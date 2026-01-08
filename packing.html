@@ -59,12 +59,16 @@
                     </button>
                 </div>
                 <!-- Mobile menu button -->
-                <div class="flex items-center md:hidden">
-                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="toggleLanguage()" class="flex items-center justify-center w-10 h-10 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg border border-slate-300 text-sm transition-all duration-200 active:scale-95">
                         🌐
                     </button>
-                    <button <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
-                        <div class="hamburger-icon"><span></span><span></span><span></span></div>
+                    <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </button>
                 </div>
             </div>
@@ -72,12 +76,30 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="mobile-menu">
             <div class="mobile-menu-content space-y-1">
-                <a href="flights.html" class="mobile-nav-link">Flights</a>
-                <a href="schedule.html" class="mobile-nav-link">Itinerary</a>
-                <a href="budget.html" class="mobile-nav-link">Budget</a>
-                <a href="packing.html" class="mobile-nav-link">Packing</a>
-                <a href="tourist-attraction.html" class="mobile-nav-link">Attractions</a>
-                <a href="hotel.html" class="mobile-nav-link">Hotels</a>
+                <a href="flights.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-plane mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                </a>
+                <a href="schedule.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-calendar-days mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                </a>
+                <a href="budget.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-yen-sign mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                </a>
+                <a href="packing.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-suitcase mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Packing</span><span class="lang-zh">行李清单</span>
+                </a>
+                <a href="tourist-attraction.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-camera mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                </a>
+                <a href="hotel.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-hotel mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                </a>
             </div>
         </div>
     </nav>

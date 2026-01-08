@@ -1034,6 +1034,35 @@ html {
         font-size: 0.7rem;
         padding: 0.5rem 0.75rem;
     }
+    
+    /* Hamburger button mobile optimizations */
+    .hamburger-button {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .hamburger-icon {
+        width: 22px;
+        height: 18px;
+    }
+    
+    /* Mobile menu improvements */
+    .mobile-menu-content {
+        padding: 0.875rem 1rem;
+        padding-bottom: 1.25rem;
+    }
+    
+    .mobile-nav-link {
+        padding: 0.875rem 1rem;
+        font-size: 0.9375rem;
+    }
+    
+    .mobile-nav-link i {
+        width: 20px;
+        font-size: 0.875rem;
+    }
 }
 
 /* Touch-friendly buttons on mobile */
