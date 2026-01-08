@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip 2026 - Packing List</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-700" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="flights.html" class="nav-link">
+                        <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                    </a>
+                    <a href="schedule.html" class="nav-link">
+                        <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                    </a>
+                    <a href="budget.html" class="nav-link">
+                        <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                    </a>
+                    <a href="packing.html" class="nav-link active">
+                        <span class="lang-en">Packing</span><span class="lang-zh">清单</span>
+                    </a>
+                    <a href="tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                    </a>
+                    <a href="hotel.html" class="nav-link">
+                        <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <button <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon"><span></span><span></span><span></span></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content space-y-1">
+                <a href="flights.html" class="mobile-nav-link">Flights</a>
+                <a href="schedule.html" class="mobile-nav-link">Itinerary</a>
+                <a href="budget.html" class="mobile-nav-link">Budget</a>
+                <a href="packing.html" class="mobile-nav-link">Packing</a>
+                <a href="tourist-attraction.html" class="mobile-nav-link">Attractions</a>
+                <a href="hotel.html" class="mobile-nav-link">Hotels</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="homepage.html" class="back-button no-print" aria-label="Back to Homepage">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <!-- Packing List Section -->
+         <section id="packing" class="scroll-mt-24 break-inside-avoid animate-fade-in">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center mb-6 gap-3">
+                <div class="p-2 bg-pink-100 rounded-xl shadow-inner">
+                    <i class="fa-solid fa-suitcase text-pink-500 text-xl sm:text-2xl"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 class="font-header text-xl sm:text-2xl font-bold text-slate-800 mb-1">
+                        <span class="lang-en">Packing List</span><span class="lang-zh">行李清单</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500">
+                        <span class="lang-en">🎒 Don't forget the essentials!</span>
+                        <span class="lang-zh">🎒 别忘了必需品！</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                 <!-- Documents -->
+                <div class="schedule-card border-l-indigo-400 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="font-bold text-indigo-700 mb-3 flex items-center">
+                        <i class="fa-solid fa-passport mr-2"></i> <span class="lang-en">Documents</span><span class="lang-zh">证件文件</span>
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Passport</span><span class="lang-zh">护照</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Flight/Hotel Confirmations</span><span class="lang-zh">机票/酒店确认单</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Travel Insurance</span><span class="lang-zh">旅游保险</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Visit Japan Web QR</span><span class="lang-zh">入境二维码 (VJW)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Money & Tech -->
+                <div class="schedule-card border-l-emerald-400 hover:shadow-lg transition-shadow duration-300">
+                     <h3 class="font-bold text-emerald-700 mb-3 flex items-center">
+                        <i class="fa-solid fa-mobile-screen mr-2"></i> <span class="lang-en">Money & Tech</span><span class="lang-zh">钱 & 电子产品</span>
+                    </h3>
+                     <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Cash (Yen)</span><span class="lang-zh">日元现金</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Credit Cards</span><span class="lang-zh">信用卡</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">IC Card (Suica/Pasmo)</span><span class="lang-zh">交通卡 (Suica/Pasmo)</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Power Bank (Crucial)</span><span class="lang-zh">充电宝 (非常重要)</span></li>
+                         <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Travel Adapter (Type A)</span><span class="lang-zh">插座转换器 (A型)</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">eSIM / Pocket WiFi</span><span class="lang-zh">上网卡 / WiFi</span></li>
+                    </ul>
+                </div>
+
+                <!-- Clothing -->
+                <div class="schedule-card border-l-pink-400 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="font-bold text-pink-700 mb-3 flex items-center">
+                        <i class="fa-solid fa-shirt mr-2"></i> <span class="lang-en">Clothing</span><span class="lang-zh">衣物 (10-15°C)</span>
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Graduation Outfit (Formal)</span><span class="lang-zh">毕业典礼正装</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Comfortable Walking Shoes</span><span class="lang-zh">舒适走路鞋 (重要!)</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Light Coat/Jacket</span><span class="lang-zh">轻便大衣/外套</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Foldable Umbrella</span><span class="lang-zh">折叠伞</span></li>
+                    </ul>
+                </div>
+
+                 <!-- Essentials -->
+                <div class="schedule-card border-l-slate-400 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="font-bold text-slate-700 mb-3 flex items-center">
+                        <i class="fa-solid fa-briefcase-medical mr-2"></i> <span class="lang-en">Daily Essentials</span><span class="lang-zh">日用品</span>
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Personal Meds</span><span class="lang-zh">个人药品</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Coin Purse</span><span class="lang-zh">零钱包 (装硬币)</span></li>
+                         <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Plastic Bag for Trash</span><span class="lang-zh">垃圾袋 (日本垃圾桶少)</span></li>
+                        <li class="flex items-center"><input type="checkbox" class="mr-2 checkbox-item"> <span class="lang-en">Hand Towel/Handkerchief</span><span class="lang-zh">小方巾 (厕所无纸巾)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+

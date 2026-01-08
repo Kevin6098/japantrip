@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kobe Port Tower - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-kobe" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="kobe-port-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="waterfront-night-view.jpg" alt="Kobe Port Tower Waterfront at Night" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1572449735824-34dd68878534?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="tower-plaza-day.jpg" alt="Kobe Port Tower Plaza During Daytime" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1572449735824-34dd68878534?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="tower-illuminated-night.jpg" alt="Kobe Port Tower Illuminated at Night" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1572449735824-34dd68878534?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="tower-observation-deck.jpg" alt="Kobe Port Tower Observation Deck View" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1572449735824-34dd68878534?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Kobe Port Tower</span><span class="lang-zh">神户塔</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #dc2626);"></i><span class="lang-en">Kobe</span><span class="lang-zh">神户</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥700</span><span class="lang-zh">¥700</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">9:00-21:00 (Last entry 20:30)</span><span class="lang-zh">9:00-21:00（最后入场20:30）</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Kobe Port Tower is an iconic red steel lattice tower that stands 108 meters tall in Kobe's port area. Completed in 1963, it's one of Kobe's most recognizable landmarks and offers spectacular 360-degree panoramic views of the port, city, and surrounding mountains. The tower's unique design, resembling a Japanese drum (tsuzumi), makes it a distinctive symbol of Kobe.</span>
+                    <span class="lang-zh">神户塔是神户港口区域一座标志性的红色钢格塔，高108米。建于1963年，是神户最知名的地标之一，可欣赏港口、城市和周围山脉的360度全景。该塔独特的设计，类似于日本鼓（鼓），使其成为神户的独特象征。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The observation deck is located at 90.28 meters and provides breathtaking views, especially during sunset and at night when the city lights create a romantic atmosphere. The tower is particularly beautiful when illuminated at night, and it's located right next to Meriken Park, which features the famous "BE KOBE" sign.</span>
+                    <span class="lang-zh">观景台位于90.28米处，提供令人惊叹的景色，特别是在日落和夜晚，当城市灯光营造出浪漫的氛围时。该塔在夜晚被点亮时特别美丽，它就在美利坚公园旁边，那里有著名的"BE KOBE"标志。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Kobe Port Tower:</strong> 108-meter red tower with observation deck offering 360-degree views - especially stunning at sunset</span><span class="lang-zh"><strong>神户塔:</strong> 108米高的红色塔，有观景台提供360度视角 - 在日落时特别令人惊叹</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>BE KOBE Sign:</strong> Large illuminated sign in Meriken Park - iconic photo spot with port backdrop</span><span class="lang-zh"><strong>BE KOBE标志:</strong> 美利坚公园的大型发光标志 - 具有港口背景的标志性拍照点</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>BE KOBE Sign:</strong> Located in nearby Meriken Park - iconic photo spot with port backdrop</span><span class="lang-zh"><strong>BE KOBE标志:</strong> 位于附近的美利坚公园 - 具有港口背景的标志性拍照点</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Night Illumination:</strong> The tower is beautifully lit at night, creating a romantic waterfront atmosphere</span><span class="lang-zh"><strong>夜间照明:</strong> 该塔在夜晚被美丽地点亮，营造出浪漫的海滨氛围</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Best Time:</strong> Visit in the late afternoon to see the area in daylight, then stay for the beautiful night illumination</span><span class="lang-zh"><strong>最佳时间:</strong> 下午晚些时候参观，在白天看到该地区，然后留下来欣赏美丽的夜间照明</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Sunset Views:</strong> The Port Tower offers spectacular sunset views - plan to be there around 5-6 PM in March</span><span class="lang-zh"><strong>日落景色:</strong> 神户塔提供壮观的日落景色 - 计划在3月下午5-6点左右到达</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Combine with Harborland:</strong> Visit the Port Tower, then explore Harborland shopping and dining area right next door</span><span class="lang-zh"><strong>与港湾乐园结合:</strong> 参观神户塔，然后探索隔壁的港湾乐园购物和餐饮区</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Photography:</strong> The tower itself is photogenic, and the views from the top are perfect for photos</span><span class="lang-zh"><strong>摄影:</strong> 塔本身很上镜，从顶部看到的景色非常适合拍照</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-train mr-2"></i>
+                    <span class="lang-en">How to Get There</span><span class="lang-zh">如何到达</span>
+                </h2>
+                <div class="space-y-3 text-slate-700">
+                    <p><span class="lang-en"><strong>From Osaka (Umeda):</strong></span><span class="lang-zh"><strong>从大阪（梅田）:</strong></span></p>
+                    <ul class="ml-6 space-y-2 list-disc">
+                        <li><span class="lang-en">Take JR Tokaido Line or Hanshin Line to Sannomiya Station (~30 minutes)</span><span class="lang-zh">乘坐JR东海道线或阪神线至三宫站（约30分钟）</span></li>
+                        <li><span class="lang-en">Transfer to Port Liner to Minato-Motomachi Station (~5 minutes)</span><span class="lang-zh">转乘Port Liner至港町站（约5分钟）</span></li>
+                        <li><span class="lang-en">Or walk from Sannomiya Station (~15 minutes) through the port area</span><span class="lang-zh">或从三宫站步行（约15分钟）穿过港口区域</span></li>
+                    </ul>
+                    <p class="mt-4"><span class="lang-en"><strong>From Harborland:</strong></span><span class="lang-zh"><strong>从港湾乐园:</strong></span></p>
+                    <ul class="ml-6 space-y-2 list-disc">
+                        <li><span class="lang-en">Kobe Port Tower is right next to Harborland - just a few minutes' walk</span><span class="lang-zh">神户塔就在港湾乐园旁边 - 只需步行几分钟</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+                <a href="../../tourist-attraction.html" class="btn-secondary flex-1 text-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Attractions</span><span class="lang-zh">返回景点</span>
+                </a>
+                <a href="../../schedule.html" class="btn-primary flex-1 text-center">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    <span class="lang-en">View in Schedule</span><span class="lang-zh">查看行程</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Pause auto-slide on hover
+            const carousel = document.getElementById('kobe-port-carousel');
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>
+

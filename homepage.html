@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip 2026 - Home</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-700" id="main-body">
+
+    <!-- Loading Overlay -->
+    <div id="pdf-loading">
+        <i class="fa-solid fa-spinner fa-spin text-pink-500 text-4xl mb-4"></i>
+        <p class="font-header text-xl font-bold text-slate-800">Generating PDF...</p>
+    </div>
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="flights.html" class="nav-link">
+                        <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                    </a>
+                    <a href="schedule.html" class="nav-link">
+                        <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                    </a>
+                    <a href="budget.html" class="nav-link">
+                        <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                    </a>
+                    <a href="packing.html" class="nav-link">
+                        <span class="lang-en">Packing</span><span class="lang-zh">清单</span>
+                    </a>
+                    <a href="tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                    </a>
+                    <a href="hotel.html" class="nav-link">
+                        <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                    </a>
+                    <!-- Language Switcher -->
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="toggleLanguage()" class="flex items-center justify-center w-10 h-10 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg border border-slate-300 text-sm transition-all duration-200 active:scale-95">
+                        🌐
+                    </button>
+                    <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content space-y-1">
+                <a href="flights.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-plane mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                </a>
+                <a href="schedule.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-calendar-days mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                </a>
+                <a href="budget.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-yen-sign mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                </a>
+                <a href="packing.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-suitcase mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Packing</span><span class="lang-zh">行李清单</span>
+                </a>
+                <a href="tourist-attraction.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-camera mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                </a>
+                <a href="hotel.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-hotel mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative py-12 md:py-20 lg:py-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-pink-50 via-white to-blue-50 min-h-[60vh]">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-pink-200 rounded-full opacity-20 blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-40 h-40 bg-purple-200 rounded-full opacity-20 blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in w-full">
+            <!-- Countdown Timer -->
+            <div id="countdown" class="countdown-container mb-6 animate-fade-in">
+                <div class="text-sm md:text-base mb-4 font-bold">
+                    <span class="lang-en">⏰ Days Until Departure</span>
+                    <span class="lang-zh">⏰ 距离出发还有</span>
+                </div>
+                <div class="grid grid-cols-4 gap-2 md:gap-4">
+                    <div class="countdown-item">
+                        <div id="days" class="countdown-number">-</div>
+                        <div class="countdown-label"><span class="lang-en">Days</span><span class="lang-zh">天</span></div>
+                    </div>
+                    <div class="countdown-item">
+                        <div id="hours" class="countdown-number">-</div>
+                        <div class="countdown-label"><span class="lang-en">Hours</span><span class="lang-zh">小时</span></div>
+                    </div>
+                    <div class="countdown-item">
+                        <div id="minutes" class="countdown-number">-</div>
+                        <div class="countdown-label"><span class="lang-en">Minutes</span><span class="lang-zh">分钟</span></div>
+                    </div>
+                    <div class="countdown-item">
+                        <div id="seconds" class="countdown-number">-</div>
+                        <div class="countdown-label"><span class="lang-en">Seconds</span><span class="lang-zh">秒</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <span class="excitement-badge mb-4 inline-block animate-bounce-subtle">
+                🌸 <span class="lang-en">Spring 2026 Adventure Awaits!</span><span class="lang-zh">2026年春 冒险即将开始！</span>
+            </span>
+            <h1 class="font-header text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-800 mb-4 leading-tight animate-slide-up bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl text-slate-600 mb-6 md:mb-8 font-light animate-slide-up-delay px-2">
+                <span class="lang-en">Tokyo • Saitama • Osaka • Kyoto • Nara</span>
+                <span class="lang-zh">东京 • 埼玉 • 大阪 • 京都 • 奈良</span>
+            </p>
+            <div class="flex flex-col gap-3 sm:flex-row justify-center animate-fade-in-delay px-4">
+                <a href="schedule.html" class="btn-primary text-sm sm:text-base">
+                    <i class="fa-solid fa-map mr-2"></i>
+                    <span class="lang-en">View Plan</span><span class="lang-zh">查看计划</span>
+                </a>
+                <a href="tourist-attraction.html" class="btn-secondary no-print text-sm sm:text-base">
+                    <i class="fa-solid fa-camera mr-2 text-purple-500"></i>
+                    <span class="lang-en">See Attractions</span><span class="lang-zh">查看景点</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links Section -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 -mt-8 md:-mt-10 relative z-20 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <section class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-12">
+            <!-- Flights Card -->
+            <a href="flights.html" class="quick-link-card group">
+                <div class="p-3 sm:p-4 bg-purple-100 rounded-xl mb-3 sm:mb-4 shadow-inner group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-plane-arrival text-purple-500 text-2xl sm:text-3xl"></i>
+                </div>
+                <h3 class="font-header text-lg sm:text-xl font-bold text-slate-800 mb-2">
+                    <span class="lang-en">Flights</span><span class="lang-zh">航班信息</span>
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600">
+                    <span class="lang-en">Flight schedules and arrival times</span>
+                    <span class="lang-zh">航班时刻表和抵达时间</span>
+                </p>
+            </a>
+
+            <!-- Schedule Card -->
+            <a href="schedule.html" class="quick-link-card group">
+                <div class="p-3 sm:p-4 bg-indigo-100 rounded-xl mb-3 sm:mb-4 shadow-inner group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-regular fa-calendar-days text-indigo-500 text-2xl sm:text-3xl"></i>
+                </div>
+                <h3 class="font-header text-lg sm:text-xl font-bold text-slate-800 mb-2">
+                    <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600">
+                    <span class="lang-en">Daily schedule and timeline</span>
+                    <span class="lang-zh">每日行程和时间表</span>
+                </p>
+            </a>
+
+            <!-- Budget Card -->
+            <a href="budget.html" class="quick-link-card group">
+                <div class="p-3 sm:p-4 bg-emerald-100 rounded-xl mb-3 sm:mb-4 shadow-inner group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-wallet text-emerald-600 text-2xl sm:text-3xl"></i>
+                </div>
+                <h3 class="font-header text-lg sm:text-xl font-bold text-slate-800 mb-2">
+                    <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600">
+                    <span class="lang-en">Daily pocket money estimates</span>
+                    <span class="lang-zh">每日零花钱估算</span>
+                </p>
+            </a>
+
+            <!-- Hotels Card -->
+            <a href="hotel.html" class="quick-link-card group">
+                <div class="p-3 sm:p-4 bg-indigo-100 rounded-xl mb-3 sm:mb-4 shadow-inner group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-bed text-indigo-500 text-2xl sm:text-3xl"></i>
+                </div>
+                <h3 class="font-header text-lg sm:text-xl font-bold text-slate-800 mb-2">
+                    <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600">
+                    <span class="lang-en">Accommodation details</span>
+                    <span class="lang-zh">住宿详情</span>
+                </p>
+            </a>
+
+            <!-- Attractions Card -->
+            <a href="tourist-attraction.html" class="quick-link-card group">
+                <div class="p-3 sm:p-4 bg-purple-100 rounded-xl mb-3 sm:mb-4 shadow-inner group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-camera-retro text-purple-500 text-2xl sm:text-3xl"></i>
+                </div>
+                <h3 class="font-header text-lg sm:text-xl font-bold text-slate-800 mb-2">
+                    <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600">
+                    <span class="lang-en">Must-see places and photos</span>
+                    <span class="lang-zh">必看景点和照片</span>
+                </p>
+            </a>
+
+            <!-- Packing Card -->
+            <a href="packing.html" class="quick-link-card group">
+                <div class="p-3 sm:p-4 bg-pink-100 rounded-xl mb-3 sm:mb-4 shadow-inner group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-suitcase text-pink-500 text-2xl sm:text-3xl"></i>
+                </div>
+                <h3 class="font-header text-lg sm:text-xl font-bold text-slate-800 mb-2">
+                    <span class="lang-en">Packing</span><span class="lang-zh">清单</span>
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600">
+                    <span class="lang-en">Essential items checklist</span>
+                    <span class="lang-zh">必备物品清单</span>
+                </p>
+            </a>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

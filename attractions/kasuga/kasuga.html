@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasuga Taisha - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-nara" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="kasuga-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="main-hall-vermillion.png" alt="Kasuga Taisha Main Hall in Vermillion Red" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="stone-lanterns-pathway.jpg" alt="Stone Lanterns Lining the Pathway to Kasuga Taisha" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="shrine-gate-entrance.jpg" alt="Kasuga Taisha Shrine Gate Entrance" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="lanterns-hall.jpg" alt="Illuminated Lanterns Hall in Kasuga Taisha" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="temple-staircase.jpg" alt="Stone Staircase Leading to Kasuga Taisha" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="traditional-building.jpg" alt="Traditional Building in Kasuga Taisha Complex" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="shrine-complex.jpg" alt="Kasuga Taisha Shrine Complex Overview" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                    <button class="carousel-indicator" data-slide="5" aria-label="Slide 6"></button>
+                    <button class="carousel-indicator" data-slide="6" aria-label="Slide 7"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Kasuga Taisha Shrine</span><span class="lang-zh">春日大社</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #0d9488);"></i><span class="lang-en">Nara Park, Nara</span><span class="lang-zh">奈良公园，奈良</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Outer Area: Free | Inner Area: ¥500</span><span class="lang-zh">外部区域: 免费 | 内部区域: ¥500</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">6:30 AM - 5:30 PM</span><span class="lang-zh">早上6:30 - 下午5:30</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Kasuga Taisha is Nara's most celebrated shrine, founded in 768 AD. The shrine is famous for its 3,000 stone and bronze lanterns that line the paths leading to the main buildings. These lanterns are only lit twice a year during the Lantern Festivals (Setsubun in February and Obon in August), creating a magical atmosphere.</span>
+                    <span class="lang-zh">春日大社是奈良最著名的神社，建于公元768年。该神社以其3000个石制和青铜灯笼而闻名，这些灯笼排列在通往主要建筑的小径上。这些灯笼每年只在灯笼节（2月的节分和8月的盂兰盆节）期间点亮两次，营造出神奇的氛围。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The shrine is dedicated to the deity responsible for the protection of Nara. The approach to the shrine passes through a primeval forest, creating a mystical atmosphere. The vermillion-colored buildings with their distinctive architecture are a UNESCO World Heritage Site and represent some of the finest examples of Shinto shrine architecture.</span>
+                    <span class="lang-zh">该神社供奉负责保护奈良的神灵。通往神社的小径穿过原始森林，营造出神秘的氛围。具有独特建筑的朱红色建筑是联合国教科文组织世界遗产，代表了神道教神社建筑的最佳范例。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>3,000 Lanterns:</strong> Stone lanterns along the path and bronze lanterns hanging from the buildings create an unforgettable scene</span><span class="lang-zh"><strong>3000个灯笼:</strong> 沿路的石灯笼和悬挂在建筑上的青铜灯笼创造了令人难忘的场景</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Primeval Forest Path:</strong> Walk through the ancient forest to reach the shrine - a spiritual journey</span><span class="lang-zh"><strong>原始森林小径:</strong> 穿过古老的森林到达神社 - 一次精神之旅</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Vermillion Buildings:</strong> The distinctive architecture with curved roofs is stunning against the forest backdrop</span><span class="lang-zh"><strong>朱红色建筑:</strong> 具有弯曲屋顶的独特建筑在森林背景下令人惊叹</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Wisteria Trellis:</strong> Beautiful wisteria flowers bloom in late April to early May, creating a purple tunnel</span><span class="lang-zh"><strong>紫藤花架:</strong> 美丽的紫藤花在4月下旬至5月初开花，形成紫色隧道</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Free Outer Area:</strong> You can see most of the lanterns and enjoy the atmosphere without paying - the paid area is optional</span><span class="lang-zh"><strong>免费外部区域:</strong> 您可以在不付费的情况下看到大部分灯笼并享受氛围 - 付费区域是可选的</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Photography:</strong> The forest path with lanterns is extremely photogenic - bring your camera!</span><span class="lang-zh"><strong>摄影:</strong> 有灯笼的森林小径非常适合拍照 - 带上您的相机！</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Combine with Nara Park:</strong> The shrine is within Nara Park - easy to visit after seeing Todaiji</span><span class="lang-zh"><strong>与奈良公园结合:</strong> 神社在奈良公园内 - 参观东大寺后很容易参观</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Lantern Festivals:</strong> If visiting in February or August, the lit lanterns create an absolutely magical experience</span><span class="lang-zh"><strong>灯笼节:</strong> 如果在2月或8月参观，点亮的灯笼创造了绝对神奇的体验</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-train mr-2"></i>
+                    <span class="lang-en">How to Get There</span><span class="lang-zh">如何到达</span>
+                </h2>
+                <div class="space-y-3 text-slate-700">
+                    <p><span class="lang-en"><strong>From Todaiji Temple:</strong></span><span class="lang-zh"><strong>从东大寺:</strong></span></p>
+                    <ul class="ml-6 space-y-2 list-disc">
+                        <li><span class="lang-en">Walk through Nara Park for about 15-20 minutes</span><span class="lang-zh">穿过奈良公园步行约15-20分钟</span></li>
+                        <li><span class="lang-en">Follow the signs and stone lanterns - they'll guide you to the shrine</span><span class="lang-zh">跟随标志和石灯笼 - 它们会引导您到神社</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+                <a href="../../tourist-attraction.html" class="btn-secondary flex-1 text-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Attractions</span><span class="lang-zh">返回景点</span>
+                </a>
+                <a href="../../schedule.html" class="btn-primary flex-1 text-center">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    <span class="lang-en">View in Schedule</span><span class="lang-zh">查看行程</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Pause auto-slide on hover
+            const carousel = document.getElementById('kasuga-carousel');
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>
+

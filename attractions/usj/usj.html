@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Studios Japan - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-osaka" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="usj-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="parade-float-universal.jpg" alt="Universal Studios Japan Parade with Colorful Float" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1624601633420-217833cb92b6?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="harry-potter-castle.jpg" alt="Hogwarts Castle at The Wizarding World of Harry Potter" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1624601633420-217833cb92b6?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="super-nintendo-world-overview.jpg" alt="Super Nintendo World Aerial Overview" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1624601633420-217833cb92b6?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="super-nintendo-world-entrance.jpg" alt="Super Nintendo World Entrance and Themed Area" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1624601633420-217833cb92b6?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="park-entrance-day.jpg" alt="Universal Studios Japan Park Entrance During Daytime" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1624601633420-217833cb92b6?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="universal-globe-iconic.jpg" alt="Iconic Universal Studios Globe with UNIVERSAL Sign" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1624601633420-217833cb92b6?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                    <button class="carousel-indicator" data-slide="5" aria-label="Slide 6"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Universal Studios Japan</span><span class="lang-zh">环球影城</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #ea580c);"></i><span class="lang-en">Osaka</span><span class="lang-zh">大阪</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Ticket: ~¥9,500 | Express: ~¥18,000+</span><span class="lang-zh">门票: ~¥9,500 | 快通: ~¥18,000+</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">9:00 AM - 9:00 PM</span><span class="lang-zh">早上9点 - 晚上9点</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Universal Studios Japan (USJ) is one of the most popular theme parks in Japan, featuring world-class attractions based on Hollywood movies and original Japanese content. The park opened in 2001 and has since become a must-visit destination, especially famous for its exclusive attractions like Super Nintendo World, The Wizarding World of Harry Potter, and various seasonal events.</span>
+                    <span class="lang-zh">日本环球影城（USJ）是日本最受欢迎的主题公园之一，拥有基于好莱坞电影和原创日本内容的世界级景点。该公园于2001年开放，现已成为必游目的地，尤其以其独家景点而闻名，如超级任天堂世界、哈利波特魔法世界和各种季节性活动。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The park is known for its immersive experiences, cutting-edge rides, and attention to detail. Super Nintendo World, opened in 2021, is particularly popular and requires timed entry tickets. The park can get extremely crowded, so planning ahead with Express Passes is highly recommended.</span>
+                    <span class="lang-zh">该公园以其沉浸式体验、尖端游乐设施和对细节的关注而闻名。2021年开放的超级任天堂世界特别受欢迎，需要定时入场券。公园可能会非常拥挤，因此强烈建议提前计划购买快速通行证。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Must-Experience Attractions</span><span class="lang-zh">必体验景点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Super Nintendo World:</strong> Immersive Mario-themed area with interactive experiences, Yoshi's Adventure ride, and Power-Up Bands</span><span class="lang-zh"><strong>超级任天堂世界:</strong> 沉浸式马里奥主题区域，有互动体验、耀西冒险游乐设施和能量手环</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>The Wizarding World of Harry Potter:</strong> Hogsmeade village, Hogwarts Castle, and the Forbidden Journey ride</span><span class="lang-zh"><strong>哈利波特魔法世界:</strong> 霍格莫德村、霍格沃茨城堡和禁忌之旅游乐设施</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Hollywood Dream - The Ride:</strong> Thrilling roller coaster with backward option and music selection</span><span class="lang-zh"><strong>好莱坞梦想 - 过山车:</strong> 刺激的过山车，有反向选项和音乐选择</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Jurassic Park - The Ride:</strong> Water ride through dinosaur-filled jungle ending with a dramatic drop</span><span class="lang-zh"><strong>侏罗纪公园 - 游乐设施:</strong> 穿过充满恐龙的丛林的水上游乐设施，以戏剧性的下降结束</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Buy Tickets in Advance:</strong> Purchase tickets online before your visit - they often sell out, especially on weekends</span><span class="lang-zh"><strong>提前购票:</strong> 在访问前在线购买门票 - 它们经常售罄，特别是在周末</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Express Pass is Essential:</strong> The Express 7 or Express 4 pass is highly recommended to skip long lines - can save hours!</span><span class="lang-zh"><strong>快速通行证是必需的:</strong> 强烈建议购买快速通行证7或快速通行证4以跳过长队 - 可以节省数小时！</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Arrive Early:</strong> Get to the park before opening (8:30 AM) to be among the first inside - crucial for Super Nintendo World</span><span class="lang-zh"><strong>提前到达:</strong> 在开放前（早上8:30）到达公园，成为第一批进入的人 - 对超级任天堂世界至关重要</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Super Nintendo World Entry:</strong> Requires timed entry ticket - get it via the USJ app or at the park entrance early</span><span class="lang-zh"><strong>超级任天堂世界入场:</strong> 需要定时入场券 - 通过USJ应用程序或早早在公园入口处获取</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Download USJ App:</strong> Check wait times, get timed entry tickets, and use interactive features in Super Nintendo World</span><span class="lang-zh"><strong>下载USJ应用程序:</strong> 查看等待时间、获取定时入场券并在超级任天堂世界使用互动功能</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-train mr-2"></i>
+                    <span class="lang-en">How to Get There</span><span class="lang-zh">如何到达</span>
+                </h2>
+                <div class="space-y-3 text-slate-700">
+                    <p><span class="lang-en"><strong>From Namba, Osaka:</strong></span><span class="lang-zh"><strong>从大阪难波:</strong></span></p>
+                    <ul class="ml-6 space-y-2 list-disc">
+                        <li><span class="lang-en">Take JR Yumesaki Line (Sakurajima Line) to Universal City Station (~20 minutes)</span><span class="lang-zh">乘坐JR梦咲线（樱岛线）至环球城站（约20分钟）</span></li>
+                        <li><span class="lang-en">The park is a 5-minute walk from Universal City Station</span><span class="lang-zh">公园距离环球城站步行5分钟</span></li>
+                        <li><span class="lang-en">Follow the crowds - impossible to miss!</span><span class="lang-zh">跟随人群 - 不可能错过！</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+                <a href="../../tourist-attraction.html" class="btn-secondary flex-1 text-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Attractions</span><span class="lang-zh">返回景点</span>
+                </a>
+                <a href="../../schedule.html" class="btn-primary flex-1 text-center">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    <span class="lang-en">View in Schedule</span><span class="lang-zh">查看行程</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Pause auto-slide on hover
+            const carousel = document.getElementById('usj-carousel');
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip 2026 - Hotels</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-700" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="flights.html" class="nav-link">
+                        <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                    </a>
+                    <a href="schedule.html" class="nav-link">
+                        <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                    </a>
+                    <a href="budget.html" class="nav-link">
+                        <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                    </a>
+                    <a href="packing.html" class="nav-link">
+                        <span class="lang-en">Packing</span><span class="lang-zh">清单</span>
+                    </a>
+                    <a href="tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                    </a>
+                    <a href="hotel.html" class="nav-link active">
+                        <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <button <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon"><span></span><span></span><span></span></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content space-y-1">
+                <a href="flights.html" class="mobile-nav-link">Flights</a>
+                <a href="schedule.html" class="mobile-nav-link">Itinerary</a>
+                <a href="budget.html" class="mobile-nav-link">Budget</a>
+                <a href="packing.html" class="mobile-nav-link">Packing</a>
+                <a href="tourist-attraction.html" class="mobile-nav-link">Attractions</a>
+                <a href="hotel.html" class="mobile-nav-link">Hotels</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="homepage.html" class="back-button no-print" aria-label="Back to Homepage">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <!-- Hotels Section -->
+        <section id="hotels" class="scroll-mt-24 break-inside-avoid animate-fade-in">
+             <div class="flex flex-col sm:flex-row items-start sm:items-center mb-6 gap-3">
+                <div class="p-2 bg-indigo-100 rounded-xl shadow-inner">
+                    <i class="fa-solid fa-bed text-indigo-500 text-xl sm:text-2xl"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 class="font-header text-xl sm:text-2xl font-bold text-slate-800 mb-1">
+                        <span class="lang-en">Hotels</span><span class="lang-zh">住宿安排</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500">
+                        <span class="lang-en">🏨 Rest well for amazing adventures!</span>
+                        <span class="lang-zh">🏨 好好休息，迎接精彩冒险！</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+                <!-- Tokyo -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-indigo-50 shadow-sm hover:shadow-lg transition-all duration-300 animate-slide-up">
+                    <div class="bg-indigo-500 p-3 text-white text-sm font-bold flex justify-between">
+                        <span><span class="lang-en">Tokyo</span><span class="lang-zh">东京</span> (Mar 18-21)</span>
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Hotel Coco Grand</h3>
+                        <p class="text-sm text-slate-600 mb-3">
+                            <span class="lang-en">Kita-Senju Station (West Exit). Has Spa & Sauna.</span>
+                            <span class="lang-zh">北千住站 (西口)。含温泉桑拿。</span>
+                        </p>
+                        <a href="https://maps.google.com/?q=Hotel+Coco+Grand+Kitasenju" target="_blank" class="text-indigo-600 text-sm font-bold flex items-center hover:text-indigo-800 transition-colors">
+                            <i class="fa-solid fa-map-pin mr-1"></i> <span class="lang-en">View Map</span><span class="lang-zh">查看地图</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Osaka -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-orange-50 shadow-sm hover:shadow-lg transition-all duration-300 animate-slide-up-delay">
+                    <div class="bg-orange-500 p-3 text-white text-sm font-bold flex justify-between">
+                        <span><span class="lang-en">Osaka</span><span class="lang-zh">大阪</span> (Mar 21-27)</span>
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2"><span class="lang-en">Namba Area</span><span class="lang-zh">难波地区</span></h3>
+                        <p class="text-sm text-slate-600 mb-3">
+                            <span class="lang-en">Near Dotonbori. Move to <strong>Rinku Town</strong> on Mar 27 night.</span>
+                            <span class="lang-zh">近道顿堀。3月27日晚搬至<strong>临空城</strong>。</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+

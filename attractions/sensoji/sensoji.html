@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senso-ji Temple - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-tokyo" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="sensoji-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="kaminarimon-gate.jpg" alt="Kaminarimon Gate" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="nakamise-dori.jpg" alt="Nakamise-dori Shopping Street" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="temple-complex.jpg" alt="Senso-ji Temple Complex" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Senso-ji Temple</span><span class="lang-zh">浅草寺</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #4f46e5);"></i><span class="lang-en">Asakusa, Tokyo</span><span class="lang-zh">东京浅草</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Free Entry</span><span class="lang-zh">免费入场</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">6:00 AM - 5:00 PM</span><span class="lang-zh">早上6点 - 下午5点</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Senso-ji is Tokyo's oldest temple, founded in 628 AD. According to legend, two fishermen found a statue of Kannon (the goddess of mercy) in the Sumida River. The temple was built to enshrine this sacred statue. Today, it's one of Tokyo's most visited spiritual sites, attracting millions of visitors annually.</span>
+                    <span class="lang-zh">浅草寺是东京最古老的寺庙，建于公元628年。据传说，两个渔民在隅田川中发现了一尊观音像（慈悲女神）。寺庙是为了供奉这尊神圣的雕像而建造的。如今，它是东京访问量最大的精神场所之一，每年吸引数百万游客。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The temple complex includes the famous Kaminarimon (Thunder Gate) with its massive red lantern, Nakamise-dori shopping street with traditional snacks and souvenirs, and the main hall (Hondo) where the sacred Kannon statue is enshrined.</span>
+                    <span class="lang-zh">寺庙建筑群包括著名的雷门（带有巨大的红灯笼）、仲见世通购物街（有传统小吃和纪念品）以及供奉神圣观音像的主殿（本堂）。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Kaminarimon Gate:</strong> The iconic entrance with a 3.9-meter tall red lantern weighing 700kg</span><span class="lang-zh"><strong>雷门:</strong> 标志性入口，有一个3.9米高、重700公斤的红灯笼</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Nakamise-dori:</strong> 250-meter shopping street with traditional Japanese snacks like senbei (rice crackers) and ningyo-yaki (doll-shaped cakes)</span><span class="lang-zh"><strong>仲见世通:</strong> 250米长的购物街，有传统日本小吃，如煎饼和人形烧</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Main Hall:</strong> Rebuilt after WWII, houses the sacred Kannon statue (not publicly displayed)</span><span class="lang-zh"><strong>本堂:</strong> 二战后重建，供奉神圣的观音像（不公开展示）</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Five-Story Pagoda:</strong> Reconstructed in 1973, standing 53 meters tall</span><span class="lang-zh"><strong>五层塔:</strong> 1973年重建，高53米</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Visit early morning (before 9 AM) to avoid crowds and experience the temple in a more peaceful atmosphere</span><span class="lang-zh">早上（9点前）参观，避开人群，在更宁静的氛围中体验寺庙</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Try the traditional snacks on Nakamise-dori - melon pan, ningyo-yaki, and senbei are popular choices</span><span class="lang-zh">在仲见世通尝试传统小吃 - 菠萝包、人形烧和煎饼是热门选择</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Don't miss the purification fountain (temizuya) before entering the main hall - follow the proper ritual</span><span class="lang-zh">进入本堂前不要错过净化喷泉（手水舍）- 遵循正确的仪式</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">The temple is beautifully illuminated at night, offering a different experience than daytime visits</span><span class="lang-zh">寺庙在夜间灯火通明，提供与白天不同的体验</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-train mr-2"></i>
+                    <span class="lang-en">How to Get There</span><span class="lang-zh">如何到达</span>
+                </h2>
+                <div class="space-y-3 text-slate-700">
+                    <p><span class="lang-en"><strong>From Hotel Coco Grand (Kita-Senju):</strong></span><span class="lang-zh"><strong>从酒店 Coco Grand (北千住):</strong></span></p>
+                    <ul class="ml-6 space-y-2 list-disc">
+                        <li><span class="lang-en">Take Tsukuba Express to Asakusa Station (~15 minutes)</span><span class="lang-zh">乘坐筑波快线至浅草站（约15分钟）</span></li>
+                        <li><span class="lang-en">Exit at Asakusa Station - the temple is a 5-minute walk</span><span class="lang-zh">在浅草站下车 - 步行5分钟即可到达寺庙</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+                <a href="../../tourist-attraction.html" class="btn-secondary flex-1 text-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Attractions</span><span class="lang-zh">返回景点</span>
+                </a>
+                <a href="../../schedule.html" class="btn-primary flex-1 text-center">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    <span class="lang-en">View in Schedule</span><span class="lang-zh">查看行程</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Pause auto-slide on hover
+            const carousel = document.getElementById('sensoji-carousel');
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>
+

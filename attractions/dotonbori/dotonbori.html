@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dotonbori - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-osaka" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="dotonbori-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="canal-night-view.jpg" alt="Dotonbori Canal at Night with Neon Reflections" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="glico-billboard-night.jpg" alt="Glico Running Man Billboard at Night" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="neon-signs-street.jpg" alt="Dotonbori Street with Colorful Neon Signs" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="canal-bridge-day.jpg" alt="Dotonbori Canal Bridge During Daytime" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="gyoza-sign-street.jpg" alt="Dotonbori Street with Giant Gyoza Sign" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="canal-boat-night.jpg" alt="Dotonbori Canal with Tour Boat at Night" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                    <button class="carousel-indicator" data-slide="5" aria-label="Slide 6"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Dotonbori</span><span class="lang-zh">道顿堀</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #ea580c);"></i><span class="lang-en">Namba, Osaka</span><span class="lang-zh">大阪难波</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Free to Walk</span><span class="lang-zh">免费步行</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">Best at Night</span><span class="lang-zh">夜晚最佳</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Dotonbori is Osaka's most famous entertainment and dining district, running along the Dotonbori canal. Known as "Osaka's kitchen," this vibrant area is famous for its extravagant neon signs, street food, and energetic nightlife. The name comes from the Dotonbori canal, which was constructed in 1615.</span>
+                    <span class="lang-zh">道顿堀是大阪最著名的娱乐和餐饮区，沿着道顿堀运河延伸。被称为"大阪的厨房"，这个充满活力的地区以其奢华的霓虹灯招牌、街头美食和充满活力的夜生活而闻名。这个名字来自道顿堀运河，建于1615年。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The area comes alive at night with massive animated signs including the famous Glico running man, giant crabs, octopuses, and other food-themed displays. It's the perfect place to experience Osaka's food culture with takoyaki (octopus balls), okonomiyaki (savory pancakes), and kushikatsu (deep-fried skewers).</span>
+                    <span class="lang-zh">该地区在夜晚充满活力，有巨大的动画招牌，包括著名的格力高跑男、巨大的螃蟹、章鱼和其他以食物为主题的展示。这是体验大阪美食文化的完美场所，有章鱼烧、大阪烧和串炸。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Glico Running Man Sign:</strong> The iconic neon sign of a runner crossing a finish line - Osaka's most photographed landmark</span><span class="lang-zh"><strong>格力高跑男广告牌:</strong> 标志性的霓虹灯招牌，显示一个跑步者冲过终点线 - 大阪最受拍照的地标</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Giant Food Signs:</strong> Massive 3D signs including a moving crab (Kani Doraku), octopus (Tako Tako King), and pufferfish</span><span class="lang-zh"><strong>巨大食物招牌:</strong> 巨大的3D招牌，包括移动的螃蟹（蟹道乐）、章鱼（章鱼章鱼王）和河豚</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Street Food:</strong> Try takoyaki, okonomiyaki, kushikatsu, and other Osaka specialties from street vendors</span><span class="lang-zh"><strong>街头美食:</strong> 从街头小贩那里尝试章鱼烧、大阪烧、串炸和其他大阪特色菜</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Dotonbori Canal:</strong> Take a river cruise or simply enjoy the view of neon lights reflecting on the water</span><span class="lang-zh"><strong>道顿堀运河:</strong> 乘坐游船或简单地欣赏霓虹灯在水面上的倒影</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-utensils mr-2"></i>
+                    <span class="lang-en">Must-Try Foods</span><span class="lang-zh">必试美食</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-orange-700 mb-2"><span class="lang-en">Takoyaki</span><span class="lang-zh">章鱼烧</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Octopus-filled dough balls, a Osaka specialty</span><span class="lang-zh">章鱼馅的面团球，大阪特色</span></p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-orange-700 mb-2"><span class="lang-en">Okonomiyaki</span><span class="lang-zh">大阪烧</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Savory pancake with various toppings</span><span class="lang-zh">带有各种配料的咸味煎饼</span></p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-orange-700 mb-2"><span class="lang-en">Kushikatsu</span><span class="lang-zh">串炸</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Deep-fried skewers, dip once in sauce!</span><span class="lang-zh">油炸串，在酱汁中蘸一次！</span></p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-orange-700 mb-2"><span class="lang-en">Ramen</span><span class="lang-zh">拉面</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Osaka-style ramen with rich tonkotsu broth</span><span class="lang-zh">大阪风格拉面，浓郁的豚骨汤</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Visit at Night:</strong> The neon signs are most impressive after dark - best time is 7-10 PM</span><span class="lang-zh"><strong>夜晚参观:</strong> 霓虹灯招牌在夜幕降临时最令人印象深刻 - 最佳时间是晚上7-10点</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Photo Spots:</strong> The Ebisu Bridge offers the best view of the Glico sign - arrive early for sunset photos</span><span class="lang-zh"><strong>拍照点:</strong> 惠比寿桥提供格力高招牌的最佳视角 - 提前到达拍摄日落照片</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Kushikatsu Rule:</strong> Never double-dip your skewer in the shared sauce - it's considered rude!</span><span class="lang-zh"><strong>串炸规则:</strong> 永远不要在共享的酱汁中重复蘸串 - 这被认为是不礼貌的！</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Connected to Shinsaibashi:</strong> Dotonbori connects directly to Shinsaibashi shopping street - perfect for shopping after eating</span><span class="lang-zh"><strong>连接心斋桥:</strong> 道顿堀直接连接到心斋桥购物街 - 吃完后购物完美</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+                <a href="../../tourist-attraction.html" class="btn-secondary flex-1 text-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Attractions</span><span class="lang-zh">返回景点</span>
+                </a>
+                <a href="../../schedule.html" class="btn-primary flex-1 text-center">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    <span class="lang-en">View in Schedule</span><span class="lang-zh">查看行程</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Pause auto-slide on hover
+            const carousel = document.getElementById('dotonbori-carousel');
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>
+

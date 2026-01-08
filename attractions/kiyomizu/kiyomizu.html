@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiyomizu-dera - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-kyoto" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="kiyomizu-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="main-hall-veranda.jpg" alt="Kiyomizu-dera Main Hall and Veranda" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="autumn-sunset.jpg" alt="Kiyomizu-dera at Autumn Sunset" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="cherry-blossom-view.jpg" alt="Kiyomizu-dera with Cherry Blossoms" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Kiyomizu-dera Temple</span><span class="lang-zh">清水寺</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #059669);"></i><span class="lang-en">Higashiyama, Kyoto</span><span class="lang-zh">京都东山</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥400</span><span class="lang-zh">¥400</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">6:00 AM - 6:00 PM</span><span class="lang-zh">早上6点 - 下午6点</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Kiyomizu-dera (Pure Water Temple) is one of Kyoto's most celebrated temples and a UNESCO World Heritage Site. Founded in 778 AD, the temple is famous for its wooden stage (butai) that juts out from the main hall, offering spectacular views of Kyoto city and the surrounding mountains. The stage is built without using a single nail, showcasing traditional Japanese architecture.</span>
+                    <span class="lang-zh">清水寺（清水寺）是京都最著名的寺庙之一，也是联合国教科文组织世界遗产。建于公元778年，该寺庙以其从主殿突出的木制舞台（舞台）而闻名，可欣赏京都城市和周围山脉的壮丽景色。舞台建造时没有使用一颗钉子，展示了传统的日本建筑。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The temple gets its name from the Otowa Waterfall, where three streams of water fall into a pond. Visitors can drink from the streams using long-handled cups, with each stream said to grant a different blessing: longevity, success in studies, or a fortunate love life.</span>
+                    <span class="lang-zh">寺庙的名字来自音羽瀑布，三股水流落入池塘。游客可以使用长柄杯从水流中饮水，据说每股水流都会带来不同的祝福：长寿、学业成功或幸运的爱情生活。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Wooden Stage:</strong> The 13-meter high stage offers panoramic views - especially beautiful during cherry blossom and autumn seasons</span><span class="lang-zh"><strong>木制舞台:</strong> 13米高的舞台提供全景 - 在樱花和秋季特别美丽</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Otowa Waterfall:</strong> Drink from the three streams for different blessings - but choose only one!</span><span class="lang-zh"><strong>音羽瀑布:</strong> 从三股水流中饮水以获得不同的祝福 - 但只能选择一个！</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Ninenzaka & Sannenzaka:</strong> Historic stone-paved streets leading to the temple with traditional shops and cafes</span><span class="lang-zh"><strong>二年坂 & 三年坂:</strong> 通往寺庙的历史石铺街道，有传统商店和咖啡厅</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Jishu Shrine:</strong> A love shrine within the temple grounds - try walking between two "love stones" with eyes closed for true love</span><span class="lang-zh"><strong>地主神社:</strong> 寺庙内的爱情神社 - 尝试闭着眼睛在两块"爱情石"之间行走以获得真爱</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Early Morning Visit:</strong> Arrive before 8 AM to avoid crowds and enjoy the peaceful atmosphere</span><span class="lang-zh"><strong>清晨参观:</strong> 早上8点前到达，避开人群，享受宁静的氛围</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Walk Downhill:</strong> Start from Kiyomizu-Gojo Station and walk downhill to save energy - much easier!</span><span class="lang-zh"><strong>下坡步行:</strong> 从清水五条站开始，下坡步行以节省体力 - 更容易！</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Seasonal Beauty:</strong> Spring (cherry blossoms) and autumn (maple leaves) are the most beautiful times to visit</span><span class="lang-zh"><strong>季节性美景:</strong> 春季（樱花）和秋季（枫叶）是最美丽的参观时间</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Explore the Streets:</strong> Don't rush - take time to explore Ninenzaka and Sannenzaka streets with their traditional architecture</span><span class="lang-zh"><strong>探索街道:</strong> 不要匆忙 - 花时间探索二年坂和三年坂街道及其传统建筑</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-train mr-2"></i>
+                    <span class="lang-en">How to Get There</span><span class="lang-zh">如何到达</span>
+                </h2>
+                <div class="space-y-3 text-slate-700">
+                    <p><span class="lang-en"><strong>From Osaka (Namba):</strong></span><span class="lang-zh"><strong>从大阪（难波）:</strong></span></p>
+                    <ul class="ml-6 space-y-2 list-disc">
+                        <li><span class="lang-en">Take Keihan Line to Kiyomizu-Gojo Station (~50 minutes)</span><span class="lang-zh">乘坐京阪线至清水五条站（约50分钟）</span></li>
+                        <li><span class="lang-en">Walk uphill for 15-20 minutes, or take a bus to Kiyomizu-michi stop</span><span class="lang-zh">上坡步行15-20分钟，或乘坐巴士至清水道站</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+                <a href="../../tourist-attraction.html" class="btn-secondary flex-1 text-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Attractions</span><span class="lang-zh">返回景点</span>
+                </a>
+                <a href="../../schedule.html" class="btn-primary flex-1 text-center">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    <span class="lang-en">View in Schedule</span><span class="lang-zh">查看行程</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Pause auto-slide on hover
+            const carousel = document.getElementById('kiyomizu-carousel');
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>
+

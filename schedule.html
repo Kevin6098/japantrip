@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip 2026 - Schedule</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-700" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="flights.html" class="nav-link">
+                        <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                    </a>
+                    <a href="schedule.html" class="nav-link active">
+                        <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                    </a>
+                    <a href="budget.html" class="nav-link">
+                        <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                    </a>
+                    <a href="packing.html" class="nav-link">
+                        <span class="lang-en">Packing</span><span class="lang-zh">清单</span>
+                    </a>
+                    <a href="tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                    </a>
+                    <a href="hotel.html" class="nav-link">
+                        <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="toggleLanguage()" class="flex items-center justify-center w-10 h-10 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg border border-slate-300 text-sm transition-all duration-200 active:scale-95">
+                        🌐
+                    </button>
+                    <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content space-y-1">
+                <a href="flights.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-plane mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                </a>
+                <a href="schedule.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-calendar-days mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                </a>
+                <a href="budget.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-yen-sign mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                </a>
+                <a href="packing.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-suitcase mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Packing</span><span class="lang-zh">行李清单</span>
+                </a>
+                <a href="tourist-attraction.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-camera mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                </a>
+                <a href="hotel.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-hotel mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="homepage.html" class="back-button no-print" aria-label="Back to Homepage">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <!-- Itinerary Section -->
+        <section id="itinerary" class="scroll-mt-24 animate-fade-in">
+            <div class="flex flex-col items-center mb-6 md:mb-8 gap-3">
+                 <div class="bg-white px-4 sm:px-6 py-2 rounded-full shadow border border-pink-100 flex items-center">
+                    <i class="fa-regular fa-calendar-days text-pink-500 text-lg sm:text-xl mr-2"></i>
+                    <h2 class="font-header text-lg sm:text-xl font-bold text-slate-800">
+                        <span class="lang-en">Daily Schedule</span><span class="lang-zh">每日行程</span>
+                    </h2>
+                 </div>
+                 <p class="text-xs sm:text-sm text-center text-slate-500 px-4">
+                    <span class="lang-en">🗾 11 amazing days of adventure await!</span>
+                    <span class="lang-zh">🗾 11天的精彩冒险等着您！</span>
+                 </p>
+            </div>
+            
+            <div class="relative pl-2 md:pl-0 pb-8">
+                <div class="timeline-line"></div>
+
+                <!-- Day 1: Tokyo (Indigo) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                    <div class="timeline-dot" style="border-color: #4f46e5;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-indigo-700">
+                            <span class="lang-en">Arrival</span><span class="lang-zh">抵达</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Wed, Mar 18</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-indigo-500">
+                        <ul class="space-y-3">
+                            <li class="flex items-baseline"><span class="time-badge">21:15</span><span class="text-sm"><span class="lang-en">CX Lands (HND)</span><span class="lang-zh">国泰降落 (HND)</span></span></li>
+                            <li class="flex items-baseline"><span class="time-badge">22:30</span><span class="text-sm"><span class="lang-en">TG Lands (HND)</span><span class="lang-zh">泰航降落 (HND)</span></span></li>
+                            <li class="flex items-baseline"><span class="time-badge">23:30</span><span class="text-sm"><span class="lang-en">Train to Hotel (~60m)</span><span class="lang-zh">电车前往酒店 (~60分)</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 2: Tokyo (Indigo) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                    <div class="timeline-dot" style="border-color: #4f46e5;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-indigo-700">
+                            <span class="lang-en">Old Tokyo</span><span class="lang-zh">旧东京</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Thu, Mar 19</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-indigo-500">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge">09:30</span><span class="text-sm"><span class="lang-en">Meet Lobby</span><span class="lang-zh">大堂集合</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Train: Tsukuba Exp (~15m)</span><span class="lang-zh">电车: 筑波快线 (~15分)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">10:00</span><a href="https://www.google.com/search?tbm=isch&q=Sensoji+Asakusa" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Asakusa (Senso-ji)</span><span class="lang-zh">浅草 (浅草寺)</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">Free</span></li>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">12:00</span><a href="https://www.google.com/search?tbm=isch&q=Ueno+Park" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Ueno Park</span><span class="lang-zh">上野公园</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">Free</span> (Lunch)</li>
+                            <span class="transit-badge"><span class="lang-en">Train: Ginza Line (~5m)</span><span class="lang-zh">电车: 银座线 (~5分)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">14:00</span><a href="https://www.google.com/search?tbm=isch&q=Nakamura+Tokichi+Ginza" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Ginza (Tokichi Matcha)</span><span class="lang-zh">银座 (中村藤吉抹茶)</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <span class="transit-badge"><span class="lang-en">Train: Ginza Line (~15m)</span><span class="lang-zh">电车: 银座线 (~15分)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">18:00</span><a href="https://www.google.com/search?tbm=isch&q=Tsukishima+Monja+Street" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Tsukishima Monja Street</span><span class="lang-zh">月岛文字烧街</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> (Dinner)</li>
+                            <span class="transit-badge"><span class="lang-en">Taxi/Metro (~10m)</span><span class="lang-zh">出租车/地铁 (~10分)</span></span>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 3: Tokyo/Saitama (Indigo) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                    <div class="timeline-dot" style="border-color: #4f46e5;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-indigo-700">
+                            <span class="lang-en">Graduation & Shibuya</span><span class="lang-zh">毕业典礼 & 涩谷</span>
+                        </h3>
+                        <p class="text-slate-400 font-bold text-xs uppercase tracking-widest">Fri, Mar 20 (Holiday)</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-indigo-500">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">09:00</span><a href="https://www.google.com/search?tbm=isch&q=Harajuku+Omotesando" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Harajuku & Omotesando</span><span class="lang-zh">原宿 & 表参道</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <span class="transit-badge"><span class="lang-en">Takeshita St, Cafes</span><span class="lang-zh">竹下通, 咖啡厅</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">11:00</span><a href="https://www.google.com/search?tbm=isch&q=Shibuya+Crossing" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Shibuya Crossing & Hachiko</span><span class="lang-zh">涩谷十字路口 & 八公</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">11:30</span><span class="text-sm"><span class="lang-en">Depart for Saitama</span><span class="lang-zh">前往埼玉</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Direct via Hanzomon/Tobu Line (~1h 20m)</span><span class="lang-zh">直达 (半藏门/东武线 ~1小时20分)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">13:30</span><a href="https://www.google.com/search?tbm=isch&q=Nippon+Institute+of+Technology+Miyashiro" target="_blank" class="text-sm font-bold"><span class="lang-en">Graduation Ceremony</span><span class="lang-zh">毕业典礼</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <span class="transit-badge"><span class="lang-en">Nippon Institute of Technology</span><span class="lang-zh">日本工业大学 (宫代)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">19:00</span><span class="text-sm highlight-attraction"><span class="lang-en">Celebration Dinner</span><span class="lang-zh">庆功晚餐</span></span> (Shibuya) <span class="price-badge">¥20,000</span></li>
+                            <span class="transit-badge"><span class="lang-en">High-End Course Meal (Reserve!)</span><span class="lang-zh">高级料理 (需预订!)</span></span>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 4: Osaka (Orange) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                     <div class="timeline-dot" style="border-color: #f97316;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-orange-600">
+                            <span class="lang-en">Move to Osaka</span><span class="lang-zh">前往大阪</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Sat, Mar 21</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-orange-500">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge">11:00</span><span class="text-sm"><span class="lang-en">Travel to Tokyo Stn</span><span class="lang-zh">前往东京站</span></span></li>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">12:00</span><span class="text-sm"><span class="lang-en">Shinkansen to Shin-Osaka</span><span class="lang-zh">新干线至新大阪</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Travel: ~2.5 hrs (Right side for Fuji)</span><span class="lang-zh">车程: 约2.5小时 (右侧看富士山)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">15:30</span><span class="text-sm"><span class="lang-en">Check-in Namba Hotel</span><span class="lang-zh">入住难波酒店</span></span></li>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">17:50</span><span class="text-sm text-slate-500"><span class="lang-en">Group 3 lands at KIX</span><span class="lang-zh">第三组抵达关西机场</span></span></li>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">20:00</span><span class="text-sm font-bold text-orange-600"><span class="lang-en">Reunion Dinner (Dotonbori)</span><span class="lang-zh">团圆晚餐 (道顿堀)</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 5: Nara & Uji (Teal) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                     <div class="timeline-dot" style="border-color: #0d9488;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-teal-700">
+                            <span class="lang-en">Uji & Nara (Healing Route)</span><span class="lang-zh">宇治 & 奈良 (治愈路线)</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Sun, Mar 22</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-teal-600">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge">09:00</span><span class="text-sm"><span class="lang-en">Depart Osaka</span><span class="lang-zh">离开大阪</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Train: Keihan Line to Uji (~50m)</span><span class="lang-zh">电车: 京阪线至宇治 (~50分)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">10:00</span><a href="https://www.google.com/search?tbm=isch&q=Nakamura+Tokichi+Honten+Uji" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Nakamura Tokichi Honten</span><span class="lang-zh">中村藤吉本店</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <span class="transit-badge"><span class="lang-en">Matcha sweets & early lunch</span><span class="lang-zh">抹茶甜点 & 早午餐</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">11:30</span><a href="https://www.google.com/search?tbm=isch&q=Ujiagami+Shrine+Uji+River" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Ujiagami Shrine & River</span><span class="lang-zh">宇治上神社 & 宇治川</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">Free</span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk along Uji River & Byodoin Omotesando</span><span class="lang-zh">漫步宇治川 & 平等院表参道</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">13:00</span><span class="text-sm"><span class="lang-en">Transfer to Nara</span><span class="lang-zh">前往奈良</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Train: JR Nara Line (~30m)</span><span class="lang-zh">电车: JR奈良线 (~30分)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">14:00</span><a href="https://www.google.com/search?tbm=isch&q=Nara+Park+Todaiji" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Nara Park & Todaiji</span><span class="lang-zh">奈良公园 & 东大寺</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">¥600</span></li>
+                            <span class="transit-badge"><span class="lang-en">Great Buddha & Deer feeding</span><span class="lang-zh">大佛 & 喂鹿</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">16:00</span><a href="https://www.google.com/search?tbm=isch&q=Kasuga+Taisha" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Kasuga Taisha Shrine</span><span class="lang-zh">春日大社</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">Free</span></li>
+                            <span class="transit-badge"><span class="lang-en">Stone lanterns forest path</span><span class="lang-zh">石灯笼森林小径</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">17:30</span><a href="https://www.google.com/search?tbm=isch&q=Mt+Wakakusa+Night+View" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Mt. Wakakusa</span><span class="lang-zh">若草山</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> (Night View) <span class="price-badge">¥150</span></li>
+                            <span class="transit-badge"><span class="lang-en">Sunset & City Night View</span><span class="lang-zh">日落 & 城市夜景</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">19:00</span><span class="text-sm"><span class="lang-en">Return to Osaka</span><span class="lang-zh">返回大阪</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 6: Kobe (Red) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                    <div class="timeline-dot" style="border-color: #dc2626;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-red-600">
+                            <span class="lang-en">Kobe Day Trip</span><span class="lang-zh">神户一日游</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Mon, Mar 23</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-red-500">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge">09:30</span><span class="text-sm"><span class="lang-en">Depart Osaka/Umeda</span><span class="lang-zh">离开大阪/梅田</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Train: JR/Hanshin Line (~30m)</span><span class="lang-zh">电车: JR/阪神线 (~30分)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">10:30</span><a href="https://www.google.com/search?tbm=isch&q=Meriken+Park+Kobe+Harborland" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Meriken Park & Harborland</span><span class="lang-zh">美利坚公园 & 港湾乐园</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">Free</span></li>
+                            <span class="transit-badge"><span class="lang-en">BE KOBE Sign, Port Tower Photos</span><span class="lang-zh">BE KOBE标志, 神户塔拍照</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">12:00</span><span class="text-sm"><span class="lang-en">Lunch at Mosaic</span><span class="lang-zh">Mosaic 广场午餐</span></span></li>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">13:30</span><span class="text-sm"><span class="lang-en">Travel to Mt. Rokko</span><span class="lang-zh">前往六甲山</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Bus/Cable Car (~40m)</span><span class="lang-zh">巴士/缆车 (~40分)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">14:30</span><a href="https://www.google.com/search?tbm=isch&q=Rokkosan+Pasture" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Rokkosan Pasture (Sheep)</span><span class="lang-zh">六甲山牧场</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">¥500</span></li>
+                            <span class="transit-badge"><span class="lang-en">Interact with sheep & enjoy nature</span><span class="lang-zh">与羊互动 & 享受大自然</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">17:00</span><span class="text-sm"><span class="lang-en">Descend Mountain</span><span class="lang-zh">下山</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Views during sunset transit</span><span class="lang-zh">日落途中的景色</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">18:30</span><a href="https://www.google.com/search?tbm=isch&q=Kobe+Port+Tower+Night+View" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Kobe Port Tower</span><span class="lang-zh">神户塔</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> Night View <span class="price-badge">¥700</span></li>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">19:30</span><span class="text-sm font-bold"><span class="lang-en">Dinner in Kobe City</span><span class="lang-zh">神户市内晚餐</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Kobe Beef or Izakaya</span><span class="lang-zh">神户牛肉或居酒屋</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">21:00</span><span class="text-sm"><span class="lang-en">Return to Osaka</span><span class="lang-zh">返回大阪</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 7: Kyoto (Green) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                    <div class="timeline-dot" style="border-color: #16a34a;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-green-700">
+                            <span class="lang-en">Kyoto (Efficient Route)</span><span class="lang-zh">京都 (高效路线)</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Tue, Mar 24</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-green-600">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge">07:00</span><span class="text-sm"><span class="lang-en">Depart Namba (Early!)</span><span class="lang-zh">离开难波 (早起!)</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Train: Keihan Line to Fushimi-Inari</span><span class="lang-zh">电车: 京阪线至伏见稻荷</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">08:00</span><a href="https://www.google.com/search?tbm=isch&q=Fushimi+Inari+Taisha" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Fushimi Inari Taisha</span><span class="lang-zh">伏见稻荷大社</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">Free</span></li>
+                            <span class="transit-badge"><span class="lang-en">South start: Beat the crowds!</span><span class="lang-zh">南端开始: 避开人潮!</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">11:00</span><a href="https://www.google.com/search?tbm=isch&q=Kiyomizu+dera" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Kiyomizu-dera Temple</span><span class="lang-zh">清水寺</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">¥400</span></li>
+                            <span class="transit-badge"><span class="lang-en">Train to Kiyomizu-Gojo</span><span class="lang-zh">电车至清水五条</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">13:00</span><a href="https://www.google.com/search?tbm=isch&q=Ninenzaka+Sannenzaka" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Ninenzaka & Sannenzaka</span><span class="lang-zh">二年坂 & 三年坂</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">Free</span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk downhill (Energy saving!) & Lunch</span><span class="lang-zh">下坡步行 (省力!) & 午餐</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">16:00</span><a href="https://www.google.com/search?tbm=isch&q=Yasaka+Shrine+Gion" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Yasaka Shrine & Gion</span><span class="lang-zh">八坂神社 & 祇园</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">Free</span></li>
+                            <span class="transit-badge"><span class="lang-en">Atmospheric late afternoon walk</span><span class="lang-zh">傍晚漫步体验氛围</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">17:30</span><a href="https://www.google.com/search?tbm=isch&q=Kamogawa+River+Kyoto" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Kamogawa River</span><span class="lang-zh">鸭川</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> (Sunset)</li>
+                            <span class="transit-badge"><span class="lang-en">Relax by the river, romantic evening</span><span class="lang-zh">河边放松, 浪漫夜晚</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">19:00</span><span class="text-sm"><span class="lang-en">Return to Osaka</span><span class="lang-zh">返回大阪</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 8: USJ (Cyan/Sky) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                     <div class="timeline-dot" style="border-color: #0ea5e9;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-sky-600">
+                            <span class="lang-en">USJ</span><span class="lang-zh">环球影城</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Wed, Mar 25</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-sky-500">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge bg-sky-100 text-sky-800">07:30</span><span class="text-sm"><span class="lang-en">Depart (Early!)</span><span class="lang-zh">出发 (早起!)</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Train: JR (~20m)</span><span class="lang-zh">电车: JR (~20分)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge bg-sky-100 text-sky-800">08:00</span><a href="https://www.google.com/search?tbm=isch&q=Universal+Studios+Japan" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">USJ All Day</span><span class="lang-zh">环球影城全天</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <div class="ml-14 mb-2">
+                                <span class="price-badge block w-fit mb-1"><span class="lang-en">Entry</span><span class="lang-zh">门票</span>: ~¥9,500</span>
+                                <span class="price-badge block w-fit bg-yellow-100 border-yellow-200 text-yellow-800"><span class="lang-en">Express 7</span><span class="lang-zh">快通7</span>: ~¥18,000+</span>
+                            </div>
+                            <li class="flex items-baseline"><span class="time-badge bg-sky-100 text-sky-800">20:00</span><span class="text-sm"><span class="lang-en">Return / Dinner</span><span class="lang-zh">返回 / 晚餐</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 9: Osaka City (Orange) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                    <div class="timeline-dot" style="border-color: #f97316;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-orange-600">
+                            <span class="lang-en">Osaka City Highlights</span><span class="lang-zh">大阪城市精华</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Thu, Mar 26</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-orange-500">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge">09:30</span><span class="text-sm"><span class="lang-en">Depart Hotel</span><span class="lang-zh">离开酒店</span></span></li>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">10:00</span><a href="https://www.google.com/search?tbm=isch&q=Osaka+Castle" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Osaka Castle</span><span class="lang-zh">大阪城</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <span class="price-badge">Free</span></li>
+                            <span class="transit-badge"><span class="lang-en">Conan Photo Spot & Tenshukaku (Tower ¥600)</span><span class="lang-zh">柯南打卡点 & 天守阁 (登塔¥600)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">12:30</span><a href="https://www.google.com/search?tbm=isch&q=Tsutenkaku+Shinsekai" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Tsutenkaku</span><span class="lang-zh">通天阁</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <span class="transit-badge"><span class="lang-en">Cyberpunk/Neon Vibes & Kushikatsu Lunch</span><span class="lang-zh">赛博朋克霓虹感 & 炸串午餐</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">14:30</span><a href="https://www.google.com/search?tbm=isch&q=Namba+Yasaka+Shrine" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Namba Yasaka Shrine</span><span class="lang-zh">难波八阪神社</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <span class="transit-badge"><span class="lang-en">Giant Lion Head (Great for photos!)</span><span class="lang-zh">巨大狮子头 (拍照绝佳!)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">16:00</span><a href="https://www.google.com/search?tbm=isch&q=Dotonbori" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Dotonbori</span><span class="lang-zh">道顿堀</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <span class="transit-badge"><span class="lang-en">Glico Man Sign & Street Food</span><span class="lang-zh">格力高跑男广告牌 & 街头美食</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">18:00</span><a href="https://www.google.com/search?tbm=isch&q=Shinsaibashi+Shopping" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Shinsaibashi</span><span class="lang-zh">心斋桥</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <span class="transit-badge"><span class="lang-en">Shopping Paradise (Daimaru/Parco). Bring Passport for Tax Free!</span><span class="lang-zh">购物天堂 (大丸/Parco). 带护照退税!</span></span>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 10: Osaka (Orange) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                    <div class="timeline-dot" style="border-color: #f97316;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-orange-600">
+                            <span class="lang-en">Last Shopping</span><span class="lang-zh">最后购物</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Fri, Mar 27</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-orange-500">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge"><span class="lang-en">Day</span><span class="lang-zh">全天</span></span><span class="text-sm highlight-attraction"><span class="lang-en">Shinsaibashi / Umeda</span><span class="lang-zh">心斋桥 / 梅田</span></span></li>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">17:00</span><span class="text-sm"><span class="lang-en">Collect Luggage</span><span class="lang-zh">取行李</span></span></li>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">17:30</span><span class="text-sm"><span class="lang-en">Move to Airport Area</span><span class="lang-zh">前往机场区</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Train: Nankai Line (~40m)</span><span class="lang-zh">电车: 南海线 (~40分)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">18:30</span><span class="text-sm"><span class="lang-en">Check-in Hotel (Rinku Town)</span><span class="lang-zh">入住临空城酒店</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 11: Osaka (Orange) -->
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                     <div class="timeline-dot" style="border-color: #f97316;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-orange-600">
+                            <span class="lang-en">Fly Home</span><span class="lang-zh">回家</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Sat, Mar 28</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-orange-500">
+                         <div class="text-sm font-bold text-slate-800 mb-2"><span class="lang-en">Check-in Times</span><span class="lang-zh">值机时间</span>:</div>
+                         <ul class="space-y-2">
+                            <li class="flex justify-between text-sm"><span><span class="lang-en">Travel to KIX</span><span class="lang-zh">前往关西机场</span>:</span> <span>10 mins</span></li>
+                            <li class="flex justify-between text-sm"><span>CX <span class="lang-en">Check-in</span><span class="lang-zh">值机</span>:</span> <span class="font-mono font-bold">07:30</span></li>
+                            <li class="flex justify-between text-sm"><span>TG <span class="lang-en">Check-in</span><span class="lang-zh">值机</span>:</span> <span class="font-mono font-bold">08:30</span></li>
+                         </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+

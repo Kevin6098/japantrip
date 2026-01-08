@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rokkosan Pasture - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-kobe" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="rokkosan-pasture-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="sheep-grazing-hillside.jpg" alt="Sheep Grazing on Rokkosan Hillside" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="pasture-building-view.jpg" alt="Rokkosan Pasture Building with Clock Tower" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="sheep-field-landscape.jpg" alt="Sheep in Green Pasture Field" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="pasture-sheep-interaction.jpg" alt="Visitors Interacting with Sheep at Rokkosan Pasture" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="pasture-overview.jpg" alt="Rokkosan Pasture Overview with Sheep and Scenic Views" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Rokkosan Pasture</span><span class="lang-zh">六甲山牧场</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #dc2626);"></i><span class="lang-en">Mount Rokko, Kobe</span><span class="lang-zh">神户六甲山</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥500</span><span class="lang-zh">¥500</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">9:00 AM - 5:00 PM</span><span class="lang-zh">早上9点 - 下午5点</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Rokkosan Pasture (六甲山牧场) is a charming farm located on Mount Rokko, offering visitors a unique opportunity to interact with friendly sheep and enjoy stunning panoramic views of Kobe and Osaka Bay. This family-friendly attraction combines the beauty of nature with hands-on animal experiences, making it a perfect escape from the city.</span>
+                    <span class="lang-zh">六甲山牧场是位于六甲山上的迷人农场，为游客提供与友好的绵羊互动并欣赏神户和大阪湾壮丽全景的独特机会。这个适合家庭游玩的景点将自然之美与亲身体验动物相结合，是逃离城市的完美选择。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The pasture features a beautiful European-style building with a clock tower, rolling green hills where sheep graze freely, and various activities including sheep feeding, butter making workshops, and ice cream made from fresh milk. The elevation provides cool temperatures even in summer, and the views are spectacular year-round.</span>
+                    <span class="lang-zh">牧场拥有美丽的欧式建筑和钟楼，绵羊自由放牧的绿色山丘，以及各种活动，包括喂羊、制作黄油工作坊和用新鲜牛奶制作的冰淇淋。海拔高度即使在夏天也提供凉爽的温度，景色全年都很壮观。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Sheep Interaction:</strong> Feed and interact with friendly sheep that roam freely across the green pastures - a unique and memorable experience</span><span class="lang-zh"><strong>与绵羊互动:</strong> 喂食和与在绿色牧场上自由漫游的友好绵羊互动 - 独特而难忘的体验</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Scenic Views:</strong> Breathtaking panoramic views of Kobe city, Osaka Bay, and the surrounding mountains from the elevated location</span><span class="lang-zh"><strong>风景:</strong> 从高海拔位置欣赏神户市、大阪湾和周围山脉的壮丽全景</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Fresh Dairy Products:</strong> Try ice cream, butter, and other dairy products made from fresh milk produced on the farm</span><span class="lang-zh"><strong>新鲜乳制品:</strong> 尝试用农场生产的新鲜牛奶制作的冰淇淋、黄油和其他乳制品</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Workshops & Activities:</strong> Participate in butter making workshops and other hands-on farm activities</span><span class="lang-zh"><strong>工作坊和活动:</strong> 参加制作黄油工作坊和其他动手农场活动</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Weather:</strong> The mountain location is cooler than the city - bring a light jacket even in summer, and be prepared for weather changes</span><span class="lang-zh"><strong>天气:</strong> 山区位置比城市凉爽 - 即使在夏天也要带一件轻便夹克，并准备好应对天气变化</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Best Time:</strong> Visit in the morning or late afternoon for the best lighting and fewer crowds - perfect for photography</span><span class="lang-zh"><strong>最佳时间:</strong> 在早上或下午晚些时候参观，光线最佳，人少 - 非常适合摄影</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Sheep Feeding:</strong> You can purchase sheep food at the entrance - the sheep are very friendly and will approach you!</span><span class="lang-zh"><strong>喂羊:</strong> 您可以在入口处购买羊食 - 绵羊非常友好，会接近您！</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Combine with Rokko Garden Terrace:</strong> Visit the nearby Rokko Garden Terrace for additional scenic views and dining options</span><span class="lang-zh"><strong>与六甲花园露台结合:</strong> 参观附近的六甲花园露台，享受额外的风景和餐饮选择</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-train mr-2"></i>
+                    <span class="lang-en">How to Get There</span><span class="lang-zh">如何到达</span>
+                </h2>
+                <div class="space-y-3 text-slate-700">
+                    <p><span class="lang-en"><strong>From Kobe (Sannomiya):</strong></span><span class="lang-zh"><strong>从神户（三宫）:</strong></span></p>
+                    <ul class="ml-6 space-y-2 list-disc">
+                        <li><span class="lang-en">Take Rokko Cable Car from Rokko Cable Shita Station to Rokko Sanjo Station (~10 minutes)</span><span class="lang-zh">从六甲缆车下站乘坐六甲缆车至六甲山上站（约10分钟）</span></li>
+                        <li><span class="lang-en">Transfer to Rokko Sanjo Bus to Rokkosan Pasture bus stop (~15 minutes)</span><span class="lang-zh">转乘六甲山上巴士至六甲山牧场巴士站（约15分钟）</span></li>
+                        <li><span class="lang-en">Or take a taxi from Rokko Sanjo Station (~10 minutes)</span><span class="lang-zh">或从六甲山上站乘坐出租车（约10分钟）</span></li>
+                    </ul>
+                    <p class="mt-4"><span class="lang-en"><strong>From Osaka:</strong></span><span class="lang-zh"><strong>从大阪:</strong></span></p>
+                    <ul class="ml-6 space-y-2 list-disc">
+                        <li><span class="lang-en">Take JR Tokaido Line to Sannomiya Station (~30 minutes), then follow the route above</span><span class="lang-zh">乘坐JR东海道线至三宫站（约30分钟），然后按照上述路线</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+                <a href="../../tourist-attraction.html" class="btn-secondary flex-1 text-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Attractions</span><span class="lang-zh">返回景点</span>
+                </a>
+                <a href="../../schedule.html" class="btn-primary flex-1 text-center">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    <span class="lang-en">View in Schedule</span><span class="lang-zh">查看行程</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Pause auto-slide on hover
+            const carousel = document.getElementById('rokkosan-pasture-carousel');
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>
+

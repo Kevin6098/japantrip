@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip 2026 - Attractions Dashboard</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-700" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="flights.html" class="nav-link">
+                        <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                    </a>
+                    <a href="schedule.html" class="nav-link">
+                        <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                    </a>
+                    <a href="budget.html" class="nav-link">
+                        <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                    </a>
+                    <a href="packing.html" class="nav-link">
+                        <span class="lang-en">Packing</span><span class="lang-zh">清单</span>
+                    </a>
+                    <a href="tourist-attraction.html" class="nav-link active">
+                        <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                    </a>
+                    <a href="hotel.html" class="nav-link">
+                        <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="toggleLanguage()" class="flex items-center justify-center w-10 h-10 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg border border-slate-300 text-sm transition-all duration-200 active:scale-95">
+                        🌐
+                    </button>
+                    <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content space-y-1">
+                <a href="flights.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-plane mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                </a>
+                <a href="schedule.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-calendar-days mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                </a>
+                <a href="budget.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-yen-sign mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                </a>
+                <a href="packing.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-suitcase mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Packing</span><span class="lang-zh">行李清单</span>
+                </a>
+                <a href="tourist-attraction.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-camera mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                </a>
+                <a href="hotel.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-hotel mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="homepage.html" class="back-button no-print" aria-label="Back to Homepage">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <!-- Header Section -->
+        <section class="text-center animate-fade-in">
+            <div class="flex flex-col items-center mb-6 md:mb-8 gap-3">
+                 <div class="bg-white px-4 sm:px-6 py-2 rounded-full shadow border border-purple-100 flex items-center">
+                    <i class="fa-solid fa-camera-retro text-purple-500 text-lg sm:text-xl mr-2"></i>
+                    <h1 class="font-header text-lg sm:text-xl font-bold text-slate-800">
+                        <span class="lang-en">Must-See Attractions</span><span class="lang-zh">必看景点</span>
+                    </h1>
+                 </div>
+                 <p class="text-xs sm:text-sm text-center text-slate-500 px-4 max-w-2xl">
+                    <span class="lang-en">📸 Click on any attraction to discover detailed information, history, and tips for your visit!</span>
+                    <span class="lang-zh">📸 点击任何景点以了解详细信息、历史和参观提示！</span>
+                 </p>
+            </div>
+        </section>
+
+        <!-- Tokyo Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6">
+                <div class="p-2 bg-indigo-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-city text-indigo-500 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-indigo-700">
+                    <span class="lang-en">Tokyo</span><span class="lang-zh">东京</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <a href="attractions/sensoji/sensoji.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/sensoji/kaminarimon-gate.jpg" alt="Senso-ji Temple" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Senso-ji Temple</span><span class="lang-zh">浅草寺</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Tokyo's oldest temple, famous for Kaminarimon Gate</span>
+                            <span class="lang-zh">东京最古老的寺庙，以雷门而闻名</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+
+                <a href="attractions/shibuya/shibuya.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/shibuya/aerial-view.jpg" alt="Shibuya Crossing" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Shibuya Crossing</span><span class="lang-zh">涩谷十字路口</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">World's busiest pedestrian crossing & Hachiko Statue</span>
+                            <span class="lang-zh">世界上最繁忙的十字路口和忠犬八公像</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+
+                <a href="attractions/harajuku/harajuku.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/harajuku/takeshita-street.jpg" alt="Harajuku" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Harajuku & Omotesando</span><span class="lang-zh">原宿 & 表参道</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Fashion district with Takeshita Street and trendy cafes</span>
+                            <span class="lang-zh">时尚区，有竹下通和潮流咖啡厅</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+
+                <a href="attractions/ueno/ueno.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/ueno/cherry-blossom-avenue.jpg" alt="Ueno Park" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Ueno Park</span><span class="lang-zh">上野公园</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Large park with museums, zoo, and cherry blossoms</span>
+                            <span class="lang-zh">大型公园，有博物馆、动物园和樱花</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Kyoto Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6">
+                <div class="p-2 bg-green-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-torii-gate text-green-600 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-green-700">
+                    <span class="lang-en">Kyoto</span><span class="lang-zh">京都</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <a href="attractions/fushimi-inari/fushimi-inari.html" class="attraction-dashboard-card location-kyoto group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/fushimi-inari/torii-tunnel-day.jpg" alt="Fushimi Inari" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kyoto">Kyoto</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Fushimi Inari Taisha</span><span class="lang-zh">伏见稻荷大社</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Famous for thousands of vermillion torii gates</span>
+                            <span class="lang-zh">以数千个朱红色鸟居而闻名</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+
+                <a href="attractions/kiyomizu/kiyomizu.html" class="attraction-dashboard-card location-kyoto group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/kiyomizu/main-hall-veranda.jpg" alt="Kiyomizu-dera" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kyoto">Kyoto</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Kiyomizu-dera</span><span class="lang-zh">清水寺</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">UNESCO World Heritage temple with wooden stage</span>
+                            <span class="lang-zh">联合国教科文组织世界遗产，有木制舞台</span>
+                        </p>
+                        <span class="price-badge">¥400</span>
+                    </div>
+                </a>
+
+                <a href="attractions/gion/gion.html" class="attraction-dashboard-card location-kyoto group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/gion/hanamikoji-street.jpg" alt="Gion District" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kyoto">Kyoto</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Gion District</span><span class="lang-zh">祇园区</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Historic geisha district with traditional architecture</span>
+                            <span class="lang-zh">历史悠久的艺伎区，有传统建筑</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+
+                <a href="attractions/yasaka/yasaka.html" class="attraction-dashboard-card location-kyoto group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/yasaka/main-gate-day.jpg" alt="Yasaka Shrine" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kyoto">Kyoto</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Yasaka Shrine</span><span class="lang-zh">八坂神社</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Beautiful shrine with hundreds of lanterns</span>
+                            <span class="lang-zh">美丽的神社，有数百个灯笼</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Nara Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6">
+                <div class="p-2 bg-teal-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-tree text-teal-600 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-teal-700">
+                    <span class="lang-en">Nara</span><span class="lang-zh">奈良</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <a href="attractions/nara-park/nara-park.html" class="attraction-dashboard-card location-nara group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/nara-park/cherry-blossom-deer.jpg" alt="Nara Park" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-nara">Nara</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Nara Park</span><span class="lang-zh">奈良公园</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Friendly deer roaming freely in beautiful park</span>
+                            <span class="lang-zh">友好的鹿在美丽的公园中自由漫游</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+
+                <a href="attractions/todaiji/todaiji.html" class="attraction-dashboard-card location-nara group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/todaiji/main-hall-exterior.jpg" alt="Todaiji Temple" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-nara">Nara</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Todaiji Temple</span><span class="lang-zh">东大寺</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Great Buddha Hall with massive bronze statue</span>
+                            <span class="lang-zh">大佛殿，有巨大的青铜雕像</span>
+                        </p>
+                        <span class="price-badge">¥600</span>
+                    </div>
+                </a>
+
+                <a href="attractions/kasuga/kasuga.html" class="attraction-dashboard-card location-nara group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/kasuga/main-hall-vermillion.png" alt="Kasuga Taisha" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-nara">Nara</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Kasuga Taisha</span><span class="lang-zh">春日大社</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Shrine with 3000 stone lanterns</span>
+                            <span class="lang-zh">拥有3000个石灯笼的神社</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Osaka Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6">
+                <div class="p-2 bg-orange-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-utensils text-orange-600 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-orange-600">
+                    <span class="lang-en">Osaka</span><span class="lang-zh">大阪</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <a href="attractions/dotonbori/dotonbori.html" class="attraction-dashboard-card location-osaka group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/dotonbori/canal-night-view.jpg" alt="Dotonbori" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-osaka">Osaka</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Dotonbori</span><span class="lang-zh">道顿堀</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Famous food street with Glico running man sign</span>
+                            <span class="lang-zh">著名的美食街，有格力高跑男广告牌</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+
+                <a href="attractions/osaka-castle/osaka-castle.html" class="attraction-dashboard-card location-osaka group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/osaka-castle/cherry-blossom-spring.jpg" alt="Osaka Castle" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1599423300746-b62507accf76?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-osaka">Osaka</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Osaka Castle</span><span class="lang-zh">大阪城</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Historic castle with museum and beautiful gardens</span>
+                            <span class="lang-zh">历史悠久的城堡，有博物馆和美丽的花园</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+
+                <a href="attractions/usj/usj.html" class="attraction-dashboard-card location-osaka group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/usj/universal-globe-iconic.jpg" alt="Universal Studios Japan" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1624601633420-217833cb92b6?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-osaka">Osaka</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Universal Studios Japan</span><span class="lang-zh">环球影城</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Theme park with Harry Potter, Super Nintendo World</span>
+                            <span class="lang-zh">主题公园，有哈利波特、超级任天堂世界</span>
+                        </p>
+                        <span class="price-badge">~¥9,500</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Kobe Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6">
+                <div class="p-2 bg-red-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-mountain text-red-600 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-red-600">
+                    <span class="lang-en">Kobe</span><span class="lang-zh">神户</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <a href="attractions/kobe-port/kobe-port.html" class="attraction-dashboard-card location-kobe group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/kobe-port/tower-illuminated-night.jpg" alt="Kobe Port Tower" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1572449735824-34dd68878534?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kobe">Kobe</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Kobe Port Tower</span><span class="lang-zh">神户塔</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Iconic red tower with panoramic port views</span>
+                            <span class="lang-zh">标志性的红色塔，可欣赏港口全景</span>
+                        </p>
+                        <span class="price-badge">¥700</span>
+                    </div>
+                </a>
+
+                <a href="attractions/harborland/harborland.html" class="attraction-dashboard-card location-kobe group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/harborland/ferris-wheel-waterfront.jpg" alt="Harborland" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1572449735824-34dd68878534?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kobe">Kobe</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Harborland</span><span class="lang-zh">港湾乐园</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Waterfront shopping and dining district</span>
+                            <span class="lang-zh">海滨购物和餐饮区</span>
+                        </p>
+                        <span class="price-badge">Free</span>
+                    </div>
+                </a>
+
+                <a href="attractions/rokkosan-pasture/rokkosan-pasture.html" class="attraction-dashboard-card location-kobe group">
+                    <div class="attraction-image-wrapper">
+                        <img src="attractions/rokkosan-pasture/sheep-grazing-hillside.jpg" alt="Rokkosan Pasture" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kobe">Kobe</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Rokkosan Pasture</span><span class="lang-zh">六甲山牧场</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Mountain farm with sheep and scenic views</span>
+                            <span class="lang-zh">有绵羊和风景的山地农场</span>
+                        </p>
+                        <span class="price-badge">¥500</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

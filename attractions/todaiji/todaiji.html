@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todaiji Temple - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-nara" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="todaiji-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="main-hall-exterior.jpg" alt="Todaiji Temple Main Hall Exterior" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="daibutsuden-hall.jpg" alt="Daibutsuden Hall of Todaiji Temple" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="temple-complex.jpg" alt="Todaiji Temple Complex" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="great-buddha-interior.jpg" alt="Great Buddha Statue Inside Todaiji" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="buddha-statue-altar.jpg" alt="Buddha Statue with Altar in Todaiji" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Todaiji Temple</span><span class="lang-zh">东大寺</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #0d9488);"></i><span class="lang-en">Nara City</span><span class="lang-zh">奈良市</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥600</span><span class="lang-zh">¥600</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">7:30-17:30 (Apr-Oct) | 8:00-17:00 (Nov-Mar)</span><span class="lang-zh">7:30-17:30（4-10月）| 8:00-17:00（11-3月）</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Todaiji (Great Eastern Temple) is one of Japan's most famous and historically significant temples. Founded in 752 AD, it was constructed by Emperor Shomu as the head temple of all provincial Buddhist temples in Japan. The temple complex was originally much larger, but fires and reconstructions have reduced it to a fraction of its original size.</span>
+                    <span class="lang-zh">东大寺（大东寺）是日本最著名和历史意义最重大的寺庙之一。建于公元752年，由圣武天皇建造，作为日本所有地方佛教寺庙的总本山。寺庙建筑群原本要大得多，但火灾和重建已将其缩小到原始尺寸的一小部分。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The main hall, Daibutsuden (Great Buddha Hall), is the world's largest wooden building despite being only two-thirds of its original size. It houses a 15-meter tall bronze statue of Buddha Vairocana (Daibutsu), one of the largest bronze statues in the world, weighing approximately 500 tons. The statue was completed in 751 AD and represents the cosmic Buddha.</span>
+                    <span class="lang-zh">主殿大佛殿是世界上最大的木制建筑，尽管只有原始尺寸的三分之二。它供奉着一尊15米高的青铜毗卢遮那佛像（大佛），是世界上最大的青铜雕像之一，重约500吨。雕像于公元751年完成，代表宇宙佛。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Great Buddha (Daibutsu):</strong> The massive 15-meter bronze statue weighs 500 tons and is truly awe-inspiring - one of the world's largest bronze statues</span><span class="lang-zh"><strong>大佛（大仏）:</strong> 巨大的15米青铜雕像重500吨，真正令人敬畏 - 世界上最大的青铜雕像之一</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Buddha's Nostril Challenge:</strong> There's a hole in one of the temple's pillars - if you can crawl through it (same size as Buddha's nostril), you'll achieve enlightenment in your next life!</span><span class="lang-zh"><strong>大佛鼻孔挑战:</strong> 寺庙的一根柱子上有一个洞 - 如果你能爬过去（与大佛的鼻孔大小相同），你将在来世获得开悟！</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Nandaimon Gate:</strong> The impressive main gate with two fierce guardian statues (Nio) - 8.4 meters tall and dating from the 13th century</span><span class="lang-zh"><strong>南大门:</strong> 令人印象深刻的主门，有两尊凶猛的守护神像（仁王） - 高8.4米，可追溯到13世纪</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Daibutsuden Hall:</strong> The world's largest wooden building - an architectural marvel that has survived over 1,200 years</span><span class="lang-zh"><strong>大佛殿:</strong> 世界上最大的木制建筑 - 一个已经存在超过1,200年的建筑奇迹</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Pillar Challenge:</strong> The hole in the pillar is the same size as the Buddha's nostril - children and small adults can try crawling through (it's a tight fit!)</span><span class="lang-zh"><strong>柱子挑战:</strong> 柱子上的洞与大佛的鼻孔大小相同 - 儿童和小个子成年人可以尝试爬过去（很紧！）</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Best Time:</strong> Early morning (before 10 AM) for fewer crowds and better lighting for photos</span><span class="lang-zh"><strong>最佳时间:</strong> 清晨（上午10点前）人少，照片光线更好</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Combine with Nara Park:</strong> Todaiji is located within Nara Park - visit both together for a complete experience</span><span class="lang-zh"><strong>与奈良公园结合:</strong> 东大寺位于奈良公园内 - 一起参观以获得完整体验</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Photography:</strong> Photography is allowed inside the hall, but be respectful and avoid using flash</span><span class="lang-zh"><strong>摄影:</strong> 允许在殿内拍照，但要尊重，避免使用闪光灯</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-train mr-2"></i>
+                    <span class="lang-en">How to Get There</span><span class="lang-zh">如何到达</span>
+                </h2>
+                <div class="space-y-3 text-slate-700">
+                    <p><span class="lang-en"><strong>From Osaka (Namba):</strong></span><span class="lang-zh"><strong>从大阪（难波）:</strong></span></p>
+                    <ul class="ml-6 space-y-2 list-disc">
+                        <li><span class="lang-en">Take Kintetsu Nara Line to Kintetsu-Nara Station (~45 minutes)</span><span class="lang-zh">乘坐近铁奈良线至近铁奈良站（约45分钟）</span></li>
+                        <li><span class="lang-en">Or take JR Yamatoji Line to JR Nara Station (~50 minutes)</span><span class="lang-zh">或乘坐JR大和路线至JR奈良站（约50分钟）</span></li>
+                        <li><span class="lang-en">From either station, it's a 15-20 minute walk through Nara Park to Todaiji</span><span class="lang-zh">从任一车站，步行15-20分钟穿过奈良公园到达东大寺</span></li>
+                    </ul>
+                    <p class="mt-4"><span class="lang-en"><strong>From Nara Park:</strong></span><span class="lang-zh"><strong>从奈良公园:</strong></span></p>
+                    <ul class="ml-6 space-y-2 list-disc">
+                        <li><span class="lang-en">Todaiji is located within Nara Park - follow the signs or the deer!</span><span class="lang-zh">东大寺位于奈良公园内 - 跟随标志或鹿！</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+                <a href="../../tourist-attraction.html" class="btn-secondary flex-1 text-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Attractions</span><span class="lang-zh">返回景点</span>
+                </a>
+                <a href="../../schedule.html" class="btn-primary flex-1 text-center">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    <span class="lang-en">View in Schedule</span><span class="lang-zh">查看行程</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Pause auto-slide on hover
+            const carousel = document.getElementById('todaiji-carousel');
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>
+

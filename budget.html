@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip 2026 - Budget</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-700" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="flights.html" class="nav-link">
+                        <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                    </a>
+                    <a href="schedule.html" class="nav-link">
+                        <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                    </a>
+                    <a href="budget.html" class="nav-link active">
+                        <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                    </a>
+                    <a href="packing.html" class="nav-link">
+                        <span class="lang-en">Packing</span><span class="lang-zh">清单</span>
+                    </a>
+                    <a href="tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                    </a>
+                    <a href="hotel.html" class="nav-link">
+                        <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <button <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon"><span></span><span></span><span></span></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content space-y-1">
+                <a href="flights.html" class="mobile-nav-link">Flights</a>
+                <a href="schedule.html" class="mobile-nav-link">Itinerary</a>
+                <a href="budget.html" class="mobile-nav-link">Budget</a>
+                <a href="packing.html" class="mobile-nav-link">Packing</a>
+                <a href="tourist-attraction.html" class="mobile-nav-link">Attractions</a>
+                <a href="hotel.html" class="mobile-nav-link">Hotels</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="homepage.html" class="back-button no-print" aria-label="Back to Homepage">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <!-- Budget Section -->
+        <section id="budget" class="scroll-mt-24 break-inside-avoid animate-fade-in">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center mb-6 gap-3">
+                <div class="p-2 bg-emerald-100 rounded-xl shadow-inner">
+                    <i class="fa-solid fa-wallet text-emerald-600 text-xl sm:text-2xl"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 class="font-header text-xl sm:text-2xl font-bold text-slate-800 mb-1">
+                        <span class="lang-en">Daily Pocket Money</span><span class="lang-zh">每日零花钱预算</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500">
+                        <span class="lang-en">💰 Plan smart, enjoy more!</span>
+                        <span class="lang-zh">💰 精打细算，享受更多！</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="schedule-card border-l-emerald-500">
+                <p class="text-sm text-slate-500 mb-4 italic">
+                    <span class="lang-en">*Estimates per person. Excludes flights, hotels & personal shopping.</span>
+                    <span class="lang-zh">*每人估算。不含机票、酒店及个人购物。</span>
+                </p>
+                
+                <div class="overflow-x-auto rounded-lg border border-slate-200 mb-4">
+                    <table class="w-full text-xs sm:text-sm text-left min-w-[600px]">
+                        <thead class="bg-slate-50 text-slate-500 font-semibold">
+                            <tr>
+                                <th class="p-2 w-16"><span class="lang-en">Day</span><span class="lang-zh">日期</span></th>
+                                <th class="p-2"><span class="lang-en">Focus & Breakdown</span><span class="lang-zh">重点与明细</span></th>
+                                <th class="p-2 text-right"><span class="lang-en">Est. Cost</span><span class="lang-zh">预估花费</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-2 font-mono text-xs">Day 1</td>
+                                <td class="p-2">
+                                    <div class="font-bold text-slate-700"><span class="lang-en">Arrival</span><span class="lang-zh">抵达</span></div>
+                                    <div class="text-xs text-slate-500"><span class="lang-en">Airport Train (~¥700), Snack</span><span class="lang-zh">机场电车 (~¥700), 零食</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono">
+                                    <div>¥2,000</div>
+                                    <div class="text-xs text-emerald-600">RM 64</div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-2 font-mono text-xs">Day 2</td>
+                                <td class="p-2">
+                                    <div class="font-bold text-indigo-700"><span class="lang-en">Tokyo Foodie</span><span class="lang-zh">东京美食</span></div>
+                                    <div class="text-xs text-slate-500"><span class="lang-en">Metro (~¥1000), Monja Dinner (~¥4000), Sweets</span><span class="lang-zh">地铁 (~¥1000), 文字烧晚餐 (~¥4000), 甜点</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono">
+                                    <div>¥8,000</div>
+                                    <div class="text-xs text-emerald-600">RM 256</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-purple-50 hover:bg-purple-100 transition-colors">
+                                <td class="p-2 font-mono text-xs font-bold text-purple-700">Day 3</td>
+                                <td class="p-2 font-bold text-purple-700">
+                                    <div><span class="lang-en">Graduation & High Dinner</span><span class="lang-zh">毕业典礼 & 高级晚餐</span></div>
+                                    <div class="text-xs text-purple-600 font-normal"><span class="lang-en">Train to Saitama (~¥1200 round), High-End Dinner (~¥20000)</span><span class="lang-zh">往返埼玉电车 (~¥1200), 高级晚餐 (~¥20000)</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono font-bold text-purple-700">
+                                    <div>¥30,000</div>
+                                    <div class="text-xs text-purple-600">RM 960</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-orange-50 hover:bg-orange-100 transition-colors">
+                                <td class="p-2 font-mono text-xs font-bold text-orange-700">Day 4</td>
+                                <td class="p-2 font-bold text-orange-700">
+                                    <div><span class="lang-en">Shinkansen to Osaka</span><span class="lang-zh">新干线往大阪</span></div>
+                                    <div class="text-xs text-orange-600 font-normal"><span class="lang-en">Shinkansen (~¥14500), Welcome Dinner</span><span class="lang-zh">新干线 (~¥14500), 欢迎晚餐</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono font-bold text-orange-700">
+                                    <div>¥21,000</div>
+                                    <div class="text-xs text-orange-600">RM 672</div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-2 font-mono text-xs text-slate-500">Day 5</td>
+                                <td class="p-2">
+                                    <div class="font-bold text-teal-700"><span class="lang-en">Nara & Uji</span><span class="lang-zh">奈良与宇治</span></div>
+                                    <div class="text-xs text-slate-500"><span class="lang-en">Trains (~¥1700), Nakamura Tokichi (~¥2000), Food</span><span class="lang-zh">电车 (~¥1700), 中村藤吉 (~¥2000), 餐饮</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono font-bold">
+                                    <div>¥9,000</div>
+                                    <div class="text-xs text-emerald-600">RM 288</div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-2 font-mono text-xs text-slate-500">Day 6</td>
+                                <td class="p-2">
+                                    <div class="font-bold text-red-600"><span class="lang-en">Kobe Trip (Beef+Cruise)</span><span class="lang-zh">神户游 (和牛+游船)</span></div>
+                                    <div class="text-xs text-slate-500"><span class="lang-en">Rokko Cable/Bus (~¥1600), Cruise (~¥2800), Beef Lunch</span><span class="lang-zh">六甲山缆车/巴士 (~¥1600), 游船 (~¥2800), 和牛午餐</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono font-bold">
+                                    <div>¥15,000</div>
+                                    <div class="text-xs text-emerald-600">RM 480</div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-2 font-mono text-xs">Day 7</td>
+                                <td class="p-2">
+                                    <div class="font-bold text-green-700"><span class="lang-en">Kyoto Trip</span><span class="lang-zh">京都游</span></div>
+                                    <div class="text-xs text-slate-500"><span class="lang-en">Keihan Train (~¥900), Entry Fees (~¥1000), Food</span><span class="lang-zh">京阪电车 (~¥900), 门票 (~¥1000), 餐饮</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono">
+                                    <div>¥7,500</div>
+                                    <div class="text-xs text-emerald-600">RM 240</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-sky-50 hover:bg-sky-100 transition-colors">
+                                <td class="p-2 font-mono text-xs font-bold text-sky-700">Day 8</td>
+                                <td class="p-2">
+                                    <div class="font-bold text-sky-700"><span class="lang-en">USJ (VIP Express)</span><span class="lang-zh">环球影城 (VIP快速)</span></div>
+                                    <div class="text-xs text-emerald-600 font-normal"><span class="lang-en">Ticket (~¥9500), Express Pass (~¥18000+), Food</span><span class="lang-zh">门票 (~¥9500), 快速通行证 (~¥18000+), 餐饮</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono">
+                                    <div>¥35,000</div>
+                                    <div class="text-xs text-emerald-600">RM 1,120</div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-2 font-mono text-xs font-bold text-orange-700">Day 9</td>
+                                <td class="p-2">
+                                    <div class="font-bold text-orange-700"><span class="lang-en">Osaka Castle</span><span class="lang-zh">大阪城</span></div>
+                                    <div class="text-xs text-orange-600 font-normal"><span class="lang-en">Entry (~¥600), Metro, Seafood Lunch</span><span class="lang-zh">门票 (~¥600), 地铁, 海鲜午餐</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono">
+                                    <div>¥7,000</div>
+                                    <div class="text-xs text-emerald-600">RM 224</div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-2 font-mono text-xs">Day 10</td>
+                                <td class="p-2">
+                                    <div class="font-bold text-slate-700"><span class="lang-en">Airport Move</span><span class="lang-zh">前往机场</span></div>
+                                    <div class="text-xs text-slate-500"><span class="lang-en">Airport Train (~¥1000), Last Meals</span><span class="lang-zh">机场电车 (~¥1000), 最后一餐</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono">
+                                    <div>¥4,500</div>
+                                    <div class="text-xs text-emerald-600">RM 144</div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-2 font-mono text-xs">Day 11</td>
+                                <td class="p-2">
+                                    <div class="font-bold text-slate-700"><span class="lang-en">Fly Home</span><span class="lang-zh">返程</span></div>
+                                    <div class="text-xs text-slate-500"><span class="lang-en">Breakfast</span><span class="lang-zh">早餐</span></div>
+                                </td>
+                                <td class="p-2 text-right font-mono">
+                                    <div>¥1,500</div>
+                                    <div class="text-xs text-emerald-600">RM 48</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="flex justify-between items-center pt-3 bg-emerald-50 p-4 rounded-xl border border-emerald-100 animate-pulse-subtle">
+                    <div>
+                        <span class="block text-sm text-emerald-800 font-bold"><span class="lang-en">Total Prep</span><span class="lang-zh">准备总额</span></span>
+                        <span class="text-xs text-emerald-600"><span class="lang-en">(Est. Rate: 1000 JPY ≈ 32 MYR)</span><span class="lang-zh">(汇率估算: 1000日元 ≈ 32马币)</span></span>
+                    </div>
+                    <div class="text-right">
+                        <div class="font-bold text-emerald-700 text-2xl font-mono">~¥140,500</div>
+                        <div class="font-bold text-emerald-600 text-lg font-mono">~RM 4,500</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+

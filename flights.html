@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip 2026 - Flights</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-700" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="flights.html" class="nav-link active">
+                        <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                    </a>
+                    <a href="schedule.html" class="nav-link">
+                        <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                    </a>
+                    <a href="budget.html" class="nav-link">
+                        <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                    </a>
+                    <a href="packing.html" class="nav-link">
+                        <span class="lang-en">Packing</span><span class="lang-zh">清单</span>
+                    </a>
+                    <a href="tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                    </a>
+                    <a href="hotel.html" class="nav-link">
+                        <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <button <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon"><span></span><span></span><span></span></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content space-y-1">
+                <a href="flights.html" class="mobile-nav-link">Flights</a>
+                <a href="schedule.html" class="mobile-nav-link">Itinerary</a>
+                <a href="budget.html" class="mobile-nav-link">Budget</a>
+                <a href="packing.html" class="mobile-nav-link">Packing</a>
+                <a href="tourist-attraction.html" class="mobile-nav-link">Attractions</a>
+                <a href="hotel.html" class="mobile-nav-link">Hotels</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="homepage.html" class="back-button no-print" aria-label="Back to Homepage">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <!-- Flights Section -->
+        <section class="scroll-mt-24 break-inside-avoid animate-fade-in">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center mb-6 gap-3">
+                <div class="p-2 bg-pink-100 rounded-xl shadow-inner">
+                    <i class="fa-solid fa-plane-arrival text-pink-500 text-xl sm:text-2xl"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 class="font-header text-xl sm:text-2xl font-bold text-slate-800 mb-1">
+                        <span class="lang-en">Flights</span><span class="lang-zh">航班信息</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500">
+                        <span class="lang-en">✈️ Your journey begins here!</span>
+                        <span class="lang-zh">✈️ 您的旅程从这里开始！</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+                <!-- Thai Airways -->
+                <div class="glass-card rounded-2xl p-1 shadow-sm border border-purple-100 hover:shadow-lg transition-shadow duration-300 animate-slide-up">
+                    <div class="bg-purple-600 text-white p-4 rounded-t-xl flex justify-between items-center">
+                        <h3 class="font-bold font-header">
+                            <span class="lang-en">Penang Group</span><span class="lang-zh">槟城组</span>
+                        </h3>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded">TG</span>
+                    </div>
+                    <div class="p-4 text-sm">
+                        <div class="flex justify-between border-b pb-2 mb-2">
+                            <div><strong>18/03</strong> PEN ➝ HND</div>
+                            <div class="text-right"><span class="lang-en">Arr</span><span class="lang-zh">抵达</span>: 22:30</div>
+                        </div>
+                        <div class="flex justify-between">
+                            <div><strong>28/03</strong> KIX ➝ PEN</div>
+                            <div class="text-right"><span class="lang-en">Dep</span><span class="lang-zh">起飞</span>: 11:00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cathay Pacific -->
+                <div class="glass-card rounded-2xl p-1 shadow-sm border border-teal-100 hover:shadow-lg transition-shadow duration-300 animate-slide-up-delay">
+                    <div class="bg-teal-600 text-white p-4 rounded-t-xl flex justify-between items-center">
+                        <h3 class="font-bold font-header">
+                            <span class="lang-en">CX Groups</span><span class="lang-zh">国泰组</span>
+                        </h3>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded">CX</span>
+                    </div>
+                    <div class="p-4 text-sm space-y-3">
+                        <div>
+                            <div class="font-bold text-teal-700"><span class="lang-en">Singapore (1 Pax)</span><span class="lang-zh">新加坡 (1人)</span></div>
+                            <div class="flex justify-between text-slate-500 text-xs">
+                                <span>18/03 <span class="lang-en">Arr</span><span class="lang-zh">抵</span> HND: 21:15</span>
+                                <span>28/03 <span class="lang-en">Dep</span><span class="lang-zh">飞</span> KIX: 09:25</span>
+                            </div>
+                        </div>
+                        <div class="border-t pt-2">
+                            <div class="font-bold text-teal-700"><span class="lang-en">Penang Late (3 Pax)</span><span class="lang-zh">槟城迟发 (3人)</span></div>
+                            <div class="bg-orange-50 text-orange-800 p-2 rounded text-xs mt-1">
+                                <strong><span class="lang-en">Note:</span><span class="lang-zh">注:</span></strong> 
+                                <span class="lang-en">Arrive 21/03 in Osaka (17:50)</span><span class="lang-zh">3月21日 17:50 抵达大阪</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+
