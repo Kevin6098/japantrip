@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import AttractionCard from '../components/AttractionCard'
+import AttractionDetail from '../components/AttractionDetail'
+import { attractionsData } from '../data/attractionsData'
 
 const Attractions = () => {
   const { t } = useLanguage()
+  const [selectedAttraction, setSelectedAttraction] = useState(null)
 
   const attractions = {
     tokyo: [
