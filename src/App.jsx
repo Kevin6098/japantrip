@@ -1,0 +1,33 @@
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { LanguageProvider } from './context/LanguageContext'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import Schedule from './pages/Schedule'
+import Attractions from './pages/Attractions'
+import Flights from './pages/Flights'
+import Budget from './pages/Budget'
+import Packing from './pages/Packing'
+import Hotels from './pages/Hotels'
+
+function App() {
+  return (
+    <LanguageProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/attractions" element={<Attractions />} />
+            <Route path="/flights" element={<Flights />} />
+            <Route path="/budget" element={<Budget />} />
+            <Route path="/packing" element={<Packing />} />
+            <Route path="/hotels" element={<Hotels />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </LanguageProvider>
+  )
+}
+
+export default App
