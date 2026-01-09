@@ -7,12 +7,19 @@ const AttractionDetail = ({ attraction }) => {
 
   if (!attraction) return null
 
+  // Ensure images array exists, default to single image from image property
+  const images = attraction.images || (attraction.image ? [attraction.image] : [])
+
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % attraction.images.length)
+    if (images.length > 0) {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length)
+    }
   }
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + attraction.images.length) % attraction.images.length)
+    if (images.length > 0) {
+      setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
+    }
   }
 
   const goToImage = (index) => {
@@ -21,11 +28,11 @@ const AttractionDetail = ({ attraction }) => {
 
   // Auto-advance carousel
   useEffect(() => {
-    if (attraction.images.length > 1) {
+    if (images.length > 1) {
       const interval = setInterval(nextImage, 5000)
       return () => clearInterval(interval)
     }
-  }, [attraction.images.length])
+  }, [images.length])
 
   const colorClasses = {
     tokyo: 'border-indigo-500 text-indigo-700 bg-indigo-50',
@@ -40,10 +47,11 @@ const AttractionDetail = ({ attraction }) => {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 max-w-4xl mx-auto pb-24">
       {/* Image Carousel */}
+      {images.length > 0 && (
       <div className="mb-8 relative">
         <div className="relative rounded-2xl overflow-hidden shadow-xl">
           <div className="relative h-64 sm:h-80 md:h-96">
-            {attraction.images.map((img, index) => (
+            {images.map((img, index) => (
               <div
                 key={index}
                 className={`absolute inset-0 transition-opacity duration-500 ${
@@ -63,7 +71,7 @@ const AttractionDetail = ({ attraction }) => {
           </div>
 
           {/* Navigation Arrows */}
-          {attraction.images.length > 1 && (
+          {images.length > 1 && (
             <>
               <button
                 onClick={prevImage}
@@ -83,9 +91,9 @@ const AttractionDetail = ({ attraction }) => {
           )}
 
           {/* Indicators */}
-          {attraction.images.length > 1 && (
+          {images.length > 1 && (
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-              {attraction.images.map((_, index) => (
+              {images.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToImage(index)}
@@ -101,41 +109,48 @@ const AttractionDetail = ({ attraction }) => {
           )}
         </div>
       </div>
+      )}
 
       {/* Content */}
       <article className="animate-fade-in">
         <div className="mb-6">
           <h1 className="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
-            {t(attraction.title.en, attraction.title.zh)}
+            {attraction.title?.en ? t(attraction.title.en, attraction.title.zh) : attraction.title}
           </h1>
           <div className="flex flex-wrap items-center gap-3 text-sm text-slate-600">
-            <span className="flex items-center">
-              <i className="fa-solid fa-location-dot mr-2 text-indigo-500"></i>
-              {t(attraction.location.en, attraction.location.zh)}
-            </span>
-            <span className="flex items-center">
-              <i className="fa-solid fa-yen-sign mr-2 text-emerald-500"></i>
-              {attraction.price}
-            </span>
+            {attraction.location && (
+              <span className="flex items-center">
+                <i className="fa-solid fa-location-dot mr-2 text-indigo-500"></i>
+                {attraction.location.en ? t(attraction.location.en, attraction.location.zh) : attraction.location}
+              </span>
+            )}
+            {attraction.price && (
+              <span className="flex items-center">
+                <i className="fa-solid fa-yen-sign mr-2 text-emerald-500"></i>
+                {attraction.price}
+              </span>
+            )}
             {attraction.hours && (
               <span className="flex items-center">
                 <i className="fa-solid fa-clock mr-2 text-blue-500"></i>
-                {t(attraction.hours.en, attraction.hours.zh)}
+                {attraction.hours.en ? t(attraction.hours.en, attraction.hours.zh) : attraction.hours}
               </span>
             )}
           </div>
         </div>
 
         {/* About Section */}
+        {attraction.about && (
         <div className={`glass-card border-l-4 ${locationColor.split(' ')[0]} rounded-2xl p-6 mb-8`}>
           <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor.split(' ')[1]}`}>
             <i className="fa-solid fa-info-circle mr-2"></i>
             {t('About', '关于')}
           </h2>
           <div className="text-slate-700 leading-relaxed space-y-4">
-            <p>{t(attraction.about.en, attraction.about.zh)}</p>
+            <p>{attraction.about.en ? t(attraction.about.en, attraction.about.zh) : attraction.about}</p>
           </div>
         </div>
+        )}
 
         {/* Highlights Section */}
         {attraction.highlights && attraction.highlights.length > 0 && (
