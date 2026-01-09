@@ -27,15 +27,21 @@ server {
     autoindex off;
 
     # Serve actual image files in attractions folder (must come before general location)
-    location ~ ^/attractions/.*\.(jpg|jpeg|png|gif|webp|svg|html)$ {
+    # This regex only matches actual files with extensions, not directories
+    location ~ ^/attractions/.+\.(jpg|jpeg|png|gif|webp|svg|html)$ {
         try_files $uri =404;
         expires 1y;
         add_header Cache-Control "public, immutable";
         access_log off;
     }
 
-    # Handle React Router - fallback to index.html for all routes
-    # This handles /attractions (route) but allows /attractions/*.jpg (files) through
+    # Explicitly handle /attractions and /attractions/ - force to index.html for React Router
+    # This prevents 403 when the directory exists
+    location ~ ^/attractions/?$ {
+        try_files /index.html =404;
+    }
+
+    # Handle React Router - fallback to index.html for all other routes
     location / {
         # Try the URI as a file, then as a directory, then fallback to index.html
         try_files $uri $uri/ /index.html;

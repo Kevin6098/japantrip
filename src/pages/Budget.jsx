@@ -4,94 +4,180 @@ import { useLanguage } from '../context/LanguageContext'
 const Budget = () => {
   const { t } = useLanguage()
 
+  const dailyBudget = [
+    {
+      day: 1,
+      focus: { en: 'Arrival', zh: '抵达' },
+      breakdown: { en: 'Airport Train (~¥700), Snack', zh: '机场电车 (~¥700), 零食' },
+      cost: 2000,
+      color: 'slate',
+    },
+    {
+      day: 2,
+      focus: { en: 'Tokyo Foodie', zh: '东京美食' },
+      breakdown: { en: 'Metro (~¥1000), Monja Dinner (~¥4000), Sweets', zh: '地铁 (~¥1000), 文字烧晚餐 (~¥4000), 甜点' },
+      cost: 8000,
+      color: 'indigo',
+    },
+    {
+      day: 3,
+      focus: { en: 'Graduation & High Dinner', zh: '毕业典礼 & 高级晚餐' },
+      breakdown: { en: 'Train to Saitama (~¥1200 round), High-End Dinner (~¥20000)', zh: '往返埼玉电车 (~¥1200), 高级晚餐 (~¥20000)' },
+      cost: 30000,
+      color: 'purple',
+      highlight: true,
+    },
+    {
+      day: 4,
+      focus: { en: 'Shinkansen to Osaka', zh: '新干线往大阪' },
+      breakdown: { en: 'Shinkansen (~¥14500), Welcome Dinner', zh: '新干线 (~¥14500), 欢迎晚餐' },
+      cost: 21000,
+      color: 'orange',
+      highlight: true,
+    },
+    {
+      day: 5,
+      focus: { en: 'Nara & Uji', zh: '奈良与宇治' },
+      breakdown: { en: 'Trains (~¥1700), Nakamura Tokichi (~¥2000), Food', zh: '电车 (~¥1700), 中村藤吉 (~¥2000), 餐饮' },
+      cost: 9000,
+      color: 'teal',
+    },
+    {
+      day: 6,
+      focus: { en: 'Kobe Trip (Beef+Cruise)', zh: '神户游 (和牛+游船)' },
+      breakdown: { en: 'Rokko Cable/Bus (~¥1600), Cruise (~¥2800), Beef Lunch', zh: '六甲山缆车/巴士 (~¥1600), 游船 (~¥2800), 和牛午餐' },
+      cost: 15000,
+      color: 'red',
+    },
+    {
+      day: 7,
+      focus: { en: 'Kyoto Trip', zh: '京都游' },
+      breakdown: { en: 'Keihan Train (~¥900), Entry Fees (~¥1000), Food', zh: '京阪电车 (~¥900), 门票 (~¥1000), 餐饮' },
+      cost: 7500,
+      color: 'green',
+    },
+    {
+      day: 8,
+      focus: { en: 'USJ (VIP Express)', zh: '环球影城 (VIP快速)' },
+      breakdown: { en: 'Ticket (~¥9500), Express Pass (~¥18000+), Food', zh: '门票 (~¥9500), 快速通行证 (~¥18000+), 餐饮' },
+      cost: 35000,
+      color: 'sky',
+      highlight: true,
+    },
+    {
+      day: 9,
+      focus: { en: 'Osaka Castle', zh: '大阪城' },
+      breakdown: { en: 'Entry (~¥600), Metro, Seafood Lunch', zh: '门票 (~¥600), 地铁, 海鲜午餐' },
+      cost: 7000,
+      color: 'orange',
+    },
+    {
+      day: 10,
+      focus: { en: 'Airport Move', zh: '前往机场' },
+      breakdown: { en: 'Airport Train (~¥1000), Last Meals', zh: '机场电车 (~¥1000), 最后一餐' },
+      cost: 4500,
+      color: 'slate',
+    },
+    {
+      day: 11,
+      focus: { en: 'Fly Home', zh: '返程' },
+      breakdown: { en: 'Breakfast', zh: '早餐' },
+      cost: 1500,
+      color: 'slate',
+    },
+  ]
+
+  const totalCost = dailyBudget.reduce((sum, day) => sum + day.cost, 0)
+  const totalRM = Math.round(totalCost * 0.032)
+
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 max-w-5xl mx-auto pb-24">
       {/* Header */}
-      <div className="text-center mb-12 animate-fade-in">
-        <div className="inline-flex items-center bg-white px-6 py-3 rounded-full shadow border border-emerald-100 mb-4">
-          <i className="fa-solid fa-wallet text-emerald-600 text-xl mr-2"></i>
-          <h1 className="font-header text-2xl font-bold text-slate-800">
-            {t('Budget & Expenses', '预算与开支')}
-          </h1>
+      <div className="mb-8 animate-fade-in">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
+          <div className="p-2 bg-emerald-100 rounded-xl shadow-inner">
+            <i className="fa-solid fa-wallet text-emerald-600 text-xl sm:text-2xl"></i>
+          </div>
+          <div className="flex-1">
+            <h1 className="font-header text-xl sm:text-2xl font-bold text-slate-800 mb-1">
+              {t('Daily Pocket Money', '每日零花钱预算')}
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-500">
+              💰 {t('Plan smart, enjoy more!', '精打细算，享受更多！')}
+            </p>
+          </div>
         </div>
-        <p className="text-sm text-slate-600">
-          💴 {t('Daily spending estimates and breakdown', '每日开支估算和明细')}
+      </div>
+
+      {/* Budget Table */}
+      <div className="glass-card border-l-emerald-500 mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+        <p className="text-sm text-slate-500 mb-4 italic">
+          *{t('Estimates per person. Excludes flights, hotels & personal shopping.', '每人估算。不含机票、酒店及个人购物。')}
         </p>
-      </div>
 
-      {/* Budget Overview */}
-      <div className="glass-card mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-        <h2 className="font-header text-xl font-bold text-slate-800 mb-4">
-          {t('Budget Summary', '预算概要')}
-        </h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
-            <p className="text-sm text-blue-700 mb-1">{t('Daily Average', '每日平均')}</p>
-            <p className="text-3xl font-bold text-blue-800">¥8,000</p>
+        <div className="overflow-x-auto rounded-lg border border-slate-200 mb-4">
+          <table className="w-full text-xs sm:text-sm text-left min-w-[600px]">
+            <thead className="bg-slate-50 text-slate-500 font-semibold">
+              <tr>
+                <th className="p-2 w-16">{t('Day', '日期')}</th>
+                <th className="p-2">{t('Focus & Breakdown', '重点与明细')}</th>
+                <th className="p-2 text-right">{t('Est. Cost', '预估花费')}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {dailyBudget.map((day) => {
+                const bgColor = day.highlight
+                  ? day.color === 'purple'
+                    ? 'bg-purple-50 hover:bg-purple-100'
+                    : day.color === 'orange'
+                    ? 'bg-orange-50 hover:bg-orange-100'
+                    : 'bg-sky-50 hover:bg-sky-100'
+                  : 'hover:bg-slate-50'
+                const textColor = day.highlight
+                  ? `text-${day.color}-700`
+                  : day.color === 'indigo' || day.color === 'teal' || day.color === 'green' || day.color === 'red'
+                  ? `text-${day.color}-700`
+                  : 'text-slate-700'
+
+                return (
+                  <tr key={day.day} className={`${bgColor} transition-colors`}>
+                    <td className={`p-2 font-mono text-xs ${day.highlight ? 'font-bold' : ''} ${textColor}`}>
+                      Day {day.day}
+                    </td>
+                    <td className={`p-2 ${day.highlight ? 'font-bold' : ''} ${textColor}`}>
+                      <div className="font-bold">{t(day.focus.en, day.focus.zh)}</div>
+                      <div className={`text-xs ${day.highlight ? day.color === 'purple' ? 'text-purple-600' : day.color === 'orange' ? 'text-orange-600' : 'text-emerald-600' : 'text-slate-500'} font-normal`}>
+                        {t(day.breakdown.en, day.breakdown.zh)}
+                      </div>
+                    </td>
+                    <td className={`p-2 text-right font-mono ${day.highlight ? 'font-bold' : ''} ${textColor}`}>
+                      <div>¥{day.cost.toLocaleString()}</div>
+                      <div className={`text-xs ${day.highlight ? day.color === 'purple' ? 'text-purple-600' : day.color === 'orange' ? 'text-orange-600' : 'text-emerald-600' : 'text-emerald-600'}`}>
+                        RM {Math.round(day.cost * 0.032).toLocaleString()}
+                      </div>
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Total Summary */}
+        <div className="flex justify-between items-center pt-3 bg-emerald-50 p-4 rounded-xl border border-emerald-100 animate-pulse-subtle">
+          <div>
+            <span className="block text-sm text-emerald-800 font-bold">
+              {t('Total Prep', '准备总额')}
+            </span>
+            <span className="text-xs text-emerald-600">
+              ({t('Est. Rate: 1000 JPY ≈ 32 MYR', '汇率估算: 1000日元 ≈ 32马币')})
+            </span>
           </div>
-          <div className="bg-purple-50 p-4 rounded-xl border border-purple-200">
-            <p className="text-sm text-purple-700 mb-1">{t('Total Days', '总天数')}</p>
-            <p className="text-3xl font-bold text-purple-800">11</p>
-          </div>
-          <div className="bg-green-50 p-4 rounded-xl border border-green-200">
-            <p className="text-sm text-green-700 mb-1">{t('Estimated Total', '估算总额')}</p>
-            <p className="text-3xl font-bold text-green-800">¥88,000</p>
+          <div className="text-right">
+            <div className="font-bold text-emerald-700 text-2xl font-mono">~¥{totalCost.toLocaleString()}</div>
+            <div className="font-bold text-emerald-600 text-lg font-mono">~RM {totalRM.toLocaleString()}</div>
           </div>
         </div>
-      </div>
-
-      {/* Daily Breakdown */}
-      <div className="glass-card animate-fade-in" style={{ animationDelay: '0.2s' }}>
-        <h2 className="font-header text-xl font-bold text-slate-800 mb-6">
-          {t('Expense Categories', '开支类别')}
-        </h2>
-        <div className="space-y-4">
-          {[
-            { category: t('Meals', '餐饮'), amount: '¥3,000 - ¥5,000', icon: 'fa-utensils', color: 'orange' },
-            { category: t('Transportation', '交通'), amount: '¥1,000 - ¥2,000', icon: 'fa-train', color: 'blue' },
-            { category: t('Attractions', '景点'), amount: '¥500 - ¥1,500', icon: 'fa-ticket', color: 'purple' },
-            { category: t('Shopping', '购物'), amount: '¥2,000 - ¥5,000', icon: 'fa-shopping-bag', color: 'pink' },
-            { category: t('Miscellaneous', '其他'), amount: '¥500 - ¥1,000', icon: 'fa-ellipsis', color: 'slate' },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-between p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors"
-            >
-              <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full bg-${item.color}-100 flex items-center justify-center`}>
-                  <i className={`fa-solid ${item.icon} text-${item.color}-600`}></i>
-                </div>
-                <span className="font-medium text-slate-800">{item.category}</span>
-              </div>
-              <span className="font-bold text-slate-700">{item.amount}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Tips */}
-      <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-xl animate-fade-in" style={{ animationDelay: '0.3s' }}>
-        <h3 className="font-header text-lg font-bold text-yellow-900 mb-3">
-          💡 {t('Money-Saving Tips', '省钱小贴士')}
-        </h3>
-        <ul className="space-y-2 text-sm text-yellow-800">
-          <li className="flex items-start gap-2">
-            <span>•</span>
-            <span>{t('Use IC cards (Suica/PASMO) for trains - save 10% on fares', '使用IC卡 (Suica/PASMO) 乘车 - 节省10%车费')}</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span>•</span>
-            <span>{t('Convenience store meals are cheap and delicious', '便利店餐食便宜又美味')}</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span>•</span>
-            <span>{t('Tax-free shopping with passport - save 8-10%', '用护照免税购物 - 节省8-10%')}</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span>•</span>
-            <span>{t('Visit temples/shrines early morning - free and less crowded', '清晨参观寺庙/神社 - 免费且人少')}</span>
-          </li>
-        </ul>
       </div>
     </div>
   )
