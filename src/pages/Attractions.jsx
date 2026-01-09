@@ -8,24 +8,28 @@ const Attractions = () => {
   const attractions = {
     tokyo: [
       {
+        id: 'sensoji',
         title: t('Senso-ji Temple', '浅草寺'),
         description: t("Tokyo's oldest temple, famous for Kaminarimon Gate", '东京最古老的寺庙，以雷门而闻名'),
         price: 'Free',
         image: '/attractions/sensoji/kaminarimon-gate.jpg',
       },
       {
+        id: 'shibuya',
         title: t('Shibuya Crossing', '涩谷十字路口'),
         description: t("World's busiest pedestrian crossing & Hachiko Statue", '世界上最繁忙的十字路口和忠犬八公像'),
         price: 'Free',
         image: '/attractions/shibuya/aerial-view.jpg',
       },
       {
+        id: 'harajuku',
         title: t('Harajuku & Omotesando', '原宿 & 表参道'),
         description: t('Fashion district with Takeshita Street and trendy cafes', '时尚区，有竹下通和潮流咖啡厅'),
         price: 'Free',
         image: '/attractions/harajuku/takeshita-street.jpg',
       },
       {
+        id: 'ueno',
         title: t('Ueno Park', '上野公园'),
         description: t('Large park with museums, zoo, and cherry blossoms', '大型公园，有博物馆、动物园和樱花'),
         price: 'Free',
@@ -34,6 +38,7 @@ const Attractions = () => {
     ],
     kyoto: [
       {
+        id: 'fushimi-inari',
         title: t('Fushimi Inari Taisha', '伏见稻荷大社'),
         description: t('Famous for thousands of vermillion torii gates', '以数千个朱红色鸟居而闻名'),
         price: 'Free',
@@ -128,6 +133,22 @@ const Attractions = () => {
     { key: 'kobe', name: t('Kobe', '神户'), icon: 'fa-mountain', color: 'red' },
   ]
 
+  // If an attraction is selected, show detailed view
+  if (selectedAttraction) {
+    return (
+      <div>
+        <button
+          onClick={() => setSelectedAttraction(null)}
+          className="mb-6 text-slate-600 hover:text-slate-800 flex items-center gap-2 transition-colors"
+        >
+          <i className="fa-solid fa-arrow-left"></i>
+          <span>{t('Back to Attractions', '返回景点')}</span>
+        </button>
+        <AttractionDetail attraction={selectedAttraction} />
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 max-w-7xl mx-auto">
       {/* Header */}
@@ -159,19 +180,36 @@ const Attractions = () => {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {attractions[section.key].map((attraction, index) => (
-              <div
-                key={index}
-                className="animate-fade-in"
-                style={{ animationDelay: `${(sectionIndex * 0.1) + (index * 0.05)}s` }}
-              >
-                <AttractionCard
-                  {...attraction}
-                  location={section.name}
-                  locationColor={section.color}
-                />
-              </div>
-            ))}
+            {attractions[section.key].map((attraction, index) => {
+              // Try to get detailed data from attractionsData
+              const attractionId = attraction.id || attraction.title.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
+              const detailedData = attractionsData[attractionId] || attraction
+              
+              return (
+                <div
+                  key={index}
+                  className="animate-fade-in"
+                  style={{ animationDelay: `${(sectionIndex * 0.1) + (index * 0.05)}s` }}
+                >
+                  <AttractionCard
+                    {...attraction}
+                    location={section.name}
+                    locationColor={section.color}
+                    onClick={() => {
+                      // Merge card data with detailed data
+                      const fullData = {
+                        ...attraction,
+                        ...detailedData,
+                        city: section.key,
+                        title: detailedData.title || { en: attraction.title, zh: attraction.title },
+                        location: detailedData.location || { en: section.name, zh: section.name },
+                      }
+                      setSelectedAttraction(fullData)
+                    }}
+                  />
+                </div>
+              )
+            })}
           </div>
         </div>
       ))}

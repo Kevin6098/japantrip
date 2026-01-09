@@ -42,7 +42,7 @@ const AttractionCard = ({
   return (
     <div 
       onClick={onClick}
-      className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 cursor-pointer border border-slate-200 ${colors.border} hover:shadow-xl hover:-translate-y-1 ${colors.shadow} group`}
+      className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 ${onClick ? 'cursor-pointer' : ''} border border-slate-200 ${colors.border} hover:shadow-xl hover:-translate-y-1 ${colors.shadow} group`}
     >
       <div className="relative h-56 overflow-hidden">
         <img 
