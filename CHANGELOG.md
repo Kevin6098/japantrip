@@ -301,6 +301,134 @@ Completely replaced Day 2 itinerary from "Old Tokyo" to "Tokyo City Tour" with n
 
 ---
 
+## [2024-12-XX] - Updated Day 3 (March 20) - Harajuku & Shibuya
+
+### Changes
+Completely replaced Day 3 itinerary from "Graduation & Shibuya" (with Saitama graduation ceremony) to "Harajuku & Shibuya" with new activities:
+
+**Previous Day 3**: Graduation Ceremony in Saitama, then celebration dinner in Shibuya
+
+**New Day 3 (March 20 - Harajuku & Shibuya)**:
+- **08:00**: Depart from Airbnb (Katsushika-ku)
+- **09:00**: Meiji Jingu Shrine - ~1.5 hours (Visit main shrine, walk through forest path)
+- **10:30**: Takeshita Street - ~45 mins (Explore shops, street food, crepes)
+- **11:30**: Afuri (Lunch) - ~45 mins (Yuzu ramen in Harajuku, expect possible wait)
+- **12:30**: Omotesando (Branded Shopping) - ~1.5-2 hours (Luxury brands, boutiques)
+- **14:30**: Shibuya - Crossing & Hachiko Statue - ~1-1.5 hours
+- **18:00**: Graduation Celebration Dinner - ~1.5-2 hours (Near Shibuya Station, Restaurant TBD)
+- **20:30**: Return to Airbnb (Katsushika-ku)
+
+### Transit Routes & Times Added
+- All transit routes include walking times, train lines, and total travel times
+- Google Maps links added to all locations
+- Duration for each activity specified
+- All routes optimized for efficient travel between locations
+
+### Files Modified
+- `schedule.html` - Completely replaced Day 3 itinerary with new Harajuku & Shibuya schedule
+
+### Notes
+- Day 3 changed from "Graduation & Shibuya" (with Saitama trip) to "Harajuku & Shibuya" (Tokyo only)
+- Removed Saitama graduation ceremony from this day
+- All activities include estimated duration times
+- All transit routes include detailed walking times and train connections
+- Google Maps links added for easy navigation
+- Graduation dinner location TBD (to be decided)
+- Bilingual support maintained (English/Chinese)
+
+---
+
+## [2024-12-XX] - Added Ginza Kanimitsu for Lunch on Day 2 (March 19)
+
+### Changes
+Updated Day 2 lunch location to specify Ginza Kanimitsu restaurant:
+
+- **Previous**: Generic "Ginza - Lunch & Shopping" (~2 hours combined)
+- **New**: 
+  - **12:00**: Ginza Kanimitsu (Lunch) - ~1-1.5 hours
+    - Crab restaurant in Ginza
+    - Lunch sets from ¥4,600-¥11,000 (with service charge and tax)
+    - Located at Ginza Crystal Building 4F, 4-2-12 Ginza, Chuo-ku, Tokyo
+    - Website: https://ginza-kanimitsu.com/menu/lunch/
+  - **13:30**: Ginza Shopping - ~30 mins (separated from lunch)
+
+### Files Modified
+- `schedule.html` - Updated Day 2 lunch entry with Ginza Kanimitsu details and separated shopping time
+
+### Notes
+- Restaurant link added to schedule
+- Google Maps link added for navigation
+- Lunch duration adjusted to 1-1.5 hours for proper dining experience
+- Shopping time separated and reduced to 30 mins to accommodate lunch timing
+- Bilingual support maintained (English/Chinese)
+
+---
+
+## [2024-12-XX] - Updated Day 2 & Day 3 Schedules
+
+### Changes
+
+**Day 2 (March 19) - Morning Update**:
+- **Removed**: Pain Maison and Senso-ji Temple from morning
+- **Added**: Tsukiji Outer Market in the morning
+  - **09:00**: Tsukiji Outer Market - ~2.5 hours
+    - Walk around market, try street food, fresh seafood, shops
+    - Transit: Walk 5 mins → Train ~30-35 mins → Higashi-Ginza → Walk 5 mins
+    - Google Maps link added
+- **Updated**: Travel to Ginza now from Tsukiji Market (walk 10-15 mins)
+
+**Day 3 (March 20) - Complete Restructure**:
+- **Removed**: Meiji Jingu Shrine, Takeshita Street, Afuri, Omotesando shopping
+- **New Schedule**:
+  - **09:00**: Asakusa (Senso-ji Temple) - ~2 hours (Explore temple & Nakamise Street)
+  - **11:30**: Ichiran Ramen (Lunch) - ~45 mins (Famous tonkotsu ramen in Asakusa)
+  - **13:00**: Travel to Saitama for Graduation (~1h 20m train)
+  - **14:30**: Nippon Institute of Technology (Graduation Ceremony) - ~2-3 hours
+  - **17:30**: Travel to Shibuya (~1h 20m train)
+  - **19:00**: Shibuya - Crossing & Hachiko Statue - ~30-45 mins
+  - **20:00**: Graduation Celebration Dinner - ~1.5-2 hours (Near Shibuya Station, Restaurant TBD)
+  - **22:00**: Return to Airbnb
+
+### Files Modified
+- `schedule.html` - Updated Day 2 morning and completely restructured Day 3
+
+### Notes
+- Day 2 now starts with Tsukiji Market experience instead of Asakusa
+- Day 3 restructured to focus on graduation day activities
+- All transit routes include detailed walking times and train connections
+- Google Maps links added for all locations
+- Ichiran Ramen location specified for Asakusa
+- Graduation ceremony timing adjusted to afternoon
+- Shibuya visit moved to evening after graduation
+- Bilingual support maintained (English/Chinese)
+
+---
+
+## [2024-12-XX] - Updated Day 3 (March 20) Dinner to Tsukada Shabu Shabu
+
+### Changes
+Updated Day 3 dinner location from "TBD" to specific restaurant:
+
+- **Previous**: Graduation Celebration Dinner (Restaurant TBD)
+- **New**: Tsukada Shabu Shabu (Graduation Celebration Dinner)
+  - Location: Shibuya Scramble Square 12F, 2-24-12 Shibuya, Shibuya-ku, Tokyo
+  - Hours: 17:00-23:00 (Dinner)
+  - Walk 3-5 mins from Shibuya Station
+  - Duration: ~1.5-2 hours
+  - Google Maps link added
+
+### Files Modified
+- `schedule.html` - Updated Day 3 dinner entry with Tsukada Shabu Shabu details
+
+### Notes
+- Restaurant name and location specified
+- Google Maps link added for easy navigation
+- Walking directions from Shibuya Station included
+- Restaurant hours included (17:00-23:00)
+- Bilingual support maintained (English/Chinese)
+
+---
+
 ## Future Changes
 
 All future changes will be documented below with:
