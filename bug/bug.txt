@@ -1,2 +1,1 @@
-[] remove this hotel for me (refer hotel.png)
-[] after clicking the details nothing shown, maybe the linking there got problem (refer to itinerary.png) (the details are in the schedule folder)
+[] the itinerary down there d can remove d, because click liao will show the details so can remove the detailed schedule d (refer itinerary.png)
