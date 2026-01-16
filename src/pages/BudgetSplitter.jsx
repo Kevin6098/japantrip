@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { budgetService } from '../services/budgetService'
 
@@ -36,6 +37,7 @@ const BudgetSplitter = () => {
   const [formWarn, setFormWarn] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [expandedCategories, setExpandedCategories] = useState(new Set())
 
   useEffect(() => {
     loadState()
@@ -449,6 +451,29 @@ const BudgetSplitter = () => {
 
   const { totals, catTotals } = calculateTotals()
 
+  const toggleCategory = (currency, category) => {
+    const key = `${currency}-${category}`
+    setExpandedCategories(prev => {
+      const next = new Set(prev)
+      if (next.has(key)) {
+        next.delete(key)
+      } else {
+        next.add(key)
+      }
+      return next
+    })
+  }
+
+  const isCategoryExpanded = (currency, category) => {
+    return expandedCategories.has(`${currency}-${category}`)
+  }
+
+  const getExpensesByCategory = (currency, category) => {
+    return expenses.filter(exp => 
+      exp.currency === currency && exp.category === category
+    )
+  }
+
   if (loading) {
     return (
       <div className="min-h-screen py-12 px-4 sm:px-6 max-w-7xl mx-auto pb-24">
@@ -795,12 +820,65 @@ const BudgetSplitter = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            {Object.keys(catTotals[cur] || {}).sort().map(cat => (
-                              <tr key={cat} className="border-t border-slate-200">
-                                <td className="p-2">{cat}</td>
-                                <td className="p-2 text-right">{formatMoney(catTotals[cur][cat], cur)}</td>
-                              </tr>
-                            ))}
+                            {Object.keys(catTotals[cur] || {}).sort().map(cat => {
+                              const isExpanded = isCategoryExpanded(cur, cat)
+                              const categoryExpenses = getExpensesByCategory(cur, cat)
+                              return (
+                                <React.Fragment key={cat}>
+                                  <tr 
+                                    className="border-t border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors"
+                                    onClick={() => toggleCategory(cur, cat)}
+                                  >
+                                    <td className="p-2">
+                                      <div className="flex items-center gap-2">
+                                        <i className={`fa-solid fa-chevron-${isExpanded ? 'down' : 'right'} text-xs text-slate-500 transition-transform`}></i>
+                                        <span className="font-medium">{cat}</span>
+                                      </div>
+                                    </td>
+                                    <td className="p-2 text-right font-semibold">
+                                      {formatMoney(catTotals[cur][cat], cur)}
+                                    </td>
+                                  </tr>
+                                  {isExpanded && categoryExpenses.length > 0 && (
+                                    <tr>
+                                      <td colSpan="2" className="p-2 bg-slate-50">
+                                        <div className="pl-6 space-y-2">
+                                          {categoryExpenses.map(exp => {
+                                            const paidByName = members.find(m => m.id === exp.paidBy)?.name || '-'
+                                            return (
+                                              <div 
+                                                key={exp.id}
+                                                className="flex items-center justify-between text-xs border-b border-slate-200 pb-2 last:border-0 last:pb-0"
+                                              >
+                                                <div className="flex-1">
+                                                  <Link 
+                                                    to={`/split-expenses/expense/${exp.id}`}
+                                                    className="text-slate-700 hover:text-emerald-600 transition-colors"
+                                                  >
+                                                    <div className="font-medium">{exp.description || exp.desc || t('No description', '无描述')}</div>
+                                                    <div className="text-slate-500 text-xs mt-0.5">
+                                                      {exp.date} • {t('Paid by', '付款人')}: {paidByName}
+                                                    </div>
+                                                  </Link>
+                                                </div>
+                                                <div className="text-right ml-4">
+                                                  <Link 
+                                                    to={`/split-expenses/expense/${exp.id}`}
+                                                    className="text-slate-700 hover:text-emerald-600 transition-colors font-semibold"
+                                                  >
+                                                    {formatMoney(exp.amount, exp.currency)}
+                                                  </Link>
+                                                </div>
+                                              </div>
+                                            )
+                                          })}
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  )}
+                                </React.Fragment>
+                              )
+                            })}
                             {Object.keys(catTotals[cur] || {}).length === 0 && (
                               <tr>
                                 <td colSpan="2" className="p-2 text-xs text-slate-500 text-center">
@@ -836,13 +914,12 @@ const BudgetSplitter = () => {
                   {members.map(m => (
                     <th key={m.id} className="text-right p-2 font-semibold text-slate-700 min-w-[100px]">{m.name}</th>
                   ))}
-                  <th className="text-center p-2 font-semibold text-slate-700 min-w-[90px]">{t('Action', '操作')}</th>
                 </tr>
               </thead>
               <tbody>
                 {expenses.length === 0 ? (
                   <tr>
-                    <td colSpan={5 + members.length + 1} className="p-4 text-center text-slate-500 text-sm">
+                    <td colSpan={5 + members.length} className="p-4 text-center text-slate-500 text-sm">
                       {t('No expenses yet.', '还没有费用。')}
                     </td>
                   </tr>
@@ -850,28 +927,63 @@ const BudgetSplitter = () => {
                   [...expenses].sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(exp => {
                     const paidByName = members.find(m => m.id === exp.paidBy)?.name || '-'
                     return (
-                      <tr key={exp.id} className="border-t border-slate-200 hover:bg-slate-50">
-                        <td className="p-2">{exp.date || ''}</td>
-                        <td className="p-2">{exp.category || ''}</td>
-                        <td className="p-2 max-w-xs break-words text-sm">{exp.description || exp.desc || ''}</td>
-                        <td className="p-2">{paidByName}</td>
-                        <td className="p-2 text-right font-semibold">{formatMoney(exp.amount, exp.currency)}</td>
+                      <tr 
+                        key={exp.id} 
+                        className="border-t border-slate-200 hover:bg-slate-50"
+                      >
+                        <td className="p-2">
+                          <Link 
+                            to={`/split-expenses/expense/${exp.id}`}
+                            className="block hover:text-emerald-600 transition-colors"
+                          >
+                            {exp.date || ''}
+                          </Link>
+                        </td>
+                        <td className="p-2">
+                          <Link 
+                            to={`/split-expenses/expense/${exp.id}`}
+                            className="block hover:text-emerald-600 transition-colors"
+                          >
+                            {exp.category || ''}
+                          </Link>
+                        </td>
+                        <td className="p-2 max-w-xs break-words text-sm">
+                          <Link 
+                            to={`/split-expenses/expense/${exp.id}`}
+                            className="block hover:text-emerald-600 transition-colors"
+                          >
+                            {exp.description || exp.desc || ''}
+                          </Link>
+                        </td>
+                        <td className="p-2">
+                          <Link 
+                            to={`/split-expenses/expense/${exp.id}`}
+                            className="block hover:text-emerald-600 transition-colors"
+                          >
+                            {paidByName}
+                          </Link>
+                        </td>
+                        <td className="p-2 text-right font-semibold">
+                          <Link 
+                            to={`/split-expenses/expense/${exp.id}`}
+                            className="block hover:text-emerald-600 transition-colors"
+                          >
+                            {formatMoney(exp.amount, exp.currency)}
+                          </Link>
+                        </td>
                         {members.map(m => {
                           const splitAmount = exp.splits?.[m.id] || 0
                           return (
                             <td key={m.id} className="p-2 text-right text-xs text-slate-600">
-                              {splitAmount > 0 ? formatMoney(splitAmount, exp.currency) : ''}
+                              <Link 
+                                to={`/split-expenses/expense/${exp.id}`}
+                                className="block hover:text-emerald-600 transition-colors"
+                              >
+                                {splitAmount > 0 ? formatMoney(splitAmount, exp.currency) : ''}
+                              </Link>
                             </td>
                           )
                         })}
-                        <td className="p-2 text-center">
-                          <button
-                            onClick={() => deleteExpense(exp.id)}
-                            className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition-colors text-xs font-semibold"
-                          >
-                            {t('Delete', '删除')}
-                          </button>
-                        </td>
                       </tr>
                     )
                   })
