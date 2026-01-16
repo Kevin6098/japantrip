@@ -38,6 +38,7 @@ const BudgetSplitter = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [expandedCategories, setExpandedCategories] = useState(new Set())
+  const [expandedMembers, setExpandedMembers] = useState(new Set())
   const [activeTab, setActiveTab] = useState('summary')
   const [selectedMembers, setSelectedMembers] = useState(new Set())
 
@@ -117,6 +118,7 @@ const BudgetSplitter = () => {
       const state = JSON.parse(raw)
       setMembers(state.members || [])
       setExpenses(state.expenses || [])
+      
       if (state.members && state.members.length > 0) {
         setExpPaidBy(state.members[0].id)
         setSplitWith(new Set(state.members.map(m => m.id)))
@@ -228,6 +230,13 @@ const BudgetSplitter = () => {
         return next
       })
       setSelectedMembers(prev => {
+        const next = new Set(prev)
+        next.delete(id)
+        return next
+      })
+      
+      // Remove from expanded members if expanded
+      setExpandedMembers(prev => {
         const next = new Set(prev)
         next.delete(id)
         return next
@@ -482,10 +491,37 @@ const BudgetSplitter = () => {
     return expandedCategories.has(`${currency}-${category}`)
   }
 
+  const toggleMember = (memberId) => {
+    setExpandedMembers(prev => {
+      const next = new Set(prev)
+      if (next.has(memberId)) {
+        next.delete(memberId)
+      } else {
+        next.add(memberId)
+      }
+      return next
+    })
+  }
+
+  const isMemberExpanded = (memberId) => {
+    return expandedMembers.has(memberId)
+  }
+
   const getExpensesByCategory = (currency, category) => {
     return expenses.filter(exp => 
       exp.currency === currency && exp.category === category
     )
+  }
+
+  const getExpensesByMember = (currency, memberId) => {
+    return expenses.filter(exp => {
+      if (exp.currency !== currency) return false
+      const splitAmount = exp.splits?.[memberId] || 0
+      return splitAmount > 0
+    }).map(exp => ({
+      ...exp,
+      memberAmount: exp.splits?.[memberId] || 0
+    }))
   }
 
   if (loading) {
@@ -886,11 +922,37 @@ const BudgetSplitter = () => {
                           <tbody>
                             {members.filter(m => selectedMembers.has(m.id)).map(m => {
                               const v = totals[cur][m.id] || 0
+                              const isExpanded = isMemberExpanded(m.id)
+                              const memberExpenses = getExpensesByMember(cur, m.id)
                               return (
-                                <tr key={m.id} className="border-t border-slate-200">
-                                  <td className="p-2">{m.name}</td>
-                                  <td className="p-2 text-right font-semibold">{formatMoney(v, cur)}</td>
-                                </tr>
+                                <React.Fragment key={m.id}>
+                                  <tr 
+                                    className="border-t border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors"
+                                    onClick={() => toggleMember(m.id)}
+                                  >
+                                    <td className="p-2">
+                                      <div className="flex items-center gap-2">
+                                        <i className={`fa-solid fa-chevron-${isExpanded ? 'down' : 'right'} text-xs text-slate-500 transition-transform`}></i>
+                                        <span className="font-medium">{m.name}</span>
+                                      </div>
+                                    </td>
+                                    <td className="p-2 text-right font-semibold">{formatMoney(v, cur)}</td>
+                                  </tr>
+                                  {isExpanded && memberExpenses.length > 0 && (
+                                    <tr className="border-t border-slate-100 bg-slate-50">
+                                      <td colSpan="2" className="p-2 pl-8">
+                                        <div className="space-y-1">
+                                          {memberExpenses.map(exp => (
+                                            <div key={exp.id} className="text-sm text-slate-700 flex items-center justify-between">
+                                              <span>{exp.description || exp.category}</span>
+                                              <span className="font-semibold">{formatMoney(exp.memberAmount, cur)}</span>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  )}
+                                </React.Fragment>
                               )
                             })}
                             {members.filter(m => selectedMembers.has(m.id)).length === 0 && (
