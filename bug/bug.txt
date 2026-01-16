@@ -1,0 +1,2 @@
+[] remove this hotel for me (refer hotel.png)
+[] after clicking the details nothing shown, maybe the linking there got problem (refer to itinerary.png) (the details are in the schedule folder)
