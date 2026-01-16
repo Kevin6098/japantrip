@@ -574,6 +574,70 @@ Created dedicated HTML pages for each day of the itinerary, organized in a `sche
 
 ---
 
+## [2024-12-XX] - Added Budget Splitter Tool
+
+### Changes
+Created a comprehensive budget splitter tool for tracking and splitting expenses among group members:
+
+**New Budget Splitter Features**:
+- **Member Management**: Add/remove members with automatic local storage
+- **Expense Tracking**: Add expenses with date, category, currency, description, and amount
+- **Multiple Currencies**: Support for JPY, MYR, USD, SGD
+- **Split Modes**: 
+  - Equal split (automatically divides amount among selected members)
+  - Custom split (manually enter each member's share)
+- **Per-Member Totals**: Automatic calculation of each member's total share across all expenses
+- **Category Summaries**: Total spending by category (Meal, Transport, Tickets, Shopping, Hotel, Other)
+- **CSV Export**: Export all expenses to CSV file for external analysis
+- **Offline Functionality**: All data stored in browser localStorage, works completely offline
+
+**Pre-filled Members**: 
+- Automatically loads 10 members on first use:
+  - Soon Zheng Dong, Soon Cheng Wai, Soon Xin Yi, See Siew Pheng, Ang Shin Nee, See Siew Tin, See Siew Kim, See Eng Kim, See Yi Joe, Koay Jun Ming
+
+**Dashboard Integration**:
+- Added featured card on homepage dashboard with special gradient design
+- Prominent placement above other quick links
+- Visual highlights: Auto Split, Multi-Currency, Offline, 10 Members
+- Shimmer hover effects and animations
+- "NEW" badge with pulse animation
+
+**Navigation Updates**:
+- Added "Split Expenses" link to desktop navigation menu
+- Added "Split Expenses" link to mobile menu with calculator icon
+- Active state styling when on budget splitter page
+
+**Styling & Design**:
+- Matched homepage design language (pink/emerald theme)
+- Added navigation bar consistent with other pages
+- Added sakura animation background
+- Added back button to return to homepage dashboard
+- Integrated Tailwind CSS for consistent styling
+- Bilingual support (English/Chinese) for all UI elements
+- Responsive design for mobile and desktop
+
+**CSS Organization**:
+- Created separate `budget-splitter.css` file for budget splitter specific styles
+- All styles prefixed with `.budget-*` to avoid conflicts
+- Maintains separation of concerns while matching site-wide design
+
+### Files Created
+- `japan_trip_budget.html` - Main budget splitter page with full functionality
+- `budget-splitter.css` - Dedicated stylesheet for budget splitter components
+
+### Files Modified
+- `homepage.html` - Added featured budget splitter card and navigation links
+
+### Notes
+- Budget splitter uses localStorage key `jp_trip_budget_splitter_v1` for data persistence
+- All calculations are client-side, no server required
+- Data persists across browser sessions
+- Reset functionality clears all data and restores default members
+- CSV export includes all expense details and split information
+- Future enhancement: "Who owes who" settlement calculation can be added if requested
+
+---
+
 ## Future Changes
 
 All future changes will be documented below with:
