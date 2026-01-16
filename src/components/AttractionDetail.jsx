@@ -29,7 +29,9 @@ const AttractionDetail = ({ attraction }) => {
   // Auto-advance carousel
   useEffect(() => {
     if (images.length > 1) {
-      const interval = setInterval(nextImage, 5000)
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length)
+      }, 5000)
       return () => clearInterval(interval)
     }
   }, [images.length])
@@ -127,7 +129,9 @@ const AttractionDetail = ({ attraction }) => {
             {attraction.price && (
               <span className="flex items-center">
                 <i className="fa-solid fa-yen-sign mr-2 text-emerald-500"></i>
-                {attraction.price}
+                {typeof attraction.price === 'object' && attraction.price.en
+                  ? t(attraction.price.en, attraction.price.zh)
+                  : attraction.price}
               </span>
             )}
             {attraction.hours && (

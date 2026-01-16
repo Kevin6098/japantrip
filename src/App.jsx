@@ -13,6 +13,7 @@ import BudgetSplitter from './pages/BudgetSplitter'
 import ExpenseDetail from './pages/ExpenseDetail'
 import ExpensesList from './pages/ExpensesList'
 import DaySchedule from './pages/DaySchedule'
+import AttractionDetailPage from './pages/AttractionDetailPage'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/schedule/day/:day" element={<DaySchedule />} />
             <Route path="/attractions" element={<Attractions />} />
+            <Route path="/attractions/:id" element={<AttractionDetailPage />} />
             <Route path="/flights" element={<Flights />} />
             <Route path="/budget" element={<Budget />} />
             <Route path="/packing" element={<Packing />} />

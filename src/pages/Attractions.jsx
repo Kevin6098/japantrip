@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import AttractionCard from '../components/AttractionCard'
-import AttractionDetail from '../components/AttractionDetail'
 import { attractionsData } from '../data/attractionsData'
 
 const Attractions = () => {
   const { t } = useLanguage()
-  const [selectedAttraction, setSelectedAttraction] = useState(null)
 
   const attractions = {
     tokyo: [
@@ -148,22 +147,6 @@ const Attractions = () => {
     { key: 'kobe', name: t('Kobe', '神户'), icon: 'fa-mountain', color: 'red' },
   ]
 
-  // If an attraction is selected, show detailed view
-  if (selectedAttraction) {
-    return (
-      <div>
-        <button
-          onClick={() => setSelectedAttraction(null)}
-          className="mb-6 text-slate-600 hover:text-slate-800 flex items-center gap-2 transition-colors"
-        >
-          <i className="fa-solid fa-arrow-left"></i>
-          <span>{t('Back to Attractions', '返回景点')}</span>
-        </button>
-        <AttractionDetail attraction={selectedAttraction} />
-      </div>
-    )
-  }
-
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 max-w-7xl mx-auto">
       {/* Header */}
@@ -206,22 +189,13 @@ const Attractions = () => {
                   className="animate-fade-in"
                   style={{ animationDelay: `${(sectionIndex * 0.1) + (index * 0.05)}s` }}
                 >
-                  <AttractionCard
-                    {...attraction}
-                    location={section.name}
-                    locationColor={section.color}
-                    onClick={() => {
-                      // Merge card data with detailed data
-                      const fullData = {
-                        ...attraction,
-                        ...detailedData,
-                        city: section.key,
-                        title: detailedData.title || { en: attraction.title, zh: attraction.title },
-                        location: detailedData.location || { en: section.name, zh: section.name },
-                      }
-                      setSelectedAttraction(fullData)
-                    }}
-                  />
+                  <Link to={`/attractions/${attractionId}`} className="block">
+                    <AttractionCard
+                      {...attraction}
+                      location={section.name}
+                      locationColor={section.color}
+                    />
+                  </Link>
                 </div>
               )
             })}

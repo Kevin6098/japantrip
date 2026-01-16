@@ -151,19 +151,20 @@ export const attractionsData = {
       '/attractions/ueno/boat-ride.jpg',
     ],
     about: {
-      en: "Ueno Park is one of Tokyo's most popular public parks, especially famous for cherry blossom viewing (hanami) in spring. The park was established in 1873 and covers 53 hectares. It's home to several major museums including the Tokyo National Museum, National Museum of Western Art, Tokyo Metropolitan Art Museum, and the National Museum of Nature and Science. The park also features Ueno Zoo (Japan's oldest zoo), Shinobazu Pond with boat rentals, and numerous temples and shrines. During cherry blossom season (late March to early April), the park attracts millions of visitors who come to enjoy hanami parties under the beautiful sakura trees.",
-      zh: '上野公园是东京最受欢迎的公园之一，尤其以春季赏樱（花见）而闻名。该公园建于1873年，占地53公顷。它是几个主要博物馆的所在地，包括东京国立博物馆、国立西洋美术馆、东京都美术馆和国立科学博物馆。公园还设有上野动物园（日本最古老的动物园）、可租船的忍池，以及众多寺庙和神社。在樱花季节（3月下旬至4月初），公园吸引数百万游客前来在美丽的樱花树下享受花见聚会。'
+      en: "Ueno Park is one of Tokyo's first public parks, established in 1873. The park is famous for its cherry blossoms in spring, making it one of Tokyo's most popular hanami (flower viewing) spots. The park houses several major museums, a zoo, temples, and shrines, making it a cultural hub in the heart of Tokyo. The park was originally part of Kaneiji Temple, one of the city's wealthiest temples. After the Battle of Ueno in 1868, the temple was destroyed, and the land was converted into one of Japan's first Western-style parks. Today, it's a perfect blend of nature, culture, and history.",
+      zh: '上野公园是东京最早的公共公园之一，建于1873年。该公园以春季樱花而闻名，是东京最受欢迎的花见（赏花）地点之一。公园内设有几个主要博物馆、一个动物园、寺庙和神社，使其成为东京市中心的文化中心。该公园最初是宽永寺的一部分，这是该市最富有的寺庙之一。1868年上野之战后，寺庙被毁，土地被改造成日本最早的西式公园之一。今天，它是自然、文化和历史的完美结合。'
     },
     highlights: [
-      { en: 'Cherry Blossoms: Over 1,000 cherry trees create a stunning tunnel of pink flowers in spring', zh: '樱花: 超过1,000棵樱花树在春天形成令人惊叹的粉色花朵隧道' },
-      { en: 'Tokyo National Museum: Japan\'s largest and oldest museum with extensive art and archaeological collections', zh: '东京国立博物馆: 日本最大和最古老的博物馆，拥有丰富的艺术和考古收藏' },
-      { en: 'Ueno Zoo: Home to pandas and over 3,000 animals from 400 species', zh: '上野动物园: 大熊猫和来自400个物种的3,000多只动物的家园' },
-      { en: 'Shinobazu Pond: Beautiful pond with lotus flowers and boat rentals', zh: '忍池: 美丽的池塘，有莲花和船只租赁' },
+      { en: 'Cherry Blossoms: Over 1,000 cherry trees create a stunning tunnel of pink in spring (late March to early April)', zh: '樱花: 1000多棵樱花树在春季（3月下旬至4月初）形成令人惊叹的粉色隧道' },
+      { en: 'Tokyo National Museum: Japan\'s oldest and largest museum with extensive art and archaeological collections', zh: '东京国立博物馆: 日本最古老和最大的博物馆，拥有丰富的艺术和考古收藏' },
+      { en: 'Ueno Zoo: Japan\'s oldest zoo, home to pandas and over 3,000 animals', zh: '上野动物园: 日本最古老的动物园，是大熊猫和3000多只动物的家园' },
+      { en: 'Shinobazu Pond: Large pond with lotus flowers and boat rentals, perfect for relaxation', zh: '不忍池: 有荷花和租船服务的大池塘，非常适合放松' },
     ],
     tips: [
-      { en: 'Cherry Blossom Season: Visit in late March to early April for the best hanami experience', zh: '樱花季节: 在3月下旬至4月初参观，获得最佳花见体验' },
-      { en: 'Weekday Visit: Much less crowded on weekdays, especially in the morning', zh: '工作日参观: 工作日人少得多，特别是早上' },
-      { en: 'Museum Pass: Consider buying a museum pass if visiting multiple museums', zh: '博物馆通票: 如果参观多个博物馆，考虑购买博物馆通票' },
+      { en: 'Cherry Blossom Season: Extremely crowded during sakura season - arrive early or visit on weekdays', zh: '樱花季节: 樱花季节非常拥挤 - 提前到达或在工作日参观' },
+      { en: 'Museum Pass: Consider the Ueno Park Pass for discounted entry to multiple museums', zh: '博物馆通票: 考虑购买上野公园通票，可折扣进入多个博物馆' },
+      { en: 'Food Options: Many food vendors and restaurants in the park - perfect for lunch break', zh: '餐饮选择: 公园内有许多食品摊和餐厅 - 非常适合午餐休息' },
+      { en: 'Combine with Asakusa: Ueno is just one stop away from Asakusa on the Ginza Line - easy to visit both', zh: '与浅草结合: 上野距离浅草只有一站（银座线）- 很容易参观两者' },
     ],
   },
   'dotonbori': {
