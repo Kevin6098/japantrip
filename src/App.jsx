@@ -11,6 +11,7 @@ import Packing from './pages/Packing'
 import Hotels from './pages/Hotels'
 import BudgetSplitter from './pages/BudgetSplitter'
 import ExpenseDetail from './pages/ExpenseDetail'
+import ExpensesList from './pages/ExpensesList'
 import DaySchedule from './pages/DaySchedule'
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/packing" element={<Packing />} />
             <Route path="/hotels" element={<Hotels />} />
             <Route path="/split-expenses" element={<BudgetSplitter />} />
+            <Route path="/split-expenses/expenses" element={<ExpensesList />} />
             <Route path="/split-expenses/expense/:id" element={<ExpenseDetail />} />
           </Routes>
         </Layout>

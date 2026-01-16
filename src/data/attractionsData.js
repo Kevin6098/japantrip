@@ -112,6 +112,60 @@ export const attractionsData = {
       { en: 'Early Morning Visit: Arrive before 8 AM to avoid crowds and enjoy the peaceful atmosphere', zh: '清晨参观: 早上8点前到达，避开人群，享受宁静的氛围' },
     ],
   },
+  'shibuya': {
+    id: 'shibuya',
+    title: { en: 'Shibuya Crossing', zh: '涩谷十字路口' },
+    location: { en: 'Shibuya, Tokyo', zh: '东京涩谷' },
+    city: 'tokyo',
+    price: 'Free',
+    hours: { en: '24 Hours', zh: '24小时' },
+    images: [
+      '/attractions/shibuya/aerial-view.jpg',
+      '/attractions/shibuya/hachiko-statue.jpg',
+      '/attractions/shibuya/crossing-night.jpg',
+    ],
+    about: {
+      en: "Shibuya Crossing is the world's busiest pedestrian crossing, with up to 3,000 people crossing at once during peak times. Located in front of Shibuya Station, this iconic intersection has become a symbol of modern Tokyo. The area is surrounded by massive video screens and neon advertisements, creating an electric atmosphere. The famous Hachiko Statue, honoring the loyal dog who waited for his owner for years, is a popular meeting point. Shibuya is also a major shopping and entertainment district with countless stores, restaurants, and nightlife options.",
+      zh: '涩谷十字路口是世界上最繁忙的十字路口，在高峰时段一次有多达3,000人过马路。位于涩谷站前，这个标志性的交叉路口已成为现代东京的象征。该地区被巨大的视频屏幕和霓虹灯广告所包围，营造出充满活力的氛围。著名的忠犬八公像，纪念多年来等待主人的忠诚狗，是一个受欢迎的会面点。涩谷也是一个主要的购物和娱乐区，有无数商店、餐厅和夜生活选择。'
+    },
+    highlights: [
+      { en: 'Hachiko Statue: The famous bronze statue of the loyal Akita dog - a popular meeting point', zh: '忠犬八公像: 著名的忠诚秋田犬青铜雕像 - 一个受欢迎的会面点' },
+      { en: 'Scramble Crossing: Watch thousands of people cross simultaneously from the Shibuya Sky observation deck', zh: '混乱十字路口: 从涩谷天空观景台观看数千人同时过马路' },
+      { en: 'Shibuya 109: Iconic fashion building with trendy Japanese brands', zh: '涩谷109: 标志性的时尚建筑，有潮流日本品牌' },
+    ],
+    tips: [
+      { en: 'Best View: Visit Shibuya Sky or Mag\'s Park for aerial views of the crossing', zh: '最佳视角: 参观涩谷天空或Mag\'s Park，从空中观看十字路口' },
+      { en: 'Peak Times: Most impressive during rush hour (7-9 AM, 5-7 PM)', zh: '高峰时段: 在高峰时段（上午7-9点，下午5-7点）最令人印象深刻' },
+    ],
+  },
+  'ueno': {
+    id: 'ueno',
+    title: { en: 'Ueno Park', zh: '上野公园' },
+    location: { en: 'Ueno, Tokyo', zh: '东京上野' },
+    city: 'tokyo',
+    price: { en: 'Park: Free | Museums: Varies', zh: '公园: 免费 | 博物馆: 不同' },
+    hours: { en: 'Open 24 Hours', zh: '24小时开放' },
+    images: [
+      '/attractions/ueno/cherry-blossom-avenue.jpg',
+      '/attractions/ueno/hanami-crowd.jpg',
+      '/attractions/ueno/boat-ride.jpg',
+    ],
+    about: {
+      en: "Ueno Park is one of Tokyo's most popular public parks, especially famous for cherry blossom viewing (hanami) in spring. The park was established in 1873 and covers 53 hectares. It's home to several major museums including the Tokyo National Museum, National Museum of Western Art, Tokyo Metropolitan Art Museum, and the National Museum of Nature and Science. The park also features Ueno Zoo (Japan's oldest zoo), Shinobazu Pond with boat rentals, and numerous temples and shrines. During cherry blossom season (late March to early April), the park attracts millions of visitors who come to enjoy hanami parties under the beautiful sakura trees.",
+      zh: '上野公园是东京最受欢迎的公园之一，尤其以春季赏樱（花见）而闻名。该公园建于1873年，占地53公顷。它是几个主要博物馆的所在地，包括东京国立博物馆、国立西洋美术馆、东京都美术馆和国立科学博物馆。公园还设有上野动物园（日本最古老的动物园）、可租船的忍池，以及众多寺庙和神社。在樱花季节（3月下旬至4月初），公园吸引数百万游客前来在美丽的樱花树下享受花见聚会。'
+    },
+    highlights: [
+      { en: 'Cherry Blossoms: Over 1,000 cherry trees create a stunning tunnel of pink flowers in spring', zh: '樱花: 超过1,000棵樱花树在春天形成令人惊叹的粉色花朵隧道' },
+      { en: 'Tokyo National Museum: Japan\'s largest and oldest museum with extensive art and archaeological collections', zh: '东京国立博物馆: 日本最大和最古老的博物馆，拥有丰富的艺术和考古收藏' },
+      { en: 'Ueno Zoo: Home to pandas and over 3,000 animals from 400 species', zh: '上野动物园: 大熊猫和来自400个物种的3,000多只动物的家园' },
+      { en: 'Shinobazu Pond: Beautiful pond with lotus flowers and boat rentals', zh: '忍池: 美丽的池塘，有莲花和船只租赁' },
+    ],
+    tips: [
+      { en: 'Cherry Blossom Season: Visit in late March to early April for the best hanami experience', zh: '樱花季节: 在3月下旬至4月初参观，获得最佳花见体验' },
+      { en: 'Weekday Visit: Much less crowded on weekdays, especially in the morning', zh: '工作日参观: 工作日人少得多，特别是早上' },
+      { en: 'Museum Pass: Consider buying a museum pass if visiting multiple museums', zh: '博物馆通票: 如果参观多个博物馆，考虑购买博物馆通票' },
+    ],
+  },
   'dotonbori': {
     id: 'dotonbori',
     title: { en: 'Dotonbori', zh: '道顿堀' },
@@ -139,6 +193,282 @@ export const attractionsData = {
     tips: [
       { en: 'Visit at Night: The neon signs are most impressive after dark', zh: '夜晚参观: 霓虹灯招牌在夜晚最令人印象深刻' },
       { en: 'Try the Food: Don\'t miss takoyaki, okonomiyaki, and kushikatsu', zh: '尝试美食: 不要错过章鱼烧、大阪烧和串炸' },
+    ],
+  },
+  'gion': {
+    id: 'gion',
+    title: { en: 'Gion District', zh: '祇园区' },
+    location: { en: 'Gion, Kyoto', zh: '京都祇园' },
+    city: 'kyoto',
+    price: 'Free',
+    hours: { en: '24 Hours (Best in Evening)', zh: '24小时（傍晚最佳）' },
+    images: [
+      '/attractions/gion/hanamikoji-street.jpg',
+      '/attractions/gion/traditional-streets.jpg',
+      '/attractions/gion/geisha-evening.jpg',
+    ],
+    about: {
+      en: "Gion is Kyoto's famous geisha district, known for its traditional wooden machiya houses, narrow cobblestone streets, and traditional teahouses. The area has preserved its historic charm and is one of the best places in Japan to see geishas (geiko) and maikos (apprentice geishas) walking to appointments. Hanamikoji Street is the main thoroughfare, lined with traditional architecture, exclusive restaurants, and ochaya (teahouses). Gion is especially beautiful in the evening when lanterns light up the streets, creating a magical atmosphere that transports visitors back to old Japan.",
+      zh: '祇园是京都著名的艺伎区，以其传统的木制町屋、狭窄的鹅卵石街道和传统茶屋而闻名。该地区保留了其历史魅力，是日本观赏艺伎（艺子）和舞伎（学徒艺伎）前往约会的绝佳地点之一。花见小路是主要街道，两旁是传统建筑、独家餐厅和茶屋。祇园在傍晚特别美丽，当灯笼照亮街道时，营造出一种神奇的氛围，将游客带回古老的日本。'
+    },
+    highlights: [
+      { en: 'Hanamikoji Street: The main street with traditional architecture and exclusive teahouses', zh: '花见小路: 主要街道，有传统建筑和独家茶屋' },
+      { en: 'Geisha Spotting: Best chance to see geishas and maikos in traditional attire (evening hours)', zh: '观赏艺伎: 看到传统服装的艺伎和舞伎的最佳机会（傍晚时段）' },
+      { en: 'Yasaka Shrine: Beautiful shrine at the end of Hanamikoji with hundreds of lanterns', zh: '八坂神社: 花见小路尽头的美丽神社，有数百个灯笼' },
+    ],
+    tips: [
+      { en: 'Evening Visit: Best time to see geishas and experience the magical atmosphere', zh: '傍晚参观: 观赏艺伎和体验神奇氛围的最佳时间' },
+      { en: 'Respect Privacy: Don\'t chase or harass geishas - observe from a respectful distance', zh: '尊重隐私: 不要追逐或骚扰艺伎 - 从尊重的距离观察' },
+      { en: 'Traditional Restaurants: Many exclusive restaurants require reservations', zh: '传统餐厅: 许多独家餐厅需要预订' },
+    ],
+  },
+  'yasaka': {
+    id: 'yasaka',
+    title: { en: 'Yasaka Shrine', zh: '八坂神社' },
+    location: { en: 'Gion, Kyoto', zh: '京都祇园' },
+    city: 'kyoto',
+    price: 'Free',
+    hours: { en: 'Open 24 Hours', zh: '24小时开放' },
+    images: [
+      '/attractions/yasaka/main-gate-day.jpg',
+      '/attractions/yasaka/lanterns-night.jpg',
+      '/attractions/yasaka/main-hall.jpg',
+    ],
+    about: {
+      en: "Yasaka Shrine (also known as Gion Shrine) is one of Kyoto's most famous shrines, located at the end of Hanamikoji Street in the Gion district. Founded over 1,350 years ago, the shrine is dedicated to Susanoo-no-Mikoto and his consort. The shrine is famous for its hundreds of lanterns that line the main hall, creating a beautiful and photogenic scene, especially at night when they're lit. The shrine hosts the famous Gion Matsuri festival in July, one of Japan's three major festivals. The main hall (honden) is designated as a National Treasure.",
+      zh: '八坂神社（也称为祇园神社）是京都最著名的神社之一，位于祇园区花见小路的尽头。建于1,350多年前，神社供奉素戋呜尊及其配偶。神社以其主殿旁的数百个灯笼而闻名，创造出美丽且上镜的场景，特别是在夜晚点亮时。神社在7月举办著名的祇园祭，这是日本三大节日之一。主殿（本殿）被指定为国宝。'
+    },
+    highlights: [
+      { en: 'Hundreds of Lanterns: Beautiful lanterns lining the main hall, especially stunning at night', zh: '数百个灯笼: 主殿旁的美丽灯笼，在夜晚特别令人惊叹' },
+      { en: 'Gion Matsuri: One of Japan\'s three major festivals held in July', zh: '祇园祭: 7月举行的日本三大节日之一' },
+      { en: 'Main Hall: National Treasure-designated building with unique architecture', zh: '主殿: 被指定为国宝的建筑，具有独特的建筑风格' },
+    ],
+    tips: [
+      { en: 'Night Visit: The lanterns are most beautiful when lit at night', zh: '夜晚参观: 灯笼在夜晚点亮时最美丽' },
+      { en: 'Gion Matsuri: Visit in July to experience the famous festival', zh: '祇园祭: 在7月参观，体验著名的节日' },
+    ],
+  },
+  'nara-park': {
+    id: 'nara-park',
+    title: { en: 'Nara Park', zh: '奈良公园' },
+    location: { en: 'Nara', zh: '奈良' },
+    city: 'nara',
+    price: 'Free',
+    hours: { en: 'Open 24 Hours', zh: '24小时开放' },
+    images: [
+      '/attractions/nara-park/cherry-blossom-deer.jpg',
+      '/attractions/nara-park/deer-feeding.jpg',
+      '/attractions/nara-park/park-scenery.jpg',
+    ],
+    about: {
+      en: "Nara Park is a large public park in the heart of Nara, famous for its population of over 1,200 freely roaming sika deer. The deer are considered sacred messengers of the gods in Shinto religion and are designated as a National Natural Treasure. Visitors can interact with the friendly deer, feed them special deer crackers (shika senbei) sold throughout the park, and take photos. The park covers 660 hectares and includes several major temples and shrines including Todaiji Temple, Kasuga Taisha, and Kofukuji Temple. The park is especially beautiful during cherry blossom season in spring.",
+      zh: '奈良公园是奈良市中心的一个大型公园，以其1,200多只自由漫游的梅花鹿而闻名。在神道教中，这些鹿被认为是神圣的神的使者，被指定为国家自然宝藏。游客可以与友好的鹿互动，喂它们在整个公园出售的特殊鹿饼干（鹿煎饼），并拍照。公园占地660公顷，包括几个主要寺庙和神社，包括东大寺、春日大社和兴福寺。公园在春季樱花季节特别美丽。'
+    },
+    highlights: [
+      { en: 'Friendly Deer: Over 1,200 sika deer freely roaming and interacting with visitors', zh: '友好的鹿: 超过1,200只梅花鹿自由漫游并与游客互动' },
+      { en: 'Deer Feeding: Buy special deer crackers (shika senbei) to feed the deer', zh: '喂鹿: 购买特殊的鹿饼干（鹿煎饼）来喂鹿' },
+      { en: 'Major Temples: Home to Todaiji, Kasuga Taisha, and Kofukuji temples', zh: '主要寺庙: 东大寺、春日大社和兴福寺的所在地' },
+      { en: 'Cherry Blossoms: Beautiful sakura trees throughout the park in spring', zh: '樱花: 春天整个公园都有美丽的樱花树' },
+    ],
+    tips: [
+      { en: 'Deer Crackers: Available for ¥200 - be careful, deer can be persistent!', zh: '鹿饼干: 售价200日元 - 小心，鹿可能会很坚持！' },
+      { en: 'Respect the Deer: Don\'t tease or chase them - they can bow for food!', zh: '尊重鹿: 不要戏弄或追逐它们 - 它们会为食物鞠躬！' },
+      { en: 'Early Morning: Best time to visit with fewer crowds and active deer', zh: '清晨: 参观的最佳时间，人少，鹿活跃' },
+    ],
+  },
+  'todaiji': {
+    id: 'todaiji',
+    title: { en: 'Todaiji Temple', zh: '东大寺' },
+    location: { en: 'Nara', zh: '奈良' },
+    city: 'nara',
+    price: '¥600',
+    hours: { en: '7:30 AM - 5:30 PM (Apr-Oct), 8:00 AM - 5:00 PM (Nov-Mar)', zh: '早上7:30 - 下午5:30（4-10月），早上8:00 - 下午5:00（11-3月）' },
+    images: [
+      '/attractions/todaiji/main-hall-exterior.jpg',
+      '/attractions/todaiji/great-buddha.jpg',
+      '/attractions/todaiji/temple-complex.jpg',
+    ],
+    about: {
+      en: "Todaiji (Great Eastern Temple) is one of Japan's most famous and historically significant temples. Founded in 752 AD, it was constructed by Emperor Shomu to serve as the head temple of all provincial Buddhist temples. The main hall (Daibutsuden) is the world's largest wooden building, despite being rebuilt at only two-thirds of its original size after fires. Inside stands the Great Buddha (Daibutsu), a massive bronze statue of Vairocana Buddha that is 15 meters tall and weighs 500 tons. The temple complex also includes the Nandaimon Gate with its fierce guardian statues and the Nigatsudo Hall with beautiful views.",
+      zh: '东大寺（大东寺）是日本最著名和历史意义最重大的寺庙之一。建于公元752年，由圣武天皇建造，作为所有省级佛教寺庙的总本山。主殿（大佛殿）是世界上最大的木制建筑，尽管在火灾后重建时只有原始尺寸的三分之二。内部矗立着大佛（大仏），一尊巨大的毗卢遮那佛青铜雕像，高15米，重500吨。寺庙建筑群还包括有凶猛守护神像的南大门和有美丽景色的二月堂。'
+    },
+    highlights: [
+      { en: 'Great Buddha Hall: World\'s largest wooden building housing the massive bronze Buddha statue', zh: '大佛殿: 世界上最大的木制建筑，内有巨大的青铜佛像' },
+      { en: 'Great Buddha: 15-meter tall bronze statue weighing 500 tons - one of Japan\'s largest', zh: '大佛: 高15米、重500吨的青铜雕像 - 日本最大的之一' },
+      { en: 'Nandaimon Gate: Massive gate with fierce guardian statues (Nio)', zh: '南大门: 有凶猛守护神像（仁王）的巨大门' },
+      { en: 'Pillar Hole: Try to crawl through a hole in a pillar - said to bring enlightenment', zh: '柱子洞: 尝试爬过柱子上的洞 - 据说能带来开悟' },
+    ],
+    tips: [
+      { en: 'Early Visit: Arrive early to avoid crowds, especially during peak season', zh: '早到: 早到以避开人群，特别是在旺季' },
+      { en: 'Pillar Challenge: The hole in the pillar is said to be the same size as the Buddha\'s nostril', zh: '柱子挑战: 柱子上的洞据说与佛像的鼻孔大小相同' },
+      { en: 'Combined Ticket: Consider buying a combined ticket for multiple Nara attractions', zh: '联票: 考虑购买多个奈良景点的联票' },
+    ],
+  },
+  'kasuga': {
+    id: 'kasuga',
+    title: { en: 'Kasuga Taisha', zh: '春日大社' },
+    location: { en: 'Nara', zh: '奈良' },
+    city: 'nara',
+    price: 'Free (Main Area) | ¥500 (Inner Area)',
+    hours: { en: '6:00 AM - 6:00 PM (Apr-Sep), 6:30 AM - 5:00 PM (Oct-Mar)', zh: '早上6:00 - 下午6:00（4-9月），早上6:30 - 下午5:00（10-3月）' },
+    images: [
+      '/attractions/kasuga/main-hall-vermillion.png',
+      '/attractions/kasuga/lanterns.jpg',
+      '/attractions/kasuga/torii-path.jpg',
+    ],
+    about: {
+      en: "Kasuga Taisha is Nara's most celebrated Shinto shrine, famous for its 3,000 stone and bronze lanterns. Founded in 768 AD, the shrine is dedicated to the deity responsible for the protection of Nara. The approach to the shrine is lined with hundreds of stone lanterns, creating a magical pathway. The main hall features hundreds of bronze lanterns hanging from the eaves. The shrine is especially beautiful during the Lantern Festivals in February and August when all lanterns are lit. The vermillion-colored buildings stand out beautifully against the surrounding forest.",
+      zh: '春日大社是奈良最著名的神道教神社，以其3,000个石制和青铜灯笼而闻名。建于公元768年，神社供奉负责保护奈良的神灵。通往神社的道路两旁有数百个石制灯笼，创造出一条神奇的路径。主殿有数百个青铜灯笼从屋檐垂下。神社在2月和8月的灯笼节期间特别美丽，所有灯笼都被点亮。朱红色的建筑在周围的森林中显得格外美丽。'
+    },
+    highlights: [
+      { en: '3,000 Lanterns: Stone and bronze lanterns throughout the shrine grounds', zh: '3,000个灯笼: 整个神社场地的石制和青铜灯笼' },
+      { en: 'Lantern Festivals: All lanterns lit during festivals in February and August', zh: '灯笼节: 在2月和8月的节日期间，所有灯笼都被点亮' },
+      { en: 'Vermillion Buildings: Beautiful traditional architecture in vibrant vermillion color', zh: '朱红色建筑: 鲜艳朱红色的美丽传统建筑' },
+      { en: 'Stone Lantern Path: Magical pathway lined with hundreds of stone lanterns', zh: '石灯笼路径: 两旁有数百个石灯笼的神奇路径' },
+    ],
+    tips: [
+      { en: 'Lantern Festivals: Visit in February or August to see all lanterns lit', zh: '灯笼节: 在2月或8月参观，看到所有灯笼被点亮' },
+      { en: 'Early Morning: Beautiful lighting and fewer crowds in the morning', zh: '清晨: 早晨光线美丽，人少' },
+      { en: 'Inner Area: Pay ¥500 to see the inner area with more lanterns', zh: '内区: 支付500日元参观内区，有更多灯笼' },
+    ],
+  },
+  'osaka-castle': {
+    id: 'osaka-castle',
+    title: { en: 'Osaka Castle', zh: '大阪城' },
+    location: { en: 'Osaka', zh: '大阪' },
+    city: 'osaka',
+    price: 'Free (Park) | ¥600 (Castle Tower)',
+    hours: { en: '9:00 AM - 5:00 PM (Castle Tower)', zh: '上午9:00 - 下午5:00（天守阁）' },
+    images: [
+      '/attractions/osaka-castle/cherry-blossom-spring.jpg',
+      '/attractions/osaka-castle/castle-tower.jpg',
+      '/attractions/osaka-castle/gardens.jpg',
+    ],
+    about: {
+      en: "Osaka Castle is one of Japan's most famous castles, originally built in 1583 by Toyotomi Hideyoshi. The current castle tower is a concrete reconstruction completed in 1931, but it houses a museum with artifacts and displays about the castle's history. The castle is surrounded by beautiful gardens and moats, making it a popular spot for cherry blossom viewing in spring. The castle played a crucial role in the unification of Japan during the 16th century. The observation deck on the 8th floor offers panoramic views of Osaka city.",
+      zh: '大阪城是日本最著名的城堡之一，最初由丰臣秀吉于1583年建造。现在的天守阁是1931年完成的混凝土重建，但它设有一个博物馆，展示有关城堡历史的文物和展品。城堡被美丽的花园和护城河所环绕，使其成为春季赏樱的热门地点。城堡在16世纪日本统一中发挥了关键作用。8楼的观景台可欣赏大阪市的全景。'
+    },
+    highlights: [
+      { en: 'Castle Tower: 8-story reconstruction with museum and observation deck', zh: '天守阁: 8层重建，有博物馆和观景台' },
+      { en: 'Cherry Blossoms: Beautiful sakura trees throughout the park in spring', zh: '樱花: 春天整个公园都有美丽的樱花树' },
+      { en: 'Museum: Exhibits about Toyotomi Hideyoshi and the castle\'s history', zh: '博物馆: 关于丰臣秀吉和城堡历史的展览' },
+      { en: 'Gardens: Beautiful traditional Japanese gardens surrounding the castle', zh: '花园: 围绕城堡的美丽传统日本花园' },
+    ],
+    tips: [
+      { en: 'Cherry Blossom Season: Visit in late March to early April for stunning views', zh: '樱花季节: 在3月下旬至4月初参观，欣赏令人惊叹的景色' },
+      { en: 'Observation Deck: Great views of Osaka from the 8th floor', zh: '观景台: 从8楼可以欣赏到大阪的美景' },
+      { en: 'Park is Free: You can enjoy the gardens and exterior without entering the tower', zh: '公园免费: 您可以享受花园和外观，无需进入天守阁' },
+    ],
+  },
+  'usj': {
+    id: 'usj',
+    title: { en: 'Universal Studios Japan', zh: '环球影城' },
+    location: { en: 'Osaka', zh: '大阪' },
+    city: 'osaka',
+    price: '~¥9,500',
+    hours: { en: 'Varies by Season (Usually 9 AM - 8 PM)', zh: '因季节而异（通常上午9点 - 晚上8点）' },
+    images: [
+      '/attractions/usj/universal-globe-iconic.jpg',
+      '/attractions/usj/harry-potter-world.jpg',
+      '/attractions/usj/nintendo-world.jpg',
+    ],
+    about: {
+      en: "Universal Studios Japan (USJ) is one of Japan's most popular theme parks, featuring attractions based on Hollywood movies and Japanese pop culture. The park is famous for its Wizarding World of Harry Potter, Super Nintendo World (the first of its kind globally), and various themed areas. With thrilling rides, shows, and character meet-and-greets, USJ offers entertainment for all ages. The park is especially popular with both Japanese and international visitors, so expect crowds and consider purchasing Express Passes for popular attractions.",
+      zh: '日本环球影城（USJ）是日本最受欢迎的主题公园之一，设有基于好莱坞电影和日本流行文化的景点。该公园以其哈利波特魔法世界、超级任天堂世界（全球首个此类世界）和各种主题区域而闻名。凭借惊险的游乐设施、表演和角色见面会，USJ为所有年龄段提供娱乐。该公园在日本和国际游客中特别受欢迎，因此预计会有人群，并考虑为热门景点购买快速通行证。'
+    },
+    highlights: [
+      { en: 'Super Nintendo World: First-of-its-kind interactive theme park area with Mario Kart ride', zh: '超级任天堂世界: 首个互动主题公园区域，有马里奥卡丁车游乐设施' },
+      { en: 'Wizarding World of Harry Potter: Immersive experience with Hogwarts Castle and Butterbeer', zh: '哈利波特魔法世界: 沉浸式体验，有霍格沃茨城堡和黄油啤酒' },
+      { en: 'The Flying Dinosaur: One of the world\'s longest and fastest flying roller coasters', zh: '飞天翼龙: 世界上最长和最快的飞行过山车之一' },
+    ],
+    tips: [
+      { en: 'Express Passes: Highly recommended to avoid long wait times', zh: '快速通行证: 强烈推荐以避免长时间等待' },
+      { en: 'Early Arrival: Arrive before opening time to be first in line', zh: '早到: 在开放时间前到达，成为第一批' },
+      { en: 'Nintendo World: May require timed entry ticket - check park app', zh: '任天堂世界: 可能需要定时入场票 - 查看公园应用' },
+    ],
+  },
+  'kobe-port': {
+    id: 'kobe-port',
+    title: { en: 'Kobe Port Tower', zh: '神户塔' },
+    location: { en: 'Kobe', zh: '神户' },
+    city: 'kobe',
+    price: '¥700',
+    hours: { en: '9:00 AM - 9:00 PM', zh: '上午9:00 - 晚上9:00' },
+    images: [
+      '/attractions/kobe-port/tower-illuminated-night.jpg',
+      '/attractions/kobe-port/harbor-view.jpg',
+      '/attractions/kobe-port/tower-day.jpg',
+    ],
+    about: {
+      en: "Kobe Port Tower is an iconic red steel tower that has become the symbol of Kobe. Standing 108 meters tall, the tower was completed in 1963 to commemorate the 90th anniversary of Kobe's opening as a port city. The tower's unique design resembles a traditional Japanese drum (tsuzumi) and offers panoramic views of Kobe city, the port, and the surrounding mountains. The tower is especially beautiful at night when it's illuminated in various colors. The observation deck provides 360-degree views, and there's a revolving restaurant on the 3rd floor.",
+      zh: '神户塔是一个标志性的红色钢塔，已成为神户的象征。高108米，该塔于1963年完工，以纪念神户作为港口城市开放90周年。塔的独特设计类似于传统的日本鼓（鼓），可欣赏神户市、港口和周围山脉的全景。塔在夜晚特别美丽，当它以各种颜色点亮时。观景台提供360度视野，3楼有一个旋转餐厅。'
+    },
+    highlights: [
+      { en: 'Panoramic Views: 360-degree views of Kobe city, port, and mountains', zh: '全景: 神户市、港口和山脉的360度视野' },
+      { en: 'Night Illumination: Beautifully lit in various colors at night', zh: '夜间照明: 在夜晚以各种颜色美丽地点亮' },
+      { en: 'Unique Design: Resembles a traditional Japanese drum (tsuzumi)', zh: '独特设计: 类似于传统的日本鼓（鼓）' },
+      { en: 'Revolving Restaurant: Dine with a view on the 3rd floor', zh: '旋转餐厅: 在3楼用餐，欣赏美景' },
+    ],
+    tips: [
+      { en: 'Night Visit: Most beautiful when illuminated at night', zh: '夜晚参观: 在夜晚点亮时最美丽' },
+      { en: 'Clear Day: Best views on clear days with good visibility', zh: '晴天: 在能见度好的晴天视野最佳' },
+      { en: 'Combined Ticket: Consider buying a ticket with Harborland attractions', zh: '联票: 考虑购买与港湾乐园景点的联票' },
+    ],
+  },
+  'harborland': {
+    id: 'harborland',
+    title: { en: 'Harborland', zh: '港湾乐园' },
+    location: { en: 'Kobe', zh: '神户' },
+    city: 'kobe',
+    price: 'Free',
+    hours: { en: 'Shops: 10 AM - 9 PM', zh: '商店: 上午10点 - 晚上9点' },
+    images: [
+      '/attractions/harborland/ferris-wheel-waterfront.jpg',
+      '/attractions/harborland/shopping-district.jpg',
+      '/attractions/harborland/waterfront-view.jpg',
+    ],
+    about: {
+      en: "Harborland is Kobe's premier waterfront shopping and entertainment district, located near Kobe Port. The area features a large shopping mall (Umie), restaurants, cafes, and entertainment facilities. The highlight is the giant Ferris wheel offering panoramic views of Kobe Bay and the city. The area is perfect for shopping, dining, and enjoying the waterfront atmosphere. Harborland is especially beautiful at sunset and in the evening when the area is illuminated. It's a great place to relax after exploring Kobe's other attractions.",
+      zh: '港湾乐园是神户首屈一指的海滨购物和娱乐区，位于神户港附近。该地区设有大型购物中心（Umie）、餐厅、咖啡厅和娱乐设施。亮点是提供神户湾和城市全景的巨型摩天轮。该地区非常适合购物、用餐和享受海滨氛围。港湾乐园在日落和傍晚特别美丽，当该地区被点亮时。这是在探索神户其他景点后放松的好地方。'
+    },
+    highlights: [
+      { en: 'Giant Ferris Wheel: Panoramic views of Kobe Bay and city', zh: '巨型摩天轮: 神户湾和城市的全景' },
+      { en: 'Shopping Mall: Large shopping complex with various stores', zh: '购物中心: 有各种商店的大型购物中心' },
+      { en: 'Waterfront Dining: Restaurants and cafes with harbor views', zh: '海滨餐饮: 有港口景色的餐厅和咖啡厅' },
+      { en: 'Evening Illumination: Beautiful lighting in the evening', zh: '夜间照明: 傍晚美丽的照明' },
+    ],
+    tips: [
+      { en: 'Sunset Visit: Most beautiful during sunset hours', zh: '日落参观: 在日落时段最美丽' },
+      { en: 'Ferris Wheel: Great views especially on clear days', zh: '摩天轮: 特别是在晴天的美景' },
+      { en: 'Shopping: Great place to buy Kobe souvenirs', zh: '购物: 购买神户纪念品的绝佳地点' },
+    ],
+  },
+  'rokkosan-pasture': {
+    id: 'rokkosan-pasture',
+    title: { en: 'Rokkosan Pasture', zh: '六甲山牧场' },
+    location: { en: 'Kobe', zh: '神户' },
+    city: 'kobe',
+    price: '¥500',
+    hours: { en: '9:00 AM - 5:00 PM', zh: '上午9:00 - 下午5:00' },
+    images: [
+      '/attractions/rokkosan-pasture/sheep-grazing-hillside.jpg',
+      '/attractions/rokkosan-pasture/mountain-views.jpg',
+      '/attractions/rokkosan-pasture/pasture-scenery.jpg',
+    ],
+    about: {
+      en: "Rokkosan Pasture is a beautiful mountain farm located on Mount Rokko, offering a peaceful escape from the city with scenic views, farm animals, and fresh air. The pasture features sheep, cows, and other farm animals that visitors can interact with. The area offers stunning panoramic views of Kobe city and Osaka Bay. Visitors can enjoy fresh dairy products, take part in farm activities, and relax in the natural mountain setting. The pasture is especially beautiful during spring and autumn when the weather is pleasant and the views are clear.",
+      zh: '六甲山牧场是一个美丽的山地农场，位于六甲山上，提供远离城市的宁静，有风景、农场动物和新鲜空气。牧场有绵羊、奶牛和其他农场动物，游客可以与它们互动。该地区提供神户市和大阪湾的令人惊叹的全景。游客可以享受新鲜乳制品，参加农场活动，并在自然山地环境中放松。牧场在春季和秋季特别美丽，天气宜人，视野清晰。'
+    },
+    highlights: [
+      { en: 'Farm Animals: Interact with sheep, cows, and other farm animals', zh: '农场动物: 与绵羊、奶牛和其他农场动物互动' },
+      { en: 'Mountain Views: Panoramic views of Kobe city and Osaka Bay', zh: '山景: 神户市和大阪湾的全景' },
+      { en: 'Fresh Dairy: Enjoy fresh milk, ice cream, and other dairy products', zh: '新鲜乳制品: 享受新鲜牛奶、冰淇淋和其他乳制品' },
+      { en: 'Natural Setting: Peaceful mountain environment away from the city', zh: '自然环境: 远离城市的宁静山地环境' },
+    ],
+    tips: [
+      { en: 'Weather Check: Mountain weather can be different - bring layers', zh: '天气检查: 山地天气可能不同 - 带多层衣服' },
+      { en: 'Clear Day: Best views on clear days with good visibility', zh: '晴天: 在能见度好的晴天视野最佳' },
+      { en: 'Dairy Products: Don\'t miss the fresh ice cream and milk', zh: '乳制品: 不要错过新鲜冰淇淋和牛奶' },
     ],
   },
 }

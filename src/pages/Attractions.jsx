@@ -48,18 +48,21 @@ const Attractions = () => {
         image: '/attractions/fushimi-inari/torii-tunnel-day.jpg',
       },
       {
+        id: 'kiyomizu',
         title: t('Kiyomizu-dera', '清水寺'),
         description: t('UNESCO World Heritage temple with wooden stage', '联合国教科文组织世界遗产，有木制舞台'),
         price: '¥400',
         image: '/attractions/kiyomizu/main-hall-veranda.jpg',
       },
       {
+        id: 'gion',
         title: t('Gion District', '祇园区'),
         description: t('Historic geisha district with traditional architecture', '历史悠久的艺伎区，有传统建筑'),
         price: 'Free',
         image: '/attractions/gion/hanamikoji-street.jpg',
       },
       {
+        id: 'yasaka',
         title: t('Yasaka Shrine', '八坂神社'),
         description: t('Beautiful shrine with hundreds of lanterns', '美丽的神社，有数百个灯笼'),
         price: 'Free',
@@ -68,18 +71,21 @@ const Attractions = () => {
     ],
     nara: [
       {
+        id: 'nara-park',
         title: t('Nara Park', '奈良公园'),
         description: t('Friendly deer roaming freely in beautiful park', '友好的鹿在美丽的公园中自由漫游'),
         price: 'Free',
         image: '/attractions/nara-park/cherry-blossom-deer.jpg',
       },
       {
+        id: 'todaiji',
         title: t('Todaiji Temple', '东大寺'),
         description: t('Great Buddha Hall with massive bronze statue', '大佛殿，有巨大的青铜雕像'),
         price: '¥600',
         image: '/attractions/todaiji/main-hall-exterior.jpg',
       },
       {
+        id: 'kasuga',
         title: t('Kasuga Taisha', '春日大社'),
         description: t('Shrine with 3000 stone lanterns', '拥有3000个石灯笼的神社'),
         price: 'Free',
@@ -88,18 +94,21 @@ const Attractions = () => {
     ],
     osaka: [
       {
+        id: 'dotonbori',
         title: t('Dotonbori', '道顿堀'),
         description: t('Famous food street with Glico running man sign', '著名的美食街，有格力高跑男广告牌'),
         price: 'Free',
         image: '/attractions/dotonbori/canal-night-view.jpg',
       },
       {
+        id: 'osaka-castle',
         title: t('Osaka Castle', '大阪城'),
         description: t('Historic castle with museum and beautiful gardens', '历史悠久的城堡，有博物馆和美丽的花园'),
         price: 'Free',
         image: '/attractions/osaka-castle/cherry-blossom-spring.jpg',
       },
       {
+        id: 'usj',
         title: t('Universal Studios Japan', '环球影城'),
         description: t('Theme park with Harry Potter, Super Nintendo World', '主题公园，有哈利波特、超级任天堂世界'),
         price: '~¥9,500',
@@ -108,18 +117,21 @@ const Attractions = () => {
     ],
     kobe: [
       {
+        id: 'kobe-port',
         title: t('Kobe Port Tower', '神户塔'),
         description: t('Iconic red tower with panoramic port views', '标志性的红色塔，可欣赏港口全景'),
         price: '¥700',
         image: '/attractions/kobe-port/tower-illuminated-night.jpg',
       },
       {
+        id: 'harborland',
         title: t('Harborland', '港湾乐园'),
         description: t('Waterfront shopping and dining district', '海滨购物和餐饮区'),
         price: 'Free',
         image: '/attractions/harborland/ferris-wheel-waterfront.jpg',
       },
       {
+        id: 'rokkosan-pasture',
         title: t('Rokkosan Pasture', '六甲山牧场'),
         description: t('Mountain farm with sheep and scenic views', '有绵羊和风景的山地农场'),
         price: '¥500',

@@ -38,6 +38,8 @@ const BudgetSplitter = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [expandedCategories, setExpandedCategories] = useState(new Set())
+  const [activeTab, setActiveTab] = useState('summary')
+  const [selectedMembers, setSelectedMembers] = useState(new Set())
 
   useEffect(() => {
     loadState()
@@ -65,6 +67,7 @@ const BudgetSplitter = () => {
       if (membersData.length > 0) {
         setExpPaidBy(membersData[0].id)
         setSplitWith(new Set(membersData.map(m => m.id)))
+        setSelectedMembers(new Set(membersData.map(m => m.id))) // Select all by default
       } else {
         // Initialize with default members if database is empty
         await initializeDefaultMembers()
@@ -115,6 +118,7 @@ const BudgetSplitter = () => {
       if (state.members && state.members.length > 0) {
         setExpPaidBy(state.members[0].id)
         setSplitWith(new Set(state.members.map(m => m.id)))
+        setSelectedMembers(new Set(state.members.map(m => m.id))) // Select all by default
       }
     } catch {
       const defaultMembers = DEFAULT_MEMBERS.map(name => ({ id: uniqId(), name }))
@@ -163,12 +167,14 @@ const BudgetSplitter = () => {
         setMembers(newMembers)
         if (!expPaidBy) setExpPaidBy(newMember.id)
         setSplitWith(prev => new Set([...prev, newMember.id]))
+        setSelectedMembers(prev => new Set([...prev, newMember.id])) // Auto-select new member
       } else {
         const newMember = { id: uniqId(), name }
         const newMembers = [...members, newMember]
         setMembers(newMembers)
         if (!expPaidBy) setExpPaidBy(newMember.id)
         setSplitWith(prev => new Set([...prev, newMember.id]))
+        setSelectedMembers(prev => new Set([...prev, newMember.id])) // Auto-select new member
         saveToLocalStorage({ members: newMembers, expenses })
       }
       
@@ -215,6 +221,11 @@ const BudgetSplitter = () => {
 
       if (expPaidBy === id && newMembers.length > 0) setExpPaidBy(newMembers[0].id)
       setSplitWith(prev => {
+        const next = new Set(prev)
+        next.delete(id)
+        return next
+      })
+      setSelectedMembers(prev => {
         const next = new Set(prev)
         next.delete(id)
         return next
@@ -402,11 +413,12 @@ const BudgetSplitter = () => {
   }
 
   const exportCSV = () => {
-    const header = ['Date', 'Category', 'Currency', 'Description', 'Amount', 'PaidBy', ...members.map(m => m.name)]
+    const selectedMembersList = members.filter(m => selectedMembers.has(m.id))
+    const header = ['Date', 'Category', 'Currency', 'Description', 'Amount', 'PaidBy', ...selectedMembersList.map(m => m.name)]
     const rows = [header]
     expenses.forEach(exp => {
       const paidByName = members.find(m => m.id === exp.paidBy)?.name || ''
-      const memberAmounts = members.map(m => {
+      const memberAmounts = selectedMembersList.map(m => {
         const splitAmount = exp.splits?.[m.id] || 0
         return splitAmount > 0 ? Number(splitAmount).toFixed(2) : ''
       })
@@ -510,6 +522,28 @@ const BudgetSplitter = () => {
             </div>
           )}
         </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex gap-2 mb-6 border-b border-slate-200">
+        <button
+          onClick={() => setActiveTab('summary')}
+          className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
+            activeTab === 'summary'
+              ? 'border-emerald-600 text-emerald-600'
+              : 'border-transparent text-slate-600 hover:text-slate-800'
+          }`}
+        >
+          <i className="fa-solid fa-chart-pie mr-2"></i>
+          {t('Summary', '摘要')}
+        </button>
+        <Link
+          to="/split-expenses/expenses"
+          className={`px-6 py-3 font-semibold transition-colors border-b-2 border-transparent text-slate-600 hover:text-slate-800`}
+        >
+          <i className="fa-solid fa-list mr-2"></i>
+          {t('Expenses', '费用')}
+        </Link>
       </div>
 
       {/* Main Content */}
@@ -736,7 +770,7 @@ const BudgetSplitter = () => {
           )}
         </div>
 
-        {/* Right Column: Summary & Expenses */}
+        {/* Right Column: Summary */}
         <div className="glass-card p-6">
           <div className="flex justify-between items-center mb-4">
             <div>
@@ -747,6 +781,55 @@ const BudgetSplitter = () => {
                 {t('Totals are per member (based on splits), not "paid by".', '总计按成员（基于分摊），而非"付款人"。')}
               </p>
             </div>
+          </div>
+
+          {/* Member Filter */}
+          <div className="mb-4 p-3 bg-slate-50 rounded-lg border border-slate-200">
+            <label className="block text-sm font-semibold text-slate-700 mb-2">
+              {t('Show Members', '显示成员')}
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {members.map(m => (
+                <label key={m.id} className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={selectedMembers.has(m.id)}
+                    onChange={() => {
+                      setSelectedMembers(prev => {
+                        const next = new Set(prev)
+                        if (next.has(m.id)) {
+                          next.delete(m.id)
+                        } else {
+                          next.add(m.id)
+                        }
+                        return next
+                      })
+                    }}
+                    className="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500"
+                  />
+                  <span className="text-sm">{m.name}</span>
+                </label>
+              ))}
+            </div>
+            <div className="flex gap-2 mt-2">
+              <button
+                onClick={() => setSelectedMembers(new Set(members.map(m => m.id)))}
+                className="text-xs text-emerald-600 hover:text-emerald-800 font-semibold"
+              >
+                {t('Select All', '全选')}
+              </button>
+              <span className="text-xs text-slate-400">|</span>
+              <button
+                onClick={() => setSelectedMembers(new Set())}
+                className="text-xs text-slate-600 hover:text-slate-800 font-semibold"
+              >
+                {t('Deselect All', '全不选')}
+              </button>
+            </div>
+          </div>
+
+          <div className="flex justify-between items-center mb-4">
+            <div></div>
             <div className="flex gap-2">
               <button
                 onClick={exportCSV}
@@ -799,7 +882,7 @@ const BudgetSplitter = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            {members.map(m => {
+                            {members.filter(m => selectedMembers.has(m.id)).map(m => {
                               const v = totals[cur][m.id] || 0
                               return (
                                 <tr key={m.id} className="border-t border-slate-200">
@@ -808,6 +891,13 @@ const BudgetSplitter = () => {
                                 </tr>
                               )
                             })}
+                            {members.filter(m => selectedMembers.has(m.id)).length === 0 && (
+                              <tr>
+                                <td colSpan="2" className="p-2 text-xs text-slate-500 text-center">
+                                  {t('No members selected', '未选择成员')}
+                                </td>
+                              </tr>
+                            )}
                           </tbody>
                         </table>
                       </div>
@@ -895,106 +985,6 @@ const BudgetSplitter = () => {
               })
             )}
           </div>
-
-          <hr className="border-slate-200 my-6" />
-
-          <h2 className="font-header text-xl font-bold text-slate-800 mb-4">
-            {t('Expenses', '费用')}
-          </h2>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border border-slate-200 rounded-lg">
-              <thead className="bg-slate-100">
-                <tr>
-                  <th className="text-left p-2 font-semibold text-slate-700 min-w-[95px]">{t('Date', '日期')}</th>
-                  <th className="text-left p-2 font-semibold text-slate-700 min-w-[90px]">{t('Category', '类别')}</th>
-                  <th className="text-left p-2 font-semibold text-slate-700">{t('Description', '描述')}</th>
-                  <th className="text-left p-2 font-semibold text-slate-700 min-w-[95px]">{t('Paid by', '付款人')}</th>
-                  <th className="text-right p-2 font-semibold text-slate-700 min-w-[110px]">{t('Amount', '金额')}</th>
-                  {members.map(m => (
-                    <th key={m.id} className="text-right p-2 font-semibold text-slate-700 min-w-[100px]">{m.name}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {expenses.length === 0 ? (
-                  <tr>
-                    <td colSpan={5 + members.length} className="p-4 text-center text-slate-500 text-sm">
-                      {t('No expenses yet.', '还没有费用。')}
-                    </td>
-                  </tr>
-                ) : (
-                  [...expenses].sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(exp => {
-                    const paidByName = members.find(m => m.id === exp.paidBy)?.name || '-'
-                    return (
-                      <tr 
-                        key={exp.id} 
-                        className="border-t border-slate-200 hover:bg-slate-50"
-                      >
-                        <td className="p-2">
-                          <Link 
-                            to={`/split-expenses/expense/${exp.id}`}
-                            className="block hover:text-emerald-600 transition-colors"
-                          >
-                            {exp.date || ''}
-                          </Link>
-                        </td>
-                        <td className="p-2">
-                          <Link 
-                            to={`/split-expenses/expense/${exp.id}`}
-                            className="block hover:text-emerald-600 transition-colors"
-                          >
-                            {exp.category || ''}
-                          </Link>
-                        </td>
-                        <td className="p-2 max-w-xs break-words text-sm">
-                          <Link 
-                            to={`/split-expenses/expense/${exp.id}`}
-                            className="block hover:text-emerald-600 transition-colors"
-                          >
-                            {exp.description || exp.desc || ''}
-                          </Link>
-                        </td>
-                        <td className="p-2">
-                          <Link 
-                            to={`/split-expenses/expense/${exp.id}`}
-                            className="block hover:text-emerald-600 transition-colors"
-                          >
-                            {paidByName}
-                          </Link>
-                        </td>
-                        <td className="p-2 text-right font-semibold">
-                          <Link 
-                            to={`/split-expenses/expense/${exp.id}`}
-                            className="block hover:text-emerald-600 transition-colors"
-                          >
-                            {formatMoney(exp.amount, exp.currency)}
-                          </Link>
-                        </td>
-                        {members.map(m => {
-                          const splitAmount = exp.splits?.[m.id] || 0
-                          return (
-                            <td key={m.id} className="p-2 text-right text-xs text-slate-600">
-                              <Link 
-                                to={`/split-expenses/expense/${exp.id}`}
-                                className="block hover:text-emerald-600 transition-colors"
-                              >
-                                {splitAmount > 0 ? formatMoney(splitAmount, exp.currency) : ''}
-                              </Link>
-                            </td>
-                          )
-                        })}
-                      </tr>
-                    )
-                  })
-                )}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="text-xs text-slate-500 mt-4">
-            {t('Tip: If you want "who owes who" settlement later, tell me and I\'ll add it.', '提示：如果您想要"谁欠谁"的结算功能，告诉我，我会添加它。')}
-          </p>
         </div>
       </div>
     </div>

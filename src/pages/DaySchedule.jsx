@@ -137,31 +137,8 @@ const DaySchedule = () => {
 
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 max-w-5xl mx-auto pb-24">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <div className={`inline-block ${getColorClasses(dayData.color).split(' ')[2]} px-6 py-2 rounded-full mb-4`}>
-          <span className="font-bold text-sm text-white">
-            {t('Day', '第')} {dayData.day} {t('Day', '天')}
-          </span>
-        </div>
-        <h1 className={`text-4xl md:text-5xl font-header font-bold mb-2 ${getColorClasses(dayData.color).split(' ')[1]}`}>
-          {typeof dayData.title === 'string' ? dayData.title : t(dayData.title?.en || '', dayData.title?.zh || '')}
-        </h1>
-        <p className="text-pink-500 font-bold text-lg uppercase tracking-widest">
-          {dayData.date} {dayData.isHoliday && t('(Holiday)', '(假日)')}
-        </p>
-        <p className="text-slate-500 text-sm mt-2">📍 {dayData.location}</p>
-      </div>
-
-      {/* Schedule Details */}
-      <div className={`glass-card border-l-4 ${getColorClasses(dayData.color).split(' ')[0]} mb-8 p-6`}>
-        <ul className="space-y-1">
-          {dayData.items.map((item, itemIndex) => renderItem(item, itemIndex))}
-        </ul>
-      </div>
-
-      {/* Navigation */}
-      <div className="flex justify-between items-center pt-6 border-t border-slate-200">
+      {/* Navigation - Moved to Top */}
+      <div className="flex justify-between items-center mb-6 pb-4 border-b border-slate-200">
         {prevDay ? (
           <Link
             to={`/schedule/day/${prevDay}`}
@@ -204,6 +181,29 @@ const DaySchedule = () => {
             <i className="fa-solid fa-arrow-right"></i>
           </Link>
         )}
+      </div>
+
+      {/* Header */}
+      <div className="text-center mb-8">
+        <div className={`inline-block ${getColorClasses(dayData.color).split(' ')[2]} px-6 py-2 rounded-full mb-4`}>
+          <span className="font-bold text-sm text-white">
+            {t('Day', '第')} {dayData.day} {t('Day', '天')}
+          </span>
+        </div>
+        <h1 className={`text-4xl md:text-5xl font-header font-bold mb-2 ${getColorClasses(dayData.color).split(' ')[1]}`}>
+          {typeof dayData.title === 'string' ? dayData.title : t(dayData.title?.en || '', dayData.title?.zh || '')}
+        </h1>
+        <p className="text-pink-500 font-bold text-lg uppercase tracking-widest">
+          {dayData.date} {dayData.isHoliday && t('(Holiday)', '(假日)')}
+        </p>
+        <p className="text-slate-500 text-sm mt-2">📍 {dayData.location}</p>
+      </div>
+
+      {/* Schedule Details */}
+      <div className={`glass-card border-l-4 ${getColorClasses(dayData.color).split(' ')[0]} mb-8 p-6`}>
+        <ul className="space-y-1">
+          {dayData.items.map((item, itemIndex) => renderItem(item, itemIndex))}
+        </ul>
       </div>
     </div>
   )
