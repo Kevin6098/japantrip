@@ -262,6 +262,45 @@ Updated the Tokyo accommodation to a new Airbnb listing:
 
 ---
 
+## [2024-12-XX] - Updated Day 2 (March 19) - Tokyo City Tour
+
+### Changes
+Completely replaced Day 2 itinerary from "Old Tokyo" to "Tokyo City Tour" with new activities:
+
+**Previous Day 2**: Old Tokyo (Senso-ji, Ueno Park, Ginza, Tsukishima Monja Street)
+
+**New Day 2 (March 19 - Tokyo City Tour)**:
+- **08:00**: Depart from Airbnb (Katsushika-ku)
+- **08:30**: Pain Maison (Buy bread) - ~15-20 mins
+- **09:00**: Asakusa (Senso-ji Temple) - ~2 hours (explore temple & Nakamise Street)
+- **11:30**: Travel to Ginza
+- **12:00**: Ginza - Lunch & Shopping - ~2 hours
+- **14:00**: Nakamura Tokichi (Matcha Parfait) - Tea time - ~1 hour
+- **15:30**: Travel to Tokyo Station
+- **16:00**: Tokyo Station (Explore & Buy Souvenirs) - ~1.5 hours (before sunset)
+- **17:30**: Travel to Asakusa for dinner
+- **18:00**: Asakusa - Monja Yaki & Okonomiyaki (Dinner) - ~1.5 hours
+- **19:30**: Return to Airbnb (Katsushika-ku)
+
+### Transit Routes & Times Added
+- All transit routes include walking times, train lines, and total travel times
+- Google Maps links added to all locations
+- Duration for each activity specified
+- All routes optimized for efficient travel between locations
+
+### Files Modified
+- `schedule.html` - Completely replaced Day 4 itinerary with new Tokyo City Tour schedule
+
+### Notes
+- Day 2 changed from "Old Tokyo" to "Tokyo City Tour" (March 19)
+- Day 4 (March 21) restored to original "Move to Osaka" schedule
+- All activities include estimated duration times
+- All transit routes include detailed walking times and train connections
+- Google Maps links added for easy navigation
+- Bilingual support maintained (English/Chinese)
+
+---
+
 ## Future Changes
 
 All future changes will be documented below with:
