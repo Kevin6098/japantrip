@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3: Graduation Day - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="text-slate-700 location-tokyo" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../schedule.html" class="nav-link">
+                        <span class="lang-en">← Back to Itinerary</span><span class="lang-zh">← 返回行程</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../schedule.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../schedule.html" class="back-button no-print" aria-label="Back to Itinerary">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-8 pb-20 md:pb-24">
+        <!-- Day Header -->
+        <section class="text-center mb-8">
+            <div class="inline-block bg-indigo-500 text-white px-6 py-2 rounded-full mb-4">
+                <span class="font-bold text-sm"><span class="lang-en">Day 3</span><span class="lang-zh">第3天</span></span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-header font-bold location-heading-tokyo mb-2">
+                <span class="lang-en">Graduation Day</span><span class="lang-zh">毕业典礼日</span>
+            </h1>
+            <p class="text-pink-500 font-bold text-lg uppercase tracking-widest">Fri, Mar 20 (Holiday), 2026</p>
+        </section>
+
+        <!-- Detailed Schedule -->
+        <section class="glass-card p-6 md:p-8">
+            <div class="relative pl-2 md:pl-0 pb-8">
+                <div class="timeline-line"></div>
+                
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 timeline-item">
+                    <div class="timeline-dot" style="border-color: #4f46e5;"></div>
+                    
+                    <div class="schedule-card border-l-indigo-500">
+
+                    <div class="timeline-dot" style="border-color: #4f46e5;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-indigo-700">
+                            <span class="lang-en">Graduation Day</span><span class="lang-zh">毕业典礼日</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Fri, Mar 20 (Holiday)</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-indigo-500">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">08:00</span><span class="text-sm"><span class="lang-en">Depart from Airbnb (Katsushika-ku - 5 mins walk to nearest station)</span><span class="lang-zh">从Airbnb出发 (葛饰区 - 步行5分钟至最近车站)</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 5 mins to nearest station → Keisei Line/Toei Asakusa Line to Asakusa Station (~20-25 mins train) → Walk 5 mins</span><span class="lang-zh">步行5分钟至最近车站 → 京成线/都营浅草线至浅草站 (~20-25分钟电车) → 步行5分钟</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">09:00</span><a href="../attractions/sensoji/sensoji.html" class="text-sm highlight-attraction"><span class="lang-en">Asakusa (Senso-ji Temple)</span><span class="lang-zh">浅草 (浅草寺)</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <a href="https://www.google.com/maps/dir/?api=1&destination=Senso-ji+Temple+Tokyo" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a> <span class="price-badge">Free</span></li>
+                            <span class="transit-badge"><span class="lang-en">Duration: ~2 hours (Explore temple & Nakamise Street)</span><span class="lang-zh">停留时间: 约2小时 (参观寺庙 & 仲见世通)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">11:30</span><a href="https://www.google.com/maps/search/?api=1&query=Ichiran+Ramen+Asakusa+Tokyo" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Ichiran Ramen (Lunch)</span><span class="lang-zh">一兰拉面 (午餐)</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <a href="https://www.google.com/maps/search/?api=1&query=Ichiran+Ramen+Asakusa+Tokyo" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 5-10 mins from Senso-ji (Duration: ~45 mins - Famous tonkotsu ramen, expect possible wait)</span><span class="lang-zh">从浅草寺步行5-10分钟 (停留时间: 约45分钟 - 著名豚骨拉面, 可能需要排队)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">13:00</span><span class="text-sm"><span class="lang-en">Travel to Saitama for Graduation</span><span class="lang-zh">前往埼玉参加毕业典礼</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 5-10 mins to Asakusa Station → Ginza Line to Ueno → JR Utsunomiya Line to Omiya → Tobu Skytree Line to Miyashiro Station (~1h 20m train)</span><span class="lang-zh">步行5-10分钟至浅草站 → 银座线至上野 → JR宇都宫线至大宫 → 东武晴空塔线至宫代站 (~1小时20分钟电车)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">14:30</span><a href="https://www.google.com/search?tbm=isch&q=Nippon+Institute+of+Technology+Miyashiro" target="_blank" class="text-sm font-bold"><span class="lang-en">Nippon Institute of Technology (Graduation Ceremony)</span><span class="lang-zh">日本工业大学 (毕业典礼)</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <a href="https://www.google.com/maps/dir/?api=1&destination=Nippon+Institute+of+Technology+Miyashiro+Saitama" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 10 mins from Miyashiro Station (Duration: ~2-3 hours)</span><span class="lang-zh">从宫代站步行10分钟 (停留时间: 约2-3小时)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">17:30</span><span class="text-sm"><span class="lang-en">Travel to Shibuya</span><span class="lang-zh">前往涩谷</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 10 mins to Miyashiro Station → Tobu Skytree Line to Oshiage → Hanzomon Line to Shibuya (~1h 20m train)</span><span class="lang-zh">步行10分钟至宫代站 → 东武晴空塔线至押上 → 半藏门线至涩谷 (~1小时20分钟电车)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">19:00</span><a href="../attractions/shibuya/shibuya.html" class="text-sm highlight-attraction"><span class="lang-en">Shibuya - Crossing & Hachiko Statue</span><span class="lang-zh">涩谷 - 十字路口 & 八公像</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <a href="https://www.google.com/maps/dir/?api=1&destination=Shibuya+Scramble+Crossing+Tokyo" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 3 mins from Shibuya Station (Duration: ~30-45 mins - Famous scramble crossing & Hachiko statue)</span><span class="lang-zh">从涩谷站步行3分钟 (停留时间: 约30-45分钟 - 著名十字路口 & 八公像)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">20:00</span><a href="https://www.google.com/maps/search/?api=1&query=Tsukada+Shabu+Shabu+Shibuya+Tokyo" target="_blank" class="text-sm highlight-attraction"><span class="lang-en">Tsukada Shabu Shabu (Graduation Celebration Dinner)</span><span class="lang-zh">塚田しゃぶしゃぶ (毕业庆功晚餐)</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <a href="https://www.google.com/maps/search/?api=1&query=Tsukada+Shabu+Shabu+Shibuya+Tokyo" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 3-5 mins from Shibuya Station to Shibuya Scramble Square 12F (Duration: ~1.5-2 hours - Shabu shabu restaurant, hours: 17:00-23:00)</span><span class="lang-zh">从涩谷站步行3-5分钟至涩谷Scramble Square 12楼 (停留时间: 约1.5-2小时 - 涮涮锅餐厅, 营业时间: 17:00-23:00)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge bg-indigo-100 text-indigo-700">22:00</span><span class="text-sm"><span class="lang-en">Return to Airbnb (Katsushika-ku)</span><span class="lang-zh">返回Airbnb (葛饰区)</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 3 mins to Shibuya Station → Hanzomon Line to Oshiage → Keisei Line/Toei Asakusa Line to nearest station in Katsushika-ku (~35-40 mins train) → Walk 5 mins</span><span class="lang-zh">步行3分钟至涩谷站 → 半藏门线至押上 → 京成线/都营浅草线至葛饰区最近车站 (~35-40分钟电车) → 步行5分钟</span></span>
+                        </ul>
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation to Other Days -->
+        <section class="mt-8">
+            <div class="flex justify-between items-center">
+                <a href="day2.html" class="btn-primary"><span class="lang-en">← Previous: Day 2</span><span class="lang-zh">← 上一天: 第2天</span></a>
+                <a href="day4.html" class="btn-primary"><span class="lang-en">Next: Day 4 →</span><span class="lang-zh">下一天: 第4天 →</span></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+</body>
+</html>

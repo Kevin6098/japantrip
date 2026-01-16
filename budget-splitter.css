@@ -1,0 +1,259 @@
+/* Budget Splitter Specific Styles */
+.budget-splitter-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.budget-splitter-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+@media (min-width: 980px) {
+    .budget-splitter-grid {
+        grid-template-columns: 420px 1fr;
+    }
+}
+
+.budget-card {
+    background: #fff;
+    border: 1px solid #e6e8f0;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.03);
+}
+
+.budget-card h2 {
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.budget-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.budget-row3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.budget-label {
+    display: block;
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.budget-input,
+.budget-select,
+.budget-btn {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d8dbe6;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    background: #fff;
+    font-family: 'Noto Sans JP', 'Noto Sans SC', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.budget-input:focus,
+.budget-select:focus {
+    outline: none;
+    border-color: #f472b6;
+    box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.1);
+}
+
+input[type="number"].budget-input {
+    appearance: textfield;
+}
+
+.budget-btn {
+    cursor: pointer;
+    font-weight: 700;
+    border: 0;
+    background: #2563eb;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+.budget-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+.budget-btn:active {
+    transform: translateY(0);
+}
+
+.budget-btn-secondary {
+    background: #1e293b;
+}
+
+.budget-btn-secondary:hover {
+    background: #0f172a;
+}
+
+.budget-btn-ghost {
+    background: #eef2ff;
+    color: #1e40af;
+    border: 1px solid #dbe3ff;
+}
+
+.budget-btn-ghost:hover {
+    background: #e0e7ff;
+    border-color: #c7d2fe;
+}
+
+.budget-btn-danger {
+    background: #dc2626;
+}
+
+.budget-btn-danger:hover {
+    background: #b91c1c;
+}
+
+.budget-muted {
+    font-size: 12px;
+    color: #555;
+}
+
+.budget-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.budget-chip {
+    border: 1px solid #d8dbe6;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fafbff;
+}
+
+.budget-chip button {
+    width: auto;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #1e293b;
+    font-size: 12px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.budget-chip button:hover {
+    background: #0f172a;
+}
+
+.budget-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.budget-table th,
+.budget-table td {
+    border-bottom: 1px solid #eef0f6;
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 13px;
+    vertical-align: top;
+}
+
+.budget-table th {
+    font-size: 12px;
+    color: #333;
+    background: #fafbff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-weight: 600;
+}
+
+.budget-right {
+    text-align: right;
+}
+
+.budget-small {
+    font-size: 12px;
+    color: #444;
+}
+
+.budget-splitBox {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+}
+
+@media (min-width: 520px) {
+    .budget-splitBox {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.budget-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border: 1px solid #e6e8f0;
+    border-radius: 10px;
+    background: #fff;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.budget-check:hover {
+    background: #f8fafc;
+    border-color: #f472b6;
+}
+
+.budget-check input {
+    width: auto;
+    cursor: pointer;
+}
+
+.budget-toolbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.budget-toolbar button {
+    width: auto;
+    padding: 10px 12px;
+}
+
+.budget-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: #1e40af;
+    font-size: 12px;
+}
+
+.budget-warn {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #9a3412;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}

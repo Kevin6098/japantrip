@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4: Move to Osaka - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="text-slate-700 location-osaka" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../schedule.html" class="nav-link">
+                        <span class="lang-en">← Back to Itinerary</span><span class="lang-zh">← 返回行程</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../schedule.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../schedule.html" class="back-button no-print" aria-label="Back to Itinerary">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-8 pb-20 md:pb-24">
+        <!-- Day Header -->
+        <section class="text-center mb-8">
+            <div class="inline-block bg-orange-500 text-white px-6 py-2 rounded-full mb-4">
+                <span class="font-bold text-sm"><span class="lang-en">Day 4</span><span class="lang-zh">第4天</span></span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-header font-bold location-heading-osaka mb-2">
+                <span class="lang-en">Move to Osaka</span><span class="lang-zh">前往大阪</span>
+            </h1>
+            <p class="text-pink-500 font-bold text-lg uppercase tracking-widest">Sat, Mar 21, 2026</p>
+        </section>
+
+        <!-- Detailed Schedule -->
+        <section class="glass-card p-6 md:p-8">
+            <div class="relative pl-2 md:pl-0 pb-8">
+                <div class="timeline-line"></div>
+                
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 timeline-item">
+                    <div class="timeline-dot" style="border-color: #f97316;"></div>
+                    
+                    <div class="schedule-card border-l-orange-500">
+
+                     <div class="timeline-dot" style="border-color: #f97316;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-orange-600">
+                            <span class="lang-en">Move to Osaka</span><span class="lang-zh">前往大阪</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Sat, Mar 21</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-orange-500">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge">11:00</span><span class="text-sm"><span class="lang-en">Travel to Tokyo Station</span><span class="lang-zh">前往东京站</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 5 mins to nearest station in Katsushika-ku → Keisei Line/Toei Asakusa Line to Oshiage → Hanzomon Line to Otemachi → Walk 5 mins to Tokyo Station (~40-45 mins total)</span><span class="lang-zh">步行5分钟至葛饰区最近车站 → 京成线/都营浅草线至押上 → 半藏门线至大手町 → 步行5分钟至东京站 (~40-45分钟总计)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">12:00</span><span class="text-sm"><span class="lang-en">Shinkansen to Shin-Osaka</span><span class="lang-zh">新干线至新大阪</span></span> <a href="https://www.google.com/maps/dir/?api=1&origin=Tokyo+Station&destination=Shin-Osaka+Station&travelmode=transit" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a></li>
+                            <span class="transit-badge"><span class="lang-en">Travel: ~2.5 hrs (Right side for Fuji)</span><span class="lang-zh">车程: 约2.5小时 (右侧看富士山)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">15:30</span><span class="text-sm"><span class="lang-en">Check-in Osaka Airbnb (JR Momodani Station)</span><span class="lang-zh">入住大阪Airbnb (JR桃谷站)</span></span> <a href="https://www.google.com/maps/dir/?api=1&origin=Shin-Osaka+Station&destination=JR+Momodani+Station+Osaka&travelmode=transit" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 2 mins to Shin-Osaka Station → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins</span><span class="lang-zh">步行2分钟至新大阪站 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">17:50</span><span class="text-sm text-slate-500"><span class="lang-en">Group 3 lands at KIX</span><span class="lang-zh">第三组抵达关西机场</span></span></li>
+                            <li class="flex items-baseline"><span class="time-badge">18:30</span><span class="text-sm"><span class="lang-en">Private Van to Osaka Airbnb</span><span class="lang-zh">私人包车前往大阪Airbnb</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Travel time: ~50-60 mins (KIX → JR Momodani Station area)</span><span class="lang-zh">车程: 约50-60分钟 (关西机场 → JR桃谷站附近)</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">20:00</span><span class="text-sm font-bold text-orange-600"><span class="lang-en">Reunion Dinner (Dotonbori)</span><span class="lang-zh">团圆晚餐 (道顿堀)</span></span></li>
+                        </ul>
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation to Other Days -->
+        <section class="mt-8">
+            <div class="flex justify-between items-center">
+                <a href="day3.html" class="btn-primary"><span class="lang-en">← Previous: Day 3</span><span class="lang-zh">← 上一天: 第3天</span></a>
+                <a href="day5.html" class="btn-primary"><span class="lang-en">Next: Day 5 →</span><span class="lang-zh">下一天: 第5天 →</span></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+</body>
+</html>

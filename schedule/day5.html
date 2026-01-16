@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5: Kobe Day Trip - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="text-slate-700 location-kobe" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../schedule.html" class="nav-link">
+                        <span class="lang-en">← Back to Itinerary</span><span class="lang-zh">← 返回行程</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../schedule.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../schedule.html" class="back-button no-print" aria-label="Back to Itinerary">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-8 pb-20 md:pb-24">
+        <!-- Day Header -->
+        <section class="text-center mb-8">
+            <div class="inline-block bg-red-500 text-white px-6 py-2 rounded-full mb-4">
+                <span class="font-bold text-sm"><span class="lang-en">Day 5</span><span class="lang-zh">第5天</span></span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-header font-bold location-heading-kobe mb-2">
+                <span class="lang-en">Kobe Day Trip</span><span class="lang-zh">神户一日游</span>
+            </h1>
+            <p class="text-pink-500 font-bold text-lg uppercase tracking-widest">Sun, Mar 22, 2026</p>
+        </section>
+
+        <!-- Detailed Schedule -->
+        <section class="glass-card p-6 md:p-8">
+            <div class="relative pl-2 md:pl-0 pb-8">
+                <div class="timeline-line"></div>
+                
+                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 timeline-item">
+                    <div class="timeline-dot" style="border-color: #dc2626;"></div>
+                    
+                    <div class="schedule-card border-l-red-500">
+
+                    <div class="timeline-dot" style="border-color: #dc2626;"></div>
+                    
+                    <div class="mb-3">
+                        <h3 class="text-2xl font-header font-bold text-red-600">
+                            <span class="lang-en">Kobe Day Trip</span><span class="lang-zh">神户一日游</span>
+                        </h3>
+                        <p class="text-pink-500 font-bold text-xs uppercase tracking-widest">Sun, Mar 22</p>
+                    </div>
+                    
+                    <div class="schedule-card border-l-red-500">
+                        <ul class="space-y-1">
+                            <li class="flex items-baseline"><span class="time-badge">09:30</span><span class="text-sm"><span class="lang-en">Depart from Airbnb (JR Momodani Station)</span><span class="lang-zh">从Airbnb出发 (JR桃谷站)</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 2 mins to Momodani Station → JR Osaka Loop Line to Osaka Station → JR Kobe Line to Sannomiya Station (~30 mins train) → Walk 10 mins</span><span class="lang-zh">步行2分钟至桃谷站 → JR大阪环状线至大阪站 → JR神户线至三宫站 (~30分钟电车) → 步行10分钟</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">10:30</span><a href="../attractions/harborland/harborland.html" class="text-sm highlight-attraction"><span class="lang-en">Meriken Park & Harborland</span><span class="lang-zh">美利坚公园 & 港湾乐园</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <a href="https://www.google.com/maps/dir/?api=1&destination=Meriken+Park+Kobe" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a> <span class="price-badge">Free</span></li>
+                            <span class="transit-badge"><span class="lang-en">BE KOBE Sign, Port Tower Photos</span><span class="lang-zh">BE KOBE标志, 神户塔拍照</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">12:00</span><span class="text-sm"><span class="lang-en">Lunch at Mosaic</span><span class="lang-zh">Mosaic 广场午餐</span></span> <a href="https://www.google.com/maps/dir/?api=1&destination=Mosaic+Kobe" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 3 mins from Harborland</span><span class="lang-zh">从港湾乐园步行3分钟</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">13:30</span><span class="text-sm"><span class="lang-en">Travel to Mt. Rokko</span><span class="lang-zh">前往六甲山</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 5 mins to Sannomiya Station → Bus #16 to Rokko Cable Shita (~25 mins bus) → Cable Car to Rokko-sancho (~10 mins) → Walk 5 mins</span><span class="lang-zh">步行5分钟至三宫站 → 16号巴士至六甲缆车下 (~25分钟巴士) → 缆车至六甲山顶 (~10分钟) → 步行5分钟</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">14:30</span><a href="../attractions/rokkosan-pasture/rokkosan-pasture.html" class="text-sm highlight-attraction"><span class="lang-en">Rokkosan Pasture (Sheep)</span><span class="lang-zh">六甲山牧场</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <a href="https://www.google.com/maps/dir/?api=1&destination=Rokkosan+Pasture+Kobe" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a> <span class="price-badge">¥500</span></li>
+                            <span class="transit-badge"><span class="lang-en">Interact with sheep & enjoy nature</span><span class="lang-zh">与羊互动 & 享受大自然</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">17:00</span><span class="text-sm"><span class="lang-en">Descend Mountain</span><span class="lang-zh">下山</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 5 mins to Rokko-sancho → Cable Car to Rokko Cable Shita (~10 mins) → Bus #16 to Sannomiya (~25 mins bus)</span><span class="lang-zh">步行5分钟至六甲山顶 → 缆车至六甲缆车下 (~10分钟) → 16号巴士至三宫 (~25分钟巴士)</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">18:30</span><a href="../attractions/kobe-port/kobe-port.html" class="text-sm highlight-attraction"><span class="lang-en">Kobe Port Tower</span><span class="lang-zh">神户塔</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <a href="https://www.google.com/maps/dir/?api=1&destination=Kobe+Port+Tower" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a> Night View <span class="price-badge">¥700</span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 10 mins from Sannomiya Station</span><span class="lang-zh">从三宫站步行10分钟</span></span>
+                            
+                            <li class="flex items-baseline"><span class="time-badge">19:30</span><span class="text-sm font-bold"><span class="lang-en">Dinner in Kobe City</span><span class="lang-zh">神户市内晚餐</span></span> <a href="https://www.google.com/maps/dir/?api=1&destination=Kobe+City+Center" target="_blank" class="ml-2 text-xs text-blue-600 hover:text-blue-800"><i class="fa-solid fa-map-location-dot"></i> <span class="lang-en">Map</span><span class="lang-zh">地图</span></a></li>
+                            <span class="transit-badge"><span class="lang-en">Kobe Beef or Izakaya</span><span class="lang-zh">神户牛肉或居酒屋</span></span>
+
+                            <li class="flex items-baseline"><span class="time-badge">21:00</span><span class="text-sm"><span class="lang-en">Return to Airbnb (JR Momodani Station)</span><span class="lang-zh">返回Airbnb (JR桃谷站)</span></span></li>
+                            <span class="transit-badge"><span class="lang-en">Walk 10 mins to Sannomiya Station → JR Kobe Line to Osaka Station → JR Osaka Loop Line to Momodani Station (~30 mins train) → Walk 2 mins</span><span class="lang-zh">步行10分钟至三宫站 → JR神户线至大阪站 → JR大阪环状线至桃谷站 (~30分钟电车) → 步行2分钟</span></span>
+                        </ul>
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation to Other Days -->
+        <section class="mt-8">
+            <div class="flex justify-between items-center">
+                <a href="day4.html" class="btn-primary"><span class="lang-en">← Previous: Day 4</span><span class="lang-zh">← 上一天: 第4天</span></a>
+                <a href="day6.html" class="btn-primary"><span class="lang-en">Next: Day 6 →</span><span class="lang-zh">下一天: 第6天 →</span></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+</body>
+</html>

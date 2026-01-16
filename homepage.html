@@ -60,6 +60,9 @@
                     <a href="hotel.html" class="nav-link">
                         <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
                     </a>
+                    <a href="japan_trip_budget.html" class="nav-link">
+                        <span class="lang-en">Split Expenses</span><span class="lang-zh">费用分摊</span>
+                    </a>
                     <!-- Language Switcher -->
                     <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
                         🌐 EN / 中
@@ -106,6 +109,10 @@
                 <a href="hotel.html" class="mobile-nav-link" onclick="closeMobileMenu()">
                     <i class="fa-solid fa-hotel mr-3 text-pink-500 w-5"></i>
                     <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                </a>
+                <a href="japan_trip_budget.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-calculator mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Split Expenses</span><span class="lang-zh">费用分摊</span>
                 </a>
             </div>
         </div>
@@ -171,7 +178,76 @@
 
     <!-- Quick Links Section -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 -mt-8 md:-mt-10 relative z-20 space-y-12 md:space-y-16 pb-20 md:pb-24">
-        <section class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-12">
+        <!-- Featured: Budget Splitter -->
+        <section class="mt-8 md:mt-12 animate-fade-in">
+            <a href="japan_trip_budget.html" class="block group">
+                <div class="relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] border-2 border-emerald-400/50">
+                    <!-- Animated Background Pattern -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute top-0 left-0 w-full h-full" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);"></div>
+                    </div>
+                    
+                    <!-- Shimmer Effect -->
+                    <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                    
+                    <div class="relative p-6 md:p-8 text-white">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="p-3 bg-white/20 backdrop-blur-sm rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fa-solid fa-calculator text-3xl md:text-4xl"></i>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <h3 class="font-header text-2xl md:text-3xl font-black">
+                                            <span class="lang-en">Budget Splitter</span><span class="lang-zh">费用分摊器</span>
+                                        </h3>
+                                        <span class="px-2 py-1 bg-yellow-400 text-yellow-900 text-xs font-bold rounded-full animate-pulse">
+                                            <span class="lang-en">NEW</span><span class="lang-zh">新</span>
+                                        </span>
+                                    </div>
+                                    <p class="text-emerald-50 text-sm md:text-base opacity-90">
+                                        <span class="lang-en">Track & split expenses with your group</span>
+                                        <span class="lang-zh">与团队追踪和分摊费用</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block">
+                                <i class="fa-solid fa-arrow-right text-2xl opacity-70 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                                <div class="text-xs opacity-80 mb-1">
+                                    <span class="lang-en">Auto Split</span><span class="lang-zh">自动分摊</span>
+                                </div>
+                                <div class="text-lg font-bold">⚡</div>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                                <div class="text-xs opacity-80 mb-1">
+                                    <span class="lang-en">Multi-Currency</span><span class="lang-zh">多币种</span>
+                                </div>
+                                <div class="text-lg font-bold">💱</div>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                                <div class="text-xs opacity-80 mb-1">
+                                    <span class="lang-en">Offline</span><span class="lang-zh">离线</span>
+                                </div>
+                                <div class="text-lg font-bold">📱</div>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                                <div class="text-xs opacity-80 mb-1">
+                                    <span class="lang-en">10 Members</span><span class="lang-zh">10人</span>
+                                </div>
+                                <div class="text-lg font-bold">👥</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <section class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             <!-- Flights Card -->
             <a href="flights.html" class="quick-link-card group">
                 <div class="p-3 sm:p-4 bg-purple-100 rounded-xl mb-3 sm:mb-4 shadow-inner group-hover:scale-110 transition-transform duration-300">

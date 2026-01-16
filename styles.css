@@ -1443,3 +1443,37 @@ html {
     }
 }
 
+
+/* Schedule Dashboard Cards */
+.day-card {
+    transition: all 0.3s ease;
+}
+
+.day-card:hover {
+    transform: translateY(-4px);
+}
+
+.day-card button {
+    pointer-events: none; /* Prevent button from blocking card click */
+}
+
+/* Day Details Sections */
+.day-details {
+    animation: fadeInDown 0.4s ease;
+    display: block;
+}
+
+.day-details.day-details-hidden {
+    display: none !important;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

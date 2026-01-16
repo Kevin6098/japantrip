@@ -487,6 +487,93 @@ Completely restructured the schedule page into a dashboard view with day summari
 
 ---
 
+## [2024-12-XX] - Fixed Schedule Dashboard "View Details" Toggle Functionality
+
+### Issue
+The "View Details" button on schedule dashboard cards was not showing the detailed timeline sections when clicked.
+
+### Root Cause
+- Tailwind CSS's `hidden` class was conflicting with custom CSS
+- JavaScript was checking for `hidden` class but HTML was using `day-details-hidden`
+- CSS specificity issues with Tailwind's utility classes
+
+### Solution
+1. **Changed CSS class name**: Replaced `hidden` with `day-details-hidden` to avoid Tailwind conflicts
+   - Updated all 11 day details sections in HTML
+   - Added `!important` to CSS rule for proper override
+
+2. **Updated JavaScript**: Modified `toggleDayDetails()` function to:
+   - Check for `day-details-hidden` class instead of `hidden`
+   - Add/remove `day-details-hidden` class correctly
+   - Added error logging for debugging
+
+3. **Enhanced CSS**: 
+   - Added `display: block` to `.day-details` base class
+   - Used `.day-details.day-details-hidden` selector for specificity
+   - Added `!important` to ensure override of Tailwind classes
+
+### Files Modified
+- `schedule.html` - Changed all `hidden` classes to `day-details-hidden` (11 instances)
+- `script.js` - Updated `toggleDayDetails()` function to use correct class name
+- `styles.css` - Added proper CSS rules with `!important` flag
+
+### Testing
+- All 11 day cards now properly expand/collapse when clicked
+- Chevron icons rotate correctly (down = collapsed, up = expanded)
+- Smooth scroll animation works when expanding
+- No conflicts with Tailwind CSS utility classes
+
+---
+
+## [2024-12-XX] - Created Individual Day Schedule Pages
+
+### Changes
+Created dedicated HTML pages for each day of the itinerary, organized in a `schedule/` folder structure:
+
+**New Structure**:
+- **Individual Day Pages**: Created 11 separate HTML pages (day1.html through day11.html) in `schedule/` folder
+  - Each page contains the full detailed schedule for that specific day
+  - Color-coded headers matching location (Tokyo: Indigo, Osaka: Orange, Kobe: Red, USJ: Sky, Kyoto: Emerald, Uji & Nara: Teal)
+  - Navigation links to previous/next day
+  - Back to itinerary link in navigation and footer
+  - Consistent styling with main schedule page
+
+**Dashboard Updates**:
+- Changed all dashboard cards from expandable sections to direct links
+- Replaced `onclick="toggleDayDetails()"` with `<a href="schedule/dayX.html">`
+- Changed chevron icons to arrow-right icons
+- Cards now navigate directly to individual day pages
+
+**Navigation Features**:
+- Each day page has:
+  - "Back to Itinerary" link in navigation bar
+  - Previous/Next day navigation buttons at bottom
+  - Day 1: Back to Itinerary + Next Day
+  - Day 11: Previous Day + Back to Itinerary
+  - Days 2-10: Previous Day + Next Day
+
+**Technical Implementation**:
+- Created Python script (`generate_day_pages.py`) to automatically extract and generate day pages from `schedule.html`
+- Script extracts day content, fixes relative paths (attractions links), and generates complete HTML pages
+- All day pages maintain bilingual support (English/Chinese)
+- Location-based styling applied to each page
+
+### Files Created
+- `schedule/day1.html` through `schedule/day11.html` (11 files)
+- `generate_day_pages.py` (utility script for generating pages)
+
+### Files Modified
+- `schedule.html` - Updated all 11 dashboard cards to link to individual day pages instead of using toggle functionality
+
+### Notes
+- Individual day pages provide better organization and easier navigation
+- Each day can be bookmarked or shared directly
+- Better mobile experience with dedicated pages
+- All existing functionality preserved (Google Maps links, transit routes, etc.)
+- Paths to attractions correctly updated to `../attractions/` for proper navigation
+
+---
+
 ## Future Changes
 
 All future changes will be documented below with:
