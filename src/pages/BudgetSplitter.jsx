@@ -458,16 +458,34 @@ const BudgetSplitter = () => {
   const calculateTotals = () => {
     const totals = {}
     const catTotals = {}
+    
+    // Only process expenses that involve selected members
     expenses.forEach(exp => {
       const cur = exp.currency || 'JPY'
+      
+      // Check if this expense has any splits with selected members
+      const hasSelectedMemberSplits = Object.keys(exp.splits || {}).some(mid => 
+        selectedMembers.has(mid) && (exp.splits[mid] || 0) > 0
+      )
+      
+      if (!hasSelectedMemberSplits) return // Skip expenses with no selected member splits
+      
       if (!totals[cur]) totals[cur] = {}
       if (!catTotals[cur]) catTotals[cur] = {}
       if (!catTotals[cur][exp.category]) catTotals[cur][exp.category] = 0
-      catTotals[cur][exp.category] += Number(exp.amount || 0)
+      
+      // Calculate category total based on selected members' shares only
+      let selectedMembersShare = 0
       Object.entries(exp.splits || {}).forEach(([mid, v]) => {
-        if (!totals[cur][mid]) totals[cur][mid] = 0
-        totals[cur][mid] += Number(v)
+        if (selectedMembers.has(mid)) {
+          selectedMembersShare += Number(v || 0)
+          if (!totals[cur][mid]) totals[cur][mid] = 0
+          totals[cur][mid] += Number(v || 0)
+        }
       })
+      
+      // Add only the selected members' share to category total
+      catTotals[cur][exp.category] += selectedMembersShare
     })
     return { totals, catTotals }
   }
@@ -896,7 +914,10 @@ const BudgetSplitter = () => {
               </div>
             ) : (
               Object.keys(totals).sort().map(cur => {
-                const grand = Object.values(catTotals[cur] || {}).reduce((a, b) => a + b, 0)
+                // Calculate grand total from selected members' totals only
+                const grand = Object.entries(totals[cur] || {})
+                  .filter(([mid]) => selectedMembers.has(mid))
+                  .reduce((sum, [, amount]) => sum + amount, 0)
                 return (
                   <div key={cur} className="mb-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
                     <div className="flex justify-between items-center mb-3">
