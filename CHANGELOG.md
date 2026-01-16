@@ -215,6 +215,53 @@ Enhanced the entire itinerary with comprehensive transit information and Google 
 
 ---
 
+## [2024-12-XX] - Updated Tokyo Airbnb Listing
+
+### Changes
+Updated the Tokyo accommodation to a new Airbnb listing:
+
+- **Previous Listing**: "Charming House Near Asakusa/SkyTree, Free Bicycle"
+  - Location: Sumida-ku, Tokyo
+  - 8-10min walk to Hikifune & Keisei Hikifune stations
+  - Airbnb ID: 32620100
+
+- **New Listing**: "Modern House in Katsushika"
+  - Location: Katsushika-ku, Tokyo
+  - 5 mins walk to nearest station
+  - 6 mins to Tokyo Skytree, 10 mins to Asakusa
+  - Sleeps up to 6
+  - Amenities: WiFi, kitchen, private bathroom
+  - Airbnb ID: 1582468829135768556
+  - Dates: Mar 18-21, 2026
+
+### Files Modified
+- `hotel.html` - Updated Tokyo Airbnb section with new listing details and link
+
+### Notes
+- The new listing is in a different area (Katsushika-ku instead of Sumida-ku)
+- Nearest station walk time reduced from 8-10 mins to 5 mins
+- All Tokyo itinerary entries (Days 1-4) updated to reflect the new location
+
+### Schedule Updates
+- **Day 1 (Arrival)**: Updated location from "Sumida-ku" to "Katsushika-ku"
+- **Day 2 (Old Tokyo)**: 
+  - Updated departure from "Hikifune Station - 10 mins walk" to "Katsushika-ku - 5 mins walk to nearest station"
+  - Updated transit route to use Keisei Line/Toei Asakusa Line instead of Tsukuba Express
+  - Updated return route accordingly
+- **Day 3 (Graduation & Shibuya)**:
+  - Updated departure from "Hikifune Station - 10 mins walk" to "Katsushika-ku - 5 mins walk to nearest station"
+  - Updated transit routes to reflect new location
+  - Updated return route accordingly
+- **Day 4 (Move to Osaka)**:
+  - Updated departure route to reflect "Katsushika-ku - 5 mins walk to nearest station"
+  - Transit time adjusted to ~40-45 mins total (from ~35 mins)
+
+### Files Modified
+- `hotel.html` - Updated Tokyo Airbnb section with new listing details and link
+- `schedule.html` - Updated all Tokyo itinerary entries (Days 1-4) to reflect new Katsushika-ku location
+
+---
+
 ## Future Changes
 
 All future changes will be documented below with:
