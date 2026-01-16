@@ -1,1 +1,3 @@
 [] the itinerary down there d can remove d, because click liao will show the details so can remove the detailed schedule d (refer itinerary.png)
+[] the button can move on top, easier to click (refer to itinerary2.png)
+[] the attraction there got some is no detail d, i think only first 3 got nia, from ueno park all is no details d (refer to attraction.png)
