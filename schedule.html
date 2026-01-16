@@ -109,9 +109,9 @@
         <i class="fa-solid fa-arrow-left"></i>
     </a>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
-        <!-- Itinerary Section -->
-        <section id="itinerary" class="scroll-mt-24 animate-fade-in">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <!-- Schedule Dashboard -->
+        <section id="schedule-dashboard" class="scroll-mt-24 animate-fade-in">
             <div class="flex flex-col items-center mb-6 md:mb-8 gap-3">
                  <div class="bg-white px-4 sm:px-6 py-2 rounded-full shadow border border-pink-100 flex items-center">
                     <i class="fa-regular fa-calendar-days text-pink-500 text-lg sm:text-xl mr-2"></i>
@@ -125,11 +125,214 @@
                  </p>
             </div>
             
-            <div class="relative pl-2 md:pl-0 pb-8">
-                <div class="timeline-line"></div>
+            <!-- Dashboard Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
+                <!-- Day 1 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-indigo-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day1')">
+                    <div class="bg-indigo-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 1</span><span class="lang-zh">第1天</span></span>
+                            <span class="text-xs">Wed, Mar 18</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">Arrival</span><span class="lang-zh">抵达</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">CX & TG arrive at HND → Private van to Tokyo Airbnb</span><span class="lang-zh">国泰 & 泰航抵达羽田 → 私人包车前往东京Airbnb</span></p>
+                        <button class="w-full text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day1-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Day 2 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-indigo-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day2')">
+                    <div class="bg-indigo-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 2</span><span class="lang-zh">第2天</span></span>
+                            <span class="text-xs">Thu, Mar 19</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">Tokyo City Tour</span><span class="lang-zh">东京城市游</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">Tsukiji Market → Ginza (Kanimitsu) → Tokyo Station → Asakusa</span><span class="lang-zh">筑地市场 → 银座 (蟹みつ) → 东京站 → 浅草</span></p>
+                        <button class="w-full text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day2-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Day 3 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-indigo-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day3')">
+                    <div class="bg-indigo-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 3</span><span class="lang-zh">第3天</span></span>
+                            <span class="text-xs">Fri, Mar 20</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">Graduation Day</span><span class="lang-zh">毕业典礼日</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">Senso-ji → Ichiran → Graduation → Shibuya → Tsukada Shabu Shabu</span><span class="lang-zh">浅草寺 → 一兰 → 毕业典礼 → 涩谷 → 塚田しゃぶしゃぶ</span></p>
+                        <button class="w-full text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day3-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Day 4 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day4')">
+                    <div class="bg-orange-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 4</span><span class="lang-zh">第4天</span></span>
+                            <span class="text-xs">Sat, Mar 21</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">Move to Osaka</span><span class="lang-zh">前往大阪</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">Shinkansen to Osaka → Check-in Airbnb → Reunion Dinner</span><span class="lang-zh">新干线至大阪 → 入住Airbnb → 团圆晚餐</span></p>
+                        <button class="w-full text-xs font-bold text-orange-600 hover:text-orange-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day4-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Day 5 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-red-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day5')">
+                    <div class="bg-red-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 5</span><span class="lang-zh">第5天</span></span>
+                            <span class="text-xs">Sun, Mar 22</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">Kobe Day Trip</span><span class="lang-zh">神户一日游</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">Harborland → Mt. Rokko → Kobe Port Tower → Kobe Beef</span><span class="lang-zh">港湾乐园 → 六甲山 → 神户塔 → 神户牛肉</span></p>
+                        <button class="w-full text-xs font-bold text-red-600 hover:text-red-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day5-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Day 6 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-sky-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day6')">
+                    <div class="bg-sky-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 6</span><span class="lang-zh">第6天</span></span>
+                            <span class="text-xs">Mon, Mar 23</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">USJ</span><span class="lang-zh">环球影城</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">Universal Studios Japan - All Day Adventure</span><span class="lang-zh">日本环球影城 - 全天冒险</span></p>
+                        <button class="w-full text-xs font-bold text-sky-600 hover:text-sky-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day6-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Day 7 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day7')">
+                    <div class="bg-orange-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 7</span><span class="lang-zh">第7天</span></span>
+                            <span class="text-xs">Tue, Mar 24</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">Osaka City Highlights</span><span class="lang-zh">大阪城市精华</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">Osaka Castle → Tsutenkaku → Dotonbori → Shinsaibashi</span><span class="lang-zh">大阪城 → 通天阁 → 道顿堀 → 心斋桥</span></p>
+                        <button class="w-full text-xs font-bold text-orange-600 hover:text-orange-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day7-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Day 8 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-emerald-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day8')">
+                    <div class="bg-emerald-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 8</span><span class="lang-zh">第8天</span></span>
+                            <span class="text-xs">Wed, Mar 25</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">Kyoto</span><span class="lang-zh">京都</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">Fushimi Inari → Kiyomizu → Gion → Kamogawa River</span><span class="lang-zh">伏见稻荷 → 清水寺 → 祇园 → 鸭川</span></p>
+                        <button class="w-full text-xs font-bold text-emerald-600 hover:text-emerald-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day8-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Day 9 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-teal-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day9')">
+                    <div class="bg-teal-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 9</span><span class="lang-zh">第9天</span></span>
+                            <span class="text-xs">Thu, Mar 26</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">Uji & Nara</span><span class="lang-zh">宇治 & 奈良</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">Uji Matcha → Nara Park → Todaiji → Kasuga Taisha</span><span class="lang-zh">宇治抹茶 → 奈良公园 → 东大寺 → 春日大社</span></p>
+                        <button class="w-full text-xs font-bold text-teal-600 hover:text-teal-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day9-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Day 10 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day10')">
+                    <div class="bg-orange-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 10</span><span class="lang-zh">第10天</span></span>
+                            <span class="text-xs">Fri, Mar 27</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">Last Shopping</span><span class="lang-zh">最后购物</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">Shinsaibashi / Umeda → Collect Luggage → Private Van to KIX</span><span class="lang-zh">心斋桥 / 梅田 → 取行李 → 私人包车至关西机场</span></p>
+                        <button class="w-full text-xs font-bold text-orange-600 hover:text-orange-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day10-icon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Day 11 Card -->
+                <div class="day-card glass-card rounded-xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer" onclick="toggleDayDetails('day11')">
+                    <div class="bg-orange-500 p-4 text-white">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-sm"><span class="lang-en">Day 11</span><span class="lang-zh">第11天</span></span>
+                            <span class="text-xs">Sat, Mar 28</span>
+                        </div>
+                        <h3 class="text-lg font-bold"><span class="lang-en">Fly Home</span><span class="lang-zh">回家</span></h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-600 mb-3"><span class="lang-en">Private Van to KIX → Check-in → Flight Departs</span><span class="lang-zh">私人包车至关西机场 → 值机 → 航班起飞</span></p>
+                        <button class="w-full text-xs font-bold text-orange-600 hover:text-orange-800 flex items-center justify-center gap-2">
+                            <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300" id="day11-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detailed Timeline Section -->
+            <section id="detailed-timeline" class="mt-12">
+                <div class="relative pl-2 md:pl-0 pb-8">
+                    <div class="timeline-line"></div>
 
-                <!-- Day 1: Tokyo (Indigo) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 1: Tokyo (Indigo) - Details -->
+                <div id="day1-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                     <div class="timeline-dot" style="border-color: #4f46e5;"></div>
                     
                     <div class="mb-3">
@@ -150,8 +353,8 @@
                     </div>
                 </div>
 
-                <!-- Day 2: Tokyo (Indigo) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 2: Tokyo (Indigo) - Details -->
+                <div id="day2-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                     <div class="timeline-dot" style="border-color: #4f46e5;"></div>
                     
                     <div class="mb-3">
@@ -199,8 +402,8 @@
                     </div>
                 </div>
 
-                <!-- Day 3: Tokyo/Saitama (Indigo) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 3: Tokyo/Saitama (Indigo) - Details -->
+                <div id="day3-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                     <div class="timeline-dot" style="border-color: #4f46e5;"></div>
                     
                     <div class="mb-3">
@@ -242,8 +445,8 @@
                     </div>
                 </div>
 
-                <!-- Day 4: Osaka (Orange) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 4: Osaka (Orange) - Details -->
+                <div id="day4-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                      <div class="timeline-dot" style="border-color: #f97316;"></div>
                     
                     <div class="mb-3">
@@ -273,8 +476,8 @@
                     </div>
                 </div>
 
-                <!-- Day 5: Kobe (Red) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 5: Kobe (Red) - Details -->
+                <div id="day5-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                     <div class="timeline-dot" style="border-color: #dc2626;"></div>
                     
                     <div class="mb-3">
@@ -316,8 +519,8 @@
                     </div>
                 </div>
 
-                <!-- Day 6: USJ (Cyan/Sky) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 6: USJ (Cyan/Sky) - Details -->
+                <div id="day6-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                      <div class="timeline-dot" style="border-color: #0ea5e9;"></div>
                     
                     <div class="mb-3">
@@ -343,8 +546,8 @@
                     </div>
                 </div>
 
-                <!-- Day 7: Osaka (Orange) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 7: Osaka (Orange) - Details -->
+                <div id="day7-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                      <div class="timeline-dot" style="border-color: #f97316;"></div>
                     
                     <div class="mb-3">
@@ -384,8 +587,8 @@
                     </div>
                 </div>
 
-                <!-- Day 8: Kyoto (Green) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 8: Kyoto (Green) - Details -->
+                <div id="day8-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                     <div class="timeline-dot" style="border-color: #059669;"></div>
                     
                     <div class="mb-3">
@@ -424,8 +627,8 @@
                     </div>
                 </div>
 
-                <!-- Day 9: Uji & Nara (Teal) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 9: Uji & Nara (Teal) - Details -->
+                <div id="day9-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                      <div class="timeline-dot" style="border-color: #0d9488;"></div>
                     
                     <div class="mb-3">
@@ -467,8 +670,8 @@
                     </div>
                 </div>
 
-                <!-- Day 10: Osaka (Orange) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 10: Osaka (Orange) - Details -->
+                <div id="day10-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                     <div class="timeline-dot" style="border-color: #f97316;"></div>
                     
                     <div class="mb-3">
@@ -494,8 +697,8 @@
                     </div>
                 </div>
 
-                <!-- Day 11: Osaka (Orange) -->
-                <div class="relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
+                <!-- Day 11: Osaka (Orange) - Details -->
+                <div id="day11-details" class="day-details hidden relative pl-8 sm:pl-10 md:pl-16 mb-8 md:mb-12 break-inside-avoid timeline-item">
                      <div class="timeline-dot" style="border-color: #f97316;"></div>
                     
                     <div class="mb-3">
@@ -520,6 +723,7 @@
                     </div>
                 </div>
 
+                </div>
             </div>
         </section>
     </main>

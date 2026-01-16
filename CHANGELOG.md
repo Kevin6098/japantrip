@@ -429,6 +429,64 @@ Updated Day 3 dinner location from "TBD" to specific restaurant:
 
 ---
 
+## [2024-12-XX] - Restructured Schedule into Dashboard with Expandable Details
+
+### Changes
+Completely restructured the schedule page into a dashboard view with day summaries and expandable detailed sections:
+
+**New Structure**:
+- **Schedule Dashboard**: Grid layout showing all 11 days as summary cards
+  - Each card shows: Day number, date, title, and key highlights
+  - Color-coded by location (Tokyo: Indigo, Osaka: Orange, Kobe: Red, USJ: Sky, Kyoto: Emerald, Uji & Nara: Teal)
+  - "View Details" button with chevron icon on each card
+  - Clickable cards that expand/collapse detailed timeline
+
+- **Detailed Timeline Sections**: All day details wrapped in collapsible sections
+  - Hidden by default (`.hidden` class)
+  - Expandable when clicking on day cards
+  - Smooth scroll animation when expanding
+  - Chevron icon rotates to indicate state (down = collapsed, up = expanded)
+
+**Dashboard Cards Created**:
+- Day 1: Arrival (Indigo)
+- Day 2: Tokyo City Tour (Indigo)
+- Day 3: Graduation Day (Indigo)
+- Day 4: Move to Osaka (Orange)
+- Day 5: Kobe Day Trip (Red)
+- Day 6: USJ (Sky)
+- Day 7: Osaka City Highlights (Orange)
+- Day 8: Kyoto (Emerald)
+- Day 9: Uji & Nara (Teal)
+- Day 10: Last Shopping (Orange)
+- Day 11: Fly Home (Orange)
+
+### Technical Implementation
+- **JavaScript**: Added `toggleDayDetails(dayId)` function
+  - Toggles visibility of detailed sections
+  - Updates chevron icon state
+  - Smooth scrolls to expanded section
+  
+- **CSS**: Added styles for dashboard cards and collapsible sections
+  - `.day-card`: Hover effects and transitions
+  - `.day-details`: Fade-in animation
+  - `.day-details.hidden`: Hidden state
+
+### Files Modified
+- `schedule.html` - Restructured with dashboard grid and collapsible timeline sections
+- `script.js` - Added `toggleDayDetails()` function
+- `styles.css` - Added dashboard card and collapsible section styles
+
+### Notes
+- Dashboard provides quick overview of all days at a glance
+- Detailed timeline sections remain accessible but hidden by default
+- Clicking any day card expands its detailed schedule
+- Smooth animations and transitions for better UX
+- All existing functionality (transit routes, Google Maps links, etc.) preserved
+- Bilingual support maintained (English/Chinese)
+- Mobile responsive grid layout (1 column mobile, 2 columns tablet, 3 columns desktop)
+
+---
+
 ## Future Changes
 
 All future changes will be documented below with:
