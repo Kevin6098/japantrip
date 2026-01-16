@@ -93,9 +93,11 @@ const BudgetSplitter = () => {
       if (defaultMembers.length > 0) {
         setExpPaidBy(defaultMembers[0].id)
         setSplitWith(new Set(defaultMembers.map(m => m.id)))
+        setSelectedMembers(new Set(defaultMembers.map(m => m.id))) // Select all by default
       }
     } catch (err) {
       console.error('Failed to initialize default members:', err)
+      throw err // Re-throw to allow error handling upstream
     }
   }
 
