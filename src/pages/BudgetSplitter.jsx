@@ -526,9 +526,23 @@ const BudgetSplitter = () => {
   }
 
   const getExpensesByCategory = (currency, category) => {
-    return expenses.filter(exp => 
-      exp.currency === currency && exp.category === category
-    )
+    return expenses.filter(exp => {
+      if (exp.currency !== currency || exp.category !== category) return false
+      // Only include expenses that have splits with selected members
+      const hasSelectedMemberSplits = Object.keys(exp.splits || {}).some(mid => 
+        selectedMembers.has(mid) && (exp.splits[mid] || 0) > 0
+      )
+      return hasSelectedMemberSplits
+    }).map(exp => {
+      // Calculate selected members' share for this expense
+      const selectedMembersShare = Object.entries(exp.splits || {})
+        .filter(([mid]) => selectedMembers.has(mid))
+        .reduce((sum, [, amount]) => sum + Number(amount || 0), 0)
+      return {
+        ...exp,
+        selectedMembersShare
+      }
+    })
   }
 
   const getExpensesByMember = (currency, memberId) => {
@@ -1041,7 +1055,7 @@ const BudgetSplitter = () => {
                                                     to={`/split-expenses/expense/${exp.id}`}
                                                     className="text-slate-700 hover:text-emerald-600 transition-colors font-semibold"
                                                   >
-                                                    {formatMoney(exp.amount, exp.currency)}
+                                                    {formatMoney(exp.selectedMembersShare || 0, exp.currency)}
                                                   </Link>
                                                 </div>
                                               </div>
