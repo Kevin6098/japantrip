@@ -144,7 +144,7 @@ const Schedule = () => {
         {schedule.map((day) => (
           <Link
             key={day.day}
-            to={`/schedule/day${day.day}`}
+            to={`/schedule/day/${day.day}`}
             className="glass-card rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group"
           >
             <div className={`${getColorBg(day.color)} p-4 text-white`}>

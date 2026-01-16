@@ -164,7 +164,7 @@ const DaySchedule = () => {
       <div className="flex justify-between items-center pt-6 border-t border-slate-200">
         {prevDay ? (
           <Link
-            to={`/schedule/day${prevDay}`}
+            to={`/schedule/day/${prevDay}`}
             className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors"
           >
             <i className="fa-solid fa-arrow-left"></i>
@@ -189,7 +189,7 @@ const DaySchedule = () => {
 
         {nextDay ? (
           <Link
-            to={`/schedule/day${nextDay}`}
+            to={`/schedule/day/${nextDay}`}
             className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors"
           >
             <span>{t('Next Day', '下一天')}</span>

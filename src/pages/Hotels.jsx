@@ -74,47 +74,6 @@ const Hotels = () => {
             </a>
           </div>
         </div>
-
-        {/* Airport Hotel */}
-        <div className="glass-card border-l-4 border-pink-500 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-2xl">✈️</span>
-                <h2 className="font-header text-2xl font-bold text-pink-600">
-                  {t('Airport Hotel (Rinku Town)', '机场酒店 (临空城)')}
-                </h2>
-              </div>
-              <p className="text-slate-600 text-sm">{t('Near Kansai Airport', '关西机场附近')}</p>
-            </div>
-            <span className="bg-pink-100 text-pink-700 px-4 py-1 rounded-full text-sm font-bold mt-2 md:mt-0">
-              Mar 27-28
-            </span>
-          </div>
-          <div className="space-y-3 text-sm">
-            <div className="flex items-start gap-2">
-              <i className="fa-solid fa-location-dot text-pink-500 mt-0.5"></i>
-              <div>
-                <p className="font-semibold text-slate-800">{t('Location', '位置')}</p>
-                <p className="text-slate-600">{t('10 min from Kansai Airport', '距关西机场10分钟')}</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-2">
-              <i className="fa-solid fa-bed text-purple-500 mt-0.5"></i>
-              <div>
-                <p className="font-semibold text-slate-800">{t('Room Type', '房型')}</p>
-                <p className="text-slate-600">{t('Details TBD', '详情待定')}</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-2">
-              <i className="fa-solid fa-plane text-blue-500 mt-0.5"></i>
-              <div>
-                <p className="font-semibold text-slate-800">{t('Purpose', '目的')}</p>
-                <p className="text-slate-600">{t('Convenient for early morning flights', '方便早班飞机')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Important Notes */}
