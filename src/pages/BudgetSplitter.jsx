@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
+import { budgetService } from '../services/budgetService'
 
 const STORAGE_KEY = 'jp_trip_budget_splitter_v1'
 const DEFAULT_MEMBERS = [
@@ -14,6 +15,9 @@ const DEFAULT_MEMBERS = [
   'See Yi Joe',
   'Koay Jun Ming'
 ]
+
+// Feature flag: Set to true to use database, false for localStorage
+const USE_DATABASE = import.meta.env.VITE_USE_DATABASE === 'true' || false
 
 const BudgetSplitter = () => {
   const { t } = useLanguage()
@@ -30,6 +34,8 @@ const BudgetSplitter = () => {
   const [splitWith, setSplitWith] = useState(new Set())
   const [customSplits, setCustomSplits] = useState({})
   const [formWarn, setFormWarn] = useState('')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     loadState()
@@ -40,13 +46,62 @@ const BudgetSplitter = () => {
     if (!expDate) setExpDate(today)
   }, [expDate])
 
-  const loadState = () => {
+  // ========== DATABASE MODE ==========
+  const loadFromDatabase = async () => {
+    try {
+      setLoading(true)
+      setError(null)
+      
+      const [membersData, expensesData] = await Promise.all([
+        budgetService.getMembers(),
+        budgetService.getExpenses()
+      ])
+      
+      setMembers(membersData)
+      setExpenses(expensesData)
+      
+      if (membersData.length > 0) {
+        setExpPaidBy(membersData[0].id)
+        setSplitWith(new Set(membersData.map(m => m.id)))
+      } else {
+        // Initialize with default members if database is empty
+        await initializeDefaultMembers()
+      }
+    } catch (err) {
+      console.error('Failed to load from database:', err)
+      setError(t('Failed to load data from database. Using local storage.', '从数据库加载数据失败。使用本地存储。'))
+      // Fallback to localStorage
+      loadFromLocalStorage()
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const initializeDefaultMembers = async () => {
+    try {
+      const defaultMembers = []
+      for (const name of DEFAULT_MEMBERS) {
+        const member = await budgetService.addMember({ name })
+        defaultMembers.push(member)
+      }
+      setMembers(defaultMembers)
+      if (defaultMembers.length > 0) {
+        setExpPaidBy(defaultMembers[0].id)
+        setSplitWith(new Set(defaultMembers.map(m => m.id)))
+      }
+    } catch (err) {
+      console.error('Failed to initialize default members:', err)
+    }
+  }
+
+  // ========== LOCALSTORAGE MODE ==========
+  const loadFromLocalStorage = () => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY)
       if (!raw) {
         const defaultMembers = DEFAULT_MEMBERS.map(name => ({ id: uniqId(), name }))
         const state = { members: defaultMembers, expenses: [] }
-        saveState(state)
+        saveToLocalStorage(state)
         setMembers(defaultMembers)
         setExpenses([])
         if (defaultMembers.length > 0) setExpPaidBy(defaultMembers[0].id)
@@ -63,12 +118,22 @@ const BudgetSplitter = () => {
       const defaultMembers = DEFAULT_MEMBERS.map(name => ({ id: uniqId(), name }))
       setMembers(defaultMembers)
       setExpenses([])
+    } finally {
+      setLoading(false)
     }
   }
 
-  const saveState = (state = null) => {
+  const saveToLocalStorage = (state = null) => {
     const toSave = state || { members, expenses }
     localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave))
+  }
+
+  const loadState = () => {
+    if (USE_DATABASE) {
+      loadFromDatabase()
+    } else {
+      loadFromLocalStorage()
+    }
   }
 
   const uniqId = () => Math.random().toString(36).slice(2) + Date.now().toString(36)
@@ -79,43 +144,83 @@ const BudgetSplitter = () => {
     return `${fixed} ${currency}`
   }
 
-  const addMember = () => {
+  // ========== MEMBER OPERATIONS ==========
+  const addMember = async () => {
     const name = memberName.trim()
     if (!name) {
       setFormWarn(t('Member name cannot be empty.', '成员姓名不能为空。'))
       return
     }
-    const newMember = { id: uniqId(), name }
-    const newMembers = [...members, newMember]
-    setMembers(newMembers)
-    setMemberName('')
-    setFormWarn('')
-    if (!expPaidBy) setExpPaidBy(newMember.id)
-    setSplitWith(prev => new Set([...prev, newMember.id]))
-    saveState({ members: newMembers, expenses })
+
+    try {
+      setFormWarn('')
+      
+      if (USE_DATABASE) {
+        const newMember = await budgetService.addMember({ name })
+        const newMembers = [...members, newMember]
+        setMembers(newMembers)
+        if (!expPaidBy) setExpPaidBy(newMember.id)
+        setSplitWith(prev => new Set([...prev, newMember.id]))
+      } else {
+        const newMember = { id: uniqId(), name }
+        const newMembers = [...members, newMember]
+        setMembers(newMembers)
+        if (!expPaidBy) setExpPaidBy(newMember.id)
+        setSplitWith(prev => new Set([...prev, newMember.id]))
+        saveToLocalStorage({ members: newMembers, expenses })
+      }
+      
+      setMemberName('')
+    } catch (err) {
+      setFormWarn(t('Failed to add member. Please try again.', '添加成员失败。请重试。'))
+      console.error('Error adding member:', err)
+    }
   }
 
-  const removeMember = (id) => {
-    const newMembers = members.filter(m => m.id !== id)
-    const newExpenses = expenses.map(e => {
-      const newSplits = { ...e.splits }
-      delete newSplits[id]
-      return {
-        ...e,
-        splits: newSplits,
-        splitWith: (e.splitWith || []).filter(mid => mid !== id),
-        paidBy: e.paidBy === id ? (newMembers[0]?.id || '') : e.paidBy
+  const removeMember = async (id) => {
+    try {
+      const newMembers = members.filter(m => m.id !== id)
+      const newExpenses = expenses.map(e => {
+        const newSplits = { ...e.splits }
+        delete newSplits[id]
+        return {
+          ...e,
+          splits: newSplits,
+          splitWith: (e.splitWith || []).filter(mid => mid !== id),
+          paidBy: e.paidBy === id ? (newMembers[0]?.id || '') : e.paidBy
+        }
+      }).filter(e => e.paidBy)
+
+      if (USE_DATABASE) {
+        await budgetService.deleteMember(id)
+        // Update expenses that reference this member
+        for (const exp of newExpenses) {
+          if (exp.id) {
+            await budgetService.updateExpense(exp.id, {
+              splits: exp.splits,
+              splitWith: exp.splitWith,
+              paidBy: exp.paidBy
+            })
+          }
+        }
+        setMembers(newMembers)
+        setExpenses(newExpenses)
+      } else {
+        setMembers(newMembers)
+        setExpenses(newExpenses)
+        saveToLocalStorage({ members: newMembers, expenses: newExpenses })
       }
-    }).filter(e => e.paidBy)
-    setMembers(newMembers)
-    setExpenses(newExpenses)
-    if (expPaidBy === id && newMembers.length > 0) setExpPaidBy(newMembers[0].id)
-    setSplitWith(prev => {
-      const next = new Set(prev)
-      next.delete(id)
-      return next
-    })
-    saveState({ members: newMembers, expenses: newExpenses })
+
+      if (expPaidBy === id && newMembers.length > 0) setExpPaidBy(newMembers[0].id)
+      setSplitWith(prev => {
+        const next = new Set(prev)
+        next.delete(id)
+        return next
+      })
+    } catch (err) {
+      setFormWarn(t('Failed to remove member. Please try again.', '删除成员失败。请重试。'))
+      console.error('Error removing member:', err)
+    }
   }
 
   const toggleSplitWith = (id) => {
@@ -130,7 +235,6 @@ const BudgetSplitter = () => {
   const parseAmount = (input) => {
     if (!input || typeof input !== 'string') return NaN
     const trimmed = input.trim().toLowerCase()
-    // Support "k" suffix (e.g., "5k" = 5000, "10k" = 10000)
     if (trimmed.endsWith('k')) {
       const num = Number(trimmed.slice(0, -1))
       if (isFinite(num)) return num * 1000
@@ -149,13 +253,9 @@ const BudgetSplitter = () => {
     }
     const splits = {}
     if (splitMode === 'equal') {
-      // Use precise division to avoid floating-point errors
-      // Calculate each person's share rounded to 2 decimals
       const each = Math.floor((amt * 100) / checked.length) / 100
-      // Calculate remainder to ensure exact total
       const totalDistributed = each * checked.length
       const remainder = Math.round((amt - totalDistributed) * 100) / 100
-      // Distribute the remainder to the first member to ensure exact total
       checked.forEach((id, index) => {
         if (index === 0) {
           splits[id] = Math.round((each + remainder) * 100) / 100
@@ -184,7 +284,8 @@ const BudgetSplitter = () => {
     return { ok: true, splits }
   }
 
-  const addExpense = () => {
+  // ========== EXPENSE OPERATIONS ==========
+  const addExpense = async () => {
     setFormWarn('')
     if (members.length === 0) {
       setFormWarn(t('Add at least 1 member first.', '请先添加至少1个成员。'))
@@ -199,48 +300,102 @@ const BudgetSplitter = () => {
       setFormWarn(msg)
       return
     }
-    const parsedAmount = parseAmount(expAmount)
-    const newExpense = {
-      id: uniqId(),
-      date: expDate || new Date().toISOString().split('T')[0],
-      category: expCategory,
-      currency: expCurrency,
-      desc: expDesc.trim(),
-      amount: parsedAmount,
-      paidBy: expPaidBy,
-      splitWith: Array.from(splitWith),
-      splits
+    
+    try {
+      const parsedAmount = parseAmount(expAmount)
+      const newExpense = {
+        date: expDate || new Date().toISOString().split('T')[0],
+        category: expCategory,
+        currency: expCurrency,
+        description: expDesc.trim(),
+        amount: parsedAmount,
+        paidBy: expPaidBy,
+        splitWith: Array.from(splitWith),
+        splits
+      }
+
+      if (USE_DATABASE) {
+        const createdExpense = await budgetService.addExpense(newExpense)
+        setExpenses(prev => [...prev, createdExpense])
+      } else {
+        const expenseWithId = { id: uniqId(), ...newExpense }
+        const newExpenses = [...expenses, expenseWithId]
+        setExpenses(newExpenses)
+        saveToLocalStorage({ members, expenses: newExpenses })
+      }
+
+      setExpDesc('')
+      setExpAmount('')
+      setCustomSplits({})
+    } catch (err) {
+      setFormWarn(t('Failed to add expense. Please try again.', '添加费用失败。请重试。'))
+      console.error('Error adding expense:', err)
     }
-    const newExpenses = [...expenses, newExpense]
-    setExpenses(newExpenses)
-    setExpDesc('')
-    setExpAmount('')
-    setCustomSplits({})
-    saveState({ members, expenses: newExpenses })
   }
 
-  const deleteExpense = (id) => {
-    const newExpenses = expenses.filter(e => e.id !== id)
-    setExpenses(newExpenses)
-    saveState({ members, expenses: newExpenses })
+  const deleteExpense = async (id) => {
+    try {
+      if (USE_DATABASE) {
+        await budgetService.deleteExpense(id)
+        setExpenses(prev => prev.filter(e => e.id !== id))
+      } else {
+        const newExpenses = expenses.filter(e => e.id !== id)
+        setExpenses(newExpenses)
+        saveToLocalStorage({ members, expenses: newExpenses })
+      }
+    } catch (err) {
+      setFormWarn(t('Failed to delete expense. Please try again.', '删除费用失败。请重试。'))
+      console.error('Error deleting expense:', err)
+    }
   }
 
-  const clearExpenses = () => {
+  const clearExpenses = async () => {
     if (window.confirm(t('Clear all expenses (keep members)?', '清除所有费用（保留成员）？'))) {
-      setExpenses([])
-      saveState({ members, expenses: [] })
+      try {
+        if (USE_DATABASE) {
+          // Delete all expenses from database
+          const deletePromises = expenses.map(exp => budgetService.deleteExpense(exp.id))
+          await Promise.all(deletePromises)
+          setExpenses([])
+        } else {
+          setExpenses([])
+          saveToLocalStorage({ members, expenses: [] })
+        }
+      } catch (err) {
+        setFormWarn(t('Failed to clear expenses. Please try again.', '清除费用失败。请重试。'))
+        console.error('Error clearing expenses:', err)
+      }
     }
   }
 
-  const resetAll = () => {
+  const resetAll = async () => {
     if (window.confirm(t('Reset EVERYTHING (members + expenses)?', '重置所有内容（成员 + 费用）？'))) {
-      localStorage.removeItem(STORAGE_KEY)
-      const defaultMembers = DEFAULT_MEMBERS.map(name => ({ id: uniqId(), name }))
-      setMembers(defaultMembers)
-      setExpenses([])
-      setExpPaidBy(defaultMembers[0]?.id || '')
-      setSplitWith(new Set(defaultMembers.map(m => m.id)))
-      saveState({ members: defaultMembers, expenses: [] })
+      try {
+        if (USE_DATABASE) {
+          // Delete all expenses
+          const deleteExpensePromises = expenses.map(exp => budgetService.deleteExpense(exp.id))
+          await Promise.all(deleteExpensePromises)
+          
+          // Delete all members
+          const deleteMemberPromises = members.map(m => budgetService.deleteMember(m.id))
+          await Promise.all(deleteMemberPromises)
+          
+          // Initialize defaults
+          await initializeDefaultMembers()
+          setExpenses([])
+        } else {
+          localStorage.removeItem(STORAGE_KEY)
+          const defaultMembers = DEFAULT_MEMBERS.map(name => ({ id: uniqId(), name }))
+          setMembers(defaultMembers)
+          setExpenses([])
+          setExpPaidBy(defaultMembers[0]?.id || '')
+          setSplitWith(new Set(defaultMembers.map(m => m.id)))
+          saveToLocalStorage({ members: defaultMembers, expenses: [] })
+        }
+      } catch (err) {
+        setFormWarn(t('Failed to reset. Please try again.', '重置失败。请重试。'))
+        console.error('Error resetting:', err)
+      }
     }
   }
 
@@ -257,7 +412,7 @@ const BudgetSplitter = () => {
         exp.date || '',
         exp.category || '',
         exp.currency || '',
-        exp.desc || '',
+        exp.description || exp.desc || '',
         Number(exp.amount || 0).toFixed(2),
         paidByName,
         ...memberAmounts
@@ -294,6 +449,17 @@ const BudgetSplitter = () => {
 
   const { totals, catTotals } = calculateTotals()
 
+  if (loading) {
+    return (
+      <div className="min-h-screen py-12 px-4 sm:px-6 max-w-7xl mx-auto pb-24">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600"></div>
+          <p className="mt-4 text-slate-600">{t('Loading...', '加载中...')}</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 max-w-7xl mx-auto pb-24">
       {/* Header */}
@@ -302,14 +468,22 @@ const BudgetSplitter = () => {
           <div className="p-3 bg-emerald-100 rounded-xl shadow-inner">
             <i className="fa-solid fa-calculator text-emerald-600 text-2xl md:text-3xl"></i>
           </div>
-          <div>
+          <div className="flex-1">
             <h1 className="font-header text-2xl md:text-3xl font-bold text-slate-800 mb-1">
               {t('Budget Splitter', '费用分摊器')}
             </h1>
             <p className="text-sm md:text-base text-slate-600">
-              {t('Offline tracker — auto split expenses by selected members + per-member totals.', '离线追踪器 — 自动按选定成员分摊费用 + 每人总计。')}
+              {USE_DATABASE 
+                ? t('Database mode — data synced across devices.', '数据库模式 — 数据跨设备同步。')
+                : t('Offline tracker — auto split expenses by selected members + per-member totals.', '离线追踪器 — 自动按选定成员分摊费用 + 每人总计。')
+              }
             </p>
           </div>
+          {error && (
+            <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800 max-w-md">
+              {error}
+            </div>
+          )}
         </div>
       </div>
 
@@ -352,7 +526,10 @@ const BudgetSplitter = () => {
             ))}
           </div>
           <p className="text-xs text-slate-500 mb-6">
-            {t('Members are saved automatically.', '成员会自动保存。')}
+            {USE_DATABASE 
+              ? t('Members are saved to database.', '成员已保存到数据库。')
+              : t('Members are saved automatically.', '成员会自动保存。')
+            }
           </p>
 
           <hr className="border-slate-200 my-6" />
@@ -407,31 +584,33 @@ const BudgetSplitter = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 mb-4">
-            <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">
-                {t('Description', '描述')}
-              </label>
-              <input
-                type="text"
-                value={expDesc}
-                onChange={(e) => setExpDesc(e.target.value)}
-                placeholder={t('e.g., Ichiran ramen', '例如：一兰拉面')}
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">
-                {t('Amount', '金额')}
-              </label>
-              <input
-                type="text"
-                value={expAmount}
-                onChange={(e) => setExpAmount(e.target.value)}
-                placeholder={t('e.g., 4800 or 5k', '例如：4800 或 5k')}
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              />
-            </div>
+          <div className="mb-4">
+            <label className="block text-sm font-semibold text-slate-700 mb-1">
+              {t('Description', '描述')}
+            </label>
+            <textarea
+              value={expDesc}
+              onChange={(e) => setExpDesc(e.target.value)}
+              placeholder={t('e.g., Ramen 50k, Meat 50k', '例如：拉面 50k，肉类 50k')}
+              rows={3}
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-y"
+            />
+            <p className="text-xs text-slate-500 mt-1">
+              {t('You can break down the expense here. e.g., "Ramen 50k, Meat 50k" for a 100k meal total.', '您可以在此处分解费用。例如：总餐费100k，可写"拉面 50k，肉类 50k"。')}
+            </p>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-sm font-semibold text-slate-700 mb-1">
+              {t('Amount', '金额')}
+            </label>
+            <input
+              type="text"
+              value={expAmount}
+              onChange={(e) => setExpAmount(e.target.value)}
+              placeholder={t('e.g., 4800 or 5k', '例如：4800 或 5k')}
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
           </div>
 
           <div className="grid grid-cols-2 gap-3 mb-4">
@@ -674,7 +853,7 @@ const BudgetSplitter = () => {
                       <tr key={exp.id} className="border-t border-slate-200 hover:bg-slate-50">
                         <td className="p-2">{exp.date || ''}</td>
                         <td className="p-2">{exp.category || ''}</td>
-                        <td className="p-2">{exp.desc || ''}</td>
+                        <td className="p-2 max-w-xs break-words text-sm">{exp.description || exp.desc || ''}</td>
                         <td className="p-2">{paidByName}</td>
                         <td className="p-2 text-right font-semibold">{formatMoney(exp.amount, exp.currency)}</td>
                         {members.map(m => {
