@@ -14,6 +14,7 @@ const Navigation = () => {
     { path: '/packing', label: { en: 'Packing', zh: '清单' }, icon: 'fa-suitcase' },
     { path: '/attractions', label: { en: 'Attractions', zh: '景点' }, icon: 'fa-camera' },
     { path: '/hotels', label: { en: 'Hotels', zh: '住宿' }, icon: 'fa-hotel' },
+    { path: '/split-expenses', label: { en: 'Split Expenses', zh: '费用分摊' }, icon: 'fa-calculator' },
   ]
 
   const isActive = (path) => location.pathname === path
