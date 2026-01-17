@@ -39,36 +39,41 @@ const AttractionCard = ({
 
   const colors = colorClasses[locationColor] || colorClasses.indigo
 
+  const fallbackImage = 'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'
+
   return (
     <div 
       onClick={onClick}
-      className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 ${onClick ? 'cursor-pointer' : ''} border border-slate-200 ${colors.border} hover:shadow-xl hover:-translate-y-1 ${colors.shadow} group`}
+      className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 ${onClick ? 'cursor-pointer' : ''} border border-slate-200 ${colors.border} hover:shadow-xl hover:-translate-y-1 ${colors.shadow} group flex flex-col h-full`}
     >
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-56 overflow-hidden flex-shrink-0 bg-slate-100">
         <img 
-          src={image || 'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'} 
+          src={image || fallbackImage} 
           alt={title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           onError={(e) => {
-            e.target.src = 'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'
+            // Prevent infinite loop by checking if already using fallback
+            if (e.target.src !== fallbackImage) {
+              e.target.src = fallbackImage
+            }
           }}
         />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
           <i className="fa-solid fa-arrow-right text-white text-2xl opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-300"></i>
         </div>
       </div>
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full border uppercase tracking-wide mb-2 ${colors.badge}`}>
           {location}
         </span>
         <h3 className="font-header text-lg font-bold text-slate-800 mb-2">
           {title}
         </h3>
-        <p className="text-sm text-slate-600 mb-3">
+        <p className="text-sm text-slate-600 mb-3 flex-grow">
           {description}
         </p>
         {price && (
-          <span className="inline-block text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full border border-green-200">
+          <span className="inline-block text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full border border-green-200 mt-auto">
             {price}
           </span>
         )}

@@ -9,10 +9,10 @@ export const restaurantsData = {
     price: '¥120-¥190',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623537/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623537/japantrip/restaurants/pain-maison/bakery-sign.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623540/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623540/japantrip/restaurants/pain-maison/bread-individual.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623538/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623538/japantrip/restaurants/pain-maison/bread-display.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623538/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623538/japantrip/restaurants/pain-maison/bread-basket.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/pain-maison/bakery-sign.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/pain-maison/bread-individual.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/pain-maison/bread-display.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/pain-maison/bread-basket.jpg',
     ],
     about: {
       en: "Pain Maison (塩パン屋) is a famous salt bread bakery in Tokyo, known for its original salt bread (塩パン). The bakery specializes in premium salt bread and melon bread, offering freshly baked goods with high-quality ingredients. Popular with both locals and tourists, expect possible wait times especially during peak hours.",
@@ -43,11 +43,11 @@ export const restaurantsData = {
     price: '¥4,600-¥11,000',
     hours: { en: '11:30 AM - 3:00 PM (Lunch)', zh: '11:30 AM - 3:00 PM (Lunch)' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623521/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623521/japantrip/restaurants/ginza-kanimitsu/crab-whole-dish.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623525/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623525/japantrip/restaurants/ginza-kanimitsu/restaurant-interior.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623520/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623520/japantrip/restaurants/ginza-kanimitsu/crab-rice-pot.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623524/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623524/japantrip/restaurants/ginza-kanimitsu/multi-course-meal.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623522/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623522/japantrip/restaurants/ginza-kanimitsu/meal-set-tray.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ginza-kanimitsu/crab-whole-dish.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ginza-kanimitsu/restaurant-interior.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ginza-kanimitsu/crab-rice-pot.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ginza-kanimitsu/multi-course-meal.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ginza-kanimitsu/meal-set-tray.jpg',
     ],
     about: {
       en: "Ginza Kanimitsu is a premium crab restaurant specializing in fresh crab dishes. The restaurant offers various lunch sets featuring different parts of the crab, from crab sashimi to grilled crab legs. Known for its high-quality ingredients and traditional preparation methods, it's a must-visit for seafood lovers.",
@@ -77,9 +77,9 @@ export const restaurantsData = {
     price: 'Tea Time',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623536/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623536/japantrip/restaurants/nakamura-tokichi-ginza/matcha-parfait.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623533/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623533/japantrip/restaurants/nakamura-tokichi-ginza/matcha-dessert-set.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623534/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623534/japantrip/restaurants/nakamura-tokichi-ginza/matcha-meal-set.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/nakamura-tokichi-ginza/matcha-parfait.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/nakamura-tokichi-ginza/matcha-dessert-set.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/nakamura-tokichi-ginza/matcha-meal-set.jpg',
     ],
     about: {
       en: "Nakamura Tokichi is a famous matcha specialty shop from Uji, Kyoto, with a branch in Ginza. Known for premium matcha parfaits, matcha desserts, and traditional tea time experiences. The Ginza location offers a modern setting to enjoy authentic Uji matcha flavors.",
@@ -106,7 +106,9 @@ export const restaurantsData = {
     city: 'tokyo',
     price: 'Varies',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
-    images: [],
+    images: [
+      'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1200&q=80',
+    ],
     about: {
       en: "Traditional Tokyo street food experience featuring Monja Yaki and Okonomiyaki. Monja Yaki is a Tokyo specialty - a runny, gooey pancake-like dish cooked on a hot plate. Okonomiyaki is a savory pancake with various ingredients. Both are popular local foods in the Asakusa area.",
       zh: '传统东京街头美食体验，包括文字烧和大阪烧。文字烧是东京特色 - 一种在热板上烹制的流质、粘稠的煎饼状菜肴。大阪烧是一种带有各种配料的咸味煎饼。两者都是浅草地区受欢迎的当地美食。'
@@ -133,9 +135,9 @@ export const restaurantsData = {
     price: '¥890-¥1,490',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623528/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623528/japantrip/restaurants/ichiran-ramen/restaurant-interior.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623527/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623527/japantrip/restaurants/ichiran-ramen/restaurant-dining-area.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623526/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623526/japantrip/restaurants/ichiran-ramen/ramen-bowl-closeup.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ichiran-ramen/restaurant-interior.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ichiran-ramen/restaurant-dining-area.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ichiran-ramen/ramen-bowl-closeup.jpg',
     ],
     about: {
       en: "Ichiran is a famous tonkotsu ramen chain known for its rich, creamy pork bone broth and customizable ramen experience. The restaurant features private booths for solo dining, allowing you to focus on your ramen without distractions. Famous for its signature tonkotsu ramen with thin noodles, chashu pork, and green onions.",
@@ -164,10 +166,10 @@ export const restaurantsData = {
     price: 'Varies',
     hours: { en: '5:00 PM - 11:00 PM', zh: '下午5点 - 晚上11点' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623541/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623541/japantrip/restaurants/tsukada-shabu/restaurant-interior.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623542/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623542/japantrip/restaurants/tsukada-shabu/shabu-dining-counter.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623545/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623545/japantrip/restaurants/tsukada-shabu/shabu-meal-setup.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623544/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623544/japantrip/restaurants/tsukada-shabu/shabu-meal-closeup.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/tsukada-shabu/restaurant-interior.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/tsukada-shabu/shabu-dining-counter.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/tsukada-shabu/shabu-meal-setup.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/tsukada-shabu/shabu-meal-closeup.jpg',
     ],
     about: {
       en: "Tsukada Shabu Shabu is a premium shabu shabu restaurant located in Shibuya Scramble Square 12F. The restaurant offers high-quality meat and vegetables for shabu shabu, a Japanese hot pot dish where you cook thin slices of meat in boiling broth. Perfect for graduation celebration dinner with a group.",
@@ -196,12 +198,12 @@ export const restaurantsData = {
     price: '¥900-¥1,500',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623511/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623511/japantrip/restaurants/afuri-yurakucho/restaurant-exterior.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623507/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623507/japantrip/restaurants/afuri-yurakucho/ramen-bowl-closeup.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623506/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623506/japantrip/restaurants/afuri-yurakucho/meal-spread.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623508/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623508/japantrip/restaurants/afuri-yurakucho/ramen-bowls-table.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623510/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623510/japantrip/restaurants/afuri-yurakucho/ramen-dipping-style.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623512/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623512/japantrip/restaurants/afuri-yurakucho/spicy-ramen-bowl.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/afuri-yurakucho/restaurant-exterior.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/afuri-yurakucho/ramen-bowl-closeup.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/afuri-yurakucho/meal-spread.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/afuri-yurakucho/ramen-bowls-table.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/afuri-yurakucho/ramen-dipping-style.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/afuri-yurakucho/spicy-ramen-bowl.jpg',
     ],
     about: {
       en: "Afuri (阿夫利) is a famous ramen restaurant in Tokyo, known for its unique yuzu-flavored ramen. The restaurant specializes in light, citrusy shio (salt) and shoyu (soy sauce) ramen with a refreshing yuzu twist. The modern, sleek interior features counter seating and an open kitchen concept.",
@@ -231,7 +233,9 @@ export const restaurantsData = {
     city: 'osaka',
     price: 'Varies',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
-    images: [],
+    images: [
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/attractions/dotonbori/canal-night-view.jpg',
+    ],
     about: {
       en: "Dotonbori is Osaka's most famous entertainment and dining district, known for its vibrant neon signs, street food, and local cuisine. The area offers countless dining options from traditional Osaka dishes like takoyaki and okonomiyaki to modern restaurants and izakaya.",
       zh: '道顿堀是大阪最著名的娱乐和餐饮区，以其充满活力的霓虹灯招牌、街头美食和当地美食而闻名。该地区提供无数餐饮选择，从传统的大阪料理如章鱼烧和大阪烧到现代餐厅和居酒屋。'
@@ -257,7 +261,9 @@ export const restaurantsData = {
     city: 'osaka',
     price: '¥100-¥500 per skewer',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
-    images: [],
+    images: [
+      'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1200&q=80',
+    ],
     about: {
       en: "Kushikatsu is Osaka's famous deep-fried skewers, and Shinsekai is the best area to try them. Various ingredients like meat, vegetables, and seafood are breaded and deep-fried, then served with a special dipping sauce. The rule is: no double-dipping!",
       zh: '炸串是大阪著名的深炸串，新世界是尝试它们的最佳区域。各种食材如肉类、蔬菜和海鲜被裹上面包屑并深炸，然后配以特殊的蘸酱。规则是：不要二次蘸酱！'
@@ -285,11 +291,11 @@ export const restaurantsData = {
     price: '¥6,000-¥7,000',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623531/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623531/japantrip/restaurants/kobe-steak-nick/restaurant-exterior.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623531/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623531/japantrip/restaurants/kobe-steak-nick/restaurant-interior.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623532/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623532/japantrip/restaurants/kobe-steak-nick/steak-slices-closeup.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623530/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623530/japantrip/restaurants/kobe-steak-nick/meal-set.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623529/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623529/japantrip/restaurants/kobe-steak-nick/meal-presentation.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/kobe-steak-nick/restaurant-exterior.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/kobe-steak-nick/restaurant-interior.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/kobe-steak-nick/steak-slices-closeup.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/kobe-steak-nick/meal-set.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/kobe-steak-nick/meal-presentation.jpg',
     ],
     about: {
       en: "Kobe Steak Nick (KOBE STEAK 青斜塔) is a premium meat shop and restaurant in Kobe, specializing in authentic Kobe beef. The restaurant offers high-quality wagyu beef with beautiful marbling, prepared to perfection. The modern, elegant interior features wooden tables with warm lighting, creating an intimate dining atmosphere perfect for enjoying premium Kobe beef.",
@@ -320,13 +326,13 @@ export const restaurantsData = {
     price: '¥1,100-¥1,880',
     hours: { en: '11:00 AM - 10:00 PM', zh: '11:00 AM - 10:00 PM' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623517/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623517/japantrip/restaurants/gashoken/restaurant-exterior-night.png',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623515/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623515/japantrip/restaurants/gashoken/menu-display.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623516/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623516/japantrip/restaurants/gashoken/ramen-varieties-promo.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623519/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623519/japantrip/restaurants/gashoken/tonkotsu-ramen-bowl.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623513/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623513/japantrip/restaurants/gashoken/basil-cheese-ramen.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623518/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623518/japantrip/restaurants/gashoken/spicy-ramen-bowl.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623514/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623514/japantrip/restaurants/gashoken/black-tonkotsu-ramen.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/gashoken/restaurant-exterior-night.png',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/gashoken/menu-display.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/gashoken/ramen-varieties-promo.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/gashoken/tonkotsu-ramen-bowl.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/gashoken/basil-cheese-ramen.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/gashoken/spicy-ramen-bowl.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/gashoken/black-tonkotsu-ramen.jpg',
     ],
     about: {
       en: "Gashoken (賀正軒) is a famous tonkotsu ramen restaurant in Kobe, specializing in rich, creamy pork bone broth ramen. The Sannomiya location offers a modern dining experience with various unique ramen varieties, including their signature tonkotsu, fusion-style ramen with cheese and basil, spicy mentaiko miso, and black squid ink ramen.",
@@ -356,7 +362,9 @@ export const restaurantsData = {
     city: 'kyoto',
     price: 'Varies',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
-    images: [],
+    images: [
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/attractions/kiyomizu/main-hall-veranda.jpg',
+    ],
     about: {
       en: "Traditional Kyoto cuisine in the historic Ninenzaka and Sannenzaka area, known for its preserved traditional streets and traditional restaurants. The area offers various dining options featuring Kyoto's traditional kaiseki cuisine, tofu dishes, and local specialties.",
       zh: '历史悠久的二三年坂地区的传统京都料理，以其保存完好的传统街道和传统餐厅而闻名。该地区提供各种餐饮选择，包括京都的传统怀石料理、豆腐料理和当地特色菜。'
@@ -382,7 +390,9 @@ export const restaurantsData = {
     city: 'uji',
     price: 'Varies',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
-    images: [],
+    images: [
+      'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/nakamura-tokichi-ginza/matcha-parfait.jpg',
+    ],
     about: {
       en: "Nakamura Tokichi Honten is the historic main store in Uji, Kyoto, famous for premium matcha sweets and traditional tea. The original location where the brand was founded, offering authentic Uji matcha experiences including matcha parfaits, matcha desserts, and traditional tea ceremonies.",
       zh: '中村藤吉本店是位于京都宇治的历史悠久的主店，以优质抹茶甜点和传统茶而闻名。品牌创始的原始地点，提供正宗的宇治抹茶体验，包括抹茶芭菲、抹茶甜点和传统茶道。'
@@ -402,4 +412,3 @@ export const restaurantsData = {
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Nakamura+Tokichi+Honten+Uji',
   },
 }
-
