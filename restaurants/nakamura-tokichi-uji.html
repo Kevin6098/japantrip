@@ -60,10 +60,48 @@
     </a>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
-        <!-- Image -->
+        <!-- Image Carousel -->
         <div class="mb-8 relative">
-            <div class="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-80 md:h-96">
-                <img src="https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80" alt="Nakamura Tokichi Honten" class="w-full h-full object-cover">
+            <div id="nakamura-tokichi-uji-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="https://global.tokichi.jp/cdn/shop/files/sp_top_202210_28-1.webp?v=1676857832&width=3840" alt="Nakamura Tokichi Honten - Matcha Shop" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://global.tokichi.jp/cdn/shop/files/1_1_9d25c4e0-fdc9-4cdf-9f36-77c76069b6ed.webp?v=1676857729&width=3840" alt="Nakamura Tokichi Honten - Matcha Products" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://www.kyototourism.org/wp/wp-content/uploads/2021/01/Tea_Nakamura-Tokichi-Honten-01.jpg" alt="Nakamura Tokichi Honten - Tea Experience" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://global.tokichi.jp/cdn/shop/files/3_1b6712d2-d9f4-4376-85c9-40ee083c44f6.webp?v=1677140158&width=3840" alt="Nakamura Tokichi Honten - Matcha Desserts" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://tokichi.jp/cdn/shop/files/39_69bc85e7-dd86-4522-80f8-ba60d2b4c351.jpg?v=1674790321&width=1500" alt="Nakamura Tokichi Honten - Traditional Tea House" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkNnuRn6-Q2jpLDSpcx68njipWba-bO_46zw&s" alt="Nakamura Tokichi Honten - Matcha Sweets" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                    <button class="carousel-indicator" data-slide="5" aria-label="Slide 6"></button>
+                </div>
             </div>
         </div>
 

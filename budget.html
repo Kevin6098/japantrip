@@ -57,6 +57,9 @@
                     <a href="hotel.html" class="nav-link">
                         <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
                     </a>
+                    <a href="japan_trip_budget.html" class="nav-link">
+                        <span class="lang-en">Split Expenses</span><span class="lang-zh">费用分摊</span>
+                    </a>
                     <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
                         🌐 EN / 中
                     </button>
@@ -107,6 +110,10 @@
                     <i class="fa-solid fa-hotel mr-3 text-pink-500 w-5"></i>
                     <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
                 </a>
+                <a href="japan_trip_budget.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-calculator mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Split Expenses</span><span class="lang-zh">费用分摊</span>
+                </a>
             </div>
         </div>
     </nav>
@@ -117,6 +124,29 @@
     </a>
 
     <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <!-- Transportation Budget Link -->
+        <section class="mb-8 animate-fade-in">
+            <a href="transportation-budget.html" class="block glass-card p-6 hover:shadow-lg transition-all duration-300 border-2 border-blue-200 hover:border-blue-400">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="p-3 bg-blue-100 rounded-xl mr-4">
+                            <i class="fa-solid fa-train text-blue-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-header text-lg font-bold text-slate-800 mb-1">
+                                <span class="lang-en">Transportation Budget & Walking Times</span><span class="lang-zh">交通预算 & 步行时间</span>
+                            </h3>
+                            <p class="text-sm text-slate-600">
+                                <span class="lang-en">Detailed breakdown of train, bus fares, and walking times for each day</span>
+                                <span class="lang-zh">每天的电车、巴士费用和步行时间详细分解</span>
+                            </p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-blue-500 text-xl ml-4"></i>
+                </div>
+            </a>
+        </section>
+
         <!-- Budget Section -->
         <section id="budget" class="scroll-mt-24 break-inside-avoid animate-fade-in">
             <div class="flex flex-col sm:flex-row items-start sm:items-center mb-6 gap-3">

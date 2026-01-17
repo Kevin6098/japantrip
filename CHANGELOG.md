@@ -4,6 +4,147 @@ This file documents all changes made to the Japan Trip 2026 project.
 
 ---
 
+## 2026-01-17: Unified Navigation Links Across All Pages
+
+### Description
+Added the "Split Expenses" navigation link to all HTML pages to ensure consistent navigation and easy access to the budget splitter tool from every page on the site.
+
+### Changes Made
+
+#### Navigation Updates
+- **Added "Split Expenses" link** to desktop navigation menus on all main pages
+- **Added "Split Expenses" link** to mobile navigation menus on all main pages
+- **Consistent placement** - Link appears after "Hotels" and before the language switcher button
+- **Bilingual support** - Link displays "Split Expenses" in English and "费用分摊" in Chinese
+
+#### Files Modified
+- `flights.html` - Added Split Expenses link to desktop and mobile navigation
+- `schedule.html` - Added Split Expenses link to desktop and mobile navigation
+- `budget.html` - Added Split Expenses link to desktop and mobile navigation
+- `packing.html` - Added Split Expenses link to desktop and mobile navigation
+- `tourist-attraction.html` - Added Split Expenses link to desktop and mobile navigation
+- `food.html` - Added Split Expenses link to desktop and mobile navigation
+- `hotel.html` - Added Split Expenses link to desktop and mobile navigation
+
+### Benefits
+- ✅ Consistent navigation across all pages
+- ✅ Easy access to budget splitter from any page
+- ✅ Improved user experience with unified navigation structure
+- ✅ Mobile-friendly navigation includes all links
+- ✅ Bilingual navigation support maintained
+
+### Notes
+- All navigation menus now match the structure of `homepage.html`
+- Split Expenses link points to `japan_trip_budget.html`
+- Desktop navigation uses text link, mobile navigation uses icon + text format
+- Link uses calculator icon (fa-calculator) in mobile menu for visual consistency
+
+---
+
+## 2026-01-17: Created Jumbo Fishing Boat Tsurikichi Osaka Shinsekai Restaurant Page
+
+### Description
+Created a complete restaurant page for Jumbo Fishing Boat Tsurikichi Osaka Shinsekai (ジャンボ釣船 つり吉 大阪新世界店), a unique interactive fishing izakaya where guests can catch their own fish and have it prepared fresh, with carousel images and full integration into the food dashboard and schedule pages.
+
+### Changes Made
+
+#### New Restaurant Page Created
+- **Created folder structure**: `restaurants/tsurikichi-shinsekai/`
+- **Created HTML page**: `tsurikichi-shinsekai.html` with full restaurant details
+- **Added 9 image URLs** in carousel format matching other restaurant pages
+- **Implemented carousel functionality** with navigation arrows and dot indicators
+
+#### Image URLs Added
+1. `https://tsuri-kichi.com/img/fishing/img_menu3.jpg`
+2. `https://rimage.gnst.jp/rest/img/ck7vnzdm0000/s_0nhf.jpg?t=1730696406`
+3. `https://tsuri-kichi.com/img/food_menu/img07.jpg`
+4. `https://img.pretty-online.jp/wp-content/uploads/2020/04/11190833/ad5b80e260163d82f91773c1688c67a4.jpg.webp`
+5. `https://tsuri-kichi.com/img/top/img_02.jpg`
+6. `https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/193676/c0800177b7f3420b7e4478522068b3ab.jpg?token=4cc5210&api=v2`
+7. `https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/106398/106398191.jpg?token=e0a87d6&api=v2`
+8. `https://tsuri-kichi.com/img/access/img_namba.jpg`
+9. `https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/150734/150734486.jpg?token=30117da&api=v2`
+
+#### Files Created
+- `restaurants/tsurikichi-shinsekai/tsurikichi-shinsekai.html` - Complete restaurant page with carousel, details, and bilingual content
+
+#### Files Modified
+- `src/data/restaurantsData.js` - Added `tsurikichi-shinsekai` entry with all 9 images and restaurant details
+- `food.html` - Added restaurant card to Osaka section
+- `schedule/day10.html` - Updated dinner link to point to new restaurant page instead of generic "Dinner in Shinsekai/Tsutenkaku area"
+- `schedule.html` - Updated detailed schedule for Day 10 to include restaurant link
+- `src/pages/Food.jsx` - Added `tsurikichi-shinsekai` to Osaka restaurants array
+
+### Restaurant Details
+- **Name**: Jumbo Fishing Boat Tsurikichi Osaka Shinsekai (ジャンボ釣船 つり吉 大阪新世界店)
+- **Location**: Shinsekai, Osaka
+- **Type**: Interactive fishing izakaya (Japanese pub)
+- **Hours**: 5:00 PM - 11:00 PM (Dinner)
+- **Price**: Varies
+- **Nearest Station**: Dobutsuen-mae Station
+
+### Benefits
+- ✅ Complete restaurant page with all details and images
+- ✅ Integrated into food dashboard (Osaka section)
+- ✅ Linked from schedule pages (Day 10 - March 27 dinner)
+- ✅ Carousel format matches other restaurant pages
+- ✅ Bilingual support (English/Chinese)
+- ✅ React app integration complete
+- ✅ Perfect for dinner after exploring Tsutenkaku and Shinsekai area
+- ✅ Unique interactive experience - catch your own fish!
+
+### Notes
+- Restaurant offers interactive fishing experience where guests catch their own fish from tanks
+- Fish can be prepared in various styles: sashimi, grilled, fried, or hot pot
+- Located in vibrant Shinsekai district near Tsutenkaku, perfect for dinner after sightseeing
+- All 9 images showcase fishing experience, fresh seafood, restaurant interior, and location
+- Carousel includes auto-play functionality and touch/swipe support
+- Perfect timing: Dinner at 7:00 PM after visiting Tsutenkaku at 5:30 PM
+- Duration: ~1.5-2 hours for fishing and dining experience
+- Fun and interactive experience - great for groups
+
+---
+
+## 2026-01-17: Updated Nakamura Tokichi Honten with Image Carousel
+
+### Description
+Enhanced the Nakamura Tokichi Honten (中村藤吉本店) restaurant page with additional images and converted the display format to a carousel, matching the style of other restaurant pages.
+
+### Changes Made
+
+#### Restaurant Page Updates
+- **Added 6 new image URLs** to showcase Nakamura Tokichi Honten's matcha shop, products, tea experience, and traditional tea house
+- **Converted image display** from single static image to interactive carousel format
+- **Added carousel functionality** with navigation arrows and dot indicators
+- **Total of 6 images** now available in the carousel
+
+#### Image URLs Added
+1. `https://global.tokichi.jp/cdn/shop/files/sp_top_202210_28-1.webp?v=1676857832&width=3840`
+2. `https://global.tokichi.jp/cdn/shop/files/1_1_9d25c4e0-fdc9-4cdf-9f36-77c76069b6ed.webp?v=1676857729&width=3840`
+3. `https://www.kyototourism.org/wp/wp-content/uploads/2021/01/Tea_Nakamura-Tokichi-Honten-01.jpg`
+4. `https://global.tokichi.jp/cdn/shop/files/3_1b6712d2-d9f4-4376-85c9-40ee083c44f6.webp?v=1677140158&width=3840`
+5. `https://tokichi.jp/cdn/shop/files/39_69bc85e7-dd86-4522-80f8-ba60d2b4c351.jpg?v=1674790321&width=1500`
+6. `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkNnuRn6-Q2jpLDSpcx68njipWba-bO_46zw&s`
+
+#### Files Modified
+- `restaurants/nakamura-tokichi-uji.html` - Added carousel with 6 images, navigation arrows, and indicators
+- `src/data/restaurantsData.js` - Updated images array to include all 6 carousel images
+
+### Benefits
+- ✅ Consistent UI/UX - Carousel format matches other restaurant pages
+- ✅ Better image showcase - Users can browse through multiple images of the tea house, matcha products, and desserts
+- ✅ Interactive experience - Navigation arrows and indicators for easy browsing
+- ✅ Complete data integration - All images properly linked in data files
+
+### Notes
+- Carousel includes auto-play functionality (pauses on hover)
+- Touch/swipe support enabled for mobile devices
+- All images have proper alt text for accessibility
+- First image in carousel is used as thumbnail on dashboard
+- Images showcase the historic tea house, matcha products, tea ceremony experience, and traditional Japanese desserts
+
+---
+
 ## 2026-01-17: Updated Schedule for Day 7 and Day 10
 
 ### Description

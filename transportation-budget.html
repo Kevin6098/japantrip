@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation Budget - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-700" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="budget.html" class="nav-link">
+                        <span class="lang-en">← Back to Budget</span><span class="lang-zh">← 返回预算</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="budget.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Header -->
+        <section class="text-center mb-12">
+            <div class="inline-flex items-center bg-blue-100 px-6 py-3 rounded-full shadow border border-blue-200 mb-4">
+                <i class="fa-solid fa-train text-blue-600 text-2xl mr-3"></i>
+                <h1 class="font-header text-3xl font-bold text-slate-800">
+                    <span class="lang-en">Transportation Budget</span><span class="lang-zh">交通预算</span>
+                </h1>
+            </div>
+            <p class="text-sm text-slate-600 max-w-2xl mx-auto">
+                <span class="lang-en">Detailed breakdown of train, bus, and walking times for each day</span>
+                <span class="lang-zh">每天的电车、巴士和步行时间详细分解</span>
+            </p>
+        </section>
+
+        <!-- Daily Transportation Breakdown -->
+        <div class="space-y-8">
+            <!-- Day 1 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-indigo-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-indigo-700">Day 1</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">Arrival (Mar 18)</span><span class="lang-zh">抵达 (3月18日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li><span class="lang-en">Private Van: HND → Katsushika-ku</span><span class="lang-zh">私人包车: 羽田机场 → 葛饰区</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-indigo-600"><span class="lang-en">Private Van (Shared)</span><span class="lang-zh">私人包车 (分摊)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li><span class="lang-en">Minimal walking (airport transfer)</span><span class="lang-zh">最少步行 (机场接送)</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~0 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 2 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-indigo-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-indigo-700">Day 2</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">Tokyo City Tour (Mar 19)</span><span class="lang-zh">东京城市游 (3月19日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Katsushika → Higashi-Ginza (Keisei/Toei):</span><span class="lang-zh">葛饰区 → 东银座 (京成/都营):</span> <span class="font-mono font-semibold">¥280</span></li>
+                            <li>• <span class="lang-en">Ginza → Tokyo Station (Walk/Marunouchi Line):</span><span class="lang-zh">银座 → 东京站 (步行/丸之内线):</span> <span class="font-mono font-semibold">¥180</span></li>
+                            <li>• <span class="lang-en">Tokyo Station → Asakusa (Ginza Line):</span><span class="lang-zh">东京站 → 浅草 (银座线):</span> <span class="font-mono font-semibold">¥200</span></li>
+                            <li>• <span class="lang-en">Asakusa → Katsushika (Keisei/Toei):</span><span class="lang-zh">浅草 → 葛饰区 (京成/都营):</span> <span class="font-mono font-semibold">¥280</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-indigo-600">¥940</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">To station:</span><span class="lang-zh">至车站:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Higashi-Ginza → Tsukiji:</span><span class="lang-zh">东银座 → 筑地:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Tsukiji → Pain Maison:</span><span class="lang-zh">筑地 → Pain Maison:</span> 15 mins</li>
+                            <li>• <span class="lang-en">Pain Maison → Ginza:</span><span class="lang-zh">Pain Maison → 银座:</span> 12 mins</li>
+                            <li>• <span class="lang-en">Ginza area walking:</span><span class="lang-zh">银座区步行:</span> 30 mins</li>
+                            <li>• <span class="lang-en">Ginza → Tokyo Station:</span><span class="lang-zh">银座 → 东京站:</span> 12 mins</li>
+                            <li>• <span class="lang-en">Asakusa Station → Restaurant:</span><span class="lang-zh">浅草站 → 餐厅:</span> 4 mins</li>
+                            <li>• <span class="lang-en">Asakusa → Station:</span><span class="lang-zh">浅草 → 车站:</span> 4 mins</li>
+                            <li>• <span class="lang-en">From station:</span><span class="lang-zh">从车站:</span> 5 mins</li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~87 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 3 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-indigo-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-indigo-700">Day 3</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">Graduation Day (Mar 20)</span><span class="lang-zh">毕业典礼日 (3月20日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Katsushika → Asakusa (Keisei/Toei):</span><span class="lang-zh">葛饰区 → 浅草 (京成/都营):</span> <span class="font-mono font-semibold">¥280</span></li>
+                            <li>• <span class="lang-en">Asakusa → Ueno → Omiya → Miyashiro (JR/Tobu):</span><span class="lang-zh">浅草 → 上野 → 大宫 → 宫代 (JR/东武):</span> <span class="font-mono font-semibold">¥1,200</span></li>
+                            <li>• <span class="lang-en">Miyashiro → Oshiage → Shibuya (Tobu/Hanzomon):</span><span class="lang-zh">宫代 → 押上 → 涩谷 (东武/半藏门):</span> <span class="font-mono font-semibold">¥1,200</span></li>
+                            <li>• <span class="lang-en">Shibuya → Oshiage → Katsushika (Hanzomon/Keisei/Toei):</span><span class="lang-zh">涩谷 → 押上 → 葛饰区 (半藏门/京成/都营):</span> <span class="font-mono font-semibold">¥400</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-indigo-600">¥3,080</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">To station:</span><span class="lang-zh">至车站:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Asakusa Station → Senso-ji:</span><span class="lang-zh">浅草站 → 浅草寺:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Senso-ji → Ichiran:</span><span class="lang-zh">浅草寺 → 一兰:</span> 7 mins</li>
+                            <li>• <span class="lang-en">Asakusa → Station:</span><span class="lang-zh">浅草 → 车站:</span> 7 mins</li>
+                            <li>• <span class="lang-en">Miyashiro Station → NIT:</span><span class="lang-zh">宫代站 → 日本工业大学:</span> 10 mins</li>
+                            <li>• <span class="lang-en">NIT → Miyashiro Station:</span><span class="lang-zh">日本工业大学 → 宫代站:</span> 10 mins</li>
+                            <li>• <span class="lang-en">Shibuya Station → Crossing:</span><span class="lang-zh">涩谷站 → 十字路口:</span> 3 mins</li>
+                            <li>• <span class="lang-en">Shibuya Station → Restaurant:</span><span class="lang-zh">涩谷站 → 餐厅:</span> 4 mins</li>
+                            <li>• <span class="lang-en">Shibuya → Station:</span><span class="lang-zh">涩谷 → 车站:</span> 3 mins</li>
+                            <li>• <span class="lang-en">From station:</span><span class="lang-zh">从车站:</span> 5 mins</li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~59 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 4 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-orange-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-orange-700">Day 4</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">Move to Osaka (Mar 21)</span><span class="lang-zh">前往大阪 (3月21日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Katsushika → Yurakucho (Keisei/Toei/Hanzomon/Yurakucho):</span><span class="lang-zh">葛饰区 → 有乐町 (京成/都营/半藏门/有乐町):</span> <span class="font-mono font-semibold">¥400</span></li>
+                            <li>• <span class="lang-en">Yurakucho → Tokyo Station (Walk):</span><span class="lang-zh">有乐町 → 东京站 (步行):</span> <span class="font-mono font-semibold">Free</span></li>
+                            <li>• <span class="lang-en">Tokyo → Shin-Osaka (Shinkansen):</span><span class="lang-zh">东京 → 新大阪 (新干线):</span> <span class="font-mono font-semibold">¥13,870</span></li>
+                            <li>• <span class="lang-en">Shin-Osaka → Momodani (JR Loop Line):</span><span class="lang-zh">新大阪 → 桃谷 (JR环状线):</span> <span class="font-mono font-semibold">¥200</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-orange-600">¥14,470</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">To station:</span><span class="lang-zh">至车站:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Yurakucho → Afuri:</span><span class="lang-zh">有乐町 → 阿夫利:</span> 3 mins</li>
+                            <li>• <span class="lang-en">Yurakucho → Tokyo Station:</span><span class="lang-zh">有乐町 → 东京站:</span> 7 mins</li>
+                            <li>• <span class="lang-en">Shin-Osaka Station → Platform:</span><span class="lang-zh">新大阪站 → 站台:</span> 2 mins</li>
+                            <li>• <span class="lang-en">Momodani Station → Airbnb:</span><span class="lang-zh">桃谷站 → Airbnb:</span> 2 mins</li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~19 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 5 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-red-700">Day 5</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">Kobe Day Trip (Mar 22)</span><span class="lang-zh">神户一日游 (3月22日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Momodani → Osaka → Sannomiya (JR Loop/Kobe Line):</span><span class="lang-zh">桃谷 → 大阪 → 三宫 (JR环状/神户线):</span> <span class="font-mono font-semibold">¥610</span></li>
+                            <li>• <span class="lang-en">Sannomiya → Rokko Station (Train):</span><span class="lang-zh">三宫 → 六甲站 (电车):</span> <span class="font-mono font-semibold">¥320</span></li>
+                            <li>• <span class="lang-en">Rokko Cable Car (Round trip):</span><span class="lang-zh">六甲缆车 (往返):</span> <span class="font-mono font-semibold">¥1,200</span></li>
+                            <li>• <span class="lang-en">Rokko-sancho → Pasture (Bus/Walk):</span><span class="lang-zh">六甲山顶 → 牧场 (巴士/步行):</span> <span class="font-mono font-semibold">¥210</span></li>
+                            <li>• <span class="lang-en">Pasture → Rokko-sancho (Bus/Walk):</span><span class="lang-zh">牧场 → 六甲山顶 (巴士/步行):</span> <span class="font-mono font-semibold">¥210</span></li>
+                            <li>• <span class="lang-en">Rokko Station → Sannomiya (Train):</span><span class="lang-zh">六甲站 → 三宫 (电车):</span> <span class="font-mono font-semibold">¥320</span></li>
+                            <li>• <span class="lang-en">Sannomiya → Osaka → Momodani (JR Kobe/Loop Line):</span><span class="lang-zh">三宫 → 大阪 → 桃谷 (JR神户/环状线):</span> <span class="font-mono font-semibold">¥610</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-red-600">¥3,480</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">To station:</span><span class="lang-zh">至车站:</span> 2 mins</li>
+                            <li>• <span class="lang-en">Sannomiya → Meriken Park:</span><span class="lang-zh">三宫 → 美利坚公园:</span> 10 mins</li>
+                            <li>• <span class="lang-en">Meriken Park → Kobe Steak Nick:</span><span class="lang-zh">美利坚公园 → 神户牛排 Nick:</span> 12 mins</li>
+                            <li>• <span class="lang-en">Sannomiya → Rokko Cable Car:</span><span class="lang-zh">三宫 → 六甲缆车:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Rokko Station → Cable Car:</span><span class="lang-zh">六甲站 → 缆车:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Rokko-sancho → Pasture:</span><span class="lang-zh">六甲山顶 → 牧场:</span> 12 mins</li>
+                            <li>• <span class="lang-en">Pasture → Rokko-sancho:</span><span class="lang-zh">牧场 → 六甲山顶:</span> 12 mins</li>
+                            <li>• <span class="lang-en">Cable Car → Rokko Station:</span><span class="lang-zh">缆车 → 六甲站:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Sannomiya → Gashoken:</span><span class="lang-zh">三宫 → Gashoken:</span> 7 mins</li>
+                            <li>• <span class="lang-en">Gashoken → Kobe Port Tower:</span><span class="lang-zh">Gashoken → 神户塔:</span> 12 mins</li>
+                            <li>• <span class="lang-en">Kobe Port Tower → Sannomiya:</span><span class="lang-zh">神户塔 → 三宫:</span> 10 mins</li>
+                            <li>• <span class="lang-en">From station:</span><span class="lang-zh">从车站:</span> 2 mins</li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~92 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 6 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-sky-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-sky-700">Day 6</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">USJ (Mar 23)</span><span class="lang-zh">环球影城 (3月23日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Momodani → Nishikujo → Universal City (JR Loop/Yumesaki):</span><span class="lang-zh">桃谷 → 西九条 → 环球影城 (JR环状/梦咲):</span> <span class="font-mono font-semibold">¥200</span></li>
+                            <li>• <span class="lang-en">Universal City → Nishikujo → Momodani (JR Yumesaki/Loop):</span><span class="lang-zh">环球影城 → 西九条 → 桃谷 (JR梦咲/环状):</span> <span class="font-mono font-semibold">¥200</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-sky-600">¥400</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">To station:</span><span class="lang-zh">至车站:</span> 2 mins</li>
+                            <li>• <span class="lang-en">Universal City Station → USJ:</span><span class="lang-zh">环球影城站 → USJ:</span> 5 mins</li>
+                            <li>• <span class="lang-en">USJ → Universal City Station:</span><span class="lang-zh">USJ → 环球影城站:</span> 5 mins</li>
+                            <li>• <span class="lang-en">From station:</span><span class="lang-zh">从车站:</span> 2 mins</li>
+                            <li>• <span class="lang-en">USJ internal walking (all day):</span><span class="lang-zh">USJ内部步行 (全天):</span> ~120 mins</li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~134 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 7 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-orange-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-orange-700">Day 7</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">Osaka Exploration (Mar 24)</span><span class="lang-zh">大阪探索 (3月24日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Momodani → Osaka Station (JR Loop Line):</span><span class="lang-zh">桃谷 → 大阪站 (JR环状线):</span> <span class="font-mono font-semibold">¥200</span></li>
+                            <li>• <span class="lang-en">Osaka Station → Osakako (JR Loop Line):</span><span class="lang-zh">大阪站 → 大阪港 (JR环状线):</span> <span class="font-mono font-semibold">¥200</span></li>
+                            <li>• <span class="lang-en">Osakako → Honmachi → Shinsaibashi (Chuo/Midosuji):</span><span class="lang-zh">大阪港 → 本町 → 心斋桥 (中央/御堂筋):</span> <span class="font-mono font-semibold">¥240</span></li>
+                            <li>• <span class="lang-en">Namba → Momodani (JR Loop Line):</span><span class="lang-zh">难波 → 桃谷 (JR环状线):</span> <span class="font-mono font-semibold">¥200</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-orange-600">¥840</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">To station:</span><span class="lang-zh">至车站:</span> 2 mins</li>
+                            <li>• <span class="lang-en">Osaka Station → Umeda Sky Building:</span><span class="lang-zh">大阪站 → 梅田蓝天大厦:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Osaka Station → Platform:</span><span class="lang-zh">大阪站 → 站台:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Osakako Station → Aquarium:</span><span class="lang-zh">大阪港站 → 海游馆:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Aquarium → Osakako Station:</span><span class="lang-zh">海游馆 → 大阪港站:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Shinsaibashi Station → Shopping area:</span><span class="lang-zh">心斋桥站 → 购物区:</span> 2 mins</li>
+                            <li>• <span class="lang-en">Shinsaibashi → Dotonbori:</span><span class="lang-zh">心斋桥 → 道顿堀:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Dotonbori area walking:</span><span class="lang-zh">道顿堀区步行:</span> 30 mins</li>
+                            <li>• <span class="lang-en">Namba Station → Platform:</span><span class="lang-zh">难波站 → 站台:</span> 5 mins</li>
+                            <li>• <span class="lang-en">From station:</span><span class="lang-zh">从车站:</span> 2 mins</li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~66 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 8 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-emerald-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-emerald-700">Day 8</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">Kyoto (Mar 25)</span><span class="lang-zh">京都 (3月25日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Momodani → Kyobashi → Fushimi-Inari (JR Loop/Keihan):</span><span class="lang-zh">桃谷 → 京桥 → 伏见稻荷 (JR环状/京阪):</span> <span class="font-mono font-semibold">¥500</span></li>
+                            <li>• <span class="lang-en">Fushimi-Inari → Kiyomizu-Gojo (Keihan Line):</span><span class="lang-zh">伏见稻荷 → 清水五条 (京阪线):</span> <span class="font-mono font-semibold">¥220</span></li>
+                            <li>• <span class="lang-en">Gion-Shijo → Kyobashi → Momodani (Keihan/JR Loop):</span><span class="lang-zh">祇园四条 → 京桥 → 桃谷 (京阪/JR环状):</span> <span class="font-mono font-semibold">¥500</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-emerald-600">¥1,220</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">To station:</span><span class="lang-zh">至车站:</span> 2 mins</li>
+                            <li>• <span class="lang-en">Fushimi-Inari Station → Shrine:</span><span class="lang-zh">伏见稻荷站 → 神社:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Fushimi Inari exploration:</span><span class="lang-zh">伏见稻荷探索:</span> 60 mins</li>
+                            <li>• <span class="lang-en">Fushimi-Inari Station → Platform:</span><span class="lang-zh">伏见稻荷站 → 站台:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Kiyomizu-Gojo → Kiyomizu-dera:</span><span class="lang-zh">清水五条 → 清水寺:</span> 15 mins</li>
+                            <li>• <span class="lang-en">Kiyomizu-dera → Ninenzaka:</span><span class="lang-zh">清水寺 → 二年坂:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Ninenzaka → Gion:</span><span class="lang-zh">二年坂 → 祇园:</span> 10 mins</li>
+                            <li>• <span class="lang-en">Gion area walking:</span><span class="lang-zh">祇园区步行:</span> 30 mins</li>
+                            <li>• <span class="lang-en">Gion → Gion-Shijo Station:</span><span class="lang-zh">祇园 → 祇园四条站:</span> 5 mins</li>
+                            <li>• <span class="lang-en">From station:</span><span class="lang-zh">从车站:</span> 2 mins</li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~137 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 9 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-teal-700">Day 9</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">Uji & Nara (Mar 26)</span><span class="lang-zh">宇治 & 奈良 (3月26日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Momodani → Kyobashi → Uji (JR Loop/Keihan):</span><span class="lang-zh">桃谷 → 京桥 → 宇治 (JR环状/京阪):</span> <span class="font-mono font-semibold">¥600</span></li>
+                            <li>• <span class="lang-en">Uji → Nara (JR Nara Line):</span><span class="lang-zh">宇治 → 奈良 (JR奈良线):</span> <span class="font-mono font-semibold">¥560</span></li>
+                            <li>• <span class="lang-en">Nara Station → Shizuka Kouen (Bus #2/70):</span><span class="lang-zh">奈良站 → 志津香 (巴士2/70号):</span> <span class="font-mono font-semibold">¥210</span></li>
+                            <li>• <span class="lang-en">Nara area walking (no train needed):</span><span class="lang-zh">奈良区步行 (无需电车):</span> <span class="font-mono font-semibold">Free</span></li>
+                            <li>• <span class="lang-en">Nara → Kyobashi → Momodani (JR Nara/Loop Line):</span><span class="lang-zh">奈良 → 京桥 → 桃谷 (JR奈良/环状线):</span> <span class="font-mono font-semibold">¥760</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-teal-600">¥2,130</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">To station:</span><span class="lang-zh">至车站:</span> 2 mins</li>
+                            <li>• <span class="lang-en">Uji Station → Nakamura Tokichi:</span><span class="lang-zh">宇治站 → 中村藤吉:</span> 3 mins</li>
+                            <li>• <span class="lang-en">Nakamura Tokichi → Ujigami Shrine:</span><span class="lang-zh">中村藤吉 → 宇治上神社:</span> 10 mins</li>
+                            <li>• <span class="lang-en">Ujigami Shrine → Uji Station:</span><span class="lang-zh">宇治上神社 → 宇治站:</span> 10 mins</li>
+                            <li>• <span class="lang-en">Nara Station → Shizuka Kouen (or walk 10 mins):</span><span class="lang-zh">奈良站 → 志津香 (或步行10分钟):</span> 10 mins</li>
+                            <li>• <span class="lang-en">Shizuka Kouen → Nara Park:</span><span class="lang-zh">志津香 → 奈良公园:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Nara Park → Todaiji:</span><span class="lang-zh">奈良公园 → 东大寺:</span> 10 mins</li>
+                            <li>• <span class="lang-en">Todaiji → Kasuga Taisha:</span><span class="lang-zh">东大寺 → 春日大社:</span> 15 mins</li>
+                            <li>• <span class="lang-en">Kasuga Taisha → Mt. Wakakusa:</span><span class="lang-zh">春日大社 → 若草山:</span> 15 mins</li>
+                            <li>• <span class="lang-en">Mt. Wakakusa → Yamatoen Honten:</span><span class="lang-zh">若草山 → 大和园本店:</span> 20 mins</li>
+                            <li>• <span class="lang-en">Yamatoen Honten → Nara Station:</span><span class="lang-zh">大和园本店 → 奈良站:</span> 15 mins</li>
+                            <li>• <span class="lang-en">From station:</span><span class="lang-zh">从车站:</span> 2 mins</li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~117 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 10 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-orange-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-orange-700">Day 10</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">Osaka City Highlights (Mar 27)</span><span class="lang-zh">大阪城市精华 (3月27日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Momodani → Shin-Osaka → Minami-Ibaraki (JR Loop/Midosuji):</span><span class="lang-zh">桃谷 → 新大阪 → 南茨木 (JR环状/御堂筋):</span> <span class="font-mono font-semibold">¥600</span></li>
+                            <li>• <span class="lang-en">Minami-Ibaraki → Katsuoji (Bus):</span><span class="lang-zh">南茨木 → 勝尾寺 (巴士):</span> <span class="font-mono font-semibold">¥500</span></li>
+                            <li>• <span class="lang-en">Katsuoji → Minami-Ibaraki (Bus):</span><span class="lang-zh">勝尾寺 → 南茨木 (巴士):</span> <span class="font-mono font-semibold">¥500</span></li>
+                            <li>• <span class="lang-en">Minami-Ibaraki → Shin-Osaka → Morinomiya (Midosuji/JR Loop):</span><span class="lang-zh">南茨木 → 新大阪 → 森之宫 (御堂筋/JR环状):</span> <span class="font-mono font-semibold">¥600</span></li>
+                            <li>• <span class="lang-en">Morinomiya → Namba (JR Loop Line):</span><span class="lang-zh">森之宫 → 难波 (JR环状线):</span> <span class="font-mono font-semibold">¥200</span></li>
+                            <li>• <span class="lang-en">Namba → Tennoji (Midosuji Line):</span><span class="lang-zh">难波 → 天王寺 (御堂筋线):</span> <span class="font-mono font-semibold">¥180</span></li>
+                            <li>• <span class="lang-en">Tennoji → Dobutsuen-mae (Midosuji Line):</span><span class="lang-zh">天王寺 → 动物园前 (御堂筋线):</span> <span class="font-mono font-semibold">¥180</span></li>
+                            <li>• <span class="lang-en">Dobutsuen-mae → Namba → Momodani (Midosuji/JR Loop):</span><span class="lang-zh">动物园前 → 难波 → 桃谷 (御堂筋/JR环状):</span> <span class="font-mono font-semibold">¥380</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-orange-600">¥3,140</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">To station:</span><span class="lang-zh">至车站:</span> 2 mins</li>
+                            <li>• <span class="lang-en">Morinomiya Station → Osaka Castle:</span><span class="lang-zh">森之宫站 → 大阪城:</span> 10 mins</li>
+                            <li>• <span class="lang-en">Osaka Castle → Morinomiya Station:</span><span class="lang-zh">大阪城 → 森之宫站:</span> 10 mins</li>
+                            <li>• <span class="lang-en">Namba Station → Kuromon Market:</span><span class="lang-zh">难波站 → 黑门市场:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Kuromon Market → Namba Yasaka:</span><span class="lang-zh">黑门市场 → 难波八阪:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Namba Yasaka → Namba Station:</span><span class="lang-zh">难波八阪 → 难波站:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Tennoji Station → Harukas Abeno:</span><span class="lang-zh">天王寺站 → 阿倍野HARUKAS:</span> 2 mins</li>
+                            <li>• <span class="lang-en">Harukas Abeno → Tennoji Station:</span><span class="lang-zh">阿倍野HARUKAS → 天王寺站:</span> 2 mins</li>
+                            <li>• <span class="lang-en">Dobutsuen-mae Station → Tsutenkaku:</span><span class="lang-zh">动物园前站 → 通天阁:</span> 5 mins</li>
+                            <li>• <span class="lang-en">Tsutenkaku area walking:</span><span class="lang-zh">通天阁区步行:</span> 20 mins</li>
+                            <li>• <span class="lang-en">Dobutsuen-mae → Station:</span><span class="lang-zh">动物园前 → 车站:</span> 5 mins</li>
+                            <li>• <span class="lang-en">From station:</span><span class="lang-zh">从车站:</span> 2 mins</li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~73 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 11 -->
+            <section class="glass-card p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-orange-100 p-2 rounded-lg mr-3">
+                        <span class="font-bold text-orange-700">Day 11</span>
+                    </div>
+                    <h2 class="font-header text-xl font-bold text-slate-800">
+                        <span class="lang-en">Fly Home (Mar 28)</span><span class="lang-zh">回家 (3月28日)</span>
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-train text-blue-500 mr-2"></i>
+                            <span class="lang-en">Transportation</span><span class="lang-zh">交通</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Private Van: Osaka Airbnb → KIX</span><span class="lang-zh">私人包车: 大阪Airbnb → 关西机场</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Cost:</span><span class="lang-zh">总费用:</span></span>
+                                <span class="text-lg font-bold text-orange-600"><span class="lang-en">Private Van (Shared)</span><span class="lang-zh">私人包车 (分摊)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <h3 class="font-bold text-sm text-slate-700 mb-2">
+                            <i class="fa-solid fa-walking text-green-500 mr-2"></i>
+                            <span class="lang-en">Walking Time</span><span class="lang-zh">步行时间</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 text-slate-600">
+                            <li>• <span class="lang-en">Minimal walking (airport transfer)</span><span class="lang-zh">最少步行 (机场接送)</span></li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-slate-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold text-slate-700"><span class="lang-en">Total Walking:</span><span class="lang-zh">总步行:</span></span>
+                                <span class="text-lg font-bold text-green-600">~0 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Summary Section -->
+        <section class="glass-card p-6 mt-8">
+            <h2 class="font-header text-2xl font-bold text-slate-800 mb-6">
+                <i class="fa-solid fa-calculator text-blue-500 mr-2"></i>
+                <span class="lang-en">Total Summary</span><span class="lang-zh">总计</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 rounded-xl p-6 text-center">
+                    <i class="fa-solid fa-train text-blue-600 text-3xl mb-3"></i>
+                    <h3 class="font-bold text-sm text-slate-700 mb-2">
+                        <span class="lang-en">Total Transportation</span><span class="lang-zh">总交通费</span>
+                    </h3>
+                    <div class="text-3xl font-bold text-blue-600 mb-1">¥26,220</div>
+                    <div class="text-sm text-slate-500">~RM 839</div>
+                    <p class="text-xs text-slate-600 mt-2">
+                        <span class="lang-en">*Excludes private vans (shared cost)</span>
+                        <span class="lang-zh">*不含私人包车 (分摊费用)</span>
+                    </p>
+                </div>
+                <div class="bg-green-50 rounded-xl p-6 text-center">
+                    <i class="fa-solid fa-walking text-green-600 text-3xl mb-3"></i>
+                    <h3 class="font-bold text-sm text-slate-700 mb-2">
+                        <span class="lang-en">Total Walking Time</span><span class="lang-zh">总步行时间</span>
+                    </h3>
+                    <div class="text-3xl font-bold text-green-600 mb-1">~667 mins</div>
+                    <div class="text-sm text-slate-500">~11.1 hours</div>
+                    <p class="text-xs text-slate-600 mt-2">
+                        <span class="lang-en">*Average ~61 mins per day</span>
+                        <span class="lang-zh">*平均每天约61分钟</span>
+                    </p>
+                </div>
+                <div class="bg-purple-50 rounded-xl p-6 text-center">
+                    <i class="fa-solid fa-info-circle text-purple-600 text-3xl mb-3"></i>
+                    <h3 class="font-bold text-sm text-slate-700 mb-2">
+                        <span class="lang-en">Notes</span><span class="lang-zh">备注</span>
+                    </h3>
+                    <ul class="text-xs text-left text-slate-600 space-y-1">
+                        <li>• <span class="lang-en">Fares are estimates based on typical Japan transit costs</span><span class="lang-zh">费用基于日本典型交通成本估算</span></li>
+                        <li>• <span class="lang-en">Consider JR Pass for Day 3-11 if traveling extensively</span><span class="lang-zh">如广泛旅行，考虑第3-11天使用JR Pass</span></li>
+                        <li>• <span class="lang-en">IC cards (Suica/PASMO) recommended for convenience</span><span class="lang-zh">建议使用IC卡 (Suica/PASMO) 方便</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="glass-card p-6 mt-8">
+            <h2 class="font-header text-xl font-bold text-slate-800 mb-4">
+                <i class="fa-solid fa-lightbulb text-yellow-500 mr-2"></i>
+                <span class="lang-en">Money-Saving Tips</span><span class="lang-zh">省钱提示</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-yellow-50 rounded-lg p-4">
+                    <h3 class="font-bold text-sm text-slate-700 mb-2">
+                        <span class="lang-en">JR Pass Consideration</span><span class="lang-zh">JR Pass考虑</span>
+                    </h3>
+                    <p class="text-xs text-slate-600 mb-2">
+                        <span class="lang-en">7-day JR Pass: ~¥29,650. Your estimated JR costs (Days 4-11): ~¥22,000. May not be worth it unless you add more JR travel.</span>
+                        <span class="lang-zh">7天JR Pass: 约¥29,650。您的JR估算费用 (第4-11天): 约¥22,000。除非增加更多JR旅行，否则可能不值得。</span>
+                    </p>
+                </div>
+                <div class="bg-yellow-50 rounded-lg p-4">
+                    <h3 class="font-bold text-sm text-slate-700 mb-2">
+                        <span class="lang-en">IC Cards</span><span class="lang-zh">IC卡</span>
+                    </h3>
+                    <p class="text-xs text-slate-600 mb-2">
+                        <span class="lang-en">Get Suica (Tokyo) or ICOCA (Osaka) for seamless travel. Works on most trains, buses, and convenience stores. Initial deposit: ¥500 (refundable).</span>
+                        <span class="lang-zh">购买Suica (东京) 或ICOCA (大阪) 以便无缝旅行。适用于大多数电车、巴士和便利店。初始押金: ¥500 (可退还)。</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

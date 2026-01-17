@@ -20,6 +20,7 @@ const Food = () => {
     osaka: [
       { id: 'dotonbori-dinner', ...restaurantsData['dotonbori-dinner'] },
       { id: 'kushikatsu-shinsekai', ...restaurantsData['kushikatsu-shinsekai'] },
+      { id: 'tsurikichi-shinsekai', ...restaurantsData['tsurikichi-shinsekai'] },
     ],
     kobe: [
       { id: 'kobe-steak-nick', ...restaurantsData['kobe-steak-nick'] },
