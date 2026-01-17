@@ -7,6 +7,7 @@ const RestaurantCard = ({
   price, 
   image, 
   locationColor = 'indigo',
+  schedule = null,
   onClick 
 }) => {
   const colorClasses = {
@@ -67,6 +68,27 @@ const RestaurantCard = ({
         <p className="text-sm text-slate-600 mb-3 flex-grow">
           {description}
         </p>
+        {schedule && (
+          <div className="mb-3">
+            {Array.isArray(schedule) ? (
+              schedule.map((s, idx) => (
+                <div key={idx} className="flex items-center gap-2 mb-2">
+                  <i className="fa-solid fa-calendar-day text-blue-500 text-xs"></i>
+                  <span className="text-xs font-semibold text-blue-700">
+                    {s.date} {s.time} - {s.meal}
+                  </span>
+                </div>
+              ))
+            ) : (
+              <div className="flex items-center gap-2">
+                <i className="fa-solid fa-calendar-day text-blue-500 text-xs"></i>
+                <span className="text-xs font-semibold text-blue-700">
+                  {schedule.date} {schedule.time} - {schedule.meal}
+                </span>
+              </div>
+            )}
+          </div>
+        )}
         {price && (
           <span className="inline-block text-xs font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200 mt-auto">
             {price}

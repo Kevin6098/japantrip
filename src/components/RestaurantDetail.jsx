@@ -246,6 +246,41 @@ const RestaurantDetail = ({ restaurant }) => {
           </div>
         </div>
 
+        {/* Schedule */}
+        {restaurant.schedule && (
+          <div className={`glass-card rounded-2xl p-6 mb-8 border ${locationColor}`}>
+            <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor}`}>
+              <i className="fa-solid fa-calendar-day mr-2"></i>
+              {t('Schedule', '行程安排')}
+            </h2>
+            <div className="space-y-3 text-slate-700">
+              {Array.isArray(restaurant.schedule) ? (
+                restaurant.schedule.map((s, idx) => (
+                  <div key={idx} className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                    <i className="fa-solid fa-calendar-day text-blue-600"></i>
+                    <div>
+                      <span className="font-semibold text-blue-700">
+                        {t(s.date.en, s.date.zh)} {s.time}
+                      </span>
+                      <span className="text-blue-600 ml-2">- {t(s.meal.en, s.meal.zh)}</span>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                  <i className="fa-solid fa-calendar-day text-blue-600"></i>
+                  <div>
+                    <span className="font-semibold text-blue-700">
+                      {t(restaurant.schedule.date.en, restaurant.schedule.date.zh)} {restaurant.schedule.time}
+                    </span>
+                    <span className="text-blue-600 ml-2">- {t(restaurant.schedule.meal.en, restaurant.schedule.meal.zh)}</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         {/* About */}
         {restaurant.about && (
           <div className={`glass-card rounded-2xl p-6 mb-8 border ${locationColor}`}>

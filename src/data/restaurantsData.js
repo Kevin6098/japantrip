@@ -8,6 +8,12 @@ export const restaurantsData = {
     city: 'tokyo',
     price: '¥120-¥190',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: {
+      day: 2,
+      date: { en: 'Thu, Mar 19', zh: '3月19日 星期四' },
+      time: '11:30',
+      meal: { en: 'Snack', zh: '小吃' },
+    },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/pain-maison/bakery-sign.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/pain-maison/bread-individual.jpg',
@@ -42,6 +48,12 @@ export const restaurantsData = {
     city: 'tokyo',
     price: '¥4,600-¥11,000',
     hours: { en: '11:30 AM - 3:00 PM (Lunch)', zh: '11:30 AM - 3:00 PM (Lunch)' },
+    schedule: {
+      day: 2,
+      date: { en: 'Thu, Mar 19', zh: '3月19日 星期四' },
+      time: '12:00',
+      meal: { en: 'Lunch', zh: '午餐' },
+    },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ginza-kanimitsu/crab-whole-dish.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ginza-kanimitsu/restaurant-interior.jpg',
@@ -74,8 +86,14 @@ export const restaurantsData = {
     title: { en: 'Nakamura Tokichi Ginza', zh: '中村藤吉 银座店' },
     location: { en: 'Ginza, Tokyo', zh: '东京银座' },
     city: 'tokyo',
-    price: 'Tea Time',
+    price: '¥1,000-¥2,000',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: {
+      day: 2,
+      date: { en: 'Thu, Mar 19', zh: '3月19日 星期四' },
+      time: '14:00',
+      meal: { en: 'Tea Time', zh: '下午茶' },
+    },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/nakamura-tokichi-ginza/matcha-parfait.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/nakamura-tokichi-ginza/matcha-dessert-set.jpg',
@@ -104,8 +122,14 @@ export const restaurantsData = {
     title: { en: 'Asakusa - Monja Yaki & Okonomiyaki', zh: '浅草 - 文字烧 & 大阪烧' },
     location: { en: 'Asakusa, Tokyo', zh: '东京浅草' },
     city: 'tokyo',
-    price: 'Varies',
+    price: '¥2,000-¥3,000',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: {
+      day: 2,
+      date: { en: 'Thu, Mar 19', zh: '3月19日 星期四' },
+      time: '18:00',
+      meal: { en: 'Dinner', zh: '晚餐' },
+    },
     images: [
       'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Monjayaki_After.JPG/250px-Monjayaki_After.JPG',
       'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/261855/f7d28b7cb3c7b2ff2a55c328d1dd1162.jpg?token=2309b10&api=v2',
@@ -140,6 +164,12 @@ export const restaurantsData = {
     city: 'tokyo',
     price: '¥890-¥1,490',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: {
+      day: 3,
+      date: { en: 'Fri, Mar 20', zh: '3月20日 星期五' },
+      time: '11:30',
+      meal: { en: 'Lunch', zh: '午餐' },
+    },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ichiran-ramen/restaurant-interior.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/ichiran-ramen/restaurant-dining-area.jpg',
@@ -169,8 +199,14 @@ export const restaurantsData = {
     title: { en: 'Tsukada Shabu Shabu', zh: '塚田しゃぶしゃぶ' },
     location: { en: 'Shibuya, Tokyo', zh: '东京涩谷' },
     city: 'tokyo',
-    price: 'Varies',
+    price: '¥6,000-¥8,000',
     hours: { en: '5:00 PM - 11:00 PM', zh: '下午5点 - 晚上11点' },
+    schedule: {
+      day: 3,
+      date: { en: 'Fri, Mar 20', zh: '3月20日 星期五' },
+      time: '20:00',
+      meal: { en: 'Dinner (Graduation Celebration)', zh: '晚餐 (毕业庆功)' },
+    },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/tsukada-shabu/restaurant-interior.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/tsukada-shabu/shabu-dining-counter.jpg',
@@ -203,6 +239,12 @@ export const restaurantsData = {
     city: 'tokyo',
     price: '¥900-¥1,500',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: {
+      day: 4,
+      date: { en: 'Sat, Mar 21', zh: '3月21日 星期六' },
+      time: '11:00',
+      meal: { en: 'Lunch', zh: '午餐' },
+    },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/afuri-yurakucho/restaurant-exterior.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/afuri-yurakucho/ramen-bowl-closeup.jpg',
@@ -239,6 +281,20 @@ export const restaurantsData = {
     city: 'osaka',
     price: 'Varies',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: [
+      {
+        day: 4,
+        date: { en: 'Sat, Mar 21', zh: '3月21日 星期六' },
+        time: '20:00',
+        meal: { en: 'Dinner (Reunion)', zh: '晚餐 (团圆)' },
+      },
+      {
+        day: 10,
+        date: { en: 'Fri, Mar 27', zh: '3月27日 星期五' },
+        time: '19:00',
+        meal: { en: 'Dinner', zh: '晚餐' },
+      },
+    ],
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/attractions/dotonbori/canal-night-view.jpg',
     ],
@@ -260,35 +316,6 @@ export const restaurantsData = {
     access: { en: 'Walk from Namba Station', zh: '从难波站步行' },
     mapUrl: 'https://www.google.com/maps/dir/?api=1&destination=Dotonbori+Osaka',
   },
-  'kushikatsu-shinsekai': {
-    id: 'kushikatsu-shinsekai',
-    title: { en: 'Kushikatsu (Shinsekai)', zh: '炸串 (新世界)' },
-    location: { en: 'Shinsekai, Osaka', zh: '大阪新世界' },
-    city: 'osaka',
-    price: '¥100-¥500 per skewer',
-    hours: { en: 'Hours Vary', zh: '营业时间不定' },
-    images: [
-      'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1200&q=80',
-    ],
-    about: {
-      en: "Kushikatsu is Osaka's famous deep-fried skewers, and Shinsekai is the best area to try them. Various ingredients like meat, vegetables, and seafood are breaded and deep-fried, then served with a special dipping sauce. The rule is: no double-dipping!",
-      zh: '炸串是大阪著名的深炸串，新世界是尝试它们的最佳区域。各种食材如肉类、蔬菜和海鲜被裹上面包屑并深炸，然后配以特殊的蘸酱。规则是：不要二次蘸酱！'
-    },
-    highlights: [
-      { en: "Osaka's Famous Dish: Deep-fried skewers", zh: '大阪著名料理: 深炸串' },
-      { en: 'Shinsekai Area: Best place to try kushikatsu', zh: '新世界区域: 尝试炸串的最佳地点' },
-      { en: 'Special Dipping Sauce: Unique flavor', zh: '特殊蘸酱: 独特风味' },
-    ],
-    tips: [
-      { en: 'No double-dipping rule!', zh: '不要二次蘸酱规则！' },
-      { en: 'Duration: ~1 hour', zh: '停留时间: 约1小时' },
-      { en: 'Near Tsutenkaku Tower', zh: '通天阁附近' },
-    ],
-    address: { en: 'Shinsekai, Osaka', zh: '大阪新世界' },
-    station: { en: 'Tennoji Station', zh: '天王寺站' },
-    access: { en: 'Walk 5 mins from Tennoji Station', zh: '从天王寺站步行5分钟' },
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Kushikatsu+Shinsekai+Osaka',
-  },
   'kobe-steak-nick': {
     id: 'kobe-steak-nick',
     title: { en: 'Kobe Steak Nick (KOBE STEAK 青斜塔)', zh: 'Kobe Steak Nick (KOBE STEAK 青斜塔)' },
@@ -296,6 +323,12 @@ export const restaurantsData = {
     city: 'kobe',
     price: '¥6,000-¥7,000',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: {
+      day: 5,
+      date: { en: 'Sun, Mar 22', zh: '3月22日 星期日' },
+      time: '12:00',
+      meal: { en: 'Lunch', zh: '午餐' },
+    },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/kobe-steak-nick/restaurant-exterior.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/kobe-steak-nick/restaurant-interior.jpg',
@@ -331,6 +364,12 @@ export const restaurantsData = {
     city: 'kobe',
     price: '¥1,100-¥1,880',
     hours: { en: '11:00 AM - 10:00 PM', zh: '11:00 AM - 10:00 PM' },
+    schedule: {
+      day: 5,
+      date: { en: 'Sun, Mar 22', zh: '3月22日 星期日' },
+      time: '17:30',
+      meal: { en: 'Dinner', zh: '晚餐' },
+    },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/gashoken/restaurant-exterior-night.png',
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/restaurants/gashoken/menu-display.jpg',
@@ -368,6 +407,12 @@ export const restaurantsData = {
     city: 'kyoto',
     price: 'Varies',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: {
+      day: 8,
+      date: { en: 'Wed, Mar 25', zh: '3月25日 星期三' },
+      time: '13:00',
+      meal: { en: 'Lunch', zh: '午餐' },
+    },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/attractions/kiyomizu/main-hall-veranda.jpg',
     ],
@@ -394,8 +439,9 @@ export const restaurantsData = {
     title: { en: 'Gion Unagi Kawato (祇园うなぎ 川と)', zh: '祇园うなぎ 川と' },
     location: { en: 'Gion, Kyoto', zh: '京都祇园' },
     city: 'kyoto',
-    price: 'Varies',
+    price: '¥5,000-¥6,000',
     hours: { en: '5:00 PM - 11:00 PM', zh: '下午5点 - 晚上11点' },
+    schedule: null, // Not explicitly scheduled
     images: [
       'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/285723/0ea5efdb69af2e51243dc205716d2910.jpg?token=28a170c&api=v2',
       'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/285722/f2910ac1f39d789b4ea39cd60d1794d7.jpg?token=ec2770b&api=v2',
@@ -430,8 +476,14 @@ export const restaurantsData = {
     title: { en: 'Nakamura Tokichi Honten', zh: '中村藤吉 本店' },
     location: { en: 'Uji, Kyoto', zh: '京都宇治' },
     city: 'uji',
-    price: 'Varies',
+    price: '¥2,000-¥3,000',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: {
+      day: 9,
+      date: { en: 'Thu, Mar 26', zh: '3月26日 星期四' },
+      time: '10:00',
+      meal: { en: 'Early Lunch / Tea Time', zh: '早午餐 / 下午茶' },
+    },
     images: [
       'https://global.tokichi.jp/cdn/shop/files/sp_top_202210_28-1.webp?v=1676857832&width=3840',
       'https://global.tokichi.jp/cdn/shop/files/1_1_9d25c4e0-fdc9-4cdf-9f36-77c76069b6ed.webp?v=1676857729&width=3840',
@@ -463,8 +515,9 @@ export const restaurantsData = {
     title: { en: 'Kamameshi Shizuka Kouen-ten (志津香)', zh: '志津香公园店' },
     location: { en: 'Nara Park, Nara', zh: '奈良公园，奈良' },
     city: 'nara',
-    price: 'Varies',
+    price: '¥1,000-¥2,000',
     hours: { en: '11:00 AM - 3:00 PM', zh: '11:00 AM - 3:00 PM' },
+    schedule: null, // Not explicitly scheduled
     images: [
       'https://static.gltjp.com/glt/data/directory/14000/13162/20220630_163718_48f149c8_w640.webp',
       'https://tblg.k-img.com/restaurant/images/Rvw/229983/640x640_rect_d60dddefe0e8c38b8bbf3b442cd57d8a.jpg',
@@ -498,8 +551,9 @@ export const restaurantsData = {
     title: { en: 'Yamatoen Honten (大和园本店)', zh: '大和园本店' },
     location: { en: 'Nara', zh: '奈良' },
     city: 'nara',
-    price: 'Varies',
+    price: '¥3,000-¥4,000',
     hours: { en: '5:00 PM - 11:00 PM', zh: '下午5点 - 晚上11点' },
+    schedule: null, // Not explicitly scheduled
     images: [
       'https://static.where-e.com/Japan/Nara_Prefecture/Yamatoan-Honten_c105737e9d8c53bcb797de7c9e2608f7.jpg',
       'https://airial.travel/_next/image?url=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-w%2F18%2F9b%2F56%2F98%2Fphoto1jpg.jpg&w=3840&q=75',
@@ -534,8 +588,14 @@ export const restaurantsData = {
     title: { en: 'Jumbo Fishing Boat Tsurikichi Osaka Shinsekai (ジャンボ釣船 つり吉 大阪新世界店)', zh: 'ジャンボ釣船 つり吉 大阪新世界店' },
     location: { en: 'Shinsekai, Osaka', zh: '大阪新世界' },
     city: 'osaka',
-    price: 'Varies',
+    price: '¥3,000-¥4,000',
     hours: { en: '5:00 PM - 11:00 PM (Dinner)', zh: '5:00 PM - 11:00 PM (晚餐)' },
+    schedule: {
+      day: 10,
+      date: { en: 'Fri, Mar 27', zh: '3月27日 星期五' },
+      time: '18:30',
+      meal: { en: 'Dinner', zh: '晚餐' },
+    },
     images: [
       'https://tsuri-kichi.com/img/fishing/img_menu3.jpg',
       'https://rimage.gnst.jp/rest/img/ck7vnzdm0000/s_0nhf.jpg?t=1730696406',

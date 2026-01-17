@@ -821,4 +821,70 @@ export const attractionsData = {
       { en: 'Duration: Allow 30-60 minutes for a leisurely walk along the river', zh: '停留时间: 沿河悠闲散步需要30-60分钟' },
     ],
   },
+  'katsuoji': {
+    id: 'katsuoji',
+    title: { en: 'Katsuoji Temple (勝尾寺)', zh: '勝尾寺' },
+    location: { en: 'Osaka', zh: '大阪' },
+    city: 'osaka',
+    price: '¥500',
+    hours: { en: '8:00 AM - 5:00 PM', zh: '早上8点 - 下午5点' },
+    images: [
+      'https://maido-storage.oss-cn-hongkong.aliyuncs.com/maido/uploads/2020/08/katsuoji-01.jpg',
+      'https://maido-storage.oss-cn-hongkong.aliyuncs.com/maido/uploads/2020/08/katsuoji-02-400x280.jpg',
+      'https://katsuo-ji-temple.or.jp/seasons/img/img_autumn01_3.jpg',
+      'https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/mmnqsbcymiztuwzrvyml.jpg',
+      'https://res.cloudinary.com/dbeud0a7k/image/upload/c_fill,w_1200,h_800,q_auto:low,f_webp,fl_progressive/v1756090846/locations/osaka/286-katsuoji-temple/286-katsuoji-temple_1756090845_UdBRrzpK.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqXvRWWq2U4E655Xt82GaXclOH7-p8vTq_QA&s',
+    ],
+    about: {
+      en: "Katsuoji Temple (勝尾寺) is a famous Buddhist temple located in the mountains of northern Osaka, known for its thousands of daruma dolls. The temple is often called \"Daruma-dera\" (Daruma Temple) because of the countless daruma dolls that visitors place throughout the temple grounds. Founded in 727 AD, Katsuoji Temple has a long history and is known as a temple for \"winning luck\" (katsuo means \"victory\" in Japanese). Visitors come to pray for success in various endeavors and purchase daruma dolls to place around the temple, creating a unique and colorful atmosphere.",
+      zh: '勝尾寺是大阪北部山区的一座著名佛教寺庙，以其数千个达摩娃娃而闻名。这座寺庙通常被称为"达摩寺"，因为游客在整个寺庙场地放置了无数达摩娃娃。勝尾寺建于公元727年，历史悠久，被称为"胜利之寺"（勝尾在日语中意为"胜利"）。游客来这里祈祷在各种努力中取得成功，并购买达摩娃娃放置在寺庙周围，营造出独特而多彩的氛围。'
+    },
+    highlights: [
+      { en: 'Thousands of Daruma Dolls: The temple grounds are filled with colorful daruma dolls placed by visitors, creating a unique and photogenic atmosphere', zh: '数千个达摩娃娃: 寺庙场地充满了游客放置的彩色达摩娃娃，营造出独特而适合拍照的氛围' },
+      { en: 'Victory Temple: Known as a temple for "winning luck" - visitors pray for success in exams, business, sports, and other endeavors', zh: '胜利之寺: 被称为"胜利之寺" - 游客祈祷在考试、商业、体育和其他努力中取得成功' },
+      { en: 'Seasonal Beauty: Beautiful mountain temple surrounded by nature - especially stunning in autumn when the maple leaves change color', zh: '季节性美景: 美丽的山寺被自然环绕 - 尤其是在秋季枫叶变色时格外美丽' },
+      { en: 'Early Morning Access: Opens at 8:00 AM, perfect for early morning visits before crowds arrive', zh: '清晨开放: 早上8点开放，非常适合在人群到达之前清晨参观' },
+    ],
+    tips: [
+      { en: 'Early Arrival: Arriving at 7:00 AM allows you to experience the temple before the crowds and enjoy the peaceful morning atmosphere', zh: '早到: 早上7点到达可以让您在人群到达之前体验寺庙，享受宁静的早晨氛围' },
+      { en: 'Daruma Dolls: You can purchase daruma dolls at the temple to place around the grounds - they come in various sizes', zh: '达摩娃娃: 您可以在寺庙购买达摩娃娃放置在场地周围 - 它们有各种尺寸' },
+      { en: 'Autumn Season: The temple is especially beautiful in autumn (late October to early December) when the maple leaves turn red and yellow', zh: '秋季: 寺庙在秋季（10月下旬至12月初）特别美丽，此时枫叶变红变黄' },
+      { en: 'Mountain Location: Located in the mountains, the temple offers beautiful views and a peaceful escape from the city', zh: '山区位置: 位于山区，寺庙提供美丽的景色和远离城市的宁静避风港' },
+    ],
+  },
+  'harukas-abeno': {
+    id: 'harukas-abeno',
+    title: { en: 'Abeno Harukas (阿倍野HARUKAS)', zh: '阿倍野HARUKAS' },
+    location: { en: 'Osaka', zh: '大阪' },
+    city: 'osaka',
+    price: '¥1,500 (Observation Deck)',
+    hours: { en: '9:00 AM - 10:00 PM', zh: '早上9点 - 晚上10点' },
+    images: [
+      'https://tenmabashi-ekimae.hotelkeihan.co.jp/wp-content/uploads/sites/425/2022/02/POI_ABENOHARUKAS.jpg',
+      'https://www.abenoharukas-300.jp/en/images/bnr-ph01.jpg',
+      'https://ichibanosaka.com/wdps/wp-content/uploads/2018/07/ad6ff09de8b12f7c591affa1ef81a225.jpg',
+      'https://www.offthetrackjapan.com/wp-content/uploads/2019/02/abeno-harukas-4025468_1280_1000x667-min.jpg',
+      'https://cdn.gaijinpot.com/app/uploads/sites/6/2016/12/Abeno-Harukas-.jpg',
+      'https://www.neverendingvoyage.com/wp-content/uploads/2019/03/abeno-harukas300-3.jpg',
+      'https://s3-ap-northeast-1.amazonaws.com/thegate/2020/12/21/15/45/57/Abeno-Harukas.jpg',
+    ],
+    about: {
+      en: "Abeno Harukas (阿倍野HARUKAS) is Japan's tallest building, standing at 300 meters (984 feet) tall with 60 floors. Located in the Abeno district of Osaka, it opened in 2014 and has quickly become one of the city's most iconic landmarks. The complex houses a department store, hotel, office spaces, and the highest observation deck in Japan. The name \"Harukas\" comes from the ancient Japanese word meaning \"to make bright, clear, and cheerful.\" The building features stunning modern architecture and offers panoramic views of Osaka from its observation deck on the 58th, 59th, and 60th floors.",
+      zh: '阿倍野HARUKAS是日本最高的建筑，高300米（984英尺），共60层。位于大阪的阿倍野区，于2014年开放，并迅速成为该市最具标志性的地标之一。该综合建筑内设有百货商店、酒店、办公空间和日本最高的观景台。"HARUKAS"这个名字来自古代日语单词，意思是"使明亮、清晰和愉快"。该建筑采用令人惊叹的现代建筑，从其位于58、59和60层的观景台可欣赏大阪的全景。'
+    },
+    highlights: [
+      { en: 'Japan\'s Tallest Building: At 300 meters tall, Abeno Harukas is the tallest building in Japan, offering breathtaking views of Osaka', zh: '日本最高的建筑: 高300米，阿倍野HARUKAS是日本最高的建筑，提供令人叹为观止的大阪景色' },
+      { en: 'HARUKAS 300 Observation Deck: Located on floors 58-60, the observation deck offers 360-degree panoramic views of Osaka and surrounding areas', zh: 'HARUKAS 300观景台: 位于58-60层，观景台提供360度全景，可欣赏大阪及周边地区' },
+      { en: 'Shopping Paradise: The building houses a massive department store with luxury brands, fashion, electronics, and local products', zh: '购物天堂: 该建筑内设有大型百货商店，有奢侈品牌、时尚、电子产品和当地产品' },
+      { en: 'Dining Options: Wide variety of restaurants and cafes throughout the building, from casual dining to fine dining', zh: '餐饮选择: 整个建筑内有各种餐厅和咖啡馆，从休闲餐饮到高级餐饮' },
+      { en: 'Easy Access: Directly connected to Tennoji Station, making it easily accessible by train', zh: '交通便利: 直接连接到天王寺站，乘坐火车即可轻松到达' },
+    ],
+    tips: [
+      { en: 'Best Time to Visit: Visit during sunset hours for the most spectacular views of Osaka bathed in golden light', zh: '最佳访问时间: 在日落时分访问，可欣赏大阪沐浴在金色光芒中最壮观的景色' },
+      { en: 'Shopping Tax-Free: Bring your passport for tax-free shopping at the department store - many international brands available', zh: '免税购物: 携带护照在百货商店享受免税购物 - 有许多国际品牌可供选择' },
+      { en: 'Observation Deck: The HARUKAS 300 observation deck offers indoor and outdoor viewing areas - tickets can be purchased on-site or online', zh: '观景台: HARUKAS 300观景台提供室内和室外观景区 - 可以在现场或在线购买门票' },
+      { en: 'Combine with Nearby Attractions: Visit nearby Tennoji Zoo, Shitennoji Temple, or Tsutenkaku Tower in the same area', zh: '与附近景点结合: 参观附近的天王寺动物园、四天王寺或通天阁塔，都在同一地区' },
+    ],
+  },
 }

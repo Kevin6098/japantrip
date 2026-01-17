@@ -227,6 +227,9 @@ export const getScheduleData = (t) => [
       { 
         time: '20:00', 
         text: t('Reunion Dinner (Dotonbori)', '团圆晚餐 (道顿堀)'), 
+        highlight: true,
+        link: '/attractions/dotonbori',
+        mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Dotonbori+Osaka',
         special: true 
       },
     ],
@@ -400,6 +403,8 @@ export const getScheduleData = (t) => [
       { 
         time: '20:00', 
         text: t('Dinner in Dotonbori', '道顿堀晚餐'),
+        highlight: true,
+        link: '/attractions/dotonbori',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Dotonbori+Osaka',
         special: true,
         transit: t('Return: Walk 5 mins to Namba Station → JR Osaka Loop Line to Momodani Station (~15 mins train) → Walk 2 mins', '返回: 步行5分钟至难波站 → JR大阪环状线至桃谷站 (~15分钟电车) → 步行2分钟')
@@ -557,31 +562,77 @@ export const getScheduleData = (t) => [
   {
     day: 10,
     date: 'Fri, Mar 27',
-    title: t('Last Shopping', '最后购物'),
+    title: t('Osaka City Highlights', '大阪城市精华'),
     location: 'Osaka',
     color: 'orange',
     items: [
       { 
-        time: t('Day', '全天'), 
-        text: t('Shinsaibashi / Umeda', '心斋桥 / 梅田'),
+        time: '06:00', 
+        text: t('Depart from Airbnb (JR Momodani Station)', '从Airbnb出发 (JR桃谷站)'),
+        transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Shin-Osaka → Midosuji Line to Minami-Ibaraki → Bus to Katsuoji (~1.5 hours total)', '步行2分钟至桃谷站 → JR大阪环状线至新大阪 → 御堂筋线至南茨木 → 巴士至勝尾寺 (~1.5小时总计)')
+      },
+      { 
+        time: '07:00', 
+        text: t('Katsuoji Temple (勝尾寺)', '勝尾寺'), 
         highlight: true,
-        link: '/attractions/shinsaibashi',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=JR+Momodani+Station+Osaka&destination=Shinsaibashi+Osaka&travelmode=transit',
-        transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Namba (~15 mins train) → Walk 3 mins to Shinsaibashi. To Umeda: Walk 2 mins to Momodani Station → JR Osaka Loop Line to Osaka Station (~20 mins train)', '步行2分钟至桃谷站 → JR大阪环状线至难波 (~15分钟电车) → 步行3分钟至心斋桥。至梅田: 步行2分钟至桃谷站 → JR大阪环状线至大阪站 (~20分钟电车)')
+        link: '/attractions/katsuoji',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Katsuoji+Temple+Osaka',
+        price: '¥500',
+        transit: t('Arrive at 7am - Famous temple with thousands of daruma dolls', '早上7点到达 - 以数千个达摩娃娃而闻名的寺庙')
       },
       { 
-        time: '17:00', 
-        text: t('Collect Luggage', '取行李')
+        time: '09:00', 
+        text: t('Depart from Katsuoji', '从勝尾寺出发'),
+        transit: t('Bus to Minami-Ibaraki → Midosuji Line to Shin-Osaka → JR Osaka Loop Line to Morinomiya (~1.5 hours total)', '巴士至南茨木 → 御堂筋线至新大阪 → JR大阪环状线至森之宫 (~1.5小时总计)')
       },
       { 
-        time: '17:30', 
-        text: t('Private Van to KIX', '私人包车前往关西机场'),
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=JR+Momodani+Station+Osaka&destination=Kansai+International+Airport',
-        transit: t('Travel time: ~50-60 mins (Osaka Airbnb → KIX)', '车程: 约50-60分钟 (大阪Airbnb → 关西机场)')
+        time: '10:30', 
+        text: t('Osaka Castle', '大阪城'), 
+        highlight: true,
+        link: '/attractions/osaka-castle',
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Morinomiya+Station+Osaka&destination=Osaka+Castle&travelmode=walking',
+        price: 'Free',
+        transit: t('Walk 10 mins from Morinomiya Station. Conan Photo Spot & Tenshukaku (Tower ¥600)', '从森之宫站步行10分钟。柯南打卡点 & 天守阁 (登塔¥600)')
+      },
+      { 
+        time: '12:30', 
+        text: t('Kuromon Ichiba Market (Lunch)', '黑门市场 (午餐)'), 
+        highlight: true,
+        link: '/attractions/kuromon-market',
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Osaka+Castle&destination=Kuromon+Ichiba+Market+Osaka&travelmode=transit',
+        price: 'Free',
+        transit: t('Walk 10 mins to Morinomiya Station → JR Osaka Loop Line to Namba Station (~18 mins train) → Walk 5 mins. Fresh Seafood & Street Food Lunch', '步行10分钟至森之宫站 → JR大阪环状线至难波站 (~18分钟电车) → 步行5分钟。新鲜海鲜 & 街头美食午餐')
+      },
+      { 
+        time: '14:00', 
+        text: t('Namba Yasaka Shrine', '难波八阪神社'), 
+        highlight: true,
+        link: '/attractions/namba-yasaka-shrine',
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kuromon+Ichiba+Market+Osaka&destination=Namba+Yasaka+Shrine+Osaka&travelmode=walking',
+        price: 'Free',
+        transit: t('Walk 5 mins from Kuromon Market. Giant Lion Head (Great for photos!)', '从黑门市场步行5分钟。巨大狮子头 (拍照绝佳!)')
+      },
+      { 
+        time: '15:00', 
+        text: t('Harukas Abeno', '阿倍野HARUKAS'), 
+        highlight: true,
+        link: '/attractions/harukas-abeno',
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Namba+Yasaka+Shrine+Osaka&destination=Harukas+Abeno+Osaka&travelmode=transit',
+        transit: t('Walk 5 mins to Namba Station → Midosuji Line to Tennoji Station (~5 mins train) → Walk 2 mins. Shopping at Japan\'s tallest building - Department stores & observation deck', '步行5分钟至难波站 → 御堂筋线至天王寺站 (~5分钟电车) → 步行2分钟。在日本最高建筑购物 - 百货商店 & 观景台')
+      },
+      { 
+        time: '18:00', 
+        text: t('Travel to Jumbo Fishing Boat Tsurikichi Shinsekai', '前往ジャンボ釣船 つり吉 新世界店'),
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Harukas+Abeno+Osaka&destination=Tsurikichi+Shinsekai+Osaka&travelmode=transit',
+        transit: t('Walk 2 mins to Tennoji Station → Midosuji Line to Dobutsuen-mae Station (~5 mins train) → Walk 5 mins', '步行2分钟至天王寺站 → 御堂筋线至动物园前站 (~5分钟电车) → 步行5分钟')
       },
       { 
         time: '18:30', 
-        text: t('Stay at Osaka Airbnb (No hotel check-in needed)', '继续住大阪Airbnb (无需入住酒店)')
+        text: t('Jumbo Fishing Boat Tsurikichi Shinsekai (Dinner)', 'ジャンボ釣船 つり吉 新世界店 (晚餐)'), 
+        highlight: true,
+        link: '/food/tsurikichi-shinsekai',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Tsurikichi+Shinsekai+Osaka',
+        transit: t('Duration: ~1.5-2 hours - Interactive fishing izakaya experience. Catch your own fish and have it prepared fresh (sashimi, grilled, fried, or hot pot). Return: Walk 5 mins to Dobutsuen-mae Station → Midosuji Line to Nishikujo → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins', '停留时间: 约1.5-2小时 - 互动钓鱼居酒屋体验。自己钓鱼并让餐厅新鲜制作 (刺身、烤制、油炸或火锅)。返回: 步行5分钟至动物园前站 → 御堂筋线至西九条 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟')
       },
     ],
   },

@@ -18,8 +18,6 @@ const Food = () => {
       { id: 'afuri-yurakucho', ...restaurantsData['afuri-yurakucho'] },
     ],
     osaka: [
-      { id: 'dotonbori-dinner', ...restaurantsData['dotonbori-dinner'] },
-      { id: 'kushikatsu-shinsekai', ...restaurantsData['kushikatsu-shinsekai'] },
       { id: 'tsurikichi-shinsekai', ...restaurantsData['tsurikichi-shinsekai'] },
     ],
     kobe: [
@@ -27,7 +25,6 @@ const Food = () => {
       { id: 'gashoken', ...restaurantsData['gashoken'] },
     ],
     kyoto: [
-      { id: 'kyoto-lunch', ...restaurantsData['kyoto-lunch'] },
       { id: 'gion-unagi-kawato', ...restaurantsData['gion-unagi-kawato'] },
     ],
     uji: [
@@ -102,6 +99,19 @@ const Food = () => {
                         price={restaurant.price}
                         image={image}
                         locationColor={section.color}
+                        schedule={restaurant.schedule ? (
+                          Array.isArray(restaurant.schedule) 
+                            ? restaurant.schedule.map(s => ({
+                                date: t(s.date.en, s.date.zh),
+                                time: s.time,
+                                meal: t(s.meal.en, s.meal.zh)
+                              }))
+                            : {
+                                date: t(restaurant.schedule.date.en, restaurant.schedule.date.zh),
+                                time: restaurant.schedule.time,
+                                meal: t(restaurant.schedule.meal.en, restaurant.schedule.meal.zh)
+                              }
+                        ) : null}
                       />
                     </Link>
                   </div>

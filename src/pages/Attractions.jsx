@@ -32,10 +32,12 @@ const Attractions = () => {
     ],
     osaka: [
       { id: 'dotonbori' },
+      { id: 'katsuoji' },
       { id: 'osaka-castle' },
       { id: 'osaka-aquarium' },
       { id: 'namba-yasaka-shrine' },
       { id: 'kuromon-market' },
+      { id: 'harukas-abeno' },
       { id: 'usj' },
       { id: 'tsutenkaku' },
       { id: 'shinsaibashi' },
