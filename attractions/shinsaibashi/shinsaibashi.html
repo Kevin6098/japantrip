@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shinsaibashi - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-osaka" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="shinsaibashi-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="https://www.jocjapantravel.com/wp-content/uploads/2025/08/Shinsaibashi-1270144.jpg" alt="Shinsaibashi Shopping Arcade" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://assets.hldycdn.com/cdn-cgi/image/format=webp,width=1024,quality=75/articles/4eeb57_6778c5d866d04e09880369eb9379d4b3~mv2.webp" alt="Shinsaibashi Street View" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/06/22/5f/caption.jpg?w=800&h=800&s=1" alt="Shinsaibashi Shopping District" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://cdn.cheapoguides.com/wp-content/uploads/sites/3/2019/01/Shinsaibashi-suji-Shotengai.jpg" alt="Shinsaibashi Suji Shotengai" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/490000/490590-shinsaibashi.jpg" alt="Shinsaibashi Arcade" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a38283959c84?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Shinsaibashi (心斎橋)</span><span class="lang-zh">心斋桥</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #ea580c);"></i><span class="lang-en">Chuo Ward, Osaka</span><span class="lang-zh">大阪中央区</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Free to Walk</span><span class="lang-zh">免费步行</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">10:00 AM - 9:00 PM</span><span class="lang-zh">10:00 AM - 9:00 PM</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Shinsaibashi is one of Osaka's most famous shopping districts, featuring a 580-meter long covered shopping arcade known as Shinsaibashi-suji. This vibrant shopping street connects to Dotonbori and offers everything from high-end department stores to trendy boutiques, traditional shops, and countless restaurants and cafes.</span>
+                    <span class="lang-zh">心斋桥是大阪最著名的购物区之一，拥有580米长的有盖购物拱廊，称为心斋桥筋。这个充满活力的购物街连接到道顿堀，提供从高端百货商店到时尚精品店、传统商店以及无数餐厅和咖啡厅的一切。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The arcade dates back to the Edo period and has been a commercial center for over 300 years. Today, it's a bustling pedestrian-only street filled with shops selling fashion, cosmetics, electronics, souvenirs, and local specialties. The area is particularly popular with both locals and tourists for shopping, dining, and entertainment.</span>
+                    <span class="lang-zh">拱廊可以追溯到江户时代，作为商业中心已有300多年的历史。今天，它是一个繁华的步行街，到处都是销售时尚、化妆品、电子产品、纪念品和当地特色商品的商店。该地区特别受当地人和游客的欢迎，用于购物、餐饮和娱乐。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Covered Shopping Arcade:</strong> 580-meter long pedestrian-only street protected from weather</span><span class="lang-zh"><strong>有盖购物拱廊:</strong> 580米长的步行街，不受天气影响</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Diverse Shopping:</strong> From luxury brands to affordable fashion, cosmetics, electronics, and souvenirs</span><span class="lang-zh"><strong>多样化购物:</strong> 从奢侈品牌到平价时尚、化妆品、电子产品和纪念品</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Connects to Dotonbori:</strong> Seamlessly connects to Osaka's famous food and entertainment district</span><span class="lang-zh"><strong>连接道顿堀:</strong> 无缝连接到大阪著名的美食和娱乐区</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Historic Significance:</strong> Commercial center dating back over 300 years to the Edo period</span><span class="lang-zh"><strong>历史意义:</strong> 可追溯到300多年前江户时代的商业中心</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-shopping-bag mr-2"></i>
+                    <span class="lang-en">Shopping Highlights</span><span class="lang-zh">购物亮点</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-orange-700 mb-2"><span class="lang-en">Fashion & Apparel</span><span class="lang-zh">时尚服装</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Trendy boutiques, international brands, and local fashion stores</span><span class="lang-zh">时尚精品店、国际品牌和当地时尚商店</span></p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-orange-700 mb-2"><span class="lang-en">Cosmetics & Beauty</span><span class="lang-zh">化妆品与美容</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Japanese and international beauty products, drugstores</span><span class="lang-zh">日本和国际美容产品、药妆店</span></p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-orange-700 mb-2"><span class="lang-en">Electronics</span><span class="lang-zh">电子产品</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Cameras, gadgets, and tech accessories</span><span class="lang-zh">相机、小工具和科技配件</span></p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-orange-700 mb-2"><span class="lang-en">Souvenirs & Gifts</span><span class="lang-zh">纪念品和礼品</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Traditional crafts, snacks, and unique Osaka souvenirs</span><span class="lang-zh">传统工艺品、零食和独特的大阪纪念品</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Best Time to Visit:</strong> Weekday mornings are less crowded; evenings are livelier with more people</span><span class="lang-zh"><strong>最佳参观时间:</strong> 工作日上午人较少；晚上更热闹，人更多</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Tax-Free Shopping:</strong> Many stores offer tax-free shopping for tourists - bring your passport</span><span class="lang-zh"><strong>免税购物:</strong> 许多商店为游客提供免税购物 - 请携带护照</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Combine with Dotonbori:</strong> Perfect for shopping during the day, then dining in Dotonbori at night</span><span class="lang-zh"><strong>与道顿堀结合:</strong> 白天购物，晚上在道顿堀用餐的完美选择</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Access:</strong> Direct access from Shinsaibashi Station (Osaka Metro Midosuji Line) or Namba Station</span><span class="lang-zh"><strong>交通:</strong> 从心斋桥站（大阪地铁御堂筋线）或难波站直接到达</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> Shinsaibashi-suji, Chuo Ward, Osaka</span>
+                    <span class="lang-zh"><strong>地址:</strong> 大阪市中央区心斋桥筋</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Nearest Station:</strong> Shinsaibashi Station (Osaka Metro Midosuji Line) or Namba Station</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> 心斋桥站（大阪地铁御堂筋线）或难波站</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Access:</strong> Direct access from Shinsaibashi Station Exit 5 or 6, or 5-minute walk from Namba Station</span>
+                    <span class="lang-zh"><strong>交通:</strong> 从心斋桥站5号或6号出口直接到达，或从难波站步行5分钟</span>
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Shinsaibashi+Osaka" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+                <a href="../../tourist-attraction.html" class="btn-secondary flex-1 text-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Attractions</span><span class="lang-zh">返回景点</span>
+                </a>
+                <a href="../../schedule.html" class="btn-primary flex-1 text-center">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    <span class="lang-en">View in Schedule</span><span class="lang-zh">查看行程</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Pause auto-slide on hover
+            const carousel = document.getElementById('shinsaibashi-carousel');
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>

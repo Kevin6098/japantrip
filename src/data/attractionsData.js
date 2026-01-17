@@ -693,4 +693,132 @@ export const attractionsData = {
       { en: 'Combine your visit with Namba Yasaka Shrine (5 mins walk) and Dotonbori (10 mins walk)', zh: '可以将参观与难波八阪神社（步行5分钟）和道顿堀（步行10分钟）结合起来' },
     ],
   },
+  'tsutenkaku': {
+    id: 'tsutenkaku',
+    title: { en: 'Tsutenkaku Tower (通天阁)', zh: '通天阁' },
+    location: { en: 'Shinsekai, Osaka', zh: '大阪新世界' },
+    city: 'osaka',
+    price: '¥900',
+    hours: { en: '9:00 AM - 9:00 PM', zh: '9:00 AM - 9:00 PM' },
+    images: [
+      'https://www.wamazing.com/media/wp-content/uploads/sites/7/2024/11/tsutenkaku_pixta_92512158_M-853x569-1.jpg.webp',
+      'https://res-2.cloudinary.com/jnto/image/upload/w_2064,h_1300,c_fill,f_auto,fl_lossy,q_auto/v1675232782/osaka/Osaka_s_id26_1',
+      'https://cdn.prod.rexby.com/image/7f560b0585544a4eb098c3d1a0379ac0?format=webp&width=1080&height=1350',
+      'https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000120/img/basic/a2000120_thumbnail.jpg',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1e/5f/78/ea/caption.jpg?w=1200&h=-1&s=1',
+    ],
+    about: {
+      en: "Tsutenkaku Tower is an iconic landmark in Osaka's Shinsekai district. The name \"Tsutenkaku\" means \"tower reaching heaven\" in Japanese. The current tower, completed in 1956, is the second iteration - the original was built in 1912 but was dismantled during World War II. Standing at 103 meters tall, it's one of Osaka's most recognizable symbols. The tower features an observation deck at 91 meters offering panoramic views of Osaka, a Billiken statue (god of happiness) on the 5th floor, and colorful LED lights that change with the weather forecast. The surrounding Shinsekai area is famous for its retro atmosphere, kushikatsu restaurants, and vibrant street life.",
+      zh: '通天阁是大阪新世界区的标志性地标。"Tsutenkaku"这个名字在日语中意思是"通向天空的塔"。现在的塔建于1956年，是第二个版本 - 原版建于1912年，但在第二次世界大战期间被拆除。高103米，是大阪最知名的象征之一。塔在91米处设有观景台，可欣赏大阪全景，5楼有比利肯雕像（幸福之神），还有根据天气预报改变颜色的彩色LED灯。周围的新世界区以其复古氛围、串炸餐厅和充满活力的街头生活而闻名。'
+    },
+    highlights: [
+      { en: 'Observation Deck: Panoramic views of Osaka from 91 meters high', zh: '观景台: 从91米高处欣赏大阪全景' },
+      { en: 'Billiken Statue: Rub the feet of the Billiken for good luck - a popular tradition', zh: '比利肯雕像: 抚摸比利肯的脚以求好运 - 一个受欢迎的传统' },
+      { en: 'LED Light Display: Color-coded lights indicate weather forecast (blue=sunny, orange=cloudy, pink=rainy)', zh: 'LED灯光显示: 颜色编码的灯光显示天气预报（蓝色=晴天，橙色=多云，粉色=雨天）' },
+      { en: 'Shinsekai District: Explore the retro neighborhood with kushikatsu restaurants and local shops', zh: '新世界区: 探索有串炸餐厅和当地商店的复古社区' },
+    ],
+    tips: [
+      { en: 'Best Time to Visit: Visit during sunset for beautiful views of Osaka illuminated at dusk', zh: '最佳参观时间: 在日落时参观，欣赏黄昏时大阪的美丽景色' },
+      { en: 'Combine with Shinsekai: Explore the surrounding area for kushikatsu and local street food', zh: '与新世界结合: 探索周边地区，品尝串炸和当地街头美食' },
+      { en: 'Access: 3-minute walk from Ebisucho Station (Osaka Metro Sakaisuji Line) or Dobutsuen-mae Station', zh: '交通: 从惠美须町站（大阪地铁堺筋线）或动物园前站步行3分钟' },
+      { en: 'Duration: Allow 30-45 minutes for the tower visit, plus time to explore Shinsekai', zh: '停留时间: 塔参观需要30-45分钟，加上探索新世界的时间' },
+    ],
+  },
+  'shinsaibashi': {
+    id: 'shinsaibashi',
+    title: { en: 'Shinsaibashi (心斎橋)', zh: '心斋桥' },
+    location: { en: 'Chuo Ward, Osaka', zh: '大阪中央区' },
+    city: 'osaka',
+    price: 'Free',
+    hours: { en: '10:00 AM - 9:00 PM', zh: '10:00 AM - 9:00 PM' },
+    images: [
+      'https://www.jocjapantravel.com/wp-content/uploads/2025/08/Shinsaibashi-1270144.jpg',
+      'https://assets.hldycdn.com/cdn-cgi/image/format=webp,width=1024,quality=75/articles/4eeb57_6778c5d866d04e09880369eb9379d4b3~mv2.webp',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/06/22/5f/caption.jpg?w=800&h=800&s=1',
+      'https://cdn.cheapoguides.com/wp-content/uploads/sites/3/2019/01/Shinsaibashi-suji-Shotengai.jpg',
+      'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/490000/490590-shinsaibashi.jpg',
+    ],
+    about: {
+      en: "Shinsaibashi is one of Osaka's most famous shopping districts, featuring a 580-meter long covered shopping arcade known as Shinsaibashi-suji. This vibrant shopping street connects to Dotonbori and offers everything from high-end department stores to trendy boutiques, traditional shops, and countless restaurants and cafes. The arcade dates back to the Edo period and has been a commercial center for over 300 years. Today, it's a bustling pedestrian-only street filled with shops selling fashion, cosmetics, electronics, souvenirs, and local specialties. The area is particularly popular with both locals and tourists for shopping, dining, and entertainment.",
+      zh: '心斋桥是大阪最著名的购物区之一，拥有580米长的有盖购物拱廊，称为心斋桥筋。这个充满活力的购物街连接到道顿堀，提供从高端百货商店到时尚精品店、传统商店以及无数餐厅和咖啡厅的一切。拱廊可以追溯到江户时代，作为商业中心已有300多年的历史。今天，它是一个繁华的步行街，到处都是销售时尚、化妆品、电子产品、纪念品和当地特色商品的商店。该地区特别受当地人和游客的欢迎，用于购物、餐饮和娱乐。'
+    },
+    highlights: [
+      { en: 'Covered Shopping Arcade: 580-meter long pedestrian-only street protected from weather', zh: '有盖购物拱廊: 580米长的步行街，不受天气影响' },
+      { en: 'Diverse Shopping: From luxury brands to affordable fashion, cosmetics, electronics, and souvenirs', zh: '多样化购物: 从奢侈品牌到平价时尚、化妆品、电子产品和纪念品' },
+      { en: 'Connects to Dotonbori: Seamlessly connects to Osaka\'s famous food and entertainment district', zh: '连接道顿堀: 无缝连接到大阪著名的美食和娱乐区' },
+      { en: 'Historic Significance: Commercial center dating back over 300 years to the Edo period', zh: '历史意义: 可追溯到300多年前江户时代的商业中心' },
+    ],
+    tips: [
+      { en: 'Best Time to Visit: Weekday mornings are less crowded; evenings are livelier with more people', zh: '最佳参观时间: 工作日上午人较少；晚上更热闹，人更多' },
+      { en: 'Tax-Free Shopping: Many stores offer tax-free shopping for tourists - bring your passport', zh: '免税购物: 许多商店为游客提供免税购物 - 请携带护照' },
+      { en: 'Combine with Dotonbori: Perfect for shopping during the day, then dining in Dotonbori at night', zh: '与道顿堀结合: 白天购物，晚上在道顿堀用餐的完美选择' },
+      { en: 'Access: Direct access from Shinsaibashi Station (Osaka Metro Midosuji Line) or Namba Station', zh: '交通: 从心斋桥站（大阪地铁御堂筋线）或难波站直接到达' },
+    ],
+  },
+  'ninenzaka-sannenzaka': {
+    id: 'ninenzaka-sannenzaka',
+    title: { en: 'Ninenzaka & Sannenzaka (二三年坂)', zh: '二三年坂' },
+    location: { en: 'Higashiyama, Kyoto', zh: '京都东山' },
+    city: 'kyoto',
+    price: 'Free',
+    hours: { en: 'Best: Early Morning or Evening', zh: '最佳: 清晨或傍晚' },
+    images: [
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHeYA5VNkPHxgm023xTgXN500BhHbSEMJ-A&s',
+      'https://waplus-kimono.com/kyoto/wp-content/uploads/2022/09/pixta_68238894_M.jpg',
+      'https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=center,quality=60,width=400,height=265,dpr=2/tour_img/9565110d28180a365d2a47ad1dfa76c658fadf49bd3c8ab357111c67878d2989.png',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvbn6bT8UEOc5WuvIa29L3DD4G51oOiGPdPg&s',
+      'https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000498/img/basic/a2000498_main.jpg',
+      'https://mediaim.expedia.com/destination/1/3bc76a96d16aed5e1f00c3a30a815b11.jpg',
+    ],
+    about: {
+      en: "Ninenzaka (二寧坂) and Sannenzaka (産寧坂) are two of Kyoto's most famous preserved historic streets, located in the Higashiyama district near Kiyomizu-dera Temple. These charming stone-paved slopes are lined with traditional wooden machiya houses, shops selling local crafts, souvenirs, and traditional sweets, creating an atmosphere that transports visitors back to old Kyoto. The streets are pedestrian-only and have been carefully preserved to maintain their traditional appearance. Ninenzaka means \"two-year slope\" and Sannenzaka means \"three-year slope\" - names that may refer to the time it took to build them or to prayers for safe childbirth. Both streets offer beautiful views, especially during cherry blossom season and autumn foliage, and are perfect for experiencing traditional Kyoto culture.",
+      zh: '二寧坂和産寧坂是京都最著名的保存历史街道中的两条，位于清水寺附近的东山区。这些迷人的石砌斜坡两旁是传统的木制町屋、销售当地工艺品、纪念品和传统甜点的商店，营造出一种将游客带回古老京都的氛围。这些街道仅供行人通行，并经过精心保护以保持其传统外观。二寧坂意思是"二年坂"，産寧坂意思是"三年坂" - 这些名称可能指的是建造它们所需的时间，或者是为了祈求安全分娩的祈祷。两条街道都提供美丽的景色，特别是在樱花季节和秋叶季节，是体验传统京都文化的完美场所。'
+    },
+    highlights: [
+      { en: 'Historic Preservation: Beautifully preserved traditional streets with stone paving and wooden buildings', zh: '历史保护: 保存完好的传统街道，有石砌路面和木制建筑' },
+      { en: 'Traditional Shops: Local crafts, pottery, sweets, tea, and souvenirs in traditional machiya buildings', zh: '传统商店: 传统町屋建筑中的当地工艺品、陶器、甜点、茶和纪念品' },
+      { en: 'Scenic Beauty: Stunning views especially during cherry blossom and autumn foliage seasons', zh: '风景优美: 特别是在樱花和秋叶季节的壮丽景色' },
+      { en: 'Near Kiyomizu-dera: Perfect combination visit with the famous temple just above the streets', zh: '靠近清水寺: 与位于街道上方的著名寺庙完美结合参观' },
+    ],
+    tips: [
+      { en: 'Best Time to Visit: Early morning (before 9 AM) or late afternoon to avoid crowds; cherry blossom and autumn are especially beautiful', zh: '最佳参观时间: 清晨（上午9点前）或下午晚些时候以避免人群；樱花和秋季特别美丽' },
+      { en: 'Photography: The streets are very photogenic, but be respectful of shop owners and other visitors', zh: '摄影: 街道非常适合拍照，但要尊重店主和其他游客' },
+      { en: 'Combine with Kiyomizu-dera: Visit the temple first, then walk down these historic streets', zh: '与清水寺结合: 先参观寺庙，然后沿着这些历史街道步行' },
+      { en: 'Access: 5-minute walk from Kiyomizu-dera Temple, or 10-minute walk from Kiyomizu-Gojo Station', zh: '交通: 从清水寺步行5分钟，或从清水五条站步行10分钟' },
+      { en: 'Duration: Allow 30-60 minutes to explore both streets and browse shops', zh: '停留时间: 留出30-60分钟探索两条街道并浏览商店' },
+    ],
+  },
+  'kamogawa': {
+    id: 'kamogawa',
+    title: { en: 'Kamogawa River (鴨川)', zh: '鸭川' },
+    location: { en: 'Central Kyoto', zh: '京都中心' },
+    city: 'kyoto',
+    price: 'Free',
+    hours: { en: 'Best: Cherry Blossom & Evening', zh: '最佳: 樱花季和傍晚' },
+    images: [
+      'https://a3.cdn.japantravel.com/photo/29194-148400/1440x960!/kyoto-a-walk-along-kamo-river-148400.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/3/30/Kamogawa_sakura.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6kD54kb3bX0XFZ2s9Awl1ZLVbfdifBw2Lhg&s',
+      'https://en.japantravel.com/photo/poi-788-243945/1200x630/kyoto-kamo-river-243945.jpg',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/cc/37/43/caption.jpg?w=900&h=500&s=1',
+    ],
+    about: {
+      en: "Kamogawa (Kamo River) is a scenic river that flows through the heart of Kyoto, dividing the city into east and west. The river is one of Kyoto's most beloved natural features, offering a peaceful escape from the bustling city streets. The riverbanks are beautifully maintained with walking paths, making it a popular spot for locals and tourists to stroll, jog, or simply relax and enjoy the scenery. The river is especially beautiful during cherry blossom season (late March to early April) when the sakura trees along the banks burst into bloom, creating a stunning pink tunnel. In summer, the riverbanks come alive with people enjoying yuka (outdoor dining platforms) at restaurants, and in the evenings, the area is popular for romantic walks. The river also features traditional stepping stones (dai-odan) that allow people to cross to the small islands in the middle of the river.",
+      zh: '鸭川是一条风景如画的河流，流经京都中心，将城市分为东西两部分。这条河是京都最受喜爱的自然景观之一，为繁忙的城市街道提供了一个宁静的避风港。河岸维护良好，有步行道，是当地人和游客散步、慢跑或只是放松和享受风景的热门地点。这条河在樱花季节（3月下旬至4月初）特别美丽，河岸两旁的樱花树盛开，形成令人惊叹的粉色隧道。在夏天，河岸因人们在餐厅享受纳凉床（户外用餐平台）而充满活力，在傍晚，该地区是浪漫散步的热门地点。这条河还设有传统的踏脚石（大跳石），让人们可以过河到河中央的小岛上。'
+    },
+    highlights: [
+      { en: 'Cherry Blossom Season: Stunning sakura tunnel along the riverbanks in spring', zh: '樱花季节: 春天河岸两旁令人惊叹的樱花隧道' },
+      { en: 'Riverside Walks: Beautiful walking paths perfect for strolling and jogging', zh: '河畔散步: 美丽的步行道，非常适合散步和慢跑' },
+      { en: 'Summer Yuka Dining: Outdoor dining platforms at riverside restaurants during summer', zh: '夏季纳凉床: 夏季河畔餐厅的户外用餐平台' },
+      { en: 'Stepping Stones: Traditional dai-odan stones for crossing to river islands', zh: '踏脚石: 传统的踏脚石，用于过河到河中的小岛' },
+      { en: 'Evening Atmosphere: Romantic evening walks with beautiful city lights reflecting on the water', zh: '傍晚氛围: 浪漫的晚间散步，美丽的城市灯光倒映在水面上' },
+    ],
+    tips: [
+      { en: 'Best Time to Visit: Early morning for peaceful walks, evening for romantic atmosphere, or during cherry blossom season for stunning views', zh: '最佳参观时间: 清晨进行宁静的散步，傍晚享受浪漫氛围，或在樱花季节欣赏壮丽景色' },
+      { en: 'Popular Sections: The area between Shijo-dori and Sanjo-dori is most popular, especially near Gion district', zh: '热门区域: 四条通和三条通之间的区域最受欢迎，特别是靠近祇园区的区域' },
+      { en: 'Summer Yuka: Many restaurants set up outdoor platforms (yuka) from May to September - perfect for riverside dining', zh: '夏季纳凉床: 许多餐厅从5月到9月设置户外平台（纳凉床）- 非常适合河畔用餐' },
+      { en: 'Access: Easily accessible from multiple stations including Shijo Station, Sanjo Station, or Gion-Shijo Station', zh: '交通: 从多个车站轻松到达，包括四条站、三条站或祇园四条站' },
+      { en: 'Duration: Allow 30-60 minutes for a leisurely walk along the river', zh: '停留时间: 沿河悠闲散步需要30-60分钟' },
+    ],
+  },
 }

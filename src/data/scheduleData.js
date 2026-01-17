@@ -377,6 +377,7 @@ export const getScheduleData = (t) => [
         time: '14:00', 
         text: t('Tsutenkaku', '通天阁'), 
         highlight: true,
+        link: '/attractions/tsutenkaku',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kuromon+Ichiba+Market+Osaka&destination=Tsutenkaku+Osaka&travelmode=transit',
         transit: t('Walk 5 mins to Nipponbashi Station → Midosuji Line to Dobutsuen-mae Station (~5 mins train) → Walk 5 mins. Cyberpunk/Neon Vibes', '步行5分钟至日本桥站 → 御堂筋线至动物园前站 (~5分钟电车) → 步行5分钟。赛博朋克霓虹感')
       },
@@ -384,6 +385,7 @@ export const getScheduleData = (t) => [
         time: '15:30', 
         text: t('Shinsaibashi', '心斋桥'), 
         highlight: true,
+        link: '/attractions/shinsaibashi',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Tsutenkaku+Osaka&destination=Shinsaibashi+Osaka&travelmode=transit',
         transit: t('Walk 5 mins to Dobutsuen-mae Station → Midosuji Line to Shinsaibashi Station (~5 mins train) → Walk 3 mins. Shopping Paradise (Daimaru/Parco). Bring Passport for Tax Free!', '步行5分钟至动物园前站 → 御堂筋线至心斋桥站 (~5分钟电车) → 步行3分钟。购物天堂 (大丸/Parco)。带护照退税!')
       },
@@ -438,6 +440,7 @@ export const getScheduleData = (t) => [
         time: '13:00', 
         text: t('Ninenzaka & Sannenzaka', '二年坂 & 三年坂'), 
         highlight: true,
+        link: '/attractions/ninenzaka-sannenzaka',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kiyomizu-dera+Temple+Kyoto&destination=Ninenzaka+Kyoto&travelmode=walking',
         price: 'Free',
         transit: t('Walk 5 mins downhill from Kiyomizu-dera (Energy saving!) & Lunch', '从清水寺步行5分钟下坡 (省力!) & 午餐')
@@ -464,6 +467,7 @@ export const getScheduleData = (t) => [
         time: '17:30', 
         text: t('Kamogawa River', '鸭川'), 
         highlight: true,
+        link: '/attractions/kamogawa',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Gion+District+Kyoto&destination=Kamogawa+River+Kyoto&travelmode=walking',
         note: t('(Sunset)', '(日落)'),
         transit: t('Walk 3 mins from Gion (Relax by the river, romantic evening)', '从祇园步行3分钟 (河边放松, 浪漫夜晚)')
@@ -561,6 +565,7 @@ export const getScheduleData = (t) => [
         time: t('Day', '全天'), 
         text: t('Shinsaibashi / Umeda', '心斋桥 / 梅田'),
         highlight: true,
+        link: '/attractions/shinsaibashi',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=JR+Momodani+Station+Osaka&destination=Shinsaibashi+Osaka&travelmode=transit',
         transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Namba (~15 mins train) → Walk 3 mins to Shinsaibashi. To Umeda: Walk 2 mins to Momodani Station → JR Osaka Loop Line to Osaka Station (~20 mins train)', '步行2分钟至桃谷站 → JR大阪环状线至难波 (~15分钟电车) → 步行3分钟至心斋桥。至梅田: 步行2分钟至桃谷站 → JR大阪环状线至大阪站 (~20分钟电车)')
       },

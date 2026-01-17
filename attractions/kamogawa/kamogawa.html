@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamogawa River - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-kyoto" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="kamogawa-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="https://a3.cdn.japantravel.com/photo/29194-148400/1440x960!/kyoto-a-walk-along-kamo-river-148400.jpg" alt="Kamogawa River Walk" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Kamogawa_sakura.jpg" alt="Kamogawa River with Cherry Blossoms" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6kD54kb3bX0XFZ2s9Awl1ZLVbfdifBw2Lhg&s" alt="Kamogawa River Scenic View" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://en.japantravel.com/photo/poi-788-243945/1200x630/kyoto-kamo-river-243945.jpg" alt="Kamogawa River Kyoto" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/cc/37/43/caption.jpg?w=900&h=500&s=1" alt="Kamogawa River Evening" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Kamogawa River (鴨川)</span><span class="lang-zh">鸭川</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #10b981);"></i><span class="lang-en">Central Kyoto</span><span class="lang-zh">京都中心</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Free</span><span class="lang-zh">免费</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">Best: Cherry Blossom & Evening</span><span class="lang-zh">最佳: 樱花季和傍晚</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Kamogawa (Kamo River) is a scenic river that flows through the heart of Kyoto, dividing the city into east and west. The river is one of Kyoto's most beloved natural features, offering a peaceful escape from the bustling city streets. The riverbanks are beautifully maintained with walking paths, making it a popular spot for locals and tourists to stroll, jog, or simply relax and enjoy the scenery.</span>
+                    <span class="lang-zh">鸭川是一条风景如画的河流，流经京都中心，将城市分为东西两部分。这条河是京都最受喜爱的自然景观之一，为繁忙的城市街道提供了一个宁静的避风港。河岸维护良好，有步行道，是当地人和游客散步、慢跑或只是放松和享受风景的热门地点。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The river is especially beautiful during cherry blossom season (late March to early April) when the sakura trees along the banks burst into bloom, creating a stunning pink tunnel. In summer, the riverbanks come alive with people enjoying yuka (outdoor dining platforms) at restaurants, and in the evenings, the area is popular for romantic walks. The river also features traditional stepping stones (dai-odan) that allow people to cross to the small islands in the middle of the river.</span>
+                    <span class="lang-zh">这条河在樱花季节（3月下旬至4月初）特别美丽，河岸两旁的樱花树盛开，形成令人惊叹的粉色隧道。在夏天，河岸因人们在餐厅享受纳凉床（户外用餐平台）而充满活力，在傍晚，该地区是浪漫散步的热门地点。这条河还设有传统的踏脚石（大跳石），让人们可以过河到河中央的小岛上。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Cherry Blossom Season:</strong> Stunning sakura tunnel along the riverbanks in spring</span><span class="lang-zh"><strong>樱花季节:</strong> 春天河岸两旁令人惊叹的樱花隧道</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Riverside Walks:</strong> Beautiful walking paths perfect for strolling and jogging</span><span class="lang-zh"><strong>河畔散步:</strong> 美丽的步行道，非常适合散步和慢跑</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Summer Yuka Dining:</strong> Outdoor dining platforms at riverside restaurants during summer</span><span class="lang-zh"><strong>夏季纳凉床:</strong> 夏季河畔餐厅的户外用餐平台</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Stepping Stones:</strong> Traditional dai-odan stones for crossing to river islands</span><span class="lang-zh"><strong>踏脚石:</strong> 传统的踏脚石，用于过河到河中的小岛</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Evening Atmosphere:</strong> Romantic evening walks with beautiful city lights reflecting on the water</span><span class="lang-zh"><strong>傍晚氛围:</strong> 浪漫的晚间散步，美丽的城市灯光倒映在水面上</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-calendar-alt mr-2"></i>
+                    <span class="lang-en">Seasonal Highlights</span><span class="lang-zh">季节性亮点</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-green-700 mb-2"><span class="lang-en">Spring (March-April)</span><span class="lang-zh">春天 (3-4月)</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Cherry blossoms create a beautiful pink tunnel along the river</span><span class="lang-zh">樱花在河岸两旁形成美丽的粉色隧道</span></p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-green-700 mb-2"><span class="lang-en">Summer (May-August)</span><span class="lang-zh">夏天 (5-8月)</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Yuka dining platforms open for outdoor riverside dining</span><span class="lang-zh">纳凉床开放，可在户外河畔用餐</span></p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-green-700 mb-2"><span class="lang-en">Autumn (September-November)</span><span class="lang-zh">秋天 (9-11月)</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Beautiful autumn foliage colors along the riverbanks</span><span class="lang-zh">河岸两旁美丽的秋叶色彩</span></p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-green-700 mb-2"><span class="lang-en">Winter (December-February)</span><span class="lang-zh">冬天 (12-2月)</span></h4>
+                        <p class="text-sm text-slate-600"><span class="lang-en">Peaceful winter walks with fewer crowds</span><span class="lang-zh">宁静的冬季散步，人群较少</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Best Time to Visit:</strong> Early morning for peaceful walks, evening for romantic atmosphere, or during cherry blossom season for stunning views</span><span class="lang-zh"><strong>最佳参观时间:</strong> 清晨进行宁静的散步，傍晚享受浪漫氛围，或在樱花季节欣赏壮丽景色</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Popular Sections:</strong> The area between Shijo-dori and Sanjo-dori is most popular, especially near Gion district</span><span class="lang-zh"><strong>热门区域:</strong> 四条通和三条通之间的区域最受欢迎，特别是靠近祇园区的区域</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Summer Yuka:</strong> Many restaurants set up outdoor platforms (yuka) from May to September - perfect for riverside dining</span><span class="lang-zh"><strong>夏季纳凉床:</strong> 许多餐厅从5月到9月设置户外平台（纳凉床）- 非常适合河畔用餐</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Access:</strong> Easily accessible from multiple stations including Shijo Station, Sanjo Station, or Gion-Shijo Station</span><span class="lang-zh"><strong>交通:</strong> 从多个车站轻松到达，包括四条站、三条站或祇园四条站</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en"><strong>Duration:</strong> Allow 30-60 minutes for a leisurely walk along the river</span><span class="lang-zh"><strong>停留时间:</strong> 沿河悠闲散步需要30-60分钟</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> Kamogawa River flows through central Kyoto, from north to south</span>
+                    <span class="lang-zh"><strong>地址:</strong> 鸭川流经京都中心，从北到南</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Nearest Stations:</strong> Shijo Station, Sanjo Station, Gion-Shijo Station, or Demachiyanagi Station</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> 四条站、三条站、祇园四条站或出町柳站</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Access:</strong> The most popular section is between Shijo-dori and Sanjo-dori, easily accessible from multiple stations</span>
+                    <span class="lang-zh"><strong>交通:</strong> 最受欢迎的区域是四条通和三条通之间，从多个车站轻松到达</span>
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Kamogawa+River+Kyoto" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+                <a href="../../tourist-attraction.html" class="btn-secondary flex-1 text-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Attractions</span><span class="lang-zh">返回景点</span>
+                </a>
+                <a href="../../schedule.html" class="btn-primary flex-1 text-center">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    <span class="lang-en">View in Schedule</span><span class="lang-zh">查看行程</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Pause auto-slide on hover
+            const carousel = document.getElementById('kamogawa-carousel');
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        });
+    </script>
+</body>
+</html>

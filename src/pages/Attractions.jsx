@@ -21,6 +21,8 @@ const Attractions = () => {
       { id: 'gion' },
       { id: 'yasaka' },
       { id: 'ujigami' },
+      { id: 'ninenzaka-sannenzaka' },
+      { id: 'kamogawa' },
     ],
     nara: [
       { id: 'nara-park' },
@@ -35,6 +37,8 @@ const Attractions = () => {
       { id: 'namba-yasaka-shrine' },
       { id: 'kuromon-market' },
       { id: 'usj' },
+      { id: 'tsutenkaku' },
+      { id: 'shinsaibashi' },
     ],
     kobe: [
       { id: 'kobe-port' },
