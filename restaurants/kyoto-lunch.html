@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch (Ninenzaka & Sannenzaka) - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="text-slate-700 location-kyoto" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../food.html" class="nav-link">
+                        <span class="lang-en">← Back to Food</span><span class="lang-zh">← 返回美食</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../food.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../food.html" class="back-button no-print" aria-label="Back to Food">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image -->
+        <div class="mb-8 relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-80 md:h-96">
+                <img src="https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80" alt="Lunch (Ninenzaka & Sannenzaka)" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Lunch (Ninenzaka & Sannenzaka)</span><span class="lang-zh">午餐 (二三年坂)</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #4f46e5);"></i><span class="lang-en">Ninenzaka & Sannenzaka, Kyoto</span><span class="lang-zh">京都二三年坂</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥1,500-¥4,000</span><span class="lang-zh">¥1,500-¥4,000</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">11:00 AM - 3:00 PM</span><span class="lang-zh">11:00 AM - 3:00 PM</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Ninenzaka and Sannenzaka are historic preserved streets leading to Kiyomizu-dera Temple, lined with traditional wooden buildings housing shops, cafes, and restaurants. The area offers traditional Kyoto cuisine including kaiseki, soba noodles, and local specialties in a beautiful historic setting.</span>
+                    <span class="lang-zh">二三年坂是通往清水寺的历史保护街道，两旁是传统木制建筑，设有商店、咖啡厅和餐厅。该地区提供传统京都料理，包括怀石料理、荞麦面和当地特色菜，环境优美且具有历史意义。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Traditional Kyoto cuisine</span><span class="lang-zh">传统京都料理</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Historic preserved streets</span><span class="lang-zh">历史保护街道</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Beautiful traditional architecture</span><span class="lang-zh">美丽的传统建筑</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Near Kiyomizu-dera Temple</span><span class="lang-zh">靠近清水寺</span></span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Tips</span><span class="lang-zh">提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Duration: ~1 hour for lunch</span><span class="lang-zh">停留时间: 午餐约1小时</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Walk 5 mins downhill from Kiyomizu-dera</span><span class="lang-zh">从清水寺步行5分钟下坡</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Many traditional restaurants available</span><span class="lang-zh">有许多传统餐厅</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Great for experiencing Kyoto culture</span><span class="lang-zh">非常适合体验京都文化</span></span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> Ninenzaka & Sannenzaka, Higashiyama Ward, Kyoto</span>
+                    <span class="lang-zh"><strong>地址:</strong> Ninenzaka & Sannenzaka, Higashiyama Ward, Kyoto</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Nearest Station:</strong> Kiyomizu-Gojo Station</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> Kiyomizu-Gojo Station</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Access:</strong> Walk 5 mins downhill from Kiyomizu-dera</span>
+                    <span class="lang-zh"><strong>交通:</strong> Walk 5 mins downhill from Kiyomizu-dera</span>
+                </p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Ninenzaka+Sannenzaka+Kyoto" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+</body>
+</html>

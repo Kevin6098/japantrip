@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kushikatsu (Shinsekai) - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="text-slate-700 location-osaka" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../food.html" class="nav-link">
+                        <span class="lang-en">← Back to Food</span><span class="lang-zh">← 返回美食</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../food.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../food.html" class="back-button no-print" aria-label="Back to Food">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image -->
+        <div class="mb-8 relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-80 md:h-96">
+                <img src="https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80" alt="Kushikatsu (Shinsekai)" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Kushikatsu (Shinsekai)</span><span class="lang-zh">炸串 (新世界)</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #4f46e5);"></i><span class="lang-en">Shinsekai, Osaka</span><span class="lang-zh">大阪新世界</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥1,000-¥3,000</span><span class="lang-zh">¥1,000-¥3,000</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">11:00 AM - 10:00 PM</span><span class="lang-zh">11:00 AM - 10:00 PM</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Kushikatsu is Osaka's famous deep-fried skewers, and Shinsekai (New World) is the best place to try them. This retro district near Tsutenkaku Tower is filled with kushikatsu restaurants. You dip the skewers in a shared sauce (only once - no double dipping!) and enjoy with beer.</span>
+                    <span class="lang-zh">炸串是大阪著名的油炸串，新世界是尝试它们的最佳地点。这个位于通天阁附近的复古区域到处都是炸串餐厅。您将串串蘸入共享酱汁（只蘸一次 - 不要重复蘸！）并与啤酒一起享用。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Osaka's signature dish</span><span class="lang-zh">大阪的标志性料理</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Retro Shinsekai atmosphere</span><span class="lang-zh">复古新世界氛围</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Near Tsutenkaku Tower</span><span class="lang-zh">靠近通天阁</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Affordable and delicious</span><span class="lang-zh">价格实惠且美味</span></span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Tips</span><span class="lang-zh">提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">No double dipping in the shared sauce!</span><span class="lang-zh">不要在共享酱汁中重复蘸！</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Duration: ~1 hour for lunch</span><span class="lang-zh">停留时间: 午餐约1小时</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Many restaurants in Shinsekai area</span><span class="lang-zh">新世界地区有许多餐厅</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Great with beer</span><span class="lang-zh">配啤酒很棒</span></span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> Shinsekai, Naniwa Ward, Osaka</span>
+                    <span class="lang-zh"><strong>地址:</strong> Shinsekai, Naniwa Ward, Osaka</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Nearest Station:</strong> Tennoji Station</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> Tennoji Station</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Access:</strong> Walk 5 mins from Tennoji Station</span>
+                    <span class="lang-zh"><strong>交通:</strong> Walk 5 mins from Tennoji Station</span>
+                </p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Shinsekai+Osaka" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+</body>
+</html>

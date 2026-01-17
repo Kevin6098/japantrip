@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afuri Yurakucho - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-tokyo" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../food.html" class="nav-link">
+                        <span class="lang-en">← Back to Food</span><span class="lang-zh">← 返回美食</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../food.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../food.html" class="back-button no-print" aria-label="Back to Food">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="afuri-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="restaurant-exterior.jpg" alt="Afuri Yurakucho Restaurant Exterior" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="ramen-bowl-closeup.jpg" alt="Afuri Yuzu Ramen Bowl" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="meal-spread.jpg" alt="Afuri Meal Spread" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="ramen-bowls-table.jpg" alt="Afuri Ramen Bowls on Table" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="ramen-dipping-style.jpg" alt="Afuri Tsukemen Dipping Ramen" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="spicy-ramen-bowl.jpg" alt="Afuri Spicy Ramen Bowl" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                    <button class="carousel-indicator" data-slide="5" aria-label="Slide 6"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Afuri (阿夫利)</span><span class="lang-zh">阿夫利</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #4f46e5);"></i><span class="lang-en">Yurakucho, Tokyo</span><span class="lang-zh">东京有乐町</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥900-¥1,500</span><span class="lang-zh">¥900-¥1,500</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">Hours Vary</span><span class="lang-zh">营业时间不定</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Afuri (阿夫利) is a famous ramen restaurant in Tokyo, known for its unique yuzu-flavored ramen. The restaurant specializes in light, citrusy shio (salt) and shoyu (soy sauce) ramen with a refreshing yuzu twist. The modern, sleek interior features counter seating and an open kitchen concept.</span>
+                    <span class="lang-zh">阿夫利是东京著名的拉面餐厅，以其独特的柚子味拉面而闻名。餐厅专门提供清淡、带有柑橘味的盐拉面和酱油拉面，带有清爽的柚子风味。现代化、时尚的内部设有吧台座位和开放式厨房概念。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The restaurant offers various ramen styles including regular yuzu ramen, tsukemen (dipping ramen), and spicy options. The Yurakucho location is conveniently located near Tokyo Station, making it a perfect lunch stop before taking the Shinkansen to Osaka.</span>
+                    <span class="lang-zh">餐厅提供各种拉面风格，包括常规柚子拉面、蘸面（tsukemen）和辣味选项。有乐町店位于东京站附近，是在乘坐新干线前往大阪前享用午餐的完美停留点。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Yuzu Ramen:</strong> Signature light, citrusy ramen with fresh yuzu flavor - unique and refreshing</span><span class="lang-zh"><strong>柚子拉面:</strong> 招牌清淡、带有柑橘味的拉面，带有新鲜柚子风味 - 独特且清爽</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Tsukemen (Dipping Ramen):</strong> Thick noodles served with rich dipping sauce</span><span class="lang-zh"><strong>蘸面:</strong> 粗面条配浓郁蘸酱</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Spicy Options:</strong> Various spicy ramen options for those who like heat</span><span class="lang-zh"><strong>辣味选项:</strong> 多种辣味拉面选项，适合喜欢辣味的人</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Modern Atmosphere:</strong> Sleek interior with counter seating and open kitchen</span><span class="lang-zh"><strong>现代氛围:</strong> 时尚的内部，设有吧台座位和开放式厨房</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Tips</span><span class="lang-zh">提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Try the signature yuzu shio ramen for the unique citrus flavor experience</span><span class="lang-zh">尝试招牌柚子盐拉面，体验独特的柑橘风味</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Duration: ~1 hour for lunch (including possible wait time)</span><span class="lang-zh">停留时间: 午餐约1小时（包括可能的等待时间）</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Conveniently located near Tokyo Station - perfect stop before Shinkansen departure</span><span class="lang-zh">位于东京站附近 - 新干线出发前的完美停留点</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Pricing: ¥900-¥1,500 per bowl depending on toppings and options</span><span class="lang-zh">价格: 每碗¥900-¥1,500，取决于配料和选项</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> Yurakucho, Tokyo (Multiple locations)</span>
+                    <span class="lang-zh"><strong>地址:</strong> 东京有乐町（多家分店）</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Nearest Station:</strong> Yurakucho Station (Tokyo Metro Yurakucho Line / JR Yamanote Line)</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> 有乐町站（东京地铁有乐町线 / JR山手线）</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>From Tokyo Airbnb:</strong> Walk 5 mins to nearest station → Keisei Line/Toei Asakusa Line to Oshiage → Hanzomon Line to Otemachi → Tokyo Metro Yurakucho Line to Yurakucho (~45-50 mins total)</span>
+                    <span class="lang-zh"><strong>从东京Airbnb:</strong> 步行5分钟至最近车站 → 京成线/都营浅草线至押上 → 半藏门线至大手町 → 东京地铁有乐町线至有乐町 (~45-50分钟总计)</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>To Tokyo Station:</strong> Walk 5-10 mins from Yurakucho Station to Tokyo Station (for Shinkansen)</span>
+                    <span class="lang-zh"><strong>至东京站:</strong> 从有乐町站步行5-10分钟至东京站（前往新干线）</span>
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Afuri+Yurakucho+Tokyo" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+</body>
+</html>

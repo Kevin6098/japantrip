@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pain Maison - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-tokyo" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../food.html" class="nav-link">
+                        <span class="lang-en">← Back to Food</span><span class="lang-zh">← 返回美食</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../food.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../food.html" class="back-button no-print" aria-label="Back to Food">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="pain-maison-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="bakery-sign.jpg" alt="Pain Maison Bakery Exterior" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="bread-individual.jpg" alt="Individual Salt Bread" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="bread-display.jpg" alt="Bread Display" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="bread-basket.jpg" alt="Bread Basket with Multiple Rolls" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Pain Maison (塩パン屋)</span><span class="lang-zh">Pain Maison (盐面包店)</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #4f46e5);"></i><span class="lang-en">Tokyo</span><span class="lang-zh">东京</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥120-¥190</span><span class="lang-zh">¥120-¥190</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">Hours Vary</span><span class="lang-zh">营业时间不定</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Pain Maison (塩パン屋) is a famous salt bread bakery in Tokyo, known for its original salt bread (塩パン). The bakery specializes in premium salt bread and melon bread, offering freshly baked goods with high-quality ingredients. Popular with both locals and tourists, expect possible wait times especially during peak hours.</span>
+                    <span class="lang-zh">Pain Maison (塩パン屋) 是东京著名的盐面包店，以其原创盐面包（塩パン）而闻名。面包店专门提供优质盐面包和菠萝包，使用高品质食材新鲜烘焙。深受当地人和游客欢迎，特别是在高峰时段可能需要排队。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The bakery offers salt bread (¥120), melon bread (¥190), and various salt bread sandwiches. There are purchase limits per person to ensure availability for all customers.</span>
+                    <span class="lang-zh">面包店提供盐面包（¥120）、菠萝包（¥190）和各种盐面包三明治。每人有购买限制以确保所有顾客都能买到。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Original Salt Bread (塩パン):</strong> Famous signature bread, ¥120 per piece</span><span class="lang-zh"><strong>原创盐面包 (塩パン):</strong> 著名招牌面包，每个¥120</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Melon Bread (メロンパン):</strong> Premium melon bread, ¥190 per piece</span><span class="lang-zh"><strong>菠萝包 (メロンパン):</strong> 优质菠萝包，每个¥190</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Salt Bread Sandwiches:</strong> Various sandwich options using salt bread</span><span class="lang-zh"><strong>盐面包三明治:</strong> 使用盐面包的各种三明治选项</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Freshly Baked:</strong> All bread baked fresh daily with premium ingredients</span><span class="lang-zh"><strong>新鲜烘焙:</strong> 所有面包每天使用优质食材新鲜烘焙</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Tips</span><span class="lang-zh">提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Expect possible wait times, especially during peak hours - the bakery is very popular</span><span class="lang-zh">可能需要等待，特别是在高峰时段 - 面包店非常受欢迎</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Purchase limits apply: Max 20 salt bread, max 15 melon bread, max 2 sandwiches per person</span><span class="lang-zh">购买限制：每人最多20个盐面包，最多15个菠萝包，最多2个三明治</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Duration: ~15-20 mins for purchase</span><span class="lang-zh">停留时间: 购买约15-20分钟</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Walk from Tsukiji Market area - convenient stop before continuing to Ginza</span><span class="lang-zh">从筑地市场区域步行 - 前往银座前的便捷停留点</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> Tokyo (Multiple locations)</span>
+                    <span class="lang-zh"><strong>地址:</strong> 东京（多家分店）</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Access:</strong> Walk from Tsukiji Market area</span>
+                    <span class="lang-zh"><strong>交通:</strong> 从筑地市场区域步行</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>From Tsukiji Market:</strong> Walk from market area (Duration: ~5-10 mins depending on location)</span>
+                    <span class="lang-zh"><strong>从筑地市场:</strong> 从市场区域步行 (时间: 约5-10分钟，取决于地点)</span>
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Pain+Maison+Tokyo" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+</body>
+</html>

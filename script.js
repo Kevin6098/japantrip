@@ -301,3 +301,124 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Schedule Dashboard - Toggle Day Details
+function toggleDayDetails(dayId) {
+    const detailsSection = document.getElementById(dayId + '-details');
+    const icon = document.getElementById(dayId + '-icon');
+    
+    if (detailsSection && icon) {
+        const isHidden = detailsSection.classList.contains('hidden');
+        
+        if (isHidden) {
+            // Show details
+            detailsSection.classList.remove('hidden');
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+            
+            // Smooth scroll to the details section
+            setTimeout(() => {
+                detailsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        } else {
+            // Hide details
+            detailsSection.classList.add('hidden');
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        }
+    }
+}
+
+// Carousel Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    // Find all carousels on the page
+    const carousels = document.querySelectorAll('.carousel-container');
+    
+    carousels.forEach(carousel => {
+        const carouselId = carousel.id;
+        if (!carouselId) return;
+        
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const prevBtn = carousel.querySelector('.carousel-nav-prev');
+        const nextBtn = carousel.querySelector('.carousel-nav-next');
+        const indicators = carousel.querySelectorAll('.carousel-indicator');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Function to show a specific slide
+        function showSlide(index) {
+            // Remove active class from all slides and indicators
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Add active class to current slide and indicator
+            if (slides[index]) {
+                slides[index].classList.add('active');
+            }
+            if (indicators[index]) {
+                indicators[index].classList.add('active');
+            }
+            
+            currentSlide = index;
+        }
+        
+        // Next slide function
+        function nextSlide() {
+            const next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+        
+        // Previous slide function
+        function prevSlide() {
+            const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prev);
+        }
+        
+        // Event listeners for navigation buttons
+        if (nextBtn) {
+            nextBtn.addEventListener('click', nextSlide);
+        }
+        if (prevBtn) {
+            prevBtn.addEventListener('click', prevSlide);
+        }
+        
+        // Event listeners for indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Auto-play carousel (optional - every 5 seconds)
+        let autoPlayInterval = setInterval(nextSlide, 5000);
+        
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide();
+            }
+            if (touchEndX > touchStartX + 50) {
+                prevSlide();
+            }
+        }
+    });
+});

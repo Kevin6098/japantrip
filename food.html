@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip 2026 - Food & Restaurants Dashboard</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-700" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="flights.html" class="nav-link">
+                        <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                    </a>
+                    <a href="schedule.html" class="nav-link">
+                        <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                    </a>
+                    <a href="budget.html" class="nav-link">
+                        <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                    </a>
+                    <a href="packing.html" class="nav-link">
+                        <span class="lang-en">Packing</span><span class="lang-zh">清单</span>
+                    </a>
+                    <a href="tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                    </a>
+                    <a href="food.html" class="nav-link active">
+                        <span class="lang-en">Food</span><span class="lang-zh">美食</span>
+                    </a>
+                    <a href="hotel.html" class="nav-link">
+                        <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="toggleLanguage()" class="flex items-center justify-center w-10 h-10 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg border border-slate-300 text-sm transition-all duration-200 active:scale-95">
+                        🌐
+                    </button>
+                    <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content space-y-1">
+                <a href="flights.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-plane mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                </a>
+                <a href="schedule.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-calendar-days mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                </a>
+                <a href="budget.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-yen-sign mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                </a>
+                <a href="packing.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-suitcase mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Packing</span><span class="lang-zh">行李清单</span>
+                </a>
+                <a href="tourist-attraction.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-camera mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                </a>
+                <a href="food.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-utensils mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Food</span><span class="lang-zh">美食</span>
+                </a>
+                <a href="hotel.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-hotel mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="homepage.html" class="back-button no-print" aria-label="Back to Homepage">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <!-- Header Section -->
+        <section class="text-center animate-fade-in">
+            <div class="flex flex-col items-center mb-6 md:mb-8 gap-3">
+                 <div class="bg-white px-4 sm:px-6 py-2 rounded-full shadow border border-orange-100 flex items-center">
+                    <i class="fa-solid fa-utensils text-orange-500 text-lg sm:text-xl mr-2"></i>
+                    <h1 class="font-header text-lg sm:text-xl font-bold text-slate-800">
+                        <span class="lang-en">Food & Restaurants</span><span class="lang-zh">美食与餐厅</span>
+                    </h1>
+                 </div>
+                 <p class="text-xs sm:text-sm text-center text-slate-500 px-4 max-w-2xl">
+                    <span class="lang-en">🍜 Discover all the amazing restaurants and food experiences in your itinerary!</span>
+                    <span class="lang-zh">🍜 探索行程中所有精彩的餐厅和美食体验！</span>
+                 </p>
+            </div>
+        </section>
+
+        <!-- Tokyo Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6">
+                <div class="p-2 bg-indigo-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-city text-indigo-500 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-indigo-700">
+                    <span class="lang-en">Tokyo</span><span class="lang-zh">东京</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <a href="restaurants/pain-maison/pain-maison.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="restaurants/pain-maison/bakery-sign.jpg" alt="Pain Maison" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Pain Maison (塩パン屋)</span><span class="lang-zh">Pain Maison (盐面包店)</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Famous salt bread bakery, original 塩パン</span>
+                            <span class="lang-zh">著名盐面包店，原创塩パン</span>
+                        </p>
+                        <span class="price-badge">¥120-¥190</span>
+                    </div>
+                </a>
+
+                <a href="restaurants/ginza-kanimitsu/ginza-kanimitsu.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="restaurants/ginza-kanimitsu/crab-whole-dish.jpg" alt="Ginza Kanimitsu" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Ginza Kanimitsu</span><span class="lang-zh">银座蟹みつ</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Premium crab restaurant, lunch sets ¥4,600-¥11,000</span>
+                            <span class="lang-zh">高级螃蟹餐厅，午餐套餐¥4,600-¥11,000</span>
+                        </p>
+                        <span class="price-badge">¥4,600-¥11,000</span>
+                    </div>
+                </a>
+
+                <a href="restaurants/nakamura-tokichi-ginza/nakamura-tokichi-ginza.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="restaurants/nakamura-tokichi-ginza/matcha-parfait.jpg" alt="Nakamura Tokichi Ginza" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Nakamura Tokichi Ginza</span><span class="lang-zh">中村藤吉银座</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Famous matcha parfait & tea time experience</span>
+                            <span class="lang-zh">著名抹茶芭菲和下午茶体验</span>
+                        </p>
+                        <span class="price-badge">Tea Time</span>
+                    </div>
+                </a>
+
+                <a href="restaurants/afuri-yurakucho/afuri-yurakucho.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="restaurants/afuri-yurakucho/restaurant-exterior.jpg" alt="Afuri Yurakucho" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Afuri (阿夫利)</span><span class="lang-zh">阿夫利</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Famous yuzu ramen restaurant, signature citrus ramen</span>
+                            <span class="lang-zh">著名柚子拉面餐厅，招牌柑橘拉面</span>
+                        </p>
+                        <span class="price-badge">¥900-¥1,500</span>
+                    </div>
+                </a>
+
+                <a href="restaurants/asakusa-monja.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=600&q=80" alt="Asakusa Monja Yaki" class="attraction-dashboard-image">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Asakusa - Monja Yaki & Okonomiyaki</span><span class="lang-zh">浅草 - 文字烧 & 大阪烧</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Traditional Tokyo street food experience</span>
+                            <span class="lang-zh">传统东京街头美食体验</span>
+                        </p>
+                        <span class="price-badge">Dinner</span>
+                    </div>
+                </a>
+
+                <a href="restaurants/ichiran-ramen/ichiran-ramen.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="restaurants/ichiran-ramen/restaurant-interior.jpg" alt="Ichiran Ramen" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Ichiran Ramen</span><span class="lang-zh">一兰拉面</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Famous tonkotsu ramen, expect possible wait</span>
+                            <span class="lang-zh">著名豚骨拉面，可能需要排队</span>
+                        </p>
+                        <span class="price-badge">Lunch</span>
+                    </div>
+                </a>
+
+                <a href="restaurants/tsukada-shabu/tsukada-shabu.html" class="attraction-dashboard-card location-tokyo group">
+                    <div class="attraction-image-wrapper">
+                        <img src="restaurants/tsukada-shabu/restaurant-interior.jpg" alt="Tsukada Shabu Shabu" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-tokyo">Tokyo</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Tsukada Shabu Shabu</span><span class="lang-zh">塚田しゃぶしゃぶ</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Graduation celebration dinner, Shibuya Scramble Square 12F</span>
+                            <span class="lang-zh">毕业庆功晚餐，涩谷Scramble Square 12楼</span>
+                        </p>
+                        <span class="price-badge">Dinner</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Osaka Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6">
+                <div class="p-2 bg-orange-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-city text-orange-500 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-orange-700">
+                    <span class="lang-en">Osaka</span><span class="lang-zh">大阪</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <a href="restaurants/dotonbori-dinner.html" class="attraction-dashboard-card location-osaka group">
+                    <div class="attraction-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=600&q=80" alt="Dotonbori Dinner" class="attraction-dashboard-image">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-osaka">Osaka</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Dotonbori Dinner</span><span class="lang-zh">道顿堀晚餐</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Reunion dinner & local Osaka cuisine</span>
+                            <span class="lang-zh">团圆晚餐和当地大阪料理</span>
+                        </p>
+                        <span class="price-badge">Dinner</span>
+                    </div>
+                </a>
+
+                <a href="restaurants/kushikatsu-shinsekai.html" class="attraction-dashboard-card location-osaka group">
+                    <div class="attraction-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=600&q=80" alt="Kushikatsu Shinsekai" class="attraction-dashboard-image">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-osaka">Osaka</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Kushikatsu (Shinsekai)</span><span class="lang-zh">炸串 (新世界)</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Osaka's famous deep-fried skewers near Tsutenkaku</span>
+                            <span class="lang-zh">大阪著名炸串，位于通天阁附近</span>
+                        </p>
+                        <span class="price-badge">Lunch</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Kobe Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6">
+                <div class="p-2 bg-red-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-city text-red-500 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-red-700">
+                    <span class="lang-en">Kobe</span><span class="lang-zh">神户</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <a href="restaurants/gashoken/gashoken.html" class="attraction-dashboard-card location-kobe group">
+                    <div class="attraction-image-wrapper">
+                        <img src="restaurants/gashoken/restaurant-exterior-night.png" alt="Gashoken" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kobe">Kobe</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Gashoken (賀正軒) Sannomiya</span><span class="lang-zh">賀正軒 三宮店</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Famous tonkotsu ramen with unique fusion varieties</span>
+                            <span class="lang-zh">著名豚骨拉面，独特融合品种</span>
+                        </p>
+                        <span class="price-badge">¥1,100-¥1,880</span>
+                    </div>
+                </a>
+
+                <a href="restaurants/kobe-steak-nick/kobe-steak-nick.html" class="attraction-dashboard-card location-kobe group">
+                    <div class="attraction-image-wrapper">
+                        <img src="restaurants/kobe-steak-nick/restaurant-exterior.jpg" alt="Kobe Steak Nick" class="attraction-dashboard-image" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=600&q=80'">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kobe">Kobe</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Kobe Steak Nick (青斜塔)</span><span class="lang-zh">Kobe Steak Nick (青斜塔)</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Premium Kobe beef with exceptional marbling, authentic wagyu</span>
+                            <span class="lang-zh">优质神户牛肉，大理石花纹丰富，正宗和牛</span>
+                        </p>
+                        <span class="price-badge">¥6,000-¥7,000</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Kyoto Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6">
+                <div class="p-2 bg-green-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-torii-gate text-green-600 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-green-700">
+                    <span class="lang-en">Kyoto</span><span class="lang-zh">京都</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <a href="restaurants/kyoto-lunch.html" class="attraction-dashboard-card location-kyoto group">
+                    <div class="attraction-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=600&q=80" alt="Kyoto Lunch" class="attraction-dashboard-image">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kyoto">Kyoto</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Lunch (Ninenzaka & Sannenzaka)</span><span class="lang-zh">午餐 (二三年坂)</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Traditional Kyoto cuisine in historic district</span>
+                            <span class="lang-zh">历史街区的传统京都料理</span>
+                        </p>
+                        <span class="price-badge">Lunch</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Uji Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6">
+                <div class="p-2 bg-teal-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-leaf text-teal-600 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-teal-700">
+                    <span class="lang-en">Uji</span><span class="lang-zh">宇治</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <a href="restaurants/nakamura-tokichi-uji.html" class="attraction-dashboard-card location-kyoto group">
+                    <div class="attraction-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80" alt="Nakamura Tokichi Honten" class="attraction-dashboard-image">
+                        <div class="attraction-overlay-dashboard">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="location-badge location-badge-kyoto">Uji</span>
+                        <h3 class="font-header text-lg font-bold text-slate-800 mb-2">
+                            <span class="lang-en">Nakamura Tokichi Honten</span><span class="lang-zh">中村藤吉本店</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <span class="lang-en">Historic matcha sweets & early lunch in Uji</span>
+                            <span class="lang-zh">宇治历史悠久的抹茶甜点和早午餐</span>
+                        </p>
+                        <span class="price-badge">Early Lunch</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

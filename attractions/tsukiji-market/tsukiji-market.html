@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsukiji Outer Market - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-tokyo" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="tsukiji-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="market-overview.jpg" alt="Tsukiji Market Overview" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="market-street.jpg" alt="Tsukiji Market Street Scene" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="market-vendors.jpg" alt="Tsukiji Market Vendors" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="fish-stall.jpg" alt="Fish Stall at Tsukiji Market" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="market-interior.jpg" alt="Tsukiji Market Interior" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Tsukiji Outer Market</span><span class="lang-zh">筑地外市场</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #4f46e5);"></i><span class="lang-en">Tsukiji, Tokyo</span><span class="lang-zh">东京筑地</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Free Entry</span><span class="lang-zh">免费入场</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">5:00 AM - 2:00 PM</span><span class="lang-zh">早上5点 - 下午2点</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Tsukiji Outer Market is a vibrant street food market located near the former Tsukiji Fish Market. While the inner wholesale market moved to Toyosu in 2018, the outer market remains a popular destination for tourists and locals seeking fresh seafood, traditional Japanese snacks, and authentic street food experiences.</span>
+                    <span class="lang-zh">筑地外市场是一个充满活力的街头美食市场，位于前筑地鱼市场附近。虽然内部批发市场于2018年迁至丰洲，但外市场仍然是游客和当地人寻找新鲜海鲜、传统日本小吃和正宗街头美食体验的热门目的地。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The market features narrow alleys lined with small shops and stalls selling everything from fresh sashimi and grilled seafood to traditional Japanese sweets, kitchenware, and souvenirs.</span>
+                    <span class="lang-zh">市场有狭窄的小巷，两旁是小商店和摊位，出售从新鲜生鱼片和烤海鲜到传统日本甜点、厨具和纪念品的各种商品。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Fresh Sashimi Stalls:</strong> World-famous tuna, salmon, and other seafood served fresh from the market</span><span class="lang-zh"><strong>新鲜生鱼片摊位:</strong> 世界著名的金枪鱼、三文鱼和其他从市场新鲜供应的海鲜</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Tamagoyaki Shops:</strong> Sweet Japanese rolled omelet, a market specialty and must-try</span><span class="lang-zh"><strong>玉子烧店铺:</strong> 甜味日本卷蛋，市场特色和必试之选</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Grilled Seafood:</strong> Fresh scallops, oysters, and eel grilled on the spot with blowtorches</span><span class="lang-zh"><strong>烤海鲜:</strong> 新鲜扇贝、牡蛎和鳗鱼现场用喷枪烤制</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Market Atmosphere:</strong> Narrow alleys filled with vendors, traditional snacks, kitchenware, and souvenirs</span><span class="lang-zh"><strong>市场氛围:</strong> 狭窄的小巷里满是摊贩、传统小吃、厨具和纪念品</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Visit early in the morning (before 9 AM) for the freshest seafood and fewer crowds</span><span class="lang-zh">早上早点去（上午9点前）可以买到最新鲜的海鲜，人也会少一些</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Bring cash as many stalls don't accept credit cards</span><span class="lang-zh">带现金，因为许多摊位不接受信用卡</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Wear comfortable shoes and be prepared to walk through narrow, crowded alleys</span><span class="lang-zh">穿舒适的鞋子，准备在狭窄拥挤的小巷中行走</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Duration: Plan for ~2.5 hours to fully explore the market and try various foods</span><span class="lang-zh">停留时间: 计划约2.5小时充分探索市场并尝试各种美食</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-tokyo rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> 4 Chome-16-2 Tsukiji, Chuo City, Tokyo 104-0045</span>
+                    <span class="lang-zh"><strong>地址:</strong> 东京都中央区筑地4-16-2</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Nearest Station:</strong> Higashi-Ginza Station (Toei Asakusa Line / Tokyo Metro Hibiya Line)</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> 东银座站（都营浅草线 / 东京地铁日比谷线）</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>From Airbnb:</strong> Walk 5 mins to nearest station → Keisei Line/Toei Asakusa Line to Higashi-Ginza → Walk 5 mins (~30-35 mins train)</span>
+                    <span class="lang-zh"><strong>从Airbnb:</strong> 步行5分钟至最近车站 → 京成线/都营浅草线至东银座 → 步行5分钟 (~30-35分钟电车)</span>
+                </p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Tsukiji+Outer+Market+Tokyo" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+</body>
+</html>

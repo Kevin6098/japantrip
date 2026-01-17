@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gashoken (賀正軒) Sannomiya - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-kobe" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../food.html" class="nav-link">
+                        <span class="lang-en">← Back to Food</span><span class="lang-zh">← 返回美食</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../food.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../food.html" class="back-button no-print" aria-label="Back to Food">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="gashoken-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="restaurant-exterior-night.png" alt="Gashoken Restaurant Exterior at Night" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="menu-display.jpg" alt="Gashoken Menu Display" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="ramen-varieties-promo.jpg" alt="Gashoken Ramen Varieties Promo" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="tonkotsu-ramen-bowl.jpg" alt="Gashoken Tonkotsu Ramen Bowl" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="basil-cheese-ramen.jpg" alt="Gashoken Basil Cheese Ramen" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="spicy-ramen-bowl.jpg" alt="Gashoken Spicy Ramen Bowl" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="black-tonkotsu-ramen.jpg" alt="Gashoken Black Tonkotsu Ramen" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                    <button class="carousel-indicator" data-slide="5" aria-label="Slide 6"></button>
+                    <button class="carousel-indicator" data-slide="6" aria-label="Slide 7"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Gashoken (賀正軒) Sannomiya</span><span class="lang-zh">賀正軒 三宮店</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #dc2626);"></i><span class="lang-en">Sannomiya, Kobe</span><span class="lang-zh">神户三宫</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥1,100-¥1,880</span><span class="lang-zh">¥1,100-¥1,880</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">11:00 AM - 10:00 PM</span><span class="lang-zh">11:00 AM - 10:00 PM</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Gashoken (賀正軒) is a famous tonkotsu ramen restaurant in Kobe, specializing in rich, creamy pork bone broth ramen. The Sannomiya location offers a modern dining experience with various unique ramen varieties, including their signature tonkotsu, fusion-style ramen with cheese and basil, spicy mentaiko miso, and black squid ink ramen.</span>
+                    <span class="lang-zh">賀正軒是神户著名的豚骨拉面餐厅，专门提供浓郁、奶油般的猪骨汤拉面。三宫店提供现代用餐体验，提供各种独特的拉面品种，包括招牌豚骨拉面、芝士罗勒融合拉面、辣味明太子味噌拉面和黑色鱿鱼墨拉面。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The restaurant features an illuminated menu board with food models, traditional counter seating, and a warm, inviting atmosphere. Popular varieties include Original Tonkotsu, Pesto Ramen, Curry Ramen, Spicy Ramen, Shrimp Ramen, and unique creations like Basil Cheese Ramen and Black Tonkotsu with Squid Ink.</span>
+                    <span class="lang-zh">餐厅设有带食物模型的发光菜单板、传统吧台座位以及温暖、诱人的氛围。受欢迎的品种包括原味豚骨拉面、罗勒拉面、咖喱拉面、辣味拉面、虾拉面，以及罗勒芝士拉面和鱿鱼墨黑豚骨拉面等独特创意。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Signature Tonkotsu Ramen:</strong> Rich, creamy pork bone broth with thin noodles, chashu, green onions</span><span class="lang-zh"><strong>招牌豚骨拉面:</strong> 浓郁、奶油般的猪骨汤，配细面条、叉烧、葱</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Unique Fusion Ramen:</strong> Basil Cheese Ramen, Pesto Ramen with innovative toppings</span><span class="lang-zh"><strong>独特融合拉面:</strong> 罗勒芝士拉面、罗勒拉面配创新配料</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Spicy Varieties:</strong> Spicy Mentaiko Miso Ramen, Spicy Ramen with chili oil</span><span class="lang-zh"><strong>辣味品种:</strong> 辣味明太子味噌拉面、辣油拉面</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Black Tonkotsu:</strong> Squid ink-infused black broth with perilla leaves (大葉とイカスミ)</span><span class="lang-zh"><strong>黑豚骨:</strong> 鱿鱼墨注入的黑色汤配紫苏叶（大葉とイカスミ）</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Tips</span><span class="lang-zh">提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Duration: ~1 hour for dinner</span><span class="lang-zh">停留时间: 晚餐约1小时</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Walk 5-10 mins from Sannomiya Station to the restaurant</span><span class="lang-zh">从三宫站步行5-10分钟至餐厅</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Try the unique fusion varieties like Basil Cheese Ramen or Black Tonkotsu</span><span class="lang-zh">尝试独特的融合品种，如罗勒芝士拉面或黑豚骨拉面</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Pricing: ¥1,100-¥1,880 per bowl depending on variety (Extra noodles ¥100)</span><span class="lang-zh">价格: 每碗¥1,100-¥1,880，取决于品种（加面¥100）</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kobe rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-kobe mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> 1 Chome-9-5 Kitanagasadori, Chuo Ward, Kobe, Hyogo 650-0012 (賀正軒 三宮店)</span>
+                    <span class="lang-zh"><strong>地址:</strong> 兵库县神户市中央区北長狭通1丁目9-5 (賀正軒 三宮店)</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Nearest Station:</strong> Sannomiya Station (JR / Hanshin / Kobe Subway)</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> 三宫站（JR / 阪神 / 神户地铁）</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>From Rokkosan Pasture:</strong> Walk or bus to Rokko-sancho (~10-15 mins) → Rokko Cable Car to Rokko Cable station (~10 mins ropeway) → Train to Sannomiya Station (~20 mins train) → Walk 5-10 mins to Gashoken</span>
+                    <span class="lang-zh"><strong>从六甲山牧场:</strong> 步行或巴士至六甲山顶 (~10-15分钟) → 六甲缆车至六甲缆车站 (~10分钟缆车) → 电车至三宫站 (~20分钟电车) → 步行5-10分钟至賀正軒</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>To Kobe Port Tower:</strong> Walk 10-15 mins from Gashoken to Kobe Port Tower</span>
+                    <span class="lang-zh"><strong>至神户塔:</strong> 从賀正軒步行10-15分钟至神户塔</span>
+                </p>
+                <a href="https://www.google.com/maps/dir/Rokkosan+Pasture+(Ranch),+管理事務所+Nakaichiriyama-１+Rokkosancho,+Nada+Ward,+Kobe,+Hyogo/Gashoken,+1+Chome-9-5+Kitanagasadori,+Chuo+Ward,+Kobe,+Hyogo+650-0012/@34.7382724,135.2082318,16.39z/data=!3m1!5s0x60008ee4a81916ab:0x498009409c9fcef0!4m14!4m13!1m5!1m1!1s0x6000896db7f28ca9:0x57d97cb99d7b8508!2m2!1d135.2090028!2d34.7515873!1m5!1m1!1s0x60008ee4a8747f7b:0xac2b4c2b2f62ba82!2m2!1d135.1916295!2d34.6924887!3e3?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+</body>
+</html>
