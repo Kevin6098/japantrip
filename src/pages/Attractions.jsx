@@ -98,10 +98,10 @@ const Attractions = () => {
               return (
                 <div
                   key={index}
-                  className="animate-fade-in"
+                  className="animate-fade-in h-full"
                   style={{ animationDelay: `${(sectionIndex * 0.1) + (index * 0.05)}s` }}
                 >
-                  <Link to={`/attractions/${attractionId}`} className="block">
+                  <Link to={`/attractions/${attractionId}`} className="block h-full">
                     <AttractionCard
                       title={t(detailedData.title.en, detailedData.title.zh)}
                       description={detailedData.about ? t(detailedData.about.en, detailedData.about.zh).substring(0, 100) + '...' : ''}
