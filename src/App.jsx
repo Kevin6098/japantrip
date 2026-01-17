@@ -21,7 +21,7 @@ function AppContent() {
   const { t } = useLanguage()
   
   React.useEffect(() => {
-    document.title = `🌸 ${t('Japan Trip', '日本之旅')} 2026`
+    document.title = `${t('Japan Trip', '日本之旅')} 2026`
   }, [t])
 
   return (
