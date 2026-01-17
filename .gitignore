@@ -29,3 +29,8 @@ dist-ssr
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Image folders (now hosted on Cloudinary)
+# Uncomment these after uploading to Cloudinary:
+# attractions/
+# restaurants/
