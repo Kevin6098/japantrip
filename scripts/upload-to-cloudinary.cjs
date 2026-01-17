@@ -103,8 +103,8 @@ async function uploadAllImages() {
 
   // Upload each image
   for (const image of allImages) {
-    // Create public_id: japantrip/attractions/sensoji/kaminarimon-gate
-    const publicId = `japantrip/${image.relativePath.replace(/\.(jpg|jpeg|png|gif|webp)$/i, '')}`;
+    // Create public_id: attractions/sensoji/kaminarimon-gate (folder will add japantrip/)
+    const publicId = `${image.relativePath.replace(/\.(jpg|jpeg|png|gif|webp)$/i, '')}`;
     
     // Old path format: /attractions/sensoji/kaminarimon-gate.jpg
     const oldPath = `/${image.relativePath}`;

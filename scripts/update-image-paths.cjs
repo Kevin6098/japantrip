@@ -47,6 +47,13 @@ function updateImagePaths(filePath) {
       console.log(`  Updated: ${oldPath} -> ${cloudinaryUrl}`);
     }
   }
+  
+  // Fix duplicate japantrip/japantrip paths if they exist
+  if (content.includes('japantrip/japantrip')) {
+    content = content.replace(/japantrip\/japantrip\//g, 'japantrip/');
+    updated = true;
+    console.log('  Fixed duplicate japantrip paths');
+  }
 
   if (updated) {
     fs.writeFileSync(filePath, content, 'utf8');
