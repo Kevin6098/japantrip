@@ -37,10 +37,10 @@ echo "📂 Copying dist files to $WEB_ROOT..."
 sudo rm -rf "$WEB_ROOT"/*
 sudo cp -r dist/* "$WEB_ROOT/"
 
-# Copy attractions folder with images
-echo "🖼️  Copying attractions folder with images..."
-sudo mkdir -p "$WEB_ROOT/attractions"
-sudo cp -r attractions/* "$WEB_ROOT/attractions/"
+# Note: Images are now hosted on Cloudinary, so we don't need to copy
+# the attractions/ or restaurants/ folders anymore
+# If you still have old images on the server, you can remove them:
+# sudo rm -rf "$WEB_ROOT/attractions" "$WEB_ROOT/restaurants"
 
 # Set correct permissions
 echo "🔐 Setting permissions..."

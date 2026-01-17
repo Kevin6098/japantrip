@@ -79,10 +79,17 @@ sudo systemctl reload nginx
 - Verify file permissions: `ls -la /var/www/linkup-event.com/attractions/`
 - Check Nginx error logs: `sudo tail -f /var/log/nginx/error.log`
 
-### 404 errors on routes?
-- Ensure Nginx has the React Router fallback configured
+### 403/404 errors on routes?
+- **IMPORTANT**: Ensure Nginx has the React Router fallback configured:
+  ```nginx
+  location / {
+      try_files $uri $uri/ /index.html;
+  }
+  ```
+- This makes all routes work with React Router
 - Check that `index.html` is in the web root
 - Clear browser cache
+- See `nginx-config-linkup-event.com.conf` for complete example
 
 ### Permission denied errors?
 - Run: `sudo chown -R www-data:www-data /var/www/linkup-event.com`
