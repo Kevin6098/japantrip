@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namba Yasaka Shrine - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-osaka" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="namba-yasaka-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="https://pic.k-cdn.media/2024/10/ortbQdhu-20240920-namba-yasaka-main.jpg" alt="Namba Yasaka Shrine - Giant Lion Head" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://static.japan-food.guide/uploads/article/cover_image/000/000/570/005457c1682a6027b97207fce1994c417ca202da43009b77092356bd5239dcbd/eye_catch_29284747_s__1_.jpg?1759897952" alt="Namba Yasaka Shrine Lion Head Detail" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://www.howto-osaka.com/en/wp/wp-content/uploads/2023/09/yasaka-4.jpg" alt="Namba Yasaka Shrine Overview" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://photos.smugmug.com/Osaka/Central-Osaka/i-MpmXgxr/0/63f52ae3/L/Minami_TSD_NambaYasakaShrine4-L.jpg" alt="Namba Yasaka Shrine Main Hall" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://osaka.b-cdn.net/wp-content/uploads/2025/11/IMG_9460-1024x683.jpg" alt="Namba Yasaka Shrine Exterior" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Namba Yasaka Shrine</span><span class="lang-zh">难波八阪神社</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #ea580c);"></i><span class="lang-en">Namba, Osaka</span><span class="lang-zh">大阪难波</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Free</span><span class="lang-zh">免费</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">Open Daily</span><span class="lang-zh">每日开放</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Namba Yasaka Shrine (難波八阪神社) is a unique Shinto shrine located in the Namba district of Osaka. What makes this shrine truly special is its massive 12-meter-tall lion head stage (Shishiden), which is one of the largest and most impressive lion heads in Japan. The lion's open mouth is believed to swallow evil spirits and bring good fortune to visitors.</span>
+                    <span class="lang-zh">难波八阪神社（難波八阪神社）是位于大阪难波地区的一座独特的神社。这座神社最特别的是其12米高的巨大狮子头舞台（狮子殿），这是日本最大、最令人印象深刻的狮子头之一。据说狮子张开的嘴巴可以吞噬邪灵，为游客带来好运。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The shrine is conveniently located near Namba Station, making it an easy stop during your Osaka exploration. It's a popular spot for taking photos, especially with the impressive lion head as a backdrop. The shrine also hosts various festivals throughout the year, and the surrounding area offers plenty of shopping and dining options.</span>
+                    <span class="lang-zh">神社位于难波站附近，交通便利，是大阪探索中的便捷停留点。这是一个受欢迎的拍照地点，尤其是以令人印象深刻的狮子头为背景。神社全年举办各种节日活动，周围区域提供丰富的购物和餐饮选择。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Giant Lion Head (Shishiden):</strong> The 12-meter-tall lion head stage is absolutely stunning and perfect for photos</span><span class="lang-zh"><strong>巨大狮子头（狮子殿）：</strong> 12米高的狮子头舞台绝对令人惊叹，非常适合拍照</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Easy Access:</strong> Just a short walk from Namba Station, making it a convenient stop</span><span class="lang-zh"><strong>交通便利：</strong> 距离难波站仅几步之遥，是一个便捷的停留点</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Free Admission:</strong> No entrance fee, perfect for a quick visit</span><span class="lang-zh"><strong>免费入场：</strong> 无需门票，非常适合快速参观</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Near Attractions:</strong> Close to Kuromon Market, Dotonbori, and Shinsaibashi shopping area</span><span class="lang-zh"><strong>附近景点：</strong> 靠近黑门市场、道顿堀和心斋桥购物区</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Photography:</strong> The lion head makes for an impressive and unique photo opportunity</span><span class="lang-zh"><strong>摄影：</strong> 狮子头提供了令人印象深刻且独特的拍照机会</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">The shrine is free to enter and usually takes 15-20 minutes to explore</span><span class="lang-zh">神社免费进入，通常需要15-20分钟探索</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Best time to visit is during the day when you can clearly see the lion head details</span><span class="lang-zh">最佳参观时间是白天，可以清楚地看到狮子头的细节</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Combine your visit with nearby attractions like Kuromon Market (5 mins walk) or Dotonbori (10 mins walk)</span><span class="lang-zh">可以将参观与附近景点结合，如黑门市场（步行5分钟）或道顿堀（步行10分钟）</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Be respectful when taking photos, especially if there are ceremonies or prayers in progress</span><span class="lang-zh">拍照时要尊重，特别是在进行仪式或祈祷时</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <div class="space-y-4 text-slate-700">
+                    <div>
+                        <p class="font-semibold mb-2"><span class="lang-en">Address:</span><span class="lang-zh">地址：</span></p>
+                        <p>2-9-19 Motomachi, Naniwa-ku, Osaka 556-0016</p>
+                        <p class="text-sm text-slate-600 mt-1"><span class="lang-en">2-9-19 Motomachi, Naniwa-ku, Osaka</span><span class="lang-zh">大阪市浪速区元町2-9-19</span></p>
+                    </div>
+                    <div>
+                        <p class="font-semibold mb-2"><span class="lang-en">Nearest Station:</span><span class="lang-zh">最近车站：</span></p>
+                        <p>Namba Station (難波駅) - 5 minutes walk</p>
+                    </div>
+                    <div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Namba+Yasaka+Shrine+Osaka" target="_blank" class="btn-primary inline-flex items-center">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i>
+                            <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+</body>
+</html>

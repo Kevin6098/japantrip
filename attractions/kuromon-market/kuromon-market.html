@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuromon Ichiba Market - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-osaka" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="kuromon-market-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="https://article-image.travel.navitime.jp/img/NTJtrv1084-en/NTJtrv1084-en_kuromon_market_0.jpg" alt="Kuromon Ichiba Market Overview" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://onb-cdn.b-cdn.net/images-stn-osaka/121-Kuromon-Ichiba-Market-Osaka1.jpg" alt="Kuromon Ichiba Market Stalls" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://www.japan-guide.com/g19/4031_11.jpg" alt="Kuromon Market Fresh Seafood" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://www.datocms-assets.com/101439/1706245431-kuromon-ichiba.webp?auto=format&fit=max&w=1200" alt="Kuromon Market Street View" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/91000/91692-Kuromon-Ichiba.jpg" alt="Kuromon Market Food Vendors" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://cdn.globaleur.com/places/5e5ed54401b751678fee2196/63742d7b00467f49704ea126/gV7SkceMeG_ori.jpg" alt="Kuromon Market Shopping" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                    <button class="carousel-indicator" data-slide="5" aria-label="Slide 6"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Kuromon Ichiba Market</span><span class="lang-zh">黑门市场</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #ea580c);"></i><span class="lang-en">Namba, Osaka</span><span class="lang-zh">大阪难波</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Free Entry</span><span class="lang-zh">免费入场</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">9:00 - 18:00</span><span class="lang-zh">9:00 - 18:00</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Kuromon Ichiba Market (黒門市場), also known as "Osaka's Kitchen," is a vibrant public market located in the Namba district of Osaka. Established over 190 years ago, this covered market stretches for about 600 meters and is home to over 150 shops selling everything from fresh seafood, fruits, vegetables, meat, and traditional Japanese snacks to kitchenware and daily necessities.</span>
+                    <span class="lang-zh">黑门市场（黒門市場），也被称为"大阪的厨房"，是位于大阪难波地区的一个充满活力的公共市场。这个有盖市场已有190多年的历史，长约600米，拥有150多家店铺，销售从新鲜海鲜、水果、蔬菜、肉类和传统日本小吃到厨具和日用品的各种商品。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The market is famous for its fresh seafood, especially tuna, crab, and sea urchin. Many shops offer prepared food that you can eat on the spot, making it a popular destination for food lovers. The lively atmosphere, friendly vendors, and incredible variety of food make Kuromon Ichiba a must-visit destination for anyone exploring Osaka.</span>
+                    <span class="lang-zh">该市场以其新鲜海鲜而闻名，特别是金枪鱼、螃蟹和海胆。许多商店提供即食食品，使其成为美食爱好者的热门目的地。热闹的氛围、友好的摊主和令人难以置信的各种食物使黑门市场成为探索大阪的必游之地。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Fresh Seafood:</strong> World-class tuna, crab, oysters, and sea urchin available at various stalls</span><span class="lang-zh"><strong>新鲜海鲜：</strong> 世界级的金枪鱼、螃蟹、牡蛎和海胆在各摊位均有售</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Street Food:</strong> Try takoyaki, kushikatsu, fresh fruit, and other local specialties</span><span class="lang-zh"><strong>街头美食：</strong> 尝试章鱼烧、炸串、新鲜水果和其他当地特色美食</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Local Atmosphere:</strong> Experience authentic Osaka market culture with friendly vendors</span><span class="lang-zh"><strong>当地氛围：</strong> 体验正宗的大阪市场文化与友好的摊主</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Great for Lunch:</strong> Many vendors offer prepared food perfect for a quick and delicious meal</span><span class="lang-zh"><strong>午餐好去处：</strong> 许多摊主提供即食食品，非常适合快速美味的用餐</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Perfect Location:</strong> Just a 5-minute walk from Namba Yasaka Shrine and close to Dotonbori</span><span class="lang-zh"><strong>位置绝佳：</strong> 距离难波八阪神社仅5分钟步行路程，靠近道顿堀</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Travel Tips</span><span class="lang-zh">旅行提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Best time to visit is in the morning (9:00-12:00) when the market is liveliest and food is freshest</span><span class="lang-zh">最佳参观时间是早上（9:00-12:00），此时市场最热闹，食物最新鲜</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Bring cash - many vendors don't accept credit cards</span><span class="lang-zh">带现金 - 许多摊主不接受信用卡</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Try the fresh tuna sashimi, grilled crab, and Japanese strawberries - they're incredible!</span><span class="lang-zh">尝试新鲜金枪鱼生鱼片、烤螃蟹和日本草莓 - 它们非常棒！</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">The market is covered, so it's great to visit even on rainy days</span><span class="lang-zh">市场有顶棚，所以即使在雨天也是参观的好去处</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
+                        <span><span class="lang-en">Combine your visit with Namba Yasaka Shrine (5 mins walk) and Dotonbori (10 mins walk)</span><span class="lang-zh">可以将参观与难波八阪神社（步行5分钟）和道顿堀（步行10分钟）结合起来</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <div class="space-y-4 text-slate-700">
+                    <div>
+                        <p class="font-semibold mb-2"><span class="lang-en">Address:</span><span class="lang-zh">地址：</span></p>
+                        <p>2-4-1 Nipponbashi, Chuo-ku, Osaka 542-0073</p>
+                        <p class="text-sm text-slate-600 mt-1"><span class="lang-en">2-4-1 Nipponbashi, Chuo-ku, Osaka</span><span class="lang-zh">大阪市中央区日本桥2-4-1</span></p>
+                    </div>
+                    <div>
+                        <p class="font-semibold mb-2"><span class="lang-en">Nearest Station:</span><span class="lang-zh">最近车站：</span></p>
+                        <p>Nipponbashi Station (日本橋駅) or Namba Station (難波駅) - 5 minutes walk</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold mb-2"><span class="lang-en">Opening Hours:</span><span class="lang-zh">营业时间：</span></p>
+                        <p><span class="lang-en">9:00 AM - 6:00 PM (hours vary by shop)</span><span class="lang-zh">9:00 - 18:00（各店营业时间不同）</span></p>
+                    </div>
+                    <div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kuromon+Ichiba+Market+Osaka" target="_blank" class="btn-primary inline-flex items-center">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i>
+                            <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+</body>
+</html>
