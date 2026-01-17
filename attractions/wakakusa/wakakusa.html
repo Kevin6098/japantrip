@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mt. Wakakusa (若草山) - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-nara" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="wakakusa-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="https://narashikanko.or.jp/lsc/upfile/spot/0001/0108/10108_1_l.jpg" alt="Mt. Wakakusa - Panoramic View" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://narashikanko.or.jp/lsc/upfile/spot/0001/0108/10108_2_l.jpg" alt="Mt. Wakakusa - Scenic Landscape" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://cdn.prod.rexby.com/image/a3c42040a8e34c88bc5500d192bb3128?format=webp&width=1080&height=1350" alt="Mt. Wakakusa - Mountain View" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://nara-sightseeing.com/ns/wp-content/uploads/2020/04/PMH_160821_191900_2402-1024x683.jpg" alt="Mt. Wakakusa - Sunset View" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD0xx8OJilJe2a2PqCCTQY1x7YaNS-0wm7DA&s" alt="Mt. Wakakusa - City View" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0HXUMDBtNp71oMQXYLTpi88sZJltLuxt_4A&s" alt="Mt. Wakakusa - Scenic Overlook" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://www.travelingjapan.net/wp-content/uploads/2022/11/night-veiw-from-mount-wakakusa-2-scaled.jpg" alt="Mt. Wakakusa - Night View" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                    <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
+                    <button class="carousel-indicator" data-slide="5" aria-label="Slide 6"></button>
+                    <button class="carousel-indicator" data-slide="6" aria-label="Slide 7"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Mt. Wakakusa (若草山)</span><span class="lang-zh">若草山</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #0d9488);"></i><span class="lang-en">Nara City</span><span class="lang-zh">奈良市</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥150</span><span class="lang-zh">¥150</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">9:00 AM - 5:00 PM (varies by season)</span><span class="lang-zh">9:00 AM - 5:00 PM (因季节而异)</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Mt. Wakakusa (若草山), also known as Mount Mikasa, is a 342-meter-high grass-covered mountain located in Nara Park. The mountain offers spectacular panoramic views of Nara City and is famous for its beautiful sunset views. The entire mountain is covered with grass, creating a unique landscape that changes color with the seasons - green in spring and summer, golden in autumn, and brown in winter.</span>
+                    <span class="lang-zh">若草山，也被称为三笠山，是一座342米高的草覆盖的山，位于奈良公园。这座山提供壮观的奈良市全景，以其美丽的日落景色而闻名。整座山都被草覆盖，创造了独特的景观，随着季节变化颜色 - 春天和夏天是绿色，秋天是金色，冬天是棕色。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The mountain is particularly famous for the annual Wakakusa Yamayaki festival in January, where the entire mountain is set on fire in a spectacular display. The best time to visit is during sunset (around 5:30 PM) when you can enjoy breathtaking views of Nara City bathed in golden light. The climb to the top takes about 15-20 minutes and is relatively easy, making it accessible for most visitors.</span>
+                    <span class="lang-zh">这座山特别以每年一月的若草山烧山节而闻名，整个山被点燃，形成壮观的展示。最佳访问时间是日落时分（约下午5:30），您可以欣赏到沐浴在金色光线中的奈良市的壮丽景色。爬到山顶大约需要15-20分钟，相对容易，大多数游客都可以到达。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Panoramic Views:</strong> Spectacular 360-degree views of Nara City from the summit</span><span class="lang-zh"><strong>全景:</strong> 从山顶欣赏奈良市的壮丽360度全景</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Sunset Views:</strong> Famous for breathtaking sunset views over Nara City - best time is around 5:30 PM</span><span class="lang-zh"><strong>日落景色:</strong> 以奈良市上空的壮丽日落景色而闻名 - 最佳时间是下午5:30左右</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Grass-Covered Mountain:</strong> Unique landscape with grass covering the entire mountain, changing colors with seasons</span><span class="lang-zh"><strong>草覆盖的山:</strong> 独特的景观，整座山都被草覆盖，随季节变化颜色</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Easy Climb:</strong> 15-20 minute walk to the summit, accessible for most visitors</span><span class="lang-zh"><strong>轻松攀登:</strong> 步行15-20分钟到达山顶，大多数游客都可以到达</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Wakakusa Yamayaki Festival:</strong> Annual fire festival in January where the mountain is set ablaze</span><span class="lang-zh"><strong>若草山烧山节:</strong> 每年一月的火节，整座山被点燃</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Tips</span><span class="lang-zh">提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Best Time to Visit:</strong> Sunset (around 5:30 PM) for the most spectacular views - arrive at 5:00 PM to secure a good spot</span><span class="lang-zh"><strong>最佳访问时间:</strong> 日落时分（约下午5:30）获得最壮观的景色 - 下午5:00到达以确保好位置</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Duration:</strong> ~30-45 mins (15-20 mins climb up, 10-15 mins at top, 10 mins climb down)</span><span class="lang-zh"><strong>停留时间:</strong> 约30-45分钟（15-20分钟爬上去，10-15分钟在顶部，10分钟爬下来）</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Entrance Fee:</strong> ¥150 per person</span><span class="lang-zh"><strong>入场费:</strong> 每人¥150</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Access:</strong> Walk 15 mins from Kasuga Taisha Shrine - perfect after visiting the shrine</span><span class="lang-zh"><strong>交通:</strong> 从春日大社步行15分钟 - 参观神社后的完美选择</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Perfect Timing:</strong> Visit at 5:30 PM (sunset) after exploring Kasuga Taisha, then head to Yamatoen Honten for dinner at 7:00 PM</span><span class="lang-zh"><strong>完美时机:</strong> 下午5:30（日落）参观，在探索春日大社之后，然后在晚上7:00前往大和园本店享用晚餐</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>What to Bring:</strong> Camera for sunset photos, comfortable walking shoes, and a jacket as it can get windy at the top</span><span class="lang-zh"><strong>携带物品:</strong> 用于拍摄日落照片的相机，舒适的步行鞋，以及夹克，因为山顶可能多风</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-nara rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-nara mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> Zoshicho, Nara, Nara Prefecture</span>
+                    <span class="lang-zh"><strong>地址:</strong> 奈良县奈良市雑司町</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Nearest Station:</strong> Nara Station</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> 奈良站</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Access:</strong> Walk 15 mins from Kasuga Taisha Shrine (perfect after visiting the shrine at 4:00 PM)</span>
+                    <span class="lang-zh"><strong>交通:</strong> 从春日大社步行15分钟（在下午4:00参观神社后的完美选择）</span>
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Mt+Wakakusa+Nara" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+</body>
+</html>

@@ -20,15 +20,18 @@ const Attractions = () => {
       { id: 'kiyomizu' },
       { id: 'gion' },
       { id: 'yasaka' },
+      { id: 'ujigami' },
     ],
     nara: [
       { id: 'nara-park' },
       { id: 'todaiji' },
       { id: 'kasuga' },
+      { id: 'wakakusa' },
     ],
     osaka: [
       { id: 'dotonbori' },
       { id: 'osaka-castle' },
+      { id: 'osaka-aquarium' },
       { id: 'namba-yasaka-shrine' },
       { id: 'kuromon-market' },
       { id: 'usj' },

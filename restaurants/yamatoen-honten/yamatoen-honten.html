@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asakusa - Monja Yaki & Okonomiyaki - Japan Trip 2026</title>
+    <title>Yamatoen Honten (大和园本店) - Japan Trip 2026</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../styles.css">
 </head>
-<body class="text-slate-700 location-tokyo" id="main-body">
+<body class="text-slate-700 location-kyoto" id="main-body">
 
     <!-- Sakura Animation -->
     <div id="sakura-container" class="sakura-container"></div>
@@ -27,7 +27,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="../homepage.html" class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
                         <span class="text-pink-500 text-2xl mr-2">🌸</span>
                         <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
                             <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
@@ -35,7 +35,7 @@
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-1 items-center">
-                    <a href="../food.html" class="nav-link">
+                    <a href="../../food.html" class="nav-link">
                         <span class="lang-en">← Back to Food</span><span class="lang-zh">← 返回美食</span>
                     </a>
                     <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
@@ -46,7 +46,7 @@
                     <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
                         🌐
                     </button>
-                    <a href="../food.html" class="text-slate-600 hover:text-pink-600 p-2">
+                    <a href="../../food.html" class="text-slate-600 hover:text-pink-600 p-2">
                         <i class="fa-solid fa-arrow-left text-xl"></i>
                     </a>
                 </div>
@@ -55,36 +55,33 @@
     </nav>
 
     <!-- Back Button -->
-    <a href="../food.html" class="back-button no-print" aria-label="Back to Food">
+    <a href="../../food.html" class="back-button no-print" aria-label="Back to Food">
         <i class="fa-solid fa-arrow-left"></i>
     </a>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
         <!-- Image Carousel -->
         <div class="mb-8 relative">
-            <div id="asakusa-monja-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+            <div id="yamatoen-honten-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
                 <!-- Carousel Images -->
                 <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
                     <div class="carousel-slide active">
-                        <img src="https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80" alt="Asakusa - Monja Yaki & Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://static.where-e.com/Japan/Nara_Prefecture/Yamatoan-Honten_c105737e9d8c53bcb797de7c9e2608f7.jpg" alt="Yamatoen Honten - Restaurant Exterior" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/261855/f7d28b7cb3c7b2ff2a55c328d1dd1162.jpg?token=2309b10&api=v2" alt="Monja Yaki & Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://airial.travel/_next/image?url=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-w%2F18%2F9b%2F56%2F98%2Fphoto1jpg.jpg&w=3840&q=75" alt="Yamatoen Honten - Restaurant Interior" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://cdn.macaro-ni.jp/assets/img/shutterstock/shutterstock_303556331.jpg?p=small" alt="Monja Yaki & Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://tblg.k-img.com/restaurant/images/Rvw/322237/640x640_rect_8af8677932a564ea58216403d75ba3a1.jpg" alt="Yamatoen Honten - Traditional Dish" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://img2.mypl.net/image.php?id=2147637425&p=shopn&s=490_740&op=" alt="Monja Yaki & Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://carlming.net/wp-content/uploads/2024/03/20231011-2Q1A3248.jpg" alt="Yamatoen Honten - Meal Presentation" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG1JKBO_LuC2f3jxRyYH2YqVUl1TXOAU91uw&s" alt="Monja Yaki & Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-p/29/6a/55/c7/yamatoan-honten.jpg" alt="Yamatoen Honten - Traditional Japanese Cuisine" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Okonomiyaki_001.jpg" alt="Okonomiyaki" class="w-full h-full object-cover">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="https://www.whats4eats.com/wp-content/uploads/2023/05/breads-okonomiyaki-wikimedia-ZhengZhou-4x3-1-500x500.jpg" alt="Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://rimage.gnst.jp/rest/img/fz97xj7u0000/s_0n5j.jpg" alt="Yamatoen Honten - Restaurant Setting" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                 </div>
                 
@@ -104,7 +101,6 @@
                     <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
                     <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
                     <button class="carousel-indicator" data-slide="5" aria-label="Slide 6"></button>
-                    <button class="carousel-indicator" data-slide="6" aria-label="Slide 7"></button>
                 </div>
             </div>
         </div>
@@ -113,96 +109,94 @@
         <article class="animate-fade-in">
             <div class="mb-6">
                 <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
-                    <span class="lang-en">Asakusa - Monja Yaki & Okonomiyaki</span><span class="lang-zh">浅草 - 文字烧 & 大阪烧</span>
+                    <span class="lang-en">Yamatoen Honten (大和园本店)</span><span class="lang-zh">大和园本店</span>
                 </h1>
                 <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
-                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #4f46e5);"></i><span class="lang-en">Asakusa, Tokyo</span><span class="lang-zh">东京浅草</span></span>
-                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥800-¥2,000</span><span class="lang-zh">¥800-¥2,000</span></span>
-                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">5:00 PM - 11:00 PM</span><span class="lang-zh">5:00 PM - 11:00 PM</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #10b981);"></i><span class="lang-en">Nara</span><span class="lang-zh">奈良</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Varies</span><span class="lang-zh">价格不等</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">Dinner: 5:00 PM - 11:00 PM</span><span class="lang-zh">晚餐: 5:00 PM - 11:00 PM</span></span>
                 </div>
             </div>
 
-            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
-                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
                     <i class="fa-solid fa-info-circle mr-2"></i>
                     <span class="lang-en">About</span><span class="lang-zh">关于</span>
                 </h2>
                 <p class="text-slate-700 leading-relaxed mb-4">
-                    <span class="lang-en">Asakusa is famous for its monja yaki and okonomiyaki restaurants. Monja yaki is a Tokyo specialty - a runny, gooey version of okonomiyaki that you cook yourself on a hot plate. Okonomiyaki is a savory pancake with various ingredients. Both are quintessential Tokyo street food experiences.</span>
-                    <span class="lang-zh">浅草以其文字烧和大阪烧餐厅而闻名。文字烧是东京的特色 - 一种稀薄、粘稠的大阪烧版本，您可以在热板上自己烹饪。大阪烧是一种带有各种配料的咸味煎饼。两者都是典型的东京街头美食体验。</span>
+                    <span class="lang-en">Yamatoen Honten (大和园本店) is a traditional Japanese restaurant in Nara, known for its authentic Japanese cuisine and traditional dining experience. The restaurant offers a variety of traditional dishes prepared with local ingredients, providing visitors with an authentic taste of Nara's culinary culture. Perfect for dinner after exploring Mt. Wakakusa and the surrounding Nara attractions.</span>
+                    <span class="lang-zh">大和园本店是奈良一家传统日本餐厅，以其正宗的日本料理和传统用餐体验而闻名。餐厅提供各种使用当地食材制作的传统菜肴，为游客提供正宗的奈良美食文化体验。探索若草山和周围奈良景点后享用晚餐的完美选择。</span>
                 </p>
             </div>
 
-            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
-                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
                     <i class="fa-solid fa-star mr-2"></i>
                     <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
                 </h2>
                 <ul class="space-y-3 text-slate-700">
                     <li class="flex items-start">
                         <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Authentic monja yaki experience</span><span class="lang-zh">正宗文字烧体验</span></span>
+                        <span><span class="lang-en">Traditional Japanese Cuisine: Authentic dishes with local Nara ingredients</span><span class="lang-zh">传统日本料理: 使用奈良当地食材的正宗菜肴</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Traditional okonomiyaki</span><span class="lang-zh">传统大阪烧</span></span>
+                        <span><span class="lang-en">Perfect Location: Ideal for dinner after Mt. Wakakusa exploration</span><span class="lang-zh">完美位置: 探索若草山后享用晚餐的理想选择</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Cook your own food on hot plate</span><span class="lang-zh">在热板上自己烹饪</span></span>
+                        <span><span class="lang-en">Traditional Setting: Authentic Japanese restaurant atmosphere</span><span class="lang-zh">传统环境: 正宗的日本餐厅氛围</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Local Tokyo street food</span><span class="lang-zh">当地东京街头美食</span></span>
+                        <span><span class="lang-en">Local Specialties: Featuring Nara's regional cuisine</span><span class="lang-zh">当地特色: 提供奈良地区料理</span></span>
                     </li>
-
                 </ul>
             </div>
 
-            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
-                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
                     <i class="fa-solid fa-lightbulb mr-2"></i>
                     <span class="lang-en">Tips</span><span class="lang-zh">提示</span>
                 </h2>
                 <ul class="space-y-3 text-slate-700">
                     <li class="flex items-start">
                         <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Duration: ~1.5 hours</span><span class="lang-zh">停留时间: 约1.5小时</span></span>
+                        <span><span class="lang-en">Reservations recommended, especially for dinner</span><span class="lang-zh">建议预订，特别是晚餐时段</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Many restaurants in Asakusa area</span><span class="lang-zh">浅草地区有许多餐厅</span></span>
+                        <span><span class="lang-en">Duration: ~1.5-2 hours for dinner</span><span class="lang-zh">停留时间: 晚餐约1.5-2小时</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Walk 3-5 mins from Asakusa Station</span><span class="lang-zh">从浅草站步行3-5分钟</span></span>
+                        <span><span class="lang-en">Perfect timing: Dinner at 7:00 PM after Mt. Wakakusa sunset viewing</span><span class="lang-zh">完美时机: 在若草山观看日落后晚上7点享用晚餐</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Great for dinner experience</span><span class="lang-zh">非常适合晚餐体验</span></span>
+                        <span><span class="lang-en">Traditional Japanese dining experience with local Nara flavors</span><span class="lang-zh">传统日本用餐体验，带有奈良当地风味</span></span>
                     </li>
-
                 </ul>
             </div>
 
-            <div class="glass-card location-tokyo rounded-2xl p-6">
-                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+            <div class="glass-card location-kyoto rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
                     <i class="fa-solid fa-map-location-dot mr-2"></i>
                     <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
                 </h2>
                 <p class="text-slate-700 leading-relaxed mb-4">
-                    <span class="lang-en"><strong>Address:</strong> Asakusa, Taito City, Tokyo</span>
-                    <span class="lang-zh"><strong>地址:</strong> Asakusa, Taito City, Tokyo</span>
+                    <span class="lang-en"><strong>Address:</strong> Nara, Nara Prefecture</span>
+                    <span class="lang-zh"><strong>地址:</strong> 奈良县奈良市</span>
                 </p>
                 <p class="text-slate-700 leading-relaxed mb-4">
-                    <span class="lang-en"><strong>Nearest Station:</strong> Asakusa Station</span>
-                    <span class="lang-zh"><strong>最近车站:</strong> Asakusa Station</span>
+                    <span class="lang-en"><strong>Nearest Station:</strong> Nara Station</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> 奈良站</span>
                 </p>
                 <p class="text-slate-700 leading-relaxed mb-4">
-                    <span class="lang-en"><strong>Access:</strong> Walk 3-5 mins from Asakusa Station</span>
-                    <span class="lang-zh"><strong>交通:</strong> Walk 3-5 mins from Asakusa Station</span>
+                    <span class="lang-en"><strong>Access:</strong> Walk from Mt. Wakakusa area or take bus/taxi from Nara Station</span>
+                    <span class="lang-zh"><strong>交通:</strong> 从若草山区域步行或从奈良站乘坐巴士/出租车</span>
                 </p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Monja+Yaki+Asakusa+Okonomiyaki" target="_blank" class="btn-primary inline-flex items-center">
+                <a href="https://www.google.com/maps/search/?api=1&query=Yamatoen+Honten+Nara" target="_blank" class="btn-primary inline-flex items-center">
                     <i class="fa-solid fa-map-location-dot mr-2"></i>
                     <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
                 </a>
@@ -211,6 +205,6 @@
     </main>
 
     <!-- Scripts -->
-    <script src="../script.js"></script>
+    <script src="../../script.js"></script>
 </body>
 </html>

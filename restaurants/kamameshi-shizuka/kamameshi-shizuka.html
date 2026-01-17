@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asakusa - Monja Yaki & Okonomiyaki - Japan Trip 2026</title>
+    <title>Kamameshi Shizuka Kouen-ten (志津香) - Japan Trip 2026</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../styles.css">
 </head>
-<body class="text-slate-700 location-tokyo" id="main-body">
+<body class="text-slate-700 location-kyoto" id="main-body">
 
     <!-- Sakura Animation -->
     <div id="sakura-container" class="sakura-container"></div>
@@ -27,7 +27,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="../homepage.html" class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
                         <span class="text-pink-500 text-2xl mr-2">🌸</span>
                         <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
                             <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
@@ -35,7 +35,7 @@
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-1 items-center">
-                    <a href="../food.html" class="nav-link">
+                    <a href="../../food.html" class="nav-link">
                         <span class="lang-en">← Back to Food</span><span class="lang-zh">← 返回美食</span>
                     </a>
                     <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
@@ -46,7 +46,7 @@
                     <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
                         🌐
                     </button>
-                    <a href="../food.html" class="text-slate-600 hover:text-pink-600 p-2">
+                    <a href="../../food.html" class="text-slate-600 hover:text-pink-600 p-2">
                         <i class="fa-solid fa-arrow-left text-xl"></i>
                     </a>
                 </div>
@@ -55,36 +55,30 @@
     </nav>
 
     <!-- Back Button -->
-    <a href="../food.html" class="back-button no-print" aria-label="Back to Food">
+    <a href="../../food.html" class="back-button no-print" aria-label="Back to Food">
         <i class="fa-solid fa-arrow-left"></i>
     </a>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
         <!-- Image Carousel -->
         <div class="mb-8 relative">
-            <div id="asakusa-monja-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+            <div id="kamameshi-shizuka-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
                 <!-- Carousel Images -->
                 <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
                     <div class="carousel-slide active">
-                        <img src="https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80" alt="Asakusa - Monja Yaki & Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://static.gltjp.com/glt/data/directory/14000/13162/20220630_163718_48f149c8_w640.webp" alt="Kamameshi Shizuka - Traditional Kamameshi" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/261855/f7d28b7cb3c7b2ff2a55c328d1dd1162.jpg?token=2309b10&api=v2" alt="Monja Yaki & Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://tblg.k-img.com/restaurant/images/Rvw/229983/640x640_rect_d60dddefe0e8c38b8bbf3b442cd57d8a.jpg" alt="Kamameshi Shizuka - Rice Pot Dish" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://cdn.macaro-ni.jp/assets/img/shutterstock/shutterstock_303556331.jpg?p=small" alt="Monja Yaki & Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0fmTOFcGdEFHULPfwm_oyPMACP6knwHlZWw&s" alt="Kamameshi Shizuka - Traditional Meal" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://img2.mypl.net/image.php?id=2147637425&p=shopn&s=490_740&op=" alt="Monja Yaki & Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://img.poibank.com/3H89xPXtywAD3SucB4lqym5UWHE=/W3siZm9ybWF0IjoianBnIn0seyJrZXkiOiJzdWdnZXN0aW9uLzE5NzMwMTgwLzg4NTYzLzE1NTg4NTg1OTI5NDgifSx7InJlc2l6ZSI6eyJ3aWR0aCI6IjcwMCJ9fV0=" alt="Kamameshi Shizuka - Restaurant Interior" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG1JKBO_LuC2f3jxRyYH2YqVUl1TXOAU91uw&s" alt="Monja Yaki & Okonomiyaki" class="w-full h-full object-cover">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Okonomiyaki_001.jpg" alt="Okonomiyaki" class="w-full h-full object-cover">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="https://www.whats4eats.com/wp-content/uploads/2023/05/breads-okonomiyaki-wikimedia-ZhengZhou-4x3-1-500x500.jpg" alt="Okonomiyaki" class="w-full h-full object-cover">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnfjF-ked9UXjCvnkxGgFGmMKD4nkUTgTaGA&s" alt="Kamameshi Shizuka - Kamameshi Pot" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
                     </div>
                 </div>
                 
@@ -103,8 +97,6 @@
                     <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
                     <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
                     <button class="carousel-indicator" data-slide="4" aria-label="Slide 5"></button>
-                    <button class="carousel-indicator" data-slide="5" aria-label="Slide 6"></button>
-                    <button class="carousel-indicator" data-slide="6" aria-label="Slide 7"></button>
                 </div>
             </div>
         </div>
@@ -113,96 +105,94 @@
         <article class="animate-fade-in">
             <div class="mb-6">
                 <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
-                    <span class="lang-en">Asakusa - Monja Yaki & Okonomiyaki</span><span class="lang-zh">浅草 - 文字烧 & 大阪烧</span>
+                    <span class="lang-en">Kamameshi Shizuka Kouen-ten (志津香)</span><span class="lang-zh">志津香公园店</span>
                 </h1>
                 <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
-                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #4f46e5);"></i><span class="lang-en">Asakusa, Tokyo</span><span class="lang-zh">东京浅草</span></span>
-                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥800-¥2,000</span><span class="lang-zh">¥800-¥2,000</span></span>
-                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">5:00 PM - 11:00 PM</span><span class="lang-zh">5:00 PM - 11:00 PM</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #10b981);"></i><span class="lang-en">Nara Park, Nara</span><span class="lang-zh">奈良公园，奈良</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Varies</span><span class="lang-zh">价格不等</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">Lunch: 11:00 AM - 3:00 PM</span><span class="lang-zh">午餐: 11:00 AM - 3:00 PM</span></span>
                 </div>
             </div>
 
-            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
-                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
                     <i class="fa-solid fa-info-circle mr-2"></i>
                     <span class="lang-en">About</span><span class="lang-zh">关于</span>
                 </h2>
                 <p class="text-slate-700 leading-relaxed mb-4">
-                    <span class="lang-en">Asakusa is famous for its monja yaki and okonomiyaki restaurants. Monja yaki is a Tokyo specialty - a runny, gooey version of okonomiyaki that you cook yourself on a hot plate. Okonomiyaki is a savory pancake with various ingredients. Both are quintessential Tokyo street food experiences.</span>
-                    <span class="lang-zh">浅草以其文字烧和大阪烧餐厅而闻名。文字烧是东京的特色 - 一种稀薄、粘稠的大阪烧版本，您可以在热板上自己烹饪。大阪烧是一种带有各种配料的咸味煎饼。两者都是典型的东京街头美食体验。</span>
+                    <span class="lang-en">Kamameshi Shizuka Kouen-ten (志津香) is a traditional restaurant in Nara specializing in kamameshi, a Japanese rice dish cooked in an iron pot (kama). The restaurant is located near Nara Park, making it a perfect lunch stop before or after exploring the park and feeding the deer. Kamameshi features rice cooked with various ingredients like vegetables, meat, or seafood, creating a flavorful and aromatic dish.</span>
+                    <span class="lang-zh">志津香公园店是奈良一家传统餐厅，专门提供釜饭，一种在铁锅（釜）中烹制的日本米饭料理。餐厅位于奈良公园附近，是探索公园和喂鹿前后享用午餐的完美选择。釜饭是用各种配料（如蔬菜、肉类或海鲜）烹制的米饭，创造出美味芳香的料理。</span>
                 </p>
             </div>
 
-            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
-                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
                     <i class="fa-solid fa-star mr-2"></i>
                     <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
                 </h2>
                 <ul class="space-y-3 text-slate-700">
                     <li class="flex items-start">
                         <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Authentic monja yaki experience</span><span class="lang-zh">正宗文字烧体验</span></span>
+                        <span><span class="lang-en">Traditional Kamameshi: Authentic rice pot dish cooked in iron pot</span><span class="lang-zh">传统釜饭: 在铁锅中烹制的正宗米饭料理</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Traditional okonomiyaki</span><span class="lang-zh">传统大阪烧</span></span>
+                        <span><span class="lang-en">Convenient Location: Near Nara Park, perfect for lunch break</span><span class="lang-zh">便利位置: 靠近奈良公园，午餐休息的完美选择</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Cook your own food on hot plate</span><span class="lang-zh">在热板上自己烹饪</span></span>
+                        <span><span class="lang-en">Various Options: Different kamameshi varieties with vegetables, meat, or seafood</span><span class="lang-zh">多种选择: 不同品种的釜饭，配蔬菜、肉类或海鲜</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Local Tokyo street food</span><span class="lang-zh">当地东京街头美食</span></span>
+                        <span><span class="lang-en">Traditional Experience: Authentic Japanese rice pot cooking</span><span class="lang-zh">传统体验: 正宗的日本铁锅米饭烹饪</span></span>
                     </li>
-
                 </ul>
             </div>
 
-            <div class="glass-card location-tokyo rounded-2xl p-6 mb-8">
-                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
                     <i class="fa-solid fa-lightbulb mr-2"></i>
                     <span class="lang-en">Tips</span><span class="lang-zh">提示</span>
                 </h2>
                 <ul class="space-y-3 text-slate-700">
                     <li class="flex items-start">
                         <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Duration: ~1.5 hours</span><span class="lang-zh">停留时间: 约1.5小时</span></span>
+                        <span><span class="lang-en">Duration: ~1 hour for lunch</span><span class="lang-zh">停留时间: 午餐约1小时</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Many restaurants in Asakusa area</span><span class="lang-zh">浅草地区有许多餐厅</span></span>
+                        <span><span class="lang-en">Walk 5 mins from Nara Park or take Bus #2/70 to Shizuka Kouen stop</span><span class="lang-zh">从奈良公园步行5分钟或乘坐2/70号巴士至志津香站</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Walk 3-5 mins from Asakusa Station</span><span class="lang-zh">从浅草站步行3-5分钟</span></span>
+                        <span><span class="lang-en">Perfect timing: Lunch at 1:00 PM before exploring Nara Park at 2:00 PM</span><span class="lang-zh">完美时机: 下午1点午餐，然后在下午2点探索奈良公园</span></span>
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
-                        <span><span class="lang-en">Great for dinner experience</span><span class="lang-zh">非常适合晚餐体验</span></span>
+                        <span><span class="lang-en">Traditional kamameshi is served in the iron pot it was cooked in</span><span class="lang-zh">传统釜饭在烹制的铁锅中供应</span></span>
                     </li>
-
                 </ul>
             </div>
 
-            <div class="glass-card location-tokyo rounded-2xl p-6">
-                <h2 class="font-header text-2xl font-bold location-heading-tokyo mb-4 flex items-center">
+            <div class="glass-card location-kyoto rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
                     <i class="fa-solid fa-map-location-dot mr-2"></i>
                     <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
                 </h2>
                 <p class="text-slate-700 leading-relaxed mb-4">
-                    <span class="lang-en"><strong>Address:</strong> Asakusa, Taito City, Tokyo</span>
-                    <span class="lang-zh"><strong>地址:</strong> Asakusa, Taito City, Tokyo</span>
+                    <span class="lang-en"><strong>Address:</strong> Near Nara Park, Nara</span>
+                    <span class="lang-zh"><strong>地址:</strong> 奈良公园附近，奈良</span>
                 </p>
                 <p class="text-slate-700 leading-relaxed mb-4">
-                    <span class="lang-en"><strong>Nearest Station:</strong> Asakusa Station</span>
-                    <span class="lang-zh"><strong>最近车站:</strong> Asakusa Station</span>
+                    <span class="lang-en"><strong>Nearest Station:</strong> Nara Station</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> 奈良站</span>
                 </p>
                 <p class="text-slate-700 leading-relaxed mb-4">
-                    <span class="lang-en"><strong>Access:</strong> Walk 3-5 mins from Asakusa Station</span>
-                    <span class="lang-zh"><strong>交通:</strong> Walk 3-5 mins from Asakusa Station</span>
+                    <span class="lang-en"><strong>Access:</strong> Walk 10 mins from Nara Station or take Bus #2/70 to Shizuka Kouen stop (~10 mins bus)</span>
+                    <span class="lang-zh"><strong>交通:</strong> 从奈良站步行10分钟或乘坐2/70号巴士至志津香站 (~10分钟巴士)</span>
                 </p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Monja+Yaki+Asakusa+Okonomiyaki" target="_blank" class="btn-primary inline-flex items-center">
+                <a href="https://www.google.com/maps/search/?api=1&query=Kamameshi+Shizuka+Kouen-ten+Nara" target="_blank" class="btn-primary inline-flex items-center">
                     <i class="fa-solid fa-map-location-dot mr-2"></i>
                     <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
                 </a>
@@ -211,6 +201,6 @@
     </main>
 
     <!-- Scripts -->
-    <script src="../script.js"></script>
+    <script src="../../script.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿// Comprehensive restaurants data with details, images, and information
+// Comprehensive restaurants data with details, images, and information
 
 export const restaurantsData = {
   'pain-maison': {
@@ -107,7 +107,13 @@ export const restaurantsData = {
     price: 'Varies',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
     images: [
-      'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80',
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/261855/f7d28b7cb3c7b2ff2a55c328d1dd1162.jpg?token=2309b10&api=v2',
+      'https://cdn.macaro-ni.jp/assets/img/shutterstock/shutterstock_303556331.jpg?p=small',
+      'https://img2.mypl.net/image.php?id=2147637425&p=shopn&s=490_740&op=',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG1JKBO_LuC2f3jxRyYH2YqVUl1TXOAU91uw&s',
+      'https://upload.wikimedia.org/wikipedia/commons/5/59/Okonomiyaki_001.jpg',
+      'https://www.whats4eats.com/wp-content/uploads/2023/05/breads-okonomiyaki-wikimedia-ZhengZhou-4x3-1-500x500.jpg',
     ],
     about: {
       en: "Traditional Tokyo street food experience featuring Monja Yaki and Okonomiyaki. Monja Yaki is a Tokyo specialty - a runny, gooey pancake-like dish cooked on a hot plate. Okonomiyaki is a savory pancake with various ingredients. Both are popular local foods in the Asakusa area.",
@@ -383,6 +389,42 @@ export const restaurantsData = {
     access: { en: 'Walk from Kiyomizu-dera Temple area', zh: '从清水寺区域步行' },
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Ninenzaka+Sannenzaka+Kyoto',
   },
+  'gion-unagi-kawato': {
+    id: 'gion-unagi-kawato',
+    title: { en: 'Gion Unagi Kawato (祇园うなぎ 川と)', zh: '祇园うなぎ 川と' },
+    location: { en: 'Gion, Kyoto', zh: '京都祇园' },
+    city: 'kyoto',
+    price: 'Varies',
+    hours: { en: '5:00 PM - 11:00 PM', zh: '下午5点 - 晚上11点' },
+    images: [
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/285723/0ea5efdb69af2e51243dc205716d2910.jpg?token=28a170c&api=v2',
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/285722/f2910ac1f39d789b4ea39cd60d1794d7.jpg?token=ec2770b&api=v2',
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/285722/44ceacce72244d5a917f26680b67e334.jpg?token=d781f1c&api=v2',
+      'https://2.image.cdn.tablecheck.com/unsafe/full-fit-in/1200x630/smart/https%3A%2F%2Fcdn0.tablecheck.com%2Fimages%2F67651c7497c0b3a9968cf134%2Fimages%2Fmd%2F6bc23f0f.jpg%3F1734679669',
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/285725/1f736dfd9aa84e42817668d73b02837d.jpg?token=f8dc89f&api=v2',
+      'https://www.leafkyoto.net/leaf/wp-content/uploads/2022/07/240610-kyoto-kawatou2-1024x682.jpg',
+    ],
+    about: {
+      en: "Gion Unagi Kawato (祇园うなぎ 川と) is a traditional eel restaurant located in the historic Gion district of Kyoto. Specializing in unagi (freshwater eel), the restaurant offers authentic Japanese eel dishes prepared using traditional methods. The restaurant provides an authentic dining experience in one of Kyoto's most famous geisha districts.",
+      zh: '祇园うなぎ 川と是位于京都历史悠久的祇园区的传统鳗鱼餐厅。专门提供鳗鱼（淡水鳗鱼）料理，餐厅使用传统方法制作正宗的日本鳗鱼菜肴。餐厅在京都最著名的艺伎区之一提供正宗的用餐体验。'
+    },
+    highlights: [
+      { en: 'Traditional Unagi (Eel) Dishes: Authentic Japanese eel prepared using traditional methods', zh: '传统鳗鱼料理: 使用传统方法制作的正宗日本鳗鱼' },
+      { en: 'Historic Gion Location: Located in Kyoto\'s famous geisha district', zh: '历史悠久的祇园位置: 位于京都著名的艺伎区' },
+      { en: 'Traditional Preparation: Eel grilled over charcoal with special sauce', zh: '传统制作: 在炭火上烤制鳗鱼配特制酱汁' },
+      { en: 'Authentic Experience: Traditional Japanese dining in historic setting', zh: '正宗体验: 在历史环境中享受传统日本料理' },
+    ],
+    tips: [
+      { en: 'Reservations recommended, especially for dinner', zh: '建议预订，特别是晚餐时段' },
+      { en: 'Duration: ~1-1.5 hours', zh: '停留时间: 约1-1.5小时' },
+      { en: 'Walk 5 mins from Gion-Shijo Station or within Gion district', zh: '从祇园四条站步行5分钟或在祇园区内' },
+      { en: 'Perfect for dinner after exploring Gion district', zh: '探索祇园区后享用晚餐的完美选择' },
+    ],
+    address: { en: 'Gion, Higashiyama Ward, Kyoto', zh: '京都府京都市东山区祇园' },
+    station: { en: 'Gion-Shijo Station', zh: '祇园四条站' },
+    access: { en: 'Walk 5 mins from Gion-Shijo Station or within Gion district', zh: '从祇园四条站步行5分钟或在祇园区内' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Gion+Unagi+Kawato+Kyoto',
+  },
   'nakamura-tokichi-uji': {
     id: 'nakamura-tokichi-uji',
     title: { en: 'Nakamura Tokichi Honten', zh: '中村藤吉 本店' },
@@ -410,5 +452,76 @@ export const restaurantsData = {
     station: { en: 'Uji Station', zh: '宇治站' },
     access: { en: 'Walk from Uji Station', zh: '从宇治站步行' },
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Nakamura+Tokichi+Honten+Uji',
+  },
+  'kamameshi-shizuka': {
+    id: 'kamameshi-shizuka',
+    title: { en: 'Kamameshi Shizuka Kouen-ten (志津香)', zh: '志津香公园店' },
+    location: { en: 'Nara Park, Nara', zh: '奈良公园，奈良' },
+    city: 'nara',
+    price: 'Varies',
+    hours: { en: '11:00 AM - 3:00 PM', zh: '11:00 AM - 3:00 PM' },
+    images: [
+      'https://static.gltjp.com/glt/data/directory/14000/13162/20220630_163718_48f149c8_w640.webp',
+      'https://tblg.k-img.com/restaurant/images/Rvw/229983/640x640_rect_d60dddefe0e8c38b8bbf3b442cd57d8a.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0fmTOFcGdEFHULPfwm_oyPMACP6knwHlZWw&s',
+      'https://img.poibank.com/3H89xPXtywAD3SucB4lqym5UWHE=/W3siZm9ybWF0IjoianBnIn0seyJrZXkiOiJzdWdnZXN0aW9uLzE5NzMwMTgwLzg4NTYzLzE1NTg4NTg1OTI5NDgifSx7InJlc2l6ZSI6eyJ3aWR0aCI6IjcwMCJ9fV0=',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnfjF-ked9UXjCvnkxGgFGmMKD4nkUTgTaGA&s',
+    ],
+    about: {
+      en: "Kamameshi Shizuka Kouen-ten (志津香) is a traditional restaurant in Nara specializing in kamameshi, a Japanese rice dish cooked in an iron pot (kama). The restaurant is located near Nara Park, making it a perfect lunch stop before or after exploring the park and feeding the deer. Kamameshi features rice cooked with various ingredients like vegetables, meat, or seafood, creating a flavorful and aromatic dish.",
+      zh: '志津香公园店是奈良一家传统餐厅，专门提供釜饭，一种在铁锅（釜）中烹制的日本米饭料理。餐厅位于奈良公园附近，是探索公园和喂鹿前后享用午餐的完美选择。釜饭是用各种配料（如蔬菜、肉类或海鲜）烹制的米饭，创造出美味芳香的料理。'
+    },
+    highlights: [
+      { en: 'Traditional Kamameshi: Authentic rice pot dish cooked in iron pot', zh: '传统釜饭: 在铁锅中烹制的正宗米饭料理' },
+      { en: 'Convenient Location: Near Nara Park, perfect for lunch break', zh: '便利位置: 靠近奈良公园，午餐休息的完美选择' },
+      { en: 'Various Options: Different kamameshi varieties with vegetables, meat, or seafood', zh: '多种选择: 不同品种的釜饭，配蔬菜、肉类或海鲜' },
+      { en: 'Traditional Experience: Authentic Japanese rice pot cooking', zh: '传统体验: 正宗的日本铁锅米饭烹饪' },
+    ],
+    tips: [
+      { en: 'Duration: ~1 hour for lunch', zh: '停留时间: 午餐约1小时' },
+      { en: 'Walk 5 mins from Nara Park or take Bus #2/70 to Shizuka Kouen stop', zh: '从奈良公园步行5分钟或乘坐2/70号巴士至志津香站' },
+      { en: 'Perfect timing: Lunch at 1:00 PM before exploring Nara Park at 2:00 PM', zh: '完美时机: 下午1点午餐，然后在下午2点探索奈良公园' },
+      { en: 'Traditional kamameshi is served in the iron pot it was cooked in', zh: '传统釜饭在烹制的铁锅中供应' },
+    ],
+    address: { en: 'Near Nara Park, Nara', zh: '奈良公园附近，奈良' },
+    station: { en: 'Nara Station', zh: '奈良站' },
+    access: { en: 'Walk 10 mins from Nara Station or take Bus #2/70 to Shizuka Kouen stop (~10 mins bus)', zh: '从奈良站步行10分钟或乘坐2/70号巴士至志津香站 (~10分钟巴士)' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Kamameshi+Shizuka+Kouen-ten+Nara',
+  },
+  'yamatoen-honten': {
+    id: 'yamatoen-honten',
+    title: { en: 'Yamatoen Honten (大和园本店)', zh: '大和园本店' },
+    location: { en: 'Nara', zh: '奈良' },
+    city: 'nara',
+    price: 'Varies',
+    hours: { en: '5:00 PM - 11:00 PM', zh: '下午5点 - 晚上11点' },
+    images: [
+      'https://static.where-e.com/Japan/Nara_Prefecture/Yamatoan-Honten_c105737e9d8c53bcb797de7c9e2608f7.jpg',
+      'https://airial.travel/_next/image?url=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-w%2F18%2F9b%2F56%2F98%2Fphoto1jpg.jpg&w=3840&q=75',
+      'https://tblg.k-img.com/restaurant/images/Rvw/322237/640x640_rect_8af8677932a564ea58216403d75ba3a1.jpg',
+      'https://carlming.net/wp-content/uploads/2024/03/20231011-2Q1A3248.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-p/29/6a/55/c7/yamatoan-honten.jpg',
+      'https://rimage.gnst.jp/rest/img/fz97xj7u0000/s_0n5j.jpg',
+    ],
+    about: {
+      en: "Yamatoen Honten (大和园本店) is a traditional Japanese restaurant in Nara, known for its authentic Japanese cuisine and traditional dining experience. The restaurant offers a variety of traditional dishes prepared with local ingredients, providing visitors with an authentic taste of Nara's culinary culture. Perfect for dinner after exploring Mt. Wakakusa and the surrounding Nara attractions.",
+      zh: '大和园本店是奈良一家传统日本餐厅，以其正宗的日本料理和传统用餐体验而闻名。餐厅提供各种使用当地食材制作的传统菜肴，为游客提供正宗的奈良美食文化体验。探索若草山和周围奈良景点后享用晚餐的完美选择。'
+    },
+    highlights: [
+      { en: 'Traditional Japanese Cuisine: Authentic dishes with local Nara ingredients', zh: '传统日本料理: 使用奈良当地食材的正宗菜肴' },
+      { en: 'Perfect Location: Ideal for dinner after Mt. Wakakusa exploration', zh: '完美位置: 探索若草山后享用晚餐的理想选择' },
+      { en: 'Traditional Setting: Authentic Japanese restaurant atmosphere', zh: '传统环境: 正宗的日本餐厅氛围' },
+      { en: 'Local Specialties: Featuring Nara\'s regional cuisine', zh: '当地特色: 提供奈良地区料理' },
+    ],
+    tips: [
+      { en: 'Reservations recommended, especially for dinner', zh: '建议预订，特别是晚餐时段' },
+      { en: 'Duration: ~1.5-2 hours for dinner', zh: '停留时间: 晚餐约1.5-2小时' },
+      { en: 'Perfect timing: Dinner at 7:00 PM after Mt. Wakakusa sunset viewing', zh: '完美时机: 在若草山观看日落后晚上7点享用晚餐' },
+      { en: 'Traditional Japanese dining experience with local Nara flavors', zh: '传统日本用餐体验，带有奈良当地风味' },
+    ],
+    address: { en: 'Nara, Nara Prefecture', zh: '奈良县奈良市' },
+    station: { en: 'Nara Station', zh: '奈良站' },
+    access: { en: 'Walk from Mt. Wakakusa area or take bus/taxi from Nara Station', zh: '从若草山区域步行或从奈良站乘坐巴士/出租车' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Yamatoen+Honten+Nara',
   },
 }

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujigami Shrine (宇治上神社) - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-kyoto" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">← Back to Attractions</span><span class="lang-zh">← 返回景点</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../tourist-attraction.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../tourist-attraction.html" class="back-button no-print" aria-label="Back to Attractions">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="ujigami-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="https://www.japan-guide.com/g17/3978_02.jpg" alt="Ujigami Shrine - Main Hall" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://www.japan-guide.com/g17/3978_01.jpg" alt="Ujigami Shrine - Traditional Architecture" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYAf7rVPnFq06KA0cE0jLE4ZwQkdPOd-NCrA&s" alt="Ujigami Shrine - Shrine Grounds" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://japanjourneys.jp/wp-content/uploads/2019/10/ujigami-shrine-kyoto-header-2.jpg" alt="Ujigami Shrine - Historic Shrine" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Ujigami Shrine (宇治上神社)</span><span class="lang-zh">宇治上神社</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #10b981);"></i><span class="lang-en">Uji, Kyoto</span><span class="lang-zh">京都宇治</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">Free</span><span class="lang-zh">免费</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">9:00 AM - 4:30 PM</span><span class="lang-zh">9:00 AM - 4:30 PM</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Ujigami Shrine (宇治上神社) is one of Japan's oldest Shinto shrines and a UNESCO World Heritage Site, located in Uji, Kyoto. The shrine is believed to have been established in the late Heian period (794-1185) and is dedicated to the imperial prince Uji no Wakiiratsuko. The shrine's main hall (honden) is considered one of the oldest surviving examples of Shinto shrine architecture in Japan, dating back to the 11th century. The shrine is part of the "Historic Monuments of Ancient Kyoto" UNESCO World Heritage Site.</span>
+                    <span class="lang-zh">宇治上神社是日本最古老的神道教神社之一，也是联合国教科文组织世界遗产，位于京都宇治。神社被认为建于平安时代后期（794-1185年），供奉皇族宇治若郎子。神社的主殿（本殿）被认为是日本现存最古老的神道教神社建筑之一，可追溯到11世纪。神社是"古都京都的历史遗迹"联合国教科文组织世界遗产的一部分。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">The shrine features traditional Japanese architecture with a simple, elegant design. It's located along the Uji River, making it a peaceful and scenic spot to visit. The shrine is less crowded than many other Kyoto attractions, offering a tranquil experience. It's conveniently located near Nakamura Tokichi Honten, making it perfect to visit after enjoying matcha sweets.</span>
+                    <span class="lang-zh">神社具有传统日本建筑风格，设计简洁优雅。它位于宇治川沿岸，是一个宁静而风景如画的景点。神社比京都的许多其他景点人少，提供宁静的体验。它位于中村藤吉本店附近，非常适合在享受抹茶甜点后参观。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>UNESCO World Heritage:</strong> Part of "Historic Monuments of Ancient Kyoto"</span><span class="lang-zh"><strong>联合国教科文组织世界遗产:</strong> "古都京都的历史遗迹"的一部分</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Oldest Shrine Architecture:</strong> Main hall dates back to the 11th century</span><span class="lang-zh"><strong>最古老的神社建筑:</strong> 主殿可追溯到11世纪</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Peaceful Atmosphere:</strong> Less crowded than other Kyoto attractions</span><span class="lang-zh"><strong>宁静氛围:</strong> 比京都其他景点人少</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Riverside Location:</strong> Beautiful location along the Uji River</span><span class="lang-zh"><strong>河畔位置:</strong> 位于宇治川沿岸的美丽位置</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Traditional Architecture:</strong> Simple and elegant Shinto shrine design</span><span class="lang-zh"><strong>传统建筑:</strong> 简洁优雅的神道教神社设计</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Tips</span><span class="lang-zh">提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Duration:</strong> ~30-45 mins (walk around shrine grounds)</span><span class="lang-zh"><strong>停留时间:</strong> 约30-45分钟（在神社场地周围散步）</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Access:</strong> Walk 10 mins from Nakamura Tokichi Honten along Uji River</span><span class="lang-zh"><strong>交通:</strong> 从中村藤吉本店沿宇治川步行10分钟</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Perfect Timing:</strong> Visit at 10:30 AM after Nakamura Tokichi (9:30 AM), then leave for Nara at 11:30 AM</span><span class="lang-zh"><strong>完美时机:</strong> 在中村藤吉（上午9:30）之后上午10:30参观，然后在上午11:30前往奈良</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Free Admission:</strong> No entrance fee required</span><span class="lang-zh"><strong>免费入场:</strong> 无需入场费</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Riverside Walk:</strong> Enjoy a peaceful walk along the Uji River to reach the shrine</span><span class="lang-zh"><strong>河畔散步:</strong> 沿着宇治川享受宁静的步行到达神社</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-kyoto rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-kyoto mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> Uji, Kyoto Prefecture</span>
+                    <span class="lang-zh"><strong>地址:</strong> 京都府宇治市</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Nearest Station:</strong> Uji Station</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> 宇治站</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Access:</strong> Walk 10 mins from Nakamura Tokichi Honten along Uji River, or walk 10-15 mins from Uji Station</span>
+                    <span class="lang-zh"><strong>交通:</strong> 从中村藤吉本店沿宇治川步行10分钟，或从宇治站步行10-15分钟</span>
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Ujikami+Shrine+Uji" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+</body>
+</html>

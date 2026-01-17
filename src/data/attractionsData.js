@@ -1,4 +1,4 @@
-﻿// Comprehensive attractions data with explanations, images, and details
+// Comprehensive attractions data with explanations, images, and details
 
 export const attractionsData = {
   'sensoji': {
@@ -374,6 +374,74 @@ export const attractionsData = {
       { en: 'Inner Area: Pay ¥500 to see the inner area with more lanterns', zh: '内区: 支付500日元参观内区，有更多灯笼' },
     ],
   },
+  'ujigami': {
+    id: 'ujigami',
+    title: { en: 'Ujigami Shrine (宇治上神社)', zh: '宇治上神社' },
+    location: { en: 'Uji, Kyoto', zh: '京都宇治' },
+    city: 'kyoto',
+    price: 'Free',
+    hours: { en: '9:00 AM - 4:30 PM', zh: '9:00 AM - 4:30 PM' },
+    images: [
+      'https://www.japan-guide.com/g17/3978_02.jpg',
+      'https://www.japan-guide.com/g17/3978_01.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYAf7rVPnFq06KA0cE0jLE4ZwQkdPOd-NCrA&s',
+      'https://japanjourneys.jp/wp-content/uploads/2019/10/ujigami-shrine-kyoto-header-2.jpg',
+    ],
+    about: {
+      en: "Ujigami Shrine (宇治上神社) is one of Japan's oldest Shinto shrines and a UNESCO World Heritage Site, located in Uji, Kyoto. The shrine is believed to have been established in the late Heian period (794-1185) and is dedicated to the imperial prince Uji no Wakiiratsuko. The shrine's main hall (honden) is considered one of the oldest surviving examples of Shinto shrine architecture in Japan, dating back to the 11th century. The shrine is part of the \"Historic Monuments of Ancient Kyoto\" UNESCO World Heritage Site. The shrine features traditional Japanese architecture with a simple, elegant design. It's located along the Uji River, making it a peaceful and scenic spot to visit. The shrine is less crowded than many other Kyoto attractions, offering a tranquil experience.",
+      zh: '宇治上神社是日本最古老的神道教神社之一，也是联合国教科文组织世界遗产，位于京都宇治。神社被认为建于平安时代后期（794-1185年），供奉皇族宇治若郎子。神社的主殿（本殿）被认为是日本现存最古老的神道教神社建筑之一，可追溯到11世纪。神社是"古都京都的历史遗迹"联合国教科文组织世界遗产的一部分。神社具有传统日本建筑风格，设计简洁优雅。它位于宇治川沿岸，是一个宁静而风景如画的景点。神社比京都的许多其他景点人少，提供宁静的体验。'
+    },
+    highlights: [
+      { en: 'UNESCO World Heritage: Part of "Historic Monuments of Ancient Kyoto"', zh: '联合国教科文组织世界遗产: "古都京都的历史遗迹"的一部分' },
+      { en: 'Oldest Shrine Architecture: Main hall dates back to the 11th century', zh: '最古老的神社建筑: 主殿可追溯到11世纪' },
+      { en: 'Peaceful Atmosphere: Less crowded than other Kyoto attractions', zh: '宁静氛围: 比京都其他景点人少' },
+      { en: 'Riverside Location: Beautiful location along the Uji River', zh: '河畔位置: 位于宇治川沿岸的美丽位置' },
+      { en: 'Traditional Architecture: Simple and elegant Shinto shrine design', zh: '传统建筑: 简洁优雅的神道教神社设计' },
+    ],
+    tips: [
+      { en: 'Duration: ~30-45 mins (walk around shrine grounds)', zh: '停留时间: 约30-45分钟（在神社场地周围散步）' },
+      { en: 'Access: Walk 10 mins from Nakamura Tokichi Honten along Uji River', zh: '交通: 从中村藤吉本店沿宇治川步行10分钟' },
+      { en: 'Perfect Timing: Visit at 10:30 AM after Nakamura Tokichi (9:30 AM), then leave for Nara at 11:30 AM', zh: '完美时机: 在中村藤吉（上午9:30）之后上午10:30参观，然后在上午11:30前往奈良' },
+      { en: 'Free Admission: No entrance fee required', zh: '免费入场: 无需入场费' },
+      { en: 'Riverside Walk: Enjoy a peaceful walk along the Uji River to reach the shrine', zh: '河畔散步: 沿着宇治川享受宁静的步行到达神社' },
+    ],
+  },
+  'wakakusa': {
+    id: 'wakakusa',
+    title: { en: 'Mt. Wakakusa (若草山)', zh: '若草山' },
+    location: { en: 'Nara City', zh: '奈良市' },
+    city: 'nara',
+    price: '¥150',
+    hours: { en: '9:00 AM - 5:00 PM (varies by season)', zh: '9:00 AM - 5:00 PM (因季节而异)' },
+    images: [
+      'https://narashikanko.or.jp/lsc/upfile/spot/0001/0108/10108_1_l.jpg',
+      'https://narashikanko.or.jp/lsc/upfile/spot/0001/0108/10108_2_l.jpg',
+      'https://cdn.prod.rexby.com/image/a3c42040a8e34c88bc5500d192bb3128?format=webp&width=1080&height=1350',
+      'https://nara-sightseeing.com/ns/wp-content/uploads/2020/04/PMH_160821_191900_2402-1024x683.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD0xx8OJilJe2a2PqCCTQY1x7YaNS-0wm7DA&s',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0HXUMDBtNp71oMQXYLTpi88sZJltLuxt_4A&s',
+      'https://www.travelingjapan.net/wp-content/uploads/2022/11/night-veiw-from-mount-wakakusa-2-scaled.jpg',
+    ],
+    about: {
+      en: "Mt. Wakakusa (若草山), also known as Mount Mikasa, is a 342-meter-high grass-covered mountain located in Nara Park. The mountain offers spectacular panoramic views of Nara City and is famous for its beautiful sunset views. The entire mountain is covered with grass, creating a unique landscape that changes color with the seasons - green in spring and summer, golden in autumn, and brown in winter. The mountain is particularly famous for the annual Wakakusa Yamayaki festival in January, where the entire mountain is set on fire in a spectacular display. The best time to visit is during sunset (around 5:30 PM) when you can enjoy breathtaking views of Nara City bathed in golden light. The climb to the top takes about 15-20 minutes and is relatively easy, making it accessible for most visitors.",
+      zh: '若草山，也被称为三笠山，是一座342米高的草覆盖的山，位于奈良公园。这座山提供壮观的奈良市全景，以其美丽的日落景色而闻名。整座山都被草覆盖，创造了独特的景观，随着季节变化颜色 - 春天和夏天是绿色，秋天是金色，冬天是棕色。这座山特别以每年一月的若草山烧山节而闻名，整个山被点燃，形成壮观的展示。最佳访问时间是日落时分（约下午5:30），您可以欣赏到沐浴在金色光线中的奈良市的壮丽景色。爬到山顶大约需要15-20分钟，相对容易，大多数游客都可以到达。'
+    },
+    highlights: [
+      { en: 'Panoramic Views: Spectacular 360-degree views of Nara City from the summit', zh: '全景: 从山顶欣赏奈良市的壮丽360度全景' },
+      { en: 'Sunset Views: Famous for breathtaking sunset views over Nara City - best time is around 5:30 PM', zh: '日落景色: 以奈良市上空的壮丽日落景色而闻名 - 最佳时间是下午5:30左右' },
+      { en: 'Grass-Covered Mountain: Unique landscape with grass covering the entire mountain, changing colors with seasons', zh: '草覆盖的山: 独特的景观，整座山都被草覆盖，随季节变化颜色' },
+      { en: 'Easy Climb: 15-20 minute walk to the summit, accessible for most visitors', zh: '轻松攀登: 步行15-20分钟到达山顶，大多数游客都可以到达' },
+      { en: 'Wakakusa Yamayaki Festival: Annual fire festival in January where the mountain is set ablaze', zh: '若草山烧山节: 每年一月的火节，整座山被点燃' },
+    ],
+    tips: [
+      { en: 'Best Time to Visit: Sunset (around 5:30 PM) for the most spectacular views - arrive at 5:00 PM to secure a good spot', zh: '最佳访问时间: 日落时分（约下午5:30）获得最壮观的景色 - 下午5:00到达以确保好位置' },
+      { en: 'Duration: ~30-45 mins (15-20 mins climb up, 10-15 mins at top, 10 mins climb down)', zh: '停留时间: 约30-45分钟（15-20分钟爬上去，10-15分钟在顶部，10分钟爬下来）' },
+      { en: 'Entrance Fee: ¥150 per person', zh: '入场费: 每人¥150' },
+      { en: 'Access: Walk 15 mins from Kasuga Taisha Shrine - perfect after visiting the shrine', zh: '交通: 从春日大社步行15分钟 - 参观神社后的完美选择' },
+      { en: 'Perfect Timing: Visit at 5:30 PM (sunset) after exploring Kasuga Taisha, then head to Yamatoen Honten for dinner at 7:00 PM', zh: '完美时机: 下午5:30（日落）参观，在探索春日大社之后，然后在晚上7:00前往大和园本店享用晚餐' },
+      { en: 'What to Bring: Camera for sunset photos, comfortable walking shoes, and a jacket as it can get windy at the top', zh: '携带物品: 用于拍摄日落照片的相机，舒适的步行鞋，以及夹克，因为山顶可能多风' },
+    ],
+  },
   'osaka-castle': {
     id: 'osaka-castle',
     title: { en: 'Osaka Castle', zh: '大阪城' },
@@ -403,6 +471,40 @@ export const attractionsData = {
       { en: 'Cherry Blossom Season: Visit in late March to early April for stunning views', zh: '樱花季节: 在3月下旬至4月初参观，欣赏令人惊叹的景色' },
       { en: 'Observation Deck: Great views of Osaka from the 8th floor', zh: '观景台: 从8楼可以欣赏到大阪的美景' },
       { en: 'Park is Free: You can enjoy the gardens and exterior without entering the tower', zh: '公园免费: 您可以享受花园和外观，无需进入天守阁' },
+    ],
+  },
+  'osaka-aquarium': {
+    id: 'osaka-aquarium',
+    title: { en: 'Osaka Aquarium Kaiyukan (大阪海游馆)', zh: '大阪海游馆' },
+    location: { en: 'Osaka Bay, Osaka', zh: '大阪湾，大阪' },
+    city: 'osaka',
+    price: '¥2,700',
+    hours: { en: '10:00 AM - 8:00 PM (varies by season)', zh: '10:00 AM - 8:00 PM (因季节而异)' },
+    images: [
+      'https://asset.japan.travel/image/upload/v1648205341/osaka/H_00496_001.jpg',
+      'https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/hhdp9n7ww2yltm73opvb.jpg',
+      'https://www.the-kansai-guide.com/kansaiguide/data/directory/12000/11430/20211015_060912_bada8ec9_w640.jpg',
+      'https://pic.japanholiday.com/osakaaquas-1.jpg',
+      'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/91000/91756-Osaka-Aquarium-Kaiyukan.jpg',
+    ],
+    about: {
+      en: "Osaka Aquarium Kaiyukan (大阪海游馆) is one of Japan's largest and most impressive aquariums, located in the Tempozan Harbor Village area of Osaka Bay. The aquarium features a massive central tank that holds 5,400 tons of water and is home to whale sharks, the largest fish in the ocean. The aquarium takes visitors on a journey through the Pacific Rim, showcasing marine life from different regions including the Pacific Ocean, Antarctica, and the Great Barrier Reef. The aquarium is designed as a spiral walkway that descends through multiple floors, allowing visitors to view marine life from different depths and perspectives. The main attraction is the massive Pacific Ocean tank featuring whale sharks, manta rays, and various other large marine species.",
+      zh: '大阪海游馆是日本最大、最令人印象深刻的水族馆之一，位于大阪湾的天保山港口村地区。水族馆设有一个巨大的中央水槽，可容纳5,400吨水，是海洋中最大的鱼类鲸鲨的家园。水族馆带游客环游太平洋沿岸，展示来自不同地区的海洋生物，包括太平洋、南极洲和大堡礁。水族馆设计为螺旋式走道，通过多层下降，让游客从不同深度和角度观看海洋生物。主要景点是巨大的太平洋水槽，展示鲸鲨、蝠鲼和各种其他大型海洋物种。'
+    },
+    highlights: [
+      { en: 'Whale Sharks: See the world\'s largest fish species in the massive central tank', zh: '鲸鲨: 在巨大的中央水槽中看到世界上最大的鱼类' },
+      { en: 'Massive Central Tank: 5,400-ton tank featuring whale sharks, manta rays, and large marine species', zh: '巨大的中央水槽: 5,400吨水槽，展示鲸鲨、蝠鲼和大型海洋物种' },
+      { en: 'Pacific Rim Journey: Explore marine life from different regions of the Pacific', zh: '环太平洋之旅: 探索来自太平洋不同地区的海洋生物' },
+      { en: 'Spiral Design: Unique descending walkway through multiple floors', zh: '螺旋设计: 独特的下降走道，通过多层' },
+      { en: 'Interactive Exhibits: Educational displays and feeding shows', zh: '互动展览: 教育展示和喂食表演' },
+    ],
+    tips: [
+      { en: 'Duration: ~2-3 hours to fully explore all exhibits', zh: '停留时间: 约2-3小时充分探索所有展览' },
+      { en: 'Admission: ¥2,700 for adults (discounts available for children and seniors)', zh: '入场费: 成人¥2,700（儿童和老年人有折扣）' },
+      { en: 'Access: Walk 5 mins from Osakako Station (JR Osaka Loop Line from Osaka Station, ~20 mins)', zh: '交通: 从大阪港站步行5分钟（从大阪站乘坐JR大阪环状线，约20分钟）' },
+      { en: 'Perfect Timing: Visit at 11:00 AM after Umeda Sky Building (9:00 AM), then head to Shinsaibashi at 2:30 PM', zh: '完美时机: 在梅田蓝天大厦（上午9:00）之后上午11:00参观，然后在下午2:30前往心斋桥' },
+      { en: 'Feeding Shows: Check the schedule for whale shark and other marine life feeding times', zh: '喂食表演: 查看鲸鲨和其他海洋生物的喂食时间表' },
+      { en: 'Photography: Photography allowed (no flash), perfect for capturing the amazing marine life', zh: '摄影: 允许摄影（禁止闪光灯），非常适合拍摄令人惊叹的海洋生物' },
     ],
   },
   'usj': {

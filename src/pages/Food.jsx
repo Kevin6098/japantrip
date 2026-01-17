@@ -27,9 +27,14 @@ const Food = () => {
     ],
     kyoto: [
       { id: 'kyoto-lunch', ...restaurantsData['kyoto-lunch'] },
+      { id: 'gion-unagi-kawato', ...restaurantsData['gion-unagi-kawato'] },
     ],
     uji: [
       { id: 'nakamura-tokichi-uji', ...restaurantsData['nakamura-tokichi-uji'] },
+    ],
+    nara: [
+      { id: 'kamameshi-shizuka', ...restaurantsData['kamameshi-shizuka'] },
+      { id: 'yamatoen-honten', ...restaurantsData['yamatoen-honten'] },
     ],
   }
 
@@ -39,6 +44,7 @@ const Food = () => {
     { key: 'kobe', name: t('Kobe', '神户'), icon: 'fa-mountain', color: 'red' },
     { key: 'kyoto', name: t('Kyoto', '京都'), icon: 'fa-torii-gate', color: 'green' },
     { key: 'uji', name: t('Uji', '宇治'), icon: 'fa-leaf', color: 'teal' },
+    { key: 'nara', name: t('Nara', '奈良'), icon: 'fa-deer', color: 'amber' },
   ]
 
   return (
