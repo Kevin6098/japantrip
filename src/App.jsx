@@ -16,6 +16,7 @@ import DaySchedule from './pages/DaySchedule'
 import AttractionDetailPage from './pages/AttractionDetailPage'
 import Food from './pages/Food'
 import RestaurantDetailPage from './pages/RestaurantDetailPage'
+import TransportationBudget from './pages/TransportationBudget'
 
 function AppContent() {
   const { t } = useLanguage()
@@ -37,6 +38,7 @@ function AppContent() {
             <Route path="/food/:id" element={<RestaurantDetailPage />} />
             <Route path="/flights" element={<Flights />} />
             <Route path="/budget" element={<Budget />} />
+            <Route path="/transportation-budget" element={<TransportationBudget />} />
             <Route path="/packing" element={<Packing />} />
             <Route path="/hotels" element={<Hotels />} />
             <Route path="/split-expenses" element={<BudgetSplitter />} />
