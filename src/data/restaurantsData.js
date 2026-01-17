@@ -107,7 +107,7 @@ export const restaurantsData = {
     price: 'Varies',
     hours: { en: 'Hours Vary', zh: '营业时间不定' },
     images: [
-      'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Monjayaki_After.JPG/250px-Monjayaki_After.JPG',
       'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/261855/f7d28b7cb3c7b2ff2a55c328d1dd1162.jpg?token=2309b10&api=v2',
       'https://cdn.macaro-ni.jp/assets/img/shutterstock/shutterstock_303556331.jpg?p=small',
       'https://img2.mypl.net/image.php?id=2147637425&p=shopn&s=490_740&op=',

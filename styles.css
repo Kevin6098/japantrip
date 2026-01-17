@@ -333,6 +333,11 @@ body.zh-mode div.lang-zh, body.zh-mode p.lang-zh, body.zh-mode ul.lang-zh, body.
     opacity: 0;
 }
 
+.animate-slide-up-delay-2 {
+    animation: slideUp 0.6s ease 0.4s forwards;
+    opacity: 0;
+}
+
 .animate-bounce-subtle {
     animation: bounceSubtle 2s ease-in-out infinite;
 }
@@ -515,8 +520,12 @@ span.highlight-attraction {
 
 /* Dashboard Attraction Cards */
 .attraction-dashboard-card {
-    @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 block;
+    @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300;
     border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
 }
 
 .attraction-dashboard-card:hover {
@@ -525,7 +534,15 @@ span.highlight-attraction {
 }
 
 .attraction-image-wrapper {
-    @apply relative overflow-hidden h-48 sm:h-56;
+    @apply relative overflow-hidden;
+    height: 192px;
+    flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+    .attraction-image-wrapper {
+        height: 224px;
+    }
 }
 
 .attraction-dashboard-image {
@@ -534,6 +551,14 @@ span.highlight-attraction {
 
 .attraction-dashboard-card:hover .attraction-dashboard-image {
     @apply scale-110;
+}
+
+/* Ensure content area inside cards fills remaining space */
+.attraction-dashboard-card > div:last-child {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 0;
 }
 
 .attraction-overlay-dashboard {
@@ -1443,7 +1468,6 @@ html {
     }
 }
 
-
 /* Schedule Dashboard Cards */
 .day-card {
     transition: all 0.3s ease;
@@ -1460,11 +1484,10 @@ html {
 /* Day Details Sections */
 .day-details {
     animation: fadeInDown 0.4s ease;
-    display: block;
 }
 
-.day-details.day-details-hidden {
-    display: none !important;
+.day-details.hidden {
+    display: none;
 }
 
 @keyframes fadeInDown {
@@ -1476,4 +1499,18 @@ html {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Flight Time Highlighting */
+.highlight-time {
+    color: #dc2626;
+    font-weight: 700;
+    background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #f59e0b;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.5px;
 }

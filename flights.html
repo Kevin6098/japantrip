@@ -141,52 +141,282 @@
                 </div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
-                <!-- Thai Airways -->
-                <div class="glass-card rounded-2xl p-1 shadow-sm border border-purple-100 hover:shadow-lg transition-shadow duration-300 animate-slide-up">
-                    <div class="bg-purple-600 text-white p-4 rounded-t-xl flex justify-between items-center">
-                        <h3 class="font-bold font-header">
-                            <span class="lang-en">Penang Group</span><span class="lang-zh">槟城组</span>
+            <div class="space-y-6">
+                <!-- Group 1: Penang → Tokyo / Osaka → Penang (via Bangkok) -->
+                <div class="glass-card rounded-2xl p-1 shadow-sm border-2 border-purple-200 hover:shadow-lg transition-shadow duration-300 animate-slide-up">
+                    <div class="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 rounded-t-xl">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold font-header text-lg">
+                                <span class="lang-en">✈️ Group 1 – Penang → Tokyo / Osaka → Penang</span>
+                                <span class="lang-zh">✈️ 第一组 – 槟城 → 东京 / 大阪 → 槟城</span>
                         </h3>
-                        <span class="text-xs bg-white/20 px-2 py-1 rounded">TG</span>
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded font-bold">TG</span>
+                        </div>
+                        <div class="text-xs bg-white/20 px-3 py-1 rounded inline-block mt-1">
+                            <span class="lang-en">Passengers (4):</span><span class="lang-zh">乘客 (4人):</span>
+                            <span class="font-semibold">Cheng Wai Soon, Siew Pheng See, Yi Joe See, Siew Kim See</span>
+                        </div>
                     </div>
-                    <div class="p-4 text-sm">
-                        <div class="flex justify-between border-b pb-2 mb-2">
-                            <div><strong>18/03</strong> PEN ➝ HND</div>
-                            <div class="text-right"><span class="lang-en">Arr</span><span class="lang-zh">抵达</span>: 22:30</div>
+                    <div class="p-5 space-y-4">
+                        <!-- Outbound -->
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <div class="font-bold text-purple-700 mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-plane-departure"></i>
+                                <span class="lang-en">🛫 Outbound (To Japan)</span><span class="lang-zh">🛫 去程 (前往日本)</span>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-purple-50 p-3 rounded-lg">
+                                    <div class="font-semibold text-slate-800 mb-1">
+                                        <span class="lang-en">18 Mar 2026</span><span class="lang-zh">2026年3月18日</span>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-slate-600">Penang → Bangkok</span>
+                                            <span class="font-bold text-purple-600 bg-purple-100 px-2 py-1 rounded">⏰ <span class="highlight-time">08:00 – 08:50</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Thai Airways TG426</div>
+                                        <div class="flex items-center justify-between mt-2">
+                                            <span class="text-slate-600">Bangkok → Tokyo</span>
+                                            <span class="font-bold text-purple-600 bg-purple-100 px-2 py-1 rounded">⏰ <span class="highlight-time">14:50 – 22:30</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Thai Airways TG660</div>
+                                    </div>
+                                </div>
+                                <div class="bg-green-50 border border-green-200 p-2 rounded text-xs">
+                                    <span class="font-semibold text-green-700">📍 <span class="lang-en">Arrive:</span><span class="lang-zh">抵达:</span></span>
+                                    <span class="text-green-800">Tokyo (18 Mar 2026, night)</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <div><strong>28/03</strong> KIX ➝ PEN</div>
-                            <div class="text-right"><span class="lang-en">Dep</span><span class="lang-zh">起飞</span>: 11:00</div>
-                        </div>
-                        <div class="mt-2 pt-2 border-t text-xs text-slate-500">
-                            <span class="lang-en">📍 Departure from Osaka Airbnb (JR Momodani Station area)</span>
-                            <span class="lang-zh">📍 从大阪Airbnb出发（JR桃谷站附近）</span>
+                        <!-- Return -->
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <div class="font-bold text-orange-700 mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-plane-arrival"></i>
+                                <span class="lang-en">🛬 Return (From Japan)</span><span class="lang-zh">🛬 返程 (从日本)</span>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-orange-50 p-3 rounded-lg">
+                                    <div class="font-semibold text-slate-800 mb-1">
+                                        <span class="lang-en">28 Mar 2026</span><span class="lang-zh">2026年3月28日</span>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-slate-600">Osaka → Bangkok</span>
+                                            <span class="font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded">⏰ <span class="highlight-time">11:00 – 15:45</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Thai Airways TG623</div>
+                                        <div class="flex items-center justify-between mt-2">
+                                            <span class="text-slate-600">Bangkok → Penang</span>
+                                            <span class="font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded">⏰ <span class="highlight-time">19:30 – 22:20</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Thai Airways TG425</div>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-50 border border-blue-200 p-2 rounded text-xs space-y-1">
+                                    <div><span class="font-semibold text-blue-700">📍 <span class="lang-en">Depart Japan:</span><span class="lang-zh">离开日本:</span></span> <span class="text-blue-800">Osaka</span></div>
+                                    <div><span class="font-semibold text-blue-700">📍 <span class="lang-en">Arrive Home:</span><span class="lang-zh">抵达家乡:</span></span> <span class="text-blue-800">Penang (28 Mar 2026, night)</span></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Cathay Pacific -->
-                <div class="glass-card rounded-2xl p-1 shadow-sm border border-teal-100 hover:shadow-lg transition-shadow duration-300 animate-slide-up-delay">
-                    <div class="bg-teal-600 text-white p-4 rounded-t-xl flex justify-between items-center">
-                        <h3 class="font-bold font-header">
-                            <span class="lang-en">CX Groups</span><span class="lang-zh">国泰组</span>
-                        </h3>
-                        <span class="text-xs bg-white/20 px-2 py-1 rounded">CX</span>
+                <!-- Group 2: Singapore → Tokyo / Osaka → Singapore (via Hong Kong) -->
+                <div class="glass-card rounded-2xl p-1 shadow-sm border-2 border-teal-200 hover:shadow-lg transition-shadow duration-300 animate-slide-up-delay">
+                    <div class="bg-gradient-to-r from-teal-600 to-teal-700 text-white p-4 rounded-t-xl">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold font-header text-lg">
+                                <span class="lang-en">✈️ Group 2 – Singapore → Tokyo / Osaka → Singapore</span>
+                                <span class="lang-zh">✈️ 第二组 – 新加坡 → 东京 / 大阪 → 新加坡</span>
+                            </h3>
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded font-bold">CX</span>
+                        </div>
+                        <div class="text-xs bg-white/20 px-3 py-1 rounded inline-block mt-1">
+                            <span class="lang-en">Passenger (1):</span><span class="lang-zh">乘客 (1人):</span>
+                            <span class="font-semibold">Ang Shin Nee</span>
+                        </div>
                     </div>
-                    <div class="p-4 text-sm space-y-3">
-                        <div>
-                            <div class="font-bold text-teal-700"><span class="lang-en">Singapore (1 Pax)</span><span class="lang-zh">新加坡 (1人)</span></div>
-                            <div class="flex justify-between text-slate-500 text-xs">
-                                <span>18/03 <span class="lang-en">Arr</span><span class="lang-zh">抵</span> HND: 21:15</span>
-                                <span>28/03 <span class="lang-en">Dep</span><span class="lang-zh">飞</span> KIX: 09:25</span>
+                    <div class="p-5 space-y-4">
+                        <!-- Outbound -->
+                        <div class="border-l-4 border-teal-500 pl-4">
+                            <div class="font-bold text-teal-700 mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-plane-departure"></i>
+                                <span class="lang-en">🛫 Outbound (To Japan)</span><span class="lang-zh">🛫 去程 (前往日本)</span>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-teal-50 p-3 rounded-lg">
+                                    <div class="font-semibold text-slate-800 mb-1">
+                                        <span class="lang-en">18 Mar 2026</span><span class="lang-zh">2026年3月18日</span>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-slate-600">Singapore → Hong Kong</span>
+                                            <span class="font-bold text-teal-600 bg-teal-100 px-2 py-1 rounded">⏰ <span class="highlight-time">10:00 – 14:00</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Cathay Pacific CX658</div>
+                                        <div class="flex items-center justify-between mt-2">
+                                            <span class="text-slate-600">Hong Kong → Tokyo</span>
+                                            <span class="font-bold text-teal-600 bg-teal-100 px-2 py-1 rounded">⏰ <span class="highlight-time">16:30 – 21:15</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Cathay Pacific CX542</div>
+                                    </div>
+                                </div>
+                                <div class="bg-green-50 border border-green-200 p-2 rounded text-xs">
+                                    <span class="font-semibold text-green-700">📍 <span class="lang-en">Arrive:</span><span class="lang-zh">抵达:</span></span>
+                                    <span class="text-green-800">Tokyo (18 Mar 2026, night)</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="border-t pt-2">
-                            <div class="font-bold text-teal-700"><span class="lang-en">Penang Late (3 Pax)</span><span class="lang-zh">槟城迟发 (3人)</span></div>
-                            <div class="bg-orange-50 text-orange-800 p-2 rounded text-xs mt-1">
-                                <strong><span class="lang-en">Note:</span><span class="lang-zh">注:</span></strong> 
-                                <span class="lang-en">Arrive 21/03 in Osaka (17:50)</span><span class="lang-zh">3月21日 17:50 抵达大阪</span>
+                        <!-- Return -->
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <div class="font-bold text-orange-700 mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-plane-arrival"></i>
+                                <span class="lang-en">🛬 Return (From Japan)</span><span class="lang-zh">🛬 返程 (从日本)</span>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-orange-50 p-3 rounded-lg">
+                                    <div class="font-semibold text-slate-800 mb-1">
+                                        <span class="lang-en">28 Mar 2026</span><span class="lang-zh">2026年3月28日</span>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-slate-600">Osaka → Hong Kong</span>
+                                            <span class="font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded">⏰ <span class="highlight-time">09:25 – 13:00</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Cathay Pacific CX567</div>
+                                        <div class="flex items-center justify-between mt-2">
+                                            <span class="text-slate-600">Hong Kong → Singapore</span>
+                                            <span class="font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded">⏰ <span class="highlight-time">15:10 – 19:15</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Cathay Pacific CX635</div>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-50 border border-blue-200 p-2 rounded text-xs space-y-1">
+                                    <div><span class="font-semibold text-blue-700">📍 <span class="lang-en">Depart Japan:</span><span class="lang-zh">离开日本:</span></span> <span class="text-blue-800">Osaka</span></div>
+                                    <div><span class="font-semibold text-blue-700">📍 <span class="lang-en">Arrive Home:</span><span class="lang-zh">抵达家乡:</span></span> <span class="text-blue-800">Singapore (28 Mar 2026, night)</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3: Penang → Osaka / Osaka → Penang (via Hong Kong) -->
+                <div class="glass-card rounded-2xl p-1 shadow-sm border-2 border-amber-200 hover:shadow-lg transition-shadow duration-300 animate-slide-up-delay-2">
+                    <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-white p-4 rounded-t-xl">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold font-header text-lg">
+                                <span class="lang-en">✈️ Group 3 – Penang → Osaka / Osaka → Penang</span>
+                                <span class="lang-zh">✈️ 第三组 – 槟城 → 大阪 / 大阪 → 槟城</span>
+                        </h3>
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded font-bold">CX</span>
+                        </div>
+                        <div class="text-xs bg-white/20 px-3 py-1 rounded inline-block mt-1">
+                            <span class="lang-en">Passengers (3):</span><span class="lang-zh">乘客 (3人):</span>
+                            <span class="font-semibold">Siew Tin See, Jun Ming Koay, Eng Kim See</span>
+                        </div>
+                    </div>
+                    <div class="p-5 space-y-4">
+                        <!-- Outbound -->
+                        <div class="border-l-4 border-amber-500 pl-4">
+                            <div class="font-bold text-amber-700 mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-plane-departure"></i>
+                                <span class="lang-en">🛫 Outbound (To Japan)</span><span class="lang-zh">🛫 去程 (前往日本)</span>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-amber-50 p-3 rounded-lg">
+                                    <div class="font-semibold text-slate-800 mb-1">
+                                        <span class="lang-en">21 Mar 2026</span><span class="lang-zh">2026年3月21日</span>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-slate-600">Penang → Hong Kong</span>
+                                            <span class="font-bold text-amber-600 bg-amber-100 px-2 py-1 rounded">⏰ <span class="highlight-time">07:50 – 11:45</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Cathay Pacific CX622</div>
+                                        <div class="flex items-center justify-between mt-2">
+                                            <span class="text-slate-600">Hong Kong → Osaka</span>
+                                            <span class="font-bold text-amber-600 bg-amber-100 px-2 py-1 rounded">⏰ <span class="highlight-time">13:20 – 17:50</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Cathay Pacific CX598</div>
+                                    </div>
+                                </div>
+                                <div class="bg-green-50 border border-green-200 p-2 rounded text-xs">
+                                    <span class="font-semibold text-green-700">📍 <span class="lang-en">Arrive:</span><span class="lang-zh">抵达:</span></span>
+                                    <span class="text-green-800">Osaka (21 Mar 2026, evening)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Return -->
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <div class="font-bold text-orange-700 mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-plane-arrival"></i>
+                                <span class="lang-en">🛬 Return (From Japan)</span><span class="lang-zh">🛬 返程 (从日本)</span>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-orange-50 p-3 rounded-lg">
+                                    <div class="font-semibold text-slate-800 mb-1">
+                                        <span class="lang-en">28 Mar 2026</span><span class="lang-zh">2026年3月28日</span>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-slate-600">Osaka → Hong Kong</span>
+                                            <span class="font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded">⏰ <span class="highlight-time">10:00 – 13:35</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Cathay Pacific CX503</div>
+                                        <div class="flex items-center justify-between mt-2">
+                                            <span class="text-slate-600">Hong Kong → Penang</span>
+                                            <span class="font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded">⏰ <span class="highlight-time">15:15 – 19:05</span></span>
+                                        </div>
+                                        <div class="text-xs text-slate-500 pl-4">Cathay Pacific CX621</div>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-50 border border-blue-200 p-2 rounded text-xs space-y-1">
+                                    <div><span class="font-semibold text-blue-700">📍 <span class="lang-en">Depart Japan:</span><span class="lang-zh">离开日本:</span></span> <span class="text-blue-800">Osaka</span></div>
+                                    <div><span class="font-semibold text-blue-700">📍 <span class="lang-en">Arrive Home:</span><span class="lang-zh">抵达家乡:</span></span> <span class="text-blue-800">Penang (28 Mar 2026, night)</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Overview -->
+                <div class="glass-card rounded-2xl p-5 shadow-sm border-2 border-indigo-200 bg-gradient-to-br from-indigo-50 to-purple-50">
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="p-2 bg-indigo-600 text-white rounded-xl">
+                            <i class="fa-solid fa-compass text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold font-header text-lg text-indigo-800 mb-2">
+                                <span class="lang-en">🧭 Quick Overview</span><span class="lang-zh">🧭 快速概览</span>
+                            </h3>
+                            <div class="space-y-2 text-sm text-slate-700">
+                                <div class="bg-white/80 p-3 rounded-lg border border-indigo-200">
+                                    <div class="font-semibold text-indigo-700 mb-1">
+                                        <span class="lang-en">Earliest arrival in Japan:</span><span class="lang-zh">最早抵达日本:</span>
+                                    </div>
+                                    <div class="text-slate-600">
+                                        <span class="lang-en">Group 1 & 2 → 18 Mar 2026 (Tokyo)</span>
+                                        <span class="lang-zh">第一组 & 第二组 → 2026年3月18日 (东京)</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white/80 p-3 rounded-lg border border-indigo-200">
+                                    <div class="font-semibold text-indigo-700 mb-1">
+                                        <span class="lang-en">Latest arrival in Japan:</span><span class="lang-zh">最晚抵达日本:</span>
+                                    </div>
+                                    <div class="text-slate-600">
+                                        <span class="lang-en">Group 3 → 21 Mar 2026 (Osaka)</span>
+                                        <span class="lang-zh">第三组 → 2026年3月21日 (大阪)</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white/80 p-3 rounded-lg border border-indigo-200">
+                                    <div class="font-semibold text-indigo-700 mb-1">
+                                        <span class="lang-en">All groups depart Japan:</span><span class="lang-zh">所有组离开日本:</span>
+                                    </div>
+                                    <div class="text-slate-600">
+                                        <span class="lang-en">28 Mar 2026 from Osaka</span>
+                                        <span class="lang-zh">2026年3月28日 从大阪</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
