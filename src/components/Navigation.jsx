@@ -11,6 +11,7 @@ const Navigation = () => {
     { path: '/flights', label: { en: 'Flights', zh: '航班' }, icon: 'fa-plane' },
     { path: '/schedule', label: { en: 'Itinerary', zh: '行程' }, icon: 'fa-calendar-days' },
     { path: '/budget', label: { en: 'Budget', zh: '预算' }, icon: 'fa-yen-sign' },
+    { path: '/transportation-budget', label: { en: 'Transportation', zh: '交通' }, icon: 'fa-train' },
     { path: '/packing', label: { en: 'Packing', zh: '清单' }, icon: 'fa-suitcase' },
     { path: '/attractions', label: { en: 'Attractions', zh: '景点' }, icon: 'fa-camera' },
     { path: '/food', label: { en: 'Food', zh: '美食' }, icon: 'fa-utensils' },
