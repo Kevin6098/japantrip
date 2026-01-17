@@ -1,4 +1,4 @@
-// Comprehensive attractions data with explanations, images, and details
+﻿// Comprehensive attractions data with explanations, images, and details
 
 export const attractionsData = {
   'sensoji': {
@@ -9,9 +9,9 @@ export const attractionsData = {
     price: 'Free',
     hours: { en: '6:00 AM - 5:00 PM', zh: '早上6点 - 下午5点' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623475/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623475/japantrip/attractions/sensoji/kaminarimon-gate.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623476/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623476/japantrip/attractions/sensoji/nakamise-dori.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623477/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623477/japantrip/attractions/sensoji/temple-complex.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623475/japantrip/attractions/sensoji/kaminarimon-gate.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623476/japantrip/attractions/sensoji/nakamise-dori.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623477/japantrip/attractions/sensoji/temple-complex.jpg',
     ],
     about: {
       en: "Senso-ji is Tokyo's oldest temple, founded in 628 AD. According to legend, two fishermen found a statue of Kannon (the goddess of mercy) in the Sumida River. The temple was built to enshrine this sacred statue. Today, it's one of Tokyo's most visited spiritual sites, attracting millions of visitors annually. The temple complex includes the famous Kaminarimon (Thunder Gate) with its massive red lantern, Nakamise-dori shopping street with traditional snacks and souvenirs, and the main hall (Hondo) where the sacred Kannon statue is enshrined.",
@@ -37,11 +37,11 @@ export const attractionsData = {
     price: 'Free',
     hours: { en: 'Shops: 10 AM - 8 PM', zh: '商店: 上午10点 - 晚上8点' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623427/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623427/japantrip/attractions/harajuku/takeshita-street.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623424/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623424/japantrip/attractions/harajuku/harajuku-station.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623425/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623425/japantrip/attractions/harajuku/mirrored-building.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623426/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623426/japantrip/attractions/harajuku/omotesando-night.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623428/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623428/japantrip/attractions/harajuku/tokyu-plaza.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623427/japantrip/attractions/harajuku/takeshita-street.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623424/japantrip/attractions/harajuku/harajuku-station.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623425/japantrip/attractions/harajuku/mirrored-building.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623426/japantrip/attractions/harajuku/omotesando-night.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623428/japantrip/attractions/harajuku/tokyu-plaza.jpg',
     ],
     about: {
       en: "Harajuku is Tokyo's center of youth culture and fashion, famous for its vibrant street style, unique boutiques, and trendy cafes. Takeshita Street is the heart of Harajuku, a narrow pedestrian street packed with shops selling everything from kawaii (cute) fashion to crepes and cotton candy. Just a few minutes away, Omotesando offers a complete contrast with its tree-lined boulevard and luxury brand stores, earning it the nickname \"Tokyo's Champs-Élysées.\" The area perfectly represents Tokyo's dual nature - the playful, experimental Harajuku versus the sophisticated, elegant Omotesando. Both areas are must-visits for anyone wanting to experience Tokyo's fashion and culture scene.",
@@ -67,9 +67,9 @@ export const attractionsData = {
     price: 'Free',
     hours: { en: 'Open 24 Hours', zh: '24小时开放' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623413/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623413/japantrip/attractions/fushimi-inari/torii-tunnel-day.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623412/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623412/japantrip/attractions/fushimi-inari/torii-pathway.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623414/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623414/japantrip/attractions/fushimi-inari/torii-tunnel-night.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623413/japantrip/attractions/fushimi-inari/torii-tunnel-day.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623412/japantrip/attractions/fushimi-inari/torii-pathway.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623414/japantrip/attractions/fushimi-inari/torii-tunnel-night.jpg',
     ],
     about: {
       en: "Fushimi Inari Taisha is one of Japan's most important Shinto shrines, dedicated to Inari, the god of rice, agriculture, and business. Founded in 711 AD, it's the head shrine of over 30,000 Inari shrines across Japan. The shrine is world-famous for its thousands of vermillion torii gates that create stunning tunnel-like paths up the mountainside. The torii gates are donated by individuals and companies, with names inscribed on the back. The main path leads to the summit of Mount Inari (233 meters), taking about 2-3 hours for a round trip. The shrine is open 24 hours, making it perfect for early morning or evening visits to avoid crowds.",
@@ -95,9 +95,9 @@ export const attractionsData = {
     price: '¥400',
     hours: { en: '6:00 AM - 6:00 PM', zh: '早上6点 - 下午6点' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623447/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623447/japantrip/attractions/kiyomizu/main-hall-veranda.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623446/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623446/japantrip/attractions/kiyomizu/cherry-blossom-view.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623445/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623445/japantrip/attractions/kiyomizu/autumn-sunset.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623447/japantrip/attractions/kiyomizu/main-hall-veranda.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623446/japantrip/attractions/kiyomizu/cherry-blossom-view.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623445/japantrip/attractions/kiyomizu/autumn-sunset.jpg',
     ],
     about: {
       en: "Kiyomizu-dera (Pure Water Temple) is one of Kyoto's most celebrated temples and a UNESCO World Heritage Site. Founded in 778 AD, the temple is famous for its wooden stage (butai) that juts out from the main hall, offering spectacular views of Kyoto city and the surrounding mountains. The stage is built without using a single nail, showcasing traditional Japanese architecture. The temple gets its name from the Otowa Waterfall, where three streams of water fall into a pond. Visitors can drink from the streams using long-handled cups, with each stream said to grant a different blessing: longevity, success in studies, or a fortunate love life.",
@@ -120,7 +120,7 @@ export const attractionsData = {
     price: 'Free',
     hours: { en: '24 Hours', zh: '24小时' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623481/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623481/japantrip/attractions/shibuya/night-view.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623481/japantrip/attractions/shibuya/night-view.jpg',
     ],
     about: {
       en: "Shibuya Crossing is the world's busiest pedestrian crossing, with up to 3,000 people crossing at once during peak times. Located in front of Shibuya Station, this iconic intersection has become a symbol of modern Tokyo. The area is surrounded by massive video screens and neon advertisements, creating an electric atmosphere. The famous Hachiko Statue, honoring the loyal dog who waited for his owner for years, is a popular meeting point. Shibuya is also a major shopping and entertainment district with countless stores, restaurants, and nightlife options.",
@@ -144,9 +144,9 @@ export const attractionsData = {
     price: { en: 'Park: Free | Museums: Varies', zh: '公园: 免费 | 博物馆: 不同' },
     hours: { en: 'Open 24 Hours', zh: '24小时开放' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623493/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623493/japantrip/attractions/ueno/cherry-blossom-avenue.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623494/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623494/japantrip/attractions/ueno/hanami-crowd.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623492/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623492/japantrip/attractions/ueno/boat-ride.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623493/japantrip/attractions/ueno/cherry-blossom-avenue.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623494/japantrip/attractions/ueno/hanami-crowd.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623492/japantrip/attractions/ueno/boat-ride.jpg',
     ],
     about: {
       en: "Ueno Park is one of Tokyo's first public parks, established in 1873. The park is famous for its cherry blossoms in spring, making it one of Tokyo's most popular hanami (flower viewing) spots. The park houses several major museums, a zoo, temples, and shrines, making it a cultural hub in the heart of Tokyo. The park was originally part of Kaneiji Temple, one of the city's wealthiest temples. After the Battle of Ueno in 1868, the temple was destroyed, and the land was converted into one of Japan's first Western-style parks. Today, it's a perfect blend of nature, culture, and history.",
@@ -173,12 +173,12 @@ export const attractionsData = {
     price: 'Free',
     hours: { en: 'Best at Night', zh: '夜晚最佳' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623408/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623408/japantrip/attractions/dotonbori/canal-night-view.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623409/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623409/japantrip/attractions/dotonbori/glico-billboard-night.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623411/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623411/japantrip/attractions/dotonbori/neon-signs-street.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623406/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623406/japantrip/attractions/dotonbori/canal-boat-night.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623407/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623407/japantrip/attractions/dotonbori/canal-bridge-day.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623410/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623410/japantrip/attractions/dotonbori/gyoza-sign-street.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623408/japantrip/attractions/dotonbori/canal-night-view.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623409/japantrip/attractions/dotonbori/glico-billboard-night.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623411/japantrip/attractions/dotonbori/neon-signs-street.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623406/japantrip/attractions/dotonbori/canal-boat-night.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623407/japantrip/attractions/dotonbori/canal-bridge-day.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623410/japantrip/attractions/dotonbori/gyoza-sign-street.jpg',
     ],
     about: {
       en: "Dotonbori is Osaka's most famous entertainment and dining district, running along the Dotonbori canal. Known as \"Osaka's kitchen,\" this vibrant area is famous for its extravagant neon signs, street food, and energetic nightlife. The name comes from the Dotonbori canal, which was constructed in 1615. The area comes alive at night with massive animated signs including the famous Glico running man, giant crabs, octopuses, and other food-themed displays. It's the perfect place to experience Osaka's food culture with takoyaki (octopus balls), okonomiyaki (savory pancakes), and kushikatsu (deep-fried skewers).",
@@ -202,9 +202,9 @@ export const attractionsData = {
     price: 'Free',
     hours: { en: '24 Hours (Best in Evening)', zh: '24小时（傍晚最佳）' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623417/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623417/japantrip/attractions/gion/hanamikoji-street.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623419/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623419/japantrip/attractions/gion/traditional-street.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623416/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623416/japantrip/attractions/gion/evening-lanterns.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623417/japantrip/attractions/gion/hanamikoji-street.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623419/japantrip/attractions/gion/traditional-street.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623416/japantrip/attractions/gion/evening-lanterns.jpg',
     ],
     about: {
       en: "Gion is Kyoto's famous geisha district, known for its traditional wooden machiya houses, narrow cobblestone streets, and traditional teahouses. The area has preserved its historic charm and is one of the best places in Japan to see geishas (geiko) and maikos (apprentice geishas) walking to appointments. Hanamikoji Street is the main thoroughfare, lined with traditional architecture, exclusive restaurants, and ochaya (teahouses). Gion is especially beautiful in the evening when lanterns light up the streets, creating a magical atmosphere that transports visitors back to old Japan.",
@@ -229,9 +229,9 @@ export const attractionsData = {
     price: 'Free',
     hours: { en: 'Open 24 Hours', zh: '24小时开放' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623503/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623503/japantrip/attractions/yasaka/main-gate-day.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623502/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623502/japantrip/attractions/yasaka/lanterns-hall.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623504/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623504/japantrip/attractions/yasaka/shrine-complex.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623503/japantrip/attractions/yasaka/main-gate-day.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623502/japantrip/attractions/yasaka/lanterns-hall.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623504/japantrip/attractions/yasaka/shrine-complex.jpg',
     ],
     about: {
       en: "Yasaka Shrine (also known as Gion Shrine) is one of Kyoto's most famous shrines, located at the end of Hanamikoji Street in the Gion district. Founded over 1,350 years ago, the shrine is dedicated to Susanoo-no-Mikoto and his consort. The shrine is famous for its hundreds of lanterns that line the main hall, creating a beautiful and photogenic scene, especially at night when they're lit. The shrine hosts the famous Gion Matsuri festival in July, one of Japan's three major festivals. The main hall (honden) is designated as a National Treasure.",
@@ -255,9 +255,9 @@ export const attractionsData = {
     price: 'Free',
     hours: { en: 'Open 24 Hours', zh: '24小时开放' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623454/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623454/japantrip/attractions/nara-park/cherry-blossom-deer.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623455/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623455/japantrip/attractions/nara-park/deer-feeding.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623459/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623459/japantrip/attractions/nara-park/park-pathway.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623454/japantrip/attractions/nara-park/cherry-blossom-deer.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623455/japantrip/attractions/nara-park/deer-feeding.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623459/japantrip/attractions/nara-park/park-pathway.jpg',
     ],
     about: {
       en: "Nara Park is a large public park in the heart of Nara, famous for its population of over 1,200 freely roaming sika deer. The deer are considered sacred messengers of the gods in Shinto religion and are designated as a National Natural Treasure. Visitors can interact with the friendly deer, feed them special deer crackers (shika senbei) sold throughout the park, and take photos. The park covers 660 hectares and includes several major temples and shrines including Todaiji Temple, Kasuga Taisha, and Kofukuji Temple. The park is especially beautiful during cherry blossom season in spring.",
@@ -283,9 +283,9 @@ export const attractionsData = {
     price: '¥600',
     hours: { en: '7:30 AM - 5:30 PM (Apr-Oct), 8:00 AM - 5:00 PM (Nov-Mar)', zh: '早上7:30 - 下午5:30（4-10月），早上8:00 - 下午5:00（11-3月）' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623485/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623485/japantrip/attractions/todaiji/main-hall-exterior.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623484/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623484/japantrip/attractions/todaiji/great-buddha-interior.jpg',
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623486/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623486/japantrip/attractions/todaiji/temple-complex.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623485/japantrip/attractions/todaiji/main-hall-exterior.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623484/japantrip/attractions/todaiji/great-buddha-interior.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623486/japantrip/attractions/todaiji/temple-complex.jpg',
     ],
     about: {
       en: "Todaiji (Great Eastern Temple) is one of Japan's most famous and historically significant temples. Founded in 752 AD, it was constructed by Emperor Shomu to serve as the head temple of all provincial Buddhist temples. The main hall (Daibutsuden) is the world's largest wooden building, despite being rebuilt at only two-thirds of its original size after fires. Inside stands the Great Buddha (Daibutsu), a massive bronze statue of Vairocana Buddha that is 15 meters tall and weighs 500 tons. The temple complex also includes the Nandaimon Gate with its fierce guardian statues and the Nigatsudo Hall with beautiful views.",
@@ -339,7 +339,7 @@ export const attractionsData = {
     price: 'Free (Park) | ¥600 (Castle Tower)',
     hours: { en: '9:00 AM - 5:00 PM (Castle Tower)', zh: '上午9:00 - 下午5:00（天守阁）' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623469/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623469/japantrip/attractions/osaka-castle/cherry-blossom-spring.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623469/japantrip/attractions/osaka-castle/cherry-blossom-spring.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/v1768623463/japantrip/attractions/osaka-castle/castle-close-up.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/v1768623469/japantrip/attractions/osaka-castle/cherry-blossom-spring.jpg',
     ],
@@ -367,7 +367,7 @@ export const attractionsData = {
     price: '~¥9,500',
     hours: { en: 'Varies by Season (Usually 9 AM - 8 PM)', zh: '因季节而异（通常上午9点 - 晚上8点）' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623501/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623501/japantrip/attractions/usj/universal-globe-iconic.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623501/japantrip/attractions/usj/universal-globe-iconic.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/v1768623495/japantrip/attractions/usj/harry-potter-castle.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/v1768623498/japantrip/attractions/usj/super-nintendo-world-entrance.jpg',
     ],
@@ -394,7 +394,7 @@ export const attractionsData = {
     price: '¥700',
     hours: { en: '9:00 AM - 9:00 PM', zh: '上午9:00 - 晚上9:00' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623448/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623448/japantrip/attractions/kobe-port/tower-illuminated-night.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623448/japantrip/attractions/kobe-port/tower-illuminated-night.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/v1768623452/japantrip/attractions/kobe-port/waterfront-night-view.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/v1768623451/japantrip/attractions/kobe-port/tower-plaza-day.jpg',
     ],
@@ -422,7 +422,7 @@ export const attractionsData = {
     price: 'Free',
     hours: { en: 'Shops: 10 AM - 9 PM', zh: '商店: 上午10点 - 晚上9点' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623431/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623431/japantrip/attractions/harborland/ferris-wheel-waterfront.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623431/japantrip/attractions/harborland/ferris-wheel-waterfront.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/v1768623435/japantrip/attractions/harborland/mosaic-shopping-complex.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/v1768623436/japantrip/attractions/harborland/waterfront-promenade.jpg',
     ],
@@ -450,7 +450,7 @@ export const attractionsData = {
     price: '¥500',
     hours: { en: '9:00 AM - 5:00 PM', zh: '上午9:00 - 下午5:00' },
     images: [
-      'https://res.cloudinary.com/dput41tre/image/upload/v1768623474/japantriphttps://res.cloudinary.com/dput41tre/image/upload/v1768623474/japantrip/attractions/rokkosan-pasture/sheep-grazing-hillside.jpg',
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768623474/japantrip/attractions/rokkosan-pasture/sheep-grazing-hillside.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/v1768623471/japantrip/attractions/rokkosan-pasture/pasture-overview.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/v1768623472/japantrip/attractions/rokkosan-pasture/pasture-sheep-interaction.jpg',
     ],

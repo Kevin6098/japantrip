@@ -7,135 +7,34 @@ import { attractionsData } from '../data/attractionsData'
 const Attractions = () => {
   const { t } = useLanguage()
 
+  // Build attractions list from attractionsData, organized by city
   const attractions = {
     tokyo: [
-      {
-        id: 'sensoji',
-        title: t('Senso-ji Temple', '浅草寺'),
-        description: t("Tokyo's oldest temple, famous for Kaminarimon Gate", '东京最古老的寺庙，以雷门而闻名'),
-        price: 'Free',
-        image: '/attractions/sensoji/kaminarimon-gate.jpg',
-      },
-      {
-        id: 'shibuya',
-        title: t('Shibuya Crossing', '涩谷十字路口'),
-        description: t("World's busiest pedestrian crossing & Hachiko Statue", '世界上最繁忙的十字路口和忠犬八公像'),
-        price: 'Free',
-        image: '/attractions/shibuya/aerial-view.jpg',
-      },
-      {
-        id: 'harajuku',
-        title: t('Harajuku & Omotesando', '原宿 & 表参道'),
-        description: t('Fashion district with Takeshita Street and trendy cafes', '时尚区，有竹下通和潮流咖啡厅'),
-        price: 'Free',
-        image: '/attractions/harajuku/takeshita-street.jpg',
-      },
-      {
-        id: 'ueno',
-        title: t('Ueno Park', '上野公园'),
-        description: t('Large park with museums, zoo, and cherry blossoms', '大型公园，有博物馆、动物园和樱花'),
-        price: 'Free',
-        image: '/attractions/ueno/cherry-blossom-avenue.jpg',
-      },
+      { id: 'sensoji' },
+      { id: 'shibuya' },
+      { id: 'harajuku' },
+      { id: 'ueno' },
     ],
     kyoto: [
-      {
-        id: 'fushimi-inari',
-        title: t('Fushimi Inari Taisha', '伏见稻荷大社'),
-        description: t('Famous for thousands of vermillion torii gates', '以数千个朱红色鸟居而闻名'),
-        price: 'Free',
-        image: '/attractions/fushimi-inari/torii-tunnel-day.jpg',
-      },
-      {
-        id: 'kiyomizu',
-        title: t('Kiyomizu-dera', '清水寺'),
-        description: t('UNESCO World Heritage temple with wooden stage', '联合国教科文组织世界遗产，有木制舞台'),
-        price: '¥400',
-        image: '/attractions/kiyomizu/main-hall-veranda.jpg',
-      },
-      {
-        id: 'gion',
-        title: t('Gion District', '祇园区'),
-        description: t('Historic geisha district with traditional architecture', '历史悠久的艺伎区，有传统建筑'),
-        price: 'Free',
-        image: '/attractions/gion/hanamikoji-street.jpg',
-      },
-      {
-        id: 'yasaka',
-        title: t('Yasaka Shrine', '八坂神社'),
-        description: t('Beautiful shrine with hundreds of lanterns', '美丽的神社，有数百个灯笼'),
-        price: 'Free',
-        image: '/attractions/yasaka/main-gate-day.jpg',
-      },
+      { id: 'fushimi-inari' },
+      { id: 'kiyomizu' },
+      { id: 'gion' },
+      { id: 'yasaka' },
     ],
     nara: [
-      {
-        id: 'nara-park',
-        title: t('Nara Park', '奈良公园'),
-        description: t('Friendly deer roaming freely in beautiful park', '友好的鹿在美丽的公园中自由漫游'),
-        price: 'Free',
-        image: '/attractions/nara-park/cherry-blossom-deer.jpg',
-      },
-      {
-        id: 'todaiji',
-        title: t('Todaiji Temple', '东大寺'),
-        description: t('Great Buddha Hall with massive bronze statue', '大佛殿，有巨大的青铜雕像'),
-        price: '¥600',
-        image: '/attractions/todaiji/main-hall-exterior.jpg',
-      },
-      {
-        id: 'kasuga',
-        title: t('Kasuga Taisha', '春日大社'),
-        description: t('Shrine with 3000 stone lanterns', '拥有3000个石灯笼的神社'),
-        price: 'Free',
-        image: '/attractions/kasuga/main-hall-vermillion.png',
-      },
+      { id: 'nara-park' },
+      { id: 'todaiji' },
+      { id: 'kasuga' },
     ],
     osaka: [
-      {
-        id: 'dotonbori',
-        title: t('Dotonbori', '道顿堀'),
-        description: t('Famous food street with Glico running man sign', '著名的美食街，有格力高跑男广告牌'),
-        price: 'Free',
-        image: '/attractions/dotonbori/canal-night-view.jpg',
-      },
-      {
-        id: 'osaka-castle',
-        title: t('Osaka Castle', '大阪城'),
-        description: t('Historic castle with museum and beautiful gardens', '历史悠久的城堡，有博物馆和美丽的花园'),
-        price: 'Free',
-        image: '/attractions/osaka-castle/cherry-blossom-spring.jpg',
-      },
-      {
-        id: 'usj',
-        title: t('Universal Studios Japan', '环球影城'),
-        description: t('Theme park with Harry Potter, Super Nintendo World', '主题公园，有哈利波特、超级任天堂世界'),
-        price: '~¥9,500',
-        image: '/attractions/usj/universal-globe-iconic.jpg',
-      },
+      { id: 'dotonbori' },
+      { id: 'osaka-castle' },
+      { id: 'usj' },
     ],
     kobe: [
-      {
-        id: 'kobe-port',
-        title: t('Kobe Port Tower', '神户塔'),
-        description: t('Iconic red tower with panoramic port views', '标志性的红色塔，可欣赏港口全景'),
-        price: '¥700',
-        image: '/attractions/kobe-port/tower-illuminated-night.jpg',
-      },
-      {
-        id: 'harborland',
-        title: t('Harborland', '港湾乐园'),
-        description: t('Waterfront shopping and dining district', '海滨购物和餐饮区'),
-        price: 'Free',
-        image: '/attractions/harborland/ferris-wheel-waterfront.jpg',
-      },
-      {
-        id: 'rokkosan-pasture',
-        title: t('Rokkosan Pasture', '六甲山牧场'),
-        description: t('Mountain farm with sheep and scenic views', '有绵羊和风景的山地农场'),
-        price: '¥500',
-        image: '/attractions/rokkosan-pasture/sheep-grazing-hillside.jpg',
-      },
+      { id: 'kobe-port' },
+      { id: 'harborland' },
+      { id: 'rokkosan-pasture' },
     ],
   }
 
@@ -179,9 +78,20 @@ const Attractions = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {attractions[section.key].map((attraction, index) => {
-              // Try to get detailed data from attractionsData
-              const attractionId = attraction.id || attraction.title.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
-              const detailedData = attractionsData[attractionId] || attraction
+              const attractionId = attraction.id
+              const detailedData = attractionsData[attractionId]
+              
+              if (!detailedData) return null
+              
+              // Get the first image from Cloudinary URLs
+              const image = detailedData.images && detailedData.images.length > 0
+                ? detailedData.images[0]
+                : 'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'
+              
+              // Handle price - can be string or object {en, zh}
+              const price = typeof detailedData.price === 'object' && detailedData.price !== null
+                ? t(detailedData.price.en, detailedData.price.zh)
+                : detailedData.price
               
               return (
                 <div
@@ -191,8 +101,11 @@ const Attractions = () => {
                 >
                   <Link to={`/attractions/${attractionId}`} className="block">
                     <AttractionCard
-                      {...attraction}
+                      title={t(detailedData.title.en, detailedData.title.zh)}
+                      description={detailedData.about ? t(detailedData.about.en, detailedData.about.zh).substring(0, 100) + '...' : ''}
                       location={section.name}
+                      price={price}
+                      image={image}
                       locationColor={section.color}
                     />
                   </Link>
