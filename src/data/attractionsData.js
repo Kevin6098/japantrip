@@ -120,8 +120,8 @@ export const attractionsData = {
     price: 'Free',
     hours: { en: '24 Hours', zh: '24小时' },
     images: [
+      'https://res.cloudinary.com/dput41tre/image/upload/v1768649339/japantrip/attractions/shibuya/aerial-view.jpg',
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/attractions/shibuya/night-view.jpg',
-      'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80',
     ],
     about: {
       en: "Shibuya Crossing is the world's busiest pedestrian crossing, with up to 3,000 people crossing at once during peak times. Located in front of Shibuya Station, this iconic intersection has become a symbol of modern Tokyo. The area is surrounded by massive video screens and neon advertisements, creating an electric atmosphere. The famous Hachiko Statue, honoring the loyal dog who waited for his owner for years, is a popular meeting point. Shibuya is also a major shopping and entertainment district with countless stores, restaurants, and nightlife options.",
