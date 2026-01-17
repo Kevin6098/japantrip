@@ -9,8 +9,11 @@ const RestaurantDetail = ({ restaurant }) => {
 
   if (!restaurant) return null
 
-  // Ensure images array exists
-  const images = restaurant.images || []
+  // Ensure images array exists - add default fallback if empty
+  const defaultImage = 'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'
+  const images = restaurant.images && restaurant.images.length > 0 
+    ? restaurant.images 
+    : [defaultImage]
 
   const nextImage = () => {
     if (images.length > 0) {
@@ -89,7 +92,7 @@ const RestaurantDetail = ({ restaurant }) => {
       {/* Image Carousel */}
       {images.length > 0 && (
         <div className="mb-8 relative">
-          <div className="relative rounded-2xl overflow-hidden shadow-xl cursor-pointer group" onClick={() => openLightbox(currentImageIndex)}>
+          <div className="relative overflow-hidden cursor-pointer group" onClick={() => openLightbox(currentImageIndex)}>
             <div className="relative h-64 sm:h-80 md:h-96">
               {images.map((img, index) => (
                 <div
@@ -108,12 +111,6 @@ const RestaurantDetail = ({ restaurant }) => {
                   />
                 </div>
               ))}
-              {/* Click indicator overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center z-30 pointer-events-none">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 rounded-full p-3 shadow-lg">
-                  <i className="fa-solid fa-expand text-slate-700 text-xl"></i>
-                </div>
-              </div>
             </div>
 
             {/* Navigation Arrows */}
