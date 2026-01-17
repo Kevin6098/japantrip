@@ -66,10 +66,10 @@ const AttractionCard = ({
         <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full border uppercase tracking-wide mb-2 ${colors.badge}`}>
           {location}
         </span>
-        <h3 className="font-header text-lg font-bold text-slate-800 mb-2">
+        <h3 className="font-header text-lg font-bold text-slate-800 mb-2 line-clamp-2">
           {title}
         </h3>
-        <p className="text-sm text-slate-600 mb-3 flex-grow">
+        <p className="text-sm text-slate-600 mb-3 flex-grow min-h-[3rem] line-clamp-3">
           {description}
         </p>
         {price && (
