@@ -56,6 +56,14 @@ const Home = () => {
       bgColor: 'bg-pink-100',
       iconColor: 'text-pink-500',
     },
+    {
+      to: '/food',
+      icon: 'fa-utensils',
+      title: t('Food & Restaurants', '美食与餐厅'),
+      description: t('Restaurants and dining experiences', '餐厅和用餐体验'),
+      bgColor: 'bg-orange-100',
+      iconColor: 'text-orange-500',
+    },
   ]
 
   return (

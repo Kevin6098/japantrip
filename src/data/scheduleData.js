@@ -39,9 +39,18 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '11:30', 
+        text: t('Pain Maison (塩パン屋)', 'Pain Maison (盐面包店)'), 
+        highlight: true,
+        link: '/food/pain-maison',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Pain+Maison+Tokyo',
+        price: '¥120-¥190',
+        transit: t('Walk from Tsukiji Market area (Duration: ~15-20 mins for purchase - Salt bread bakery, max 20 salt bread, max 15 melon bread per person)', '从筑地市场区域步行 (停留时间: 购买约15-20分钟 - 盐面包店, 每人最多20个盐面包, 最多15个菠萝包)')
+      },
+      { 
+        time: '11:50', 
         text: t('Travel to Ginza', '前往银座'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Tsukiji+Outer+Market+Tokyo&destination=Ginza+Tokyo&travelmode=walking',
-        transit: t('Walk 10-15 mins from Tsukiji Market to Ginza Station', '从筑地市场步行10-15分钟至银座站')
+        transit: t('Walk 10-15 mins from Pain Maison to Ginza Station', '从Pain Maison步行10-15分钟至银座站')
       },
       { 
         time: '12:00', 
@@ -174,15 +183,30 @@ export const getScheduleData = (t) => [
     color: 'orange',
     items: [
       { 
+        time: '10:30', 
+        text: t('Travel to Afuri Yurakucho', '前往阿夫利有乐町'),
+        transit: t('Walk 5 mins to nearest station in Katsushika-ku → Keisei Line/Toei Asakusa Line to Oshiage → Hanzomon Line to Otemachi → Walk 5 mins to Tokyo Station → Walk 5-10 mins to Yurakucho (~45-50 mins total)', '步行5分钟至葛饰区最近车站 → 京成线/都营浅草线至押上 → 半藏门线至大手町 → 步行5分钟至东京站 → 步行5-10分钟至有乐町 (~45-50分钟总计)')
+      },
+      { 
         time: '11:00', 
-        text: t('Travel to Tokyo Station', '前往东京站'),
-        transit: t('Walk 5 mins to nearest station in Katsushika-ku → Keisei Line/Toei Asakusa Line to Oshiage → Hanzomon Line to Otemachi → Walk 5 mins to Tokyo Station (~40-45 mins total)', '步行5分钟至葛饰区最近车站 → 京成线/都营浅草线至押上 → 半藏门线至大手町 → 步行5分钟至东京站 (~40-45分钟总计)')
+        text: t('Afuri Yurakucho (Lunch)', '阿夫利有乐町 (午餐)'), 
+        highlight: true,
+        link: '/food/afuri-yurakucho',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Afuri+Yurakucho+Tokyo',
+        price: '¥900-¥1,500',
+        transit: t('Duration: ~1 hour (Yuzu ramen, unique citrus flavor - perfect stop before Shinkansen)', '停留时间: 约1小时 (柚子拉面, 独特柑橘风味 - 新干线出发前的完美停留点)')
       },
       { 
         time: '12:00', 
+        text: t('Travel to Tokyo Station', '前往东京站'),
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Yurakucho+Tokyo&destination=Tokyo+Station&travelmode=walking',
+        transit: t('Walk 5-10 mins from Yurakucho to Tokyo Station', '从有乐町步行5-10分钟至东京站')
+      },
+      { 
+        time: '13:00', 
         text: t('Shinkansen to Shin-Osaka', '新干线至新大阪'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Tokyo+Station&destination=Shin-Osaka+Station&travelmode=transit',
-        transit: t('Travel: ~2.5 hrs (Right side for Fuji)', '车程: 约2.5小时 (右侧看富士山)')
+        transit: t('Travel: ~2.5 hrs (Right side for Fuji) - Ticket: ¥13,870', '车程: 约2.5小时 (右侧看富士山) - 票价: ¥13,870')
       },
       { 
         time: '15:30', 
@@ -226,18 +250,21 @@ export const getScheduleData = (t) => [
         link: '/attractions/harborland',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Meriken+Park+Kobe',
         price: 'Free',
-        transit: t('BE KOBE Sign, Port Tower Photos', 'BE KOBE标志, 神户塔拍照')
+        transit: t('Duration: ~1.5 hours (BE KOBE Sign, Port Tower Photos)', '停留时间: 约1.5小时 (BE KOBE标志, 神户塔拍照)')
       },
       { 
         time: '12:00', 
-        text: t('Lunch at Mosaic', 'Mosaic 广场午餐'),
-        mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Mosaic+Kobe',
-        transit: t('Walk 3 mins from Harborland', '从港湾乐园步行3分钟')
+        text: t('Kobe Steak Nick (Lunch)', 'Kobe Steak Nick (午餐)'), 
+        highlight: true,
+        link: '/food/kobe-steak-nick',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Kobe+Steak+Nick+Kobe',
+        price: '¥6,000-¥7,000',
+        transit: t('Walk 10-15 mins from Meriken Park (Duration: ~1-1.5 hours - Authentic Kobe beef)', '从美利坚公园步行10-15分钟 (停留时间: 约1-1.5小时 - 正宗神户牛肉)')
       },
       { 
         time: '13:30', 
-        text: t('Travel to Mt. Rokko', '前往六甲山'),
-        transit: t('Walk 5 mins to Sannomiya Station → Bus #16 to Rokko Cable Shita (~25 mins bus) → Cable Car to Rokko-sancho (~10 mins) → Walk 5 mins', '步行5分钟至三宫站 → 16号巴士至六甲缆车下 (~25分钟巴士) → 缆车至六甲山顶 (~10分钟) → 步行5分钟')
+        text: t('Travel to Rokkosan Pasture', '前往六甲山牧场'),
+        transit: t('Walk 5-10 mins to Sannomiya Station → Train to Rokko Station (~20 mins train) → Walk to Rokko Cable Car station (~5 mins walk) → Rokko Cable Car to Rokko-sancho (~10 mins ropeway) → Bus or walk to Pasture (~10-15 mins)', '步行5-10分钟至三宫站 → 电车至六甲站 (~20分钟电车) → 步行至六甲缆车站 (~5分钟步行) → 六甲缆车至六甲山顶 (~10分钟缆车) → 巴士或步行至牧场 (~10-15分钟)')
       },
       { 
         time: '14:30', 
@@ -246,34 +273,41 @@ export const getScheduleData = (t) => [
         link: '/attractions/rokkosan-pasture',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Rokkosan+Pasture+Kobe',
         price: '¥500',
-        transit: t('Interact with sheep & enjoy nature', '与羊互动 & 享受大自然')
+        transit: t('Duration: ~2 hours (Interact with sheep & enjoy nature)', '停留时间: 约2小时 (与羊互动 & 享受大自然)')
       },
       { 
-        time: '17:00', 
-        text: t('Descend Mountain', '下山'),
-        transit: t('Walk 5 mins to Rokko-sancho → Cable Car to Rokko Cable Shita (~10 mins) → Bus #16 to Sannomiya (~25 mins bus)', '步行5分钟至六甲山顶 → 缆车至六甲缆车下 (~10分钟) → 16号巴士至三宫 (~25分钟巴士)')
+        time: '16:30', 
+        text: t('Descend from Rokkosan Pasture', '从六甲山牧场下山'),
+        transit: t('Walk or bus to Rokko-sancho (~10-15 mins) → Rokko Cable Car to Rokko Cable station (~10 mins ropeway) → Train to Sannomiya Station (~20 mins train) → Walk 5-10 mins to Gashoken', '步行或巴士至六甲山顶 (~10-15分钟) → 六甲缆车至六甲缆车站 (~10分钟缆车) → 电车至三宫站 (~20分钟电车) → 步行5-10分钟至賀正軒')
+      },
+      { 
+        time: '17:30', 
+        text: t('Gashoken (Dinner)', '賀正軒 (晚餐)'), 
+        highlight: true,
+        link: '/food/gashoken',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Gashoken+Sannomiya+Kobe',
+        price: '¥1,100-¥1,880',
+        transit: t('Duration: ~1 hour (Tonkotsu ramen, unique fusion varieties like Basil Cheese Ramen)', '停留时间: 约1小时 (豚骨拉面, 独特融合品种如罗勒芝士拉面)')
       },
       { 
         time: '18:30', 
-        text: t('Kobe Port Tower', '神户塔'), 
+        text: t('Travel to Kobe Port Tower', '前往神户塔'),
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Gashoken+Kobe&destination=Kobe+Port+Tower',
+        transit: t('Walk 10-15 mins from Gashoken', '从賀正軒步行10-15分钟')
+      },
+      { 
+        time: '18:45', 
+        text: t('Kobe Port Tower (Night View)', '神户塔 (夜景)'), 
         highlight: true,
         link: '/attractions/kobe-port',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Kobe+Port+Tower',
-        note: t('Night View', '夜景'),
         price: '¥700',
-        transit: t('Walk 10 mins from Sannomiya Station', '从三宫站步行10分钟')
+        transit: t('Duration: ~1 hour', '停留时间: 约1小时')
       },
       { 
-        time: '19:30', 
-        text: t('Dinner in Kobe City', '神户市内晚餐'), 
-        special: true,
-        mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Kobe+City+Center',
-        transit: t('Kobe Beef or Izakaya', '神户牛肉或居酒屋')
-      },
-      { 
-        time: '21:00', 
+        time: '20:00', 
         text: t('Return to Airbnb (JR Momodani Station)', '返回Airbnb (JR桃谷站)'),
-        transit: t('Walk 10 mins to Sannomiya Station → JR Kobe Line to Osaka Station → JR Osaka Loop Line to Momodani Station (~30 mins train) → Walk 2 mins', '步行10分钟至三宫站 → JR神户线至大阪站 → JR大阪环状线至桃谷站 (~30分钟电车) → 步行2分钟')
+        transit: t('Walk 10 mins to Sannomiya Station → JR Kobe Line to Osaka Station (~15 mins train) → JR Osaka Loop Line to Momodani Station (~15 mins train) → Walk 2 mins', '步行10分钟至三宫站 → JR神户线至大阪站 (~15分钟电车) → JR大阪环状线至桃谷站 (~15分钟电车) → 步行2分钟')
       },
     ],
   },
