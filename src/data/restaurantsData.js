@@ -1234,4 +1234,151 @@ export const restaurantsData = {
     access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Men+wa+Tomoare+Dotonbori+Osaka',
   },
+  'torepichi-kuromon': {
+    id: 'torepichi-kuromon',
+    title: { en: 'TOREPICHI see food 黒門とれぴち市場 南黒門店', zh: 'TOREPICHI see food 黒門とれぴち市場 南黒門店' },
+    genre: { en: 'Seafood', zh: '海鲜' },
+    location: { en: 'Kuromon, Osaka', zh: '大阪黑门' },
+    city: 'osaka',
+    price: '¥1,500-¥3,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://rimage.hitosara.com/gg/image/0020007645/0020007645I1_750x500s.jpg?t=1749698878',
+      'https://hitosara.com/gg/image/0020007645/0020007645R2.jpg',
+      'https://rimage.hitosara.com/gg/image/0020007645/0020007645R1_750x500s.jpg?t=1749698878',
+      'https://rimage.hitosara.com/gg/image/0020007645/0020007645I6_350ssd:60.jpg?t=1749698878',
+    ],
+    about: {
+      en: "TOREPICHI see food 黒門とれぴち市場 南黒門店 is a popular seafood restaurant located in Kuromon Ichiba Market, Osaka's famous kitchen. Specializing in fresh seafood from the market, the restaurant offers a variety of seafood dishes prepared with the freshest ingredients available. The vibrant market setting provides an authentic Osaka dining experience with fresh fish, sashimi, and seafood specialties.",
+      zh: 'TOREPICHI see food 黒門とれぴち市場 南黒門店是位于大阪著名厨房黑门市场的一家受欢迎的海鲜餐厅。专门提供来自市场的新鲜海鲜，餐厅提供各种使用最新鲜食材制作的海鲜料理。充满活力的市场环境提供正宗的大阪用餐体验，包括新鲜鱼类、刺身和海鲜特色菜。'
+    },
+    highlights: [
+      { en: 'Fresh Seafood: Market-fresh fish and seafood specialties', zh: '新鲜海鲜: 市场新鲜鱼类和海鲜特色菜' },
+      { en: 'Kuromon Market Location: Located in Osaka\'s famous "Kitchen" market', zh: '黑门市场位置: 位于大阪著名的"厨房"市场' },
+      { en: 'Authentic Experience: Traditional seafood dining in market setting', zh: '正宗体验: 在市场环境中享受传统海鲜料理' },
+      { en: 'Sashimi Specialties: Fresh sashimi and seafood dishes', zh: '刺身特色: 新鲜刺身和海鲜料理' },
+    ],
+    tips: [
+      { en: 'Popular spot in Kuromon Market, may have queues', zh: '黑门市场热门地点，可能需要排队' },
+      { en: 'Perfect for lunch while exploring Kuromon Market', zh: '探索黑门市场时享用午餐的完美选择' },
+      { en: 'Enjoy fresh seafood in the vibrant market atmosphere', zh: '在充满活力的市场氛围中享用新鲜海鲜' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Kuromon Ichiba Market, Osaka', zh: '大阪黑门市场' },
+    station: { en: 'Namba Station', zh: '难波站' },
+    access: { en: 'Walk 5 mins from Namba Station to Kuromon Market', zh: '从难波站步行5分钟至黑门市场' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=TOREPICHI+Kuromon+Osaka',
+  },
+  'shinuoei-kuromon': {
+    id: 'shinuoei-kuromon',
+    title: { en: 'Shinuoei (新魚栄)', zh: '新魚栄' },
+    genre: { en: 'Seafood', zh: '海鲜' },
+    location: { en: 'Kuromon, Osaka', zh: '大阪黑门' },
+    city: 'osaka',
+    price: '¥0-¥1,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://tblg.k-img.com/restaurant/images/Rvw/336190/640x640_rect_b6542a07943cbadb4f00fca64aa2ee8b.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvssmcaoqJ_F_ThXfTZo2ayRvUnXgwq-4b8w&s',
+      'https://tblg.k-img.com/restaurant/images/Rvw/94217/94217413.jpg',
+    ],
+    about: {
+      en: "Shinuoei (新魚栄) is a popular seafood restaurant located in Kuromon Ichiba Market, Osaka's famous kitchen. Specializing in fresh seafood from the market, the restaurant offers a variety of affordable seafood dishes prepared with the freshest ingredients. The vibrant market setting provides an authentic Osaka dining experience with fresh fish, sashimi, and seafood specialties at budget-friendly prices.",
+      zh: '新魚栄是位于大阪著名厨房黑门市场的一家受欢迎的海鲜餐厅。专门提供来自市场的新鲜海鲜，餐厅提供各种价格实惠的海鲜料理，使用最新鲜的食材制作。充满活力的市场环境提供正宗的大阪用餐体验，以实惠的价格提供新鲜鱼类、刺身和海鲜特色菜。'
+    },
+    highlights: [
+      { en: 'Fresh Seafood: Market-fresh fish and seafood specialties', zh: '新鲜海鲜: 市场新鲜鱼类和海鲜特色菜' },
+      { en: 'Budget-Friendly: Affordable seafood dishes from ¥0-¥1,000', zh: '价格实惠: 价格从¥0-¥1,000的实惠海鲜料理' },
+      { en: 'Kuromon Market Location: Located in Osaka\'s famous "Kitchen" market', zh: '黑门市场位置: 位于大阪著名的"厨房"市场' },
+      { en: 'Authentic Experience: Traditional seafood dining in market setting', zh: '正宗体验: 在市场环境中享受传统海鲜料理' },
+    ],
+    tips: [
+      { en: 'Popular spot in Kuromon Market, may have queues', zh: '黑门市场热门地点，可能需要排队' },
+      { en: 'Perfect for budget-friendly seafood lunch in Kuromon Market', zh: '在黑门市场享用实惠海鲜午餐的完美选择' },
+      { en: 'Enjoy fresh seafood at affordable prices in the vibrant market atmosphere', zh: '在充满活力的市场氛围中以实惠的价格享用新鲜海鲜' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Kuromon Ichiba Market, Osaka', zh: '大阪黑门市场' },
+    station: { en: 'Namba Station', zh: '难波站' },
+    access: { en: 'Walk 5 mins from Namba Station to Kuromon Market', zh: '从难波站步行5分钟至黑门市场' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Shinuoei+Kuromon+Osaka',
+  },
+  'nodobotoke-kamoru': {
+    id: 'nodobotoke-kamoru',
+    title: { en: 'Nodobotoke, Kamoru', zh: 'Nodobotoke, Kamoru' },
+    genre: { en: 'Omakase', zh: '主厨套餐' },
+    location: { en: 'Temma, Osaka', zh: '大阪天满' },
+    city: 'osaka',
+    price: '¥5,000-¥10,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://livedoor.blogimg.jp/yosiyosi128128/imgs/5/3/530a800f.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/333799/640x640_rect_519fa6f3de7d9671c0d6351db2564216.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/329054/640x640_rect_d9b9931d5a0320c5db494204d22fdc53.jpg',
+      'https://ximg.retty.me/crop/s400x400/q80/das/-/retty/img_repo/2l/01/37760831.jpg',
+    ],
+    about: {
+      en: "Nodobotoke, Kamoru is a premium omakase restaurant located in Temma, Osaka. Specializing in traditional omakase dining experiences, the restaurant offers carefully curated multi-course meals where the chef selects the finest seasonal ingredients. The intimate setting and attention to detail create an authentic Japanese fine dining experience, perfect for those seeking a memorable culinary journey.",
+      zh: 'Nodobotoke, Kamoru是位于大阪天满的一家高级主厨套餐餐厅。专门提供传统主厨套餐用餐体验，餐厅提供精心策划的多道菜套餐，主厨选择最好的时令食材。私密的环境和对细节的关注创造正宗的日本精致用餐体验，非常适合寻求难忘美食之旅的人。'
+    },
+    highlights: [
+      { en: 'Premium Omakase: Carefully curated multi-course meals with chef\'s selection', zh: '高级主厨套餐: 精心策划的多道菜套餐，由主厨选择' },
+      { en: 'Seasonal Ingredients: Finest fresh ingredients selected by the chef', zh: '时令食材: 主厨选择最好的新鲜食材' },
+      { en: 'Intimate Dining: Authentic Japanese fine dining experience', zh: '私密用餐: 正宗的日本精致用餐体验' },
+      { en: 'Traditional Setting: Traditional Japanese omakase restaurant atmosphere', zh: '传统环境: 传统日本主厨套餐餐厅氛围' },
+    ],
+    tips: [
+      { en: 'Reservations highly recommended, especially for dinner', zh: '强烈建议预订，特别是晚餐时段' },
+      { en: 'Premium dining experience - perfect for special occasions', zh: '高级用餐体验 - 非常适合特殊场合' },
+      { en: 'Omakase menu varies based on season and chef\'s selection', zh: '主厨套餐菜单根据季节和主厨选择而变化' },
+      { en: 'Duration: ~2-3 hours for full omakase experience', zh: '停留时间: 完整主厨套餐体验约2-3小时' },
+    ],
+    address: { en: 'Temma, Osaka', zh: '大阪天满' },
+    station: { en: 'Temmabashi Station', zh: '天满桥站' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Nodobotoke+Kamoru+Temma+Osaka',
+  },
+  'sushi-jin-harukas': {
+    id: 'sushi-jin-harukas',
+    title: { en: 'Sushi Jin in Abeno Harukas Dining', zh: 'Sushi Jin 阿倍野HARUKAS Dining' },
+    genre: { en: 'Sushi', zh: '寿司' },
+    location: { en: 'Tennoji, Osaka', zh: '大阪天王寺' },
+    city: 'osaka',
+    price: '¥3,000-¥4,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://rimage.hitosara.com/gg/image/0004028919/0004028919I1_750x500s.jpg',
+      'https://www.nakanoya-harukas.com/jin/shared/img/index/key.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk9uZsNSJJ132emUmvWqFup84ckx_J63YN5w&s',
+      'https://rimage.hitosara.com/gg/image/0004028919/0004028919E4_750x500s.jpg',
+    ],
+    about: {
+      en: "Sushi Jin in Abeno Harukas Dining is a popular sushi restaurant located in Abeno Harukas, Japan's tallest building, in the Tennoji area of Osaka. Specializing in traditional sushi and Japanese cuisine, the restaurant offers high-quality sushi dishes at affordable prices. The restaurant is located on the dining floor of Harukas, providing diners with a modern setting to enjoy authentic Japanese sushi while experiencing the views and atmosphere of this iconic Osaka landmark.",
+      zh: 'Sushi Jin 阿倍野HARUKAS Dining是位于大阪天王寺地区日本最高建筑阿倍野HARUKAS的一家受欢迎的寿司餐厅。专门提供传统寿司和日本料理，餐厅以实惠的价格提供高品质的寿司料理。餐厅位于HARUKAS的餐饮楼层，为用餐者提供现代环境，在体验这个标志性大阪地标的景色和氛围的同时，享受正宗的日本寿司。'
+    },
+    highlights: [
+      { en: 'Premium Sushi: High-quality traditional sushi at affordable prices', zh: '优质寿司: 价格实惠的高品质传统寿司' },
+      { en: 'Harukas Location: Located in Japan\'s tallest building in Tennoji', zh: 'HARUKAS位置: 位于天王寺日本最高建筑内' },
+      { en: 'Traditional Setting: Authentic Japanese sushi restaurant atmosphere', zh: '传统环境: 正宗的日本寿司餐厅氛围' },
+      { en: 'Modern Dining: Experience sushi in a modern, elegant setting', zh: '现代用餐: 在现代优雅的环境中体验寿司' },
+    ],
+    tips: [
+      { en: 'Reservations recommended, especially during peak dining hours', zh: '建议预订，特别是在高峰用餐时段' },
+      { en: 'Perfect for lunch or dinner while shopping or visiting Harukas', zh: '在HARUKAS购物或参观时享用午餐或晚餐的完美选择' },
+      { en: 'Enjoy sushi with views from Japan\'s tallest building', zh: '在日本最高建筑内享用寿司并欣赏景色' },
+      { en: 'Duration: ~1-1.5 hours for dining', zh: '停留时间: 用餐约1-1.5小时' },
+    ],
+    address: { en: 'Abeno Harukas, Tennoji, Osaka', zh: '大阪天王寺阿倍野HARUKAS' },
+    station: { en: 'Tennoji Station', zh: '天王寺站' },
+    access: { en: 'Walk 2 mins from Tennoji Station to Abeno Harukas', zh: '从天王寺站步行2分钟至阿倍野HARUKAS' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Sushi+Jin+Abeno+Harukas+Osaka',
+  },
 }

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi Jin in Abeno Harukas Dining - Japan Trip 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="text-slate-700 location-osaka" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../../homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="../../food.html" class="nav-link">
+                        <span class="lang-en">← Back to Food</span><span class="lang-zh">← 返回美食</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleLanguage()" class="mr-3 bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-300 text-xs">
+                        🌐
+                    </button>
+                    <a href="../../food.html" class="text-slate-600 hover:text-pink-600 p-2">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="../../food.html" class="back-button no-print" aria-label="Back to Food">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12 pb-20 md:pb-24">
+        <!-- Image Carousel -->
+        <div class="mb-8 relative">
+            <div id="sushi-jin-carousel" class="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
+                <!-- Carousel Images -->
+                <div class="carousel-wrapper relative h-64 sm:h-80 md:h-96">
+                    <div class="carousel-slide active">
+                        <img src="https://rimage.hitosara.com/gg/image/0004028919/0004028919I1_750x500s.jpg" alt="Sushi Jin Restaurant" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://www.nakanoya-harukas.com/jin/shared/img/index/key.jpg" alt="Sushi Jin Interior" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk9uZsNSJJ132emUmvWqFup84ckx_J63YN5w&s" alt="Sushi Jin Sushi Dishes" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://rimage.hitosara.com/gg/image/0004028919/0004028919E4_750x500s.jpg" alt="Sushi Jin Dining Experience" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="carousel-prev" class="carousel-nav carousel-nav-prev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="carousel-nav carousel-nav-next" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                    <button class="carousel-indicator" data-slide="3" aria-label="Slide 4"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="animate-fade-in">
+            <div class="mb-6">
+                <h1 class="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
+                    <span class="lang-en">Sushi Jin in Abeno Harukas Dining</span><span class="lang-zh">Sushi Jin 阿倍野HARUKAS Dining</span>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2" style="color: var(--location-primary, #ea580c);"></i><span class="lang-en">Tennoji, Osaka</span><span class="lang-zh">大阪天王寺</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-yen-sign mr-2 text-emerald-500"></i><span class="lang-en">¥3,000-¥4,000</span><span class="lang-zh">¥3,000-¥4,000</span></span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-blue-500"></i><span class="lang-en">Hours Vary</span><span class="lang-zh">营业时间不定</span></span>
+                </div>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-info-circle mr-2"></i>
+                    <span class="lang-en">About</span><span class="lang-zh">关于</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en">Sushi Jin in Abeno Harukas Dining is a popular sushi restaurant located in Abeno Harukas, Japan's tallest building, in the Tennoji area of Osaka. Specializing in traditional sushi and Japanese cuisine, the restaurant offers high-quality sushi dishes at affordable prices. The restaurant is located on the dining floor of Harukas, providing diners with a modern setting to enjoy authentic Japanese sushi while experiencing the views and atmosphere of this iconic Osaka landmark.</span>
+                    <span class="lang-zh">Sushi Jin 阿倍野HARUKAS Dining是位于大阪天王寺地区日本最高建筑阿倍野HARUKAS的一家受欢迎的寿司餐厅。专门提供传统寿司和日本料理，餐厅以实惠的价格提供高品质的寿司料理。餐厅位于HARUKAS的餐饮楼层，为用餐者提供现代环境，在体验这个标志性大阪地标的景色和氛围的同时，享受正宗的日本寿司。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    <span class="lang-en">Abeno Harukas is Japan's tallest building, standing at 300 meters tall, and features multiple dining floors with various restaurants. Sushi Jin offers traditional sushi preparation with fresh ingredients, allowing visitors to enjoy authentic Japanese sushi cuisine in a modern, elegant setting. The restaurant's location makes it perfect for combining shopping and dining experiences while visiting this iconic Osaka attraction.</span>
+                    <span class="lang-zh">阿倍野HARUKAS是日本最高的建筑，高300米，拥有多个餐饮楼层，设有各种餐厅。Sushi Jin使用新鲜食材提供传统寿司制作，让游客在现代优雅的环境中享受正宗的日本寿司料理。餐厅的位置使其成为参观这个标志性大阪景点时结合购物和用餐体验的完美选择。</span>
+                </p>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i>
+                    <span class="lang-en">Highlights</span><span class="lang-zh">亮点</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Premium Sushi:</strong> High-quality traditional sushi at affordable prices</span><span class="lang-zh"><strong>优质寿司:</strong> 价格实惠的高品质传统寿司</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Harukas Location:</strong> Located in Japan's tallest building in Tennoji</span><span class="lang-zh"><strong>HARUKAS位置:</strong> 位于天王寺日本最高建筑内</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Traditional Setting:</strong> Authentic Japanese sushi restaurant atmosphere</span><span class="lang-zh"><strong>传统环境:</strong> 正宗的日本寿司餐厅氛围</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en"><strong>Modern Dining:</strong> Experience sushi in a modern, elegant setting</span><span class="lang-zh"><strong>现代用餐:</strong> 在现代优雅的环境中体验寿司</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6 mb-8">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-lightbulb mr-2"></i>
+                    <span class="lang-en">Tips</span><span class="lang-zh">提示</span>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Reservations recommended, especially during peak dining hours</span><span class="lang-zh">建议预订，特别是在高峰用餐时段</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Perfect for lunch or dinner while shopping or visiting Harukas</span><span class="lang-zh">在HARUKAS购物或参观时享用午餐或晚餐的完美选择</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Enjoy sushi with views from Japan's tallest building</span><span class="lang-zh">在日本最高建筑内享用寿司并欣赏景色</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
+                        <span><span class="lang-en">Duration: ~1-1.5 hours for dining</span><span class="lang-zh">停留时间: 用餐约1-1.5小时</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card location-osaka rounded-2xl p-6">
+                <h2 class="font-header text-2xl font-bold location-heading-osaka mb-4 flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Location & Access</span><span class="lang-zh">位置与交通</span>
+                </h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Address:</strong> Abeno Harukas, Tennoji, Osaka (阿倍野HARUKAS)</span>
+                    <span class="lang-zh"><strong>地址:</strong> 大阪天王寺阿倍野HARUKAS（阿倍野HARUKAS）</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Nearest Station:</strong> Tennoji Station (JR / Subway)</span>
+                    <span class="lang-zh"><strong>最近车站:</strong> 天王寺站（JR / 地铁）</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>Access:</strong> Walk 2 mins from Tennoji Station to Abeno Harukas. The restaurant is located on the dining floor of Harukas.</span>
+                    <span class="lang-zh"><strong>交通:</strong> 从天王寺站步行2分钟至阿倍野HARUKAS。餐厅位于HARUKAS的餐饮楼层。</span>
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <span class="lang-en"><strong>From Namba Station:</strong> Midosuji Line to Tennoji Station (~5 mins train) → Walk 2 mins to Harukas</span>
+                    <span class="lang-zh"><strong>从难波站:</strong> 御堂筋线至天王寺站（~5分钟电车）→ 步行2分钟至HARUKAS</span>
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Sushi+Jin+Abeno+Harukas+Osaka" target="_blank" class="btn-primary inline-flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>
+                    <span class="lang-en">Open in Google Maps</span><span class="lang-zh">在Google地图中打开</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script>
+        // Carousel functionality
+        const carousel = document.getElementById('sushi-jin-carousel');
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const indicators = carousel.querySelectorAll('.carousel-indicator');
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+            currentSlide = index;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            const prev = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prev);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => showSlide(index));
+        });
+
+        // Auto-advance carousel
+        setInterval(() => {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }, 5000);
+    </script>
+</body>
+</html>

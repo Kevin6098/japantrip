@@ -28,6 +28,10 @@ const Food = () => {
       { id: 'oden-no-den-maki-sennichimae', ...restaurantsData['oden-no-den-maki-sennichimae'] },
       { id: 'tsukemen-suzume', ...restaurantsData['tsukemen-suzume'] },
       { id: 'men-wa-tomoare', ...restaurantsData['men-wa-tomoare'] },
+      { id: 'torepichi-kuromon', ...restaurantsData['torepichi-kuromon'] },
+      { id: 'shinuoei-kuromon', ...restaurantsData['shinuoei-kuromon'] },
+      { id: 'nodobotoke-kamoru', ...restaurantsData['nodobotoke-kamoru'] },
+      { id: 'sushi-jin-harukas', ...restaurantsData['sushi-jin-harukas'] },
     ],
     kobe: [
       { id: 'kobe-steak-nick', ...restaurantsData['kobe-steak-nick'] },
