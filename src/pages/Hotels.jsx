@@ -11,11 +11,11 @@ const Hotels = () => {
         <div className="inline-flex items-center bg-white px-6 py-3 rounded-full shadow border border-indigo-100 mb-4">
           <i className="fa-solid fa-hotel text-indigo-500 text-xl mr-2"></i>
           <h1 className="font-header text-2xl font-bold text-slate-800">
-            {t('Accommodation', '住宿信息')}
+            {t('Accommodation', '住宿')}
           </h1>
         </div>
         <p className="text-sm text-slate-600">
-          🏨 {t('Hotel details and locations', '酒店详情和位置')}
+          🏨 {t('Accommodation details and locations', '住宿详情和位置')}
         </p>
       </div>
 
@@ -79,24 +79,40 @@ const Hotels = () => {
       {/* Important Notes */}
       <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-xl animate-fade-in" style={{ animationDelay: '0.4s' }}>
         <h3 className="font-header text-lg font-bold text-yellow-900 mb-3">
-          📌 {t('Important Notes', '重要提示')}
+          📌 {t('Important Notes (Airbnb Stay)', '重要提示 (Airbnb住宿)')}
         </h3>
         <ul className="space-y-2 text-sm text-yellow-800">
           <li className="flex items-start gap-2">
-            <span>•</span>
-            <span>{t('Check-in time: Usually 15:00, check with hotel', '入住时间: 通常15:00，请与酒店确认')}</span>
+            <span>🕒</span>
+            <span>{t('Check-in time: Usually after 15:00 (confirm exact self check-in time with host)', '入住时间: 通常15:00后 (与房东确认具体自助入住时间)')}</span>
           </li>
           <li className="flex items-start gap-2">
-            <span>•</span>
-            <span>{t('Check-out time: Usually 11:00', '退房时间: 通常11:00')}</span>
+            <span>🕚</span>
+            <span>{t('Check-out time: Usually by 11:00', '退房时间: 通常11:00前')}</span>
           </li>
           <li className="flex items-start gap-2">
-            <span>•</span>
-            <span>{t('Luggage storage available before check-in and after check-out', '入住前和退房后可寄存行李')}</span>
+            <span>🔑</span>
+            <span>{t("Self check-in: Follow host's instructions (key box / smart lock / keypad)", '自助入住: 遵循房东指示 (钥匙盒 / 智能锁 / 密码锁)')}</span>
           </li>
           <li className="flex items-start gap-2">
-            <span>•</span>
-            <span>{t('Remember to bring passport for check-in', '记得带护照办理入住')}</span>
+            <span>📩</span>
+            <span>{t("Message from host: Check Airbnb messages 1–2 days before arrival for access details", '房东消息: 到达前1-2天查看Airbnb消息获取访问详情')}</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>🗑️</span>
+            <span>{t('Trash rules: Follow local garbage sorting & disposal instructions', '垃圾规则: 遵循当地垃圾分类和处理指示')}</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>🧼</span>
+            <span>{t('House rules: Please respect quiet hours, especially at night', '房屋规则: 请尊重安静时间，特别是在夜间')}</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>🧳</span>
+            <span>{t('Luggage: Early luggage storage depends on host approval', '行李: 提前行李寄存需经房东批准')}</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>📶</span>
+            <span>{t("WiFi info: Password usually provided inside the house or via message", 'WiFi信息: 密码通常在房屋内或通过消息提供')}</span>
           </li>
         </ul>
       </div>

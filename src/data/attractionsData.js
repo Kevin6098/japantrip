@@ -137,6 +137,37 @@ export const attractionsData = {
       { en: 'Peak Times: Most impressive during rush hour (7-9 AM, 5-7 PM)', zh: '高峰时段: 在高峰时段（上午7-9点，下午5-7点）最令人印象深刻' },
     ],
   },
+  'tokyo-station': {
+    id: 'tokyo-station',
+    title: { en: 'Tokyo Station', zh: '东京站' },
+    location: { en: 'Marunouchi, Tokyo', zh: '东京丸之内' },
+    city: 'tokyo',
+    price: 'Free',
+    hours: { en: 'Station: 24 Hours | Shops: 10 AM - 9 PM', zh: '车站: 24小时 | 商店: 上午10点 - 晚上9点' },
+    images: [
+      'https://japanjourneys.jp/wp-content/uploads/2020/10/TokyoStationHeader4.jpg',
+      'https://cdn.gaijinpot.com/app/uploads/sites/6/2017/06/Tokyo-Station-S-.jpg',
+      'https://www.jal.co.jp/br/en/guide-to-japan/destinations/articles/tokyo/tokyo-station/_jcr_content/root/responsivegrid/sectioncontainer_cop/image_74573324.coreimg.jpeg/1738649008853.jpeg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Qhq0qip-y5K7bEkQ2gnszCyD2oZE_a8_Hg&s',
+      'https://www.gov-online.go.jp/en/assets/hj_2025_02_03_02.jpg',
+    ],
+    about: {
+      en: "Tokyo Station is one of Japan's most important railway stations and a historic architectural landmark. The station opened in 1914 and features a beautiful red-brick facade in the Marunouchi area, designed by Kingo Tatsuno. The station has been restored to its original early 20th-century appearance, combining historical charm with modern functionality. Tokyo Station serves as a major hub for multiple JR lines, Shinkansen (bullet trains), and subway lines, connecting to destinations throughout Japan. The station complex includes extensive shopping areas, restaurants, and the famous Character Street with themed shops selling merchandise from popular anime and manga characters. The station is also home to the luxurious Tokyo Station Hotel.",
+      zh: '东京站是日本最重要的火车站之一，也是历史建筑地标。车站于1914年开放，在丸之内地区拥有美丽的红砖外墙，由辰野金吾设计。车站已恢复到其20世纪初的原始外观，将历史魅力与现代功能相结合。东京站是多个JR线、新干线（子弹头列车）和地铁线的主要枢纽，连接日本各地的目的地。车站综合体包括广泛的购物区、餐厅和著名的角色街，有主题商店销售来自热门动漫和漫画角色的商品。车站还设有豪华的东京站酒店。'
+    },
+    highlights: [
+      { en: 'Historic Red-Brick Building: Beautiful restored facade showcasing early 20th-century architecture', zh: '历史红砖建筑: 美丽的修复外墙，展示20世纪初的建筑' },
+      { en: 'Character Street: Famous shopping arcade with themed shops selling anime and manga merchandise', zh: '角色街: 著名的购物拱廊，有主题商店销售动漫和漫画商品' },
+      { en: 'Gransta: Large underground shopping mall with restaurants, souvenirs, and Japanese snacks', zh: 'Gransta: 大型地下购物中心，有餐厅、纪念品和日本小吃' },
+      { en: 'Shinkansen Hub: Gateway to bullet trains connecting to major cities across Japan', zh: '新干线枢纽: 连接日本主要城市的子弹头列车门户' },
+    ],
+    tips: [
+      { en: 'Shopping: Explore Character Street and Gransta for unique souvenirs and Japanese snacks', zh: '购物: 探索角色街和Gransta，寻找独特的纪念品和日本小吃' },
+      { en: 'Architecture: Admire the restored red-brick facade from the Marunouchi side', zh: '建筑: 从丸之内一侧欣赏修复的红砖外墙' },
+      { en: 'Station Layout: The station is large - use the many signs to navigate or ask station staff', zh: '车站布局: 车站很大 - 使用许多标志导航或询问车站工作人员' },
+      { en: 'Early Visit: Visit in the morning for fewer crowds and better photo opportunities', zh: '早访: 早上参观，人群较少，拍照机会更好' },
+    ],
+  },
   'ueno': {
     id: 'ueno',
     title: { en: 'Ueno Park', zh: '上野公园' },

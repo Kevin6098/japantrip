@@ -13,6 +13,7 @@ const Attractions = () => {
       { id: 'sensoji' },
       { id: 'shibuya' },
       { id: 'harajuku' },
+      { id: 'tokyo-station' },
       { id: 'ueno' },
     ],
     kyoto: [
@@ -87,7 +88,7 @@ const Attractions = () => {
               {section.name}
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
             {attractions[section.key].map((attraction, index) => {
               const attractionId = attraction.id
               const detailedData = attractionsData[attractionId]
@@ -107,10 +108,10 @@ const Attractions = () => {
               return (
                 <div
                   key={index}
-                  className="animate-fade-in h-full"
+                  className="animate-fade-in flex"
                   style={{ animationDelay: `${(sectionIndex * 0.1) + (index * 0.05)}s` }}
                 >
-                  <Link to={`/attractions/${attractionId}`} className="block h-full">
+                  <Link to={`/attractions/${attractionId}`} className="block w-full flex">
                     <AttractionCard
                       title={t(detailedData.title.en, detailedData.title.zh)}
                       description={detailedData.about ? t(detailedData.about.en, detailedData.about.zh).substring(0, 100) + '...' : ''}

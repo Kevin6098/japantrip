@@ -66,11 +66,11 @@ const DaySchedule = () => {
 
     return (
       <React.Fragment key={itemIndex}>
-        <li className={`flex items-start gap-3 ${isDeparture ? 'bg-blue-50 border-l-4 border-blue-500 p-3 rounded-lg mb-2 shadow-sm' : ''}`}>
+        <li className={`flex items-start gap-3 ${isDeparture ? 'bg-red-50 border-l-4 border-red-500 p-3 rounded-lg mb-2 shadow-sm' : ''}`}>
           {item.time && (
             <span className={`font-mono font-bold px-2 py-1 rounded min-w-[60px] text-center shrink-0 transition-all ${
               isDeparture 
-                ? 'bg-blue-600 text-white text-sm px-3 py-1.5 shadow-lg font-black' 
+                ? 'bg-red-600 text-white text-sm px-3 py-1.5 shadow-lg font-black' 
                 : 'text-slate-700 bg-slate-100 text-xs'
             }`}>
               {isDeparture && <i className="fa-solid fa-plane-departure mr-1 text-xs"></i>}
@@ -80,8 +80,8 @@ const DaySchedule = () => {
           <div className="flex-grow">
             <div className="flex items-center gap-2 flex-wrap">
               {isDeparture ? (
-                <span className="text-sm font-bold text-blue-800 inline-flex items-center gap-1">
-                  <i className="fa-solid fa-exclamation-circle text-blue-600"></i>
+                <span className="text-sm font-bold text-red-800 inline-flex items-center gap-1">
+                  <i className="fa-solid fa-exclamation-circle text-red-600"></i>
                   {content}
                 </span>
               ) : (

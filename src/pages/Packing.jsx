@@ -9,75 +9,88 @@ const Packing = () => {
     setChecked(prev => ({ ...prev, [id]: !prev[id] }))
   }
 
+  const colorClasses = {
+    indigo: 'bg-indigo-100',
+    pink: 'bg-pink-100',
+    cyan: 'bg-cyan-100',
+    purple: 'bg-purple-100',
+    emerald: 'bg-emerald-100',
+    slate: 'bg-slate-100',
+  }
+
   const categories = [
     {
       title: t('Documents', '证件文件'),
-      icon: 'fa-passport',
-      color: 'red',
+      icon: '📄',
+      color: 'indigo',
       items: [
         t('Passport', '护照'),
-        t('Flight tickets', '机票'),
-        t('Hotel confirmations', '酒店确认'),
-        t('Travel insurance', '旅行保险'),
-        t('Emergency contacts', '紧急联系方式'),
+        t('Flight tickets (digital + backup)', '机票 (数字版 + 备份)'),
+        t('Hotel address list (saved offline / printed)', '酒店地址列表 (离线保存 / 打印)'),
+        t('Copy of passport (photo or print)', '护照复印件 (照片或打印)'),
       ],
     },
     {
       title: t('Clothing', '衣物'),
-      icon: 'fa-shirt',
-      color: 'blue',
+      icon: '👕',
+      color: 'pink',
       items: [
-        t('Comfortable walking shoes', '舒适的步行鞋'),
-        t('Light jacket', '轻便外套'),
-        t('Underwear & socks (11 days)', '内衣袜子 (11天)'),
-        t('Casual outfits', '休闲服装'),
-        t('Formal outfit (graduation)', '正装 (毕业典礼)'),
+        t('Comfortable walking shoes', '舒适步行鞋'),
+        t('Light jacket / windbreaker', '轻便外套 / 防风外套'),
+        t('Underwear & socks (≈ 11 days)', '内衣 & 袜子 (≈ 11天)'),
+        t('Casual outfits (easy to layer)', '休闲装 (易于分层)'),
+        t('Thin sweater / hoodie', '薄毛衣 / 连帽衫'),
+        t('Sleepwear', '睡衣'),
       ],
     },
     {
       title: t('Toiletries', '洗漱用品'),
-      icon: 'fa-pump-soap',
-      color: 'green',
+      icon: '🧴',
+      color: 'cyan',
       items: [
-        t('Toothbrush & toothpaste', '牙刷牙膏'),
-        t('Shampoo & soap', '洗发水沐浴露'),
+        t('Toothbrush & toothpaste', '牙刷 & 牙膏'),
+        t('Skincare & makeup', '护肤品 & 化妆品'),
         t('Sunscreen', '防晒霜'),
-        t('Medications', '药品'),
-        t('Face masks', '口罩'),
+        t('Medications (personal + pain relief)', '药品 (个人 + 止痛药)'),
+        t('Lip balm', '润唇膏'),
+        t('Hand cream', '护手霜'),
       ],
     },
     {
-      title: t('Electronics', '电子设备'),
-      icon: 'fa-mobile-screen',
+      title: t('Electronics', '电子产品'),
+      icon: '📱',
       color: 'purple',
       items: [
-        t('Phone & charger', '手机和充电器'),
+        t('Phone & charger', '手机 & 充电器'),
         t('Power bank', '充电宝'),
-        t('Camera', '相机'),
-        t('Universal adapter', '万能转换插头'),
-        t('Earphones', '耳机'),
+        t('Universal adapter (Japan Type A)', '万能转换插头 (日本A型)'),
+        t('Earphones / headphones', '耳机 / 头戴式耳机'),
+        t('SIM card / eSIM / pocket Wi-Fi', 'SIM卡 / eSIM / 口袋Wi-Fi'),
+        t('Extra charging cable', '额外充电线'),
+        t('Offline maps & Google Translate downloaded', '离线地图 & 谷歌翻译已下载'),
       ],
     },
     {
-      title: t('Money & Cards', '现金银行卡'),
-      icon: 'fa-credit-card',
+      title: t('Money & Cards', '钱 & 卡'),
+      icon: '💴',
       color: 'emerald',
       items: [
-        t('Cash (¥50,000+)', '现金 (¥50,000+)'),
+        t('Cash', '现金'),
         t('Credit cards', '信用卡'),
-        t('IC card (Suica/PASMO)', 'IC卡 (Suica/PASMO)'),
+        t('Coin pouch / small wallet', '零钱包 / 小钱包'),
       ],
     },
     {
       title: t('Miscellaneous', '其他物品'),
-      icon: 'fa-bag-shopping',
-      color: 'orange',
+      icon: '🎒',
+      color: 'slate',
       items: [
-        t('Reusable water bottle', '水杯'),
-        t('Umbrella', '雨伞'),
-        t('Hand sanitizer', '消毒液'),
-        t('Snacks', '零食'),
-        t('Empty luggage space for shopping', '留空行李箱空间购物'),
+        t('Compact umbrella', '折叠伞'),
+        t('Reusable shopping bag', '可重复使用购物袋'),
+        t('Pocket tissues / wet wipes', '口袋纸巾 / 湿巾'),
+        t('Daypack / small backpack', '日用背包 / 小背包'),
+        t('Sunglasses / cap', '太阳镜 / 帽子'),
+        t('Empty luggage space for souvenirs', '预留行李空间放纪念品'),
       ],
     },
   ]
@@ -128,8 +141,8 @@ const Packing = () => {
             style={{ animationDelay: `${catIndex * 0.05}s` }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className={`w-12 h-12 rounded-xl bg-${category.color}-100 flex items-center justify-center`}>
-                <i className={`fa-solid ${category.icon} text-${category.color}-600 text-xl`}></i>
+              <div className={`w-12 h-12 rounded-xl ${colorClasses[category.color]} flex items-center justify-center text-2xl`}>
+                {category.icon}
               </div>
               <h2 className="font-header text-xl font-bold text-slate-800">
                 {category.title}

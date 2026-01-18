@@ -58,18 +58,18 @@ const RestaurantCard = ({
           <i className="fa-solid fa-arrow-right text-white text-2xl opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-300"></i>
         </div>
       </div>
-      <div className="p-4 flex flex-col flex-grow">
-        <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full border uppercase tracking-wide mb-2 ${colors.badge}`}>
+      <div className="p-4 flex flex-col flex-grow min-h-0">
+        <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full border uppercase tracking-wide mb-2 flex-shrink-0 ${colors.badge}`}>
           {location}
         </span>
-        <h3 className="font-header text-lg font-bold text-slate-800 mb-2">
+        <h3 className="font-header text-lg font-bold text-slate-800 mb-2 line-clamp-2 flex-shrink-0 min-h-[3.5rem]">
           {title}
         </h3>
-        <p className="text-sm text-slate-600 mb-3 flex-grow">
+        <p className="text-sm text-slate-600 mb-3 flex-grow min-h-[3rem] line-clamp-3">
           {description}
         </p>
         {schedule && (
-          <div className="mb-3">
+          <div className={`mb-3 flex-shrink-0 ${price ? '' : 'mt-auto'}`}>
             {Array.isArray(schedule) ? (
               schedule.map((s, idx) => (
                 <div key={idx} className="flex items-center gap-2 mb-2">
@@ -90,7 +90,7 @@ const RestaurantCard = ({
           </div>
         )}
         {price && (
-          <span className="inline-block text-xs font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200 mt-auto">
+          <span className="inline-block text-xs font-semibold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200 mt-auto flex-shrink-0">
             {price}
           </span>
         )}

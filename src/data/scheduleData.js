@@ -33,6 +33,7 @@ export const getScheduleData = (t) => [
         time: '09:00', 
         text: t('Tsukiji Outer Market', '筑地外市场'), 
         highlight: true,
+        link: '/attractions/tsukiji-market',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Tsukiji+Outer+Market+Tokyo',
         price: 'Free',
         transit: t('Duration: ~2.5 hours (Walk around market, try street food, fresh seafood, shops)', '停留时间: 约2.5小时 (漫步市场, 品尝街头美食, 新鲜海鲜, 商店)')
@@ -56,7 +57,7 @@ export const getScheduleData = (t) => [
         time: '12:00', 
         text: t('Ginza Kanimitsu (Lunch)', '银座蟹みつ (午餐)'), 
         highlight: true,
-        link: 'https://ginza-kanimitsu.com/menu/lunch/',
+        link: '/food/ginza-kanimitsu',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Ginza+Kanimitsu+Tokyo',
         transit: t('Walk 3-5 mins from Ginza Station (Duration: ~1-1.5 hours - Crab restaurant, lunch sets from ¥4,600-¥11,000)', '从银座站步行3-5分钟 (停留时间: 约1-1.5小时 - 螃蟹餐厅, 午餐套餐¥4,600-¥11,000)')
       },
@@ -70,6 +71,7 @@ export const getScheduleData = (t) => [
         time: '14:00', 
         text: t('Nakamura Tokichi (Matcha Parfait)', '中村藤吉 (抹茶芭菲)'), 
         highlight: true,
+        link: '/food/nakamura-tokichi-ginza',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Nakamura+Tokichi+Ginza',
         price: 'Tea Time',
         transit: t('Walk 3-5 mins within Ginza area (Duration: ~1 hour)', '银座区内步行3-5分钟 (停留时间: 约1小时)')
@@ -84,6 +86,7 @@ export const getScheduleData = (t) => [
         time: '16:00', 
         text: t('Tokyo Station (Explore & Buy Souvenirs)', '东京站 (参观 & 购买纪念品)'), 
         highlight: true,
+        link: '/attractions/tokyo-station',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Tokyo+Station',
         transit: t('Duration: ~1.5 hours (Explore station architecture, buy souvenirs at Character Street & Gransta)', '停留时间: 约1.5小时 (参观车站建筑, 在角色街 & Gransta购买纪念品)')
       },
@@ -97,6 +100,7 @@ export const getScheduleData = (t) => [
         time: '18:00', 
         text: t('Asakusa - Monja Yaki & Okonomiyaki', '浅草 - 文字烧 & 大阪烧'), 
         highlight: true,
+        link: '/food/asakusa-monja',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Monja+Yaki+Asakusa+Okonomiyaki',
         note: t('(Dinner)', '(晚餐)'),
         transit: t('Duration: ~1.5 hours (Traditional Tokyo street food experience)', '停留时间: 约1.5小时 (传统东京街头美食体验)')
@@ -133,6 +137,8 @@ export const getScheduleData = (t) => [
       { 
         time: '11:30', 
         text: t('Ichiran Ramen (Lunch)', '一兰拉面 (午餐)'),
+        highlight: true,
+        link: '/food/ichiran-ramen',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Ichiran+Ramen+Asakusa+Tokyo',
         transit: t('Walk 5-10 mins from Senso-ji (Duration: ~45 mins - Famous tonkotsu ramen, expect possible wait)', '从浅草寺步行5-10分钟 (停留时间: 约45分钟 - 著名豚骨拉面, 可能需要排队)')
       },
@@ -165,6 +171,7 @@ export const getScheduleData = (t) => [
         time: '20:00', 
         text: t('Tsukada Shabu Shabu (Graduation Celebration Dinner)', '塚田しゃぶしゃぶ (毕业庆功晚餐)'), 
         highlight: true,
+        link: '/food/tsukada-shabu',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Tsukada+Shabu+Shabu+Shibuya+Tokyo',
         transit: t('Walk 3-5 mins from Shibuya Station to Shibuya Scramble Square 12F (Duration: ~1.5-2 hours - Shabu shabu restaurant, hours: 17:00-23:00)', '从涩谷站步行3-5分钟至涩谷Scramble Square 12楼 (停留时间: 约1.5-2小时 - 涮涮锅餐厅, 营业时间: 17:00-23:00)')
       },
@@ -329,7 +336,7 @@ export const getScheduleData = (t) => [
       { 
         time: '08:00', 
         text: t('USJ All Day', '环球影城全天'), 
-        special: true,
+        highlight: true,
         link: '/attractions/usj',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Universal+Studios+Japan+Osaka',
         prices: [
@@ -500,6 +507,7 @@ export const getScheduleData = (t) => [
         time: '10:00', 
         text: t('Nakamura Tokichi Honten', '中村藤吉本店'), 
         highlight: true,
+        link: '/food/nakamura-tokichi-uji',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Nakamura+Tokichi+Honten+Uji',
         transit: t('Walk 3 mins from Uji Station (Matcha sweets & early lunch)', '从宇治站步行3分钟 (抹茶甜点 & 早午餐)')
       },
@@ -507,6 +515,7 @@ export const getScheduleData = (t) => [
         time: '11:30', 
         text: t('Ujiagami Shrine & River', '宇治上神社 & 宇治川'), 
         highlight: true,
+        link: '/attractions/ujigami',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Nakamura+Tokichi+Honten+Uji&destination=Ujiagami+Shrine+Uji&travelmode=walking',
         price: 'Free',
         transit: t('Walk 10 mins along Uji River & Byodoin Omotesando', '沿宇治川 & 平等院表参道步行10分钟')
@@ -544,13 +553,14 @@ export const getScheduleData = (t) => [
         transit: t('Walk 15 mins from Todaiji (Stone lanterns forest path)', '从东大寺步行15分钟 (石灯笼森林小径)')
       },
       { 
-        time: '18:00', 
+        time: '17:30', 
         text: t('Mt. Wakakusa', '若草山'), 
         highlight: true,
+        link: '/attractions/wakakusa',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kasuga+Taisha+Nara&destination=Mt+Wakakusa+Nara&travelmode=walking',
         note: t('(Night View)', '(夜景)'),
         price: '¥150',
-        transit: t('Walk 20 mins from Kasuga Taisha (Sunset & City Night View)', '从春日大社步行20分钟 (日落 & 城市夜景)')
+        transit: t('Walk 15 mins from Kasuga Taisha (Sunset & panoramic city view)', '从春日大社步行15分钟 (日落 & 全景城市景观)')
       },
       { 
         time: '19:30', 
