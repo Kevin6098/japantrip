@@ -357,6 +357,30 @@ const BudgetSplitter = () => {
     }
   }
 
+  const toggleMemberPaid = async (expenseId, memberId, currentStatus) => {
+    try {
+      const newStatus = !currentStatus
+      const expense = expenses.find(e => e.id === expenseId)
+      const membersPaid = expense?.membersPaid || expense?.members_paid || {}
+      const updatedMembersPaid = { ...membersPaid, [memberId]: newStatus }
+      
+      if (USE_DATABASE) {
+        await budgetService.updateExpense(expenseId, { members_paid: updatedMembersPaid })
+        setExpenses(prev => prev.map(exp => 
+          exp.id === expenseId ? { ...exp, members_paid: updatedMembersPaid, membersPaid: updatedMembersPaid } : exp
+        ))
+      } else {
+        const updatedExpenses = expenses.map(exp => 
+          exp.id === expenseId ? { ...exp, membersPaid: updatedMembersPaid } : exp
+        )
+        setExpenses(updatedExpenses)
+        saveToLocalStorage({ members, expenses: updatedExpenses })
+      }
+    } catch (error) {
+      console.error('Error updating member paid status:', error)
+    }
+  }
+
   const deleteExpense = async (id) => {
     try {
       if (USE_DATABASE) {

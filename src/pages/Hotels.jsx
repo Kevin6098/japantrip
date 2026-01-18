@@ -29,14 +29,28 @@ const Hotels = () => {
           </div>
           <div className="p-5">
             <h3 className="text-xl font-bold text-slate-800 mb-2">
-              {t('Modern House in Katsushika', '葛饰区现代房屋')}
+              {t('Home in Katsushika City', '葛饰区房屋')}
             </h3>
             <p className="text-sm text-slate-600 mb-2">
-              {t('Katsushika-ku, Tokyo. 5 mins walk to nearest station. 6 mins to Tokyo Skytree, 10 mins to Asakusa. WiFi, kitchen, private bathroom.', '东京都葛饰区。步行5分钟至最近车站。6分钟至东京晴空塔，10分钟至浅草。WiFi、厨房、独立浴室。')}
+              <strong>{t('Address:', '地址:')}</strong> {t('1-chōme-9-2 Yotsugi, Katsushika City, Tokyo', '东京都葛饰区四つ木1-9-2')}
+            </p>
+            <p className="text-sm text-slate-600 mb-2">
+              {t('Hosted by Aria Homes. 5 mins walk to nearest station. 6 min to Skytree, 5 min walk. Quiet Private House. WiFi, kitchen, private bathroom.', '房东：Aria Homes。步行5分钟至最近车站。6分钟至晴空塔，步行5分钟。安静私人房屋。WiFi、厨房、独立浴室。')}
+            </p>
+            <p className="text-xs text-slate-500 mb-2">
+              <strong>{t('Check-in:', '入住:')}</strong> {t('Wed, Mar 18, 4:00 PM', '3月18日（周三）下午4:00')}
             </p>
             <p className="text-xs text-slate-500 mb-3">
-              ⭐ {t('Sleeps up to 6 · Full amenities', '最多可住6人 · 设施齐全')}
+              <strong>{t('Checkout:', '退房:')}</strong> {t('Sat, Mar 21, 10:00 AM', '3月21日（周六）上午10:00')}
             </p>
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=1-chōme-9-2+Yotsugi+Katsushika+City+Tokyo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-600 text-sm font-bold flex items-center hover:text-indigo-800 transition-colors mb-2"
+            >
+              <i className="fa-solid fa-map-location-dot mr-1"></i> {t('View on Google Maps', '在Google地图中查看')}
+            </a>
             <a 
               href="https://www.airbnb.com/rooms/1582468829135768556?viralityEntryPoint=1&s=76&source_impression_id=p3_1768539072_P3uZUw09Nv5YO4bm&check_in=2026-03-18&guests=1&adults=1&check_out=2026-03-21" 
               target="_blank" 
@@ -56,14 +70,28 @@ const Hotels = () => {
           </div>
           <div className="p-5">
             <h3 className="text-xl font-bold text-slate-800 mb-2">
-              {t('172㎡ Entire House / JR Momodani 2mins walk', '172㎡整栋房屋 / 步行2分钟至JR桃谷站')}
+              {t('Home in Ikuno Ward, Osaka', '大阪生野区房屋')}
             </h3>
             <p className="text-sm text-slate-600 mb-2">
-              {t('Ikuno Ward, Osaka. 2 mins walk from JR Momodani Station. Max 24 people. 3 bedrooms, 11 beds, 3 bathrooms.', '大阪市生野区。步行2分钟至JR桃谷站。最多24人。3间卧室，11张床，3间浴室。')}
+              <strong>{t('Address:', '地址:')}</strong> {t('1-chōme-12-11 Momodani, Ikuno Ward, Osaka', '大阪市生野区桃谷1-12-11')}
+            </p>
+            <p className="text-sm text-slate-600 mb-2">
+              {t('Hosted by Momo. 172m² Entire House. JR Momodani 2mins walk. Max 24ppl. 3 bedrooms, 11 beds, 3 bathrooms.', '房东：Momo。172平方米整栋房屋。步行2分钟至JR桃谷站。最多24人。3间卧室，11张床，3间浴室。')}
+            </p>
+            <p className="text-xs text-slate-500 mb-2">
+              <strong>{t('Check-in:', '入住:')}</strong> {t('Sat, Mar 21, 4:00 PM', '3月21日（周六）下午4:00')}
             </p>
             <p className="text-xs text-slate-500 mb-3">
-              ⭐ {t('4.78/5 (27 reviews) · Hosted by Momo (Superhost) · 7 nights', '4.78/5 (27条评价) · 房东：Momo (超赞房东) · 7晚')}
+              <strong>{t('Checkout:', '退房:')}</strong> {t('Sat, Mar 28, 10:00 AM', '3月28日（周六）上午10:00')}
             </p>
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=1-chōme-12-11+Momodani+Ikuno+Ward+Osaka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-orange-600 text-sm font-bold flex items-center hover:text-orange-800 transition-colors mb-2"
+            >
+              <i className="fa-solid fa-map-location-dot mr-1"></i> {t('View on Google Maps', '在Google地图中查看')}
+            </a>
             <a 
               href="https://www.airbnb.com.sg/rooms/1251897604600079315" 
               target="_blank" 

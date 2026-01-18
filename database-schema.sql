@@ -62,3 +62,10 @@ GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO budget_user;
 -- Optional: Create policy to allow all operations (adjust as needed)
 -- CREATE POLICY "Allow all operations" ON members FOR ALL USING (true);
 -- CREATE POLICY "Allow all operations" ON expenses FOR ALL USING (true);
+
+-- ============================================
+-- Migration: Add members_paid field to expenses
+-- Run this if you have an existing database
+-- This tracks which members have paid their share (JSONB: { "member_id": true/false })
+-- ============================================
+-- ALTER TABLE expenses ADD COLUMN IF NOT EXISTS members_paid JSONB DEFAULT '{}';

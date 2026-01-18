@@ -12,9 +12,9 @@ export const getScheduleData = (t) => [
       { 
         time: '23:30', 
         text: t('Private Van to Tokyo Airbnb', '私人包车前往东京Airbnb'),
-        transit: t('Travel time: ~45-60 mins (HND → Katsushika-ku)', '车程: 约45-60分钟 (羽田机场 → 葛饰区)')
+        transit: t('Travel time: ~45-60 mins (HND → 1-chōme-9-2 Yotsugi, Katsushika City)', '车程: 约45-60分钟 (羽田机场 → 葛饰区四つ木1-9-2)')
       },
-      { time: '00:30', text: t('Arrive at Tokyo Airbnb', '抵达东京Airbnb') },
+      { time: '00:30', text: t('Arrive at Tokyo Airbnb (1-chōme-9-2 Yotsugi, Katsushika City)', '抵达东京Airbnb (葛饰区四つ木1-9-2)') },
     ],
   },
   {
@@ -26,7 +26,7 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '08:00', 
-        text: t('Depart from Airbnb (Katsushika-ku - 5 mins walk to nearest station)', '从Airbnb出发 (葛饰区 - 步行5分钟至最近车站)'),
+        text: t('Depart from Airbnb (1-chōme-9-2 Yotsugi, Katsushika City - 5 mins walk to nearest station)', '从Airbnb出发 (葛饰区四つ木1-9-2 - 步行5分钟至最近车站)'),
         transit: t('Walk 5 mins to nearest station → Keisei Line/Toei Asakusa Line to Higashi-Ginza → Walk 5 mins to Tsukiji Outer Market (~30-35 mins train)', '步行5分钟至最近车站 → 京成线/都营浅草线至东银座 → 步行5分钟至筑地外市场 (~30-35分钟电车)')
       },
       { 
@@ -107,8 +107,8 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '19:30', 
-        text: t('Return to Airbnb (Katsushika-ku)', '返回Airbnb (葛饰区)'),
-        transit: t('Walk 3-5 mins to Asakusa Station → Keisei Line/Toei Asakusa Line to nearest station in Katsushika-ku (~20-25 mins train) → Walk 5 mins', '步行3-5分钟至浅草站 → 京成线/都营浅草线至葛饰区最近车站 (~20-25分钟电车) → 步行5分钟')
+        text: t('Return to Airbnb (1-chōme-9-2 Yotsugi, Katsushika City)', '返回Airbnb (葛饰区四つ木1-9-2)'),
+        transit: t('Walk 3-5 mins to Asakusa Station → Keisei Line/Toei Asakusa Line to nearest station in Katsushika-ku (~20-25 mins train) → Walk 5 mins to 1-chōme-9-2 Yotsugi', '步行3-5分钟至浅草站 → 京成线/都营浅草线至葛饰区最近车站 (~20-25分钟电车) → 步行5分钟至四つ木1-9-2')
       },
     ],
   },
@@ -122,7 +122,7 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '08:00', 
-        text: t('Depart from Airbnb (Katsushika-ku - 5 mins walk to nearest station)', '从Airbnb出发 (葛饰区 - 步行5分钟至最近车站)'),
+        text: t('Depart from Airbnb (1-chōme-9-2 Yotsugi, Katsushika City - 5 mins walk to nearest station)', '从Airbnb出发 (葛饰区四つ木1-9-2 - 步行5分钟至最近车站)'),
         transit: t('Walk 5 mins to nearest station → Keisei Line/Toei Asakusa Line to Asakusa Station (~20-25 mins train) → Walk 5 mins', '步行5分钟至最近车站 → 京成线/都营浅草线至浅草站 (~20-25分钟电车) → 步行5分钟')
       },
       { 
@@ -177,8 +177,8 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '22:00', 
-        text: t('Return to Airbnb (Katsushika-ku)', '返回Airbnb (葛饰区)'),
-        transit: t('Walk 3 mins to Shibuya Station → Hanzomon Line to Oshiage → Keisei Line/Toei Asakusa Line to nearest station in Katsushika-ku (~35-40 mins train) → Walk 5 mins', '步行3分钟至涩谷站 → 半藏门线至押上 → 京成线/都营浅草线至葛饰区最近车站 (~35-40分钟电车) → 步行5分钟')
+        text: t('Return to Airbnb (1-chōme-9-2 Yotsugi, Katsushika City)', '返回Airbnb (葛饰区四つ木1-9-2)'),
+        transit: t('Walk 3 mins to Shibuya Station → Hanzomon Line to Oshiage → Keisei Line/Toei Asakusa Line to nearest station in Katsushika-ku (~35-40 mins train) → Walk 5 mins to 1-chōme-9-2 Yotsugi', '步行3分钟至涩谷站 → 半藏门线至押上 → 京成线/都营浅草线至葛饰区最近车站 (~35-40分钟电车) → 步行5分钟至四つ木1-9-2')
       },
     ],
   },
@@ -217,9 +217,9 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '15:30', 
-        text: t('Check-in Osaka Airbnb (JR Momodani Station)', '入住大阪Airbnb (JR桃谷站)'),
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Shin-Osaka+Station&destination=JR+Momodani+Station+Osaka&travelmode=transit',
-        transit: t('Walk 2 mins to Shin-Osaka Station → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins', '步行2分钟至新大阪站 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟')
+        text: t('Check-in Osaka Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '入住大阪Airbnb (生野区桃谷1-12-11)'),
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Shin-Osaka+Station&destination=1-chōme-12-11+Momodani+Ikuno+Ward+Osaka&travelmode=transit',
+        transit: t('Walk 2 mins to Shin-Osaka Station → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行2分钟至新大阪站 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟至桃谷1-12-11')
       },
       { 
         time: '17:50', 
@@ -228,8 +228,8 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '18:30', 
-        text: t('Private Van to Osaka Airbnb', '私人包车前往大阪Airbnb'),
-        transit: t('Travel time: ~50-60 mins (KIX → JR Momodani Station area)', '车程: 约50-60分钟 (关西机场 → JR桃谷站附近)')
+        text: t('Private Van to Osaka Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '私人包车前往大阪Airbnb (生野区桃谷1-12-11)'),
+        transit: t('Travel time: ~50-60 mins (KIX → 1-chōme-12-11 Momodani, Ikuno Ward)', '车程: 约50-60分钟 (关西机场 → 生野区桃谷1-12-11)')
       },
       { 
         time: '20:00', 
@@ -250,8 +250,8 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '09:30', 
-        text: t('Depart from Airbnb (JR Momodani Station)', '从Airbnb出发 (JR桃谷站)'),
-        transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Osaka Station → JR Kobe Line to Sannomiya Station (~30 mins train) → Walk 10 mins', '步行2分钟至桃谷站 → JR大阪环状线至大阪站 → JR神户线至三宫站 (~30分钟电车) → 步行10分钟')
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)'),
+        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Osaka Station → JR Kobe Line to Sannomiya Station (~30 mins train) → Walk 10 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至大阪站 → JR神户线至三宫站 (~30分钟电车) → 步行10分钟')
       },
       { 
         time: '10:30', 
@@ -316,8 +316,8 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '20:00', 
-        text: t('Return to Airbnb (JR Momodani Station)', '返回Airbnb (JR桃谷站)'),
-        transit: t('Walk 10 mins to Sannomiya Station → JR Kobe Line to Osaka Station (~15 mins train) → JR Osaka Loop Line to Momodani Station (~15 mins train) → Walk 2 mins', '步行10分钟至三宫站 → JR神户线至大阪站 (~15分钟电车) → JR大阪环状线至桃谷站 (~15分钟电车) → 步行2分钟')
+        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)'),
+        transit: t('Walk 10 mins to Sannomiya Station → JR Kobe Line to Osaka Station (~15 mins train) → JR Osaka Loop Line to Momodani Station (~15 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行10分钟至三宫站 → JR神户线至大阪站 (~15分钟电车) → JR大阪环状线至桃谷站 (~15分钟电车) → 步行2分钟至桃谷1-12-11')
       },
     ],
   },
@@ -330,8 +330,8 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '07:30', 
-        text: t('Depart from Airbnb (JR Momodani Station) (Early!)', '从Airbnb出发 (JR桃谷站) (早起!)'),
-        transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Nishikujo → JR Yumesaki Line to Universal City Station (~20 mins train) → Walk 5 mins', '步行2分钟至桃谷站 → JR大阪环状线至西九条 → JR梦咲线至环球影城站 (~20分钟电车) → 步行5分钟')
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) (Early!)', '从Airbnb出发 (生野区桃谷1-12-11) (早起!)'),
+        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Nishikujo → JR Yumesaki Line to Universal City Station (~20 mins train) → Walk 5 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至西九条 → JR梦咲线至环球影城站 (~20分钟电车) → 步行5分钟')
       },
       { 
         time: '08:00', 
@@ -346,8 +346,8 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '20:00', 
-        text: t('Return to Airbnb (JR Momodani Station) / Dinner', '返回Airbnb (JR桃谷站) / 晚餐'),
-        transit: t('Walk 5 mins to Universal City Station → JR Yumesaki Line to Nishikujo → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins', '步行5分钟至环球影城站 → JR梦咲线至西九条 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟')
+        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) / Dinner', '返回Airbnb (生野区桃谷1-12-11) / 晚餐'),
+        transit: t('Walk 5 mins to Universal City Station → JR Yumesaki Line to Nishikujo → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行5分钟至环球影城站 → JR梦咲线至西九条 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟至桃谷1-12-11')
       },
     ],
   },
@@ -360,8 +360,8 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '08:30', 
-        text: t('Depart from Airbnb (JR Momodani Station)', '从Airbnb出发 (JR桃谷站)'),
-        transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Osaka Station (~20 mins train) → Walk 5 mins', '步行2分钟至桃谷站 → JR大阪环状线至大阪站 (~20分钟电车) → 步行5分钟')
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)'),
+        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Osaka Station (~20 mins train) → Walk 5 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至大阪站 (~20分钟电车) → 步行5分钟')
       },
       { 
         time: '09:00', 
@@ -421,7 +421,7 @@ export const getScheduleData = (t) => [
         highlight: true,
         link: '/attractions/dotonbori',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Dotonbori+Osaka',
-        transit: t('Various dining options in Dotonbori area. Return: Walk 5 mins to Namba Station → JR Osaka Loop Line to Momodani Station (~15 mins train) → Walk 2 mins', '道顿堀区域各种餐饮选择。返回: 步行5分钟至难波站 → JR大阪环状线至桃谷站 (~15分钟电车) → 步行2分钟')
+        transit: t('Various dining options in Dotonbori area. Return: Walk 5 mins to Namba Station → JR Osaka Loop Line to Momodani Station (~15 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '道顿堀区域各种餐饮选择。返回: 步行5分钟至难波站 → JR大阪环状线至桃谷站 (~15分钟电车) → 步行2分钟至桃谷1-12-11')
       },
     ],
   },
@@ -434,8 +434,8 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '07:00', 
-        text: t('Depart from Airbnb (JR Momodani Station) (Early!)', '从Airbnb出发 (JR桃谷站) (早起!)'),
-        transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Kyobashi → Keihan Line to Fushimi-Inari Station (~50 mins train) → Walk 5 mins', '步行2分钟至桃谷站 → JR大阪环状线至京桥 → 京阪线至伏见稻荷站 (~50分钟电车) → 步行5分钟')
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) (Early!)', '从Airbnb出发 (生野区桃谷1-12-11) (早起!)'),
+        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Kyobashi → Keihan Line to Fushimi-Inari Station (~50 mins train) → Walk 5 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至京桥 → 京阪线至伏见稻荷站 (~50分钟电车) → 步行5分钟')
       },
       { 
         time: '08:00', 
@@ -493,8 +493,8 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '19:00', 
-        text: t('Return to Airbnb (JR Momodani Station)', '返回Airbnb (JR桃谷站)'),
-        transit: t('Walk 5 mins to Gion-Shijo Station → Keihan Line to Kyobashi → JR Osaka Loop Line to Momodani Station (~50 mins train) → Walk 2 mins', '步行5分钟至祇园四条站 → 京阪线至京桥 → JR大阪环状线至桃谷站 (~50分钟电车) → 步行2分钟')
+        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)'),
+        transit: t('Walk 5 mins to Gion-Shijo Station → Keihan Line to Kyobashi → JR Osaka Loop Line to Momodani Station (~50 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行5分钟至祇园四条站 → 京阪线至京桥 → JR大阪环状线至桃谷站 (~50分钟电车) → 步行2分钟至桃谷1-12-11')
       },
     ],
   },
@@ -507,8 +507,8 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '09:00', 
-        text: t('Depart from Airbnb (JR Momodani Station)', '从Airbnb出发 (JR桃谷站)'),
-        transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Kyobashi → Keihan Line to Uji Station (~50 mins train) → Walk 3 mins', '步行2分钟至桃谷站 → JR大阪环状线至京桥 → 京阪线至宇治站 (~50分钟电车) → 步行3分钟')
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)'),
+        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Kyobashi → Keihan Line to Uji Station (~50 mins train) → Walk 3 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至京桥 → 京阪线至宇治站 (~50分钟电车) → 步行3分钟')
       },
       { 
         time: '10:00', 
@@ -571,8 +571,8 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '19:30', 
-        text: t('Return to Airbnb (JR Momodani Station)', '返回Airbnb (JR桃谷站)'),
-        transit: t('Walk 20 mins to Nara Station → JR Nara Line to Kyobashi → JR Osaka Loop Line to Momodani Station (~1h 10m train) → Walk 2 mins', '步行20分钟至奈良站 → JR奈良线至京桥 → JR大阪环状线至桃谷站 (~1小时10分钟电车) → 步行2分钟')
+        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)'),
+        transit: t('Walk 20 mins to Nara Station → JR Nara Line to Kyobashi → JR Osaka Loop Line to Momodani Station (~1h 10m train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行20分钟至奈良站 → JR奈良线至京桥 → JR大阪环状线至桃谷站 (~1小时10分钟电车) → 步行2分钟至桃谷1-12-11')
       },
     ],
   },
@@ -585,8 +585,8 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '06:00', 
-        text: t('Depart from Airbnb (JR Momodani Station)', '从Airbnb出发 (JR桃谷站)'),
-        transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Shin-Osaka → Midosuji Line to Minami-Ibaraki → Bus to Katsuoji (~1.5 hours total)', '步行2分钟至桃谷站 → JR大阪环状线至新大阪 → 御堂筋线至南茨木 → 巴士至勝尾寺 (~1.5小时总计)')
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)'),
+        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Shin-Osaka → Midosuji Line to Minami-Ibaraki → Bus to Katsuoji (~1.5 hours total)', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至新大阪 → 御堂筋线至南茨木 → 巴士至勝尾寺 (~1.5小时总计)')
       },
       { 
         time: '07:00', 
@@ -663,7 +663,7 @@ export const getScheduleData = (t) => [
       { 
         time: '06:30', 
         text: t('Private Van to KIX (CX Group)', '私人包车前往关西机场 (国泰组)'),
-        transit: t('Travel time: ~50-60 mins (Osaka Airbnb → KIX)', '车程: 约50-60分钟 (大阪Airbnb → 关西机场)')
+        transit: t('Travel time: ~50-60 mins (1-chōme-12-11 Momodani, Ikuno Ward → KIX)', '车程: 约50-60分钟 (生野区桃谷1-12-11 → 关西机场)')
       },
       { 
         time: '07:30', 
@@ -673,7 +673,7 @@ export const getScheduleData = (t) => [
       { 
         time: '07:30', 
         text: t('Private Van to KIX (TG Group)', '私人包车前往关西机场 (泰航组)'),
-        transit: t('Travel time: ~50-60 mins (Osaka Airbnb → KIX)', '车程: 约50-60分钟 (大阪Airbnb → 关西机场)')
+        transit: t('Travel time: ~50-60 mins (1-chōme-12-11 Momodani, Ikuno Ward → KIX)', '车程: 约50-60分钟 (生野区桃谷1-12-11 → 关西机场)')
       },
       { 
         time: '08:30', 

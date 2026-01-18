@@ -55,6 +55,35 @@ const ExpensesList = () => {
     return `${fixed} ${currency}`
   }
 
+  const toggleMemberPaid = async (expenseId, memberId, currentStatus) => {
+    try {
+      const newStatus = !currentStatus
+      const expense = expenses.find(e => e.id === expenseId)
+      const membersPaid = expense?.membersPaid || expense?.members_paid || {}
+      const updatedMembersPaid = { ...membersPaid, [memberId]: newStatus }
+      
+      if (USE_DATABASE) {
+        await budgetService.updateExpense(expenseId, { members_paid: updatedMembersPaid })
+        setExpenses(prev => prev.map(exp => 
+          exp.id === expenseId ? { ...exp, members_paid: updatedMembersPaid, membersPaid: updatedMembersPaid } : exp
+        ))
+      } else {
+        const updatedExpenses = expenses.map(exp => 
+          exp.id === expenseId ? { ...exp, membersPaid: updatedMembersPaid } : exp
+        )
+        setExpenses(updatedExpenses)
+        const raw = localStorage.getItem(STORAGE_KEY)
+        if (raw) {
+          const state = JSON.parse(raw)
+          state.expenses = updatedExpenses
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+        }
+      }
+    } catch (error) {
+      console.error('Error updating member paid status:', error)
+    }
+  }
+
   const exportCSV = () => {
     const selectedMembersList = members.filter(m => selectedMembers.has(m.id))
     const header = ['Date', 'Category', 'Currency', 'Description', 'Amount', 'PaidBy', ...selectedMembersList.map(m => m.name)]
@@ -185,7 +214,7 @@ const ExpensesList = () => {
                 <th className="text-left p-2 font-semibold text-slate-700 min-w-[95px]">{t('Paid by', '付款人')}</th>
                 <th className="text-right p-2 font-semibold text-slate-700 min-w-[110px]">{t('Amount', '金额')}</th>
                 {members.filter(m => selectedMembers.has(m.id)).map(m => (
-                  <th key={m.id} className="text-right p-2 font-semibold text-slate-700 min-w-[100px]">{m.name}</th>
+                  <th key={m.id} className="text-right p-2 font-semibold text-slate-700 min-w-[120px]">{m.name}</th>
                 ))}
               </tr>
             </thead>
@@ -199,6 +228,7 @@ const ExpensesList = () => {
               ) : (
                 [...expenses].sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(exp => {
                   const paidByName = members.find(m => m.id === exp.paidBy)?.name || '-'
+                  const membersPaid = exp.membersPaid || exp.members_paid || {}
                   return (
                     <tr 
                       key={exp.id} 
@@ -246,14 +276,34 @@ const ExpensesList = () => {
                       </td>
                       {members.filter(m => selectedMembers.has(m.id)).map(m => {
                         const splitAmount = exp.splits?.[m.id] || 0
+                        const isPaid = membersPaid[m.id] || false
                         return (
-                          <td key={m.id} className="p-2 text-right text-xs text-slate-600">
-                            <Link 
-                              to={`/split-expenses/expense/${exp.id}`}
-                              className="block hover:text-emerald-600 transition-colors"
-                            >
-                              {splitAmount > 0 ? formatMoney(splitAmount, exp.currency) : ''}
-                            </Link>
+                          <td 
+                            key={m.id} 
+                            className={`p-2 text-right text-xs ${isPaid ? 'bg-green-50' : ''}`}
+                          >
+                            <div className="flex items-center justify-end gap-2">
+                              <label className="cursor-pointer">
+                                <input
+                                  type="checkbox"
+                                  checked={isPaid}
+                                  onChange={(e) => {
+                                    e.stopPropagation()
+                                    toggleMemberPaid(exp.id, m.id, isPaid)
+                                  }}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500 cursor-pointer"
+                                  title={isPaid ? t('Paid', '已付款') : t('Not paid', '未付款')}
+                                  disabled={splitAmount <= 0}
+                                />
+                              </label>
+                              <Link 
+                                to={`/split-expenses/expense/${exp.id}`}
+                                className="hover:text-emerald-600 transition-colors"
+                              >
+                                {splitAmount > 0 ? formatMoney(splitAmount, exp.currency) : ''}
+                              </Link>
+                            </div>
                           </td>
                         )
                       })}
