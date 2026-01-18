@@ -29,6 +29,12 @@ const DaySchedule = () => {
     const itemText = typeof item.text === 'string' ? item.text : t(item.text?.en || '', item.text?.zh || '')
     const itemTransit = item.transit ? (typeof item.transit === 'string' ? item.transit : t(item.transit?.en || '', item.transit?.zh || '')) : null
     const itemNote = item.note ? (typeof item.note === 'string' ? item.note : t(item.note?.en || '', item.note?.zh || '')) : null
+    
+    // Check if this is a departure item
+    const isDeparture = itemText.toLowerCase().includes('depart') || 
+                       itemText.toLowerCase().includes('出发') ||
+                       itemText.toLowerCase().includes('leave') ||
+                       (itemIndex === 0 && item.time) // First item of the day is usually departure
 
     const content = item.link ? (
       <Link
@@ -60,15 +66,27 @@ const DaySchedule = () => {
 
     return (
       <React.Fragment key={itemIndex}>
-        <li className="flex items-start gap-3">
+        <li className={`flex items-start gap-3 ${isDeparture ? 'bg-blue-50 border-l-4 border-blue-500 p-3 rounded-lg mb-2 shadow-sm' : ''}`}>
           {item.time && (
-            <span className="font-mono text-xs font-bold text-slate-700 bg-slate-100 px-2 py-1 rounded min-w-[60px] text-center shrink-0">
+            <span className={`font-mono font-bold px-2 py-1 rounded min-w-[60px] text-center shrink-0 transition-all ${
+              isDeparture 
+                ? 'bg-blue-600 text-white text-sm px-3 py-1.5 shadow-lg font-black' 
+                : 'text-slate-700 bg-slate-100 text-xs'
+            }`}>
+              {isDeparture && <i className="fa-solid fa-plane-departure mr-1 text-xs"></i>}
               {item.time}
             </span>
           )}
           <div className="flex-grow">
             <div className="flex items-center gap-2 flex-wrap">
-              {content}
+              {isDeparture ? (
+                <span className="text-sm font-bold text-blue-800 inline-flex items-center gap-1">
+                  <i className="fa-solid fa-exclamation-circle text-blue-600"></i>
+                  {content}
+                </span>
+              ) : (
+                content
+              )}
               {itemNote && (
                 <span className="text-sm text-slate-600">{itemNote}</span>
               )}
