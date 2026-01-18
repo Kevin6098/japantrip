@@ -123,6 +123,7 @@ export const budgetService = {
       paid_by: expense.paidBy,
       split_with: expense.splitWith || [],
       splits: expense.splits || {},
+      members_paid: expense.membersPaid || expense.members_paid || {},
     }
 
     const data = await apiRequest('/expenses', {

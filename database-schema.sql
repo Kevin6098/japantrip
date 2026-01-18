@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS expenses (
   paid_by UUID REFERENCES members(id) ON DELETE SET NULL,
   split_with UUID[] DEFAULT '{}',
   splits JSONB DEFAULT '{}',
+  members_paid JSONB DEFAULT '{}',
   created_at TIMESTAMP DEFAULT NOW(),
   updated_at TIMESTAMP DEFAULT NOW()
 );
