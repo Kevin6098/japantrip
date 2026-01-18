@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Trip 2026 - Checklist</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <script>
+        // Load saved checklist items from localStorage
+        function loadChecklist() {
+            const saved = localStorage.getItem('checklist-items');
+            return saved ? JSON.parse(saved) : {};
+        }
+
+        // Save checklist items to localStorage
+        function saveChecklist(checkedItems) {
+            localStorage.setItem('checklist-items', JSON.stringify(checkedItems));
+        }
+
+        // Handle checkbox change
+        function handleCheck(id) {
+            const checkedItems = loadChecklist();
+            checkedItems[id] = !checkedItems[id];
+            saveChecklist(checkedItems);
+            updateProgress();
+            updateCheckboxState(id, checkedItems[id]);
+        }
+
+        // Update checkbox state
+        function updateCheckboxState(id, checked) {
+            const checkbox = document.getElementById(id);
+            if (checkbox) {
+                checkbox.checked = checked;
+                const label = checkbox.closest('.checklist-item');
+                if (label) {
+                    const title = label.querySelector('label');
+                    if (title) {
+                        if (checked) {
+                            title.classList.add('line-through', 'text-slate-400');
+                            title.classList.remove('text-slate-800');
+                        } else {
+                            title.classList.remove('line-through', 'text-slate-400');
+                            title.classList.add('text-slate-800');
+                        }
+                    }
+                }
+            }
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const checkedItems = loadChecklist();
+            const total = document.querySelectorAll('.checklist-item input[type="checkbox"]').length;
+            const checked = Object.values(checkedItems).filter(Boolean).length;
+            const percentage = total > 0 ? (checked / total) * 100 : 0;
+            
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            
+            if (progressBar) {
+                progressBar.style.width = percentage + '%';
+            }
+            if (progressText) {
+                progressText.textContent = `${checked} / ${total}`;
+            }
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const checkedItems = loadChecklist();
+            document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+                const id = checkbox.id;
+                if (checkedItems[id]) {
+                    checkbox.checked = true;
+                    updateCheckboxState(id, true);
+                }
+            });
+            updateProgress();
+        });
+    </script>
+</head>
+<body class="text-slate-700" id="main-body">
+
+    <!-- Sakura Animation -->
+    <div id="sakura-container" class="sakura-container"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center">
+                        <span class="text-pink-500 text-2xl mr-2">🌸</span>
+                        <span class="font-header text-xl font-bold text-slate-800 tracking-tight">
+                            <span class="lang-en">Japan Trip</span><span class="lang-zh">日本之旅</span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1 items-center">
+                    <a href="flights.html" class="nav-link">
+                        <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                    </a>
+                    <a href="schedule.html" class="nav-link">
+                        <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                    </a>
+                    <a href="budget.html" class="nav-link">
+                        <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                    </a>
+                    <a href="packing.html" class="nav-link">
+                        <span class="lang-en">Packing</span><span class="lang-zh">清单</span>
+                    </a>
+                    <a href="tourist-attraction.html" class="nav-link">
+                        <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                    </a>
+                    <a href="food.html" class="nav-link">
+                        <span class="lang-en">Food</span><span class="lang-zh">美食</span>
+                    </a>
+                    <a href="hotel.html" class="nav-link">
+                        <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                    </a>
+                    <a href="checklist.html" class="nav-link active">
+                        <span class="lang-en">Checklist</span><span class="lang-zh">清单</span>
+                    </a>
+                    <a href="japan_trip_budget.html" class="nav-link">
+                        <span class="lang-en">Split Expenses</span><span class="lang-zh">费用分摊</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition">
+                        🌐 EN / 中
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="toggleLanguage()" class="flex items-center justify-center w-10 h-10 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg border border-slate-300 text-sm transition-all duration-200 active:scale-95">
+                        🌐
+                    </button>
+                    <button id="hamburger-btn" onclick="toggleMobileMenu()" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content space-y-1">
+                <a href="flights.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-plane mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Flights</span><span class="lang-zh">航班</span>
+                </a>
+                <a href="schedule.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-calendar-days mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Itinerary</span><span class="lang-zh">行程</span>
+                </a>
+                <a href="budget.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-yen-sign mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Budget</span><span class="lang-zh">预算</span>
+                </a>
+                <a href="packing.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-suitcase mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Packing</span><span class="lang-zh">行李清单</span>
+                </a>
+                <a href="tourist-attraction.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-camera mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Attractions</span><span class="lang-zh">景点</span>
+                </a>
+                <a href="food.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-utensils mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Food</span><span class="lang-zh">美食</span>
+                </a>
+                <a href="hotel.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-hotel mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Hotels</span><span class="lang-zh">住宿</span>
+                </a>
+                <a href="checklist.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-clipboard-check mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Checklist</span><span class="lang-zh">清单</span>
+                </a>
+                <a href="japan_trip_budget.html" class="mobile-nav-link" onclick="closeMobileMenu()">
+                    <i class="fa-solid fa-calculator mr-3 text-pink-500 w-5"></i>
+                    <span class="lang-en">Split Expenses</span><span class="lang-zh">费用分摊</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="homepage.html" class="back-button no-print" aria-label="Back to Homepage">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12 space-y-12 md:space-y-16 pb-20 md:pb-24">
+        <!-- Header Section -->
+        <section class="text-center animate-fade-in">
+            <div class="flex justify-center mb-4">
+                <div class="p-4 bg-white rounded-2xl shadow-lg">
+                    <i class="fa-solid fa-clipboard-check text-4xl text-pink-500"></i>
+                </div>
+            </div>
+            <h1 class="font-header text-3xl md:text-4xl font-bold text-slate-800 mb-3">
+                <span class="lang-en">Trip Checklist</span><span class="lang-zh">行程清单</span>
+            </h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">
+                <span class="lang-en">Keep track of tickets and reservations for your Japan trip</span>
+                <span class="lang-zh">跟踪日本之旅的门票和预订情况</span>
+            </p>
+        </section>
+
+        <!-- Shinkansen Tickets Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6 p-3 bg-indigo-100 rounded-xl">
+                <div class="p-2 bg-indigo-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-train text-indigo-600 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-indigo-700">
+                    <span class="lang-en">Shinkansen Tickets</span><span class="lang-zh">新干线车票</span>
+                </h2>
+            </div>
+            <div class="space-y-4">
+                <div class="checklist-item glass-card p-4 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <input
+                            type="checkbox"
+                            id="shinkansen-tokyo-osaka"
+                            onclick="handleCheck(this.id)"
+                            class="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer flex-shrink-0"
+                        />
+                        <div class="flex-grow min-w-0">
+                            <label for="shinkansen-tokyo-osaka" class="block font-header text-lg font-bold mb-1 cursor-pointer text-slate-800">
+                                <span class="lang-en">Tokyo → Osaka Shinkansen (Day 4, Mar 21)</span>
+                                <span class="lang-zh">东京 → 大阪新干线 (第4天, 3月21日)</span>
+                            </label>
+                            <p class="text-sm text-slate-600 mb-2">
+                                <span class="lang-en">11 people, ~¥13,870 per person</span>
+                                <span class="lang-zh">11人, 每人约¥13,870</span>
+                            </p>
+                            <a
+                                href="https://www.jr-central.co.jp/en/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center gap-1"
+                            >
+                                <span class="lang-en">Book Tickets</span><span class="lang-zh">预订车票</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attraction Tickets Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6 p-3 bg-green-100 rounded-xl">
+                <div class="p-2 bg-green-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-ticket text-green-600 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-green-700">
+                    <span class="lang-en">Attraction Tickets</span><span class="lang-zh">景点门票</span>
+                </h2>
+            </div>
+            <div class="space-y-4">
+                <div class="checklist-item glass-card p-4 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <input
+                            type="checkbox"
+                            id="usj-tickets"
+                            onclick="handleCheck(this.id)"
+                            class="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer flex-shrink-0"
+                        />
+                        <div class="flex-grow min-w-0">
+                            <label for="usj-tickets" class="block font-header text-lg font-bold mb-1 cursor-pointer text-slate-800">
+                                <span class="lang-en">Universal Studios Japan (USJ) Tickets</span>
+                                <span class="lang-zh">日本环球影城 (USJ) 门票</span>
+                            </label>
+                            <p class="text-sm text-slate-600 mb-2">
+                                <span class="lang-en">Day 6, Mar 23 - 1-Day Studio Pass for 11 people</span>
+                                <span class="lang-zh">第6天, 3月23日 - 11人的1日门票</span>
+                            </p>
+                            <p class="text-xs text-amber-600 bg-amber-50 p-2 rounded mt-2 mb-2">
+                                <i class="fa-solid fa-info-circle mr-1"></i>
+                                <span class="lang-en">Express Pass recommended for some (Mario Kart, Donkey Kong, Flying Dinosaur)</span>
+                                <span class="lang-zh">建议部分人员购买快速通行证 (马力欧卡丁车, 大金刚, 飞行恐龙)</span>
+                            </p>
+                            <a
+                                href="https://www.usj.co.jp/web/en/us"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center gap-1"
+                            >
+                                <span class="lang-en">Buy Tickets</span><span class="lang-zh">购买门票</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-item glass-card p-4 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <input
+                            type="checkbox"
+                            id="umeda-sky-building-tickets"
+                            onclick="handleCheck(this.id)"
+                            class="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer flex-shrink-0"
+                        />
+                        <div class="flex-grow min-w-0">
+                            <label for="umeda-sky-building-tickets" class="block font-header text-lg font-bold mb-1 cursor-pointer text-slate-800">
+                                <span class="lang-en">Umeda Sky Building Observation Deck Tickets</span>
+                                <span class="lang-zh">梅田蓝天大厦展望台门票</span>
+                            </label>
+                            <p class="text-sm text-slate-600 mb-2">
+                                <span class="lang-en">Day 7, Mar 24 - Floating Garden Observatory for 11 people, ~¥1,500 per person</span>
+                                <span class="lang-zh">第7天, 3月24日 - 空中庭园展望台11人, 每人约¥1,500</span>
+                            </p>
+                            <a
+                                href="attractions/umeda-sky-building/umeda-sky-building.html"
+                                class="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center gap-1"
+                            >
+                                <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-item glass-card p-4 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <input
+                            type="checkbox"
+                            id="osaka-aquarium-tickets"
+                            onclick="handleCheck(this.id)"
+                            class="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer flex-shrink-0"
+                        />
+                        <div class="flex-grow min-w-0">
+                            <label for="osaka-aquarium-tickets" class="block font-header text-lg font-bold mb-1 cursor-pointer text-slate-800">
+                                <span class="lang-en">Osaka Aquarium Kaiyukan Tickets</span>
+                                <span class="lang-zh">大阪海游馆门票</span>
+                            </label>
+                            <p class="text-sm text-slate-600 mb-2">
+                                <span class="lang-en">Day 7, Mar 24 - Admission for 11 people, ~¥2,700 per person</span>
+                                <span class="lang-zh">第7天, 3月24日 - 入场门票11人, 每人约¥2,700</span>
+                            </p>
+                            <a
+                                href="attractions/osaka-aquarium/osaka-aquarium.html"
+                                class="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center gap-1"
+                            >
+                                <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurant Reservations Section -->
+        <section class="animate-fade-in">
+            <div class="flex items-center mb-6 p-3 bg-orange-100 rounded-xl">
+                <div class="p-2 bg-orange-100 rounded-xl mr-3">
+                    <i class="fa-solid fa-utensils text-orange-600 text-xl"></i>
+                </div>
+                <h2 class="font-header text-xl sm:text-2xl font-bold text-orange-700">
+                    <span class="lang-en">Restaurant Reservations</span><span class="lang-zh">餐厅预订</span>
+                </h2>
+            </div>
+            <div class="space-y-4">
+                <!-- Ginza Kanimitsu -->
+                <div class="checklist-item glass-card p-4 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <input
+                            type="checkbox"
+                            id="ginza-kanimitsu"
+                            onclick="handleCheck(this.id)"
+                            class="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer flex-shrink-0"
+                        />
+                        <div class="flex-grow min-w-0">
+                            <label for="ginza-kanimitsu" class="block font-header text-lg font-bold mb-1 cursor-pointer text-slate-800">
+                                <span class="lang-en">Ginza Kanimitsu</span><span class="lang-zh">银座蟹みつ</span>
+                            </label>
+                            <p class="text-sm text-blue-600 mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-day text-xs"></i>
+                                <span class="lang-en">Thu, Mar 19 12:00 - Lunch</span>
+                                <span class="lang-zh">3月19日 星期四 12:00 - 午餐</span>
+                            </p>
+                            <p class="text-xs text-slate-500 mb-2">
+                                <i class="fa-solid fa-map-marker-alt mr-1"></i>
+                                <span class="lang-en">Ginza, Tokyo</span><span class="lang-zh">东京银座</span>
+                            </p>
+                            <span class="inline-block text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded mt-2">
+                                <i class="fa-solid fa-exclamation-circle mr-1"></i>
+                                <span class="lang-en">Reservation Required</span><span class="lang-zh">需要预订</span>
+                            </span>
+                            <a
+                                href="restaurants/ginza-kanimitsu/ginza-kanimitsu.html"
+                                class="text-xs text-blue-600 hover:text-blue-800 mt-2 ml-2 inline-flex items-center gap-1"
+                            >
+                                <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tsukada Shabu Shabu -->
+                <div class="checklist-item glass-card p-4 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <input
+                            type="checkbox"
+                            id="tsukada-shabu"
+                            onclick="handleCheck(this.id)"
+                            class="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer flex-shrink-0"
+                        />
+                        <div class="flex-grow min-w-0">
+                            <label for="tsukada-shabu" class="block font-header text-lg font-bold mb-1 cursor-pointer text-slate-800">
+                                <span class="lang-en">Tsukada Shabu Shabu</span><span class="lang-zh">塚田しゃぶしゃぶ</span>
+                            </label>
+                            <p class="text-sm text-blue-600 mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-day text-xs"></i>
+                                <span class="lang-en">Fri, Mar 20 20:00 - Dinner (Graduation Celebration)</span>
+                                <span class="lang-zh">3月20日 星期五 20:00 - 晚餐 (毕业庆功)</span>
+                            </p>
+                            <p class="text-xs text-slate-500 mb-2">
+                                <i class="fa-solid fa-map-marker-alt mr-1"></i>
+                                <span class="lang-en">Shibuya, Tokyo</span><span class="lang-zh">东京涩谷</span>
+                            </p>
+                            <span class="inline-block text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded mt-2">
+                                <i class="fa-solid fa-exclamation-circle mr-1"></i>
+                                <span class="lang-en">Reservation Required</span><span class="lang-zh">需要预订</span>
+                            </span>
+                            <a
+                                href="restaurants/tsukada-shabu/tsukada-shabu.html"
+                                class="text-xs text-blue-600 hover:text-blue-800 mt-2 ml-2 inline-flex items-center gap-1"
+                            >
+                                <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kobe Steak Nick -->
+                <div class="checklist-item glass-card p-4 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <input
+                            type="checkbox"
+                            id="kobe-steak-nick"
+                            onclick="handleCheck(this.id)"
+                            class="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer flex-shrink-0"
+                        />
+                        <div class="flex-grow min-w-0">
+                            <label for="kobe-steak-nick" class="block font-header text-lg font-bold mb-1 cursor-pointer text-slate-800">
+                                <span class="lang-en">Kobe Steak Nick</span><span class="lang-zh">Kobe Steak Nick</span>
+                            </label>
+                            <p class="text-sm text-blue-600 mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-day text-xs"></i>
+                                <span class="lang-en">Sun, Mar 22 12:00 - Lunch</span>
+                                <span class="lang-zh">3月22日 星期日 12:00 - 午餐</span>
+                            </p>
+                            <p class="text-xs text-slate-500 mb-2">
+                                <i class="fa-solid fa-map-marker-alt mr-1"></i>
+                                <span class="lang-en">Kobe, Hyogo</span><span class="lang-zh">兵库县神户</span>
+                            </p>
+                            <span class="inline-block text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded mt-2">
+                                <i class="fa-solid fa-exclamation-circle mr-1"></i>
+                                <span class="lang-en">Reservation Required</span><span class="lang-zh">需要预订</span>
+                            </span>
+                            <a
+                                href="restaurants/kobe-steak-nick/kobe-steak-nick.html"
+                                class="text-xs text-blue-600 hover:text-blue-800 mt-2 ml-2 inline-flex items-center gap-1"
+                            >
+                                <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other confirmed restaurants -->
+                <div class="checklist-item glass-card p-4 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <input
+                            type="checkbox"
+                            id="asakusa-monja"
+                            onclick="handleCheck(this.id)"
+                            class="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer flex-shrink-0"
+                        />
+                        <div class="flex-grow min-w-0">
+                            <label for="asakusa-monja" class="block font-header text-lg font-bold mb-1 cursor-pointer text-slate-800">
+                                <span class="lang-en">Asakusa - Monja Yaki & Okonomiyaki</span><span class="lang-zh">浅草 - 文字烧 & 大阪烧</span>
+                            </label>
+                            <p class="text-sm text-blue-600 mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-day text-xs"></i>
+                                <span class="lang-en">Thu, Mar 19 18:00 - Dinner</span>
+                                <span class="lang-zh">3月19日 星期四 18:00 - 晚餐</span>
+                            </p>
+                            <p class="text-xs text-slate-500 mb-2">
+                                <i class="fa-solid fa-map-marker-alt mr-1"></i>
+                                <span class="lang-en">Asakusa, Tokyo</span><span class="lang-zh">东京浅草</span>
+                            </p>
+                            <a
+                                href="restaurants/asakusa-monja.html"
+                                class="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center gap-1"
+                            >
+                                <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-item glass-card p-4 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <input
+                            type="checkbox"
+                            id="gashoken"
+                            onclick="handleCheck(this.id)"
+                            class="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer flex-shrink-0"
+                        />
+                        <div class="flex-grow min-w-0">
+                            <label for="gashoken" class="block font-header text-lg font-bold mb-1 cursor-pointer text-slate-800">
+                                <span class="lang-en">Gashoken (賀正軒) Sannomiya</span><span class="lang-zh">賀正軒 三宮店</span>
+                            </label>
+                            <p class="text-sm text-blue-600 mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-day text-xs"></i>
+                                <span class="lang-en">Sun, Mar 22 17:30 - Dinner</span>
+                                <span class="lang-zh">3月22日 星期日 17:30 - 晚餐</span>
+                            </p>
+                            <p class="text-xs text-slate-500 mb-2">
+                                <i class="fa-solid fa-map-marker-alt mr-1"></i>
+                                <span class="lang-en">Sannomiya, Kobe</span><span class="lang-zh">神户三宫</span>
+                            </p>
+                            <a
+                                href="restaurants/gashoken/gashoken.html"
+                                class="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center gap-1"
+                            >
+                                <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-item glass-card p-4 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <input
+                            type="checkbox"
+                            id="tsurikichi-shinsekai"
+                            onclick="handleCheck(this.id)"
+                            class="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer flex-shrink-0"
+                        />
+                        <div class="flex-grow min-w-0">
+                            <label for="tsurikichi-shinsekai" class="block font-header text-lg font-bold mb-1 cursor-pointer text-slate-800">
+                                <span class="lang-en">Jumbo Fishing Boat Tsurikichi Osaka Shinsekai</span>
+                                <span class="lang-zh">ジャンボ釣船 つり吉 大阪新世界店</span>
+                            </label>
+                            <p class="text-sm text-blue-600 mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-day text-xs"></i>
+                                <span class="lang-en">Fri, Mar 27 19:00 - Dinner</span>
+                                <span class="lang-zh">3月27日 星期五 19:00 - 晚餐</span>
+                            </p>
+                            <p class="text-xs text-slate-500 mb-2">
+                                <i class="fa-solid fa-map-marker-alt mr-1"></i>
+                                <span class="lang-en">Shinsekai, Osaka</span><span class="lang-zh">大阪新世界</span>
+                            </p>
+                            <a
+                                href="restaurants/tsurikichi-shinsekai/tsurikichi-shinsekai.html"
+                                class="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center gap-1"
+                            >
+                                <span class="lang-en">View Details</span><span class="lang-zh">查看详情</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Summary -->
+        <div class="mt-8 glass-card p-6 rounded-xl border border-slate-200 animate-fade-in">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-header text-xl font-bold text-slate-800">
+                    <span class="lang-en">Progress</span><span class="lang-zh">进度</span>
+                </h3>
+                <span id="progress-text" class="text-2xl font-bold text-pink-600">0 / 10</span>
+            </div>
+            <div class="w-full bg-slate-200 rounded-full h-3">
+                <div
+                    id="progress-bar"
+                    class="bg-gradient-to-r from-pink-500 to-purple-500 h-3 rounded-full transition-all duration-500"
+                    style="width: 0%"
+                ></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

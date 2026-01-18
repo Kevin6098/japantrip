@@ -17,6 +17,7 @@ import AttractionDetailPage from './pages/AttractionDetailPage'
 import Food from './pages/Food'
 import RestaurantDetailPage from './pages/RestaurantDetailPage'
 import TransportationBudget from './pages/TransportationBudget'
+import Checklist from './pages/Checklist'
 
 function AppContent() {
   const { t } = useLanguage()
@@ -41,6 +42,7 @@ function AppContent() {
             <Route path="/transportation-budget" element={<TransportationBudget />} />
             <Route path="/packing" element={<Packing />} />
             <Route path="/hotels" element={<Hotels />} />
+            <Route path="/checklist" element={<Checklist />} />
             <Route path="/split-expenses" element={<BudgetSplitter />} />
             <Route path="/split-expenses/expenses" element={<ExpensesList />} />
             <Route path="/split-expenses/expense/:id" element={<ExpenseDetail />} />

@@ -4,6 +4,7 @@ export const restaurantsData = {
   'pain-maison': {
     id: 'pain-maison',
     title: { en: 'Pain Maison (塩パン屋)', zh: 'Pain Maison (盐面包店)' },
+    genre: { en: 'Bread', zh: '面包' },
     location: { en: 'Tokyo', zh: '东京' },
     city: 'tokyo',
     price: '¥120-¥190',
@@ -44,6 +45,7 @@ export const restaurantsData = {
   'ginza-kanimitsu': {
     id: 'ginza-kanimitsu',
     title: { en: 'Ginza Kanimitsu', zh: '银座蟹みつ' },
+    genre: { en: 'Crab / Kaiseki', zh: '螃蟹 / 怀石料理' },
     location: { en: 'Ginza, Tokyo', zh: '东京银座' },
     city: 'tokyo',
     price: '¥4,600-¥11,000',
@@ -84,6 +86,7 @@ export const restaurantsData = {
   'nakamura-tokichi-ginza': {
     id: 'nakamura-tokichi-ginza',
     title: { en: 'Nakamura Tokichi Ginza', zh: '中村藤吉 银座店' },
+    genre: { en: 'Matcha / Tea', zh: '抹茶 / 茶' },
     location: { en: 'Ginza, Tokyo', zh: '东京银座' },
     city: 'tokyo',
     price: '¥1,000-¥2,000',
@@ -120,6 +123,7 @@ export const restaurantsData = {
   'asakusa-monja': {
     id: 'asakusa-monja',
     title: { en: 'Asakusa - Monja Yaki & Okonomiyaki', zh: '浅草 - 文字烧 & 大阪烧' },
+    genre: { en: 'Monjayaki / Okonomiyaki', zh: '文字烧 / 大阪烧' },
     location: { en: 'Asakusa, Tokyo', zh: '东京浅草' },
     city: 'tokyo',
     price: '¥2,000-¥3,000',
@@ -160,6 +164,7 @@ export const restaurantsData = {
   'ichiran-ramen': {
     id: 'ichiran-ramen',
     title: { en: 'Ichiran Ramen', zh: '一兰拉面' },
+    genre: { en: 'Ramen', zh: '拉面' },
     location: { en: 'Asakusa, Tokyo', zh: '东京浅草' },
     city: 'tokyo',
     price: '¥890-¥1,490',
@@ -197,6 +202,7 @@ export const restaurantsData = {
   'tsukada-shabu': {
     id: 'tsukada-shabu',
     title: { en: 'Tsukada Shabu Shabu', zh: '塚田しゃぶしゃぶ' },
+    genre: { en: 'Shabu Shabu', zh: '涮涮锅' },
     location: { en: 'Shibuya, Tokyo', zh: '东京涩谷' },
     city: 'tokyo',
     price: '¥6,000-¥8,000',
@@ -235,6 +241,7 @@ export const restaurantsData = {
   'afuri-yurakucho': {
     id: 'afuri-yurakucho',
     title: { en: 'Afuri (阿夫利)', zh: '阿夫利' },
+    genre: { en: 'Ramen', zh: '拉面' },
     location: { en: 'Yurakucho, Tokyo', zh: '东京有乐町' },
     city: 'tokyo',
     price: '¥900-¥1,500',
@@ -319,6 +326,7 @@ export const restaurantsData = {
   'kobe-steak-nick': {
     id: 'kobe-steak-nick',
     title: { en: 'Kobe Steak Nick (KOBE STEAK 青斜塔)', zh: 'Kobe Steak Nick (KOBE STEAK 青斜塔)' },
+    genre: { en: 'Kobe Beef / Steak', zh: '神户牛肉 / 牛排' },
     location: { en: 'Kobe, Hyogo', zh: '兵库县神户' },
     city: 'kobe',
     price: '¥6,000-¥7,000',
@@ -360,6 +368,7 @@ export const restaurantsData = {
   'gashoken': {
     id: 'gashoken',
     title: { en: 'Gashoken (賀正軒) Sannomiya', zh: '賀正軒 三宮店' },
+    genre: { en: 'Ramen', zh: '拉面' },
     location: { en: 'Sannomiya, Kobe', zh: '神户三宫' },
     city: 'kobe',
     price: '¥1,100-¥1,880',
@@ -437,6 +446,7 @@ export const restaurantsData = {
   'gion-unagi-kawato': {
     id: 'gion-unagi-kawato',
     title: { en: 'Gion Unagi Kawato (祇园うなぎ 川と)', zh: '祇园うなぎ 川と' },
+    genre: { en: 'Unagi / Eel', zh: '鳗鱼' },
     location: { en: 'Gion, Kyoto', zh: '京都祇园' },
     city: 'kyoto',
     price: '¥5,000-¥6,000',
@@ -474,6 +484,7 @@ export const restaurantsData = {
   'nakamura-tokichi-uji': {
     id: 'nakamura-tokichi-uji',
     title: { en: 'Nakamura Tokichi Honten', zh: '中村藤吉 本店' },
+    genre: { en: 'Matcha / Tea', zh: '抹茶 / 茶' },
     location: { en: 'Uji, Kyoto', zh: '京都宇治' },
     city: 'uji',
     price: '¥2,000-¥3,000',
@@ -513,6 +524,7 @@ export const restaurantsData = {
   'kamameshi-shizuka': {
     id: 'kamameshi-shizuka',
     title: { en: 'Kamameshi Shizuka Kouen-ten (志津香)', zh: '志津香公园店' },
+    genre: { en: 'Kamameshi / Rice Pot', zh: '釜饭' },
     location: { en: 'Nara Park, Nara', zh: '奈良公园，奈良' },
     city: 'nara',
     price: '¥1,000-¥2,000',
@@ -549,6 +561,7 @@ export const restaurantsData = {
   'yamatoen-honten': {
     id: 'yamatoen-honten',
     title: { en: 'Yamatoen Honten (大和园本店)', zh: '大和园本店' },
+    genre: { en: 'Sushi', zh: '寿司' },
     location: { en: 'Nara', zh: '奈良' },
     city: 'nara',
     price: '¥3,000-¥4,000',
@@ -586,6 +599,7 @@ export const restaurantsData = {
   'tsurikichi-shinsekai': {
     id: 'tsurikichi-shinsekai',
     title: { en: 'Jumbo Fishing Boat Tsurikichi Osaka Shinsekai (ジャンボ釣船 つり吉 大阪新世界店)', zh: 'ジャンボ釣船 つり吉 大阪新世界店' },
+    genre: { en: 'Seafood / Izakaya', zh: '海鲜 / 居酒屋' },
     location: { en: 'Shinsekai, Osaka', zh: '大阪新世界' },
     city: 'osaka',
     price: '¥3,000-¥4,000',
@@ -628,5 +642,596 @@ export const restaurantsData = {
     station: { en: 'Dobutsuen-mae Station', zh: '动物园前站' },
     access: { en: 'Walk 5 mins from Dobutsuen-mae Station or near Tsutenkaku', zh: '从动物园前站步行5分钟或靠近通天阁' },
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Tsurikichi+Shinsekai+Osaka',
+  },
+  'kyo-kiyomizu-shigemori': {
+    id: 'kyo-kiyomizu-shigemori',
+    title: { en: 'Kyo-Kiyomizu Shigemori', zh: '京清水しげ森' },
+    genre: { en: 'Noodles', zh: '面条' },
+    location: { en: 'Kiyomizu, Kyoto', zh: '京都清水' },
+    city: 'kyoto',
+    price: '¥1,000-¥2,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://tblg.k-img.com/restaurant/images/Rvw/159834/640x640_rect_159834390.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/198336/69141a1f1e2354f19fb8d31100a14b4e.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/198336/49b2a5e6bfc7178c100158fa1d8f8b40.jpg',
+      'https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzTIQ-3Nyl5eJ6forcju1OMxsPguxc7IlNL2TTfK3IpciYHaQKX9n2tzThxt01xk9QKPqSngRFi7NHsQUG0qIGF4OWVegQyI6K9Cd0DwP4b-unxwjIDe5Woe9skf2UFhkx30wwF=s680-w680-h510',
+    ],
+    about: {
+      en: "Kyo-Kiyomizu Shigemori (京清水しげ森) is a traditional Japanese restaurant located in the historic Kiyomizu area of Kyoto, near the famous Kiyomizu-dera Temple. The restaurant offers authentic Kyoto cuisine and traditional Japanese dining experiences in a beautiful setting that reflects Kyoto's cultural heritage.",
+      zh: '京清水しげ森是一家传统日本餐厅，位于京都历史悠久的清水区，靠近著名的清水寺。该餐厅提供正宗的京都料理和传统日本用餐体验，在反映京都文化遗产的美丽环境中。'
+    },
+    highlights: [
+      { en: 'Historic Kiyomizu Location: Near Kiyomizu-dera Temple in traditional Kyoto setting', zh: '历史悠久的清水位置: 靠近清水寺，传统京都环境' },
+      { en: 'Traditional Kyoto Cuisine: Authentic Japanese dishes with local ingredients', zh: '传统京都料理: 使用当地食材的正宗日本料理' },
+      { en: 'Beautiful Setting: Traditional Japanese restaurant atmosphere', zh: '美丽环境: 传统日本餐厅氛围' },
+      { en: 'Cultural Experience: Experience Kyoto\'s culinary heritage', zh: '文化体验: 体验京都的美食文化遗产' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Located near Kiyomizu-dera Temple - perfect for lunch or dinner after temple visit', zh: '靠近清水寺 - 参观寺庙后享用午餐或晚餐的完美选择' },
+      { en: 'Traditional Kyoto dining experience', zh: '传统京都用餐体验' },
+    ],
+    address: { en: 'Kiyomizu, Higashiyama Ward, Kyoto', zh: '京都府京都市东山区清水' },
+    station: { en: 'Kiyomizu-Gojo Station', zh: '清水五条站' },
+    access: { en: 'Walk from Kiyomizu-dera Temple area', zh: '从清水寺区域步行' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Kyo-Kiyomizu+Shigemori+Kyoto',
+  },
+  'issun-boushi': {
+    id: 'issun-boushi',
+    title: { en: 'Japanese Noodle ISSUN BOUSHI', zh: '一吋法師' },
+    genre: { en: 'Noodles', zh: '面条' },
+    location: { en: 'Kyoto', zh: '京都' },
+    city: 'kyoto',
+    price: '¥1,000-¥2,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/171350/05262ee2cb53bc7449203cf5c5fb2495.jpg?token=e592e23&api=v2',
+      'https://tblg.k-img.com/restaurant/images/Rvw/233151/640x640_rect_ddf7e89d7108c09d64fd93be6ae90937.jpg',
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/171350/ed18ebe0d2502aae229ff3172da0aff2.jpg?token=b5ac7cb&api=v2',
+      'https://rimage.savorjapan.com/svj/image/0031530607/photo/0031530607PzjwDwxCpdMxcTPYf_1024x576d80.jpg?t=1748988394',
+      'https://tblg.k-img.com/restaurant/images/Rvw/233151/640x640_rect_6837ac64a2be8056c74b6fae8012ead0.jpg',
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/171350/a45ad64275c2f27c21c7cb619f937b25.jpg?token=4724a68&api=v2',
+    ],
+    about: {
+      en: "ISSUN BOUSHI (一吋法師) is a traditional Japanese noodle restaurant in Kyoto, specializing in authentic Japanese noodles. The restaurant offers a variety of traditional noodle dishes prepared with fresh ingredients, providing visitors with an authentic taste of Kyoto's noodle cuisine in a traditional setting.",
+      zh: '一吋法師是京都一家传统日本面食餐厅，专门提供正宗的日本面条。该餐厅提供各种使用新鲜食材制作的传统面食，在传统环境中为游客提供正宗的京都面食体验。'
+    },
+    highlights: [
+      { en: 'Traditional Japanese Noodles: Authentic noodle dishes with fresh ingredients', zh: '传统日本面条: 使用新鲜食材的正宗面食' },
+      { en: 'Traditional Setting: Authentic Japanese restaurant atmosphere', zh: '传统环境: 正宗的日本餐厅氛围' },
+      { en: 'Kyoto Location: Experience Kyoto\'s noodle cuisine culture', zh: '京都位置: 体验京都的面食文化' },
+      { en: 'Fresh Ingredients: High-quality noodles and traditional preparation', zh: '新鲜食材: 优质面条和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Traditional Kyoto noodle dining experience', zh: '传统京都面食用餐体验' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Kyoto', zh: '京都' },
+    station: { en: 'Kyoto Area', zh: '京都区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=ISSUN+BOUSHI+Kyoto',
+  },
+  'gokago-matcha': {
+    id: 'gokago-matcha',
+    title: { en: 'Gokago Matcha Kyoto', zh: 'ごかご 抹茶 京都' },
+    genre: { en: 'Matcha / Tea', zh: '抹茶 / 茶' },
+    location: { en: 'Kyoto', zh: '京都' },
+    city: 'kyoto',
+    price: '¥500-¥1,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR22lcZolROAGz-5kCkA_mywKiNID2-fM9Hpg&s',
+      'https://tblg.k-img.com/restaurant/images/Rvw/207051/640x640_rect_77f40456a965dfe0b75b7996915bc715.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDZrzM9A-S2qBjjkZvTTxpupZ6ON1z8zVUyQ&s',
+      'https://i0.wp.com/anniewearsit.com/wp-content/uploads/2024/12/Annie_Fairfax_Japan_0916-scaled.jpg?resize=1500%2C2248&ssl=1',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqwia_lImeXDO5-FqA8RBYUHSNNsahXiqBEQ&s',
+    ],
+    about: {
+      en: "Gokago Matcha Kyoto (ごかご 抹茶 京都) is a traditional matcha tea house and cafe in Kyoto, specializing in authentic matcha and Japanese tea experiences. The cafe offers traditional matcha drinks, matcha desserts, and tea ceremonies in a traditional Japanese setting, providing visitors with an authentic taste of Kyoto's tea culture.",
+      zh: 'ごかご 抹茶 京都是京都一家传统抹茶茶屋和咖啡厅，专门提供正宗的抹茶和日本茶体验。该咖啡厅提供传统抹茶饮品、抹茶甜点和茶道体验，在传统日式环境中为游客提供正宗的京都茶文化体验。'
+    },
+    highlights: [
+      { en: 'Traditional Matcha Experience: Authentic matcha tea and Japanese tea culture', zh: '传统抹茶体验: 正宗的抹茶茶和日本茶文化' },
+      { en: 'Matcha Desserts: Traditional matcha sweets and desserts', zh: '抹茶甜点: 传统抹茶甜点和甜品' },
+      { en: 'Traditional Setting: Authentic Japanese tea house atmosphere', zh: '传统环境: 正宗的日本茶屋氛围' },
+      { en: 'Kyoto Tea Culture: Experience Kyoto\'s traditional tea ceremony culture', zh: '京都茶文化: 体验京都的传统茶道文化' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Traditional Kyoto matcha and tea experience', zh: '传统京都抹茶和茶体验' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Kyoto', zh: '京都' },
+    station: { en: 'Kyoto Area', zh: '京都区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Gokago+Matcha+Kyoto',
+  },
+  'shinsekai-kushikatsu-ittoku': {
+    id: 'shinsekai-kushikatsu-ittoku',
+    title: { en: 'Shinsekai Kushikatsu Ittoku, Dotonbori Main Store', zh: '新世界串かつ 一徳 道顿堀本店' },
+    genre: { en: 'Kushikatsu', zh: '串炸' },
+    location: { en: 'Dotonbori, Osaka', zh: '大阪道顿堀' },
+    city: 'osaka',
+    price: '¥3,000-¥4,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5H3gv3CTQh2Phrejr24Idl-zwgjdFyj-KWQ&s',
+      'https://lh5.googleusercontent.com/proxy/PBgbuAxswbDjYO-_q0qxmDrt4A7-EjSo3gWqpoBgoeKFHw84S4o13BXfFxH8EFESvBkGtk70x9RKHP3p7QV8l4TaCgB3-Xf_9Vg',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/3c/65/f1/caption.jpg?w=900&h=500&s=1',
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/327301/b1f22cbe224e8fabaf507ce8b812eafa.jpg?token=1474a8b&api=v2',
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/327324/6d13647720e00c5283b948efa80ebdbc.jpg?token=98531ae&api=v2',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/cc/29/02/caption.jpg?w=1200&h=1200&s=1',
+    ],
+    about: {
+      en: "Shinsekai Kushikatsu Ittoku, Dotonbori Main Store (新世界串かつ 一徳 道顿堀本店) is a famous kushikatsu (deep-fried skewered food) restaurant in Osaka's Dotonbori area. Kushikatsu is one of Osaka's signature foods, and this restaurant offers authentic kushikatsu with a variety of ingredients. The restaurant provides an authentic Osaka dining experience with crispy, freshly fried skewers served with special dipping sauce.",
+      zh: '新世界串かつ 一徳 道顿堀本店是大阪道顿堀地区著名的串炸（油炸串烧）餐厅。串炸是大阪的特色美食之一，这家餐厅提供正宗的串炸，有多种食材选择。该餐厅提供正宗的大阪用餐体验，配有酥脆的新鲜油炸串，配以特色蘸酱。'
+    },
+    highlights: [
+      { en: 'Authentic Kushikatsu: Osaka\'s famous deep-fried skewered food', zh: '正宗串炸: 大阪著名的油炸串烧美食' },
+      { en: 'Dotonbori Location: Located in Osaka\'s famous entertainment and food district', zh: '道顿堀位置: 位于大阪著名的娱乐和美食区' },
+      { en: 'Variety of Ingredients: Multiple skewer options with different ingredients', zh: '多种食材: 多种不同食材的串烧选择' },
+      { en: 'Traditional Osaka Experience: Authentic Osaka street food culture', zh: '传统大阪体验: 正宗的大阪街头美食文化' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Traditional Osaka kushikatsu dining experience', zh: '传统大阪串炸用餐体验' },
+      { en: 'Perfect for lunch or dinner in Dotonbori area', zh: '在道顿堀地区享用午餐或晚餐的完美选择' },
+      { en: 'Try the special dipping sauce - but remember: no double-dipping!', zh: '尝试特色蘸酱 - 但记住：不要二次蘸酱！' },
+    ],
+    address: { en: 'Dotonbori, Osaka', zh: '大阪道顿堀' },
+    station: { en: 'Namba Station', zh: '难波站' },
+    access: { en: 'Located in Dotonbori area, accessible from Namba Station', zh: '位于道顿堀地区，从难波站可到达' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Shinsekai+Kushikatsu+Ittoku+Dotonbori+Osaka',
+  },
+  'gion-gozu': {
+    id: 'gion-gozu',
+    title: { en: 'GION GOZU 本店', zh: 'GION GOZU 本店' },
+    genre: { en: 'Tempura', zh: '天妇罗' },
+    location: { en: 'Gion, Kyoto', zh: '京都祇园' },
+    city: 'kyoto',
+    price: '¥1,000-¥2,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://tblg.k-img.com/restaurant/images/Rvw/242857/640x640_rect_f1362a9da643aa2734d2cda980e8acc5.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/304432/640x640_rect_fdbac83fd3f2a5e994d31db90d5e3772.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/318738/640x640_rect_531cb8822f44398053e238f986359933.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZmKAiuuXeXv727m-9-gc9GMwi2YyklngW0Q&s',
+    ],
+    about: {
+      en: "GION GOZU 本店 is a traditional Japanese restaurant located in the historic Gion district of Kyoto. The restaurant offers authentic Kyoto cuisine and traditional Japanese dining experiences in a beautiful setting that reflects Kyoto's cultural heritage. Located in one of Kyoto's most famous geisha districts, GION GOZU provides visitors with an authentic taste of traditional Kyoto dining culture.",
+      zh: 'GION GOZU 本店是一家位于京都历史悠久的祇园区的传统日本餐厅。该餐厅在反映京都文化遗产的美丽环境中提供正宗的京都料理和传统日本用餐体验。位于京都最著名的艺伎区之一，GION GOZU 为游客提供正宗的传统京都用餐文化体验。'
+    },
+    highlights: [
+      { en: 'Historic Gion Location: Located in Kyoto\'s famous geisha district', zh: '历史悠久的祇园位置: 位于京都著名的艺伎区' },
+      { en: 'Traditional Kyoto Cuisine: Authentic Japanese dishes with local ingredients', zh: '传统京都料理: 使用当地食材的正宗日本料理' },
+      { en: 'Beautiful Setting: Traditional Japanese restaurant atmosphere', zh: '美丽环境: 传统日本餐厅氛围' },
+      { en: 'Cultural Experience: Experience Kyoto\'s culinary heritage in Gion', zh: '文化体验: 在祇园体验京都的美食文化遗产' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Located in Gion district - perfect for lunch or dinner after exploring the area', zh: '位于祇园区 - 探索该地区后享用午餐或晚餐的完美选择' },
+      { en: 'Traditional Kyoto dining experience', zh: '传统京都用餐体验' },
+    ],
+    address: { en: 'Gion, Higashiyama Ward, Kyoto', zh: '京都府京都市东山区祇园' },
+    station: { en: 'Gion-Shijo Station', zh: '祇园四条站' },
+    access: { en: 'Located in Gion area, accessible from Gion-Shijo Station', zh: '位于祇园地区，从祇园四条站可到达' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=GION+GOZU+Gion+Kyoto',
+  },
+  'ichiren-kyoto': {
+    id: 'ichiren-kyoto',
+    title: { en: 'ichiren KYOTO', zh: 'ichiren 京都' },
+    genre: { en: 'Noodles', zh: '面条' },
+    location: { en: 'Kyoto', zh: '京都' },
+    city: 'kyoto',
+    price: '¥1,000-¥2,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://tblg.k-img.com/restaurant/images/Rvw/229060/00575f1ad820a875d2e73752cd69cb67.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY9dF3MdYyORHR-cllienMN5IzIPv_CJl_yg&s',
+      'https://tblg.k-img.com/restaurant/images/Rvw/235900/640x640_rect_16c6cbc0e30cb670c6f3da2cc51e37a2.jpg',
+      'https://ichiren-kyoto.com/wp-content/uploads/2022/05/sara接写2-1024x683.jpg',
+    ],
+    about: {
+      en: "ichiren KYOTO is a traditional Japanese noodle restaurant in Kyoto, specializing in authentic Japanese noodles. The restaurant offers a variety of traditional noodle dishes prepared with fresh ingredients, providing visitors with an authentic taste of Kyoto's noodle cuisine in a traditional setting.",
+      zh: 'ichiren 京都是京都一家传统日本面食餐厅，专门提供正宗的日本面条。该餐厅提供各种使用新鲜食材制作的传统面食，在传统环境中为游客提供正宗的京都面食体验。'
+    },
+    highlights: [
+      { en: 'Traditional Japanese Noodles: Authentic noodle dishes with fresh ingredients', zh: '传统日本面条: 使用新鲜食材的正宗面食' },
+      { en: 'Traditional Setting: Authentic Japanese restaurant atmosphere', zh: '传统环境: 正宗的日本餐厅氛围' },
+      { en: 'Kyoto Location: Experience Kyoto\'s noodle cuisine culture', zh: '京都位置: 体验京都的面食文化' },
+      { en: 'Fresh Ingredients: High-quality noodles and traditional preparation', zh: '新鲜食材: 优质面条和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Traditional Kyoto noodle dining experience', zh: '传统京都面食用餐体验' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Kyoto', zh: '京都' },
+    station: { en: 'Kyoto Area', zh: '京都区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=ichiren+KYOTO',
+  },
+  'salmon-noodle-kyoto': {
+    id: 'salmon-noodle-kyoto',
+    title: { en: 'Salmon Noodle Kyoto', zh: 'Salmon Noodle 京都' },
+    genre: { en: 'Noodles', zh: '面条' },
+    location: { en: 'Kyoto', zh: '京都' },
+    city: 'kyoto',
+    price: '¥1,000-¥2,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://lh3.googleusercontent.com/p/AF1QipOUnGoLEuSnr86GpBcc6ML5QXDYAyt9mBUbCP8l=w289-h312-n-k-no',
+      'https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzTMh_iaN2DueEP1BHWDZG1ffd08ynmeD3EO3msNfJcTD6mGujCV3K2AoIzNmHGNxzEDnuDkLylF93tj80gtZ9uS9ERxQUHI_q95snyaNl849babuEoD_ZFKr_lu3C5JDVLhL9Oyldj1dE=s680-w680-h510',
+      'https://lh3.googleusercontent.com/p/AF1QipMvh8RFPuRSKkRTVRWrEz0uZx0bunb13Gx4hW4m=s680-w680-h510',
+      'https://tblg.k-img.com/resize/640x360c/restaurant/images/Rvw/229336/5b7c7e00769b3b5000b765df3e033715.jpg?token=4606ee6&api=v2',
+      'https://tblg.k-img.com/restaurant/images/Rvw/279277/640x640_rect_b7865388b5d317b2b80b72c426eb0a55.jpg',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/80/99/36/caption.jpg?w=800&h=500&s=1',
+    ],
+    about: {
+      en: "Salmon Noodle Kyoto is a traditional Japanese noodle restaurant in Kyoto, specializing in salmon-based noodle dishes. The restaurant offers a variety of noodle dishes featuring fresh salmon, providing visitors with an authentic taste of Kyoto's noodle cuisine with a focus on salmon ingredients in a traditional setting.",
+      zh: 'Salmon Noodle 京都是京都一家传统日本面食餐厅，专门提供以鲑鱼为主的面食。该餐厅提供各种以新鲜鲑鱼为特色的面食，在传统环境中为游客提供以鲑鱼食材为主的正宗京都面食体验。'
+    },
+    highlights: [
+      { en: 'Salmon Specialties: Authentic noodle dishes featuring fresh salmon', zh: '鲑鱼特色: 以新鲜鲑鱼为特色的正宗面食' },
+      { en: 'Traditional Setting: Authentic Japanese restaurant atmosphere', zh: '传统环境: 正宗的日本餐厅氛围' },
+      { en: 'Kyoto Location: Experience Kyoto\'s noodle cuisine culture', zh: '京都位置: 体验京都的面食文化' },
+      { en: 'Fresh Ingredients: High-quality salmon and traditional preparation', zh: '新鲜食材: 优质鲑鱼和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Traditional Kyoto noodle dining experience with salmon focus', zh: '以鲑鱼为主的传统京都面食用餐体验' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Kyoto', zh: '京都' },
+    station: { en: 'Kyoto Area', zh: '京都区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Salmon+Noodle+Kyoto',
+  },
+  'masaichi': {
+    id: 'masaichi',
+    title: { en: 'Masaichi', zh: '一念坂 まさ壱' },
+    genre: { en: 'Traditional Japanese', zh: '传统日本料理' },
+    location: { en: 'Kyoto', zh: '京都' },
+    city: 'kyoto',
+    price: '¥2,000-¥3,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://mindtrip.ai/cdn-cgi/image/format=webp,w=720/https://tcdn.mindtrip.ai/images/854845/1a6r1zi.png',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/6a/b7/5e/photo0jpg.jpg?w=900&h=500&s=1',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEcB1bG2c8_aojY3v4p46nbQuOim1qBePPhg&s',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/b9/4b/71/kyoto-dinner.jpg?w=400&h=300&s=1',
+      'https://mindtrip.ai/cdn-cgi/image/format=webp,w=720/https://tcdn.mindtrip.ai/images/569948/1uz65t5.png',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYXcidd7mpULnFWV9x_nETWCNI-PhwIptsyg&s',
+    ],
+    about: {
+      en: "Masaichi (一念坂 まさ壱) is a traditional Japanese restaurant in Kyoto, specializing in authentic Japanese cuisine. The restaurant offers a variety of traditional dishes prepared with fresh ingredients, providing visitors with an authentic taste of Kyoto's culinary culture in a traditional setting.",
+      zh: '一念坂 まさ壱是京都一家传统日本餐厅，专门提供正宗的日本料理。该餐厅提供各种使用新鲜食材制作的传统菜肴，在传统环境中为游客提供正宗的京都美食文化体验。'
+    },
+    highlights: [
+      { en: 'Traditional Cuisine: Authentic Japanese dishes with Kyoto specialties', zh: '传统料理: 具有京都特色的正宗日本菜肴' },
+      { en: 'Traditional Setting: Authentic Japanese restaurant atmosphere', zh: '传统环境: 正宗的日本餐厅氛围' },
+      { en: 'Kyoto Location: Experience Kyoto\'s culinary culture', zh: '京都位置: 体验京都的美食文化' },
+      { en: 'Fresh Ingredients: High-quality ingredients and traditional preparation', zh: '新鲜食材: 优质食材和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Traditional Kyoto dining experience', zh: '传统京都用餐体验' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Kyoto', zh: '京都' },
+    station: { en: 'Kyoto Area', zh: '京都区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Masaichi+Kyoto',
+  },
+  'naniwa-omurice': {
+    id: 'naniwa-omurice',
+    title: { en: 'Naniwa Omurice', zh: '浪花オムライス' },
+    genre: { en: 'Omurice', zh: '蛋包饭' },
+    location: { en: 'Dotonbori, Osaka', zh: '大阪道顿堀' },
+    city: 'osaka',
+    price: '¥2,000-¥3,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://tblg.k-img.com/restaurant/images/Rvw/140414/640x640_rect_dc55e9e8d8df63b1cb44b35c8d0ddd47.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/18009/640x640_rect_18009572.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/206692/640x640_rect_acc08234a8cf2c69b981c5e6635e6873.jpg',
+      'https://ximg.retty.me/crop/s400x400/q80/das/-/retty/img_repo/2l/01/32453954.jpg',
+      'https://stat.ameba.jp/user_images/20220903/08/eririnko5842/2a/2a/j/o1080144015169402552.jpg',
+    ],
+    about: {
+      en: "Naniwa Omurice (浪花オムライス) is a popular Japanese restaurant in Osaka, specializing in omurice (omelet rice) dishes. The restaurant offers a variety of omurice dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's omurice cuisine in a welcoming setting.",
+      zh: '浪花オムライス是大阪一家受欢迎的日本餐厅，专门提供蛋包饭料理。该餐厅提供各种使用新鲜食材制作的蛋包饭，在温馨环境中为游客提供正宗的大阪蛋包饭体验。'
+    },
+    highlights: [
+      { en: 'Omurice Specialties: Authentic Japanese omurice (omelet rice) dishes', zh: '蛋包饭特色: 正宗的日本蛋包饭料理' },
+      { en: 'Osaka Style: Traditional Osaka omurice preparation', zh: '大阪风格: 传统大阪蛋包饭制作方法' },
+      { en: 'Popular Restaurant: Well-known for omurice in Osaka', zh: '热门餐厅: 以蛋包饭闻名于大阪' },
+      { en: 'Fresh Ingredients: High-quality ingredients and traditional preparation', zh: '新鲜食材: 优质食材和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Popular spot, may have queues', zh: '热门地点，可能需要排队' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Osaka', zh: '大阪' },
+    station: { en: 'Osaka Area', zh: '大阪区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Naniwa+Omurice+Osaka',
+  },
+  'ajinoya-honten': {
+    id: 'ajinoya-honten',
+    title: { en: 'Ajinoya Honten', zh: '味乃家 本店' },
+    genre: { en: 'Okonomiyaki', zh: '大阪烧' },
+    location: { en: 'Dotonbori, Osaka', zh: '大阪道顿堀' },
+    city: 'osaka',
+    price: '¥3,000-¥4,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://img.rurubu.jp/img_srw/andmore/images/0000373310/wKJDbtUBS7FrF9NDJiup5ujRvVtnWIZGLGmZLrUP.jpeg',
+      'https://ajinoya-okonomiyaki.com/img/toppage/slide/2001.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/152803/640x640_rect_ccdcf3f8a3c1faa2611dfd1f8d9d63b3.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/74622/640x640_rect_74622123.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/74622/640x640_rect_74622154.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/74622/640x640_rect_74622149.jpg',
+    ],
+    about: {
+      en: "Ajinoya Honten (味乃家 本店) is a famous okonomiyaki restaurant in Osaka, specializing in traditional Osaka-style okonomiyaki (savory pancake). The restaurant offers a variety of okonomiyaki dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's okonomiyaki cuisine in a traditional setting.",
+      zh: '味乃家 本店是大阪一家著名的大阪烧餐厅，专门提供传统大阪风格的大阪烧（日式煎饼）。该餐厅提供各种使用新鲜食材制作的大阪烧，在传统环境中为游客提供正宗的大阪烧体验。'
+    },
+    highlights: [
+      { en: 'Okonomiyaki Specialties: Authentic Osaka-style okonomiyaki dishes', zh: '大阪烧特色: 正宗大阪风格的大阪烧料理' },
+      { en: 'Traditional Setting: Authentic Japanese restaurant atmosphere', zh: '传统环境: 正宗的日本餐厅氛围' },
+      { en: 'Osaka Location: Experience Osaka\'s okonomiyaki culture', zh: '大阪位置: 体验大阪的大阪烧文化' },
+      { en: 'Fresh Ingredients: High-quality ingredients and traditional preparation', zh: '新鲜食材: 优质食材和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Popular spot, may have queues', zh: '热门地点，可能需要排队' },
+      { en: 'Traditional Osaka okonomiyaki dining experience', zh: '传统大阪烧用餐体验' },
+    ],
+    address: { en: 'Osaka', zh: '大阪' },
+    station: { en: 'Osaka Area', zh: '大阪区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Ajinoya+Honten+Osaka',
+  },
+  'ganso-5cm-katsudon': {
+    id: 'ganso-5cm-katsudon',
+    title: { en: 'Katsudon Kiyomatsu', zh: 'カツ丼 きよまつ 元祖5センチかつ丼 大阪とんかつ （旧店名 ちよ松 道頓堀本店)' },
+    genre: { en: 'Tonkatsu / Katsudon', zh: '猪排 / 猪排丼' },
+    location: { en: 'Dotonbori, Osaka', zh: '大阪道顿堀' },
+    city: 'osaka',
+    price: '¥1,000-¥2,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://tblg.k-img.com/restaurant/images/Rvw/322671/640x640_rect_31fe23dfd89114d6e12fd37e4ae17c21.jpg',
+      'https://img01.jalannews.jp/img/2024/01/20240126_chiyomatu_020-670x443.jpg',
+      'https://osakatonkatsu.com/wp-content/uploads/P1170363_2-320x320.jpg?v=081942339',
+      'https://osakatonkatsu.com/wp-content/uploads/img-katsusand01_2-800x786.jpg.webp',
+      'https://img01.jalannews.jp/img/2024/01/20240126_chiyomatu_008.jpg',
+    ],
+    about: {
+      en: "Ganso 5 cm Katsudon Osaka Tonkatsu (元祖5センチかつ丼 大阪とんかつ) is a famous tonkatsu restaurant in Osaka, specializing in thick 5cm katsudon (pork cutlet rice bowl). The restaurant offers a variety of tonkatsu dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's tonkatsu cuisine in a traditional setting.",
+      zh: '元祖5センチかつ丼 大阪とんかつ是大阪一家著名的猪排餐厅，专门提供厚达5厘米的猪排丼。该餐厅提供各种使用新鲜食材制作的猪排料理，在传统环境中为游客提供正宗的大阪猪排体验。'
+    },
+    highlights: [
+      { en: '5cm Katsudon: Famous thick pork cutlet rice bowl specialty', zh: '5厘米猪排丼: 著名的厚猪排盖饭特色' },
+      { en: 'Traditional Setting: Authentic Japanese restaurant atmosphere', zh: '传统环境: 正宗的日本餐厅氛围' },
+      { en: 'Osaka Location: Experience Osaka\'s tonkatsu culture', zh: '大阪位置: 体验大阪的猪排文化' },
+      { en: 'Fresh Ingredients: High-quality ingredients and traditional preparation', zh: '新鲜食材: 优质食材和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Popular spot, may have queues', zh: '热门地点，可能需要排队' },
+      { en: 'Traditional Osaka tonkatsu dining experience', zh: '传统大阪猪排用餐体验' },
+    ],
+    address: { en: 'Osaka', zh: '大阪' },
+    station: { en: 'Osaka Area', zh: '大阪区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Ganso+5+cm+Katsudon+Osaka+Tonkatsu',
+  },
+  'dotonbori-kukuru': {
+    id: 'dotonbori-kukuru',
+    title: { en: 'Dotonbori Kukuru', zh: '道顿堀 くくる' },
+    genre: { en: 'Takoyaki', zh: '章鱼烧' },
+    location: { en: 'Dotonbori, Osaka', zh: '大阪道顿堀' },
+    city: 'osaka',
+    price: '¥500-¥1,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwmTEx6kU8z7QkrmxwCTsyWqPM1VFL1iLE0v4F8JhBQ4lsxlkQJ77PMEsLbB2AG_SRtgucmnhb0lwWOpmlG4TSMaBhFC9bIwoE1y5HCAXTnKbCoN1HRSaCieO5UEQULga9hLbWYdoPU2w=s680-w680-h510',
+      'https://lh3.googleusercontent.com/p/AF1QipOYtGAudY7aPxTU4yb04TIpzbMZQMHcQ7RXej3P=s680-w680-h510',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1IMpJOar8-pOoJwLj2_X5PaQzJU0Dp4lrPA&s',
+      'https://tblg.k-img.com/restaurant/images/Rvw/324838/640x640_rect_14a8fa53314e3e6115eb74738ad24194.jpg',
+    ],
+    about: {
+      en: "Dotonbori Kukuru (道顿堀 くくる) is a popular takoyaki restaurant in Osaka's Dotonbori area, specializing in traditional takoyaki (octopus balls). The restaurant offers a variety of takoyaki dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's famous takoyaki cuisine in a vibrant setting.",
+      zh: '道顿堀 くくる是大阪道顿堀地区一家受欢迎的章鱼烧餐厅，专门提供传统章鱼烧。该餐厅提供各种使用新鲜食材制作的章鱼烧，在充满活力的环境中为游客提供正宗的大阪章鱼烧体验。'
+    },
+    highlights: [
+      { en: 'Takoyaki Specialties: Authentic Osaka-style takoyaki (octopus balls)', zh: '章鱼烧特色: 正宗大阪风格的章鱼烧' },
+      { en: 'Dotonbori Location: Iconic location in Osaka\'s food district', zh: '道顿堀位置: 大阪美食区的标志性地点' },
+      { en: 'Traditional Setting: Authentic Japanese street food experience', zh: '传统环境: 正宗的日本街头美食体验' },
+      { en: 'Fresh Ingredients: High-quality ingredients and traditional preparation', zh: '新鲜食材: 优质食材和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Popular spot, may have queues', zh: '热门地点，可能需要排队' },
+      { en: 'Great for a quick snack while exploring Dotonbori', zh: '在探索道顿堀时适合快速享用的小食' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Dotonbori, Osaka', zh: '大阪道顿堀' },
+    station: { en: 'Dotonbori Area', zh: '道顿堀区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Dotonbori+Kukuru+Osaka',
+  },
+  'mugen-ramen': {
+    id: 'mugen-ramen',
+    title: { en: 'Mugen Ramen', zh: '無限拉面' },
+    genre: { en: 'Ramen', zh: '拉面' },
+    location: { en: 'Namba, Osaka', zh: '大阪难波' },
+    city: 'osaka',
+    price: '¥1,000-¥2,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://www.afoodieworld.com/wp-content/uploads/2025/07/Osakas-famed-beef-ramen-chain-Mugen-Ramen-opens-their-first-HK-store-in-Wan-Chai.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/300441/640x640_rect_6a8332a01814b6fa320c3c97097f2f2d.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/302828/640x640_rect_734113ef0114e2b6545c554f0f58e91c.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/220421/640x640_rect_b1a62d0a1ad53ab04673a6d47646ad71.jpg',
+    ],
+    about: {
+      en: "Mugen Ramen (無限拉面) is a famous beef ramen chain in Osaka's Namba area, specializing in rich beef-based ramen. The restaurant offers a variety of ramen dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's famous beef ramen cuisine in a welcoming setting.",
+      zh: '無限拉面是大阪难波地区一家著名的牛肉拉面连锁店，专门提供浓郁的牛肉拉面。该餐厅提供各种使用新鲜食材制作的拉面，在温馨环境中为游客提供正宗的大阪牛肉拉面体验。'
+    },
+    highlights: [
+      { en: 'Beef Ramen Specialties: Famous beef-based ramen dishes', zh: '牛肉拉面特色: 著名的牛肉拉面料理' },
+      { en: 'Namba Location: Located in Osaka\'s vibrant Namba area', zh: '难波位置: 位于大阪充满活力的难波地区' },
+      { en: 'Popular Chain: Well-known ramen chain in Osaka', zh: '热门连锁: 大阪知名的拉面连锁店' },
+      { en: 'Fresh Ingredients: High-quality ingredients and traditional preparation', zh: '新鲜食材: 优质食材和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Popular spot, may have queues', zh: '热门地点，可能需要排队' },
+      { en: 'Great for beef ramen lovers', zh: '非常适合牛肉拉面爱好者' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Namba, Osaka', zh: '大阪难波' },
+    station: { en: 'Namba Station Area', zh: '难波站区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Mugen+Ramen+Namba+Osaka',
+  },
+  'oden-no-den-maki-sennichimae': {
+    id: 'oden-no-den-maki-sennichimae',
+    title: { en: 'Oden no den Maki Sennichimae', zh: 'おでんの店 まき 千日前店' },
+    genre: { en: 'Oden', zh: '关东煮' },
+    location: { en: 'Shinsaibashi, Osaka', zh: '大阪心斋桥' },
+    city: 'osaka',
+    price: '¥1,000-¥2,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://tblg.k-img.com/restaurant/images/Rvw/292715/640x640_rect_36272d9076069cac9cee7baaff1e15d0.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/79563/640x640_rect_79563023.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/292715/640x640_rect_2516044e70e6aca4e4efadfdd50b29ba.jpg',
+      'https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxsvYMlZa52vukNV6AA_9XbUiEKY3XdOK80_qW_WhSJgKW2Yt323YlAXfOzCII2HDKrbH1U5_wwb3zP_RIIqCOXwcKhgZqrRbdKBoExauLrichrdCujWbTRadVNgnu-fCZrGOo=s680-w680-h510',
+    ],
+    about: {
+      en: "Oden no den Maki Sennichimae (おでんの店 まき 千日前店) is a popular oden restaurant in Osaka's Shinsaibashi area, specializing in traditional Japanese oden (simmered dishes). The restaurant offers a variety of oden dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's oden cuisine in a welcoming setting.",
+      zh: 'おでんの店 まき 千日前店是大阪心斋桥地区一家受欢迎的关东煮餐厅，专门提供传统日式关东煮（炖煮料理）。该餐厅提供各种使用新鲜食材制作的关东煮，在温馨环境中为游客提供正宗的大阪关东煮体验。'
+    },
+    highlights: [
+      { en: 'Oden Specialties: Authentic Japanese oden (simmered dishes)', zh: '关东煮特色: 正宗的日式关东煮（炖煮料理）' },
+      { en: 'Shinsaibashi Location: Located in Osaka\'s vibrant Shinsaibashi area', zh: '心斋桥位置: 位于大阪充满活力的心斋桥地区' },
+      { en: 'Traditional Setting: Authentic Japanese restaurant atmosphere', zh: '传统环境: 正宗的日本餐厅氛围' },
+      { en: 'Fresh Ingredients: High-quality ingredients and traditional preparation', zh: '新鲜食材: 优质食材和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Reservations recommended', zh: '建议预订' },
+      { en: 'Popular spot, may have queues', zh: '热门地点，可能需要排队' },
+      { en: 'Traditional Osaka oden dining experience', zh: '传统大阪关东煮用餐体验' },
+    ],
+    address: { en: 'Shinsaibashi, Osaka', zh: '大阪心斋桥' },
+    station: { en: 'Shinsaibashi Station Area', zh: '心斋桥站区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Oden+no+den+Maki+Sennichimae+Shinsaibashi+Osaka',
+  },
+  'tsukemen-suzume': {
+    id: 'tsukemen-suzume',
+    title: { en: 'Tsukemen Suzume', zh: 'つけ麺 雀' },
+    genre: { en: 'Tsukemen', zh: '蘸面' },
+    location: { en: 'Shinsaibashi, Osaka', zh: '大阪心斋桥' },
+    city: 'osaka',
+    price: '¥1,000-¥2,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://tblg.k-img.com/restaurant/images/Rvw/222746/640x640_rect_05e93a20bfa3f0f5cbd59fce45eb7f43.jpg',
+      'https://tblg.k-img.com/restaurant/images/Rvw/217844/640x640_rect_789e2e6a14d2a40d28626306e1f9d3ce.jpg',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/ca/1a/49/photo2jpg.jpg?w=900&h=500&s=1',
+      'https://ditechs.com/en/articleimages/ditech-blog28-8.jpg',
+    ],
+    about: {
+      en: "Tsukemen Suzume (つけ麺 雀) is a popular tsukemen (dipping noodles) restaurant in Osaka's Shinsaibashi area, specializing in rich and flavorful tsukemen. The restaurant offers a variety of tsukemen dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's tsukemen cuisine in a welcoming setting.",
+      zh: 'つけ麺 雀是大阪心斋桥地区一家受欢迎的蘸面餐厅，专门提供浓郁美味的蘸面。该餐厅提供各种使用新鲜食材制作的蘸面，在温馨环境中为游客提供正宗的大阪蘸面体验。'
+    },
+    highlights: [
+      { en: 'Tsukemen Specialties: Authentic Japanese tsukemen (dipping noodles)', zh: '蘸面特色: 正宗的日式蘸面（蘸汁面）' },
+      { en: 'Shinsaibashi Location: Located in Osaka\'s vibrant Shinsaibashi area', zh: '心斋桥位置: 位于大阪充满活力的心斋桥地区' },
+      { en: 'Rich Broth: Flavorful dipping broth with various options', zh: '浓郁汤汁: 多种口味的蘸汁' },
+      { en: 'Fresh Ingredients: High-quality ingredients and traditional preparation', zh: '新鲜食材: 优质食材和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Popular spot, may have queues', zh: '热门地点，可能需要排队' },
+      { en: 'Great for tsukemen lovers', zh: '非常适合蘸面爱好者' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Shinsaibashi, Osaka', zh: '大阪心斋桥' },
+    station: { en: 'Shinsaibashi Station Area', zh: '心斋桥站区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Tsukemen+Suzume+Shinsaibashi+Osaka',
+  },
+  'men-wa-tomoare': {
+    id: 'men-wa-tomoare',
+    title: { en: 'Chicken Paitan Ramen Men wa Tomoare', zh: '鶏白湯ラーメン 麺はともあれ' },
+    genre: { en: 'Ramen', zh: '拉面' },
+    location: { en: 'Dotonbori, Osaka', zh: '大阪道顿堀' },
+    city: 'osaka',
+    price: '¥1,000-¥2,000',
+    hours: { en: 'Hours Vary', zh: '营业时间不定' },
+    schedule: null, // Recommended but not confirmed
+    recommended: true, // This is a recommendation, not confirmed
+    images: [
+      'https://rimage.savorjapan.com/svj/image/0004038666/photo/0004038666PsW8jcwKyfy4bDVCW_740x555.jpg?t=1753754244',
+      'https://rimage.savorjapan.com/svj/image/0004038666/photo/0004038666PaK6hKtrWxVyfD0nw_740x555.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEXUYWoOl0tG9qN2IWeeH8AWadWgWeJgPksQ&s',
+      'https://tblg.k-img.com/restaurant/images/Rvw/326171/200x200_square_3ba250aa028ad15213521cc8e36979f4.jpg',
+      'https://rimage.savorjapan.com/svj/image/0004038666/photo/0004038666P3GRovQzTqq56I7td_740x555.jpg',
+    ],
+    about: {
+      en: "Chicken Paitan Ramen Men wa Tomoare (鶏白湯ラーメン 麺はともあれ) is a popular chicken paitan ramen restaurant in Osaka's Dotonbori area, specializing in rich and creamy chicken-based ramen broth. The restaurant offers a variety of chicken paitan ramen dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's ramen cuisine in a welcoming setting.",
+      zh: '鶏白湯ラーメン 麺はともあれ是大阪道顿堀地区一家受欢迎的鸡白汤拉面餐厅，专门提供浓郁奶香的鸡白汤拉面。该餐厅提供各种使用新鲜食材制作的鸡白汤拉面，在温馨环境中为游客提供正宗的大阪拉面体验。'
+    },
+    highlights: [
+      { en: 'Chicken Paitan Specialties: Rich and creamy chicken-based ramen broth', zh: '鸡白汤特色: 浓郁奶香的鸡白汤拉面' },
+      { en: 'Dotonbori Location: Located in Osaka\'s famous entertainment and food district', zh: '道顿堀位置: 位于大阪著名的娱乐和美食区' },
+      { en: 'Traditional Setting: Authentic Japanese ramen restaurant atmosphere', zh: '传统环境: 正宗的日本拉面餐厅氛围' },
+      { en: 'Fresh Ingredients: High-quality ingredients and traditional preparation', zh: '新鲜食材: 优质食材和传统制作方法' },
+    ],
+    tips: [
+      { en: 'Popular spot, may have queues', zh: '热门地点，可能需要排队' },
+      { en: 'Great for chicken paitan ramen lovers', zh: '非常适合鸡白汤拉面爱好者' },
+      { en: 'Check hours before visiting', zh: '访问前请查看营业时间' },
+    ],
+    address: { en: 'Dotonbori, Osaka', zh: '大阪道顿堀' },
+    station: { en: 'Dotonbori Area', zh: '道顿堀区域' },
+    access: { en: 'Check location for specific access details', zh: '查看位置了解具体交通详情' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Men+wa+Tomoare+Dotonbori+Osaka',
   },
 }

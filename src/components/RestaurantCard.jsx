@@ -8,6 +8,8 @@ const RestaurantCard = ({
   image, 
   locationColor = 'indigo',
   schedule = null,
+  recommended = false,
+  genre = null,
   onClick 
 }) => {
   const colorClasses = {
@@ -54,6 +56,32 @@ const RestaurantCard = ({
             e.target.src = 'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'
           }}
         />
+        <div className="absolute top-2 right-2 flex flex-col items-end gap-2 z-10">
+          {recommended && (
+            <div className="bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg border-2 border-yellow-500 flex items-center gap-1">
+              <i className="fa-solid fa-star text-xs"></i>
+              <span>RECOMMEND</span>
+            </div>
+          )}
+          {location && (location.includes('Dotonbori') || location.includes('道顿堀')) && (
+            <div className="bg-pink-400 text-pink-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg border-2 border-pink-500 flex items-center gap-1">
+              <i className="fa-solid fa-map-marker-alt text-xs"></i>
+              <span>DOTONBORI</span>
+            </div>
+          )}
+          {location && (location.includes('Namba') || location.includes('难波')) && !location.includes('Dotonbori') && !location.includes('道顿堀') && (
+            <div className="bg-purple-400 text-purple-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg border-2 border-purple-500 flex items-center gap-1">
+              <i className="fa-solid fa-map-marker-alt text-xs"></i>
+              <span>NAMBA</span>
+            </div>
+          )}
+          {location && (location.includes('Shinsaibashi') || location.includes('心斋桥')) && (
+            <div className="bg-blue-400 text-blue-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg border-2 border-blue-500 flex items-center gap-1">
+              <i className="fa-solid fa-map-marker-alt text-xs"></i>
+              <span>SHINSAIBASHI</span>
+            </div>
+          )}
+        </div>
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
           <i className="fa-solid fa-arrow-right text-white text-2xl opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-300"></i>
         </div>
@@ -62,9 +90,14 @@ const RestaurantCard = ({
         <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full border uppercase tracking-wide mb-2 flex-shrink-0 ${colors.badge}`}>
           {location}
         </span>
-        <h3 className="font-header text-lg font-bold text-slate-800 mb-2 line-clamp-2 flex-shrink-0 min-h-[3.5rem]">
+        <h3 className="font-header text-lg font-bold text-slate-800 mb-1 line-clamp-2 flex-shrink-0 min-h-[3.5rem]">
           {title}
         </h3>
+        {genre && (
+          <span className="inline-block text-xs font-medium text-slate-500 mb-2 flex-shrink-0">
+            {genre}
+          </span>
+        )}
         <p className="text-sm text-slate-600 mb-3 flex-grow min-h-[3rem] line-clamp-3">
           {description}
         </p>

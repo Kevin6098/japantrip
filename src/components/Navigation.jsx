@@ -16,6 +16,7 @@ const Navigation = () => {
     { path: '/attractions', label: { en: 'Attractions', zh: '景点' }, icon: 'fa-camera' },
     { path: '/food', label: { en: 'Food', zh: '美食' }, icon: 'fa-utensils' },
     { path: '/hotels', label: { en: 'Hotels', zh: '住宿' }, icon: 'fa-hotel' },
+    { path: '/checklist', label: { en: 'Checklist', zh: '清单' }, icon: 'fa-clipboard-check' },
     { path: '/split-expenses', label: { en: 'Split Expenses', zh: '费用分摊' }, icon: 'fa-calculator' },
   ]
 

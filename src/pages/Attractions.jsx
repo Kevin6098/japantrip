@@ -35,6 +35,7 @@ const Attractions = () => {
       { id: 'dotonbori' },
       { id: 'katsuoji' },
       { id: 'osaka-castle' },
+      { id: 'umeda-sky-building' },
       { id: 'osaka-aquarium' },
       { id: 'namba-yasaka-shrine' },
       { id: 'kuromon-market' },

@@ -19,6 +19,15 @@ const Food = () => {
     ],
     osaka: [
       { id: 'tsurikichi-shinsekai', ...restaurantsData['tsurikichi-shinsekai'] },
+      { id: 'shinsekai-kushikatsu-ittoku', ...restaurantsData['shinsekai-kushikatsu-ittoku'] },
+      { id: 'naniwa-omurice', ...restaurantsData['naniwa-omurice'] },
+      { id: 'ajinoya-honten', ...restaurantsData['ajinoya-honten'] },
+      { id: 'ganso-5cm-katsudon', ...restaurantsData['ganso-5cm-katsudon'] },
+      { id: 'dotonbori-kukuru', ...restaurantsData['dotonbori-kukuru'] },
+      { id: 'mugen-ramen', ...restaurantsData['mugen-ramen'] },
+      { id: 'oden-no-den-maki-sennichimae', ...restaurantsData['oden-no-den-maki-sennichimae'] },
+      { id: 'tsukemen-suzume', ...restaurantsData['tsukemen-suzume'] },
+      { id: 'men-wa-tomoare', ...restaurantsData['men-wa-tomoare'] },
     ],
     kobe: [
       { id: 'kobe-steak-nick', ...restaurantsData['kobe-steak-nick'] },
@@ -26,6 +35,13 @@ const Food = () => {
     ],
     kyoto: [
       { id: 'gion-unagi-kawato', ...restaurantsData['gion-unagi-kawato'] },
+      { id: 'kyo-kiyomizu-shigemori', ...restaurantsData['kyo-kiyomizu-shigemori'] },
+      { id: 'issun-boushi', ...restaurantsData['issun-boushi'] },
+      { id: 'gokago-matcha', ...restaurantsData['gokago-matcha'] },
+      { id: 'gion-gozu', ...restaurantsData['gion-gozu'] },
+      { id: 'ichiren-kyoto', ...restaurantsData['ichiren-kyoto'] },
+      { id: 'salmon-noodle-kyoto', ...restaurantsData['salmon-noodle-kyoto'] },
+      { id: 'masaichi', ...restaurantsData['masaichi'] },
     ],
     uji: [
       { id: 'nakamura-tokichi-uji', ...restaurantsData['nakamura-tokichi-uji'] },
@@ -112,6 +128,8 @@ const Food = () => {
                                 meal: t(restaurant.schedule.meal.en, restaurant.schedule.meal.zh)
                               }
                         ) : null}
+                        recommended={restaurant.recommended || false}
+                        genre={restaurant.genre ? t(restaurant.genre.en, restaurant.genre.zh) : null}
                       />
                     </Link>
                   </div>

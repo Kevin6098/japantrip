@@ -359,62 +359,69 @@ export const getScheduleData = (t) => [
     color: 'orange',
     items: [
       { 
+        time: '08:30', 
+        text: t('Depart from Airbnb (JR Momodani Station)', '从Airbnb出发 (JR桃谷站)'),
+        transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Osaka Station (~20 mins train) → Walk 5 mins', '步行2分钟至桃谷站 → JR大阪环状线至大阪站 (~20分钟电车) → 步行5分钟')
+      },
+      { 
         time: '09:00', 
-        text: t('Osaka Castle', '大阪城'), 
+        text: t('Umeda Sky Building', '梅田蓝天大厦'), 
         highlight: true,
-        link: '/attractions/osaka-castle',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=JR+Momodani+Station+Osaka&destination=Osaka+Castle&travelmode=transit',
-        price: 'Free',
-        transit: t('Walk 2 mins to Momodani Station → JR Osaka Loop Line to Morinomiya Station (~15 mins train) → Walk 10 mins. Arrive at 9am. Conan Photo Spot & Tenshukaku (Tower ¥600)', '步行2分钟至桃谷站 → JR大阪环状线至森之宫站 (~15分钟电车) → 步行10分钟。9点到达。柯南打卡点 & 天守阁 (登塔¥600)')
+        link: '/attractions/umeda-sky-building',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Umeda+Sky+Building+Osaka',
+        price: '¥1,500',
+        transit: t('Reach at 9am - Floating Garden Observatory & 360° city view. Duration: ~1.5 hours', '早上9点到达 - 空中庭园展望台 & 360°城市景观。停留时间: 约1.5小时')
       },
       { 
         time: '11:00', 
-        text: t('Namba Yasaka Shrine', '难波八阪神社'), 
-        highlight: true,
-        link: '/attractions/namba-yasaka-shrine',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Osaka+Castle&destination=Namba+Yasaka+Shrine+Osaka&travelmode=transit',
-        transit: t('Walk 10 mins to Morinomiya Station → JR Osaka Loop Line to Tennoji Station → Midosuji Line to Namba Station (~20 mins train) → Walk 5 mins. Giant Lion Head (Great for photos!)', '步行10分钟至森之宫站 → JR大阪环状线至天王寺站 → 御堂筋线至难波站 (~20分钟电车) → 步行5分钟。巨大狮子头 (拍照绝佳!)')
+        text: t('Travel to Osaka Aquarium Kaiyukan', '前往大阪海游馆'),
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Umeda+Sky+Building+Osaka&destination=Osaka+Aquarium+Kaiyukan&travelmode=transit',
+        transit: t('Walk 5 mins to Osaka Station → JR Osaka Loop Line to Osakako Station (~20 mins train) → Walk 5 mins', '步行5分钟至大阪站 → JR大阪环状线至大阪港站 (~20分钟电车) → 步行5分钟')
       },
       { 
-        time: '12:00', 
-        text: t('Kuromon Market (Lunch)', '黑门市场 (午餐)'), 
+        time: '11:30', 
+        text: t('Osaka Aquarium Kaiyukan', '大阪海游馆'), 
         highlight: true,
-        link: '/attractions/kuromon-market',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Namba+Yasaka+Shrine+Osaka&destination=Kuromon+Ichiba+Market+Osaka&travelmode=walking',
-        transit: t('Walk 5 mins from Namba Yasaka Shrine. Osaka\'s Kitchen - Fresh seafood, street food, and local specialties', '从难波八阪神社步行5分钟。大阪的厨房 - 新鲜海鲜、街头美食和当地特色')
+        link: '/attractions/osaka-aquarium',
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Umeda+Sky+Building+Osaka&destination=Osaka+Aquarium+Kaiyukan&travelmode=transit',
+        price: '¥2,700',
+        transit: t('Duration: ~2-3 hours - One of Japan\'s largest aquariums with whale sharks & marine life', '停留时间: 约2-3小时 - 日本最大的水族馆之一，有鲸鲨 & 海洋生物')
       },
       { 
-        time: '14:00', 
-        text: t('Tsutenkaku', '通天阁'), 
-        highlight: true,
-        link: '/attractions/tsutenkaku',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kuromon+Ichiba+Market+Osaka&destination=Tsutenkaku+Osaka&travelmode=transit',
-        transit: t('Walk 5 mins to Nipponbashi Station → Midosuji Line to Dobutsuen-mae Station (~5 mins train) → Walk 5 mins. Cyberpunk/Neon Vibes', '步行5分钟至日本桥站 → 御堂筋线至动物园前站 (~5分钟电车) → 步行5分钟。赛博朋克霓虹感')
+        time: '14:30', 
+        text: t('Travel to Shinsaibashi', '前往心斋桥'),
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Osaka+Aquarium+Kaiyukan&destination=Shinsaibashi+Osaka&travelmode=transit',
+        transit: t('Walk 5 mins to Osakako Station → Chuo Line to Honmachi → Midosuji Line to Shinsaibashi (~25 mins train) → Walk 2 mins', '步行5分钟至大阪港站 → 中央线至本町 → 御堂筋线至心斋桥 (~25分钟电车) → 步行2分钟')
       },
       { 
-        time: '15:30', 
+        time: '15:00', 
         text: t('Shinsaibashi', '心斋桥'), 
         highlight: true,
         link: '/attractions/shinsaibashi',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Tsutenkaku+Osaka&destination=Shinsaibashi+Osaka&travelmode=transit',
-        transit: t('Walk 5 mins to Dobutsuen-mae Station → Midosuji Line to Shinsaibashi Station (~5 mins train) → Walk 3 mins. Shopping Paradise (Daimaru/Parco). Bring Passport for Tax Free!', '步行5分钟至动物园前站 → 御堂筋线至心斋桥站 (~5分钟电车) → 步行3分钟。购物天堂 (大丸/Parco)。带护照退税!')
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Osaka+Aquarium+Kaiyukan&destination=Shinsaibashi+Osaka&travelmode=transit',
+        transit: t('Duration: ~2 hours - Shopping Paradise (Daimaru/Parco). Bring Passport for Tax Free!', '停留时间: 约2小时 - 购物天堂 (大丸/Parco). 带护照退税!')
       },
       { 
-        time: '17:30', 
-        text: t('Dotonbori', '道顿堀'), 
+        time: '17:00', 
+        text: t('Travel to Dotonbori', '前往道顿堀'),
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Shinsaibashi+Osaka&destination=Dotonbori+Osaka&travelmode=walking',
+        transit: t('Walk 5 mins (connected to Shinsaibashi)', '步行5分钟 (与心斋桥相连)')
+      },
+      { 
+        time: '17:15', 
+        text: t('Dotonbori (Walk Around)', '道顿堀 (散步)'), 
         highlight: true,
         link: '/attractions/dotonbori',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Shinsaibashi+Osaka&destination=Dotonbori+Osaka&travelmode=walking',
-        transit: t('Walk 5 mins (connected to Shinsaibashi). Glico Man Sign & Street Food', '步行5分钟 (与心斋桥相连)。格力高跑男广告牌 & 街头美食')
+        transit: t('Duration: ~1.5 hours - Glico Man Sign & Street Food. Walk around and explore', '停留时间: 约1.5小时 - 格力高跑男广告牌 & 街头美食。散步探索')
       },
       { 
-        time: '20:00', 
+        time: '19:00', 
         text: t('Dinner in Dotonbori', '道顿堀晚餐'),
         highlight: true,
         link: '/attractions/dotonbori',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Dotonbori+Osaka',
-        special: true,
-        transit: t('Return: Walk 5 mins to Namba Station → JR Osaka Loop Line to Momodani Station (~15 mins train) → Walk 2 mins', '返回: 步行5分钟至难波站 → JR大阪环状线至桃谷站 (~15分钟电车) → 步行2分钟')
+        transit: t('Various dining options in Dotonbori area. Return: Walk 5 mins to Namba Station → JR Osaka Loop Line to Momodani Station (~15 mins train) → Walk 2 mins', '道顿堀区域各种餐饮选择。返回: 步行5分钟至难波站 → JR大阪环状线至桃谷站 (~15分钟电车) → 步行2分钟')
       },
     ],
   },

@@ -504,6 +504,42 @@ export const attractionsData = {
       { en: 'Park is Free: You can enjoy the gardens and exterior without entering the tower', zh: '公园免费: 您可以享受花园和外观，无需进入天守阁' },
     ],
   },
+  'umeda-sky-building': {
+    id: 'umeda-sky-building',
+    title: { en: 'Umeda Sky Building', zh: '梅田蓝天大厦' },
+    location: { en: 'Umeda, Osaka', zh: '大阪梅田' },
+    city: 'osaka',
+    price: '¥1,500',
+    hours: { en: '9:30 AM - 10:30 PM', zh: '上午9:30 - 晚上10:30' },
+    images: [
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQhBjC1p5BC3btUgkz2UG0AYPs9wkIpay1aw&s',
+      'https://www.skybldg.co.jp/lang/asset/img/top/mv_bg01.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLaN5VyCrmbhKoEW-YRpPZEqcgzrfuxQAgAw&s',
+      'https://img.enjoy-osaka-kyoto-kobe.com/wp-content/uploads/2025/07/04163652/umeda-sky-building-08-1024x683.webp',
+      'https://cdn-imgix.headout.com/mircobrands-banner/image/ef36d2145750317dcf8a549ee02fee1e-59f4d24f-867f-420c-8d95-02d1a2de343c-17836-osaka-osaka-umeda-sky-building-admission-ticket-02.jpg',
+      'https://q-xx.bstatic.com/xdata/images/xphoto/800x800/384807396.jpg?k=6d9f0044e1feb18154aa4ef94904317449ef5ce82c7fa109ede1e235746abff0&o='
+    ],
+    about: {
+      en: "Umeda Sky Building (梅田スカイビル) is one of Osaka's most iconic landmarks, completed in 1993. The building consists of two 40-story towers connected at the top by the Floating Garden Observatory, creating a distinctive architectural design. The observatory offers stunning 360-degree panoramic views of Osaka city and beyond. The building is renowned for its unique design, featuring an open-air deck on the 39th floor and an enclosed observatory on the 40th floor. The Floating Garden Observatory provides breathtaking views both day and night, making it a must-visit attraction for anyone exploring Osaka.",
+      zh: '梅田蓝天大厦（梅田スカイビル）是大阪最具标志性的地标之一，于1993年完工。该建筑由两座40层高的塔楼组成，顶部通过空中庭园展望台相连，创造出独特的建筑设计。展望台提供令人惊叹的大阪市及周边360度全景。该建筑以其独特的设计而闻名，在39层设有露天观景台，40层设有封闭式展望台。空中庭园展望台提供令人叹为观止的白天和夜晚景观，是探索大阪的必游景点。'
+    },
+    highlights: [
+      { en: 'Floating Garden Observatory: Open-air deck on 39th floor offering stunning 360° panoramic views of Osaka', zh: '空中庭园展望台: 39层的露天观景台，提供令人惊叹的大阪360°全景' },
+      { en: 'Unique Architecture: Two towers connected by a circular observatory bridge at the top', zh: '独特建筑: 两座塔楼通过顶部的圆形展望台桥相连' },
+      { en: 'Day & Night Views: Beautiful cityscape views during the day and dazzling city lights at night', zh: '白天和夜景: 白天美丽的城市景观和夜晚耀眼的城市灯光' },
+      { en: 'Luminarie Walkway: Tunnel-like escalator connecting the two towers with beautiful lighting', zh: '光之隧道: 连接两座塔楼的隧道式自动扶梯，配有美丽的灯光' },
+    ],
+    tips: [
+      { en: 'Best Time to Visit: Early morning (around 9am) to avoid crowds, or evening for city lights', zh: '最佳参观时间: 清晨（约9点）避开人群，或傍晚欣赏城市灯光' },
+      { en: 'Duration: Allow 1-1.5 hours to fully enjoy the observatory and views', zh: '停留时间: 预留1-1.5小时充分享受展望台和景观' },
+      { en: 'Weather: Clear days offer the best views. Check weather forecast before visiting', zh: '天气: 晴天提供最佳景观。访问前查看天气预报' },
+      { en: 'Photography: Great spot for panoramic photos of Osaka cityscape', zh: '摄影: 拍摄大阪城市景观全景照片的绝佳地点' },
+    ],
+    address: { en: '1-1-88 Oyodonaka, Kita-ku, Osaka 531-6023, Japan', zh: '日本大阪府大阪市北区大淀中1-1-88 531-6023' },
+    station: { en: 'Osaka Station', zh: '大阪站' },
+    access: { en: 'Walk 5 mins from Osaka Station (JR Osaka Loop Line from Momodani Station, ~20 mins train)', zh: '从大阪站步行5分钟（从桃谷站乘坐JR大阪环状线，约20分钟电车）' },
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Umeda+Sky+Building+Osaka',
+  },
   'osaka-aquarium': {
     id: 'osaka-aquarium',
     title: { en: 'Osaka Aquarium Kaiyukan (大阪海游馆)', zh: '大阪海游馆' },
@@ -567,6 +603,97 @@ export const attractionsData = {
       { en: 'Early Arrival: Arrive before opening time to be first in line', zh: '早到: 在开放时间前到达，成为第一批' },
       { en: 'Nintendo World: May require timed entry ticket - check park app', zh: '任天堂世界: 可能需要定时入场票 - 查看公园应用' },
     ],
+    visitGuide: {
+      groupInfo: {
+        en: '10 people - Mixed ages (40–50s, Gen Z, Gen Alpha) - Some with Express Pass, some without - Everyone OK with very early arrival',
+        zh: '10人 - 混合年龄（40-50岁、Z世代、Alpha世代） - 部分有快速通行证，部分没有 - 所有人都可以非常早到达'
+      },
+      arrivalPlan: {
+        title: { en: 'Arrival Plan (Very Important)', zh: '到达计划（非常重要）' },
+        time: { en: 'Arrive at USJ: 6:30 AM | Official opening: ~8:30 AM | Gates often open earlier: 7:15–7:45 AM', zh: '到达USJ: 早上6:30 | 正式开放: 约早上8:30 | 大门通常提前开放: 早上7:15–7:45' },
+        whyMatters: [
+          { en: 'Best chance to enter Super Nintendo World without timed entry', zh: '无需定时入场券进入超级任天堂世界的最佳机会' },
+          { en: 'Shortest waiting times of the day', zh: '一天中最短的等待时间' },
+          { en: 'Helps non-Express guests ride popular attractions early', zh: '帮助没有快速通行证的客人早早乘坐热门景点' }
+        ]
+      },
+      ticketsStrategy: {
+        required: { en: '1-Day Studio Pass (for everyone)', zh: '1日票（每个人都需要）' },
+        expressPass: {
+          recommendedFor: [
+            { en: 'Gen Z / thrill riders', zh: 'Z世代 / 刺激游乐设施爱好者' },
+            { en: 'Anyone who wants to avoid long queues', zh: '任何想避免长队的人' }
+          ],
+          bestType: [
+            { en: 'Mario Kart', zh: '马里奥卡丁车' },
+            { en: 'Donkey Kong Mine Cart', zh: '大金刚矿山车' },
+            { en: 'Flying Dinosaur', zh: '飞天翼龙' },
+            { en: '(Optional: Harry Potter / Minions)', zh: '（可选：哈利波特 / 小黄人）' }
+          ],
+          budgetTip: { en: 'Give Express Pass to 3–5 people only. Others rely on early entry + normal lines', zh: '只为3-5人购买快速通行证。其他人依靠早到入场 + 普通排队' }
+        }
+      },
+      morningRoute: {
+        destination: { en: 'Super Nintendo World (8:00–10:30)', zh: '超级任天堂世界（8:00–10:30）' },
+        ridePriority: [
+          { en: 'Mario Kart (must-do for everyone)', zh: '马里奥卡丁车（每个人必玩）' },
+          { en: 'Donkey Kong Mine Cart (thrill ride)', zh: '大金刚矿山车（刺激游乐设施）' },
+          { en: 'Yoshi\'s Adventure (easy, kid-friendly)', zh: '耀西冒险（简单，适合儿童）' }
+        ],
+        important: { en: 'As soon as you enter the park, use the USJ App to get a Timed Entry ticket for Super Nintendo World (for later return if needed)', zh: '一进入公园，立即使用USJ应用程序获取超级任天堂世界的定时入场券（如需要，稍后可返回）' }
+      },
+      lunch: {
+        destination: { en: 'Wizarding World of Harry Potter (11:30–13:00)', zh: '哈利波特魔法世界（11:30–13:00）' },
+        thingsToDo: [
+          { en: 'Hogwarts Castle / Forbidden Journey (skip if motion sick)', zh: '霍格沃茨城堡 / 禁忌之旅（如果晕车可跳过）' },
+          { en: 'Hippogriff (family-friendly)', zh: '鹰马飞行（适合家庭）' },
+          { en: 'Photos + Butterbeer', zh: '拍照 + 黄油啤酒' }
+        ],
+        restaurant: { en: 'Three Broomsticks - Eat early to avoid peak lunch crowd', zh: '三把扫帚 - 早吃以避开午餐高峰期人群' }
+      },
+      afternoonStrategy: {
+        groupA: {
+          title: { en: 'Group A — Express Pass users', zh: 'A组 — 快速通行证用户' },
+          tasks: [
+            { en: 'Follow Express Pass ride times', zh: '按照快速通行证的游乐设施时间' },
+            { en: 'Focus on: Flying Dinosaur, other major rides included in pass', zh: '专注于：飞天翼龙，通行证中包含的其他主要游乐设施' }
+          ]
+        },
+        groupB: {
+          title: { en: 'Group B — No Express Pass', zh: 'B组 — 无快速通行证' },
+          attractions: [
+            { en: 'JAWS (fun, suitable for all ages)', zh: '大白鲨（有趣，适合所有年龄）' },
+            { en: 'WaterWorld show (great rest time)', zh: '水世界表演（很好的休息时间）' },
+            { en: 'Minions area (optional)', zh: '小黄人区域（可选）' }
+          ]
+        },
+        meetupTip: { en: 'Set a fixed meeting point. Regroup every 1–2 hours', zh: '设置固定会合点。每1-2小时重新集合' }
+      },
+      eveningPlan: {
+        bestTime: [
+          { en: 'Crowds reduce', zh: '人群减少' },
+          { en: 'Cooler weather', zh: '天气更凉爽' },
+          { en: 'Best photos', zh: '最佳拍照时间' }
+        ],
+        returnToNintendo: [
+          { en: 'Night lighting is beautiful', zh: '夜间灯光很美' },
+          { en: 'Ride missed attractions', zh: '游玩错过的景点' },
+          { en: 'Gen Z can use Single Rider for faster queues', zh: 'Z世代可以使用单人通道以更快排队' }
+        ],
+        dinner: { en: 'Early dinner around 5:30–6:00 PM. Choose quick-service restaurants to save time', zh: '下午5:30–6:00左右早晚餐。选择快餐厅以节省时间' }
+      },
+      quickTips: [
+        { en: 'Use USJ App all day (wait times, tickets)', zh: '全天使用USJ应用程序（等待时间、门票）' },
+        { en: 'Single Rider = fastest for Gen Z', zh: '单人通道 = Z世代最快方式' },
+        { en: 'Wear comfortable shoes', zh: '穿舒适的鞋子' },
+        { en: 'Bring power bank', zh: '携带充电宝' },
+        { en: 'Take breaks with shows (WaterWorld)', zh: '通过表演（水世界）休息' }
+      ],
+      summary: {
+        en: 'Arrive early, go to Super Nintendo World first, use Express Pass strategically, split the group smartly in the afternoon, and enjoy Super Nintendo World again at night.',
+        zh: '早到，先到超级任天堂世界，战略性使用快速通行证，下午明智地分组，晚上再次享受超级任天堂世界。'
+      }
+    },
   },
   'kobe-port': {
     id: 'kobe-port',
