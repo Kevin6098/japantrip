@@ -30,11 +30,14 @@ const DaySchedule = () => {
     const itemTransit = item.transit ? (typeof item.transit === 'string' ? item.transit : t(item.transit?.en || '', item.transit?.zh || '')) : null
     const itemNote = item.note ? (typeof item.note === 'string' ? item.note : t(item.note?.en || '', item.note?.zh || '')) : null
     
-    // Check if this is a departure item
-    const isDeparture = itemText.toLowerCase().includes('depart') || 
+    // Check if this is a departure item (but exclude "Depart from Katsuoji")
+    const isKatsuojiDeparture = itemText.toLowerCase().includes('katsuoji') || 
+                                itemText.toLowerCase().includes('勝尾寺')
+    const isDeparture = !isKatsuojiDeparture && (
+                       itemText.toLowerCase().includes('depart') || 
                        itemText.toLowerCase().includes('出发') ||
                        itemText.toLowerCase().includes('leave') ||
-                       (itemIndex === 0 && item.time) // First item of the day is usually departure
+                       (itemIndex === 0 && item.time)) // First item of the day is usually departure
 
     const content = item.link ? (
       <Link
