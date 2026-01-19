@@ -16,6 +16,13 @@ const ExpenseDetail = () => {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
   const [deleting, setDeleting] = useState(false)
 
+  const normalizeExpense = (exp) => ({
+    ...exp,
+    paidBy: exp?.paidBy ?? exp?.paid_by ?? '',
+    splitWith: exp?.splitWith ?? exp?.split_with ?? [],
+    membersPaid: exp?.membersPaid ?? exp?.members_paid ?? {},
+  })
+
   useEffect(() => {
     loadData()
   }, [id])
@@ -29,12 +36,12 @@ const ExpenseDetail = () => {
           budgetService.getExpenses(),
           budgetService.getMembers()
         ])
-        const foundExpense = expensesData.find(e => e.id === id)
+        const foundExpense = expensesData.find(e => String(e.id) === String(id))
         if (!foundExpense) {
           navigate('/split-expenses')
           return
         }
-        setExpense(foundExpense)
+        setExpense(normalizeExpense(foundExpense))
         setMembers(membersData)
       } else {
         const raw = localStorage.getItem(STORAGE_KEY)
@@ -43,12 +50,12 @@ const ExpenseDetail = () => {
           return
         }
         const state = JSON.parse(raw)
-        const foundExpense = state.expenses?.find(e => e.id === id)
+        const foundExpense = state.expenses?.find(e => String(e.id) === String(id))
         if (!foundExpense) {
           navigate('/split-expenses')
           return
         }
-        setExpense(foundExpense)
+        setExpense(normalizeExpense(foundExpense))
         setMembers(state.members || [])
       }
     } catch (error) {

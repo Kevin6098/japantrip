@@ -59,7 +59,16 @@ const Checklist = () => {
 
   // Restaurant reservations - only confirmed restaurants that require reservations
   // Exclude restaurants that don't need reservations (as specified by user)
-  const noReservationRequired = ['pain-maison', 'nakamura-tokichi-ginza', 'ichiran-ramen', 'afuri-yurakucho', 'nakamura-tokichi-uji']
+  const noReservationRequired = [
+    'pain-maison',
+    'nakamura-tokichi-ginza',
+    'ichiran-ramen',
+    'afuri-yurakucho',
+    'nakamura-tokichi-uji',
+    // Removed from checklist per user request
+    'dotonbori-dinner',
+    'kyoto-lunch',
+  ]
   const confirmedRestaurants = Object.values(restaurantsData).filter(
     restaurant => restaurant.schedule !== null && !noReservationRequired.includes(restaurant.id)
   ).map(restaurant => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { budgetService } from '../services/budgetService'
@@ -12,6 +12,13 @@ const ExpensesList = () => {
   const [expenses, setExpenses] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedMembers, setSelectedMembers] = useState(new Set())
+
+  const normalizeExpenseForUI = (exp) => ({
+    ...exp,
+    paidBy: exp?.paidBy ?? exp?.paid_by ?? '',
+    splitWith: exp?.splitWith ?? exp?.split_with ?? [],
+    membersPaid: exp?.membersPaid ?? exp?.members_paid ?? {},
+  })
 
   useEffect(() => {
     loadData()
@@ -27,7 +34,7 @@ const ExpensesList = () => {
           budgetService.getExpenses()
         ])
         setMembers(membersData)
-        setExpenses(expensesData)
+        setExpenses((expensesData || []).map(normalizeExpenseForUI))
         if (membersData.length > 0) {
           setSelectedMembers(new Set(membersData.map(m => m.id))) // Select all by default
         }
@@ -36,7 +43,7 @@ const ExpensesList = () => {
         if (raw) {
           const state = JSON.parse(raw)
           setMembers(state.members || [])
-          setExpenses(state.expenses || [])
+          setExpenses((state.expenses || []).map(normalizeExpenseForUI))
           if (state.members && state.members.length > 0) {
             setSelectedMembers(new Set(state.members.map(m => m.id))) // Select all by default
           }
@@ -51,6 +58,8 @@ const ExpensesList = () => {
 
   const currencyDecimals = (currency) => (currency === 'JPY' ? 0 : 2)
 
+  const getPaidById = (exp) => exp?.paidBy ?? exp?.paid_by ?? ''
+
   const formatMoney = (amount, currency) => {
     const dec = currencyDecimals(currency)
     const n = Number(amount || 0)
@@ -58,6 +67,63 @@ const ExpensesList = () => {
     const fixed = (Math.round(n * pow) / pow).toFixed(dec)
     return `${fixed} ${currency}`
   }
+
+  // ===== Settle Up (mobile-friendly) =====
+  const [showSettleUp, setShowSettleUp] = useState(true)
+  const [settleViewMemberId, setSettleViewMemberId] = useState('')
+
+  useEffect(() => {
+    if (!settleViewMemberId && members.length > 0) setSettleViewMemberId(members[0].id)
+  }, [members, settleViewMemberId])
+
+  const settleData = useMemo(() => {
+    const usedCurrencies = new Set()
+    const debtsByCurrency = {}
+
+    expenses.forEach((raw) => {
+      const exp = normalizeExpenseForUI(raw)
+      const cur = exp.currency || 'JPY'
+      usedCurrencies.add(cur)
+      const payer = exp.paidBy
+      if (!payer) return
+      const splits = exp.splits || {}
+      Object.entries(splits).forEach(([debtorId, v]) => {
+        const amt = Number(v || 0)
+        if (!isFinite(amt) || amt <= 0) return
+        if (debtorId === payer) return
+        if (!debtsByCurrency[cur]) debtsByCurrency[cur] = {}
+        if (!debtsByCurrency[cur][debtorId]) debtsByCurrency[cur][debtorId] = {}
+        debtsByCurrency[cur][debtorId][payer] = (debtsByCurrency[cur][debtorId][payer] || 0) + amt
+      })
+    })
+
+    const memberName = (id) => members.find(m => m.id === id)?.name || id
+    const me = settleViewMemberId
+
+    const perCurrency = {}
+
+    const currencies = Array.from(usedCurrencies).sort()
+    currencies.forEach((cur) => {
+      const debts = debtsByCurrency[cur] || {}
+      const owedToMe = {}
+      const iOwe = {}
+
+      Object.entries(debts).forEach(([debtorId, creditors]) => {
+        Object.entries(creditors || {}).forEach(([creditorId, amt]) => {
+          const n = Number(amt || 0)
+          if (!isFinite(n) || n <= 0) return
+          if (me) {
+            if (creditorId === me) owedToMe[debtorId] = (owedToMe[debtorId] || 0) + n
+            if (debtorId === me) iOwe[creditorId] = (iOwe[creditorId] || 0) + n
+          }
+        })
+      })
+
+      perCurrency[cur] = { owedToMe, iOwe }
+    })
+
+    return { currencies, memberName, perCurrency }
+  }, [expenses, members, settleViewMemberId])
 
   const toggleMemberPaid = async (expenseId, memberId, currentStatus) => {
     try {
@@ -93,7 +159,8 @@ const ExpensesList = () => {
     const header = ['Date', 'Category', 'Currency', 'Description', 'Amount', 'PaidBy', ...selectedMembersList.map(m => m.name)]
     const rows = [header]
     expenses.forEach(exp => {
-      const paidByName = members.find(m => m.id === exp.paidBy)?.name || ''
+      const paidById = getPaidById(exp)
+      const paidByName = members.find(m => m.id === paidById)?.name || ''
       const dec = (exp.currency || 'JPY') === 'JPY' ? 0 : 2
       const memberAmounts = selectedMembersList.map(m => {
         const splitAmount = exp.splits?.[m.id] || 0
@@ -135,30 +202,22 @@ const ExpensesList = () => {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 max-w-7xl mx-auto pb-24">
       {/* Header */}
-      <div className="mb-6">
-        <Link
-          to="/split-expenses"
-          className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors mb-4"
-        >
-          <i className="fa-solid fa-arrow-left"></i>
-          <span>{t('Back to Budget Splitter', '返回费用分摊器')}</span>
-        </Link>
-        <div className="flex justify-between items-center">
-          <div>
-            <h1 className="text-3xl font-header font-bold text-slate-800 mb-1">
-              {t('Expenses', '费用')}
+      <div className="bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-8 md:py-12 border-b border-emerald-100 mb-8 rounded-xl">
+        <div className="flex items-center gap-4">
+          <div className="p-3 bg-emerald-100 rounded-xl shadow-inner">
+            <i className="fa-solid fa-calculator text-emerald-600 text-2xl md:text-3xl"></i>
+          </div>
+          <div className="flex-1">
+            <h1 className="font-header text-2xl md:text-3xl font-bold text-slate-800 mb-1">
+              {t('Budget Splitter', '费用分摊器')}
             </h1>
-            <p className="text-sm text-slate-600">
-              {t('View and manage all expenses', '查看和管理所有费用')}
+            <p className="text-sm md:text-base text-slate-600">
+              {USE_DATABASE
+                ? t('Database mode — data synced across devices.', '数据库模式 — 数据跨设备同步。')
+                : t('Offline tracker — auto split expenses by selected members + per-member totals.', '离线追踪器 — 自动按选定成员分摊费用 + 每人总计。')
+              }
             </p>
           </div>
-          <button
-            onClick={exportCSV}
-            className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
-          >
-            <i className="fa-solid fa-download mr-2"></i>
-            {t('Export CSV', '导出CSV')}
-          </button>
         </div>
       </div>
 
@@ -190,6 +249,27 @@ const ExpensesList = () => {
             <i className="fa-solid fa-users mr-2"></i>
             {t('Members', '成员')}
           </Link>
+        </div>
+      </div>
+
+      {/* Page title / actions (match other tabs style) */}
+      <div className="glass-card p-6 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h2 className="font-header text-xl font-bold text-slate-800 mb-1">
+              {t('Expenses', '费用')}
+            </h2>
+            <p className="text-sm text-slate-600">
+              {t('View and manage all expenses', '查看和管理所有费用')}
+            </p>
+          </div>
+          <button
+            onClick={exportCSV}
+            className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
+          >
+            <i className="fa-solid fa-download mr-2"></i>
+            {t('Export CSV', '导出CSV')}
+          </button>
         </div>
       </div>
 
@@ -263,7 +343,8 @@ const ExpensesList = () => {
                 </tr>
               ) : (
                 [...expenses].sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(exp => {
-                  const paidByName = members.find(m => m.id === exp.paidBy)?.name || '-'
+                  const paidById = getPaidById(exp)
+                  const paidByName = members.find(m => m.id === paidById)?.name || '-'
                   const membersPaid = exp.membersPaid || exp.members_paid || {}
                   return (
                     <tr 
@@ -313,6 +394,13 @@ const ExpensesList = () => {
                       {members.filter(m => selectedMembers.has(m.id)).map(m => {
                         const splitAmount = exp.splits?.[m.id] || 0
                         const isPaid = membersPaid[m.id] || false
+                        if (splitAmount <= 0) {
+                          return (
+                            <td key={m.id} className="p-2 text-right text-xs text-slate-400">
+                              -
+                            </td>
+                          )
+                        }
                         return (
                           <td 
                             key={m.id} 
@@ -330,14 +418,13 @@ const ExpensesList = () => {
                                   onClick={(e) => e.stopPropagation()}
                                   className="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500 cursor-pointer"
                                   title={isPaid ? t('Paid', '已付款') : t('Not paid', '未付款')}
-                                  disabled={splitAmount <= 0}
                                 />
                               </label>
                               <Link 
                                 to={`/split-expenses/expense/${exp.id}`}
                                 className="hover:text-emerald-600 transition-colors"
                               >
-                                {splitAmount > 0 ? formatMoney(splitAmount, exp.currency) : ''}
+                                {formatMoney(splitAmount, exp.currency)}
                               </Link>
                             </div>
                           </td>
@@ -349,6 +436,112 @@ const ExpensesList = () => {
               )}
             </tbody>
           </table>
+        </div>
+
+        {/* Settle Up (under expenses table) */}
+        <div className="mt-6 pt-6 border-t border-slate-200">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+            <button
+              onClick={() => setShowSettleUp(v => !v)}
+              className="w-full lg:w-auto px-4 py-3 bg-white border border-slate-200 text-slate-800 rounded-xl hover:bg-slate-50 transition-colors font-bold flex items-center justify-center gap-2"
+            >
+              <i className="fa-solid fa-handshake text-slate-700"></i>
+              {t('Settle Up', '结算')}
+              <i className={`fa-solid fa-chevron-${showSettleUp ? 'up' : 'down'} text-xs text-slate-500 ml-1`}></i>
+            </button>
+
+            <div className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-center">
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold text-slate-700">{t('View as', '查看为')}</span>
+                <select
+                  value={settleViewMemberId}
+                  onChange={(e) => setSettleViewMemberId(e.target.value)}
+                  className="px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white text-sm"
+                >
+                  {members.map(m => (
+                    <option key={m.id} value={m.id}>{m.name}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {showSettleUp && (
+            <div className="mt-4">
+              <div className="text-xs text-slate-500 mb-3">
+                {t(
+                  'Debts are based on split shares owed to the payer.',
+                  '欠款基于分摊金额（向付款人支付）。'
+                )}
+              </div>
+
+              {settleData.currencies.length === 0 ? (
+                <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
+                  {t('No expenses yet.', '还没有费用。')}
+                </div>
+              ) : (
+                <>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <details className="bg-white border border-slate-200 rounded-xl p-4" open>
+                      <summary className="cursor-pointer font-bold text-slate-800 flex items-center justify-between">
+                        <span>{t('People who owe me', '谁欠我')}</span>
+                        <span className="text-xs text-slate-500">{t('tap to collapse', '点击收起')}</span>
+                      </summary>
+                      <div className="mt-3 space-y-3">
+                        {settleData.currencies.map(cur => {
+                          const entries = Object.entries(settleData.perCurrency[cur]?.owedToMe || {})
+                            .filter(([, v]) => v > 0)
+                            .sort((a, b) => b[1] - a[1])
+                          if (entries.length === 0) return null
+                          return (
+                            <div key={cur}>
+                              <div className="text-xs font-semibold text-slate-600 mb-1">{cur}</div>
+                              <div className="space-y-1">
+                                {entries.map(([id, v]) => (
+                                  <div key={id} className="flex items-center justify-between text-sm py-1">
+                                    <span className="truncate">{settleData.memberName(id)}</span>
+                                    <span className="font-semibold">{formatMoney(v, cur)}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </details>
+
+                    <details className="bg-white border border-slate-200 rounded-xl p-4" open>
+                      <summary className="cursor-pointer font-bold text-slate-800 flex items-center justify-between">
+                        <span>{t('I owe people', '我欠谁')}</span>
+                        <span className="text-xs text-slate-500">{t('tap to collapse', '点击收起')}</span>
+                      </summary>
+                      <div className="mt-3 space-y-3">
+                        {settleData.currencies.map(cur => {
+                          const entries = Object.entries(settleData.perCurrency[cur]?.iOwe || {})
+                            .filter(([, v]) => v > 0)
+                            .sort((a, b) => b[1] - a[1])
+                          if (entries.length === 0) return null
+                          return (
+                            <div key={cur}>
+                              <div className="text-xs font-semibold text-slate-600 mb-1">{cur}</div>
+                              <div className="space-y-1">
+                                {entries.map(([id, v]) => (
+                                  <div key={id} className="flex items-center justify-between text-sm py-1">
+                                    <span className="truncate">{settleData.memberName(id)}</span>
+                                    <span className="font-semibold">{formatMoney(v, cur)}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </details>
+                  </div>
+                </>
+              )}
+            </div>
+          )}
         </div>
 
         <p className="text-xs text-slate-500 mt-4">

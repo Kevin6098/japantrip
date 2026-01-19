@@ -6,9 +6,9 @@ export const transportationData = [
     title: { en: 'Arrival (Mar 18)', zh: '抵达 (3月18日)' },
     color: 'indigo',
     transportation: [
-      { en: 'Private Van: HND → Katsushika-ku', zh: '私人包车: 羽田机场 → 葛饰区' },
+      { en: 'Private Car: HND → Airbnb (Katsushika-ku):', zh: '私人包车: 羽田机场 → Airbnb（葛饰区）:', cost: 'MYR 261.75 (÷4 = 65.44)' },
     ],
-    totalCost: { en: 'Private Van (Shared)', zh: '私人包车 (分摊)' },
+    totalCost: { en: 'MYR 261.75 (shared / 4 pax)', zh: 'MYR 261.75（分摊 / 4人）' },
     walking: [
       { en: 'Minimal walking (airport transfer)', zh: '最少步行 (机场接送)' },
     ],
@@ -72,8 +72,9 @@ export const transportationData = [
       { en: 'Yurakucho → Tokyo Station (Walk):', zh: '有乐町 → 东京站 (步行):', cost: 'Free' },
       { en: 'Tokyo → Shin-Osaka (Shinkansen):', zh: '东京 → 新大阪 (新干线):', cost: '¥13,870' },
       { en: 'Shin-Osaka → Momodani (JR Loop Line):', zh: '新大阪 → 桃谷 (JR环状线):', cost: '¥200' },
+      { en: 'Private Car: Osaka Airport → Airbnb (Momodani):', zh: '私人包车: 大阪机场 → Airbnb（桃谷）:', cost: 'MYR 323.75 (÷3 = 107.92)' },
     ],
-    totalCost: '¥14,470',
+    totalCost: { en: '¥14,470 + MYR 323.75 (shared / 3 pax)', zh: '¥14,470 + MYR 323.75（分摊 / 3人）' },
     walking: [
       { en: 'To station:', zh: '至车站:', time: '5 mins' },
       { en: 'Yurakucho → Afuri:', zh: '有乐町 → 阿夫利:', time: '3 mins' },

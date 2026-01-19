@@ -47,6 +47,13 @@ const BudgetSplitter = () => {
   const [selectedMembers, setSelectedMembers] = useState(new Set())
   const location = useLocation()
 
+  const normalizeExpenseForUI = (exp) => ({
+    ...exp,
+    paidBy: exp?.paidBy ?? exp?.paid_by ?? '',
+    splitWith: exp?.splitWith ?? exp?.split_with ?? [],
+    membersPaid: exp?.membersPaid ?? exp?.members_paid ?? {},
+  })
+
   useEffect(() => {
     loadState()
   }, [])
@@ -75,7 +82,7 @@ const BudgetSplitter = () => {
       ])
       
       setMembers(membersData)
-      setExpenses(expensesData)
+      setExpenses((expensesData || []).map(normalizeExpenseForUI))
       
       if (membersData.length > 0) {
         setExpPaidBy(membersData[0].id)
@@ -129,7 +136,7 @@ const BudgetSplitter = () => {
       }
       const state = JSON.parse(raw)
       setMembers(state.members || [])
-      setExpenses(state.expenses || [])
+      setExpenses((state.expenses || []).map(normalizeExpenseForUI))
       
       if (state.members && state.members.length > 0) {
         setExpPaidBy(state.members[0].id)
@@ -381,6 +388,8 @@ const BudgetSplitter = () => {
     )
   }
 
+  // (Moved) Settle Up UI is shown on Expenses page.
+
   // ========== MEMBER OPERATIONS ==========
   const addMember = async () => {
     const name = memberName.trim()
@@ -626,11 +635,11 @@ const BudgetSplitter = () => {
 
       if (USE_DATABASE) {
         const createdExpense = await budgetService.addExpense(newExpense)
-        setExpenses(prev => [...prev, createdExpense])
+        setExpenses(prev => [...prev, normalizeExpenseForUI(createdExpense)])
       } else {
         const expenseWithId = { id: uniqId(), ...newExpense }
         const newExpenses = [...expenses, expenseWithId]
-        setExpenses(newExpenses)
+        setExpenses(newExpenses.map(normalizeExpenseForUI))
         saveToLocalStorage({ members, expenses: newExpenses })
       }
 
@@ -738,7 +747,8 @@ const BudgetSplitter = () => {
     const header = ['Date', 'Category', 'Currency', 'Description', 'Amount', 'PaidBy', ...selectedMembersList.map(m => m.name)]
     const rows = [header]
     expenses.forEach(exp => {
-      const paidByName = members.find(m => m.id === exp.paidBy)?.name || ''
+      const paidById = exp.paidBy ?? exp.paid_by ?? ''
+      const paidByName = members.find(m => m.id === paidById)?.name || ''
       const dec = (exp.currency || 'JPY') === 'JPY' ? 0 : 2
       const memberAmounts = selectedMembersList.map(m => {
         const splitAmount = exp.splits?.[m.id] || 0
@@ -1642,7 +1652,8 @@ const BudgetSplitter = () => {
                                       <td colSpan="2" className="p-2 bg-slate-50">
                                         <div className="pl-6 space-y-2">
                                           {categoryExpenses.map(exp => {
-                                            const paidByName = members.find(m => m.id === exp.paidBy)?.name || '-'
+                                            const paidById = exp.paidBy ?? exp.paid_by ?? ''
+                                            const paidByName = members.find(m => m.id === paidById)?.name || '-'
                                             return (
                                               <div 
                                                 key={exp.id}

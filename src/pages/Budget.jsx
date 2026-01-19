@@ -181,29 +181,7 @@ const Budget = () => {
         </div>
       </div>
 
-      {/* Transportation Budget Link */}
-      <div className="mt-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-        <Link to="/transportation-budget" className="block group">
-          <div className="glass-card p-6 border-l-blue-500 hover:shadow-lg transition-all duration-300 transform hover:scale-[1.01]">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-blue-100 rounded-xl">
-                  <i className="fa-solid fa-train text-blue-600 text-2xl"></i>
-                </div>
-                <div>
-                  <h3 className="font-header text-xl font-bold text-slate-800 mb-1">
-                    {t('Transportation Budget & Walking Times', '交通预算与步行时间')}
-                  </h3>
-                  <p className="text-sm text-slate-600">
-                    {t('Detailed breakdown of train, bus fares, and walking times for each day', '每天的电车、巴士费用和步行时间详细分解')}
-                  </p>
-                </div>
-              </div>
-              <i className="fa-solid fa-arrow-right text-blue-600 text-xl group-hover:translate-x-2 transition-transform"></i>
-            </div>
-          </div>
-        </Link>
-      </div>
+      {/* (Removed) Transportation Budget Link */}
     </div>
   )
 }
