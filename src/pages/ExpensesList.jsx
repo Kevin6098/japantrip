@@ -86,11 +86,15 @@ const ExpensesList = () => {
       usedCurrencies.add(cur)
       const payer = exp.paidBy
       if (!payer) return
+      const paidMap = exp.membersPaid || {}
       const splits = exp.splits || {}
       Object.entries(splits).forEach(([debtorId, v]) => {
         const amt = Number(v || 0)
         if (!isFinite(amt) || amt <= 0) return
         if (debtorId === payer) return
+        // If this member's checkbox is checked, they have already paid back for this expense.
+        // So exclude their split amount from outstanding debts.
+        if (Boolean(paidMap?.[debtorId])) return
         if (!debtsByCurrency[cur]) debtsByCurrency[cur] = {}
         if (!debtsByCurrency[cur][debtorId]) debtsByCurrency[cur][debtorId] = {}
         debtsByCurrency[cur][debtorId][payer] = (debtsByCurrency[cur][debtorId][payer] || 0) + amt
@@ -470,8 +474,8 @@ const ExpensesList = () => {
             <div className="mt-4">
               <div className="text-xs text-slate-500 mb-3">
                 {t(
-                  'Debts are based on split shares owed to the payer.',
-                  '欠款基于分摊金额（向付款人支付）。'
+                  'Debts are based on split shares owed to the payer. Checked boxes are treated as already paid back and are excluded.',
+                  '欠款基于分摊金额（向付款人支付）。勾选表示已还款，将不计入结算。'
                 )}
               </div>
 
