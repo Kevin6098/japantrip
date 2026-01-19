@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { budgetService } from '../services/budgetService'
 
@@ -32,6 +32,10 @@ const BudgetSplitter = () => {
   const [expAmount, setExpAmount] = useState('')
   const [expPaidBy, setExpPaidBy] = useState('')
   const [splitMode, setSplitMode] = useState('equal')
+  // When equal split isn't divisible:
+  // - random_extra: randomly assign the extra smallest units to some members (sum == amount)
+  // - round_up_payer_earns: everyone rounds up; payer receives the extra (sum > amount)
+  const [roundingMode, setRoundingMode] = useState('random_extra')
   const [splitWith, setSplitWith] = useState(new Set())
   const [customSplits, setCustomSplits] = useState({})
   const [formWarn, setFormWarn] = useState('')
@@ -39,12 +43,20 @@ const BudgetSplitter = () => {
   const [error, setError] = useState(null)
   const [expandedCategories, setExpandedCategories] = useState(new Set())
   const [expandedMembers, setExpandedMembers] = useState(new Set())
-  const [activeTab, setActiveTab] = useState('summary')
+  const [activeTab, setActiveTab] = useState('add')
   const [selectedMembers, setSelectedMembers] = useState(new Set())
+  const location = useLocation()
 
   useEffect(() => {
     loadState()
   }, [])
+
+  useEffect(() => {
+    const tab = new URLSearchParams(location.search).get('tab')
+    if (tab === 'add' || tab === 'summary' || tab === 'members') {
+      setActiveTab(tab)
+    }
+  }, [location.search])
 
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0]
@@ -148,10 +160,225 @@ const BudgetSplitter = () => {
 
   const uniqId = () => Math.random().toString(36).slice(2) + Date.now().toString(36)
 
+  const currencyDecimals = (currency) => (currency === 'JPY' ? 0 : 2)
+
   const formatMoney = (amount, currency) => {
+    const dec = currencyDecimals(currency)
     const n = Number(amount || 0)
-    const fixed = (Math.round(n * 100) / 100).toFixed(2)
+    const pow = 10 ** dec
+    const fixed = (Math.round(n * pow) / pow).toFixed(dec)
     return `${fixed} ${currency}`
+  }
+
+  // ======= Total Summary (cross-currency) =======
+  // We model manual/current as "1 CUR = X MYR" (MYR pivot).
+  const [showTotalSummary, setShowTotalSummary] = useState(false)
+  const [totalBaseCurrency, setTotalBaseCurrency] = useState('JPY') // 'JPY' | 'MYR' | 'SGD'
+  const [rateMode, setRateMode] = useState('manual') // 'manual' | 'current'
+  const [manualRatesToMyr, setManualRatesToMyr] = useState({
+    JPY: '0.032',
+    SGD: '3.4',
+  })
+  const [currentRatesToMyr, setCurrentRatesToMyr] = useState(null) // { MYR:1, JPY:number, SGD:number }
+  const [rateLoading, setRateLoading] = useState(false)
+  const [rateError, setRateError] = useState('')
+  const [pieMode, setPieMode] = useState('category') // 'category' | 'member'
+
+  const fetchCurrentRatesToMyr = async () => {
+    try {
+      setRateError('')
+      setRateLoading(true)
+      // Frankfurter supports MYR, JPY, SGD; no API key required.
+      // Response is 1 MYR = X {JPY,SGD}; we invert to get 1 CUR = X MYR.
+      const res = await fetch('https://api.frankfurter.app/latest?from=MYR&to=JPY,SGD')
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const data = await res.json()
+      const myrToJpy = Number(data?.rates?.JPY)
+      const myrToSgd = Number(data?.rates?.SGD)
+      if (!isFinite(myrToJpy) || myrToJpy <= 0) throw new Error('Bad JPY rate')
+      if (!isFinite(myrToSgd) || myrToSgd <= 0) throw new Error('Bad SGD rate')
+      setCurrentRatesToMyr({
+        MYR: 1,
+        JPY: 1 / myrToJpy,
+        SGD: 1 / myrToSgd,
+      })
+    } catch (e) {
+      console.error('Failed to fetch FX rate:', e)
+      setRateError(t('Failed to fetch current rate. Use manual rate.', '获取实时汇率失败。请使用手动汇率。'))
+    } finally {
+      setRateLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    if (rateMode === 'current') {
+      fetchCurrentRatesToMyr()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rateMode])
+
+  const effectiveRatesToMyr = (() => {
+    if (rateMode === 'current') return currentRatesToMyr
+    const parsed = { MYR: 1 }
+    for (const cur of ['JPY', 'SGD']) {
+      const n = Number(manualRatesToMyr?.[cur])
+      parsed[cur] = isFinite(n) && n > 0 ? n : null
+    }
+    return parsed
+  })()
+
+  const convertToBase = (amount, fromCurrency, baseCurrency) => {
+    if (fromCurrency === baseCurrency) return amount
+    const rates = effectiveRatesToMyr
+    if (!rates) return null
+
+    // Only support these currencies for now
+    const supported = new Set(['JPY', 'MYR', 'SGD'])
+    if (!supported.has(fromCurrency) || !supported.has(baseCurrency)) return null
+
+    // Convert fromCurrency -> MYR
+    let inMyr = null
+    if (fromCurrency === 'MYR') {
+      inMyr = amount
+    } else {
+      const toMyr = rates[fromCurrency]
+      if (!toMyr) return null
+      inMyr = amount * toMyr
+    }
+
+    // MYR -> baseCurrency
+    if (baseCurrency === 'MYR') return inMyr
+    const baseToMyr = rates[baseCurrency]
+    if (!baseToMyr) return null
+    return inMyr / baseToMyr
+  }
+
+  const calculateTotalSummary = () => {
+    const selected = new Set(selectedMembers)
+    const supported = new Set(['JPY', 'MYR', 'SGD'])
+    const usedCurrencies = new Set()
+    const unknownCurrencies = new Set()
+
+    const byCategory = {}
+    const byMember = {}
+    let grand = 0
+
+    expenses.forEach((exp) => {
+      const cur = exp.currency || 'JPY'
+      usedCurrencies.add(cur)
+      if (!supported.has(cur)) unknownCurrencies.add(cur)
+
+      // sum only selected members' shares for this expense
+      let selectedShare = 0
+      Object.entries(exp.splits || {}).forEach(([mid, v]) => {
+        if (!selected.has(mid)) return
+        selectedShare += Number(v || 0)
+      })
+      if (selectedShare <= 0) return
+
+      const converted = convertToBase(selectedShare, cur, totalBaseCurrency)
+      if (converted == null) return
+
+      grand += converted
+
+      const cat = exp.category || 'Other'
+      byCategory[cat] = (byCategory[cat] || 0) + converted
+
+      Object.entries(exp.splits || {}).forEach(([mid, v]) => {
+        if (!selected.has(mid)) return
+        const amt = Number(v || 0)
+        if (amt <= 0) return
+        const conv = convertToBase(amt, cur, totalBaseCurrency)
+        if (conv == null) return
+        byMember[mid] = (byMember[mid] || 0) + conv
+      })
+    })
+
+    return {
+      grand,
+      byCategory,
+      byMember,
+      usedCurrencies: Array.from(usedCurrencies).sort(),
+      unknownCurrencies: Array.from(unknownCurrencies).sort(),
+    }
+  }
+
+  const PieChart = ({ data, totalCurrency }) => {
+    const entries = Object.entries(data || {}).filter(([, v]) => Number(v) > 0)
+    const total = entries.reduce((s, [, v]) => s + Number(v), 0)
+    if (total <= 0) {
+      return (
+        <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
+          {t('No data to show for the selected members.', '所选成员暂无可展示的数据。')}
+        </div>
+      )
+    }
+
+    const colors = [
+      '#10b981', '#3b82f6', '#f59e0b', '#ef4444', '#8b5cf6',
+      '#06b6d4', '#22c55e', '#e11d48', '#64748b', '#f97316',
+    ]
+
+    let acc = 0
+    const radius = 54
+    const cx = 64
+    const cy = 64
+    const circumference = 2 * Math.PI * radius
+
+    return (
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
+        <div className="flex justify-center">
+          <svg width="140" height="140" viewBox="0 0 128 128" role="img" aria-label="pie chart">
+            <circle cx={cx} cy={cy} r={radius} fill="transparent" stroke="#e2e8f0" strokeWidth="18" />
+            {entries.map(([label, value], idx) => {
+              const fraction = Number(value) / total
+              const dash = fraction * circumference
+              const dashArray = `${dash} ${circumference - dash}`
+              const dashOffset = -acc * circumference
+              acc += fraction
+              return (
+                <circle
+                  key={label}
+                  cx={cx}
+                  cy={cy}
+                  r={radius}
+                  fill="transparent"
+                  stroke={colors[idx % colors.length]}
+                  strokeWidth="18"
+                  strokeDasharray={dashArray}
+                  strokeDashoffset={dashOffset}
+                  strokeLinecap="butt"
+                  transform={`rotate(-90 ${cx} ${cy})`}
+                />
+              )
+            })}
+            <text x="64" y="62" textAnchor="middle" fontSize="10" fill="#475569" fontWeight="600">
+              {t('Total', '总计')}
+            </text>
+            <text x="64" y="78" textAnchor="middle" fontSize="12" fill="#0f172a" fontWeight="800">
+              {formatMoney(total, totalCurrency)}
+            </text>
+          </svg>
+        </div>
+
+        <div className="space-y-2">
+          {entries
+            .sort((a, b) => Number(b[1]) - Number(a[1]))
+            .map(([label, value], idx) => (
+              <div key={label} className="flex items-center justify-between gap-3 text-sm">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span
+                    className="inline-block w-3 h-3 rounded"
+                    style={{ backgroundColor: colors[idx % colors.length] }}
+                  />
+                  <span className="truncate">{label}</span>
+                </div>
+                <div className="font-semibold whitespace-nowrap">{formatMoney(value, totalCurrency)}</div>
+              </div>
+            ))}
+        </div>
+      </div>
+    )
   }
 
   // ========== MEMBER OPERATIONS ==========
@@ -276,27 +503,86 @@ const BudgetSplitter = () => {
       return { ok: false, msg: t('Enter a valid amount > 0. (You can use "k" suffix, e.g., "5k" = 5000)', '输入有效金额 > 0。（可使用"k"后缀，例如"5k" = 5000）') }
     }
     const splits = {}
+    const dec = currencyDecimals(expCurrency)
+    const scale = 10 ** dec
+    const units = Math.round(amt * scale)
+
+    if (expCurrency === 'JPY' && Math.abs(amt - Math.round(amt)) > 0.0000001) {
+      return { ok: false, msg: t('JPY amounts must be whole yen (no decimals).', '日元金额必须是整数（无小数）。') }
+    }
+
     if (splitMode === 'equal') {
-      const each = Math.floor((amt * 100) / checked.length) / 100
-      const totalDistributed = each * checked.length
-      const remainder = Math.round((amt - totalDistributed) * 100) / 100
-      checked.forEach((id, index) => {
-        if (index === 0) {
-          splits[id] = Math.round((each + remainder) * 100) / 100
-        } else {
-          splits[id] = each
-        }
+      // Rule: If payer is included, let payer pay less so the remaining (n-1) people split evenly.
+      // Example: 10 JPY / 3 people => payer 2, others 4 & 4.
+      if (checked.length === 1) {
+        splits[checked[0]] = units / scale
+        return { ok: true, splits }
+      }
+
+      const includesPayer = expPaidBy && checked.includes(expPaidBy)
+      if (includesPayer) {
+        const n = checked.length
+        const payerMax = Math.floor(units / n) // <= average
+        let payerUnits = payerMax
+        while (payerUnits >= 0 && (units - payerUnits) % (n - 1) !== 0) payerUnits -= 1
+        if (payerUnits < 0) payerUnits = payerMax // fallback (shouldn't happen)
+        const otherUnits = Math.round((units - payerUnits) / (n - 1))
+        checked.forEach((id) => {
+          splits[id] = (id === expPaidBy ? payerUnits : otherUnits) / scale
+        })
+        return { ok: true, splits }
+      }
+
+      // Payer NOT included in split group. Use configurable remainder handling.
+      const n = checked.length
+      const floorEach = Math.floor(units / n)
+      const remainder = units - floorEach * n
+
+      if (remainder === 0) {
+        checked.forEach((id) => {
+          splits[id] = floorEach / scale
+        })
+        return { ok: true, splits }
+      }
+
+      if (roundingMode === 'round_up_payer_earns') {
+        const ceilEach = Math.ceil(units / n)
+        checked.forEach((id) => {
+          splits[id] = ceilEach / scale
+        })
+        return { ok: true, splits }
+      }
+
+      // Default: random assignment of the extra smallest units (sum == amount)
+      const ids = [...checked].sort()
+      // Fisher-Yates shuffle
+      for (let i = ids.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[ids[i], ids[j]] = [ids[j], ids[i]]
+      }
+      const extraSet = new Set(ids.slice(0, remainder)) // remainder is in smallest units
+      checked.forEach((id) => {
+        splits[id] = (floorEach + (extraSet.has(id) ? 1 : 0)) / scale
       })
       return { ok: true, splits }
     }
+
     let sum = 0
     checked.forEach(id => {
       const v = Number(customSplits[id] || 0)
+      if (expCurrency === 'JPY' && Math.abs(v - Math.round(v)) > 0.0000001) {
+        // mark invalid via sum mismatch; error message below is clearer
+      }
       splits[id] = v
       sum += v
     })
+    if (expCurrency === 'JPY' && Math.abs(sum - Math.round(sum)) > 0.0000001) {
+      return { ok: false, msg: t('JPY custom splits must be whole yen (no decimals).', '日元自定义分摊必须是整数（无小数）。') }
+    }
+
     const diff = Math.abs(sum - amt)
-    if (diff > 0.01) {
+    const tolerance = dec === 0 ? 0 : 0.01
+    if (diff > tolerance) {
       return {
         ok: false,
         msg: t(
@@ -453,16 +739,17 @@ const BudgetSplitter = () => {
     const rows = [header]
     expenses.forEach(exp => {
       const paidByName = members.find(m => m.id === exp.paidBy)?.name || ''
+      const dec = (exp.currency || 'JPY') === 'JPY' ? 0 : 2
       const memberAmounts = selectedMembersList.map(m => {
         const splitAmount = exp.splits?.[m.id] || 0
-        return splitAmount > 0 ? Number(splitAmount).toFixed(2) : ''
+        return splitAmount > 0 ? Number(splitAmount).toFixed(dec) : ''
       })
       rows.push([
         exp.date || '',
         exp.category || '',
         exp.currency || '',
         exp.description || exp.desc || '',
-        Number(exp.amount || 0).toFixed(2),
+        Number(exp.amount || 0).toFixed(dec),
         paidByName,
         ...memberAmounts
       ])
@@ -619,79 +906,149 @@ const BudgetSplitter = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-2 mb-6 border-b border-slate-200">
-        <button
-          onClick={() => setActiveTab('summary')}
-          className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
-            activeTab === 'summary'
-              ? 'border-emerald-600 text-emerald-600'
-              : 'border-transparent text-slate-600 hover:text-slate-800'
-          }`}
-        >
-          <i className="fa-solid fa-chart-pie mr-2"></i>
-          {t('Summary', '摘要')}
-        </button>
-        <Link
-          to="/split-expenses/expenses"
-          className={`px-6 py-3 font-semibold transition-colors border-b-2 border-transparent text-slate-600 hover:text-slate-800`}
-        >
-          <i className="fa-solid fa-list mr-2"></i>
-          {t('Expenses', '费用')}
-        </Link>
+      <div className="mb-6">
+        <div className="inline-flex rounded-xl bg-white/70 border border-white/60 backdrop-blur-md p-1 shadow-sm">
+          <button
+            onClick={() => setActiveTab('add')}
+            className={`px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all ${
+              activeTab === 'add' ? 'bg-emerald-600 text-white shadow' : 'text-slate-700 hover:bg-white hover:shadow-sm'
+            }`}
+          >
+            <i className="fa-solid fa-receipt mr-2"></i>
+            {t('Add an expense', '添加费用')}
+          </button>
+          <button
+            onClick={() => setActiveTab('summary')}
+            className={`px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all ${
+              activeTab === 'summary' ? 'bg-emerald-600 text-white shadow' : 'text-slate-700 hover:bg-white hover:shadow-sm'
+            }`}
+          >
+            <i className="fa-solid fa-chart-pie mr-2"></i>
+            {t('Summary', '摘要')}
+          </button>
+          <Link
+            to="/split-expenses/expenses"
+            className={`px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all ${
+              activeTab === 'expenses' ? 'bg-emerald-600 text-white shadow' : 'text-slate-700 hover:bg-white hover:shadow-sm'
+            }`}
+            onClick={() => setActiveTab('expenses')}
+          >
+            <i className="fa-solid fa-list mr-2"></i>
+            {t('Expenses', '费用')}
+          </Link>
+          <button
+            onClick={() => setActiveTab('members')}
+            className={`px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all ${
+              activeTab === 'members' ? 'bg-emerald-600 text-white shadow' : 'text-slate-700 hover:bg-white hover:shadow-sm'
+            }`}
+          >
+            <i className="fa-solid fa-users mr-2"></i>
+            {t('Members', '成员')}
+          </button>
+        </div>
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Left Column: Input Form */}
+      <div className="grid grid-cols-1 gap-6">
+        {(activeTab === 'add' || activeTab === 'members') && (
         <div className="glass-card p-6">
-          <h2 className="font-header text-xl font-bold text-slate-800 mb-4">
-            {t('1) Members', '1) 成员')}
-          </h2>
-
-          <div className="flex gap-3 mb-4">
-            <input
-              type="text"
-              value={memberName}
-              onChange={(e) => setMemberName(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && addMember()}
-              placeholder={t('e.g., Ang', '例如：Ang')}
-              className="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
-            />
-            <button
-              onClick={addMember}
-              className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
-            >
-              {t('Add Member', '添加成员')}
-            </button>
-          </div>
-
-          <div className="flex flex-wrap gap-2 mb-4">
-            {members.map(m => (
-              <div key={m.id} className="flex items-center gap-2 bg-slate-100 px-3 py-1 rounded-full">
-                <span className="text-sm">{m.name}</span>
+          {activeTab === 'members' && (
+            <>
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <h2 className="font-header text-xl font-bold text-slate-800 mb-1">
+                    {t('Members', '成员')}
+                  </h2>
+                  <p className="text-xs text-slate-500">
+                    {USE_DATABASE 
+                      ? t('Members are saved to database.', '成员已保存到数据库。')
+                      : t('Members are saved automatically.', '成员会自动保存。')
+                    }
+                  </p>
+                </div>
                 <button
-                  onClick={() => removeMember(m.id)}
-                  className="text-red-600 hover:text-red-800 text-xs font-bold"
+                  onClick={() => setActiveTab('add')}
+                  className="px-3 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors text-sm font-semibold"
                 >
-                  {t('Remove', '删除')}
+                  <i className="fa-solid fa-receipt mr-2"></i>
+                  {t('Add an expense', '添加费用')}
                 </button>
               </div>
-            ))}
-          </div>
-          <p className="text-xs text-slate-500 mb-6">
-            {USE_DATABASE 
-              ? t('Members are saved to database.', '成员已保存到数据库。')
-              : t('Members are saved automatically.', '成员会自动保存。')
-            }
-          </p>
 
-          <hr className="border-slate-200 my-6" />
+              <div className="flex gap-3 mb-4">
+                <input
+                  type="text"
+                  value={memberName}
+                  onChange={(e) => setMemberName(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && addMember()}
+                  placeholder={t('e.g., Ang', '例如：Ang')}
+                  className="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                />
+                <button
+                  onClick={addMember}
+                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
+                >
+                  {t('Add Member', '添加成员')}
+                </button>
+              </div>
 
-          <h2 className="font-header text-xl font-bold text-slate-800 mb-4">
-            {t('2) Add an expense', '2) 添加费用')}
-          </h2>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {members.map(m => (
+                  <div key={m.id} className="flex items-center gap-2 bg-slate-100 px-3 py-1 rounded-full">
+                    <span className="text-sm">{m.name}</span>
+                    <button
+                      onClick={() => removeMember(m.id)}
+                      className="text-red-600 hover:text-red-800 text-xs font-bold"
+                    >
+                      {t('Remove', '删除')}
+                    </button>
+                  </div>
+                ))}
+                {members.length === 0 && (
+                  <div className="text-sm text-slate-500">
+                    {t('No members yet.', '还没有成员。')}
+                  </div>
+                )}
+              </div>
 
-          <div className="grid grid-cols-3 gap-3 mb-4">
+              <div className="flex gap-3 mt-6">
+                <button
+                  onClick={resetAll}
+                  className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold"
+                >
+                  {t('Reset All Data', '重置所有数据')}
+                </button>
+              </div>
+            </>
+          )}
+
+          {activeTab === 'add' && (
+            <>
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <h2 className="font-header text-xl font-bold text-slate-800 mb-1">
+                    {t('Add an expense', '添加费用')}
+                  </h2>
+                  <p className="text-xs text-slate-500">
+                    {t('Tip: Use "k" suffix (e.g., 5k = 5000).', '提示：可使用"k"后缀（例如 5k = 5000）。')}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setActiveTab('members')}
+                  className="px-3 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors text-sm font-semibold"
+                >
+                  <i className="fa-solid fa-users mr-2"></i>
+                  {t('Manage members', '管理成员')}
+                </button>
+              </div>
+
+              {members.length === 0 && (
+                <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
+                  {t('No members yet. Add members first to split expenses.', '还没有成员。请先添加成员以进行费用分摊。')}
+                </div>
+              )}
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">
                 {t('Date', '日期')}
@@ -731,7 +1088,6 @@ const BudgetSplitter = () => {
               >
                 <option value="JPY">JPY</option>
                 <option value="MYR">MYR</option>
-                <option value="USD">USD</option>
                 <option value="SGD">SGD</option>
               </select>
             </div>
@@ -766,7 +1122,7 @@ const BudgetSplitter = () => {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-3 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">
                 {t('Paid by', '付款人')}
@@ -795,6 +1151,35 @@ const BudgetSplitter = () => {
               </select>
             </div>
           </div>
+
+          {splitMode === 'equal' && expPaidBy && !splitWith.has(expPaidBy) && (
+            <div className="mb-4">
+              <label className="block text-sm font-semibold text-slate-700 mb-1">
+                {t(
+                  'When it can’t split evenly (payer not included)',
+                  '无法平均分摊时（付款人不参与分摊）'
+                )}
+              </label>
+              <select
+                value={roundingMode}
+                onChange={(e) => setRoundingMode(e.target.value)}
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              >
+                <option value="random_extra">
+                  {t('Randomly assign the extra to some members (total stays the same)', '随机分配零头给部分成员（总额不变）')}
+                </option>
+                <option value="round_up_payer_earns">
+                  {t('Everyone rounds up; payer earns the extra', '所有人进位；付款人赚取零头')}
+                </option>
+              </select>
+              <p className="text-xs text-slate-500 mt-1">
+                {t(
+                  'Tip: If the payer is included in “Split with”, we’ll make the payer pay less so everyone else pays the same.',
+                  '提示：如果付款人也在“分摊对象”里，我们会让付款人付少一点，其余人付一样。'
+                )}
+              </p>
+            </div>
+          )}
 
           <div className="mb-4">
             <label className="block text-sm font-semibold text-slate-700 mb-2">
@@ -842,20 +1227,24 @@ const BudgetSplitter = () => {
             </div>
           )}
 
-          <div className="flex gap-3 mt-6">
+          <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <button
               onClick={addExpense}
-              className="flex-1 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
+              className="flex-1 px-4 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
             >
+              <i className="fa-solid fa-plus mr-2"></i>
               {t('Add Expense', '添加费用')}
             </button>
             <button
               onClick={resetAll}
-              className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold"
+              className="px-4 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold"
             >
+              <i className="fa-solid fa-rotate-left mr-2"></i>
               {t('Reset All Data', '重置所有数据')}
             </button>
           </div>
+            </>
+          )}
 
           {formWarn && (
             <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
@@ -863,8 +1252,9 @@ const BudgetSplitter = () => {
             </div>
           )}
         </div>
+        )}
 
-        {/* Right Column: Summary */}
+        {activeTab === 'summary' && (
         <div className="glass-card p-6">
           <div className="flex justify-between items-center mb-4">
             <div>
@@ -922,9 +1312,16 @@ const BudgetSplitter = () => {
             </div>
           </div>
 
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
             <div></div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2 sm:justify-end">
+              <button
+                onClick={() => setShowTotalSummary(v => !v)}
+                className="px-3 py-2 bg-emerald-100 text-emerald-700 rounded-lg hover:bg-emerald-200 transition-colors text-sm font-semibold"
+              >
+                <i className="fa-solid fa-chart-pie mr-2"></i>
+                {showTotalSummary ? t('Hide Total Summary', '隐藏总汇总') : t('Total Summary', '总汇总')}
+              </button>
               <button
                 onClick={exportCSV}
                 className="px-3 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors text-sm font-semibold"
@@ -940,6 +1337,194 @@ const BudgetSplitter = () => {
             </div>
           </div>
 
+          {showTotalSummary && (
+            <div className="mb-6 p-4 bg-white rounded-xl border border-slate-200">
+              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="font-header text-lg font-bold text-slate-800">
+                    {t('Total Summary (Combine currencies)', '总汇总（合并不同货币）')}
+                  </h3>
+                  <p className="text-xs text-slate-500">
+                    {t('Uses selected members only. Converts between JPY, MYR, and SGD.', '仅统计所选成员。支持 JPY、MYR、SGD 的换算。')}
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-4">
+                <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 lg:col-span-1 min-w-[160px]">
+                  <label className="block text-sm font-semibold text-slate-700 mb-1">
+                    {t('Sum up in', '汇总货币')}
+                  </label>
+                  <select
+                    value={totalBaseCurrency}
+                    onChange={(e) => setTotalBaseCurrency(e.target.value)}
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+                  >
+                    <option value="JPY">JPY</option>
+                    <option value="MYR">MYR</option>
+                    <option value="SGD">SGD</option>
+                  </select>
+                </div>
+
+                <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 lg:col-span-4">
+                  <label className="block text-sm font-semibold text-slate-700 mb-1">
+                    {t('Exchange rate', '汇率')}
+                  </label>
+                  <select
+                    value={rateMode}
+                    onChange={(e) => setRateMode(e.target.value)}
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+                  >
+                    <option value="manual">{t('Manual (host sets)', '手动（主持人设置）')}</option>
+                    <option value="current">{t('Current rate (fetch)', '当前汇率（获取）')}</option>
+                  </select>
+                  <div className="mt-2 text-xs text-slate-600">
+                    {t('We use: 1 CUR = X MYR', '使用：1 货币 = X 马币')}
+                  </div>
+                </div>
+
+                <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 lg:col-span-7">
+                  <label className="block text-sm font-semibold text-slate-700 mb-1">
+                    {t('Rates (to MYR)', '汇率（换算到 MYR）')}
+                  </label>
+                  {rateMode === 'manual' ? (
+                    <div className="space-y-2">
+                      {(['JPY', 'SGD']).map((cur) => (
+                        <div key={cur} className="flex flex-col sm:flex-row sm:items-center gap-2">
+                          <div className="flex items-center gap-2">
+                            <div className="w-12 text-sm font-semibold text-slate-700">{cur}</div>
+                            <div className="text-xs text-slate-500">{t('1', '1')} {cur} =</div>
+                          </div>
+                          <input
+                            type="number"
+                            min="0"
+                            step="0.000001"
+                            value={manualRatesToMyr[cur]}
+                            onChange={(e) => setManualRatesToMyr(prev => ({ ...prev, [cur]: e.target.value }))}
+                            className="w-full sm:flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+                          />
+                          <div className="text-sm text-slate-600">MYR</div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="flex-1 text-sm text-slate-700">
+                          {rateLoading
+                            ? t('Fetching…', '获取中…')
+                            : (currentRatesToMyr ? t('Fetched', '已获取') : t('Not fetched', '未获取'))}
+                        </div>
+                        <button
+                          onClick={fetchCurrentRatesToMyr}
+                          className="px-3 py-2 bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition-colors text-sm font-semibold"
+                          disabled={rateLoading}
+                        >
+                          {t('Refresh', '刷新')}
+                        </button>
+                      </div>
+                      {currentRatesToMyr && (
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm">
+                          {(['JPY', 'SGD']).map((cur) => (
+                            <div key={cur} className="px-3 py-2 border border-slate-300 rounded-lg bg-white">
+                              <div className="text-xs text-slate-500">{t('1', '1')} {cur} =</div>
+                              <div className="font-semibold text-slate-800">{String(currentRatesToMyr[cur])} MYR</div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {rateError && <div className="text-xs text-red-600">{rateError}</div>}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                <div className="flex-1">
+                  <label className="block text-sm font-semibold text-slate-700 mb-1">
+                    {t('Pie chart breakdown', '饼图分组')}
+                  </label>
+                  <select
+                    value={pieMode}
+                    onChange={(e) => setPieMode(e.target.value)}
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+                  >
+                    <option value="category">{t('By category', '按类别')}</option>
+                    <option value="member">{t('By member', '按成员')}</option>
+                  </select>
+                </div>
+                <div className="flex-1">
+                  <label className="block text-sm font-semibold text-slate-700 mb-1">
+                    {t('Selected members count', '所选成员数量')}
+                  </label>
+                  <div className="px-3 py-2 border border-slate-300 rounded-lg bg-white text-sm">
+                    {members.filter(m => selectedMembers.has(m.id)).length} / {members.length}
+                  </div>
+                </div>
+              </div>
+
+              {(() => {
+                const result = calculateTotalSummary()
+                const selectedCount = members.filter(m => selectedMembers.has(m.id)).length
+                if (selectedCount === 0) {
+                  return (
+                    <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
+                      {t('Select at least 1 member above.', '请在上方至少选择1位成员。')}
+                    </div>
+                  )
+                }
+                // If multiple currencies are present, ensure all needed rates exist.
+                const needsRates = result.usedCurrencies.some(c => c !== 'MYR')
+                if (needsRates) {
+                  const rates = effectiveRatesToMyr
+                  const missing = result.usedCurrencies
+                    .filter(c => c !== 'MYR')
+                    .filter(c => !rates || !rates[c])
+                  if (missing.length > 0) {
+                    return (
+                      <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
+                        {t(
+                          `Set an exchange rate for: ${missing.join(', ')} (to MYR).`,
+                          `请设置以下货币的汇率（换算到 MYR）：${missing.join(', ')}。`
+                        )}
+                      </div>
+                    )
+                  }
+                }
+                if (result.unknownCurrencies.length > 0) {
+                  return (
+                    <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
+                      {t(
+                        `Some currencies are not supported yet: ${result.unknownCurrencies.join(', ')}. They are excluded from Total Summary.`,
+                        `暂不支持的货币：${result.unknownCurrencies.join(', ')}。这些费用不会计入总汇总。`
+                      )}
+                    </div>
+                  )
+                }
+
+                const pieData =
+                  pieMode === 'member'
+                    ? Object.fromEntries(
+                        Object.entries(result.byMember).map(([mid, v]) => [
+                          members.find(m => m.id === mid)?.name || mid,
+                          v,
+                        ])
+                      )
+                    : result.byCategory
+
+                return (
+                  <>
+                    <PieChart data={pieData} totalCurrency={totalBaseCurrency} />
+                    <div className="mt-4 text-sm text-slate-700">
+                      <span className="font-semibold">{t('Grand total:', '总计：')}</span>{' '}
+                      <span className="font-bold">{formatMoney(result.grand, totalBaseCurrency)}</span>
+                    </div>
+                  </>
+                )
+              })()}
+            </div>
+          )}
+
           {/* Totals */}
           <div className="mb-6">
             {members.length === 0 ? (
@@ -948,7 +1533,7 @@ const BudgetSplitter = () => {
               </div>
             ) : Object.keys(totals).length === 0 ? (
               <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-                {t('No expenses yet. Add your first expense on the left.', '还没有费用。在左侧添加您的第一笔费用。')}
+                {t('No expenses yet. Add your first expense in "Add an expense".', '还没有费用。请在“添加费用”中添加您的第一笔费用。')}
               </div>
             ) : (
               Object.keys(totals).sort().map(cur => {
@@ -1109,6 +1694,7 @@ const BudgetSplitter = () => {
             )}
           </div>
         </div>
+        )}
       </div>
     </div>
   )

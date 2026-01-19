@@ -49,9 +49,13 @@ const ExpensesList = () => {
     }
   }
 
+  const currencyDecimals = (currency) => (currency === 'JPY' ? 0 : 2)
+
   const formatMoney = (amount, currency) => {
+    const dec = currencyDecimals(currency)
     const n = Number(amount || 0)
-    const fixed = (Math.round(n * 100) / 100).toFixed(2)
+    const pow = 10 ** dec
+    const fixed = (Math.round(n * pow) / pow).toFixed(dec)
     return `${fixed} ${currency}`
   }
 
@@ -90,16 +94,17 @@ const ExpensesList = () => {
     const rows = [header]
     expenses.forEach(exp => {
       const paidByName = members.find(m => m.id === exp.paidBy)?.name || ''
+      const dec = (exp.currency || 'JPY') === 'JPY' ? 0 : 2
       const memberAmounts = selectedMembersList.map(m => {
         const splitAmount = exp.splits?.[m.id] || 0
-        return splitAmount > 0 ? Number(splitAmount).toFixed(2) : ''
+        return splitAmount > 0 ? Number(splitAmount).toFixed(dec) : ''
       })
       rows.push([
         exp.date || '',
         exp.category || '',
         exp.currency || '',
         exp.description || exp.desc || '',
-        Number(exp.amount || 0).toFixed(2),
+        Number(exp.amount || 0).toFixed(dec),
         paidByName,
         ...memberAmounts
       ])
@@ -154,6 +159,37 @@ const ExpensesList = () => {
             <i className="fa-solid fa-download mr-2"></i>
             {t('Export CSV', '导出CSV')}
           </button>
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="mb-6">
+        <div className="inline-flex rounded-xl bg-white/70 border border-white/60 backdrop-blur-md p-1 shadow-sm">
+          <Link
+            to="/split-expenses?tab=add"
+            className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-slate-700 hover:bg-white hover:shadow-sm"
+          >
+            <i className="fa-solid fa-receipt mr-2"></i>
+            {t('Add an expense', '添加费用')}
+          </Link>
+          <Link
+            to="/split-expenses?tab=summary"
+            className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-slate-700 hover:bg-white hover:shadow-sm"
+          >
+            <i className="fa-solid fa-chart-pie mr-2"></i>
+            {t('Summary', '摘要')}
+          </Link>
+          <span className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm bg-emerald-600 text-white shadow">
+            <i className="fa-solid fa-list mr-2"></i>
+            {t('Expenses', '费用')}
+          </span>
+          <Link
+            to="/split-expenses?tab=members"
+            className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-slate-700 hover:bg-white hover:shadow-sm"
+          >
+            <i className="fa-solid fa-users mr-2"></i>
+            {t('Members', '成员')}
+          </Link>
         </div>
       </div>
 

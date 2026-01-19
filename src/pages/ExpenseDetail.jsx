@@ -90,9 +90,13 @@ const ExpenseDetail = () => {
     }
   }
 
+  const currencyDecimals = (currency) => (currency === 'JPY' ? 0 : 2)
+
   const formatMoney = (amount, currency) => {
+    const dec = currencyDecimals(currency)
     const n = Number(amount || 0)
-    const fixed = (Math.round(n * 100) / 100).toFixed(2)
+    const pow = 10 ** dec
+    const fixed = (Math.round(n * pow) / pow).toFixed(dec)
     return `${fixed} ${currency}`
   }
 
@@ -138,6 +142,40 @@ const ExpenseDetail = () => {
         <h1 className="text-3xl font-header font-bold text-slate-800">
           {t('Expense Details', '费用详情')}
         </h1>
+      </div>
+
+      {/* Tabs */}
+      <div className="mb-6">
+        <div className="inline-flex rounded-xl bg-white/70 border border-white/60 backdrop-blur-md p-1 shadow-sm">
+          <Link
+            to="/split-expenses?tab=add"
+            className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-slate-700 hover:bg-white hover:shadow-sm"
+          >
+            <i className="fa-solid fa-receipt mr-2"></i>
+            {t('Add an expense', '添加费用')}
+          </Link>
+          <Link
+            to="/split-expenses?tab=summary"
+            className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-slate-700 hover:bg-white hover:shadow-sm"
+          >
+            <i className="fa-solid fa-chart-pie mr-2"></i>
+            {t('Summary', '摘要')}
+          </Link>
+          <Link
+            to="/split-expenses/expenses"
+            className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm bg-emerald-600 text-white shadow"
+          >
+            <i className="fa-solid fa-list mr-2"></i>
+            {t('Expenses', '费用')}
+          </Link>
+          <Link
+            to="/split-expenses?tab=members"
+            className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-slate-700 hover:bg-white hover:shadow-sm"
+          >
+            <i className="fa-solid fa-users mr-2"></i>
+            {t('Members', '成员')}
+          </Link>
+        </div>
       </div>
 
       {/* Expense Card */}
