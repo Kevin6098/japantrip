@@ -5,22 +5,25 @@ import { useLanguage } from '../context/LanguageContext'
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
-  const { toggleLanguage, t } = useLanguage()
+  const { language, toggleLanguage, t } = useLanguage()
 
   const navLinks = [
-    { path: '/flights', label: { en: 'Flights', zh: '航班' }, icon: 'fa-plane' },
-    { path: '/schedule', label: { en: 'Itinerary', zh: '行程' }, icon: 'fa-calendar-days' },
-    { path: '/budget', label: { en: 'Budget', zh: '预算' }, icon: 'fa-yen-sign' },
-    { path: '/transportation-budget', label: { en: 'Transportation', zh: '交通' }, icon: 'fa-train' },
-    { path: '/packing', label: { en: 'Packing', zh: '清单' }, icon: 'fa-suitcase' },
-    { path: '/attractions', label: { en: 'Attractions', zh: '景点' }, icon: 'fa-camera' },
-    { path: '/food', label: { en: 'Food', zh: '美食' }, icon: 'fa-utensils' },
-    { path: '/hotels', label: { en: 'Hotels', zh: '住宿' }, icon: 'fa-hotel' },
-    { path: '/checklist', label: { en: 'Checklist', zh: '清单' }, icon: 'fa-clipboard-check' },
-    { path: '/split-expenses', label: { en: 'Split Expenses', zh: '费用分摊' }, icon: 'fa-calculator' },
+    { path: '/flights', label: { en: 'Flights', zh: '航班', ja: 'フライト' }, icon: 'fa-plane' },
+    { path: '/schedule', label: { en: 'Itinerary', zh: '行程', ja: '旅程' }, icon: 'fa-calendar-days' },
+    { path: '/budget', label: { en: 'Budget', zh: '预算', ja: '予算' }, icon: 'fa-yen-sign' },
+    { path: '/transportation-budget', label: { en: 'Transportation', zh: '交通', ja: '交通' }, icon: 'fa-train' },
+    { path: '/packing', label: { en: 'Packing', zh: '清单', ja: '持ち物' }, icon: 'fa-suitcase' },
+    { path: '/attractions', label: { en: 'Attractions', zh: '景点', ja: '観光地' }, icon: 'fa-camera' },
+    { path: '/food', label: { en: 'Food', zh: '美食', ja: 'グルメ' }, icon: 'fa-utensils' },
+    { path: '/hotels', label: { en: 'Hotels', zh: '住宿', ja: 'ホテル' }, icon: 'fa-hotel' },
+    { path: '/checklist', label: { en: 'Checklist', zh: '清单', ja: 'チェックリスト' }, icon: 'fa-clipboard-check' },
+    { path: '/split-expenses', label: { en: 'Split Expenses', zh: '费用分摊', ja: '割り勘' }, icon: 'fa-calculator' },
   ]
 
   const isActive = (path) => location.pathname === path
+
+  const currentLangLabel =
+    language === 'en' ? 'EN' : language === 'zh' ? '中' : language === 'ja' ? '日' : 'EN'
 
   return (
     <nav className="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-pink-200">
@@ -33,7 +36,7 @@ const Navigation = () => {
                 🌸
               </span>
               <span className="font-header text-xl font-bold text-slate-800 tracking-tight">
-                {t('Japan Trip', '日本之旅')}
+                {t('Japan Trip', '日本之旅', '日本旅行')}
               </span>
             </Link>
           </div>
@@ -50,14 +53,16 @@ const Navigation = () => {
                     : 'text-slate-600 hover:text-pink-600 hover:bg-pink-50 hover:scale-105'
                 }`}
               >
-                {t(link.label.en, link.label.zh)}
+                {t(link.label.en, link.label.zh, link.label.ja)}
               </Link>
             ))}
             <button
               onClick={toggleLanguage}
               className="ml-4 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full border border-slate-300 font-bold text-xs transition-all duration-200 hover:scale-105"
+              aria-label="Change language"
+              title={t('Change language', '切换语言', '言語を切り替え')}
             >
-              🌐 EN / 中
+              🌐 {currentLangLabel} (EN/中/日)
             </button>
           </div>
 
@@ -66,8 +71,10 @@ const Navigation = () => {
             <button
               onClick={toggleLanguage}
               className="flex items-center justify-center w-10 h-10 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg border border-slate-300 text-sm transition-all duration-200 active:scale-95"
+              aria-label="Change language"
+              title={t('Change language', '切换语言', '言語を切り替え')}
             >
-              🌐
+              🌐 {currentLangLabel}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -113,7 +120,7 @@ const Navigation = () => {
                 }`}
               >
                 <i className={`fa-solid ${link.icon} mr-3 text-pink-500 w-5`}></i>
-                {t(link.label.en, link.label.zh)}
+                {t(link.label.en, link.label.zh, link.label.ja)}
               </Link>
             ))}
           </div>

@@ -39,14 +39,14 @@ const Countdown = () => {
   return (
     <div className="countdown-container w-full max-w-2xl mx-auto">
       <div className="text-sm md:text-base mb-4 font-bold text-center">
-        ⏰ {t('Days Until Departure', '距离出发还有')}
+        ⏰ {t('Days Until Departure', '距离出发还有', '出発まであと')}
       </div>
       <div className="grid grid-cols-4 gap-2 md:gap-4">
         {[
-          { value: timeLeft.days, label: t('Days', '天') },
-          { value: timeLeft.hours, label: t('Hours', '小时') },
-          { value: timeLeft.minutes, label: t('Minutes', '分钟') },
-          { value: timeLeft.seconds, label: t('Seconds', '秒') },
+          { value: timeLeft.days, label: t('Days', '天', '日') },
+          { value: timeLeft.hours, label: t('Hours', '小时', '時間') },
+          { value: timeLeft.minutes, label: t('Minutes', '分钟', '分') },
+          { value: timeLeft.seconds, label: t('Seconds', '秒', '秒') },
         ].map((item, index) => (
           <div key={index} className="text-center">
             <div className="text-3xl md:text-5xl font-black font-header drop-shadow-md">

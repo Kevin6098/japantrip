@@ -3,7 +3,7 @@ export const getScheduleData = (t) => [
   {
     day: 1,
     date: 'Wed, Mar 18',
-    title: t('Arrival', '抵达'),
+    title: t('Arrival', '抵达', '到着'),
     location: 'Tokyo',
     color: 'indigo',
     items: [
@@ -20,7 +20,7 @@ export const getScheduleData = (t) => [
   {
     day: 2,
     date: 'Thu, Mar 19',
-    title: t('Tokyo City Tour', '东京城市游'),
+    title: t('Tokyo City Tour', '东京城市游', '東京市内観光'),
     location: 'Tokyo',
     color: 'indigo',
     items: [
@@ -115,7 +115,7 @@ export const getScheduleData = (t) => [
   {
     day: 3,
     date: 'Fri, Mar 20',
-    title: t('Graduation Day', '毕业典礼日'),
+    title: t('Graduation Day', '毕业典礼日', '卒業式'),
     location: 'Tokyo/Saitama',
     color: 'indigo',
     isHoliday: true,
@@ -185,7 +185,7 @@ export const getScheduleData = (t) => [
   {
     day: 4,
     date: 'Sat, Mar 21',
-    title: t('Move to Osaka', '前往大阪'),
+    title: t('Move to Osaka', '前往大阪', '大阪へ移動'),
     location: 'Osaka',
     color: 'orange',
     items: [
@@ -244,7 +244,7 @@ export const getScheduleData = (t) => [
   {
     day: 5,
     date: 'Sun, Mar 22',
-    title: t('Kobe Day Trip', '神户一日游'),
+    title: t('Kobe Day Trip', '神户一日游', '神戸日帰り'),
     location: 'Kobe',
     color: 'red',
     items: [
@@ -324,7 +324,7 @@ export const getScheduleData = (t) => [
   {
     day: 6,
     date: 'Mon, Mar 23',
-    title: t('USJ', '环球影城'),
+    title: t('USJ', '环球影城', 'USJ'),
     location: 'Osaka',
     color: 'sky',
     items: [
@@ -354,7 +354,7 @@ export const getScheduleData = (t) => [
   {
     day: 7,
     date: 'Tue, Mar 24',
-    title: t('Osaka City Highlights', '大阪城市精华'),
+    title: t('Osaka City Highlights', '大阪城市精华', '大阪市内観光'),
     location: 'Osaka',
     color: 'orange',
     items: [
@@ -428,7 +428,7 @@ export const getScheduleData = (t) => [
   {
     day: 8,
     date: 'Wed, Mar 25',
-    title: t('Kyoto (Efficient Route)', '京都 (高效路线)'),
+    title: t('Kyoto (Efficient Route)', '京都 (高效路线)', '京都（効率ルート）'),
     location: 'Kyoto',
     color: 'emerald',
     items: [
@@ -501,7 +501,7 @@ export const getScheduleData = (t) => [
   {
     day: 9,
     date: 'Thu, Mar 26',
-    title: t('Uji & Nara (Healing Route)', '宇治 & 奈良 (治愈路线)'),
+    title: t('Uji & Nara (Healing Route)', '宇治 & 奈良 (治愈路线)', '宇治・奈良（癒しルート）'),
     location: 'Nara',
     color: 'teal',
     items: [
@@ -579,7 +579,7 @@ export const getScheduleData = (t) => [
   {
     day: 10,
     date: 'Fri, Mar 27',
-    title: t('Osaka City Highlights', '大阪城市精华'),
+    title: t('Osaka City Highlights', '大阪城市精华', '大阪市内観光'),
     location: 'Osaka',
     color: 'orange',
     items: [
@@ -656,7 +656,7 @@ export const getScheduleData = (t) => [
   {
     day: 11,
     date: 'Sat, Mar 28',
-    title: t('Fly Home', '回家'),
+    title: t('Fly Home', '回家', '帰国'),
     location: 'Departure',
     color: 'orange',
     items: [

@@ -94,7 +94,7 @@ const BudgetSplitter = () => {
       }
     } catch (err) {
       console.error('Failed to load from database:', err)
-      setError(t('Failed to load data from database. Using local storage.', '从数据库加载数据失败。使用本地存储。'))
+      setError(t('Failed to load data from database. Using local storage.', '从数据库加载数据失败。使用本地存储。', 'DBからの読み込みに失敗しました。ローカル保存を使用します。'))
       // Fallback to localStorage
       loadFromLocalStorage()
     } finally {
@@ -394,7 +394,7 @@ const BudgetSplitter = () => {
   const addMember = async () => {
     const name = memberName.trim()
     if (!name) {
-      setFormWarn(t('Member name cannot be empty.', '成员姓名不能为空。'))
+      setFormWarn(t('Member name cannot be empty.', '成员姓名不能为空。', 'メンバー名を入力してください。'))
       return
     }
 
@@ -420,7 +420,7 @@ const BudgetSplitter = () => {
       
       setMemberName('')
     } catch (err) {
-      setFormWarn(t('Failed to add member. Please try again.', '添加成员失败。请重试。'))
+      setFormWarn(t('Failed to add member. Please try again.', '添加成员失败。请重试。', 'メンバーの追加に失敗しました。もう一度お試しください。'))
       console.error('Error adding member:', err)
     }
   }
@@ -478,7 +478,7 @@ const BudgetSplitter = () => {
         return next
       })
     } catch (err) {
-      setFormWarn(t('Failed to remove member. Please try again.', '删除成员失败。请重试。'))
+      setFormWarn(t('Failed to remove member. Please try again.', '删除成员失败。请重试。', 'メンバーの削除に失敗しました。もう一度お試しください。'))
       console.error('Error removing member:', err)
     }
   }
@@ -505,11 +505,18 @@ const BudgetSplitter = () => {
   const buildSplits = () => {
     const checked = Array.from(splitWith)
     if (checked.length === 0) {
-      return { ok: false, msg: t('Choose at least 1 member to split with.', '至少选择1个成员进行分摊。') }
+      return { ok: false, msg: t('Choose at least 1 member to split with.', '至少选择1个成员进行分摊。', '割り勘するメンバーを1人以上選んでください。') }
     }
     const amt = parseAmount(expAmount)
     if (!isFinite(amt) || amt <= 0) {
-      return { ok: false, msg: t('Enter a valid amount > 0. (You can use "k" suffix, e.g., "5k" = 5000)', '输入有效金额 > 0。（可使用"k"后缀，例如"5k" = 5000）') }
+      return {
+        ok: false,
+        msg: t(
+          'Enter a valid amount > 0. (You can use "k" suffix, e.g., "5k" = 5000)',
+          '输入有效金额 > 0。（可使用"k"后缀，例如"5k" = 5000）',
+          '0より大きい金額を入力してください。（例： "5k" = 5000）'
+        ),
+      }
     }
     const splits = {}
     const dec = currencyDecimals(expCurrency)
@@ -517,7 +524,7 @@ const BudgetSplitter = () => {
     const units = Math.round(amt * scale)
 
     if (expCurrency === 'JPY' && Math.abs(amt - Math.round(amt)) > 0.0000001) {
-      return { ok: false, msg: t('JPY amounts must be whole yen (no decimals).', '日元金额必须是整数（无小数）。') }
+      return { ok: false, msg: t('JPY amounts must be whole yen (no decimals).', '日元金额必须是整数（无小数）。', 'JPYは整数（小数なし）で入力してください。') }
     }
 
     if (splitMode === 'equal') {
@@ -586,7 +593,7 @@ const BudgetSplitter = () => {
       sum += v
     })
     if (expCurrency === 'JPY' && Math.abs(sum - Math.round(sum)) > 0.0000001) {
-      return { ok: false, msg: t('JPY custom splits must be whole yen (no decimals).', '日元自定义分摊必须是整数（无小数）。') }
+      return { ok: false, msg: t('JPY custom splits must be whole yen (no decimals).', '日元自定义分摊必须是整数（无小数）。', 'JPYのカスタム割り勘は整数（小数なし）で入力してください。') }
     }
 
     const diff = Math.abs(sum - amt)
@@ -596,7 +603,8 @@ const BudgetSplitter = () => {
         ok: false,
         msg: t(
           `Custom split total must equal the expense amount. Currently: ${formatMoney(sum, expCurrency)} (needs ${formatMoney(amt, expCurrency)}).`,
-          `自定义分摊总额必须等于费用金额。当前：${formatMoney(sum, expCurrency)}（需要 ${formatMoney(amt, expCurrency)}）。`
+          `自定义分摊总额必须等于费用金额。当前：${formatMoney(sum, expCurrency)}（需要 ${formatMoney(amt, expCurrency)}）。`,
+          `カスタム割り勘の合計は支出金額と一致する必要があります。現在：${formatMoney(sum, expCurrency)}（必要：${formatMoney(amt, expCurrency)}）`
         )
       }
     }
@@ -607,11 +615,11 @@ const BudgetSplitter = () => {
   const addExpense = async () => {
     setFormWarn('')
     if (members.length === 0) {
-      setFormWarn(t('Add at least 1 member first.', '请先添加至少1个成员。'))
+      setFormWarn(t('Add at least 1 member first.', '请先添加至少1个成员。', '先にメンバーを1人以上追加してください。'))
       return
     }
     if (!expPaidBy) {
-      setFormWarn(t('Select who paid.', '选择付款人。'))
+      setFormWarn(t('Select who paid.', '选择付款人。', '立替した人を選んでください。'))
       return
     }
     const { ok, splits, msg } = buildSplits()
@@ -647,7 +655,7 @@ const BudgetSplitter = () => {
       setExpAmount('')
       setCustomSplits({})
     } catch (err) {
-      setFormWarn(t('Failed to add expense. Please try again.', '添加费用失败。请重试。'))
+      setFormWarn(t('Failed to add expense. Please try again.', '添加费用失败。请重试。', '支出の追加に失敗しました。もう一度お試しください。'))
       console.error('Error adding expense:', err)
     }
   }
@@ -687,13 +695,13 @@ const BudgetSplitter = () => {
         saveToLocalStorage({ members, expenses: newExpenses })
       }
     } catch (err) {
-      setFormWarn(t('Failed to delete expense. Please try again.', '删除费用失败。请重试。'))
+      setFormWarn(t('Failed to delete expense. Please try again.', '删除费用失败。请重试。', '支出の削除に失敗しました。もう一度お試しください。'))
       console.error('Error deleting expense:', err)
     }
   }
 
   const clearExpenses = async () => {
-    if (window.confirm(t('Clear all expenses (keep members)?', '清除所有费用（保留成员）？'))) {
+    if (window.confirm(t('Clear all expenses (keep members)?', '清除所有费用（保留成员）？', '支出を全て削除しますか？（メンバーは残します）'))) {
       try {
         if (USE_DATABASE) {
           // Delete all expenses from database
@@ -705,14 +713,14 @@ const BudgetSplitter = () => {
           saveToLocalStorage({ members, expenses: [] })
         }
       } catch (err) {
-        setFormWarn(t('Failed to clear expenses. Please try again.', '清除费用失败。请重试。'))
+        setFormWarn(t('Failed to clear expenses. Please try again.', '清除费用失败。请重试。', '支出のクリアに失敗しました。もう一度お試しください。'))
         console.error('Error clearing expenses:', err)
       }
     }
   }
 
   const resetAll = async () => {
-    if (window.confirm(t('Reset EVERYTHING (members + expenses)?', '重置所有内容（成员 + 费用）？'))) {
+    if (window.confirm(t('Reset EVERYTHING (members + expenses)?', '重置所有内容（成员 + 费用）？', 'すべてリセットしますか？（メンバー＋支出）'))) {
       try {
         if (USE_DATABASE) {
           // Delete all expenses
@@ -736,7 +744,7 @@ const BudgetSplitter = () => {
           saveToLocalStorage({ members: defaultMembers, expenses: [] })
         }
       } catch (err) {
-        setFormWarn(t('Failed to reset. Please try again.', '重置失败。请重试。'))
+        setFormWarn(t('Failed to reset. Please try again.', '重置失败。请重试。', 'リセットに失敗しました。もう一度お試しください。'))
         console.error('Error resetting:', err)
       }
     }
@@ -882,7 +890,7 @@ const BudgetSplitter = () => {
       <div className="min-h-screen py-12 px-4 sm:px-6 max-w-7xl mx-auto pb-24">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600"></div>
-          <p className="mt-4 text-slate-600">{t('Loading...', '加载中...')}</p>
+          <p className="mt-4 text-slate-600">{t('Loading...', '加载中...', '読み込み中...')}</p>
         </div>
       </div>
     )
@@ -898,12 +906,12 @@ const BudgetSplitter = () => {
           </div>
           <div className="flex-1">
             <h1 className="font-header text-2xl md:text-3xl font-bold text-slate-800 mb-1">
-              {t('Budget Splitter', '费用分摊器')}
+              {t('Budget Splitter', '费用分摊器', '割り勘')}
             </h1>
             <p className="text-sm md:text-base text-slate-600">
               {USE_DATABASE 
-                ? t('Database mode — data synced across devices.', '数据库模式 — 数据跨设备同步。')
-                : t('Offline tracker — auto split expenses by selected members + per-member totals.', '离线追踪器 — 自动按选定成员分摊费用 + 每人总计。')
+                ? t('Database mode — data synced across devices.', '数据库模式 — 数据跨设备同步。', 'DBモード — データは端末間で同期。')
+                : t('Offline tracker — auto split expenses by selected members + per-member totals.', '离线追踪器 — 自动按选定成员分摊费用 + 每人总计。', 'オフライン — 選択メンバーで自動割り勘＋メンバー別合計。')
               }
             </p>
           </div>

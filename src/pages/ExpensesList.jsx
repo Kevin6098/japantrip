@@ -197,7 +197,7 @@ const ExpensesList = () => {
       <div className="min-h-screen py-12 px-4 sm:px-6 max-w-7xl mx-auto pb-24">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600"></div>
-          <p className="mt-4 text-slate-600">{t('Loading...', '加载中...')}</p>
+          <p className="mt-4 text-slate-600">{t('Loading...', '加载中...', '読み込み中...')}</p>
         </div>
       </div>
     )
@@ -213,12 +213,16 @@ const ExpensesList = () => {
           </div>
           <div className="flex-1">
             <h1 className="font-header text-2xl md:text-3xl font-bold text-slate-800 mb-1">
-              {t('Budget Splitter', '费用分摊器')}
+              {t('Budget Splitter', '费用分摊器', '割り勘')}
             </h1>
             <p className="text-sm md:text-base text-slate-600">
               {USE_DATABASE
-                ? t('Database mode — data synced across devices.', '数据库模式 — 数据跨设备同步。')
-                : t('Offline tracker — auto split expenses by selected members + per-member totals.', '离线追踪器 — 自动按选定成员分摊费用 + 每人总计。')
+                ? t('Database mode — data synced across devices.', '数据库模式 — 数据跨设备同步。', 'DBモード — データは端末間で同期。')
+                : t(
+                    'Offline tracker — auto split expenses by selected members + per-member totals.',
+                    '离线追踪器 — 自动按选定成员分摊费用 + 每人总计。',
+                    'オフライン — 選択メンバーで自動割り勘＋メンバー別合計。'
+                  )
               }
             </p>
           </div>
@@ -233,25 +237,25 @@ const ExpensesList = () => {
             className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-slate-700 hover:bg-white hover:shadow-sm"
           >
             <i className="fa-solid fa-receipt mr-2"></i>
-            {t('Add an expense', '添加费用')}
+            {t('Add an expense', '添加费用', '支出を追加')}
           </Link>
           <Link
             to="/split-expenses?tab=summary"
             className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-slate-700 hover:bg-white hover:shadow-sm"
           >
             <i className="fa-solid fa-chart-pie mr-2"></i>
-            {t('Summary', '摘要')}
+            {t('Summary', '摘要', 'サマリー')}
           </Link>
           <span className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm bg-emerald-600 text-white shadow">
             <i className="fa-solid fa-list mr-2"></i>
-            {t('Expenses', '费用')}
+            {t('Expenses', '费用', '支出')}
           </span>
           <Link
             to="/split-expenses?tab=members"
             className="px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-slate-700 hover:bg-white hover:shadow-sm"
           >
             <i className="fa-solid fa-users mr-2"></i>
-            {t('Members', '成员')}
+            {t('Members', '成员', 'メンバー')}
           </Link>
         </div>
       </div>
@@ -261,10 +265,10 @@ const ExpensesList = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h2 className="font-header text-xl font-bold text-slate-800 mb-1">
-              {t('Expenses', '费用')}
+              {t('Expenses', '费用', '支出')}
             </h2>
             <p className="text-sm text-slate-600">
-              {t('View and manage all expenses', '查看和管理所有费用')}
+              {t('View and manage all expenses', '查看和管理所有费用', '支出の一覧と管理')}
             </p>
           </div>
           <button
@@ -272,7 +276,7 @@ const ExpensesList = () => {
             className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
           >
             <i className="fa-solid fa-download mr-2"></i>
-            {t('Export CSV', '导出CSV')}
+            {t('Export CSV', '导出CSV', 'CSVを書き出す')}
           </button>
         </div>
       </div>
@@ -280,7 +284,7 @@ const ExpensesList = () => {
       {/* Member Filter */}
       <div className="glass-card p-4 mb-4">
         <label className="block text-sm font-semibold text-slate-700 mb-2">
-          {t('Show Members', '显示成员')}
+          {t('Show Members', '显示成员', '表示するメンバー')}
         </label>
         <div className="flex flex-wrap gap-2">
           {members.map(m => (
@@ -310,14 +314,14 @@ const ExpensesList = () => {
             onClick={() => setSelectedMembers(new Set(members.map(m => m.id)))}
             className="text-xs text-emerald-600 hover:text-emerald-800 font-semibold"
           >
-            {t('Select All', '全选')}
+            {t('Select All', '全选', '全選択')}
           </button>
           <span className="text-xs text-slate-400">|</span>
           <button
             onClick={() => setSelectedMembers(new Set())}
             className="text-xs text-slate-600 hover:text-slate-800 font-semibold"
           >
-            {t('Deselect All', '全不选')}
+            {t('Deselect All', '全不选', '全解除')}
           </button>
         </div>
       </div>
@@ -328,11 +332,11 @@ const ExpensesList = () => {
           <table className="w-full text-sm border border-slate-200 rounded-lg">
             <thead className="bg-slate-100">
               <tr>
-                <th className="text-left p-2 font-semibold text-slate-700 min-w-[95px]">{t('Date', '日期')}</th>
-                <th className="text-left p-2 font-semibold text-slate-700 min-w-[90px]">{t('Category', '类别')}</th>
-                <th className="text-left p-2 font-semibold text-slate-700">{t('Description', '描述')}</th>
-                <th className="text-left p-2 font-semibold text-slate-700 min-w-[95px]">{t('Paid by', '付款人')}</th>
-                <th className="text-right p-2 font-semibold text-slate-700 min-w-[110px]">{t('Amount', '金额')}</th>
+                <th className="text-left p-2 font-semibold text-slate-700 min-w-[95px]">{t('Date', '日期', '日付')}</th>
+                <th className="text-left p-2 font-semibold text-slate-700 min-w-[90px]">{t('Category', '类别', 'カテゴリ')}</th>
+                <th className="text-left p-2 font-semibold text-slate-700">{t('Description', '描述', '内容')}</th>
+                <th className="text-left p-2 font-semibold text-slate-700 min-w-[95px]">{t('Paid by', '付款人', '立替')}</th>
+                <th className="text-right p-2 font-semibold text-slate-700 min-w-[110px]">{t('Amount', '金额', '金額')}</th>
                 {members.filter(m => selectedMembers.has(m.id)).map(m => (
                   <th key={m.id} className="text-right p-2 font-semibold text-slate-700 min-w-[120px]">{m.name}</th>
                 ))}
@@ -342,7 +346,7 @@ const ExpensesList = () => {
               {expenses.length === 0 ? (
                 <tr>
                   <td colSpan={5 + members.filter(m => selectedMembers.has(m.id)).length} className="p-4 text-center text-slate-500 text-sm">
-                    {t('No expenses yet.', '还没有费用。')}
+                    {t('No expenses yet.', '还没有费用。', 'まだ支出がありません。')}
                   </td>
                 </tr>
               ) : (
@@ -421,7 +425,7 @@ const ExpensesList = () => {
                                   }}
                                   onClick={(e) => e.stopPropagation()}
                                   className="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500 cursor-pointer"
-                                  title={isPaid ? t('Paid', '已付款') : t('Not paid', '未付款')}
+                                  title={isPaid ? t('Paid', '已付款', '支払い済み') : t('Not paid', '未付款', '未払い')}
                                 />
                               </label>
                               <Link 
@@ -450,13 +454,13 @@ const ExpensesList = () => {
               className="w-full lg:w-auto px-4 py-3 bg-white border border-slate-200 text-slate-800 rounded-xl hover:bg-slate-50 transition-colors font-bold flex items-center justify-center gap-2"
             >
               <i className="fa-solid fa-handshake text-slate-700"></i>
-              {t('Settle Up', '结算')}
+              {t('Settle Up', '结算', '精算')}
               <i className={`fa-solid fa-chevron-${showSettleUp ? 'up' : 'down'} text-xs text-slate-500 ml-1`}></i>
             </button>
 
             <div className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-center">
               <div className="flex items-center gap-2">
-                <span className="text-sm font-semibold text-slate-700">{t('View as', '查看为')}</span>
+                <span className="text-sm font-semibold text-slate-700">{t('View as', '查看为', '表示（自分）')}</span>
                 <select
                   value={settleViewMemberId}
                   onChange={(e) => setSettleViewMemberId(e.target.value)}
@@ -475,7 +479,8 @@ const ExpensesList = () => {
               <div className="text-xs text-slate-500 mb-3">
                 {t(
                   'Debts are based on split shares owed to the payer. Checked boxes are treated as already paid back and are excluded.',
-                  '欠款基于分摊金额（向付款人支付）。勾选表示已还款，将不计入结算。'
+                  '欠款基于分摊金额（向付款人支付）。勾选表示已还款，将不计入结算。',
+                  '精算は「立替した人に払うべき割り勘分」に基づきます。チェック済みは返済済み扱いで除外されます。'
                 )}
               </div>
 
@@ -488,8 +493,8 @@ const ExpensesList = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <details className="bg-white border border-slate-200 rounded-xl p-4" open>
                       <summary className="cursor-pointer font-bold text-slate-800 flex items-center justify-between">
-                        <span>{t('People who owe me', '谁欠我')}</span>
-                        <span className="text-xs text-slate-500">{t('tap to collapse', '点击收起')}</span>
+                        <span>{t('People who owe me', '谁欠我', '私に払う人')}</span>
+                        <span className="text-xs text-slate-500">{t('tap to collapse', '点击收起', 'タップで折りたたむ')}</span>
                       </summary>
                       <div className="mt-3 space-y-3">
                         {settleData.currencies.map(cur => {
@@ -516,8 +521,8 @@ const ExpensesList = () => {
 
                     <details className="bg-white border border-slate-200 rounded-xl p-4" open>
                       <summary className="cursor-pointer font-bold text-slate-800 flex items-center justify-between">
-                        <span>{t('I owe people', '我欠谁')}</span>
-                        <span className="text-xs text-slate-500">{t('tap to collapse', '点击收起')}</span>
+                        <span>{t('I owe people', '我欠谁', '私が払う相手')}</span>
+                        <span className="text-xs text-slate-500">{t('tap to collapse', '点击收起', 'タップで折りたたむ')}</span>
                       </summary>
                       <div className="mt-3 space-y-3">
                         {settleData.currencies.map(cur => {
@@ -549,7 +554,7 @@ const ExpensesList = () => {
         </div>
 
         <p className="text-xs text-slate-500 mt-4">
-          {t('Tip: Click on any expense to view details or delete it.', '提示：点击任何费用可查看详情或删除。')}
+          {t('Tip: Click on any expense to view details or delete it.', '提示：点击任何费用可查看详情或删除。', 'ヒント：支出をクリックすると詳細表示／削除ができます。')}
         </p>
       </div>
     </div>

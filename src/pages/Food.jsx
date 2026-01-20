@@ -57,12 +57,12 @@ const Food = () => {
   }
 
   const sections = [
-    { key: 'tokyo', name: t('Tokyo', '东京'), icon: 'fa-city', color: 'indigo' },
-    { key: 'osaka', name: t('Osaka', '大阪'), icon: 'fa-utensils', color: 'orange' },
-    { key: 'kobe', name: t('Kobe', '神户'), icon: 'fa-mountain', color: 'red' },
-    { key: 'kyoto', name: t('Kyoto', '京都'), icon: 'fa-torii-gate', color: 'green' },
-    { key: 'uji', name: t('Uji', '宇治'), icon: 'fa-leaf', color: 'teal' },
-    { key: 'nara', name: t('Nara', '奈良'), icon: 'fa-deer', color: 'amber' },
+    { key: 'tokyo', name: t('Tokyo', '东京', '東京'), icon: 'fa-city', color: 'indigo' },
+    { key: 'osaka', name: t('Osaka', '大阪', '大阪'), icon: 'fa-utensils', color: 'orange' },
+    { key: 'kobe', name: t('Kobe', '神户', '神戸'), icon: 'fa-mountain', color: 'red' },
+    { key: 'kyoto', name: t('Kyoto', '京都', '京都'), icon: 'fa-torii-gate', color: 'green' },
+    { key: 'uji', name: t('Uji', '宇治', '宇治'), icon: 'fa-leaf', color: 'teal' },
+    { key: 'nara', name: t('Nara', '奈良', '奈良'), icon: 'fa-deer', color: 'amber' },
   ]
 
   return (
@@ -72,11 +72,15 @@ const Food = () => {
         <div className="inline-flex items-center bg-white px-6 py-3 rounded-full shadow border border-orange-100 mb-4">
           <i className="fa-solid fa-utensils text-orange-500 text-xl mr-2"></i>
           <h1 className="font-header text-2xl font-bold text-slate-800">
-            {t('Food & Restaurants', '美食与餐厅')}
+            {t('Food & Restaurants', '美食与餐厅', 'グルメ・レストラン')}
           </h1>
         </div>
         <p className="text-sm text-slate-600 max-w-2xl mx-auto">
-          🍜 {t('Discover all the amazing restaurants and food experiences in your itinerary!', '探索行程中所有精彩的餐厅和美食体验！')}
+          🍜 {t(
+            'Discover all the amazing restaurants and food experiences in your itinerary!',
+            '探索行程中所有精彩的餐厅和美食体验！',
+            '旅程にあるおすすめのレストラン＆食体験をチェック！'
+          )}
         </p>
       </div>
 
@@ -113,27 +117,31 @@ const Food = () => {
                   >
                     <Link to={`/food/${restaurant.id}`} className="block w-full flex">
                       <RestaurantCard
-                        title={t(restaurant.title.en, restaurant.title.zh)}
-                        description={restaurant.about ? t(restaurant.about.en, restaurant.about.zh).substring(0, 100) + '...' : ''}
-                        location={t(restaurant.location.en, restaurant.location.zh)}
+                        title={t(restaurant.title.en, restaurant.title.zh, restaurant.title.ja)}
+                        description={
+                          restaurant.about
+                            ? t(restaurant.about.en, restaurant.about.zh, restaurant.about.ja).substring(0, 100) + '...'
+                            : ''
+                        }
+                        location={t(restaurant.location.en, restaurant.location.zh, restaurant.location.ja)}
                         price={restaurant.price}
                         image={image}
                         locationColor={section.color}
                         schedule={restaurant.schedule ? (
                           Array.isArray(restaurant.schedule) 
                             ? restaurant.schedule.map(s => ({
-                                date: t(s.date.en, s.date.zh),
+                                date: t(s.date.en, s.date.zh, s.date.ja),
                                 time: s.time,
-                                meal: t(s.meal.en, s.meal.zh)
+                                meal: t(s.meal.en, s.meal.zh, s.meal.ja)
                               }))
                             : {
-                                date: t(restaurant.schedule.date.en, restaurant.schedule.date.zh),
+                                date: t(restaurant.schedule.date.en, restaurant.schedule.date.zh, restaurant.schedule.date.ja),
                                 time: restaurant.schedule.time,
-                                meal: t(restaurant.schedule.meal.en, restaurant.schedule.meal.zh)
+                                meal: t(restaurant.schedule.meal.en, restaurant.schedule.meal.zh, restaurant.schedule.meal.ja)
                               }
                         ) : null}
                         recommended={restaurant.recommended || false}
-                        genre={restaurant.genre ? t(restaurant.genre.en, restaurant.genre.zh) : null}
+                        genre={restaurant.genre ? t(restaurant.genre.en, restaurant.genre.zh, restaurant.genre.ja) : null}
                       />
                     </Link>
                   </div>

@@ -15,10 +15,10 @@ const DaySchedule = () => {
       <div className="min-h-screen py-12 px-4 sm:px-6 max-w-5xl mx-auto pb-24">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-slate-800 mb-4">
-            {t('Day not found', '未找到该天')}
+            {t('Day not found', '未找到该天', '該当の日が見つかりません')}
           </h1>
           <Link to="/schedule" className="text-emerald-600 hover:text-emerald-800">
-            {t('← Back to Itinerary', '← 返回行程')}
+            {t('← Back to Itinerary', '← 返回行程', '← 旅程へ戻る')}
           </Link>
         </div>
       </div>
@@ -26,9 +26,13 @@ const DaySchedule = () => {
   }
 
   const renderItem = (item, itemIndex) => {
-    const itemText = typeof item.text === 'string' ? item.text : t(item.text?.en || '', item.text?.zh || '')
-    const itemTransit = item.transit ? (typeof item.transit === 'string' ? item.transit : t(item.transit?.en || '', item.transit?.zh || '')) : null
-    const itemNote = item.note ? (typeof item.note === 'string' ? item.note : t(item.note?.en || '', item.note?.zh || '')) : null
+    const itemText = typeof item.text === 'string' ? item.text : t(item.text?.en || '', item.text?.zh || '', item.text?.ja || '')
+    const itemTransit = item.transit
+      ? (typeof item.transit === 'string' ? item.transit : t(item.transit?.en || '', item.transit?.zh || '', item.transit?.ja || ''))
+      : null
+    const itemNote = item.note
+      ? (typeof item.note === 'string' ? item.note : t(item.note?.en || '', item.note?.zh || '', item.note?.ja || ''))
+      : null
     
     // Check if this is a departure item (but exclude "Depart from Katsuoji")
     const isKatsuojiDeparture = itemText.toLowerCase().includes('katsuoji') || 
@@ -104,9 +108,9 @@ const DaySchedule = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-blue-600 hover:text-blue-800"
-                  title={t('Open in Google Maps', '在Google地图中打开')}
+                  title={t('Open in Google Maps', '在Google地图中打开', 'Googleマップで開く')}
                 >
-                  <i className="fa-solid fa-map-location-dot"></i> {t('Map', '地图')}
+                  <i className="fa-solid fa-map-location-dot"></i> {t('Map', '地图', '地図')}
                 </a>
               )}
             </div>
@@ -166,7 +170,7 @@ const DaySchedule = () => {
             className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors"
           >
             <i className="fa-solid fa-arrow-left"></i>
-            <span>{t('Previous Day', '上一天')}</span>
+            <span>{t('Previous Day', '上一天', '前の日')}</span>
           </Link>
         ) : (
           <Link
@@ -174,7 +178,7 @@ const DaySchedule = () => {
             className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors"
           >
             <i className="fa-solid fa-arrow-left"></i>
-            <span>{t('Back to Itinerary', '返回行程')}</span>
+            <span>{t('Back to Itinerary', '返回行程', '旅程へ戻る')}</span>
           </Link>
         )}
 
@@ -182,7 +186,7 @@ const DaySchedule = () => {
           to="/schedule"
           className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-colors font-semibold"
         >
-          {t('Back to Itinerary', '返回行程')}
+          {t('Back to Itinerary', '返回行程', '旅程へ戻る')}
         </Link>
 
         {nextDay ? (
@@ -190,7 +194,7 @@ const DaySchedule = () => {
             to={`/schedule/day/${nextDay}`}
             className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors"
           >
-            <span>{t('Next Day', '下一天')}</span>
+            <span>{t('Next Day', '下一天', '次の日')}</span>
             <i className="fa-solid fa-arrow-right"></i>
           </Link>
         ) : (
@@ -198,7 +202,7 @@ const DaySchedule = () => {
             to="/schedule"
             className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors"
           >
-            <span>{t('Back to Itinerary', '返回行程')}</span>
+            <span>{t('Back to Itinerary', '返回行程', '旅程へ戻る')}</span>
             <i className="fa-solid fa-arrow-right"></i>
           </Link>
         )}
@@ -208,14 +212,14 @@ const DaySchedule = () => {
       <div className="text-center mb-8">
         <div className={`inline-block ${getColorClasses(dayData.color).split(' ')[2]} px-6 py-2 rounded-full mb-4`}>
           <span className="font-bold text-sm text-white">
-            {t('Day', '第')} {dayData.day} {t('Day', '天')}
+            {t('Day', '第', 'Day')} {dayData.day} {t('Day', '天', '日')}
           </span>
         </div>
         <h1 className={`text-4xl md:text-5xl font-header font-bold mb-2 ${getColorClasses(dayData.color).split(' ')[1]}`}>
-          {typeof dayData.title === 'string' ? dayData.title : t(dayData.title?.en || '', dayData.title?.zh || '')}
+          {typeof dayData.title === 'string' ? dayData.title : t(dayData.title?.en || '', dayData.title?.zh || '', dayData.title?.ja || '')}
         </h1>
         <p className="text-pink-500 font-bold text-lg uppercase tracking-widest">
-          {dayData.date} {dayData.isHoliday && t('(Holiday)', '(假日)')}
+          {dayData.date} {dayData.isHoliday && t('(Holiday)', '(假日)', '(祝日)')}
         </p>
         <p className="text-slate-500 text-sm mt-2">📍 {dayData.location}</p>
       </div>

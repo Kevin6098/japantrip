@@ -28,11 +28,11 @@ const Schedule = () => {
         <div className="inline-flex items-center bg-white px-6 py-3 rounded-full shadow border border-pink-100 mb-4">
           <i className="fa-regular fa-calendar-days text-pink-500 text-xl mr-2"></i>
           <h1 className="font-header text-2xl font-bold text-slate-800">
-            {t('Daily Schedule', '每日行程')}
+            {t('Daily Schedule', '每日行程', '日程')}
           </h1>
         </div>
         <p className="text-sm text-slate-600">
-          🗾 {t('11 amazing days of adventure await!', '11天的精彩冒险等着您！')}
+          🗾 {t('11 amazing days of adventure await!', '11天的精彩冒险等着您！', '11日間の冒険が待っています！')}
         </p>
       </div>
 
@@ -47,7 +47,7 @@ const Schedule = () => {
             <div className={`${getColorBg(day.color)} p-4 text-white`}>
               <div className="flex justify-between items-center mb-2">
                 <span className="font-bold text-sm">
-                  {t('Day', '第')} {day.day} {t('Day', '天')}
+                  {t('Day', '第', 'Day')} {day.day} {t('Day', '天', '日')}
                 </span>
                 <span className="text-xs">{day.date}</span>
               </div>
@@ -55,10 +55,19 @@ const Schedule = () => {
             </div>
             <div className="p-4">
               <p className="text-xs text-slate-600 mb-3 line-clamp-2">
-                {day.items.slice(0, 2).map(item => t(typeof item.text === 'string' ? item.text : item.text?.en || '', typeof item.text === 'string' ? item.text : item.text?.zh || '')).join(' → ')}
+                {day.items
+                  .slice(0, 2)
+                  .map(item =>
+                    t(
+                      typeof item.text === 'string' ? item.text : item.text?.en || '',
+                      typeof item.text === 'string' ? item.text : item.text?.zh || '',
+                      typeof item.text === 'string' ? item.text : item.text?.ja || ''
+                    )
+                  )
+                  .join(' → ')}
               </p>
               <div className="w-full text-xs font-bold text-slate-600 hover:text-slate-800 flex items-center justify-center gap-2">
-                <span>{t('View Details', '查看详情')}</span>
+                <span>{t('View Details', '查看详情', '詳細を見る')}</span>
                 <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
               </div>
             </div>

@@ -24,8 +24,8 @@ const Checklist = () => {
   const shinkansenItems = [
     {
       id: 'shinkansen-tokyo-osaka',
-      title: t('Tokyo → Osaka Shinkansen (Day 4, Mar 21)', '东京 → 大阪新干线 (第4天, 3月21日)'),
-      details: t('11 people, ~¥13,870 per person', '11人, 每人约¥13,870'),
+      title: t('Tokyo → Osaka Shinkansen (Day 4, Mar 21)', '东京 → 大阪新干线 (第4天, 3月21日)', '東京 → 大阪 新幹線（4日目・3/21）'),
+      details: t('11 people, ~¥13,870 per person', '11人, 每人约¥13,870', '11名、1人あたり約¥13,870'),
       link: 'https://www.jr-central.co.jp/en/',
       type: 'shinkansen'
     }
@@ -35,23 +35,35 @@ const Checklist = () => {
   const attractionItems = [
     {
       id: 'usj-tickets',
-      title: t('Universal Studios Japan (USJ) Tickets', '日本环球影城 (USJ) 门票'),
-      details: t('Day 6, Mar 23 - 1-Day Studio Pass for 11 people', '第6天, 3月23日 - 11人的1日门票'),
+      title: t('Universal Studios Japan (USJ) Tickets', '日本环球影城 (USJ) 门票', 'ユニバーサル・スタジオ・ジャパン（USJ）チケット'),
+      details: t('Day 6, Mar 23 - 1-Day Studio Pass for 11 people', '第6天, 3月23日 - 11人的1日门票', '6日目・3/23：11名分の1デイ・スタジオ・パス'),
       link: 'https://www.usj.co.jp/web/en/us',
       type: 'attraction',
-      note: t('Express Pass recommended for some (Mario Kart, Donkey Kong, Flying Dinosaur)', '建议部分人员购买快速通行证 (马力欧卡丁车, 大金刚, 飞行恐龙)')
+      note: t(
+        'Express Pass recommended for some (Mario Kart, Donkey Kong, Flying Dinosaur)',
+        '建议部分人员购买快速通行证 (马力欧卡丁车, 大金刚, 飞行恐龙)',
+        '一部はエクスプレス・パス推奨（マリオカート／ドンキーコング／フライング・ダイナソー）'
+      )
     },
     {
       id: 'umeda-sky-building-tickets',
-      title: t('Umeda Sky Building Observation Deck Tickets', '梅田蓝天大厦展望台门票'),
-      details: t('Day 7, Mar 24 - Floating Garden Observatory for 11 people, ~¥1,500 per person', '第7天, 3月24日 - 空中庭园展望台11人, 每人约¥1,500'),
+      title: t('Umeda Sky Building Observation Deck Tickets', '梅田蓝天大厦展望台门票', '梅田スカイビル 空中庭園展望台チケット'),
+      details: t(
+        'Day 7, Mar 24 - Floating Garden Observatory for 11 people, ~¥1,500 per person',
+        '第7天, 3月24日 - 空中庭园展望台11人, 每人约¥1,500',
+        '7日目・3/24：11名分、1人あたり約¥1,500'
+      ),
       link: '/attractions/umeda-sky-building',
       type: 'attraction'
     },
     {
       id: 'osaka-aquarium-tickets',
-      title: t('Osaka Aquarium Kaiyukan Tickets', '大阪海游馆门票'),
-      details: t('Day 7, Mar 24 - Admission for 11 people, ~¥2,700 per person', '第7天, 3月24日 - 入场门票11人, 每人约¥2,700'),
+      title: t('Osaka Aquarium Kaiyukan Tickets', '大阪海游馆门票', '海遊館チケット'),
+      details: t(
+        'Day 7, Mar 24 - Admission for 11 people, ~¥2,700 per person',
+        '第7天, 3月24日 - 入场门票11人, 每人约¥2,700',
+        '7日目・3/24：11名分、1人あたり約¥2,700'
+      ),
       link: '/attractions/osaka-aquarium',
       type: 'attraction'
     }
@@ -165,7 +177,7 @@ const Checklist = () => {
                   {item.reservationRequired && (
                     <span className="inline-block text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded mt-2">
                       <i className="fa-solid fa-exclamation-circle mr-1"></i>
-                      {t('Reservation Required', '需要预订')}
+                      {t('Reservation Required', '需要预订', '要予約')}
                     </span>
                   )}
                   {item.link && (
@@ -177,7 +189,8 @@ const Checklist = () => {
                         className="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center gap-1"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('View Details', '查看详情')} <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                        {t('View Details', '查看详情', '詳細を見る')}{' '}
+                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
                       </a>
                     ) : (
                       <Link
@@ -185,7 +198,8 @@ const Checklist = () => {
                         className="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-flex items-center gap-1"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('View Details', '查看详情')} <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                        {t('View Details', '查看详情', '詳細を見る')}{' '}
+                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
                       </Link>
                     )
                   )}
@@ -209,30 +223,34 @@ const Checklist = () => {
             </div>
           </div>
           <h1 className="font-header text-3xl md:text-4xl font-bold text-slate-800 mb-3">
-            {t('Trip Checklist', '行程清单')}
+            {t('Trip Checklist', '行程清单', '旅行チェックリスト')}
           </h1>
           <p className="text-slate-600 max-w-2xl mx-auto">
-            {t('Keep track of tickets and reservations for your Japan trip', '跟踪日本之旅的门票和预订情况')}
+            {t(
+              'Keep track of tickets and reservations for your Japan trip',
+              '跟踪日本之旅的门票和预订情况',
+              '旅行のチケットと予約状況を管理'
+            )}
           </p>
         </div>
 
         {/* Checklist Sections */}
         <ChecklistSection
-          title={t('Shinkansen Tickets', '新干线车票')}
+          title={t('Shinkansen Tickets', '新干线车票', '新幹線チケット')}
           icon="fa-solid fa-train"
           items={shinkansenItems}
           color="indigo"
         />
 
         <ChecklistSection
-          title={t('Attraction Tickets', '景点门票')}
+          title={t('Attraction Tickets', '景点门票', '観光チケット')}
           icon="fa-solid fa-ticket"
           items={attractionItems}
           color="green"
         />
 
         <ChecklistSection
-          title={t('Restaurant Reservations', '餐厅预订')}
+          title={t('Restaurant Reservations', '餐厅预订', 'レストラン予約')}
           icon="fa-solid fa-utensils"
           items={confirmedRestaurants}
           color="orange"
@@ -242,7 +260,7 @@ const Checklist = () => {
         <div className="mt-8 glass-card p-6 rounded-xl border border-slate-200 animate-fade-in">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-header text-xl font-bold text-slate-800">
-              {t('Progress', '进度')}
+              {t('Progress', '进度', '進捗')}
             </h3>
             <span className="text-2xl font-bold text-pink-600">
               {Object.values(checkedItems).filter(Boolean).length} / {shinkansenItems.length + attractionItems.length + confirmedRestaurants.length}

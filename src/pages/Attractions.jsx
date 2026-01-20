@@ -52,11 +52,11 @@ const Attractions = () => {
   }
 
   const sections = [
-    { key: 'tokyo', name: t('Tokyo', '东京'), icon: 'fa-city', color: 'indigo' },
-    { key: 'kyoto', name: t('Kyoto', '京都'), icon: 'fa-torii-gate', color: 'green' },
-    { key: 'nara', name: t('Nara', '奈良'), icon: 'fa-tree', color: 'teal' },
-    { key: 'osaka', name: t('Osaka', '大阪'), icon: 'fa-utensils', color: 'orange' },
-    { key: 'kobe', name: t('Kobe', '神户'), icon: 'fa-mountain', color: 'red' },
+    { key: 'tokyo', name: t('Tokyo', '东京', '東京'), icon: 'fa-city', color: 'indigo' },
+    { key: 'kyoto', name: t('Kyoto', '京都', '京都'), icon: 'fa-torii-gate', color: 'green' },
+    { key: 'nara', name: t('Nara', '奈良', '奈良'), icon: 'fa-tree', color: 'teal' },
+    { key: 'osaka', name: t('Osaka', '大阪', '大阪'), icon: 'fa-utensils', color: 'orange' },
+    { key: 'kobe', name: t('Kobe', '神户', '神戸'), icon: 'fa-mountain', color: 'red' },
   ]
 
   return (
@@ -66,11 +66,15 @@ const Attractions = () => {
         <div className="inline-flex items-center bg-white px-6 py-3 rounded-full shadow border border-purple-100 mb-4">
           <i className="fa-solid fa-camera-retro text-purple-500 text-xl mr-2"></i>
           <h1 className="font-header text-2xl font-bold text-slate-800">
-            {t('Must-See Attractions', '必看景点')}
+            {t('Must-See Attractions', '必看景点', '必見スポット')}
           </h1>
         </div>
         <p className="text-sm text-slate-600 max-w-2xl mx-auto">
-          📸 {t('Click on any attraction to discover detailed information, history, and tips for your visit!', '点击任何景点以了解详细信息、历史和参观提示！')}
+          📸 {t(
+            'Click on any attraction to discover detailed information, history, and tips for your visit!',
+            '点击任何景点以了解详细信息、历史和参观提示！',
+            '気になるスポットをクリックして、見どころ・歴史・訪問のコツをチェック！'
+          )}
         </p>
       </div>
 
@@ -103,7 +107,7 @@ const Attractions = () => {
               
               // Handle price - can be string or object {en, zh}
               const price = typeof detailedData.price === 'object' && detailedData.price !== null
-                ? t(detailedData.price.en, detailedData.price.zh)
+                ? t(detailedData.price.en, detailedData.price.zh, detailedData.price.ja)
                 : detailedData.price
               
               return (
@@ -114,8 +118,12 @@ const Attractions = () => {
                 >
                   <Link to={`/attractions/${attractionId}`} className="block w-full flex">
                     <AttractionCard
-                      title={t(detailedData.title.en, detailedData.title.zh)}
-                      description={detailedData.about ? t(detailedData.about.en, detailedData.about.zh).substring(0, 100) + '...' : ''}
+                      title={t(detailedData.title.en, detailedData.title.zh, detailedData.title.ja)}
+                      description={
+                        detailedData.about
+                          ? t(detailedData.about.en, detailedData.about.zh, detailedData.about.ja).substring(0, 100) + '...'
+                          : ''
+                      }
                       location={section.name}
                       price={price}
                       image={image}
