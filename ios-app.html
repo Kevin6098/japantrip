@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Japan Trip 2026">
+  <title>Japan Trip 2026 - iOS App</title>
+  
+  <!-- SF Pro Font (iOS native font) -->
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    :root {
+      --ios-bg: #000000;
+      --ios-card-bg: #1c1c1e;
+      --ios-secondary-bg: #2c2c2e;
+      --ios-tertiary-bg: #3a3a3c;
+      --ios-text-primary: #ffffff;
+      --ios-text-secondary: #8e8e93;
+      --ios-text-tertiary: #636366;
+      --ios-separator: #38383a;
+      --ios-blue: #0a84ff;
+      --ios-green: #30d158;
+      --ios-orange: #ff9f0a;
+      --ios-red: #ff453a;
+      --ios-pink: #ff375f;
+      --ios-purple: #bf5af2;
+      --ios-teal: #64d2ff;
+      --ios-yellow: #ffd60a;
+      --safe-area-top: env(safe-area-inset-top);
+      --safe-area-bottom: env(safe-area-inset-bottom);
+    }
+    
+    body {
+      font-family: -apple-system, 'SF Pro Display', BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--ios-bg);
+      color: var(--ios-text-primary);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding-top: var(--safe-area-top);
+      padding-bottom: calc(80px + var(--safe-area-bottom));
+    }
+    
+    /* Hide scrollbar but keep functionality */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .app-container {
+      height: 100vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Top Navigation Bar */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(28, 28, 30, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 0.5px solid var(--ios-separator);
+    }
+    
+    .nav-title {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.4px;
+    }
+    
+    .nav-btn {
+      color: var(--ios-blue);
+      font-size: 15px;
+      background: none;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      font-weight: 400;
+    }
+    
+    .nav-btn:active {
+      opacity: 0.5;
+    }
+    
+    /* Content Area */
+    .content {
+      padding: 20px 16px;
+      min-height: calc(100vh - 140px);
+    }
+    
+    /* iOS Card */
+    .ios-card {
+      background: var(--ios-card-bg);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    
+    .ios-card:active {
+      transform: scale(0.98);
+      background: var(--ios-secondary-bg);
+    }
+    
+    .ios-list-item {
+      background: var(--ios-card-bg);
+      padding: 14px 16px;
+      border-bottom: 0.5px solid var(--ios-separator);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.2s;
+    }
+    
+    .ios-list-item:first-child {
+      border-radius: 12px 12px 0 0;
+    }
+    
+    .ios-list-item:last-child {
+      border-radius: 0 0 12px 12px;
+      border-bottom: none;
+    }
+    
+    .ios-list-item:only-child {
+      border-radius: 12px;
+    }
+    
+    .ios-list-item:active {
+      background: var(--ios-secondary-bg);
+    }
+    
+    /* Bottom Tab Bar */
+    .tab-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(28, 28, 30, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 0 calc(8px + var(--safe-area-bottom));
+      border-top: 0.5px solid var(--ios-separator);
+      z-index: 100;
+    }
+    
+    .tab-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px;
+      color: var(--ios-text-secondary);
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+    
+    .tab-item.active {
+      color: var(--ios-blue);
+    }
+    
+    .tab-item:active {
+      opacity: 0.6;
+    }
+    
+    .tab-icon {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+    
+    .tab-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: -0.2px;
+    }
+    
+    /* Section Title */
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.6px;
+      margin-bottom: 16px;
+      color: var(--ios-text-primary);
+    }
+    
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--ios-text-secondary);
+      margin-top: -12px;
+      margin-bottom: 16px;
+    }
+    
+    /* Countdown */
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .countdown-item {
+      background: linear-gradient(135deg, var(--ios-pink), var(--ios-purple));
+      border-radius: 16px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+    
+    .countdown-value {
+      font-size: 32px;
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+    }
+    
+    .countdown-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+    
+    /* Schedule Day Card */
+    .day-card {
+      background: var(--ios-card-bg);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--ios-blue);
+    }
+    
+    .day-card.orange { border-left-color: var(--ios-orange); }
+    .day-card.green { border-left-color: var(--ios-green); }
+    .day-card.purple { border-left-color: var(--ios-purple); }
+    .day-card.red { border-left-color: var(--ios-red); }
+    .day-card.teal { border-left-color: var(--ios-teal); }
+    
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .day-number {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ios-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .day-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ios-text-primary);
+      margin-bottom: 4px;
+    }
+    
+    .day-date {
+      font-size: 13px;
+      color: var(--ios-text-secondary);
+    }
+    
+    .schedule-item {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 0.5px solid var(--ios-separator);
+    }
+    
+    .schedule-item:last-child {
+      border-bottom: none;
+    }
+    
+    .schedule-time {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ios-blue);
+      min-width: 50px;
+      font-variant-numeric: tabular-nums;
+    }
+    
+    .schedule-text {
+      font-size: 15px;
+      color: var(--ios-text-primary);
+      line-height: 1.4;
+    }
+    
+    .schedule-text.highlight {
+      font-weight: 600;
+      color: var(--ios-yellow);
+    }
+    
+    /* Budget Splitter */
+    .member-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ios-secondary-bg);
+      padding: 8px 14px;
+      border-radius: 20px;
+      margin: 4px;
+      font-size: 14px;
+    }
+    
+    .remove-btn {
+      color: var(--ios-red);
+      background: none;
+      border: none;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+    .remove-btn:active {
+      opacity: 0.6;
+    }
+    
+    .input-field {
+      background: var(--ios-secondary-bg);
+      border: 1px solid var(--ios-separator);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: var(--ios-text-primary);
+      font-size: 15px;
+      width: 100%;
+      margin-bottom: 12px;
+    }
+    
+    .input-field:focus {
+      outline: none;
+      border-color: var(--ios-blue);
+      background: var(--ios-tertiary-bg);
+    }
+    
+    .input-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ios-text-secondary);
+      margin-bottom: 8px;
+      display: block;
+    }
+    
+    .btn-primary {
+      background: var(--ios-blue);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.2s;
+    }
+    
+    .btn-primary:active {
+      opacity: 0.7;
+    }
+    
+    .btn-secondary {
+      background: var(--ios-secondary-bg);
+      color: var(--ios-text-primary);
+      border: none;
+      border-radius: 12px;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.2s;
+    }
+    
+    .btn-secondary:active {
+      opacity: 0.7;
+    }
+    
+    .btn-danger {
+      background: var(--ios-red);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.2s;
+    }
+    
+    .btn-danger:active {
+      opacity: 0.7;
+    }
+    
+    /* Expense Row */
+    .expense-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 0.5px solid var(--ios-separator);
+    }
+    
+    .expense-row:last-child {
+      border-bottom: none;
+    }
+    
+    .expense-info {
+      flex: 1;
+    }
+    
+    .expense-desc {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ios-text-primary);
+      margin-bottom: 4px;
+    }
+    
+    .expense-meta {
+      font-size: 13px;
+      color: var(--ios-text-secondary);
+    }
+    
+    .expense-amount {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ios-green);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    
+    /* Badge */
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    
+    .badge-new {
+      background: var(--ios-red);
+      color: white;
+    }
+    
+    .badge-category {
+      background: var(--ios-secondary-bg);
+      color: var(--ios-text-secondary);
+    }
+    
+    /* Toggle Switch */
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 51px;
+      height: 31px;
+      background: var(--ios-tertiary-bg);
+      border-radius: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .toggle-switch.active {
+      background: var(--ios-green);
+    }
+    
+    .toggle-slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 27px;
+      height: 27px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+    
+    .toggle-switch.active .toggle-slider {
+      transform: translateX(20px);
+    }
+    
+    /* Language Selector */
+    .lang-selector {
+      display: flex;
+      background: var(--ios-secondary-bg);
+      border-radius: 10px;
+      padding: 4px;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+    
+    .lang-btn {
+      flex: 1;
+      padding: 8px 12px;
+      border: none;
+      background: transparent;
+      color: var(--ios-text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .lang-btn.active {
+      background: var(--ios-tertiary-bg);
+      color: var(--ios-text-primary);
+    }
+    
+    .lang-btn:active {
+      opacity: 0.7;
+    }
+    
+    /* Search Bar */
+    .search-bar {
+      background: var(--ios-secondary-bg);
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .search-bar input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--ios-text-primary);
+      font-size: 15px;
+    }
+    
+    .search-bar input::placeholder {
+      color: var(--ios-text-tertiary);
+    }
+    
+    .search-bar input:focus {
+      outline: none;
+    }
+    
+    .search-icon {
+      color: var(--ios-text-tertiary);
+      font-size: 16px;
+    }
+    
+    /* Attraction/Restaurant Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    
+    .grid-item {
+      background: var(--ios-card-bg);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    
+    .grid-item:active {
+      transform: scale(0.96);
+    }
+    
+    .grid-item-image {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      background: var(--ios-secondary-bg);
+    }
+    
+    .grid-item-content {
+      padding: 12px;
+    }
+    
+    .grid-item-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ios-text-primary);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    
+    .grid-item-subtitle {
+      font-size: 12px;
+      color: var(--ios-text-secondary);
+    }
+    
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 200;
+      display: none;
+      animation: fadeIn 0.3s;
+    }
+    
+    .modal-overlay.show {
+      display: block;
+    }
+    
+    .modal-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--ios-card-bg);
+      border-radius: 20px 20px 0 0;
+      padding: 24px 20px calc(24px + var(--safe-area-bottom));
+      max-height: 80vh;
+      overflow-y: auto;
+      animation: slideUp 0.3s ease-out;
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .modal-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .modal-close {
+      color: var(--ios-blue);
+      font-size: 15px;
+      font-weight: 500;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+    
+    @keyframes slideDown {
+      from { transform: translateY(0); }
+      to { transform: translateY(100%); }
+    }
+    
+    /* Utility Classes */
+    .hidden {
+      display: none !important;
+    }
+    
+    .text-small {
+      font-size: 13px;
+      color: var(--ios-text-secondary);
+    }
+    
+    .text-tiny {
+      font-size: 11px;
+      color: var(--ios-text-tertiary);
+    }
+    
+    .divider {
+      height: 0.5px;
+      background: var(--ios-separator);
+      margin: 16px 0;
+    }
+    
+    .flex-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .mb-8 { margin-bottom: 8px; }
+    .mb-12 { margin-bottom: 12px; }
+    .mb-16 { margin-bottom: 16px; }
+    .mb-20 { margin-bottom: 20px; }
+    .mt-8 { margin-top: 8px; }
+    .mt-12 { margin-top: 12px; }
+    .mt-16 { margin-top: 16px; }
+    
+    .font-bold { font-weight: 700; }
+    .font-semibold { font-weight: 600; }
+    .font-medium { font-weight: 500; }
+    
+    /* Loading Spinner */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--ios-separator);
+      border-top-color: var(--ios-blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 40px auto;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Category Icons */
+    .category-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-right: 12px;
+    }
+    
+    .category-icon.meal { background: var(--ios-orange); }
+    .category-icon.transport { background: var(--ios-blue); }
+    .category-icon.tickets { background: var(--ios-purple); }
+    .category-icon.shopping { background: var(--ios-pink); }
+    .category-icon.hotel { background: var(--ios-teal); }
+    .category-icon.other { background: var(--ios-secondary-bg); }
+    
+    /* Summary Cards */
+    .summary-card {
+      background: var(--ios-card-bg);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    
+    .summary-header {
+      font-size: 13px;
+      color: var(--ios-text-secondary);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .summary-amount {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--ios-text-primary);
+      font-variant-numeric: tabular-nums;
+    }
+    
+    .summary-currency {
+      font-size: 15px;
+      color: var(--ios-text-secondary);
+      font-weight: 500;
+      margin-left: 4px;
+    }
+    
+    /* Alert/Warning */
+    .alert {
+      background: var(--ios-secondary-bg);
+      border-left: 3px solid var(--ios-yellow);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+    }
+    
+    .alert-text {
+      font-size: 13px;
+      color: var(--ios-text-primary);
+      line-height: 1.4;
+    }
+    
+    /* Select/Dropdown */
+    select {
+      background: var(--ios-secondary-bg);
+      border: 1px solid var(--ios-separator);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: var(--ios-text-primary);
+      font-size: 15px;
+      width: 100%;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    
+    select:focus {
+      outline: none;
+      border-color: var(--ios-blue);
+    }
+    
+    /* Checkbox */
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+    }
+    
+    .checkbox {
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--ios-separator);
+      border-radius: 6px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s;
+    }
+    
+    .checkbox.checked {
+      background: var(--ios-blue);
+      border-color: var(--ios-blue);
+    }
+    
+    .checkbox.checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    
+    .checkbox-label {
+      font-size: 15px;
+      color: var(--ios-text-primary);
+      cursor: pointer;
+      user-select: none;
+    }
+    
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .empty-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+      opacity: 0.3;
+    }
+    
+    .empty-text {
+      font-size: 17px;
+      color: var(--ios-text-secondary);
+      margin-bottom: 8px;
+    }
+    
+    .empty-subtext {
+      font-size: 13px;
+      color: var(--ios-text-tertiary);
+    }
+    
+    /* Attraction Detail Modal */
+    .detail-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .detail-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    
+    .detail-location {
+      font-size: 15px;
+      color: var(--ios-text-secondary);
+      margin-bottom: 16px;
+    }
+    
+    .detail-price {
+      display: inline-block;
+      background: var(--ios-green);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .detail-about {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ios-text-primary);
+      margin-bottom: 16px;
+    }
+  </style>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <div class="nav-bar">
+    <button class="nav-btn" id="backBtn" style="visibility: hidden;">
+      <i class="fas fa-chevron-left"></i> Back
+    </button>
+    <div class="nav-title" id="navTitle">Japan Trip 2026</div>
+    <button class="nav-btn" id="langBtn">
+      🌐 <span id="langLabel">EN</span>
+    </button>
+  </div>
+  
+  <!-- Main Content Area -->
+  <div class="app-container">
+    <div class="content" id="mainContent">
+      <!-- Content will be dynamically loaded here -->
+    </div>
+  </div>
+  
+  <!-- Bottom Tab Bar -->
+  <div class="tab-bar">
+    <button class="tab-item active" data-tab="home">
+      <div class="tab-icon">🏠</div>
+      <div class="tab-label" data-i18n="tab.home">Home</div>
+    </button>
+    <button class="tab-item" data-tab="schedule">
+      <div class="tab-icon">📅</div>
+      <div class="tab-label" data-i18n="tab.schedule">Schedule</div>
+    </button>
+    <button class="tab-item" data-tab="budget">
+      <div class="tab-icon">💰</div>
+      <div class="tab-label" data-i18n="tab.budget">Budget</div>
+    </button>
+    <button class="tab-item" data-tab="attractions">
+      <div class="tab-icon">📸</div>
+      <div class="tab-label" data-i18n="tab.attractions">Places</div>
+    </button>
+    <button class="tab-item" data-tab="more">
+      <div class="tab-icon">⋯</div>
+      <div class="tab-label" data-i18n="tab.more">More</div>
+    </button>
+  </div>
+  
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content" id="modalContent">
+      <!-- Modal content will be loaded here -->
+    </div>
+  </div>
+  
+  <script>
+    // ========== TRANSLATION SYSTEM ==========
+    let currentLang = localStorage.getItem('ios_app_lang') || 'en';
+    
+    const translations = {
+      en: {
+        'tab.home': 'Home',
+        'tab.schedule': 'Schedule',
+        'tab.budget': 'Budget',
+        'tab.attractions': 'Places',
+        'tab.more': 'More',
+        'home.title': 'Japan Trip 2026',
+        'home.subtitle': 'Spring Adventure Awaits',
+        'home.countdown': 'Days Until Departure',
+        'schedule.title': 'Daily Schedule',
+        'schedule.days': '11 Days of Adventure',
+        'budget.title': 'Budget Splitter',
+        'budget.add_member': 'Add Member',
+        'budget.add_expense': 'Add Expense',
+        'budget.members': 'Members',
+        'budget.expenses': 'Expenses',
+        'budget.summary': 'Summary',
+        'budget.no_expenses': 'No expenses yet',
+        'budget.total': 'Total',
+        'attractions.title': 'Attractions',
+        'attractions.search': 'Search places...',
+        'more.title': 'More Options',
+        'more.hotels': 'Hotels',
+        'more.food': 'Restaurants',
+        'more.packing': 'Packing List',
+        'more.checklist': 'Checklist',
+        'days': 'Days',
+        'hours': 'Hours',
+        'minutes': 'Minutes',
+        'seconds': 'Seconds',
+      },
+      zh: {
+        'tab.home': '首页',
+        'tab.schedule': '行程',
+        'tab.budget': '预算',
+        'tab.attractions': '景点',
+        'tab.more': '更多',
+        'home.title': '日本之旅 2026',
+        'home.subtitle': '春季冒险即将开始',
+        'home.countdown': '距离出发还有',
+        'schedule.title': '每日行程',
+        'schedule.days': '11天精彩旅程',
+        'budget.title': '费用分摊器',
+        'budget.add_member': '添加成员',
+        'budget.add_expense': '添加费用',
+        'budget.members': '成员',
+        'budget.expenses': '费用',
+        'budget.summary': '摘要',
+        'budget.no_expenses': '还没有费用',
+        'budget.total': '总计',
+        'attractions.title': '景点',
+        'attractions.search': '搜索景点...',
+        'more.title': '更多选项',
+        'more.hotels': '住宿',
+        'more.food': '餐厅',
+        'more.packing': '打包清单',
+        'more.checklist': '检查清单',
+        'days': '天',
+        'hours': '小时',
+        'minutes': '分钟',
+        'seconds': '秒',
+      },
+      ja: {
+        'tab.home': 'ホーム',
+        'tab.schedule': '予定',
+        'tab.budget': '予算',
+        'tab.attractions': 'スポット',
+        'tab.more': 'その他',
+        'home.title': '日本旅行 2026',
+        'home.subtitle': '春の冒険が始まる',
+        'home.countdown': '出発まであと',
+        'schedule.title': '日程表',
+        'schedule.days': '11日間の旅',
+        'budget.title': '割り勘',
+        'budget.add_member': 'メンバー追加',
+        'budget.add_expense': '支出を追加',
+        'budget.members': 'メンバー',
+        'budget.expenses': '支出',
+        'budget.summary': 'サマリー',
+        'budget.no_expenses': 'まだ支出がありません',
+        'budget.total': '合計',
+        'attractions.title': '観光地',
+        'attractions.search': 'スポットを検索...',
+        'more.title': 'その他',
+        'more.hotels': 'ホテル',
+        'more.food': 'レストラン',
+        'more.packing': '持ち物リスト',
+        'more.checklist': 'チェックリスト',
+        'days': '日',
+        'hours': '時間',
+        'minutes': '分',
+        'seconds': '秒',
+      }
+    };
+    
+    function t(key) {
+      return translations[currentLang]?.[key] || translations.en[key] || key;
+    }
+    
+    function updateAllTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.textContent = t(el.getAttribute('data-i18n'));
+      });
+      
+      document.getElementById('langLabel').textContent = currentLang.toUpperCase();
+      renderCurrentTab();
+    }
+    
+    document.getElementById('langBtn').addEventListener('click', () => {
+      const langs = ['en', 'zh', 'ja'];
+      const currentIndex = langs.indexOf(currentLang);
+      currentLang = langs[(currentIndex + 1) % langs.length];
+      localStorage.setItem('ios_app_lang', currentLang);
+      updateAllTranslations();
+    });
+    
+    // ========== DATA ==========
+    const DEFAULT_MEMBERS = [
+      'Soon Zheng Dong', 'Soon Cheng Wai', 'Soon Xin Yi', 'See Siew Pheng',
+      'Ang Shin Nee', 'See Siew Tin', 'See Siew Kim', 'See Eng Kim',
+      'See Yi Joe', 'Koay Jun Ming'
+    ];
+    
+    let appData = {
+      members: [],
+      expenses: []
+    };
+    
+    function loadData() {
+      const saved = localStorage.getItem('ios_japan_trip_data');
+      if (saved) {
+        appData = JSON.parse(saved);
+      } else {
+        appData.members = DEFAULT_MEMBERS.map(name => ({ id: generateId(), name }));
+        saveData();
+      }
+    }
+    
+    function saveData() {
+      localStorage.setItem('ios_japan_trip_data', JSON.stringify(appData));
+    }
+    
+    function generateId() {
+      return Math.random().toString(36).slice(2) + Date.now().toString(36);
+    }
+    
+    // ========== COUNTDOWN ==========
+    function updateCountdown() {
+      const target = new Date('2026-03-18T00:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = target - now;
+      
+      if (distance < 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      
+      return {
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+      };
+    }
+    
+    // ========== SCHEDULE DATA ==========
+    const scheduleData = [
+      { day: 1, date: 'Mar 18', title: 'Arrival', location: 'Tokyo', color: 'blue', 
+        items: [
+          { time: '22:30', text: 'Land at Haneda Airport' },
+          { time: '23:30', text: 'Private van to Airbnb' },
+          { time: '00:30', text: 'Arrive at Tokyo Airbnb' }
+        ]
+      },
+      { day: 2, date: 'Mar 19', title: 'Tokyo City Tour', location: 'Tokyo', color: 'blue',
+        items: [
+          { time: '09:00', text: 'Tsukiji Outer Market', highlight: true },
+          { time: '11:30', text: 'Pain Maison (Salt bread)', highlight: true },
+          { time: '12:00', text: 'Ginza Kanimitsu Lunch', highlight: true },
+          { time: '14:00', text: 'Nakamura Tokichi (Matcha)', highlight: true },
+          { time: '16:00', text: 'Tokyo Station Shopping', highlight: true },
+          { time: '18:00', text: 'Asakusa Monja Dinner', highlight: true }
+        ]
+      },
+      { day: 3, date: 'Mar 20', title: 'Graduation Day', location: 'Tokyo/Saitama', color: 'purple',
+        items: [
+          { time: '09:00', text: 'Senso-ji Temple', highlight: true },
+          { time: '11:00', text: 'Ichiran Ramen Lunch', highlight: true },
+          { time: '14:00', text: 'Graduation Ceremony' },
+          { time: '19:00', text: 'Shibuya Crossing', highlight: true },
+          { time: '20:00', text: 'Tsukada Shabu Shabu', highlight: true }
+        ]
+      },
+      { day: 4, date: 'Mar 21', title: 'Move to Osaka', location: 'Osaka', color: 'orange',
+        items: [
+          { time: '11:00', text: 'Afuri Yurakucho Lunch', highlight: true },
+          { time: '13:00', text: 'Shinkansen to Osaka' },
+          { time: '15:30', text: 'Check-in Osaka Airbnb' },
+          { time: '20:00', text: 'Dotonbori Reunion Dinner', highlight: true }
+        ]
+      },
+      { day: 5, date: 'Mar 22', title: 'Kobe Day Trip', location: 'Kobe', color: 'red',
+        items: [
+          { time: '10:00', text: 'Kobe Harborland', highlight: true },
+          { time: '12:00', text: 'Kobe Steak Nick Lunch', highlight: true },
+          { time: '15:00', text: 'Mt. Rokko Cable Car', highlight: true },
+          { time: '18:00', text: 'Gashoken Dinner', highlight: true }
+        ]
+      },
+      { day: 6, date: 'Mar 23', title: 'Universal Studios Japan', location: 'Osaka', color: 'teal',
+        items: [
+          { time: '09:00', text: 'Arrive at USJ' },
+          { time: 'All Day', text: 'USJ - Mario, Harry Potter, etc.', highlight: true }
+        ]
+      },
+      { day: 7, date: 'Mar 24', title: 'Osaka Highlights', location: 'Osaka', color: 'orange',
+        items: [
+          { time: '10:00', text: 'Osaka Castle', highlight: true },
+          { time: '12:30', text: 'Kuromon Market Lunch', highlight: true },
+          { time: '14:00', text: 'Namba Yasaka Shrine', highlight: true },
+          { time: '16:00', text: 'Shinsaibashi Shopping', highlight: true }
+        ]
+      },
+      { day: 8, date: 'Mar 25', title: 'Kyoto Trip', location: 'Kyoto', color: 'green',
+        items: [
+          { time: '09:00', text: 'Fushimi Inari Shrine', highlight: true },
+          { time: '12:00', text: 'Kiyomizu-dera Temple', highlight: true },
+          { time: '14:00', text: 'Ninenzaka & Sannenzaka', highlight: true },
+          { time: '16:00', text: 'Gion District', highlight: true },
+          { time: '18:00', text: 'Kamogawa River Walk', highlight: true }
+        ]
+      },
+      { day: 9, date: 'Mar 26', title: 'Uji & Nara', location: 'Uji/Nara', color: 'teal',
+        items: [
+          { time: '10:00', text: 'Nakamura Tokichi Uji', highlight: true },
+          { time: '12:00', text: 'Ujigami Shrine', highlight: true },
+          { time: '14:00', text: 'Nara Park (Deer!)', highlight: true },
+          { time: '16:00', text: 'Todaiji Temple', highlight: true }
+        ]
+      },
+      { day: 10, date: 'Mar 27', title: 'Osaka Final Day', location: 'Osaka', color: 'orange',
+        items: [
+          { time: '10:00', text: 'Katsuoji Temple', highlight: true },
+          { time: '15:00', text: 'Harukas Abeno Tower', highlight: true },
+          { time: '18:30', text: 'Tsurikichi Fishing Restaurant', highlight: true }
+        ]
+      },
+      { day: 11, date: 'Mar 28', title: 'Departure', location: 'Home', color: 'orange',
+        items: [
+          { time: '06:30', text: 'Private van to KIX' },
+          { time: '11:00', text: 'Flight departs' }
+        ]
+      }
+    ];
+    
+    const attractionsData = [
+      { id: 'sensoji', name: 'Senso-ji Temple', location: 'Tokyo', price: 'Free', image: '🏯', category: 'Temple' },
+      { id: 'shibuya', name: 'Shibuya Crossing', location: 'Tokyo', price: 'Free', image: '🚶', category: 'Landmark' },
+      { id: 'tsukiji', name: 'Tsukiji Market', location: 'Tokyo', price: 'Free', image: '🐟', category: 'Market' },
+      { id: 'fushimi', name: 'Fushimi Inari Shrine', location: 'Kyoto', price: 'Free', image: '⛩️', category: 'Shrine' },
+      { id: 'kiyomizu', name: 'Kiyomizu-dera', location: 'Kyoto', price: '¥400', image: '🏯', category: 'Temple' },
+      { id: 'dotonbori', name: 'Dotonbori', location: 'Osaka', price: 'Free', image: '🌃', category: 'District' },
+      { id: 'osaka-castle', name: 'Osaka Castle', location: 'Osaka', price: '¥600', image: '🏰', category: 'Castle' },
+      { id: 'nara-park', name: 'Nara Park', location: 'Nara', price: 'Free', image: '🦌', category: 'Park' },
+      { id: 'usj', name: 'Universal Studios Japan', location: 'Osaka', price: '¥9,500', image: '🎢', category: 'Theme Park' }
+    ];
+    
+    // ========== VIEW RENDERERS ==========
+    function renderHome() {
+      const countdown = updateCountdown();
+      return `
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <div class="countdown-value">${countdown.days}</div>
+            <div class="countdown-label">${t('days')}</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value">${countdown.hours}</div>
+            <div class="countdown-label">${t('hours')}</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value">${countdown.minutes}</div>
+            <div class="countdown-label">${t('minutes')}</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value">${countdown.seconds}</div>
+            <div class="countdown-label">${t('seconds')}</div>
+          </div>
+        </div>
+        
+        <div class="section-title">${t('home.title')}</div>
+        <div class="section-subtitle">🌸 ${t('home.subtitle')}</div>
+        
+        <div class="ios-card" onclick="switchTab('schedule')">
+          <div class="flex-between">
+            <div>
+              <div class="font-bold mb-8" style="font-size: 17px;">📅 ${t('tab.schedule')}</div>
+              <div class="text-small">${t('schedule.days')}</div>
+            </div>
+            <i class="fas fa-chevron-right" style="color: var(--ios-text-tertiary);"></i>
+          </div>
+        </div>
+        
+        <div class="ios-card" onclick="switchTab('budget')">
+          <div class="flex-between">
+            <div>
+              <div class="flex-between mb-8">
+                <span class="font-bold" style="font-size: 17px;">💰 ${t('budget.title')}</span>
+                <span class="badge badge-new">NEW</span>
+              </div>
+              <div class="text-small">Track & split expenses</div>
+            </div>
+            <i class="fas fa-chevron-right" style="color: var(--ios-text-tertiary);"></i>
+          </div>
+        </div>
+        
+        <div class="ios-card" onclick="switchTab('attractions')">
+          <div class="flex-between">
+            <div>
+              <div class="font-bold mb-8" style="font-size: 17px;">📸 ${t('attractions.title')}</div>
+              <div class="text-small">${attractionsData.length} places to visit</div>
+            </div>
+            <i class="fas fa-chevron-right" style="color: var(--ios-text-tertiary);"></i>
+          </div>
+        </div>
+        
+        <div class="ios-card" onclick="switchTab('more')">
+          <div class="flex-between">
+            <div>
+              <div class="font-bold mb-8" style="font-size: 17px;">⋯ ${t('more.title')}</div>
+              <div class="text-small">Hotels, Food, Packing & More</div>
+            </div>
+            <i class="fas fa-chevron-right" style="color: var(--ios-text-tertiary);"></i>
+          </div>
+        </div>
+      `;
+    }
+    
+    function renderSchedule() {
+      return `
+        <div class="section-title">${t('schedule.title')}</div>
+        <div class="section-subtitle">${t('schedule.days')}</div>
+        
+        ${scheduleData.map(day => `
+          <div class="day-card ${day.color}" onclick="showDayDetail(${day.day})">
+            <div class="day-header">
+              <div>
+                <div class="day-number">Day ${day.day}</div>
+                <div class="day-title">${day.title}</div>
+                <div class="day-date">${day.date} • ${day.location}</div>
+              </div>
+              <i class="fas fa-chevron-right" style="color: var(--ios-text-tertiary); font-size: 16px;"></i>
+            </div>
+            <div style="margin-top: 12px;">
+              ${day.items.slice(0, 3).map(item => `
+                <div class="schedule-item">
+                  <div class="schedule-time">${item.time}</div>
+                  <div class="schedule-text ${item.highlight ? 'highlight' : ''}">${item.text}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `).join('')}
+      `;
+    }
+    
+    function renderBudget() {
+      const totalExpenses = appData.expenses.reduce((sum, exp) => {
+        return sum + (parseFloat(exp.amount) || 0);
+      }, 0);
+      
+      return `
+        <div class="section-title">${t('budget.title')}</div>
+        <div class="section-subtitle">💳 Multi-currency expense tracker</div>
+        
+        <!-- Quick Stats -->
+        <div class="summary-card">
+          <div class="summary-header">${t('budget.total')}</div>
+          <div class="summary-amount">¥${totalExpenses.toLocaleString()}<span class="summary-currency">JPY</span></div>
+          <div class="text-small mt-8">${appData.expenses.length} expenses • ${appData.members.length} members</div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+          <button class="btn-primary" onclick="showAddExpense()">
+            <i class="fas fa-plus" style="margin-right: 6px;"></i>
+            ${t('budget.add_expense')}
+          </button>
+          <button class="btn-secondary" onclick="showMembers()">
+            <i class="fas fa-users" style="margin-right: 6px;"></i>
+            ${t('budget.members')}
+          </button>
+        </div>
+        
+        <!-- Recent Expenses -->
+        <div class="section-title" style="font-size: 17px; margin-top: 24px;">${t('budget.expenses')}</div>
+        
+        ${appData.expenses.length === 0 ? `
+          <div class="empty-state">
+            <div class="empty-icon">💸</div>
+            <div class="empty-text">${t('budget.no_expenses')}</div>
+            <div class="empty-subtext">Tap "Add Expense" to start tracking</div>
+          </div>
+        ` : `
+          ${[...appData.expenses].reverse().slice(0, 10).map(exp => {
+            const paidBy = appData.members.find(m => m.id === exp.paidBy)?.name || 'Unknown';
+            return `
+              <div class="expense-row" onclick="showExpenseDetail('${exp.id}')">
+                <div class="expense-info">
+                  <div class="expense-desc">${exp.description || exp.category}</div>
+                  <div class="expense-meta">${exp.date} • ${paidBy} • <span class="badge badge-category">${exp.category}</span></div>
+                </div>
+                <div class="expense-amount">${formatMoney(exp.amount, exp.currency)}</div>
+              </div>
+            `;
+          }).join('')}
+        `}
+      `;
+    }
+    
+    function renderAttractions() {
+      return `
+        <div class="section-title">${t('attractions.title')}</div>
+        <div class="section-subtitle">📍 ${attractionsData.length} must-see places</div>
+        
+        <div class="search-bar">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" placeholder="${t('attractions.search')}" id="attractionSearch" oninput="filterAttractions()">
+        </div>
+        
+        <div class="grid" id="attractionsGrid">
+          ${attractionsData.map(attr => `
+            <div class="grid-item" onclick="showAttractionDetail('${attr.id}')">
+              <div class="grid-item-image" style="display: flex; align-items: center; justify-content: center; font-size: 48px;">
+                ${attr.image}
+              </div>
+              <div class="grid-item-content">
+                <div class="grid-item-title">${attr.name}</div>
+                <div class="grid-item-subtitle">${attr.location} • ${attr.price}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+    
+    function renderMore() {
+      return `
+        <div class="section-title">${t('more.title')}</div>
+        
+        <div class="ios-list-item" onclick="alert('Hotels feature coming soon!')">
+          <div style="display: flex; align-items: center;">
+            <div class="category-icon hotel">🏨</div>
+            <div>
+              <div class="font-semibold" style="font-size: 15px;">${t('more.hotels')}</div>
+              <div class="text-small">Airbnb details</div>
+            </div>
+          </div>
+          <i class="fas fa-chevron-right" style="color: var(--ios-text-tertiary);"></i>
+        </div>
+        
+        <div class="ios-list-item" onclick="alert('Restaurants feature coming soon!')">
+          <div style="display: flex; align-items: center;">
+            <div class="category-icon meal">🍜</div>
+            <div>
+              <div class="font-semibold" style="font-size: 15px;">${t('more.food')}</div>
+              <div class="text-small">20+ restaurants</div>
+            </div>
+          </div>
+          <i class="fas fa-chevron-right" style="color: var(--ios-text-tertiary);"></i>
+        </div>
+        
+        <div class="ios-list-item" onclick="alert('Packing list feature coming soon!')">
+          <div style="display: flex; align-items: center;">
+            <div class="category-icon shopping">🧳</div>
+            <div>
+              <div class="font-semibold" style="font-size: 15px;">${t('more.packing')}</div>
+              <div class="text-small">Essential items</div>
+            </div>
+          </div>
+          <i class="fas fa-chevron-right" style="color: var(--ios-text-tertiary);"></i>
+        </div>
+        
+        <div class="ios-list-item" onclick="alert('Checklist feature coming soon!')">
+          <div style="display: flex; align-items: center;">
+            <div class="category-icon tickets">✓</div>
+            <div>
+              <div class="font-semibold" style="font-size: 15px;">${t('more.checklist')}</div>
+              <div class="text-small">Tickets & reservations</div>
+            </div>
+          </div>
+          <i class="fas fa-chevron-right" style="color: var(--ios-text-tertiary);"></i>
+        </div>
+        
+        <div style="margin-top: 24px;"></div>
+        
+        <div class="section-title" style="font-size: 17px;">⚙️ Settings</div>
+        
+        <div class="ios-list-item">
+          <div>
+            <div class="font-semibold" style="font-size: 15px;">Language</div>
+            <div class="text-small">English / 中文 / 日本語</div>
+          </div>
+          <div class="lang-selector" style="margin: 0; width: 140px;">
+            <button class="lang-btn ${currentLang === 'en' ? 'active' : ''}" onclick="changeLang('en')">EN</button>
+            <button class="lang-btn ${currentLang === 'zh' ? 'active' : ''}" onclick="changeLang('zh')">中</button>
+            <button class="lang-btn ${currentLang === 'ja' ? 'active' : ''}" onclick="changeLang('ja')">日</button>
+          </div>
+        </div>
+        
+        <div class="ios-list-item">
+          <div>
+            <div class="font-semibold" style="font-size: 15px;">Reset All Data</div>
+            <div class="text-small">Clear all expenses & members</div>
+          </div>
+          <button class="btn-danger" style="width: auto; padding: 8px 16px; font-size: 13px;" onclick="confirmReset()">
+            Reset
+          </button>
+        </div>
+      `;
+    }
+    
+    // ========== MODAL FUNCTIONS ==========
+    function showDayDetail(dayNum) {
+      const day = scheduleData.find(d => d.day === dayNum);
+      if (!day) return;
+      
+      const modalContent = `
+        <div class="modal-header">
+          <div class="modal-title">Day ${day.day}: ${day.title}</div>
+          <button class="modal-close" onclick="closeModal()">Done</button>
+        </div>
+        
+        <div class="text-small mb-16">${day.date} • ${day.location}</div>
+        
+        ${day.items.map(item => `
+          <div class="schedule-item" style="padding: 12px 0;">
+            <div class="schedule-time">${item.time}</div>
+            <div class="schedule-text ${item.highlight ? 'highlight' : ''}">${item.text}</div>
+          </div>
+        `).join('')}
+      `;
+      
+      showModal(modalContent);
+    }
+    
+    function showAddExpense() {
+      const modalContent = `
+        <div class="modal-header">
+          <div class="modal-title">${t('budget.add_expense')}</div>
+          <button class="modal-close" onclick="closeModal()">Cancel</button>
+        </div>
+        
+        <label class="input-label">Description</label>
+        <input class="input-field" id="expDesc" placeholder="e.g., Ramen dinner">
+        
+        <label class="input-label">Amount (JPY)</label>
+        <input class="input-field" type="number" id="expAmount" placeholder="e.g., 5000">
+        
+        <label class="input-label">Category</label>
+        <select id="expCategory">
+          <option value="Meal">🍜 Meal</option>
+          <option value="Transport">🚆 Transport</option>
+          <option value="Tickets">🎫 Tickets</option>
+          <option value="Shopping">🛍️ Shopping</option>
+          <option value="Hotel">🏨 Hotel</option>
+          <option value="Other">📦 Other</option>
+        </select>
+        
+        <label class="input-label">Paid by</label>
+        <select id="expPaidBy">
+          ${appData.members.map(m => `<option value="${m.id}">${m.name}</option>`).join('')}
+        </select>
+        
+        <label class="input-label">Date</label>
+        <input class="input-field" type="date" id="expDate" value="${new Date().toISOString().split('T')[0]}">
+        
+        <button class="btn-primary mt-16" onclick="addExpense()">
+          <i class="fas fa-check" style="margin-right: 6px;"></i>
+          Add Expense
+        </button>
+      `;
+      
+      showModal(modalContent);
+    }
+    
+    function showMembers() {
+      const modalContent = `
+        <div class="modal-header">
+          <div class="modal-title">${t('budget.members')}</div>
+          <button class="modal-close" onclick="closeModal()">Done</button>
+        </div>
+        
+        <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+          <input class="input-field" id="memberName" placeholder="e.g., John" style="margin: 0;">
+          <button class="btn-primary" style="width: auto; padding: 12px 20px; white-space: nowrap;" onclick="addMember()">
+            Add
+          </button>
+        </div>
+        
+        <div>
+          ${appData.members.map(m => `
+            <div class="member-chip">
+              <span>${m.name}</span>
+              <button class="remove-btn" onclick="removeMember('${m.id}')">Remove</button>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      
+      showModal(modalContent);
+    }
+    
+    function showAttractionDetail(id) {
+      const attr = attractionsData.find(a => a.id === id);
+      if (!attr) return;
+      
+      const modalContent = `
+        <div class="modal-header">
+          <div class="modal-title">${attr.name}</div>
+          <button class="modal-close" onclick="closeModal()">Close</button>
+        </div>
+        
+        <div style="text-align: center; font-size: 80px; margin: 20px 0;">
+          ${attr.image}
+        </div>
+        
+        <div class="detail-location">
+          <i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i>
+          ${attr.location}
+        </div>
+        
+        <div class="detail-price">${attr.price}</div>
+        
+        <div class="badge badge-category">${attr.category}</div>
+        
+        <div class="divider"></div>
+        
+        <button class="btn-secondary" onclick="window.open('https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(attr.name + ' ' + attr.location)}', '_blank')">
+          <i class="fas fa-map-location-dot" style="margin-right: 6px;"></i>
+          Open in Google Maps
+        </button>
+      `;
+      
+      showModal(modalContent);
+    }
+    
+    function showExpenseDetail(id) {
+      const exp = appData.expenses.find(e => e.id === id);
+      if (!exp) return;
+      
+      const paidBy = appData.members.find(m => m.id === exp.paidBy)?.name || 'Unknown';
+      const splits = exp.splits || {};
+      
+      const modalContent = `
+        <div class="modal-header">
+          <div class="modal-title">Expense Details</div>
+          <button class="modal-close" onclick="closeModal()">Close</button>
+        </div>
+        
+        <div class="summary-card">
+          <div class="expense-desc" style="font-size: 20px; margin-bottom: 12px;">${exp.description || exp.category}</div>
+          <div class="expense-meta" style="margin-bottom: 16px;">${exp.date} • <span class="badge badge-category">${exp.category}</span></div>
+          <div class="summary-amount" style="font-size: 32px;">${formatMoney(exp.amount, exp.currency)}</div>
+          <div class="text-small mt-8">Paid by ${paidBy}</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 17px; margin-top: 20px;">Split Details</div>
+        
+        ${Object.keys(splits).length === 0 ? `
+          <div class="text-small">No split information</div>
+        ` : `
+          ${Object.entries(splits).map(([memberId, amount]) => {
+            const memberName = appData.members.find(m => m.id === memberId)?.name || 'Unknown';
+            return `
+              <div class="flex-between" style="padding: 10px 0; border-bottom: 0.5px solid var(--ios-separator);">
+                <div class="font-medium">${memberName}</div>
+                <div class="font-bold">${formatMoney(amount, exp.currency)}</div>
+              </div>
+            `;
+          }).join('')}
+        `}
+        
+        <button class="btn-danger mt-16" onclick="deleteExpense('${exp.id}')">
+          <i class="fas fa-trash" style="margin-right: 6px;"></i>
+          Delete Expense
+        </button>
+      `;
+      
+      showModal(modalContent);
+    }
+    
+    function showModal(content) {
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('modalOverlay').classList.add('show');
+    }
+    
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('show');
+    }
+    
+    // Close modal when clicking overlay
+    document.getElementById('modalOverlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('modalOverlay')) {
+        closeModal();
+      }
+    });
+    
+    // ========== BUDGET OPERATIONS ==========
+    function addMember() {
+      const nameInput = document.getElementById('memberName');
+      const name = nameInput.value.trim();
+      if (!name) return alert('Please enter a name');
+      
+      appData.members.push({ id: generateId(), name });
+      saveData();
+      showMembers(); // Refresh
+    }
+    
+    function removeMember(id) {
+      if (!confirm('Remove this member?')) return;
+      appData.members = appData.members.filter(m => m.id !== id);
+      appData.expenses = appData.expenses.map(exp => {
+        const newSplits = { ...exp.splits };
+        delete newSplits[id];
+        return { ...exp, splits: newSplits };
+      });
+      saveData();
+      showMembers(); // Refresh
+    }
+    
+    function addExpense() {
+      const desc = document.getElementById('expDesc').value.trim();
+      const amount = parseFloat(document.getElementById('expAmount').value);
+      const category = document.getElementById('expCategory').value;
+      const paidBy = document.getElementById('expPaidBy').value;
+      const date = document.getElementById('expDate').value;
+      
+      if (!amount || amount <= 0) return alert('Please enter a valid amount');
+      if (!paidBy) return alert('Please select who paid');
+      
+      // Equal split among all members
+      const splitAmount = amount / appData.members.length;
+      const splits = {};
+      appData.members.forEach(m => {
+        splits[m.id] = Math.round(splitAmount);
+      });
+      
+      const expense = {
+        id: generateId(),
+        description: desc,
+        amount,
+        category,
+        currency: 'JPY',
+        paidBy,
+        date,
+        splits
+      };
+      
+      appData.expenses.push(expense);
+      saveData();
+      closeModal();
+      switchTab('budget'); // Refresh budget view
+    }
+    
+    function deleteExpense(id) {
+      if (!confirm('Delete this expense?')) return;
+      appData.expenses = appData.expenses.filter(e => e.id !== id);
+      saveData();
+      closeModal();
+      switchTab('budget'); // Refresh
+    }
+    
+    function confirmReset() {
+      if (confirm('Reset ALL data (members + expenses)? This cannot be undone.')) {
+        appData = {
+          members: DEFAULT_MEMBERS.map(name => ({ id: generateId(), name })),
+          expenses: []
+        };
+        saveData();
+        switchTab('more'); // Refresh
+        alert('All data has been reset.');
+      }
+    }
+    
+    function formatMoney(amount, currency) {
+      const decimals = currency === 'JPY' ? 0 : 2;
+      return `${Number(amount).toFixed(decimals)} ${currency}`;
+    }
+    
+    function filterAttractions() {
+      const query = document.getElementById('attractionSearch').value.toLowerCase();
+      const filtered = attractionsData.filter(a => 
+        a.name.toLowerCase().includes(query) || 
+        a.location.toLowerCase().includes(query) ||
+        a.category.toLowerCase().includes(query)
+      );
+      
+      document.getElementById('attractionsGrid').innerHTML = filtered.map(attr => `
+        <div class="grid-item" onclick="showAttractionDetail('${attr.id}')">
+          <div class="grid-item-image" style="display: flex; align-items: center; justify-content: center; font-size: 48px;">
+            ${attr.image}
+          </div>
+          <div class="grid-item-content">
+            <div class="grid-item-title">${attr.name}</div>
+            <div class="grid-item-subtitle">${attr.location} • ${attr.price}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    function changeLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('ios_app_lang', lang);
+      updateAllTranslations();
+    }
+    
+    // ========== TAB NAVIGATION ==========
+    let currentTab = 'home';
+    
+    function switchTab(tab) {
+      currentTab = tab;
+      
+      // Update active tab
+      document.querySelectorAll('.tab-item').forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('data-tab') === tab) {
+          item.classList.add('active');
+        }
+      });
+      
+      // Update nav title
+      const titles = {
+        home: 'Japan Trip 2026',
+        schedule: t('schedule.title'),
+        budget: t('budget.title'),
+        attractions: t('attractions.title'),
+        more: t('more.title')
+      };
+      document.getElementById('navTitle').textContent = titles[tab] || 'Japan Trip 2026';
+      
+      renderCurrentTab();
+    }
+    
+    function renderCurrentTab() {
+      const renderers = {
+        home: renderHome,
+        schedule: renderSchedule,
+        budget: renderBudget,
+        attractions: renderAttractions,
+        more: renderMore
+      };
+      
+      document.getElementById('mainContent').innerHTML = renderers[currentTab]?.() || '';
+    }
+    
+    // Tab click handlers
+    document.querySelectorAll('.tab-item').forEach(item => {
+      item.addEventListener('click', () => {
+        switchTab(item.getAttribute('data-tab'));
+      });
+    });
+    
+    // ========== INITIALIZATION ==========
+    loadData();
+    updateAllTranslations();
+    
+    // Update countdown every second
+    setInterval(() => {
+      if (currentTab === 'home') {
+        renderCurrentTab();
+      }
+    }, 1000);
+    
+    // Prevent pull-to-refresh on iOS
+    document.body.addEventListener('touchmove', function(e) {
+      if (e.target.closest('.modal-content')) return;
+      e.preventDefault();
+    }, { passive: false });
+    
+    // Add haptic feedback simulation (visual feedback)
+    document.addEventListener('touchstart', function(e) {
+      if (e.target.closest('button') || e.target.closest('.ios-card') || e.target.closest('.tab-item')) {
+        // Visual feedback is handled by CSS :active
+      }
+    });
+  </script>
+</body>
+</html>
