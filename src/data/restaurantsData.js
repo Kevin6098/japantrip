@@ -23,7 +23,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Pain Maison (塩パン屋) is a famous salt bread bakery in Tokyo, known for its original salt bread (塩パン). The bakery specializes in premium salt bread and melon bread, offering freshly baked goods with high-quality ingredients. Popular with both locals and tourists, expect possible wait times especially during peak hours.",
-      zh: 'Pain Maison (塩パン屋) 是东京著名的盐面包店，以其原创盐面包（塩パン）而闻名。面包店专门提供优质盐面包和菠萝包，使用高品质食材新鲜烘焙。深受当地人和游客欢迎，特别是在高峰时段可能需要排队。'
+      zh: 'Pain Maison (塩パン屋) 是东京著名的盐面包店，以其原创盐面包（塩パン）而闻名。面包店专门提供优质盐面包和菠萝包，使用高品质食材新鲜烘焙。深受当地人和游客欢迎，特别是在高峰时段可能需要排队。',
+      ja: '東京の人気塩パン専門店。看板の塩パン（塩パン）やメロンパンが評判で、焼きたてを楽しめます。地元客・観光客ともに人気のため、混雑時は行列になることもあります。'
     },
     highlights: [
       { en: 'Original Salt Bread (塩パン): Famous signature bread, ¥120 per piece', zh: '原创盐面包 (塩パン): 著名招牌面包，每个¥120', ja: '原创盐パン (塩パン): 著名招牌パン，每个¥120' },
@@ -65,7 +66,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Ginza Kanimitsu is a premium crab restaurant specializing in fresh crab dishes. The restaurant offers various lunch sets featuring different parts of the crab, from crab sashimi to grilled crab legs. Known for its high-quality ingredients and traditional preparation methods, it's a must-visit for seafood lovers.",
-      zh: '银座蟹みつ是一家高级螃蟹餐厅，专门提供新鲜螃蟹料理。餐厅提供各种午餐套餐，包括螃蟹的不同部位，从螃蟹刺身到烤蟹腿。以其高品质的食材和传统的烹饪方法而闻名，是海鲜爱好者的必访之地。'
+      zh: '银座蟹みつ是一家高级螃蟹餐厅，专门提供新鲜螃蟹料理。餐厅提供各种午餐套餐，包括螃蟹的不同部位，从螃蟹刺身到烤蟹腿。以其高品质的食材和传统的烹饪方法而闻名，是海鲜爱好者的必访之地。',
+      ja: '銀座の高級カニ料理店。カニ刺しや焼きガニなど、部位ごとの味を楽しめるランチセットが揃います。素材の良さと丁寧な調理で、海鮮好きにおすすめです。'
     },
     highlights: [
       { en: 'Premium crab dishes', zh: '高级螃蟹料理', ja: '高级カニ料理' },
@@ -104,7 +106,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Nakamura Tokichi is a famous matcha specialty shop from Uji, Kyoto, with a branch in Ginza. Known for premium matcha parfaits, matcha desserts, and traditional tea time experiences. The Ginza location offers a modern setting to enjoy authentic Uji matcha flavors.",
-      zh: '中村藤吉是来自京都宇治的著名抹茶专门店，在银座设有分店。以优质抹茶芭菲、抹茶甜点和传统茶时光体验而闻名。银座店提供现代环境，享受正宗的宇治抹茶风味。'
+      zh: '中村藤吉是来自京都宇治的著名抹茶专门店，在银座设有分店。以优质抹茶芭菲、抹茶甜点和传统茶时光体验而闻名。银座店提供现代环境，享受正宗的宇治抹茶风味。',
+      ja: '京都・宇治の老舗抹茶店「中村藤吉」の銀座店。宇治抹茶のパフェやスイーツ、喫茶メニューをモダンな空間で楽しめます。'
     },
     highlights: [
       { en: 'Matcha Parfait: Famous signature dessert', zh: '抹茶芭菲: 著名招牌甜点', ja: '抹お茶芭菲: 著名招牌甜点' },
@@ -145,7 +148,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Traditional Tokyo street food experience featuring Monja Yaki and Okonomiyaki. Monja Yaki is a Tokyo specialty - a runny, gooey pancake-like dish cooked on a hot plate. Okonomiyaki is a savory pancake with various ingredients. Both are popular local foods in the Asakusa area.",
-      zh: '传统东京街头美食体验，包括文字烧和大阪烧。文字烧是东京特色 - 一种在热板上烹制的流质、粘稠的煎饼状菜肴。大阪烧是一种带有各种配料的咸味煎饼。两者都是浅草地区受欢迎的当地美食。'
+      zh: '传统东京街头美食体验，包括文字烧和大阪烧。文字烧是东京特色 - 一种在热板上烹制的流质、粘稠的煎饼状菜肴。大阪烧是一种带有各种配料的咸味煎饼。两者都是浅草地区受欢迎的当地美食。',
+      ja: '浅草で味わう東京下町グルメ。鉄板で焼くもんじゃ焼きとお好み焼きが名物で、とろっとした食感が魅力。浅草エリアでも人気のローカルフードです。'
     },
     highlights: [
       { en: 'Monja Yaki: Tokyo specialty street food', zh: '文字烧: 东京特色街头美食', ja: 'もんじゃ焼き: 東京特色街头美食' },
@@ -182,7 +186,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Ichiran is a famous tonkotsu ramen chain known for its rich, creamy pork bone broth and customizable ramen experience. The restaurant features private booths for solo dining, allowing you to focus on your ramen without distractions. Famous for its signature tonkotsu ramen with thin noodles, chashu pork, and green onions.",
-      zh: '一兰是著名的豚骨拉面连锁店，以其浓郁、奶油般的猪骨汤和可定制的拉面体验而闻名。餐厅设有私人隔间，适合独自用餐，让您可以专注于拉面而不受干扰。以其招牌豚骨拉面而闻名，配有细面条、叉烧和葱。'
+      zh: '一兰是著名的豚骨拉面连锁店，以其浓郁、奶油般的猪骨汤和可定制的拉面体验而闻名。餐厅设有私人隔间，适合独自用餐，让您可以专注于拉面而不受干扰。以其招牌豚骨拉面而闻名，配有细面条、叉烧和葱。',
+      ja: '濃厚な豚骨スープで有名な一蘭。仕切り付きの個室風ブースで、自分好みに味をカスタムして集中して食べられます。細麺・チャーシュー・ねぎの定番構成が人気です。'
     },
     highlights: [
       { en: 'Famous Tonkotsu Ramen: Rich, creamy pork bone broth', zh: '著名豚骨拉面: 浓郁、奶油般的猪骨汤', ja: '著名豚骨ラーメン: 浓郁、奶油般的猪骨汤' },
@@ -221,7 +226,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Tsukada Shabu Shabu is a premium shabu shabu restaurant located in Shibuya Scramble Square 12F. The restaurant offers high-quality meat and vegetables for shabu shabu, a Japanese hot pot dish where you cook thin slices of meat in boiling broth. Perfect for graduation celebration dinner with a group.",
-      zh: '塚田しゃぶしゃぶ是一家位于涩谷Scramble Square 12楼的高级涮涮锅餐厅。餐厅提供优质的肉类和蔬菜用于涮涮锅，这是一种日本火锅，您在沸腾的汤中烹制薄肉片。非常适合团体毕业庆功晚餐。'
+      zh: '塚田しゃぶしゃぶ是一家位于涩谷Scramble Square 12楼的高级涮涮锅餐厅。餐厅提供优质的肉类和蔬菜用于涮涮锅，这是一种日本火锅，您在沸腾的汤中烹制薄肉片。非常适合团体毕业庆功晚餐。',
+      ja: '渋谷スクランブルスクエア12階の上質なしゃぶしゃぶ店。薄切り肉と野菜を出汁でさっとくぐらせる日本の鍋料理を楽しめます。グループでの特別な食事にもぴったりです。'
     },
     highlights: [
       { en: 'Premium Shabu Shabu: High-quality meat and vegetables', zh: '高级涮涮锅: 优质的肉类和蔬菜', ja: '高级しゃぶしゃぶ: 优质的肉类和蔬菜' },
@@ -262,7 +268,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Afuri (阿夫利) is a famous ramen restaurant in Tokyo, known for its unique yuzu-flavored ramen. The restaurant specializes in light, citrusy shio (salt) and shoyu (soy sauce) ramen with a refreshing yuzu twist. The modern, sleek interior features counter seating and an open kitchen concept.",
-      zh: '阿夫利是东京著名的拉面餐厅，以其独特的柚子味拉面而闻名。餐厅专门提供清淡、带有柑橘味的盐拉面和酱油拉面，带有清爽的柚子风味。现代化、时尚的内部设有吧台座位和开放式厨房概念。'
+      zh: '阿夫利是东京著名的拉面餐厅，以其独特的柚子味拉面而闻名。餐厅专门提供清淡、带有柑橘味的盐拉面和酱油拉面，带有清爽的柚子风味。现代化、时尚的内部设有吧台座位和开放式厨房概念。',
+      ja: '柚子香るラーメンで有名なAFURI。有楽町では、さっぱりした塩／醤油スープに柚子のアクセントが効いた一杯が楽しめます。スタイリッシュな店内で気軽に立ち寄れます。'
     },
     highlights: [
       { en: 'Yuzu Ramen: Signature light, citrusy ramen with fresh yuzu flavor', zh: '柚子拉面: 招牌清淡、带有柑橘味的拉面，带有新鲜柚子风味', ja: '柚子ラーメン: 招牌清淡、带有柑橘味的ラーメン，带有新鲜柚子风味' },
@@ -346,7 +353,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Kobe Steak Nick (KOBE STEAK 青斜塔) is a premium meat shop and restaurant in Kobe, specializing in authentic Kobe beef. The restaurant offers high-quality wagyu beef with beautiful marbling, prepared to perfection. The modern, elegant interior features wooden tables with warm lighting, creating an intimate dining atmosphere perfect for enjoying premium Kobe beef.",
-      zh: 'Kobe Steak Nick (KOBE STEAK 青斜塔) 是神户一家优质肉店和餐厅，专门提供正宗神户牛肉。餐厅提供具有美丽大理石花纹的优质和牛，精心烹制至完美。现代优雅的内部设有木桌和温暖照明，营造出亲密用餐氛围，非常适合享用优质神户牛肉。'
+      zh: 'Kobe Steak Nick (KOBE STEAK 青斜塔) 是神户一家优质肉店和餐厅，专门提供正宗神户牛肉。餐厅提供具有美丽大理石花纹的优质和牛，精心烹制至完美。现代优雅的内部设有木桌和温暖照明，营造出亲密用餐氛围，非常适合享用优质神户牛肉。',
+      ja: '神戸牛を扱う専門店＆レストラン。美しいサシの和牛を丁寧に焼き上げ、落ち着いた店内で堪能できます。'
     },
     highlights: [
       { en: 'Authentic Kobe Beef: Premium wagyu with exceptional marbling', zh: '正宗神户牛肉: 优质和牛，大理石花纹丰富', ja: '正宗神戸牛肉: 优质和牛，大理石花纹丰富' },
@@ -390,7 +398,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Gashoken (賀正軒) is a famous tonkotsu ramen restaurant in Kobe, specializing in rich, creamy pork bone broth ramen. The Sannomiya location offers a modern dining experience with various unique ramen varieties, including their signature tonkotsu, fusion-style ramen with cheese and basil, spicy mentaiko miso, and black squid ink ramen.",
-      zh: '賀正軒是神户著名的豚骨拉面餐厅，专门提供浓郁、奶油般的猪骨汤拉面。三宫店提供现代用餐体验，提供各种独特的拉面品种，包括招牌豚骨拉面、芝士罗勒融合拉面、辣味明太子味噌拉面和黑色鱿鱼墨拉面。'
+      zh: '賀正軒是神户著名的豚骨拉面餐厅，专门提供浓郁、奶油般的猪骨汤拉面。三宫店提供现代用餐体验，提供各种独特的拉面品种，包括招牌豚骨拉面、芝士罗勒融合拉面、辣味明太子味噌拉面和黑色鱿鱼墨拉面。',
+      ja: '神戸の豚骨ラーメン店「賀正軒」。濃厚クリーミーな豚骨スープに加え、チーズ＆バジルの融合系、辛口明太子味噌、イカ墨など個性的なメニューも揃います。'
     },
     highlights: [
       { en: 'Signature Tonkotsu Ramen: Rich, creamy pork bone broth with thin noodles, chashu, green onions', zh: '招牌豚骨拉面: 浓郁、奶油般的猪骨汤，配细面条、叉烧、葱', ja: '招牌豚骨ラーメン: 浓郁、奶油般的猪骨汤，配细面条、叉烧、葱' },
@@ -462,7 +471,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Gion Unagi Kawato (祇园うなぎ 川と) is a traditional eel restaurant located in the historic Gion district of Kyoto. Specializing in unagi (freshwater eel), the restaurant offers authentic Japanese eel dishes prepared using traditional methods. The restaurant provides an authentic dining experience in one of Kyoto's most famous geisha districts.",
-      zh: '祇园うなぎ 川と是位于京都历史悠久的祇园区的传统鳗鱼餐厅。专门提供鳗鱼（淡水鳗鱼）料理，餐厅使用传统方法制作正宗的日本鳗鱼菜肴。餐厅在京都最著名的艺伎区之一提供正宗的用餐体验。'
+      zh: '祇园うなぎ 川と是位于京都历史悠久的祇园区的传统鳗鱼餐厅。专门提供鳗鱼（淡水鳗鱼）料理，餐厅使用传统方法制作正宗的日本鳗鱼菜肴。餐厅在京都最著名的艺伎区之一提供正宗的用餐体验。',
+      ja: '京都・祇園にあるうなぎ専門店。伝統的な調理法で仕上げるうなぎ料理を、花街の雰囲気の中で味わえます。'
     },
     highlights: [
       { en: 'Traditional Unagi (Eel) Dishes: Authentic Japanese eel prepared using traditional methods', zh: '传统鳗鱼料理: 使用传统方法制作的正宗日本鳗鱼', ja: '传统うなぎ料理: 使用传统方法制作的正宗日本うなぎ' },
@@ -505,7 +515,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Nakamura Tokichi Honten is the historic main store in Uji, Kyoto, famous for premium matcha sweets and traditional tea. The original location where the brand was founded, offering authentic Uji matcha experiences including matcha parfaits, matcha desserts, and traditional tea ceremonies.",
-      zh: '中村藤吉本店是位于京都宇治的历史悠久的主店，以优质抹茶甜点和传统茶而闻名。品牌创始的原始地点，提供正宗的宇治抹茶体验，包括抹茶芭菲、抹茶甜点和传统茶道。'
+      zh: '中村藤吉本店是位于京都宇治的历史悠久的主店，以优质抹茶甜点和传统茶而闻名。品牌创始的原始地点，提供正宗的宇治抹茶体验，包括抹茶芭菲、抹茶甜点和传统茶道。',
+      ja: '宇治にある中村藤吉の本店。上質な宇治抹茶のパフェやスイーツ、伝統的なお茶を、創業の地で楽しめます。'
     },
     highlights: [
       { en: 'Historic Main Store: Original location in Uji', zh: '历史主店: 宇治的原始地点', ja: '历史主店: 宇治的原始地点' },
@@ -539,7 +550,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Kamameshi Shizuka Kouen-ten (志津香) is a traditional restaurant in Nara specializing in kamameshi, a Japanese rice dish cooked in an iron pot (kama). The restaurant is located near Nara Park, making it a perfect lunch stop before or after exploring the park and feeding the deer. Kamameshi features rice cooked with various ingredients like vegetables, meat, or seafood, creating a flavorful and aromatic dish.",
-      zh: '志津香公园店是奈良一家传统餐厅，专门提供釜饭，一种在铁锅（釜）中烹制的日本米饭料理。餐厅位于奈良公园附近，是探索公园和喂鹿前后享用午餐的完美选择。釜饭是用各种配料（如蔬菜、肉类或海鲜）烹制的米饭，创造出美味芳香的料理。'
+      zh: '志津香公园店是奈良一家传统餐厅，专门提供釜饭，一种在铁锅（釜）中烹制的日本米饭料理。餐厅位于奈良公园附近，是探索公园和喂鹿前后享用午餐的完美选择。釜饭是用各种配料（如蔬菜、肉类或海鲜）烹制的米饭，创造出美味芳香的料理。',
+      ja: '奈良公園近くの釜めし名店。鉄釜で炊き上げる具だくさんの釜めしが人気で、観光の合間のランチに最適です。'
     },
     highlights: [
       { en: 'Traditional Kamameshi: Authentic rice pot dish cooked in iron pot', zh: '传统釜饭: 在铁锅中烹制的正宗米饭料理', ja: '传统釜飯: 在铁锅中烹制的正宗米饭料理' },
@@ -577,7 +589,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Yamatoen Honten (大和园本店) is a traditional Japanese restaurant in Nara, known for its authentic Japanese cuisine and traditional dining experience. The restaurant offers a variety of traditional dishes prepared with local ingredients, providing visitors with an authentic taste of Nara's culinary culture. Perfect for dinner after exploring Mt. Wakakusa and the surrounding Nara attractions.",
-      zh: '大和园本店是奈良一家传统日本餐厅，以其正宗的日本料理和传统用餐体验而闻名。餐厅提供各种使用当地食材制作的传统菜肴，为游客提供正宗的奈良美食文化体验。探索若草山和周围奈良景点后享用晚餐的完美选择。'
+      zh: '大和园本店是奈良一家传统日本餐厅，以其正宗的日本料理和传统用餐体验而闻名。餐厅提供各种使用当地食材制作的传统菜肴，为游客提供正宗的奈良美食文化体验。探索若草山和周围奈良景点后享用晚餐的完美选择。',
+      ja: '奈良の老舗和食店。地元食材を使った料理と落ち着いた雰囲気で、若草山や周辺観光の後の夕食にも便利です。'
     },
     highlights: [
       { en: 'Traditional Japanese Cuisine: Authentic dishes with local Nara ingredients', zh: '传统日本料理: 使用奈良当地食材的正宗菜肴', ja: '传统日本料理: 使用奈良当地食材的正宗菜肴' },
@@ -623,7 +636,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Jumbo Fishing Boat Tsurikichi (ジャンボ釣船 つり吉) is a unique fishing izakaya (Japanese pub) where you can catch your own fish and have it prepared fresh. Located in the vibrant Shinsekai district near Tsutenkaku, this restaurant offers an interactive dining experience. Guests can fish for their own seafood from tanks, and the restaurant will prepare it in various styles - sashimi, grilled, fried, or in hot pot. The energetic atmosphere and fresh seafood make it a popular choice for dinner in the Shinsekai area.",
-      zh: 'ジャンボ釣船 つり吉是一家独特的钓鱼居酒屋，您可以自己钓鱼并让餐厅为您新鲜制作。位于通天阁附近充满活力的新世界区，这家餐厅提供互动用餐体验。客人可以从水箱中钓自己的海鲜，餐厅会以各种方式准备 - 刺身、烤制、油炸或火锅。充满活力的氛围和新鲜的海鲜使其成为新世界地区晚餐的热门选择。'
+      zh: 'ジャンボ釣船 つり吉是一家独特的钓鱼居酒屋，您可以自己钓鱼并让餐厅为您新鲜制作。位于通天阁附近充满活力的新世界区，这家餐厅提供互动用餐体验。客人可以从水箱中钓自己的海鲜，餐厅会以各种方式准备 - 刺身、烤制、油炸或火锅。充满活力的氛围和新鲜的海鲜使其成为新世界地区晚餐的热门选择。',
+      ja: '新世界名物の“釣り居酒屋”。生け簀で自分で釣った魚を、刺身・焼き・揚げ・鍋など好みの調理法で提供してくれる体験型のお店です。'
     },
     highlights: [
       { en: 'Interactive Fishing Experience: Catch your own fish from tanks', zh: '互动钓鱼体验: 从水箱中钓自己的鱼', ja: '互动钓鱼体验: 水箱中钓自己的鱼' },
@@ -661,7 +675,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Kyo-Kiyomizu Shigemori (京清水しげ森) is a traditional Japanese restaurant located in the historic Kiyomizu area of Kyoto, near the famous Kiyomizu-dera Temple. The restaurant offers authentic Kyoto cuisine and traditional Japanese dining experiences in a beautiful setting that reflects Kyoto's cultural heritage.",
-      zh: '京清水しげ森是一家传统日本餐厅，位于京都历史悠久的清水区，靠近著名的清水寺。该餐厅提供正宗的京都料理和传统日本用餐体验，在反映京都文化遗产的美丽环境中。'
+      zh: '京清水しげ森是一家传统日本餐厅，位于京都历史悠久的清水区，靠近著名的清水寺。该餐厅提供正宗的京都料理和传统日本用餐体验，在反映京都文化遗产的美丽环境中。',
+      ja: '清水寺近くの清水エリアにある京料理店。京都らしい味わいと、伝統を感じる空間での食事を楽しめます。'
     },
     highlights: [
       { en: 'Historic Kiyomizu Location: Near Kiyomizu-dera Temple in traditional Kyoto setting', zh: '历史悠久的清水位置: 靠近清水寺，传统京都环境', ja: '历史悠久的清水位置: 靠近清水寺，传统京都环境' },
@@ -699,7 +714,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "ISSUN BOUSHI (一吋法師) is a traditional Japanese noodle restaurant in Kyoto, specializing in authentic Japanese noodles. The restaurant offers a variety of traditional noodle dishes prepared with fresh ingredients, providing visitors with an authentic taste of Kyoto's noodle cuisine in a traditional setting.",
-      zh: '一吋法師是京都一家传统日本面食餐厅，专门提供正宗的日本面条。该餐厅提供各种使用新鲜食材制作的传统面食，在传统环境中为游客提供正宗的京都面食体验。'
+      zh: '一吋法師是京都一家传统日本面食餐厅，专门提供正宗的日本面条。该餐厅提供各种使用新鲜食材制作的传统面食，在传统环境中为游客提供正宗的京都面食体验。',
+      ja: '京都の和麺処。うどん・そばなどの麺料理を中心に、落ち着いた雰囲気で楽しめます。'
     },
     highlights: [
       { en: 'Traditional Japanese Noodles: Authentic noodle dishes with fresh ingredients', zh: '传统日本面条: 使用新鲜食材的正宗面食', ja: '传统日本面条: 使用新鲜食材的正宗面食' },
@@ -736,7 +752,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Gokago Matcha Kyoto (ごかご 抹茶 京都) is a traditional matcha tea house and cafe in Kyoto, specializing in authentic matcha and Japanese tea experiences. The cafe offers traditional matcha drinks, matcha desserts, and tea ceremonies in a traditional Japanese setting, providing visitors with an authentic taste of Kyoto's tea culture.",
-      zh: 'ごかご 抹茶 京都是京都一家传统抹茶茶屋和咖啡厅，专门提供正宗的抹茶和日本茶体验。该咖啡厅提供传统抹茶饮品、抹茶甜点和茶道体验，在传统日式环境中为游客提供正宗的京都茶文化体验。'
+      zh: 'ごかご 抹茶 京都是京都一家传统抹茶茶屋和咖啡厅，专门提供正宗的抹茶和日本茶体验。该咖啡厅提供传统抹茶饮品、抹茶甜点和茶道体验，在传统日式环境中为游客提供正宗的京都茶文化体验。',
+      ja: '京都の抹茶茶屋／カフェ。抹茶ドリンクや抹茶スイーツ、和の喫茶体験で京都の茶文化を感じられます。'
     },
     highlights: [
       { en: 'Traditional Matcha Experience: Authentic matcha tea and Japanese tea culture', zh: '传统抹茶体验: 正宗的抹茶茶和日本茶文化', ja: '传统抹お茶体验: 正宗的抹お茶お茶和日本お茶文化' },
@@ -774,7 +791,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Shinsekai Kushikatsu Ittoku, Dotonbori Main Store (新世界串かつ 一徳 道顿堀本店) is a famous kushikatsu (deep-fried skewered food) restaurant in Osaka's Dotonbori area. Kushikatsu is one of Osaka's signature foods, and this restaurant offers authentic kushikatsu with a variety of ingredients. The restaurant provides an authentic Osaka dining experience with crispy, freshly fried skewers served with special dipping sauce.",
-      zh: '新世界串かつ 一徳 道顿堀本店是大阪道顿堀地区著名的串炸（油炸串烧）餐厅。串炸是大阪的特色美食之一，这家餐厅提供正宗的串炸，有多种食材选择。该餐厅提供正宗的大阪用餐体验，配有酥脆的新鲜油炸串，配以特色蘸酱。'
+      zh: '新世界串かつ 一徳 道顿堀本店是大阪道顿堀地区著名的串炸（油炸串烧）餐厅。串炸是大阪的特色美食之一，这家餐厅提供正宗的串炸，有多种食材选择。该餐厅提供正宗的大阪用餐体验，配有酥脆的新鲜油炸串，配以特色蘸酱。',
+      ja: '道頓堀の人気串カツ店。大阪名物の串カツを、揚げたてサクサクで楽しめます。種類も豊富で、本場の雰囲気を味わえます。'
     },
     highlights: [
       { en: 'Authentic Kushikatsu: Osaka\'s famous deep-fried skewered food', zh: '正宗串炸: 大阪著名的油炸串烧美食' },
@@ -811,7 +829,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "GION GOZU 本店 is a traditional Japanese restaurant located in the historic Gion district of Kyoto. The restaurant offers authentic Kyoto cuisine and traditional Japanese dining experiences in a beautiful setting that reflects Kyoto's cultural heritage. Located in one of Kyoto's most famous geisha districts, GION GOZU provides visitors with an authentic taste of traditional Kyoto dining culture.",
-      zh: 'GION GOZU 本店是一家位于京都历史悠久的祇园区的传统日本餐厅。该餐厅在反映京都文化遗产的美丽环境中提供正宗的京都料理和传统日本用餐体验。位于京都最著名的艺伎区之一，GION GOZU 为游客提供正宗的传统京都用餐文化体验。'
+      zh: 'GION GOZU 本店是一家位于京都历史悠久的祇园区的传统日本餐厅。该餐厅在反映京都文化遗产的美丽环境中提供正宗的京都料理和传统日本用餐体验。位于京都最著名的艺伎区之一，GION GOZU 为游客提供正宗的传统京都用餐文化体验。',
+      ja: '祇園の和食店。京料理を中心に、京都の文化を感じる空間で伝統的な食事体験ができます。'
     },
     highlights: [
       { en: 'Historic Gion Location: Located in Kyoto\'s famous geisha district', zh: '历史悠久的祇园位置: 位于京都著名的艺伎区' },
@@ -847,7 +866,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "ichiren KYOTO is a traditional Japanese noodle restaurant in Kyoto, specializing in authentic Japanese noodles. The restaurant offers a variety of traditional noodle dishes prepared with fresh ingredients, providing visitors with an authentic taste of Kyoto's noodle cuisine in a traditional setting.",
-      zh: 'ichiren 京都是京都一家传统日本面食餐厅，专门提供正宗的日本面条。该餐厅提供各种使用新鲜食材制作的传统面食，在传统环境中为游客提供正宗的京都面食体验。'
+      zh: 'ichiren 京都是京都一家传统日本面食餐厅，专门提供正宗的日本面条。该餐厅提供各种使用新鲜食材制作的传统面食，在传统环境中为游客提供正宗的京都面食体验。',
+      ja: '京都の麺処。新鮮な食材で作る本格的な麺料理を、和の雰囲気の中で楽しめます。'
     },
     highlights: [
       { en: 'Traditional Japanese Noodles: Authentic noodle dishes with fresh ingredients', zh: '传统日本面条: 使用新鲜食材的正宗面食', ja: '传统日本面条: 使用新鲜食材的正宗面食' },
@@ -885,7 +905,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Salmon Noodle Kyoto is a traditional Japanese noodle restaurant in Kyoto, specializing in salmon-based noodle dishes. The restaurant offers a variety of noodle dishes featuring fresh salmon, providing visitors with an authentic taste of Kyoto's noodle cuisine with a focus on salmon ingredients in a traditional setting.",
-      zh: 'Salmon Noodle 京都是京都一家传统日本面食餐厅，专门提供以鲑鱼为主的面食。该餐厅提供各种以新鲜鲑鱼为特色的面食，在传统环境中为游客提供以鲑鱼食材为主的正宗京都面食体验。'
+      zh: 'Salmon Noodle 京都是京都一家传统日本面食餐厅，专门提供以鲑鱼为主的面食。该餐厅提供各种以新鲜鲑鱼为特色的面食，在传统环境中为游客提供以鲑鱼食材为主的正宗京都面食体验。',
+      ja: 'サーモンを使った麺料理が特徴のお店。新鮮なサーモンの旨味を活かした一杯を楽しめます。'
     },
     highlights: [
       { en: 'Salmon Specialties: Authentic noodle dishes featuring fresh salmon', zh: '鲑鱼特色: 以新鲜鲑鱼为特色的正宗面食', ja: '鲑鱼特色: 以新鲜鲑鱼为特色的正宗面食' },
@@ -923,7 +944,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Masaichi (一念坂 まさ壱) is a traditional Japanese restaurant in Kyoto, specializing in authentic Japanese cuisine. The restaurant offers a variety of traditional dishes prepared with fresh ingredients, providing visitors with an authentic taste of Kyoto's culinary culture in a traditional setting.",
-      zh: '一念坂 まさ壱是京都一家传统日本餐厅，专门提供正宗的日本料理。该餐厅提供各种使用新鲜食材制作的传统菜肴，在传统环境中为游客提供正宗的京都美食文化体验。'
+      zh: '一念坂 まさ壱是京都一家传统日本餐厅，专门提供正宗的日本料理。该餐厅提供各种使用新鲜食材制作的传统菜肴，在传统环境中为游客提供正宗的京都美食文化体验。',
+      ja: '京都・二年坂周辺の和食店。旬の食材を使った料理で、京都らしい食文化を味わえます。'
     },
     highlights: [
       { en: 'Traditional Cuisine: Authentic Japanese dishes with Kyoto specialties', zh: '传统料理: 具有京都特色的正宗日本菜肴', ja: '传统料理: 具有京都特色的正宗日本菜肴' },
@@ -960,7 +982,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Naniwa Omurice (浪花オムライス) is a popular Japanese restaurant in Osaka, specializing in omurice (omelet rice) dishes. The restaurant offers a variety of omurice dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's omurice cuisine in a welcoming setting.",
-      zh: '浪花オムライス是大阪一家受欢迎的日本餐厅，专门提供蛋包饭料理。该餐厅提供各种使用新鲜食材制作的蛋包饭，在温馨环境中为游客提供正宗的大阪蛋包饭体验。'
+      zh: '浪花オムライス是大阪一家受欢迎的日本餐厅，专门提供蛋包饭料理。该餐厅提供各种使用新鲜食材制作的蛋包饭，在温馨环境中为游客提供正宗的大阪蛋包饭体验。',
+      ja: '大阪で人気のオムライス専門店。ふわとろ卵とケチャップライスの定番から、バリエーション豊富なオムライスを楽しめます。'
     },
     highlights: [
       { en: 'Omurice Specialties: Authentic Japanese omurice (omelet rice) dishes', zh: '蛋包饭特色: 正宗的日本蛋包饭料理', ja: 'オムライス特色: 正宗的日本オムライス料理' },
@@ -998,7 +1021,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Ajinoya Honten (味乃家 本店) is a famous okonomiyaki restaurant in Osaka, specializing in traditional Osaka-style okonomiyaki (savory pancake). The restaurant offers a variety of okonomiyaki dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's okonomiyaki cuisine in a traditional setting.",
-      zh: '味乃家 本店是大阪一家著名的大阪烧餐厅，专门提供传统大阪风格的大阪烧（日式煎饼）。该餐厅提供各种使用新鲜食材制作的大阪烧，在传统环境中为游客提供正宗的大阪烧体验。'
+      zh: '味乃家 本店是大阪一家著名的大阪烧餐厅，专门提供传统大阪风格的大阪烧（日式煎饼）。该餐厅提供各种使用新鲜食材制作的大阪烧，在传统环境中为游客提供正宗的大阪烧体验。',
+      ja: '大阪の名店お好み焼き店。大阪風お好み焼きを中心に、鉄板で焼き上げる本場の味を提供しています。'
     },
     highlights: [
       { en: 'Okonomiyaki Specialties: Authentic Osaka-style okonomiyaki dishes', zh: '大阪烧特色: 正宗大阪风格的大阪烧料理', ja: 'お好み焼き特色: 正宗大阪风格的お好み焼き料理' },
@@ -1035,7 +1059,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Ganso 5 cm Katsudon Osaka Tonkatsu (元祖5センチかつ丼 大阪とんかつ) is a famous tonkatsu restaurant in Osaka, specializing in thick 5cm katsudon (pork cutlet rice bowl). The restaurant offers a variety of tonkatsu dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's tonkatsu cuisine in a traditional setting.",
-      zh: '元祖5センチかつ丼 大阪とんかつ是大阪一家著名的猪排餐厅，专门提供厚达5厘米的猪排丼。该餐厅提供各种使用新鲜食材制作的猪排料理，在传统环境中为游客提供正宗的大阪猪排体验。'
+      zh: '元祖5センチかつ丼 大阪とんかつ是大阪一家著名的猪排餐厅，专门提供厚达5厘米的猪排丼。该餐厅提供各种使用新鲜食材制作的猪排料理，在传统环境中为游客提供正宗的大阪猪排体验。',
+      ja: '厚さ5cm級の極厚カツ丼が名物のとんかつ店。揚げたての分厚いカツは食べ応え抜群で、大阪らしいガッツリ系グルメを楽しめます。'
     },
     highlights: [
       { en: '5cm Katsudon: Famous thick pork cutlet rice bowl specialty', zh: '5厘米猪排丼: 著名的厚猪排盖饭特色', ja: '5厘米とんかつ丼: 著名的厚とんかつ盖饭特色' },
@@ -1071,7 +1096,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Dotonbori Kukuru (道顿堀 くくる) is a popular takoyaki restaurant in Osaka's Dotonbori area, specializing in traditional takoyaki (octopus balls). The restaurant offers a variety of takoyaki dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's famous takoyaki cuisine in a vibrant setting.",
-      zh: '道顿堀 くくる是大阪道顿堀地区一家受欢迎的章鱼烧餐厅，专门提供传统章鱼烧。该餐厅提供各种使用新鲜食材制作的章鱼烧，在充满活力的环境中为游客提供正宗的大阪章鱼烧体验。'
+      zh: '道顿堀 くくる是大阪道顿堀地区一家受欢迎的章鱼烧餐厅，专门提供传统章鱼烧。该餐厅提供各种使用新鲜食材制作的章鱼烧，在充满活力的环境中为游客提供正宗的大阪章鱼烧体验。',
+      ja: '道頓堀で有名な「くくる」。外はふんわり、中はとろっとしたたこ焼きが名物で、食べ歩きにもぴったりです。'
     },
     highlights: [
       { en: 'Takoyaki Specialties: Authentic Osaka-style takoyaki (octopus balls)', zh: '章鱼烧特色: 正宗大阪风格的章鱼烧', ja: 'たこ焼き特色: 正宗大阪风格的たこ焼き' },
@@ -1107,7 +1133,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Mugen Ramen (無限拉面) is a famous beef ramen chain in Osaka's Namba area, specializing in rich beef-based ramen. The restaurant offers a variety of ramen dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's famous beef ramen cuisine in a welcoming setting.",
-      zh: '無限拉面是大阪难波地区一家著名的牛肉拉面连锁店，专门提供浓郁的牛肉拉面。该餐厅提供各种使用新鲜食材制作的拉面，在温馨环境中为游客提供正宗的大阪牛肉拉面体验。'
+      zh: '無限拉面是大阪难波地区一家著名的牛肉拉面连锁店，专门提供浓郁的牛肉拉面。该餐厅提供各种使用新鲜食材制作的拉面，在温馨环境中为游客提供正宗的大阪牛肉拉面体验。',
+      ja: '難波エリアの牛だしラーメン店。牛の旨味が凝縮した濃厚なスープが特徴で、ボリュームのある一杯が楽しめます。'
     },
     highlights: [
       { en: 'Beef Ramen Specialties: Famous beef-based ramen dishes', zh: '牛肉拉面特色: 著名的牛肉拉面料理', ja: '牛肉ラーメン特色: 著名的牛肉ラーメン料理' },
@@ -1143,7 +1170,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Oden no den Maki Sennichimae (おでんの店 まき 千日前店) is a popular oden restaurant in Osaka's Shinsaibashi area, specializing in traditional Japanese oden (simmered dishes). The restaurant offers a variety of oden dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's oden cuisine in a welcoming setting.",
-      zh: 'おでんの店 まき 千日前店是大阪心斋桥地区一家受欢迎的关东煮餐厅，专门提供传统日式关东煮（炖煮料理）。该餐厅提供各种使用新鲜食材制作的关东煮，在温馨环境中为游客提供正宗的大阪关东煮体验。'
+      zh: 'おでんの店 まき 千日前店是大阪心斋桥地区一家受欢迎的关东煮餐厅，专门提供传统日式关东煮（炖煮料理）。该餐厅提供各种使用新鲜食材制作的关东煮，在温馨环境中为游客提供正宗的大阪关东煮体验。',
+      ja: '千日前の人気おでん店。だしが染みた具材を中心に、温かいおでんを気軽に楽しめます。'
     },
     highlights: [
       { en: 'Oden Specialties: Authentic Japanese oden (simmered dishes)', zh: '关东煮特色: 正宗的日式关东煮（炖煮料理）', ja: 'おでん特色: 正宗的日式おでん（炖煮料理）' },
@@ -1179,7 +1207,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Tsukemen Suzume (つけ麺 雀) is a popular tsukemen (dipping noodles) restaurant in Osaka's Shinsaibashi area, specializing in rich and flavorful tsukemen. The restaurant offers a variety of tsukemen dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's tsukemen cuisine in a welcoming setting.",
-      zh: 'つけ麺 雀是大阪心斋桥地区一家受欢迎的蘸面餐厅，专门提供浓郁美味的蘸面。该餐厅提供各种使用新鲜食材制作的蘸面，在温馨环境中为游客提供正宗的大阪蘸面体验。'
+      zh: 'つけ麺 雀是大阪心斋桥地区一家受欢迎的蘸面餐厅，专门提供浓郁美味的蘸面。该餐厅提供各种使用新鲜食材制作的蘸面，在温馨环境中为游客提供正宗的大阪蘸面体验。',
+      ja: '心斎橋のつけ麺店。濃厚で風味のあるつけ汁に麺をくぐらせて食べるつけ麺が人気です。'
     },
     highlights: [
       { en: 'Tsukemen Specialties: Authentic Japanese tsukemen (dipping noodles)', zh: '蘸面特色: 正宗的日式蘸面（蘸汁面）', ja: 'つけ麺特色: 正宗的日式つけ麺（蘸汁面）' },
@@ -1216,7 +1245,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Chicken Paitan Ramen Men wa Tomoare (鶏白湯ラーメン 麺はともあれ) is a popular chicken paitan ramen restaurant in Osaka's Dotonbori area, specializing in rich and creamy chicken-based ramen broth. The restaurant offers a variety of chicken paitan ramen dishes prepared with fresh ingredients, providing visitors with an authentic taste of Osaka's ramen cuisine in a welcoming setting.",
-      zh: '鶏白湯ラーメン 麺はともあれ是大阪道顿堀地区一家受欢迎的鸡白汤拉面餐厅，专门提供浓郁奶香的鸡白汤拉面。该餐厅提供各种使用新鲜食材制作的鸡白汤拉面，在温馨环境中为游客提供正宗的大阪拉面体验。'
+      zh: '鶏白湯ラーメン 麺はともあれ是大阪道顿堀地区一家受欢迎的鸡白汤拉面餐厅，专门提供浓郁奶香的鸡白汤拉面。该餐厅提供各种使用新鲜食材制作的鸡白汤拉面，在温馨环境中为游客提供正宗的大阪拉面体验。',
+      ja: '道頓堀の鶏白湯ラーメン店。鶏の旨味が詰まった濃厚でクリーミーなスープが特徴です。'
     },
     highlights: [
       { en: 'Chicken Paitan Specialties: Rich and creamy chicken-based ramen broth', zh: '鸡白汤特色: 浓郁奶香的鸡白汤拉面', ja: '鸡白汤特色: 浓郁奶香的鸡白汤ラーメン' },
@@ -1252,7 +1282,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "TOREPICHI see food 黒門とれぴち市場 南黒門店 is a popular seafood restaurant located in Kuromon Ichiba Market, Osaka's famous kitchen. Specializing in fresh seafood from the market, the restaurant offers a variety of seafood dishes prepared with the freshest ingredients available. The vibrant market setting provides an authentic Osaka dining experience with fresh fish, sashimi, and seafood specialties.",
-      zh: 'TOREPICHI see food 黒門とれぴち市場 南黒門店是位于大阪著名厨房黑门市场的一家受欢迎的海鲜餐厅。专门提供来自市场的新鲜海鲜，餐厅提供各种使用最新鲜食材制作的海鲜料理。充满活力的市场环境提供正宗的大阪用餐体验，包括新鲜鱼类、刺身和海鲜特色菜。'
+      zh: 'TOREPICHI see food 黒門とれぴち市場 南黒門店是位于大阪著名厨房黑门市场的一家受欢迎的海鲜餐厅。专门提供来自市场的新鲜海鲜，餐厅提供各种使用最新鲜食材制作的海鲜料理。充满活力的市场环境提供正宗的大阪用餐体验，包括新鲜鱼类、刺身和海鲜特色菜。',
+      ja: '大阪の台所・黒門市場にある海鮮店。市場直送の新鮮な魚介を、刺身や海鮮料理で楽しめます。活気ある市場の雰囲気も魅力です。'
     },
     highlights: [
       { en: 'Fresh Seafood: Market-fresh fish and seafood specialties', zh: '新鲜海鲜: 市场新鲜鱼类和海鲜特色菜', ja: '新鲜海鮮: 市場新鲜鱼类和海鮮特色菜' },
@@ -1288,7 +1319,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Shinuoei (新魚栄) is a popular seafood restaurant located in Kuromon Ichiba Market, Osaka's famous kitchen. Specializing in fresh seafood from the market, the restaurant offers a variety of affordable seafood dishes prepared with the freshest ingredients. The vibrant market setting provides an authentic Osaka dining experience with fresh fish, sashimi, and seafood specialties at budget-friendly prices.",
-      zh: '新魚栄是位于大阪著名厨房黑门市场的一家受欢迎的海鲜餐厅。专门提供来自市场的新鲜海鲜，餐厅提供各种价格实惠的海鲜料理，使用最新鲜的食材制作。充满活力的市场环境提供正宗的大阪用餐体验，以实惠的价格提供新鲜鱼类、刺身和海鲜特色菜。'
+      zh: '新魚栄是位于大阪著名厨房黑门市场的一家受欢迎的海鲜餐厅。专门提供来自市场的新鲜海鲜，餐厅提供各种价格实惠的海鲜料理，使用最新鲜的食材制作。充满活力的市场环境提供正宗的大阪用餐体验，以实惠的价格提供新鲜鱼类、刺身和海鲜特色菜。',
+      ja: '黒門市場の海鮮店「新魚栄」。市場の新鮮な魚介を、手頃な価格で味わえるのが魅力です。'
     },
     highlights: [
       { en: 'Fresh Seafood: Market-fresh fish and seafood specialties', zh: '新鲜海鲜: 市场新鲜鱼类和海鲜特色菜', ja: '新鲜海鮮: 市場新鲜鱼类和海鮮特色菜' },
@@ -1325,7 +1357,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Nodobotoke, Kamoru is a premium omakase restaurant located in Temma, Osaka. Specializing in traditional omakase dining experiences, the restaurant offers carefully curated multi-course meals where the chef selects the finest seasonal ingredients. The intimate setting and attention to detail create an authentic Japanese fine dining experience, perfect for those seeking a memorable culinary journey.",
-      zh: 'Nodobotoke, Kamoru是位于大阪天满的一家高级主厨套餐餐厅。专门提供传统主厨套餐用餐体验，餐厅提供精心策划的多道菜套餐，主厨选择最好的时令食材。私密的环境和对细节的关注创造正宗的日本精致用餐体验，非常适合寻求难忘美食之旅的人。'
+      zh: 'Nodobotoke, Kamoru是位于大阪天满的一家高级主厨套餐餐厅。专门提供传统主厨套餐用餐体验，餐厅提供精心策划的多道菜套餐，主厨选择最好的时令食材。私密的环境和对细节的关注创造正宗的日本精致用餐体验，非常适合寻求难忘美食之旅的人。',
+      ja: '大阪・天満の高級おまかせ店。旬の食材を使ったコースを、落ち着いた空間でゆっくり楽しめます。記念日にもおすすめです。'
     },
     highlights: [
       { en: 'Premium Omakase: Carefully curated multi-course meals with chef\'s selection', zh: '高级主厨套餐: 精心策划的多道菜套餐，由主厨选择' },
@@ -1362,7 +1395,8 @@ export const restaurantsData = {
     ],
     about: {
       en: "Sushi Jin in Abeno Harukas Dining is a popular sushi restaurant located in Abeno Harukas, Japan's tallest building, in the Tennoji area of Osaka. Specializing in traditional sushi and Japanese cuisine, the restaurant offers high-quality sushi dishes at affordable prices. The restaurant is located on the dining floor of Harukas, providing diners with a modern setting to enjoy authentic Japanese sushi while experiencing the views and atmosphere of this iconic Osaka landmark.",
-      zh: 'Sushi Jin 阿倍野HARUKAS Dining是位于大阪天王寺地区日本最高建筑阿倍野HARUKAS的一家受欢迎的寿司餐厅。专门提供传统寿司和日本料理，餐厅以实惠的价格提供高品质的寿司料理。餐厅位于HARUKAS的餐饮楼层，为用餐者提供现代环境，在体验这个标志性大阪地标的景色和氛围的同时，享受正宗的日本寿司。'
+      zh: 'Sushi Jin 阿倍野HARUKAS Dining是位于大阪天王寺地区日本最高建筑阿倍野HARUKAS的一家受欢迎的寿司餐厅。专门提供传统寿司和日本料理，餐厅以实惠的价格提供高品质的寿司料理。餐厅位于HARUKAS的餐饮楼层，为用餐者提供现代环境，在体验这个标志性大阪地标的景色和氛围的同时，享受正宗的日本寿司。',
+      ja: 'あべのハルカスのダイニングフロアにある寿司店。手頃な価格で本格的な寿司や和食を楽しめ、モダンな空間で食事ができます。'
     },
     highlights: [
       { en: 'Premium Sushi: High-quality traditional sushi at affordable prices', zh: '优质寿司: 价格实惠的高品质传统寿司', ja: '优质寿司: 价格实惠的高品质传统寿司' },

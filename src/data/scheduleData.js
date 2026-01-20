@@ -11,7 +11,7 @@ export const getScheduleData = (t) => [
       { time: '22:30', text: t('TG Lands (HND)', '泰航降落 (HND)', 'TG着陸（羽田）') },
       { 
         time: '23:30', 
-        text: t('Private Van to Tokyo Airbnb', '私人包车前往东京Airbnb'),
+        text: t('Private Van to Tokyo Airbnb', '私人包车前往东京Airbnb', '東京Airbnbへプライベートバン'),
         transit: t('Travel time: ~45-60 mins (HND → 1-chōme-9-2 Yotsugi, Katsushika City)', '车程: 约45-60分钟 (羽田机场 → 葛饰区四つ木1-9-2)', '移動時間：約45〜60分（羽田空港→葛飾区四つ木1-9-2）')
       },
       { time: '00:30', text: t('Arrive at Tokyo Airbnb (1-chōme-9-2 Yotsugi, Katsushika City)', '抵达东京Airbnb (葛饰区四つ木1-9-2)', '東京Airbnb到着（葛飾区四つ木1-9-2）') },
@@ -26,12 +26,12 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '08:00', 
-        text: t('Depart from Airbnb (1-chōme-9-2 Yotsugi, Katsushika City - 5 mins walk to nearest station)', '从Airbnb出发 (葛饰区四つ木1-9-2 - 步行5分钟至最近车站)'),
+        text: t('Depart from Airbnb (1-chōme-9-2 Yotsugi, Katsushika City - 5 mins walk to nearest station)', '从Airbnb出发 (葛饰区四つ木1-9-2 - 步行5分钟至最近车站)', 'Airbnbから出発（葛飾区四つ木1-9-2 - 最寄り駅まで徒歩5分）'),
         transit: t('Walk 5 mins to nearest station → Keisei Line/Toei Asakusa Line to Higashi-Ginza → Walk 5 mins to Tsukiji Outer Market (~30-35 mins train)', '步行5分钟至最近车站 → 京成线/都营浅草线至东银座 → 步行5分钟至筑地外市场 (~30-35分钟电车)', '最寄り駅まで徒歩5分→京成線/都営浅草線で東銀座へ→築地場外市場まで徒歩5分（電車約30〜35分）')
       },
       { 
         time: '09:00', 
-        text: t('Tsukiji Outer Market', '筑地外市场'), 
+        text: t('Tsukiji Outer Market', '筑地外市场', '築地場外市場'), 
         highlight: true,
         link: '/attractions/tsukiji-market',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Tsukiji+Outer+Market+Tokyo',
@@ -40,7 +40,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '11:30', 
-        text: t('Pain Maison (塩パン屋)', 'Pain Maison (盐面包店)'), 
+        text: t('Pain Maison (塩パン屋)', 'Pain Maison (盐面包店)', 'Pain Maison（塩パン屋）'), 
         highlight: true,
         link: '/food/pain-maison',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Pain+Maison+Tokyo',
@@ -49,13 +49,13 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '11:50', 
-        text: t('Travel to Ginza', '前往银座'),
+        text: t('Travel to Ginza', '前往银座', '銀座へ移動'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Tsukiji+Outer+Market+Tokyo&destination=Ginza+Tokyo&travelmode=walking',
         transit: t('Walk 10-15 mins from Pain Maison to Ginza Station', '从Pain Maison步行10-15分钟至银座站', 'Pain Maisonから銀座駅まで徒歩10〜15分')
       },
       { 
         time: '12:00', 
-        text: t('Ginza Kanimitsu (Lunch)', '银座蟹みつ (午餐)'), 
+        text: t('Ginza Kanimitsu (Lunch)', '银座蟹みつ (午餐)', '銀座 かにみつ（ランチ）'), 
         highlight: true,
         link: '/food/ginza-kanimitsu',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Ginza+Kanimitsu+Tokyo',
@@ -63,13 +63,13 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '13:30', 
-        text: t('Ginza Shopping', '银座购物'),
+        text: t('Ginza Shopping', '银座购物', '銀座ショッピング'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Ginza+Tokyo',
         transit: t('Walk within Ginza area (Duration: ~30 mins)', '银座区内步行 (停留时间: 约30分钟)', '銀座エリア内を徒歩（所要時間：約30分）')
       },
       { 
         time: '14:00', 
-        text: t('Nakamura Tokichi (Matcha Parfait)', '中村藤吉 (抹茶芭菲)'), 
+        text: t('Nakamura Tokichi (Matcha Parfait)', '中村藤吉 (抹茶芭菲)', '中村藤吉（抹茶パフェ）'), 
         highlight: true,
         link: '/food/nakamura-tokichi-ginza',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Nakamura+Tokichi+Ginza',
@@ -78,13 +78,13 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '15:30', 
-        text: t('Travel to Tokyo Station', '前往东京站'),
+        text: t('Travel to Tokyo Station', '前往东京站', '東京駅へ移動'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Ginza+Tokyo&destination=Tokyo+Station&travelmode=walking',
         transit: t('Walk 10-15 mins from Ginza or Marunouchi Line from Ginza-itchome to Tokyo Station (~5 mins train)', '从银座步行10-15分钟或丸之内线从银座一丁目至东京站 (~5分钟电车)', '銀座から徒歩10〜15分、または丸ノ内線で銀座一丁目から東京駅へ（電車約5分）')
       },
       { 
         time: '16:00', 
-        text: t('Tokyo Station (Explore & Buy Souvenirs)', '东京站 (参观 & 购买纪念品)'), 
+        text: t('Tokyo Station (Explore & Buy Souvenirs)', '东京站 (参观 & 购买纪念品)', '東京駅（探索＆お土産購入）'), 
         highlight: true,
         link: '/attractions/tokyo-station',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Tokyo+Station',
@@ -92,22 +92,22 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '17:30', 
-        text: t('Travel to Asakusa for Dinner', '前往浅草晚餐'),
+        text: t('Travel to Asakusa for Dinner', '前往浅草晚餐', '浅草へ夕食のため移動'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Tokyo+Station&destination=Asakusa+Tokyo',
         transit: t('Walk 5 mins to Tokyo Station → Ginza Line to Asakusa Station (~15 mins train) → Walk 3-5 mins', '步行5分钟至东京站 → 银座线至浅草站 (~15分钟电车) → 步行3-5分钟', '東京駅まで徒歩5分→銀座線で浅草駅へ（電車約15分）→徒歩3〜5分')
       },
       { 
         time: '18:00', 
-        text: t('Asakusa - Monja Yaki & Okonomiyaki', '浅草 - 文字烧 & 大阪烧'), 
+        text: t('Asakusa - Monja Yaki & Okonomiyaki', '浅草 - 文字烧 & 大阪烧', '浅草 - もんじゃ焼き＆お好み焼き'), 
         highlight: true,
         link: '/food/asakusa-monja',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Monja+Yaki+Asakusa+Okonomiyaki',
-        note: t('(Dinner)', '(晚餐)'),
+        note: t('(Dinner)', '(晚餐)', '（ディナー）'),
         transit: t('Duration: ~1.5 hours (Traditional Tokyo street food experience)', '停留时间: 约1.5小时 (传统东京街头美食体验)', '所要時間：約1.5時間（伝統的な東京ストリートフード体験）')
       },
       { 
         time: '19:30', 
-        text: t('Return to Airbnb (1-chōme-9-2 Yotsugi, Katsushika City)', '返回Airbnb (葛饰区四つ木1-9-2)'),
+        text: t('Return to Airbnb (1-chōme-9-2 Yotsugi, Katsushika City)', '返回Airbnb (葛饰区四つ木1-9-2)', 'Airbnbに戻る（葛飾区四つ木1-9-2）'),
         transit: t('Walk 3-5 mins to Asakusa Station → Keisei Line/Toei Asakusa Line to nearest station in Katsushika-ku (~20-25 mins train) → Walk 5 mins to 1-chōme-9-2 Yotsugi', '步行3-5分钟至浅草站 → 京成线/都营浅草线至葛饰区最近车站 (~20-25分钟电车) → 步行5分钟至四つ木1-9-2', '浅草駅まで徒歩3〜5分→京成線/都営浅草線で葛飾区の最寄り駅へ（電車約20〜25分）→四つ木1-9-2まで徒歩5分')
       },
     ],
@@ -127,7 +127,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '09:00', 
-        text: t('Asakusa (Senso-ji Temple)', '浅草 (浅草寺)'), 
+        text: t('Asakusa (Senso-ji Temple)', '浅草 (浅草寺)', '浅草（浅草寺）'), 
         highlight: true,
         link: '/attractions/sensoji',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Senso-ji+Temple+Tokyo',
@@ -136,7 +136,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '11:30', 
-        text: t('Ichiran Ramen (Lunch)', '一兰拉面 (午餐)'),
+        text: t('Ichiran Ramen (Lunch)', '一兰拉面 (午餐)', '一蘭ラーメン（ランチ）'),
         highlight: true,
         link: '/food/ichiran-ramen',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Ichiran+Ramen+Asakusa+Tokyo',
@@ -144,24 +144,24 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '13:00', 
-        text: t('Travel to Saitama for Graduation', '前往埼玉参加毕业典礼'),
+        text: t('Travel to Saitama for Graduation', '前往埼玉参加毕业典礼', '卒業式のため埼玉へ移動'),
         transit: t('Walk 5-10 mins to Asakusa Station → Ginza Line to Ueno → JR Utsunomiya Line to Omiya → Tobu Skytree Line to Miyashiro Station (~1h 20m train)', '步行5-10分钟至浅草站 → 银座线至上野 → JR宇都宫线至大宫 → 东武晴空塔线至宫代站 (~1小时20分钟电车)', '浅草駅まで徒歩5〜10分→銀座線で上野へ→JR宇都宮線で大宮へ→東武スカイツリーラインで宮代駅へ（電車約1時間20分）')
       },
       { 
         time: '14:30', 
-        text: t('Nippon Institute of Technology (Graduation Ceremony)', '日本工业大学 (毕业典礼)'), 
+        text: t('Nippon Institute of Technology (Graduation Ceremony)', '日本工业大学 (毕业典礼)', '日本工業大学（卒業式）'), 
         special: true,
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Nippon+Institute+of+Technology+Miyashiro+Saitama',
         transit: t('Walk 10 mins from Miyashiro Station (Duration: ~2-3 hours)', '从宫代站步行10分钟 (停留时间: 约2-3小时)', '宮代駅から徒歩10分（所要時間：約2〜3時間）')
       },
       { 
         time: '17:30', 
-        text: t('Travel to Shibuya', '前往涩谷'),
+        text: t('Travel to Shibuya', '前往涩谷', '渋谷へ移動'),
         transit: t('Walk 10 mins to Miyashiro Station → Tobu Skytree Line to Oshiage → Hanzomon Line to Shibuya (~1h 20m train)', '步行10分钟至宫代站 → 东武晴空塔线至押上 → 半藏门线至涩谷 (~1小时20分钟电车)', '宮代駅まで徒歩10分→東武スカイツリーラインで押上へ→半蔵門線で渋谷へ（電車約1時間20分）')
       },
       { 
         time: '19:00', 
-        text: t('Shibuya - Crossing & Hachiko Statue', '涩谷 - 十字路口 & 八公像'), 
+        text: t('Shibuya - Crossing & Hachiko Statue', '涩谷 - 十字路口 & 八公像', '渋谷 - スクランブル交差点＆ハチ公像'), 
         highlight: true,
         link: '/attractions/shibuya',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Shibuya+Scramble+Crossing+Tokyo',
@@ -169,7 +169,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '20:00', 
-        text: t('Tsukada Shabu Shabu (Graduation Celebration Dinner)', '塚田しゃぶしゃぶ (毕业庆功晚餐)'), 
+        text: t('Tsukada Shabu Shabu (Graduation Celebration Dinner)', '塚田しゃぶしゃぶ (毕业庆功晚餐)', '塚田しゃぶしゃぶ（卒業祝賀晩餐）'), 
         highlight: true,
         link: '/food/tsukada-shabu',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Tsukada+Shabu+Shabu+Shibuya+Tokyo',
@@ -177,7 +177,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '22:00', 
-        text: t('Return to Airbnb (1-chōme-9-2 Yotsugi, Katsushika City)', '返回Airbnb (葛饰区四つ木1-9-2)'),
+        text: t('Return to Airbnb (1-chōme-9-2 Yotsugi, Katsushika City)', '返回Airbnb (葛饰区四つ木1-9-2)', 'Airbnbに戻る（葛飾区四つ木1-9-2）'),
         transit: t('Walk 3 mins to Shibuya Station → Hanzomon Line to Oshiage → Keisei Line/Toei Asakusa Line to nearest station in Katsushika-ku (~35-40 mins train) → Walk 5 mins to 1-chōme-9-2 Yotsugi', '步行3分钟至涩谷站 → 半藏门线至押上 → 京成线/都营浅草线至葛饰区最近车站 (~35-40分钟电车) → 步行5分钟至四つ木1-9-2', '渋谷駅まで徒歩3分→半蔵門線で押上へ→京成線/都営浅草線で葛飾区の最寄り駅へ（電車約35〜40分）→四つ木1-9-2まで徒歩5分')
       },
     ],
@@ -196,7 +196,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '11:00', 
-        text: t('Afuri Yurakucho (Lunch)', '阿夫利有乐町 (午餐)'), 
+        text: t('Afuri Yurakucho (Lunch)', '阿夫利有乐町 (午餐)', '阿夫利 有楽町（ランチ）'), 
         highlight: true,
         link: '/food/afuri-yurakucho',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Afuri+Yurakucho+Tokyo',
@@ -211,29 +211,29 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '13:00', 
-        text: t('Shinkansen to Shin-Osaka', '新干线至新大阪'),
+        text: t('Shinkansen to Shin-Osaka', '新干线至新大阪', '新幹線で新大阪へ'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Tokyo+Station&destination=Shin-Osaka+Station&travelmode=transit',
         transit: t('Travel: ~2.5 hrs (Right side for Fuji) - Ticket: ¥13,870', '车程: 约2.5小时 (右侧看富士山) - 票价: ¥13,870', '移動：約2.5時間（富士山は右側）- チケット：¥13,870')
       },
       { 
         time: '15:30', 
-        text: t('Check-in Osaka Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '入住大阪Airbnb (生野区桃谷1-12-11)'),
+        text: t('Check-in Osaka Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '入住大阪Airbnb (生野区桃谷1-12-11)', '大阪Airbnbチェックイン（生野区桃谷1-12-11）'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Shin-Osaka+Station&destination=1-chōme-12-11+Momodani+Ikuno+Ward+Osaka&travelmode=transit',
         transit: t('Walk 2 mins to Shin-Osaka Station → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行2分钟至新大阪站 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟至桃谷1-12-11', '新大阪駅まで徒歩2分→JR大阪環状線で桃谷駅へ（電車約20分）→桃谷1-12-11まで徒歩2分')
       },
       { 
         time: '17:50', 
-        text: t('Group 3 lands at KIX', '第三组抵达关西机场'),
+        text: t('Group 3 lands at KIX', '第三组抵达关西机场', '第3グループ関空着陸'),
         muted: true
       },
       { 
         time: '18:30', 
-        text: t('Private Van to Osaka Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '私人包车前往大阪Airbnb (生野区桃谷1-12-11)'),
+        text: t('Private Van to Osaka Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '私人包车前往大阪Airbnb (生野区桃谷1-12-11)', '大阪Airbnbへプライベートバン（生野区桃谷1-12-11）'),
         transit: t('Travel time: ~50-60 mins (KIX → 1-chōme-12-11 Momodani, Ikuno Ward)', '车程: 约50-60分钟 (关西机场 → 生野区桃谷1-12-11)', '移動時間：約50〜60分（関空→生野区桃谷1-12-11）')
       },
       { 
         time: '20:00', 
-        text: t('Reunion Dinner (Dotonbori)', '团圆晚餐 (道顿堀)'), 
+        text: t('Reunion Dinner (Dotonbori)', '团圆晚餐 (道顿堀)', '再会ディナー（道頓堀）'), 
         highlight: true,
         link: '/attractions/dotonbori',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Dotonbori+Osaka',
@@ -250,12 +250,12 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '09:30', 
-        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)'),
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)', 'Airbnbから出発（生野区桃谷1-12-11）'),
         transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Osaka Station → JR Kobe Line to Sannomiya Station (~30 mins train) → Walk 10 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至大阪站 → JR神户线至三宫站 (~30分钟电车) → 步行10分钟', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で大阪駅へ→JR神戸線で三宮駅へ（電車約30分）→徒歩10分')
       },
       { 
         time: '10:30', 
-        text: t('Meriken Park & Harborland', '美利坚公园 & 港湾乐园'), 
+        text: t('Meriken Park & Harborland', '美利坚公园 & 港湾乐园', 'メリケンパーク＆ハーバーランド'), 
         highlight: true,
         link: '/attractions/harborland',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Meriken+Park+Kobe',
@@ -264,7 +264,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '12:00', 
-        text: t('Kobe Steak Nick (Lunch)', 'Kobe Steak Nick (午餐)'), 
+        text: t('Kobe Steak Nick (Lunch)', 'Kobe Steak Nick (午餐)', 'Kobe Steak Nick（ランチ）'), 
         highlight: true,
         link: '/food/kobe-steak-nick',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Kobe+Steak+Nick+Kobe',
@@ -278,7 +278,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '14:30', 
-        text: t('Rokkosan Pasture (Sheep)', '六甲山牧场'), 
+        text: t('Rokkosan Pasture (Sheep)', '六甲山牧场', '六甲山牧場（羊）'), 
         highlight: true,
         link: '/attractions/rokkosan-pasture',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Rokkosan+Pasture+Kobe',
@@ -292,7 +292,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '17:30', 
-        text: t('Gashoken (Dinner)', '賀正軒 (晚餐)'), 
+        text: t('Gashoken (Dinner)', '賀正軒 (晚餐)', '賀正軒（ディナー）'), 
         highlight: true,
         link: '/food/gashoken',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Gashoken+Sannomiya+Kobe',
@@ -301,13 +301,13 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '18:30', 
-        text: t('Travel to Kobe Port Tower', '前往神户塔'),
+        text: t('Travel to Kobe Port Tower', '前往神户塔', '神戸ポートタワーへ移動'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Gashoken+Kobe&destination=Kobe+Port+Tower',
         transit: t('Walk 10-15 mins from Gashoken', '从賀正軒步行10-15分钟', '賀正軒から徒歩10〜15分')
       },
       { 
         time: '18:45', 
-        text: t('Kobe Port Tower (Night View)', '神户塔 (夜景)'), 
+        text: t('Kobe Port Tower (Night View)', '神户塔 (夜景)', '神戸ポートタワー（夜景）'), 
         highlight: true,
         link: '/attractions/kobe-port',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Kobe+Port+Tower',
@@ -316,7 +316,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '20:00', 
-        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)'),
+        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)', 'Airbnbに戻る（生野区桃谷1-12-11）'),
         transit: t('Walk 10 mins to Sannomiya Station → JR Kobe Line to Osaka Station (~15 mins train) → JR Osaka Loop Line to Momodani Station (~15 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行10分钟至三宫站 → JR神户线至大阪站 (~15分钟电车) → JR大阪环状线至桃谷站 (~15分钟电车) → 步行2分钟至桃谷1-12-11', '三宮駅まで徒歩10分→JR神戸線で大阪駅へ（電車約15分）→JR大阪環状線で桃谷駅へ（電車約15分）→桃谷1-12-11まで徒歩2分')
       },
     ],
@@ -330,23 +330,23 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '07:30', 
-        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) (Early!)', '从Airbnb出发 (生野区桃谷1-12-11) (早起!)'),
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) (Early!)', '从Airbnb出发 (生野区桃谷1-12-11) (早起!)', 'Airbnbから出発（生野区桃谷1-12-11）（早起き！）'),
         transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Nishikujo → JR Yumesaki Line to Universal City Station (~20 mins train) → Walk 5 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至西九条 → JR梦咲线至环球影城站 (~20分钟电车) → 步行5分钟', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で西九条へ→JRゆめ咲線でユニバーサルシティ駅へ（電車約20分）→徒歩5分')
       },
       { 
         time: '08:00', 
-        text: t('USJ All Day', '环球影城全天'), 
+        text: t('USJ All Day', '环球影城全天', 'USJ終日'), 
         highlight: true,
         link: '/attractions/usj',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Universal+Studios+Japan+Osaka',
         prices: [
-          { label: t('Entry', '门票'), value: '~¥9,500' },
-          { label: t('Express 7', '快通7'), value: '~¥18,000+', highlight: true }
+          { label: t('Entry', '门票', '入場券'), value: '~¥9,500' },
+          { label: t('Express 7', '快通7', 'エクスプレス7'), value: '~¥18,000+', highlight: true }
         ]
       },
       { 
         time: '20:00', 
-        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) / Dinner', '返回Airbnb (生野区桃谷1-12-11) / 晚餐'),
+        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) / Dinner', '返回Airbnb (生野区桃谷1-12-11) / 晚餐', 'Airbnbに戻る（生野区桃谷1-12-11）/ 夕食'),
         transit: t('Walk 5 mins to Universal City Station → JR Yumesaki Line to Nishikujo → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行5分钟至环球影城站 → JR梦咲线至西九条 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟至桃谷1-12-11', 'ユニバーサルシティ駅まで徒歩5分→JRゆめ咲線で西九条へ→JR大阪環状線で桃谷駅へ（電車約20分）→桃谷1-12-11まで徒歩2分')
       },
     ],
@@ -360,12 +360,12 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '08:30', 
-        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)'),
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)', 'Airbnbから出発（生野区桃谷1-12-11）'),
         transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Osaka Station (~20 mins train) → Walk 5 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至大阪站 (~20分钟电车) → 步行5分钟', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で大阪駅へ（電車約20分）→徒歩5分')
       },
       { 
         time: '09:00', 
-        text: t('Umeda Sky Building', '梅田蓝天大厦'), 
+        text: t('Umeda Sky Building', '梅田蓝天大厦', '梅田スカイビル'), 
         highlight: true,
         link: '/attractions/umeda-sky-building',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Umeda+Sky+Building+Osaka',
@@ -374,13 +374,13 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '11:00', 
-        text: t('Travel to Osaka Aquarium Kaiyukan', '前往大阪海游馆'),
+        text: t('Travel to Osaka Aquarium Kaiyukan', '前往大阪海游馆', '大阪海遊館へ移動'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Umeda+Sky+Building+Osaka&destination=Osaka+Aquarium+Kaiyukan&travelmode=transit',
         transit: t('Walk 5 mins to Osaka Station → JR Osaka Loop Line to Osakako Station (~20 mins train) → Walk 5 mins', '步行5分钟至大阪站 → JR大阪环状线至大阪港站 (~20分钟电车) → 步行5分钟', '大阪駅まで徒歩5分→JR大阪環状線で大阪港駅へ（電車約20分）→徒歩5分')
       },
       { 
         time: '11:30', 
-        text: t('Osaka Aquarium Kaiyukan', '大阪海游馆'), 
+        text: t('Osaka Aquarium Kaiyukan', '大阪海游馆', '大阪海遊館'), 
         highlight: true,
         link: '/attractions/osaka-aquarium',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Umeda+Sky+Building+Osaka&destination=Osaka+Aquarium+Kaiyukan&travelmode=transit',
@@ -389,13 +389,13 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '14:30', 
-        text: t('Travel to Shinsaibashi', '前往心斋桥'),
+        text: t('Travel to Shinsaibashi', '前往心斋桥', '心斎橋へ移動'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Osaka+Aquarium+Kaiyukan&destination=Shinsaibashi+Osaka&travelmode=transit',
         transit: t('Walk 5 mins to Osakako Station → Chuo Line to Honmachi → Midosuji Line to Shinsaibashi (~25 mins train) → Walk 2 mins', '步行5分钟至大阪港站 → 中央线至本町 → 御堂筋线至心斋桥 (~25分钟电车) → 步行2分钟', '大阪港駅まで徒歩5分→中央線で本町へ→御堂筋線で心斎橋へ（電車約25分）→徒歩2分')
       },
       { 
         time: '15:00', 
-        text: t('Shinsaibashi', '心斋桥'), 
+        text: t('Shinsaibashi', '心斋桥', '心斎橋'), 
         highlight: true,
         link: '/attractions/shinsaibashi',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Osaka+Aquarium+Kaiyukan&destination=Shinsaibashi+Osaka&travelmode=transit',
@@ -403,13 +403,13 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '17:00', 
-        text: t('Travel to Dotonbori', '前往道顿堀'),
+        text: t('Travel to Dotonbori', '前往道顿堀', '道頓堀へ移動'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Shinsaibashi+Osaka&destination=Dotonbori+Osaka&travelmode=walking',
         transit: t('Walk 5 mins (connected to Shinsaibashi)', '步行5分钟 (与心斋桥相连)', '徒歩5分（心斎橋に接続）')
       },
       { 
         time: '17:15', 
-        text: t('Dotonbori (Walk Around)', '道顿堀 (散步)'), 
+        text: t('Dotonbori (Walk Around)', '道顿堀 (散步)', '道頓堀（散策）'), 
         highlight: true,
         link: '/attractions/dotonbori',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Shinsaibashi+Osaka&destination=Dotonbori+Osaka&travelmode=walking',
@@ -417,7 +417,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '19:00', 
-        text: t('Dinner in Dotonbori', '道顿堀晚餐'),
+        text: t('Dinner in Dotonbori', '道顿堀晚餐', '道頓堀で夕食'),
         highlight: true,
         link: '/attractions/dotonbori',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Dotonbori+Osaka',
@@ -434,12 +434,12 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '07:00', 
-        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) (Early!)', '从Airbnb出发 (生野区桃谷1-12-11) (早起!)'),
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) (Early!)', '从Airbnb出发 (生野区桃谷1-12-11) (早起!)', 'Airbnbから出発（生野区桃谷1-12-11）（早起き！）'),
         transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Kyobashi → Keihan Line to Fushimi-Inari Station (~50 mins train) → Walk 5 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至京桥 → 京阪线至伏见稻荷站 (~50分钟电车) → 步行5分钟', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で京橋へ→京阪線で伏見稲荷駅へ（電車約50分）→徒歩5分')
       },
       { 
         time: '08:00', 
-        text: t('Fushimi Inari Taisha', '伏见稻荷大社'), 
+        text: t('Fushimi Inari Taisha', '伏见稻荷大社', '伏見稲荷大社'), 
         highlight: true,
         link: '/attractions/fushimi-inari',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Fushimi+Inari+Taisha+Kyoto',
@@ -448,7 +448,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '11:00', 
-        text: t('Kiyomizu-dera Temple', '清水寺'), 
+        text: t('Kiyomizu-dera Temple', '清水寺', '清水寺'), 
         highlight: true,
         link: '/attractions/kiyomizu',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Fushimi+Inari+Taisha+Kyoto&destination=Kiyomizu-dera+Temple+Kyoto&travelmode=transit',
@@ -457,7 +457,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '13:00', 
-        text: t('Ninenzaka & Sannenzaka', '二年坂 & 三年坂'), 
+        text: t('Ninenzaka & Sannenzaka', '二年坂 & 三年坂', '二年坂・三年坂'), 
         highlight: true,
         link: '/attractions/ninenzaka-sannenzaka',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kiyomizu-dera+Temple+Kyoto&destination=Ninenzaka+Kyoto&travelmode=walking',
@@ -466,7 +466,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '16:00', 
-        text: t('Yasaka Shrine', '八坂神社'), 
+        text: t('Yasaka Shrine', '八坂神社', '八坂神社'), 
         highlight: true,
         link: '/attractions/yasaka',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Ninenzaka+Kyoto&destination=Yasaka+Shrine+Kyoto&travelmode=walking',
@@ -475,7 +475,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '17:00', 
-        text: t('Gion District', '祇园区'), 
+        text: t('Gion District', '祇园区', '祇園地区'), 
         highlight: true,
         link: '/attractions/gion',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Yasaka+Shrine+Kyoto&destination=Gion+District+Kyoto&travelmode=walking',
@@ -484,16 +484,16 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '17:30', 
-        text: t('Kamogawa River', '鸭川'), 
+        text: t('Kamogawa River', '鸭川', '鴨川'), 
         highlight: true,
         link: '/attractions/kamogawa',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Gion+District+Kyoto&destination=Kamogawa+River+Kyoto&travelmode=walking',
-        note: t('(Sunset)', '(日落)'),
+        note: t('(Sunset)', '(日落)', '（夕日）'),
         transit: t('Walk 3 mins from Gion (Relax by the river, romantic evening)', '从祇园步行3分钟 (河边放松, 浪漫夜晚)', '祇園から徒歩3分（川辺でリラックス、ロマンチックな夕方）')
       },
       { 
         time: '19:00', 
-        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)'),
+        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)', 'Airbnbに戻る（生野区桃谷1-12-11）'),
         transit: t('Walk 5 mins to Gion-Shijo Station → Keihan Line to Kyobashi → JR Osaka Loop Line to Momodani Station (~50 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行5分钟至祇园四条站 → 京阪线至京桥 → JR大阪环状线至桃谷站 (~50分钟电车) → 步行2分钟至桃谷1-12-11', '祇園四条駅まで徒歩5分→京阪線で京橋へ→JR大阪環状線で桃谷駅へ（電車約50分）→桃谷1-12-11まで徒歩2分')
       },
     ],
@@ -507,12 +507,12 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '09:00', 
-        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)'),
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)', 'Airbnbから出発（生野区桃谷1-12-11）'),
         transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Kyobashi → Keihan Line to Uji Station (~50 mins train) → Walk 3 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至京桥 → 京阪线至宇治站 (~50分钟电车) → 步行3分钟', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で京橋へ→京阪線で宇治駅へ（電車約50分）→徒歩3分')
       },
       { 
         time: '10:00', 
-        text: t('Nakamura Tokichi Honten', '中村藤吉本店'), 
+        text: t('Nakamura Tokichi Honten', '中村藤吉本店', '中村藤吉本店'), 
         highlight: true,
         link: '/food/nakamura-tokichi-uji',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Nakamura+Tokichi+Honten+Uji',
@@ -520,7 +520,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '11:30', 
-        text: t('Ujiagami Shrine & River', '宇治上神社 & 宇治川'), 
+        text: t('Ujiagami Shrine & River', '宇治上神社 & 宇治川', '宇治上神社・宇治川'), 
         highlight: true,
         link: '/attractions/ujigami',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Nakamura+Tokichi+Honten+Uji&destination=Ujiagami+Shrine+Uji&travelmode=walking',
@@ -529,12 +529,12 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '13:00', 
-        text: t('Transfer to Nara', '前往奈良'),
+        text: t('Transfer to Nara', '前往奈良', '奈良へ移動'),
         transit: t('Walk 5 mins to Uji Station → JR Nara Line to Nara Station (~30 mins train) → Walk 15 mins or Bus #2/70 to Nara Park (~5 mins bus)', '步行5分钟至宇治站 → JR奈良线至奈良站 (~30分钟电车) → 步行15分钟或2/70号巴士至奈良公园 (~5分钟巴士)', '宇治駅まで徒歩5分→JR奈良線で奈良駅へ（電車約30分）→徒歩15分またはバス2/70号で奈良公園へ（バス約5分）')
       },
       { 
         time: '14:00', 
-        text: t('Nara Park', '奈良公园'), 
+        text: t('Nara Park', '奈良公园', '奈良公園'), 
         highlight: true,
         link: '/attractions/nara-park',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Nara+Park+Nara',
@@ -543,7 +543,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '15:00', 
-        text: t('Todaiji Temple', '东大寺'), 
+        text: t('Todaiji Temple', '东大寺', '東大寺'), 
         highlight: true,
         link: '/attractions/todaiji',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Nara+Park+Nara&destination=Todaiji+Temple+Nara&travelmode=walking',
@@ -552,7 +552,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '16:30', 
-        text: t('Kasuga Taisha Shrine', '春日大社'), 
+        text: t('Kasuga Taisha Shrine', '春日大社', '春日大社'), 
         highlight: true,
         link: '/attractions/kasuga',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Todaiji+Temple+Nara&destination=Kasuga+Taisha+Nara&travelmode=walking',
@@ -561,17 +561,17 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '17:30', 
-        text: t('Mt. Wakakusa', '若草山'), 
+        text: t('Mt. Wakakusa', '若草山', '若草山'), 
         highlight: true,
         link: '/attractions/wakakusa',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kasuga+Taisha+Nara&destination=Mt+Wakakusa+Nara&travelmode=walking',
-        note: t('(Night View)', '(夜景)'),
+        note: t('(Night View)', '(夜景)', '（夜景）'),
         price: '¥150',
         transit: t('Walk 15 mins from Kasuga Taisha (Sunset & panoramic city view)', '从春日大社步行15分钟 (日落 & 全景城市景观)', '春日大社から徒歩15分（夕日＆パノラマの街の眺め）')
       },
       { 
         time: '19:30', 
-        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)'),
+        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)', 'Airbnbに戻る（生野区桃谷1-12-11）'),
         transit: t('Walk 20 mins to Nara Station → JR Nara Line to Kyobashi → JR Osaka Loop Line to Momodani Station (~1h 10m train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行20分钟至奈良站 → JR奈良线至京桥 → JR大阪环状线至桃谷站 (~1小时10分钟电车) → 步行2分钟至桃谷1-12-11', '奈良駅まで徒歩20分→JR奈良線で京橋へ→JR大阪環状線で桃谷駅へ（電車約1時間10分）→桃谷1-12-11まで徒歩2分')
       },
     ],
@@ -585,12 +585,12 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '06:00', 
-        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)'),
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)', 'Airbnbから出発（生野区桃谷1-12-11）'),
         transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Shin-Osaka → Midosuji Line to Minami-Ibaraki → Bus to Katsuoji (~1.5 hours total)', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至新大阪 → 御堂筋线至南茨木 → 巴士至勝尾寺 (~1.5小时总计)', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で新大阪へ→御堂筋線で南茨木へ→バスで勝尾寺へ（合計約1.5時間）')
       },
       { 
         time: '07:00', 
-        text: t('Katsuoji Temple (勝尾寺)', '勝尾寺'), 
+        text: t('Katsuoji Temple (勝尾寺)', '勝尾寺', '勝尾寺'), 
         highlight: true,
         link: '/attractions/katsuoji',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Katsuoji+Temple+Osaka',
@@ -599,12 +599,12 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '09:00', 
-        text: t('Depart from Katsuoji', '从勝尾寺出发'),
+        text: t('Depart from Katsuoji', '从勝尾寺出发', '勝尾寺から出発'),
         transit: t('Bus to Minami-Ibaraki → Midosuji Line to Shin-Osaka → JR Osaka Loop Line to Morinomiya (~1.5 hours total)', '巴士至南茨木 → 御堂筋线至新大阪 → JR大阪环状线至森之宫 (~1.5小时总计)', 'バスで南茨木へ→御堂筋線で新大阪へ→JR大阪環状線で森ノ宮へ（合計約1.5時間）')
       },
       { 
         time: '10:30', 
-        text: t('Osaka Castle', '大阪城'), 
+        text: t('Osaka Castle', '大阪城', '大阪城'), 
         highlight: true,
         link: '/attractions/osaka-castle',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Morinomiya+Station+Osaka&destination=Osaka+Castle&travelmode=walking',
@@ -613,7 +613,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '12:30', 
-        text: t('Kuromon Ichiba Market (Lunch)', '黑门市场 (午餐)'), 
+        text: t('Kuromon Ichiba Market (Lunch)', '黑门市场 (午餐)', '黒門市場（ランチ）'), 
         highlight: true,
         link: '/attractions/kuromon-market',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Osaka+Castle&destination=Kuromon+Ichiba+Market+Osaka&travelmode=transit',
@@ -622,7 +622,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '14:00', 
-        text: t('Namba Yasaka Shrine', '难波八阪神社'), 
+        text: t('Namba Yasaka Shrine', '难波八阪神社', '難波八阪神社'), 
         highlight: true,
         link: '/attractions/namba-yasaka-shrine',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kuromon+Ichiba+Market+Osaka&destination=Namba+Yasaka+Shrine+Osaka&travelmode=walking',
@@ -631,7 +631,7 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '15:00', 
-        text: t('Harukas Abeno', '阿倍野HARUKAS'), 
+        text: t('Harukas Abeno', '阿倍野HARUKAS', 'あべのハルカス'), 
         highlight: true,
         link: '/attractions/harukas-abeno',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Namba+Yasaka+Shrine+Osaka&destination=Harukas+Abeno+Osaka&travelmode=transit',
@@ -639,13 +639,13 @@ export const getScheduleData = (t) => [
       },
       { 
         time: '18:00', 
-        text: t('Travel to Jumbo Fishing Boat Tsurikichi Shinsekai', '前往ジャンボ釣船 つり吉 新世界店'),
+        text: t('Travel to Jumbo Fishing Boat Tsurikichi Shinsekai', '前往ジャンボ釣船 つり吉 新世界店', 'ジャンボ釣船 つり吉 新世界店へ移動'),
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Harukas+Abeno+Osaka&destination=Tsurikichi+Shinsekai+Osaka&travelmode=transit',
         transit: t('Walk 2 mins to Tennoji Station → Midosuji Line to Dobutsuen-mae Station (~5 mins train) → Walk 5 mins', '步行2分钟至天王寺站 → 御堂筋线至动物园前站 (~5分钟电车) → 步行5分钟', '天王寺駅まで徒歩2分→御堂筋線で動物園前駅へ（電車約5分）→徒歩5分')
       },
       { 
         time: '18:30', 
-        text: t('Jumbo Fishing Boat Tsurikichi Shinsekai (Dinner)', 'ジャンボ釣船 つり吉 新世界店 (晚餐)'), 
+        text: t('Jumbo Fishing Boat Tsurikichi Shinsekai (Dinner)', 'ジャンボ釣船 つり吉 新世界店 (晚餐)', 'ジャンボ釣船 つり吉 新世界店（ディナー）'), 
         highlight: true,
         link: '/food/tsurikichi-shinsekai',
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Tsurikichi+Shinsekai+Osaka',
@@ -662,22 +662,22 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '06:30', 
-        text: t('Private Van to KIX (CX Group)', '私人包车前往关西机场 (国泰组)'),
+        text: t('Private Van to KIX (CX Group)', '私人包车前往关西机场 (国泰组)', '関空へプライベートバン（CXグループ）'),
         transit: t('Travel time: ~50-60 mins (1-chōme-12-11 Momodani, Ikuno Ward → KIX)', '车程: 约50-60分钟 (生野区桃谷1-12-11 → 关西机场)', '移動時間：約50〜60分（生野区桃谷1-12-11→関空）')
       },
       { 
         time: '07:30', 
-        text: t('CX Check-in', '国泰值机'),
+        text: t('CX Check-in', '国泰值机', 'CXチェックイン'),
         special: true
       },
       { 
         time: '07:30', 
-        text: t('Private Van to KIX (TG Group)', '私人包车前往关西机场 (泰航组)'),
+        text: t('Private Van to KIX (TG Group)', '私人包车前往关西机场 (泰航组)', '関空へプライベートバン（TGグループ）'),
         transit: t('Travel time: ~50-60 mins (1-chōme-12-11 Momodani, Ikuno Ward → KIX)', '车程: 约50-60分钟 (生野区桃谷1-12-11 → 关西机场)', '移動時間：約50〜60分（生野区桃谷1-12-11→関空）')
       },
       { 
         time: '08:30', 
-        text: t('TG Check-in', '泰航值机'),
+        text: t('TG Check-in', '泰航值机', 'TGチェックイン'),
         special: true
       },
       { 
