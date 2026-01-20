@@ -1087,12 +1087,12 @@ const BudgetSplitter = () => {
                 onChange={(e) => setExpCategory(e.target.value)}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
-                <option value="Meal">Meal</option>
-                <option value="Transport">Transport</option>
-                <option value="Tickets">Tickets</option>
-                <option value="Shopping">Shopping</option>
-                <option value="Hotel">Hotel</option>
-                <option value="Other">Other</option>
+                <option value="Meal">{t('Meal', '餐饮', '食事')}</option>
+                <option value="Transport">{t('Transport', '交通', '交通')}</option>
+                <option value="Tickets">{t('Tickets', '门票', 'チケット')}</option>
+                <option value="Shopping">{t('Shopping', '购物', 'ショッピング')}</option>
+                <option value="Hotel">{t('Hotel', '住宿', 'ホテル')}</option>
+                <option value="Other">{t('Other', '其他', 'その他')}</option>
               </select>
             </div>
             <div>
