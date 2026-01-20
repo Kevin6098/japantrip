@@ -62,7 +62,7 @@ const AttractionDetail = ({ attraction }) => {
               >
                 <img
                   src={img}
-                  alt={`${t(attraction.title.en, attraction.title.zh)} - Image ${index + 1}`}
+                  alt={`${t(attraction.title.en, attraction.title.zh, attraction.title.ja)} - Image ${index + 1}`}
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.target.src = 'https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1200&q=80'
@@ -117,27 +117,27 @@ const AttractionDetail = ({ attraction }) => {
       <article className="animate-fade-in">
         <div className="mb-6">
           <h1 className="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
-            {attraction.title?.en ? t(attraction.title.en, attraction.title.zh) : attraction.title}
+            {attraction.title?.en ? t(attraction.title.en, attraction.title.zh, attraction.title.ja) : attraction.title}
           </h1>
           <div className="flex flex-wrap items-center gap-3 text-sm text-slate-600">
             {attraction.location && (
               <span className="flex items-center">
                 <i className="fa-solid fa-location-dot mr-2 text-indigo-500"></i>
-                {attraction.location.en ? t(attraction.location.en, attraction.location.zh) : attraction.location}
+                {attraction.location.en ? t(attraction.location.en, attraction.location.zh, attraction.location.ja) : attraction.location}
               </span>
             )}
             {attraction.price && (
               <span className="flex items-center">
                 <i className="fa-solid fa-yen-sign mr-2 text-emerald-500"></i>
                 {typeof attraction.price === 'object' && attraction.price.en
-                  ? t(attraction.price.en, attraction.price.zh)
+                  ? t(attraction.price.en, attraction.price.zh, attraction.price.ja)
                   : attraction.price}
               </span>
             )}
             {attraction.hours && (
               <span className="flex items-center">
                 <i className="fa-solid fa-clock mr-2 text-blue-500"></i>
-                {attraction.hours.en ? t(attraction.hours.en, attraction.hours.zh) : attraction.hours}
+                {attraction.hours.en ? t(attraction.hours.en, attraction.hours.zh, attraction.hours.ja) : attraction.hours}
               </span>
             )}
           </div>
@@ -148,10 +148,10 @@ const AttractionDetail = ({ attraction }) => {
         <div className={`glass-card border-l-4 ${locationColor.split(' ')[0]} rounded-2xl p-6 mb-8`}>
           <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor.split(' ')[1]}`}>
             <i className="fa-solid fa-info-circle mr-2"></i>
-            {t('About', '关于')}
+            {t('About', '关于', '概要')}
           </h2>
           <div className="text-slate-700 leading-relaxed space-y-4">
-            <p>{attraction.about.en ? t(attraction.about.en, attraction.about.zh) : attraction.about}</p>
+            <p>{attraction.about.en ? t(attraction.about.en, attraction.about.zh, attraction.about.ja) : attraction.about}</p>
           </div>
         </div>
         )}
@@ -161,13 +161,13 @@ const AttractionDetail = ({ attraction }) => {
           <div className={`glass-card border-l-4 ${locationColor.split(' ')[0]} rounded-2xl p-6 mb-8`}>
             <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor.split(' ')[1]}`}>
               <i className="fa-solid fa-star mr-2"></i>
-              {t('Highlights', '亮点')}
+              {t('Highlights', '亮点', '見どころ')}
             </h2>
             <ul className="space-y-3 text-slate-700">
               {attraction.highlights.map((highlight, index) => (
                 <li key={index} className="flex items-start">
                   <i className="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
-                  <span>{t(highlight.en, highlight.zh)}</span>
+                  <span>{t(highlight.en, highlight.zh, highlight.ja)}</span>
                 </li>
               ))}
             </ul>
@@ -179,13 +179,13 @@ const AttractionDetail = ({ attraction }) => {
           <div className={`glass-card border-l-4 ${locationColor.split(' ')[0]} rounded-2xl p-6 mb-8`}>
             <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor.split(' ')[1]}`}>
               <i className="fa-solid fa-lightbulb mr-2"></i>
-              {t('Travel Tips', '旅行提示')}
+              {t('Travel Tips', '旅行提示', '旅行のヒント')}
             </h2>
             <ul className="space-y-3 text-slate-700">
               {attraction.tips.map((tip, index) => (
                 <li key={index} className="flex items-start">
                   <i className="fa-solid fa-circle-info text-blue-500 mr-3 mt-1 text-xs"></i>
-                  <span>{t(tip.en, tip.zh)}</span>
+                  <span>{t(tip.en, tip.zh, tip.ja)}</span>
                 </li>
               ))}
             </ul>
@@ -197,14 +197,14 @@ const AttractionDetail = ({ attraction }) => {
           <div className={`glass-card border-l-4 ${locationColor.split(' ')[0]} rounded-2xl p-6 mb-8`}>
             <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor.split(' ')[1]}`}>
               <i className="fa-solid fa-calendar-days mr-2"></i>
-              {t('Visit Guide & Schedule', '参观指南与行程')}
+              {t('Visit Guide & Schedule', '参观指南与行程', 'ガイド＆スケジュール')}
             </h2>
             
             {/* Group Info */}
             {attraction.visitGuide.groupInfo && (
               <div className="mb-6 pb-4 border-b border-orange-200">
-                <h3 className="font-bold text-lg text-slate-800 mb-3">{t('Group Info', '团队信息')}</h3>
-                <p className="text-sm text-slate-700">{t(attraction.visitGuide.groupInfo.en, attraction.visitGuide.groupInfo.zh)}</p>
+                <h3 className="font-bold text-lg text-slate-800 mb-3">{t('Group Info', '团队信息', 'グループ情報')}</h3>
+                <p className="text-sm text-slate-700">{t(attraction.visitGuide.groupInfo.en, attraction.visitGuide.groupInfo.zh, attraction.visitGuide.groupInfo.ja)}</p>
               </div>
             )}
 
@@ -213,16 +213,16 @@ const AttractionDetail = ({ attraction }) => {
               <div className="mb-6 pb-4 border-b border-orange-200">
                 <h3 className="font-bold text-lg text-slate-800 mb-3 flex items-center">
                   <i className="fa-solid fa-clock mr-2 text-orange-500"></i>
-                  {t(attraction.visitGuide.arrivalPlan.title.en, attraction.visitGuide.arrivalPlan.title.zh)}
+                  {t(attraction.visitGuide.arrivalPlan.title.en, attraction.visitGuide.arrivalPlan.title.zh, attraction.visitGuide.arrivalPlan.title.ja)}
                 </h3>
                 <ul className="space-y-2 text-slate-700 text-sm mb-3">
-                  <li>• {t(attraction.visitGuide.arrivalPlan.time.en, attraction.visitGuide.arrivalPlan.time.zh)}</li>
+                  <li>• {t(attraction.visitGuide.arrivalPlan.time.en, attraction.visitGuide.arrivalPlan.time.zh, attraction.visitGuide.arrivalPlan.time.ja)}</li>
                 </ul>
                 <div className="bg-orange-50 border-l-4 border-orange-400 p-3 rounded">
-                  <p className="text-sm text-slate-700 font-semibold mb-2">{t('Why this matters:', '为什么这很重要：')}</p>
+                  <p className="text-sm text-slate-700 font-semibold mb-2">{t('Why this matters:', '为什么这很重要：', 'ポイント：')}</p>
                   <ul className="space-y-1 text-sm text-slate-700">
                     {attraction.visitGuide.arrivalPlan.whyMatters?.map((item, index) => (
-                      <li key={index}>• {t(item.en, item.zh)}</li>
+                      <li key={index}>• {t(item.en, item.zh, item.ja)}</li>
                     ))}
                   </ul>
                 </div>
@@ -234,29 +234,29 @@ const AttractionDetail = ({ attraction }) => {
               <div className="mb-6 pb-4 border-b border-orange-200">
                 <h3 className="font-bold text-lg text-slate-800 mb-3 flex items-center">
                   <i className="fa-solid fa-ticket mr-2 text-orange-500"></i>
-                  {t('Tickets Strategy', '门票策略')}
+                  {t('Tickets Strategy', '门票策略', 'チケット戦略')}
                 </h3>
                 <div className="mb-3">
-                  <p className="font-semibold text-slate-800 mb-2">{t('Required for everyone:', '每个人都需要：')}</p>
-                  <p className="text-sm text-slate-700">• {t(attraction.visitGuide.ticketsStrategy.required.en, attraction.visitGuide.ticketsStrategy.required.zh)}</p>
+                  <p className="font-semibold text-slate-800 mb-2">{t('Required for everyone:', '每个人都需要：', '全員必須：')}</p>
+                  <p className="text-sm text-slate-700">• {t(attraction.visitGuide.ticketsStrategy.required.en, attraction.visitGuide.ticketsStrategy.required.zh, attraction.visitGuide.ticketsStrategy.required.ja)}</p>
                 </div>
                 {attraction.visitGuide.ticketsStrategy.expressPass && (
                   <div className="bg-orange-50 border-l-4 border-orange-400 p-3 rounded">
-                    <p className="font-semibold text-slate-800 mb-2">{t('Express Pass (not for everyone)', '快速通行证（不是每个人都需要的）')}</p>
-                    <p className="text-sm text-slate-700 mb-2">{t('Recommended for:', '推荐给：')}</p>
+                    <p className="font-semibold text-slate-800 mb-2">{t('Express Pass (not for everyone)', '快速通行证（不是每个人都需要的）', 'エクスプレス・パス（全員向けではありません）')}</p>
+                    <p className="text-sm text-slate-700 mb-2">{t('Recommended for:', '推荐给：', 'おすすめ：')}</p>
                     <ul className="space-y-1 text-sm text-slate-700 mb-3">
                       {attraction.visitGuide.ticketsStrategy.expressPass.recommendedFor?.map((item, index) => (
-                        <li key={index}>• {t(item.en, item.zh)}</li>
+                        <li key={index}>• {t(item.en, item.zh, item.ja)}</li>
                       ))}
                     </ul>
-                    <p className="text-sm text-slate-700 mb-2">{t('Best Express Pass type (should include):', '最佳快速通行证类型（应包括）：')}</p>
+                    <p className="text-sm text-slate-700 mb-2">{t('Best Express Pass type (should include):', '最佳快速通行证类型（应包括）：', 'おすすめの内容（含まれるべきもの）：')}</p>
                     <ul className="space-y-1 text-sm text-slate-700 mb-3">
                       {attraction.visitGuide.ticketsStrategy.expressPass.bestType?.map((item, index) => (
-                        <li key={index}>• {t(item.en, item.zh)}</li>
+                        <li key={index}>• {t(item.en, item.zh, item.ja)}</li>
                       ))}
                     </ul>
-                    <p className="text-sm font-semibold text-slate-800">{t('Budget tip:', '省钱提示：')}</p>
-                    <p className="text-sm text-slate-700">• {t(attraction.visitGuide.ticketsStrategy.expressPass.budgetTip.en, attraction.visitGuide.ticketsStrategy.expressPass.budgetTip.zh)}</p>
+                    <p className="text-sm font-semibold text-slate-800">{t('Budget tip:', '省钱提示：', '節約のコツ：')}</p>
+                    <p className="text-sm text-slate-700">• {t(attraction.visitGuide.ticketsStrategy.expressPass.budgetTip.en, attraction.visitGuide.ticketsStrategy.expressPass.budgetTip.zh, attraction.visitGuide.ticketsStrategy.expressPass.budgetTip.ja)}</p>
                   </div>
                 )}
               </div>
@@ -267,17 +267,17 @@ const AttractionDetail = ({ attraction }) => {
               <div className="mb-6 pb-4 border-b border-orange-200">
                 <h3 className="font-bold text-lg text-slate-800 mb-3 flex items-center">
                   <i className="fa-solid fa-sun mr-2 text-orange-500"></i>
-                  {t(attraction.visitGuide.morningRoute.destination.en, attraction.visitGuide.morningRoute.destination.zh)}
+                  {t(attraction.visitGuide.morningRoute.destination.en, attraction.visitGuide.morningRoute.destination.zh, attraction.visitGuide.morningRoute.destination.ja)}
                 </h3>
                 <div className="bg-orange-50 border-l-4 border-orange-400 p-3 rounded mb-3">
-                  <p className="text-sm text-slate-700 mb-2">{t('Ride priority:', '游乐设施优先顺序：')}</p>
+                  <p className="text-sm text-slate-700 mb-2">{t('Ride priority:', '游乐设施优先顺序：', '優先アトラクション：')}</p>
                   <ol className="space-y-1 text-sm text-slate-700 ml-4 list-decimal">
                     {attraction.visitGuide.morningRoute.ridePriority?.map((item, index) => (
-                      <li key={index}>{t(item.en, item.zh)}</li>
+                      <li key={index}>{t(item.en, item.zh, item.ja)}</li>
                     ))}
                   </ol>
-                  <p className="text-sm text-slate-700 mt-3 font-semibold">{t('Important:', '重要：')}</p>
-                  <p className="text-sm text-slate-700">• {t(attraction.visitGuide.morningRoute.important.en, attraction.visitGuide.morningRoute.important.zh)}</p>
+                  <p className="text-sm text-slate-700 mt-3 font-semibold">{t('Important:', '重要：', '重要：')}</p>
+                  <p className="text-sm text-slate-700">• {t(attraction.visitGuide.morningRoute.important.en, attraction.visitGuide.morningRoute.important.zh, attraction.visitGuide.morningRoute.important.ja)}</p>
                 </div>
               </div>
             )}
@@ -287,17 +287,17 @@ const AttractionDetail = ({ attraction }) => {
               <div className="mb-6 pb-4 border-b border-orange-200">
                 <h3 className="font-bold text-lg text-slate-800 mb-3 flex items-center">
                   <i className="fa-solid fa-utensils mr-2 text-orange-500"></i>
-                  {t(attraction.visitGuide.lunch.destination.en, attraction.visitGuide.lunch.destination.zh)}
+                  {t(attraction.visitGuide.lunch.destination.en, attraction.visitGuide.lunch.destination.zh, attraction.visitGuide.lunch.destination.ja)}
                 </h3>
                 <div className="bg-orange-50 border-l-4 border-orange-400 p-3 rounded">
-                  <p className="text-sm text-slate-700 mb-2">{t('Things to do:', '要做的事：')}</p>
+                  <p className="text-sm text-slate-700 mb-2">{t('Things to do:', '要做的事：', 'やること：')}</p>
                   <ul className="space-y-1 text-sm text-slate-700 mb-3">
                     {attraction.visitGuide.lunch.thingsToDo?.map((item, index) => (
-                      <li key={index}>• {t(item.en, item.zh)}</li>
+                      <li key={index}>• {t(item.en, item.zh, item.ja)}</li>
                     ))}
                   </ul>
-                  <p className="text-sm font-semibold text-slate-800">{t('Lunch:', '午餐：')}</p>
-                  <p className="text-sm text-slate-700">• {t(attraction.visitGuide.lunch.restaurant.en, attraction.visitGuide.lunch.restaurant.zh)}</p>
+                  <p className="text-sm font-semibold text-slate-800">{t('Lunch:', '午餐：', 'ランチ：')}</p>
+                  <p className="text-sm text-slate-700">• {t(attraction.visitGuide.lunch.restaurant.en, attraction.visitGuide.lunch.restaurant.zh, attraction.visitGuide.lunch.restaurant.ja)}</p>
                 </div>
               </div>
             )}
@@ -307,34 +307,34 @@ const AttractionDetail = ({ attraction }) => {
               <div className="mb-6 pb-4 border-b border-orange-200">
                 <h3 className="font-bold text-lg text-slate-800 mb-3 flex items-center">
                   <i className="fa-solid fa-sun mr-2 text-orange-500"></i>
-                  {t('Afternoon Strategy (13:00–17:30)', '下午策略（13:00–17:30）')}
+                  {t('Afternoon Strategy (13:00–17:30)', '下午策略（13:00–17:30）', '午後の動き（13:00–17:30）')}
                 </h3>
-                <p className="text-sm text-slate-700 mb-3">{t('Split into 2 flexible groups:', '分成2个灵活的小组：')}</p>
+                <p className="text-sm text-slate-700 mb-3">{t('Split into 2 flexible groups:', '分成2个灵活的小组：', '2つの柔軟なグループに分ける：')}</p>
                 <div className="space-y-3">
                   {attraction.visitGuide.afternoonStrategy.groupA && (
                     <div className="bg-blue-50 border-l-4 border-blue-400 p-3 rounded">
-                      <p className="font-bold text-slate-800 mb-2">{t(attraction.visitGuide.afternoonStrategy.groupA.title.en, attraction.visitGuide.afternoonStrategy.groupA.title.zh)}</p>
+                      <p className="font-bold text-slate-800 mb-2">{t(attraction.visitGuide.afternoonStrategy.groupA.title.en, attraction.visitGuide.afternoonStrategy.groupA.title.zh, attraction.visitGuide.afternoonStrategy.groupA.title.ja)}</p>
                       <ul className="space-y-1 text-sm text-slate-700">
                         {attraction.visitGuide.afternoonStrategy.groupA.tasks?.map((item, index) => (
-                          <li key={index}>• {t(item.en, item.zh)}</li>
+                          <li key={index}>• {t(item.en, item.zh, item.ja)}</li>
                         ))}
                       </ul>
                     </div>
                   )}
                   {attraction.visitGuide.afternoonStrategy.groupB && (
                     <div className="bg-green-50 border-l-4 border-green-400 p-3 rounded">
-                      <p className="font-bold text-slate-800 mb-2">{t(attraction.visitGuide.afternoonStrategy.groupB.title.en, attraction.visitGuide.afternoonStrategy.groupB.title.zh)}</p>
-                      <p className="text-sm text-slate-700 mb-2">{t('Recommended attractions:', '推荐景点：')}</p>
+                      <p className="font-bold text-slate-800 mb-2">{t(attraction.visitGuide.afternoonStrategy.groupB.title.en, attraction.visitGuide.afternoonStrategy.groupB.title.zh, attraction.visitGuide.afternoonStrategy.groupB.title.ja)}</p>
+                      <p className="text-sm text-slate-700 mb-2">{t('Recommended attractions:', '推荐景点：', 'おすすめ：')}</p>
                       <ul className="space-y-1 text-sm text-slate-700">
                         {attraction.visitGuide.afternoonStrategy.groupB.attractions?.map((item, index) => (
-                          <li key={index}>• {t(item.en, item.zh)}</li>
+                          <li key={index}>• {t(item.en, item.zh, item.ja)}</li>
                         ))}
                       </ul>
                     </div>
                   )}
                 </div>
                 {attraction.visitGuide.afternoonStrategy.meetupTip && (
-                  <p className="text-sm text-slate-700 mt-3"><strong>{t('Meet-up tip:', '会合提示：')}</strong> {t(attraction.visitGuide.afternoonStrategy.meetupTip.en, attraction.visitGuide.afternoonStrategy.meetupTip.zh)}</p>
+                  <p className="text-sm text-slate-700 mt-3"><strong>{t('Meet-up tip:', '会合提示：', '集合のコツ：')}</strong> {t(attraction.visitGuide.afternoonStrategy.meetupTip.en, attraction.visitGuide.afternoonStrategy.meetupTip.zh, attraction.visitGuide.afternoonStrategy.meetupTip.ja)}</p>
                 )}
               </div>
             )}
@@ -344,23 +344,23 @@ const AttractionDetail = ({ attraction }) => {
               <div className="mb-6 pb-4 border-b border-orange-200">
                 <h3 className="font-bold text-lg text-slate-800 mb-3 flex items-center">
                   <i className="fa-solid fa-moon mr-2 text-orange-500"></i>
-                  {t('Evening Plan (After 18:30)', '晚间计划（18:30后）')}
+                  {t('Evening Plan (After 18:30)', '晚间计划（18:30后）', '夜の予定（18:30以降）')}
                 </h3>
                 <div className="bg-orange-50 border-l-4 border-orange-400 p-3 rounded">
-                  <p className="text-sm font-semibold text-slate-800 mb-2">{t('Best time of the day:', '一天中最佳时间：')}</p>
+                  <p className="text-sm font-semibold text-slate-800 mb-2">{t('Best time of the day:', '一天中最佳时间：', 'おすすめポイント：')}</p>
                   <ul className="space-y-1 text-sm text-slate-700 mb-3">
                     {attraction.visitGuide.eveningPlan.bestTime?.map((item, index) => (
-                      <li key={index}>• {t(item.en, item.zh)}</li>
+                      <li key={index}>• {t(item.en, item.zh, item.ja)}</li>
                     ))}
                   </ul>
-                  <p className="font-bold text-slate-800 mb-2">➡️ {t('Return to Super Nintendo World', '返回超级任天堂世界')}</p>
+                  <p className="font-bold text-slate-800 mb-2">➡️ {t('Return to Super Nintendo World', '返回超级任天堂世界', 'スーパー・ニンテンドー・ワールドに戻る')}</p>
                   <ul className="space-y-1 text-sm text-slate-700 mb-3">
                     {attraction.visitGuide.eveningPlan.returnToNintendo?.map((item, index) => (
-                      <li key={index}>• {t(item.en, item.zh)}</li>
+                      <li key={index}>• {t(item.en, item.zh, item.ja)}</li>
                     ))}
                   </ul>
-                  <p className="text-sm font-semibold text-slate-800">{t('Dinner:', '晚餐：')}</p>
-                  <p className="text-sm text-slate-700">• {t(attraction.visitGuide.eveningPlan.dinner.en, attraction.visitGuide.eveningPlan.dinner.zh)}</p>
+                  <p className="text-sm font-semibold text-slate-800">{t('Dinner:', '晚餐：', '夕食：')}</p>
+                  <p className="text-sm text-slate-700">• {t(attraction.visitGuide.eveningPlan.dinner.en, attraction.visitGuide.eveningPlan.dinner.zh, attraction.visitGuide.eveningPlan.dinner.ja)}</p>
                 </div>
               </div>
             )}
@@ -370,13 +370,13 @@ const AttractionDetail = ({ attraction }) => {
               <div className="mb-6">
                 <h3 className="font-bold text-lg text-slate-800 mb-3 flex items-center">
                   <i className="fa-solid fa-circle-check mr-2 text-green-500"></i>
-                  {t('Quick Tips (Important)', '快速提示（重要）')}
+                  {t('Quick Tips (Important)', '快速提示（重要）', 'ポイント（重要）')}
                 </h3>
                 <ul className="space-y-2 text-slate-700 text-sm">
                   {attraction.visitGuide.quickTips.map((tip, index) => (
                     <li key={index} className="flex items-start">
                       <i className="fa-solid fa-check-circle text-green-500 mr-2 mt-1"></i>
-                      <span>{t(tip.en, tip.zh)}</span>
+                      <span>{t(tip.en, tip.zh, tip.ja)}</span>
                     </li>
                   ))}
                 </ul>
@@ -388,10 +388,10 @@ const AttractionDetail = ({ attraction }) => {
               <div className="bg-gradient-to-r from-orange-50 to-amber-50 border-2 border-orange-300 rounded-xl p-4">
                 <h3 className="font-bold text-lg text-slate-800 mb-2 flex items-center">
                   <i className="fa-solid fa-bookmark mr-2 text-orange-500"></i>
-                  {t('Simple Summary', '简单总结')}
+                  {t('Simple Summary', '简单总结', 'まとめ')}
                 </h3>
                 <p className="text-sm text-slate-700 leading-relaxed">
-                  {t(attraction.visitGuide.summary.en, attraction.visitGuide.summary.zh)}
+                  {t(attraction.visitGuide.summary.en, attraction.visitGuide.summary.zh, attraction.visitGuide.summary.ja)}
                 </p>
               </div>
             )}

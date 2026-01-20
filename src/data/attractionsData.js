@@ -15,7 +15,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Senso-ji is Tokyo's oldest temple, founded in 628 AD. According to legend, two fishermen found a statue of Kannon (the goddess of mercy) in the Sumida River. The temple was built to enshrine this sacred statue. Today, it's one of Tokyo's most visited spiritual sites, attracting millions of visitors annually. The temple complex includes the famous Kaminarimon (Thunder Gate) with its massive red lantern, Nakamise-dori shopping street with traditional snacks and souvenirs, and the main hall (Hondo) where the sacred Kannon statue is enshrined.",
-      zh: '浅草寺是东京最古老的寺庙，建于公元628年。据传说，两个渔民在隅田川中发现了一尊观音像（慈悲女神）。寺庙是为了供奉这尊神圣的雕像而建造的。如今，它是东京访问量最大的精神场所之一，每年吸引数百万游客。寺庙建筑群包括著名的雷门（带有巨大的红灯笼）、仲见世通购物街（有传统小吃和纪念品）以及供奉神圣观音像的主殿（本堂）。'
+      zh: '浅草寺是东京最古老的寺庙，建于公元628年。据传说，两个渔民在隅田川中发现了一尊观音像（慈悲女神）。寺庙是为了供奉这尊神圣的雕像而建造的。如今，它是东京访问量最大的精神场所之一，每年吸引数百万游客。寺庙建筑群包括著名的雷门（带有巨大的红灯笼）、仲见世通购物街（有传统小吃和纪念品）以及供奉神圣观音像的主殿（本堂）。',
+      ja: '浅草寺は628年創建とされる東京最古の寺院です。伝説によると、隅田川で漁師が観音（慈悲の菩薩）の像を見つけたことが起源とされています。現在は年間を通じて多くの参拝者が訪れる東京屈指の霊場で、巨大な提灯が印象的な雷門、名物の食べ歩きや土産物が並ぶ仲見世通り、観音像を安置する本堂（観音堂）など見どころが集まっています。'
     },
     highlights: [
       { en: 'Kaminarimon Gate: The iconic entrance with a 3.9-meter tall red lantern weighing 700kg', zh: '雷门: 标志性入口，有一个3.9米高、重700公斤的红灯笼', ja: '雷门: 标志性入口，有一个3.9米高、重700公斤的红灯笼' },
@@ -45,7 +46,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Harajuku is Tokyo's center of youth culture and fashion, famous for its vibrant street style, unique boutiques, and trendy cafes. Takeshita Street is the heart of Harajuku, a narrow pedestrian street packed with shops selling everything from kawaii (cute) fashion to crepes and cotton candy. Just a few minutes away, Omotesando offers a complete contrast with its tree-lined boulevard and luxury brand stores, earning it the nickname \"Tokyo's Champs-Élysées.\" The area perfectly represents Tokyo's dual nature - the playful, experimental Harajuku versus the sophisticated, elegant Omotesando. Both areas are must-visits for anyone wanting to experience Tokyo's fashion and culture scene.",
-      zh: '原宿是东京青年文化和时尚的中心，以其充满活力的街头风格、独特的精品店和潮流咖啡厅而闻名。竹下通是原宿的心脏，是一条狭窄的步行街，商店林立，从卡哇伊（可爱）时尚到可丽饼和棉花糖应有尽有。几分钟外，表参道提供完全不同的体验，有绿树成荫的大道和奢侈品牌商店，赢得了"东京香榭丽舍大街"的绰号。该地区完美地代表了东京的双重性 - 有趣、实验性的原宿与精致、优雅的表参道。对于任何想要体验东京时尚和文化场景的人来说，这两个地区都是必游之地。'
+      zh: '原宿是东京青年文化和时尚的中心，以其充满活力的街头风格、独特的精品店和潮流咖啡厅而闻名。竹下通是原宿的心脏，是一条狭窄的步行街，商店林立，从卡哇伊（可爱）时尚到可丽饼和棉花糖应有尽有。几分钟外，表参道提供完全不同的体验，有绿树成荫的大道和奢侈品牌商店，赢得了"东京香榭丽舍大街"的绰号。该地区完美地代表了东京的双重性 - 有趣、实验性的原宿与精致、优雅的表参道。对于任何想要体验东京时尚和文化场景的人来说，这两个地区都是必游之地。',
+      ja: '原宿は東京の若者文化とファッションの中心地で、個性的なショップやカフェが集まるエリアです。竹下通りは原宿の象徴で、カワイイ系ファッションからクレープ、綿あめまで多彩なお店がぎゅっと詰まっています。一方、徒歩数分の表参道は並木道と高級ブランドが並ぶ洗練された雰囲気で、「東京のシャンゼリゼ」とも呼ばれます。遊び心の原宿と上質な表参道の対比を同時に楽しめる、東京らしさが詰まったスポットです。'
     },
     highlights: [
       { en: 'Takeshita Street: 350-meter street with colorful shops, crepe stands, and unique fashion items', zh: '竹下通: 350米长的街道，有色彩缤纷的商店、可丽饼摊和独特的时尚物品', ja: '竹下通: 350米长的街道，有色彩缤纷的店舗、可丽饼摊和独特的时尚物品' },
@@ -73,7 +75,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Fushimi Inari Taisha is one of Japan's most important Shinto shrines, dedicated to Inari, the god of rice, agriculture, and business. Founded in 711 AD, it's the head shrine of over 30,000 Inari shrines across Japan. The shrine is world-famous for its thousands of vermillion torii gates that create stunning tunnel-like paths up the mountainside. The torii gates are donated by individuals and companies, with names inscribed on the back. The main path leads to the summit of Mount Inari (233 meters), taking about 2-3 hours for a round trip. The shrine is open 24 hours, making it perfect for early morning or evening visits to avoid crowds.",
-      zh: '伏见稻荷大社是日本最重要的神道教神社之一，供奉稻荷神（农业、商业之神）。建于公元711年，是日本30,000多个稻荷神社的总本社。该神社以其数千个朱红色鸟居而闻名世界，这些鸟居在山坡上形成了令人惊叹的隧道式路径。鸟居由个人和公司捐赠，背面刻有名字。主路径通往稻荷山山顶（233米），往返约需2-3小时。神社24小时开放，非常适合清晨或傍晚参观以避开人群。'
+      zh: '伏见稻荷大社是日本最重要的神道教神社之一，供奉稻荷神（农业、商业之神）。建于公元711年，是日本30,000多个稻荷神社的总本社。该神社以其数千个朱红色鸟居而闻名世界，这些鸟居在山坡上形成了令人惊叹的隧道式路径。鸟居由个人和公司捐赠，背面刻有名字。主路径通往稻荷山山顶（233米），往返约需2-3小时。神社24小时开放，非常适合清晨或傍晚参观以避开人群。',
+      ja: '伏見稲荷大社は、稲荷大神（五穀豊穣・商売繁盛の神）を祀る日本屈指の神社で、711年創建とされています。全国に約3万社ある稲荷神社の総本宮として知られ、朱色の鳥居が連なる「千本鳥居」は世界的に有名です。鳥居は個人や企業の奉納によるもので、裏面に奉納者名が刻まれています。参道は稲荷山（標高233m）の山頂へ続き、往復で約2〜3時間。24時間参拝できるため、混雑を避けたい人は早朝や夕方の訪問がおすすめです。'
     },
     highlights: [
       { en: 'Senbon Torii (Thousand Gates): The iconic tunnel of thousands of closely-spaced torii gates creating a mesmerizing vermillion path', zh: '千本鸟居: 标志性的数千个紧密排列的鸟居隧道，形成迷人的朱红色路径', ja: '千本鸟居: 标志性的数千个紧密排列的鸟居隧道，形成迷人的朱红色路径' },
@@ -101,7 +104,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Kiyomizu-dera (Pure Water Temple) is one of Kyoto's most celebrated temples and a UNESCO World Heritage Site. Founded in 778 AD, the temple is famous for its wooden stage (butai) that juts out from the main hall, offering spectacular views of Kyoto city and the surrounding mountains. The stage is built without using a single nail, showcasing traditional Japanese architecture. The temple gets its name from the Otowa Waterfall, where three streams of water fall into a pond. Visitors can drink from the streams using long-handled cups, with each stream said to grant a different blessing: longevity, success in studies, or a fortunate love life.",
-      zh: '清水寺（清水寺）是京都最著名的寺庙之一，也是联合国教科文组织世界遗产。建于公元778年，该寺庙以其从主殿突出的木制舞台（舞台）而闻名，可欣赏京都城市和周围山脉的壮丽景色。舞台建造时没有使用一颗钉子，展示了传统的日本建筑。寺庙的名字来自音羽瀑布，三股水流落入池塘。游客可以使用长柄杯从水流中饮水，据说每股水流都会带来不同的祝福：长寿、学业成功或幸运的爱情生活。'
+      zh: '清水寺（清水寺）是京都最著名的寺庙之一，也是联合国教科文组织世界遗产。建于公元778年，该寺庙以其从主殿突出的木制舞台（舞台）而闻名，可欣赏京都城市和周围山脉的壮丽景色。舞台建造时没有使用一颗钉子，展示了传统的日本建筑。寺庙的名字来自音羽瀑布，三股水流落入池塘。游客可以使用长柄杯从水流中饮水，据说每股水流都会带来不同的祝福：长寿、学业成功或幸运的爱情生活。',
+      ja: '清水寺は778年創建の京都を代表する寺院で、ユネスコ世界遺産にも登録されています。釘を使わずに組み上げられた本堂の舞台（清水の舞台）は、京都市街や周辺の山々を一望できる絶景スポットとして有名です。寺名の由来となった音羽の滝では、三本の清水を柄杓で汲んで飲むことができ、それぞれ「長寿」「学業成就」「恋愛成就」のご利益があると伝えられています。'
     },
     highlights: [
       { en: 'Wooden Stage: The 13-meter high stage offers panoramic views - especially beautiful during cherry blossom and autumn seasons', zh: '木制舞台: 13米高的舞台提供全景 - 在樱花和秋季特别美丽', ja: '木制舞台: 13米高的舞台提供全景 - 在樱花和秋季特别美丽' },
@@ -125,7 +129,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Shibuya Crossing is the world's busiest pedestrian crossing, with up to 3,000 people crossing at once during peak times. Located in front of Shibuya Station, this iconic intersection has become a symbol of modern Tokyo. The area is surrounded by massive video screens and neon advertisements, creating an electric atmosphere. The famous Hachiko Statue, honoring the loyal dog who waited for his owner for years, is a popular meeting point. Shibuya is also a major shopping and entertainment district with countless stores, restaurants, and nightlife options.",
-      zh: '涩谷十字路口是世界上最繁忙的十字路口，在高峰时段一次有多达3,000人过马路。位于涩谷站前，这个标志性的交叉路口已成为现代东京的象征。该地区被巨大的视频屏幕和霓虹灯广告所包围，营造出充满活力的氛围。著名的忠犬八公像，纪念多年来等待主人的忠诚狗，是一个受欢迎的会面点。涩谷也是一个主要的购物和娱乐区，有无数商店、餐厅和夜生活选择。'
+      zh: '涩谷十字路口是世界上最繁忙的十字路口，在高峰时段一次有多达3,000人过马路。位于涩谷站前，这个标志性的交叉路口已成为现代东京的象征。该地区被巨大的视频屏幕和霓虹灯广告所包围，营造出充满活力的氛围。著名的忠犬八公像，纪念多年来等待主人的忠诚狗，是一个受欢迎的会面点。涩谷也是一个主要的购物和娱乐区，有无数商店、餐厅和夜生活选择。',
+      ja: '渋谷スクランブル交差点は、世界でも有数の人通りを誇る交差点で、ピーク時には一度に約3,000人が横断すると言われます。渋谷駅前の象徴的なスポットで、大型ビジョンやネオンサインに囲まれた景観は「現代の東京」を体感できる雰囲気です。待ち合わせ場所として有名な忠犬ハチ公像もすぐ近くにあり、周辺にはショッピング、グルメ、ナイトライフまで楽しめる施設が集まっています。'
     },
     highlights: [
       { en: 'Hachiko Statue: The famous bronze statue of the loyal Akita dog - a popular meeting point', zh: '忠犬八公像: 著名的忠诚秋田犬青铜雕像 - 一个受欢迎的会面点', ja: '忠犬八公像: 著名的忠诚秋田犬青铜雕像 - 一个受欢迎的会面点' },
@@ -153,7 +158,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Tokyo Station is one of Japan's most important railway stations and a historic architectural landmark. The station opened in 1914 and features a beautiful red-brick facade in the Marunouchi area, designed by Kingo Tatsuno. The station has been restored to its original early 20th-century appearance, combining historical charm with modern functionality. Tokyo Station serves as a major hub for multiple JR lines, Shinkansen (bullet trains), and subway lines, connecting to destinations throughout Japan. The station complex includes extensive shopping areas, restaurants, and the famous Character Street with themed shops selling merchandise from popular anime and manga characters. The station is also home to the luxurious Tokyo Station Hotel.",
-      zh: '东京站是日本最重要的火车站之一，也是历史建筑地标。车站于1914年开放，在丸之内地区拥有美丽的红砖外墙，由辰野金吾设计。车站已恢复到其20世纪初的原始外观，将历史魅力与现代功能相结合。东京站是多个JR线、新干线（子弹头列车）和地铁线的主要枢纽，连接日本各地的目的地。车站综合体包括广泛的购物区、餐厅和著名的角色街，有主题商店销售来自热门动漫和漫画角色的商品。车站还设有豪华的东京站酒店。'
+      zh: '东京站是日本最重要的火车站之一，也是历史建筑地标。车站于1914年开放，在丸之内地区拥有美丽的红砖外墙，由辰野金吾设计。车站已恢复到其20世纪初的原始外观，将历史魅力与现代功能相结合。东京站是多个JR线、新干线（子弹头列车）和地铁线的主要枢纽，连接日本各地的目的地。车站综合体包括广泛的购物区、餐厅和著名的角色街，有主题商店销售来自热门动漫和漫画角色的商品。车站还设有豪华的东京站酒店。',
+      ja: '東京駅は日本を代表するターミナル駅で、歴史的建築としても有名です。1914年開業の赤レンガ駅舎（丸の内側）は辰野金吾の設計で、復原工事により20世紀初頭の姿が美しく蘇りました。JR各線や新幹線、地下鉄が乗り入れる一大ハブとして全国各地へアクセスでき、駅ナカにはグランスタなどの商業エリアや飲食店が充実。アニメ・キャラクターショップが集まる「東京キャラクターストリート」も人気で、東京ステーションホテルも併設されています。'
     },
     highlights: [
       { en: 'Historic Red-Brick Building: Beautiful restored facade showcasing early 20th-century architecture', zh: '历史红砖建筑: 美丽的修复外墙，展示20世纪初的建筑', ja: '历史红砖建筑: 美丽的修复外墙，展示20世纪初的建筑' },
@@ -182,7 +188,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Ueno Park is one of Tokyo's first public parks, established in 1873. The park is famous for its cherry blossoms in spring, making it one of Tokyo's most popular hanami (flower viewing) spots. The park houses several major museums, a zoo, temples, and shrines, making it a cultural hub in the heart of Tokyo. The park was originally part of Kaneiji Temple, one of the city's wealthiest temples. After the Battle of Ueno in 1868, the temple was destroyed, and the land was converted into one of Japan's first Western-style parks. Today, it's a perfect blend of nature, culture, and history.",
-      zh: '上野公园是东京最早的公共公园之一，建于1873年。该公园以春季樱花而闻名，是东京最受欢迎的花见（赏花）地点之一。公园内设有几个主要博物馆、一个动物园、寺庙和神社，使其成为东京市中心的文化中心。该公园最初是宽永寺的一部分，这是该市最富有的寺庙之一。1868年上野之战后，寺庙被毁，土地被改造成日本最早的西式公园之一。今天，它是自然、文化和历史的完美结合。'
+      zh: '上野公园是东京最早的公共公园之一，建于1873年。该公园以春季樱花而闻名，是东京最受欢迎的花见（赏花）地点之一。公园内设有几个主要博物馆、一个动物园、寺庙和神社，使其成为东京市中心的文化中心。该公园最初是宽永寺的一部分，这是该市最富有的寺庙之一。1868年上野之战后，寺庙被毁，土地被改造成日本最早的西式公园之一。今天，它是自然、文化和历史的完美结合。',
+      ja: '上野公園は1873年に開園した東京最古級の公園で、春の桜（花見）の名所として特に有名です。園内には東京国立博物館をはじめとする複数の博物館や上野動物園、寺社などが集まり、都心の文化拠点となっています。もともとは寛永寺の境内の一部で、1868年の上野戦争など歴史の舞台にもなりました。現在は自然・文化・歴史が一度に楽しめる、散策にぴったりのエリアです。'
     },
     highlights: [
       { en: 'Cherry Blossoms: Over 1,000 cherry trees create a stunning tunnel of pink in spring (late March to early April)', zh: '樱花: 1000多棵樱花树在春季（3月下旬至4月初）形成令人惊叹的粉色隧道', ja: '樱花: 1000多棵樱花树在春季（3月下旬へ4月初）形成令人惊叹的粉色隧道' },
@@ -213,7 +220,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Tsukiji Outer Market is a vibrant marketplace offering fresh seafood, produce, and Japanese kitchen supplies. While the inner wholesale market moved to Toyosu in 2018, the outer market remains a popular destination for food lovers. The market features hundreds of small shops and restaurants selling fresh sushi, sashimi, tamagoyaki (Japanese omelet), and various street food. It's the perfect place to experience Tokyo's food culture and enjoy a fresh seafood breakfast.",
-      zh: '筑地外市场是一个充满活力的市场，提供新鲜海鲜、农产品和日本厨房用品。虽然内部批发市场于2018年搬迁到丰洲，但外市场仍然是美食爱好者的热门目的地。市场有数百家小商店和餐厅，出售新鲜寿司、生鱼片、玉子烧（日式煎蛋）和各种街头美食。这是体验东京美食文化和享用新鲜海鲜早餐的完美场所。'
+      zh: '筑地外市场是一个充满活力的市场，提供新鲜海鲜、农产品和日本厨房用品。虽然内部批发市场于2018年搬迁到丰洲，但外市场仍然是美食爱好者的热门目的地。市场有数百家小商店和餐厅，出售新鲜寿司、生鱼片、玉子烧（日式煎蛋）和各种街头美食。这是体验东京美食文化和享用新鲜海鲜早餐的完美场所。',
+      ja: '築地場外市場は、新鮮な魚介や青果、調理道具などが集まる活気ある市場です。2018年に場内（卸売市場）は豊洲へ移転しましたが、場外は今も食べ歩きや朝ごはん目当ての人で賑わいます。寿司・刺身・玉子焼き、各種屋台グルメなどを楽しめ、東京の食文化を体感できる絶好のスポットです。'
     },
     highlights: [
       { en: 'Fresh Sushi & Sashimi: Some of the freshest seafood in Tokyo', zh: '新鲜寿司和生鱼片: 东京最新鲜的海鲜之一', ja: '新鲜寿司和生鱼片: 東京最新鲜的海鮮之一' },
@@ -242,7 +250,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Dotonbori is Osaka's most famous entertainment and dining district, running along the Dotonbori canal. Known as \"Osaka's kitchen,\" this vibrant area is famous for its extravagant neon signs, street food, and energetic nightlife. The name comes from the Dotonbori canal, which was constructed in 1615. The area comes alive at night with massive animated signs including the famous Glico running man, giant crabs, octopuses, and other food-themed displays. It's the perfect place to experience Osaka's food culture with takoyaki (octopus balls), okonomiyaki (savory pancakes), and kushikatsu (deep-fried skewers).",
-      zh: '道顿堀是大阪最著名的娱乐和餐饮区，沿着道顿堀运河延伸。被称为"大阪的厨房"，这个充满活力的地区以其奢华的霓虹灯招牌、街头美食和充满活力的夜生活而闻名。这个名字来自道顿堀运河，建于1615年。该地区在夜晚充满活力，有巨大的动画招牌，包括著名的格力高跑男、巨大的螃蟹、章鱼和其他以食物为主题的展示。这是体验大阪美食文化的完美场所，有章鱼烧、大阪烧和串炸。'
+      zh: '道顿堀是大阪最著名的娱乐和餐饮区，沿着道顿堀运河延伸。被称为"大阪的厨房"，这个充满活力的地区以其奢华的霓虹灯招牌、街头美食和充满活力的夜生活而闻名。这个名字来自道顿堀运河，建于1615年。该地区在夜晚充满活力，有巨大的动画招牌，包括著名的格力高跑男、巨大的螃蟹、章鱼和其他以食物为主题的展示。这是体验大阪美食文化的完美场所，有章鱼烧、大阪烧和串炸。',
+      ja: '道頓堀は道頓堀川沿いに広がる大阪随一の繁華街で、「大阪の台所」とも呼ばれるグルメの聖地です。1615年に開削された運河に由来し、夜になるとグリコの看板をはじめ、巨大なカニやタコなど派手な立体看板が街を彩ります。たこ焼き、お好み焼き、串カツなど大阪名物の食べ歩きを楽しむのにぴったりのエリアです。'
     },
     highlights: [
       { en: 'Glico Running Man Sign: The iconic neon sign of a runner crossing a finish line - Osaka\'s most photographed landmark', zh: '格力高跑男广告牌: 标志性的霓虹灯招牌，显示一个跑步者冲过终点线 - 大阪最受拍照的地标' },
@@ -272,7 +281,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Gion is Kyoto's famous geisha district, known for its traditional wooden machiya houses, narrow cobblestone streets, and traditional teahouses. The area has preserved its historic charm and is one of the best places in Japan to see geishas (geiko) and maikos (apprentice geishas) walking to appointments. Hanamikoji Street is the main thoroughfare, lined with traditional architecture, exclusive restaurants, and ochaya (teahouses). Gion is especially beautiful in the evening when lanterns light up the streets, creating a magical atmosphere that transports visitors back to old Japan.",
-      zh: '祇园是京都著名的艺伎区，以其传统的木制町屋、狭窄的鹅卵石街道和传统茶屋而闻名。该地区保留了其历史魅力，是日本观赏艺伎（艺子）和舞伎（学徒艺伎）前往约会的绝佳地点之一。花见小路是主要街道，两旁是传统建筑、独家餐厅和茶屋。祇园在傍晚特别美丽，当灯笼照亮街道时，营造出一种神奇的氛围，将游客带回古老的日本。'
+      zh: '祇园是京都著名的艺伎区，以其传统的木制町屋、狭窄的鹅卵石街道和传统茶屋而闻名。该地区保留了其历史魅力，是日本观赏艺伎（艺子）和舞伎（学徒艺伎）前往约会的绝佳地点之一。花见小路是主要街道，两旁是传统建筑、独家餐厅和茶屋。祇园在傍晚特别美丽，当灯笼照亮街道时，营造出一种神奇的氛围，将游客带回古老的日本。',
+      ja: '祇園は京都を代表する花街（芸妓の街）で、町家が並ぶ路地や石畳、茶屋など、昔ながらの風情が色濃く残るエリアです。夕方以降には、芸妓（げいこ）や舞妓（まいこ）が稽古やお座敷へ向かう姿を見かけることもあります。花見小路通を中心に、伝統的な建築と老舗の飲食店、お茶屋が並び、提灯の灯りがともる夕景は特に幻想的です。'
     },
     highlights: [
       { en: 'Hanamikoji Street: The main street with traditional architecture and exclusive teahouses', zh: '花见小路: 主要街道，有传统建筑和独家茶屋', ja: '花见小路: 主要街道，有传统建筑和独家お茶屋' },
@@ -300,7 +310,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Yasaka Shrine (also known as Gion Shrine) is one of Kyoto's most famous shrines, located at the end of Hanamikoji Street in the Gion district. Founded over 1,350 years ago, the shrine is dedicated to Susanoo-no-Mikoto and his consort. The shrine is famous for its hundreds of lanterns that line the main hall, creating a beautiful and photogenic scene, especially at night when they're lit. The shrine hosts the famous Gion Matsuri festival in July, one of Japan's three major festivals. The main hall (honden) is designated as a National Treasure.",
-      zh: '八坂神社（也称为祇园神社）是京都最著名的神社之一，位于祇园区花见小路的尽头。建于1,350多年前，神社供奉素戋呜尊及其配偶。神社以其主殿旁的数百个灯笼而闻名，创造出美丽且上镜的场景，特别是在夜晚点亮时。神社在7月举办著名的祇园祭，这是日本三大节日之一。主殿（本殿）被指定为国宝。'
+      zh: '八坂神社（也称为祇园神社）是京都最著名的神社之一，位于祇园区花见小路的尽头。建于1,350多年前，神社供奉素戋呜尊及其配偶。神社以其主殿旁的数百个灯笼而闻名，创造出美丽且上镜的场景，特别是在夜晚点亮时。神社在7月举办著名的祇园祭，这是日本三大节日之一。主殿（本殿）被指定为国宝。',
+      ja: '八坂神社（祇園社）は祇園の象徴的な神社で、花見小路通の突き当たりに位置します。約1,350年以上の歴史を持ち、素戔嗚尊（すさのおのみこと）などを祀っています。境内には数多くの提灯が並び、夜に灯りが入るととても写真映えする雰囲気に。7月の祇園祭は日本三大祭の一つとして有名で、本殿は国宝に指定されています。'
     },
     highlights: [
       { en: 'Hundreds of Lanterns: Beautiful lanterns lining the main hall, especially stunning at night', zh: '数百个灯笼: 主殿旁的美丽灯笼，在夜晚特别令人惊叹', ja: '数百个灯笼: 主殿旁的美丽灯笼，在夜晚特别令人惊叹' },
@@ -329,7 +340,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Nara Park is a large public park in the heart of Nara, famous for its population of over 1,200 freely roaming sika deer. The deer are considered sacred messengers of the gods in Shinto religion and are designated as a National Natural Treasure. Visitors can interact with the friendly deer, feed them special deer crackers (shika senbei) sold throughout the park, and take photos. The park covers 660 hectares and includes several major temples and shrines including Todaiji Temple, Kasuga Taisha, and Kofukuji Temple. The park is especially beautiful during cherry blossom season in spring.",
-      zh: '奈良公园是奈良市中心的一个大型公园，以其1,200多只自由漫游的梅花鹿而闻名。在神道教中，这些鹿被认为是神圣的神的使者，被指定为国家自然宝藏。游客可以与友好的鹿互动，喂它们在整个公园出售的特殊鹿饼干（鹿煎饼），并拍照。公园占地660公顷，包括几个主要寺庙和神社，包括东大寺、春日大社和兴福寺。公园在春季樱花季节特别美丽。'
+      zh: '奈良公园是奈良市中心的一个大型公园，以其1,200多只自由漫游的梅花鹿而闻名。在神道教中，这些鹿被认为是神圣的神的使者，被指定为国家自然宝藏。游客可以与友好的鹿互动，喂它们在整个公园出售的特殊鹿饼干（鹿煎饼），并拍照。公园占地660公顷，包括几个主要寺庙和神社，包括东大寺、春日大社和兴福寺。公园在春季樱花季节特别美丽。',
+      ja: '奈良公園は奈良市中心部に広がる大きな公園で、約1,200頭以上の野生のシカが自由に歩き回ることで有名です。シカは神の使いとされ、国の天然記念物にも指定されています。園内では「鹿せんべい」を購入して餌やり体験ができ、写真撮影も人気。東大寺、春日大社、興福寺など主要な寺社が点在し、春は桜の名所としても美しいスポットです。'
     },
     highlights: [
       { en: 'Friendly Deer: Over 1,200 sika deer freely roaming and interacting with visitors', zh: '友好的鹿: 超过1,200只梅花鹿自由漫游并与游客互动', ja: '友好的鹿: 超过1,200只梅花鹿自由漫游并与游客互动' },
@@ -359,7 +371,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Todaiji (Great Eastern Temple) is one of Japan's most famous and historically significant temples. Founded in 752 AD, it was constructed by Emperor Shomu to serve as the head temple of all provincial Buddhist temples. The main hall (Daibutsuden) is the world's largest wooden building, despite being rebuilt at only two-thirds of its original size after fires. Inside stands the Great Buddha (Daibutsu), a massive bronze statue of Vairocana Buddha that is 15 meters tall and weighs 500 tons. The temple complex also includes the Nandaimon Gate with its fierce guardian statues and the Nigatsudo Hall with beautiful views.",
-      zh: '东大寺（大东寺）是日本最著名和历史意义最重大的寺庙之一。建于公元752年，由圣武天皇建造，作为所有省级佛教寺庙的总本山。主殿（大佛殿）是世界上最大的木制建筑，尽管在火灾后重建时只有原始尺寸的三分之二。内部矗立着大佛（大仏），一尊巨大的毗卢遮那佛青铜雕像，高15米，重500吨。寺庙建筑群还包括有凶猛守护神像的南大门和有美丽景色的二月堂。'
+      zh: '东大寺（大东寺）是日本最著名和历史意义最重大的寺庙之一。建于公元752年，由圣武天皇建造，作为所有省级佛教寺庙的总本山。主殿（大佛殿）是世界上最大的木制建筑，尽管在火灾后重建时只有原始尺寸的三分之二。内部矗立着大佛（大仏），一尊巨大的毗卢遮那佛青铜雕像，高15米，重500吨。寺庙建筑群还包括有凶猛守护神像的南大门和有美丽景色的二月堂。',
+      ja: '東大寺は752年創建の日本を代表する大寺院で、聖武天皇が国分寺の総本山として建立しました。大仏殿は世界最大級の木造建築で、火災後の再建により当初より小さくなったとはいえ圧巻の規模です。堂内には高さ約15m、重さ約500トンともいわれる盧舎那仏（大仏）が鎮座します。境内には仁王像で知られる南大門や、眺望の良い二月堂など見どころが多くあります。'
     },
     highlights: [
       { en: 'Great Buddha Hall: World\'s largest wooden building housing the massive bronze Buddha statue', zh: '大佛殿: 世界上最大的木制建筑，内有巨大的青铜佛像' },
@@ -391,7 +404,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Kasuga Taisha is Nara's most celebrated Shinto shrine, famous for its 3,000 stone and bronze lanterns. Founded in 768 AD, the shrine is dedicated to the deity responsible for the protection of Nara. The approach to the shrine is lined with hundreds of stone lanterns, creating a magical pathway. The main hall features hundreds of bronze lanterns hanging from the eaves. The shrine is especially beautiful during the Lantern Festivals in February and August when all lanterns are lit. The vermillion-colored buildings stand out beautifully against the surrounding forest.",
-      zh: '春日大社是奈良最著名的神道教神社，以其3,000个石制和青铜灯笼而闻名。建于公元768年，神社供奉负责保护奈良的神灵。通往神社的道路两旁有数百个石制灯笼，创造出一条神奇的路径。主殿有数百个青铜灯笼从屋檐垂下。神社在2月和8月的灯笼节期间特别美丽，所有灯笼都被点亮。朱红色的建筑在周围的森林中显得格外美丽。'
+      zh: '春日大社是奈良最著名的神道教神社，以其3,000个石制和青铜灯笼而闻名。建于公元768年，神社供奉负责保护奈良的神灵。通往神社的道路两旁有数百个石制灯笼，创造出一条神奇的路径。主殿有数百个青铜灯笼从屋檐垂下。神社在2月和8月的灯笼节期间特别美丽，所有灯笼都被点亮。朱红色的建筑在周围的森林中显得格外美丽。',
+      ja: '春日大社は奈良を代表する神社で、境内に約3,000基の石灯籠・釣灯籠があることで知られます。768年創建とされ、奈良の守護神を祀っています。参道には石灯籠がずらりと並び、幻想的な雰囲気に。社殿の軒下には無数の釣灯籠が掛けられ、2月と8月の万灯籠の時期にはすべての灯籠に火が灯り、特に美しい光景が広がります。'
     },
     highlights: [
       { en: '3,000 Lanterns: Stone and bronze lanterns throughout the shrine grounds', zh: '3,000个灯笼: 整个神社场地的石制和青铜灯笼', ja: '3,000个灯笼: 整个神社场地的石制和青铜灯笼' },
@@ -420,7 +434,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Ujigami Shrine (宇治上神社) is one of Japan's oldest Shinto shrines and a UNESCO World Heritage Site, located in Uji, Kyoto. The shrine is believed to have been established in the late Heian period (794-1185) and is dedicated to the imperial prince Uji no Wakiiratsuko. The shrine's main hall (honden) is considered one of the oldest surviving examples of Shinto shrine architecture in Japan, dating back to the 11th century. The shrine is part of the \"Historic Monuments of Ancient Kyoto\" UNESCO World Heritage Site. The shrine features traditional Japanese architecture with a simple, elegant design. It's located along the Uji River, making it a peaceful and scenic spot to visit. The shrine is less crowded than many other Kyoto attractions, offering a tranquil experience.",
-      zh: '宇治上神社是日本最古老的神道教神社之一，也是联合国教科文组织世界遗产，位于京都宇治。神社被认为建于平安时代后期（794-1185年），供奉皇族宇治若郎子。神社的主殿（本殿）被认为是日本现存最古老的神道教神社建筑之一，可追溯到11世纪。神社是"古都京都的历史遗迹"联合国教科文组织世界遗产的一部分。神社具有传统日本建筑风格，设计简洁优雅。它位于宇治川沿岸，是一个宁静而风景如画的景点。神社比京都的许多其他景点人少，提供宁静的体验。'
+      zh: '宇治上神社是日本最古老的神道教神社之一，也是联合国教科文组织世界遗产，位于京都宇治。神社被认为建于平安时代后期（794-1185年），供奉皇族宇治若郎子。神社的主殿（本殿）被认为是日本现存最古老的神道教神社建筑之一，可追溯到11世纪。神社是"古都京都的历史遗迹"联合国教科文组织世界遗产的一部分。神社具有传统日本建筑风格，设计简洁优雅。它位于宇治川沿岸，是一个宁静而风景如画的景点。神社比京都的许多其他景点人少，提供宁静的体验。',
+      ja: '宇治上神社は京都・宇治にある日本最古級の神社で、「古都京都の文化財」としてユネスコ世界遺産にも登録されています。平安時代後期の創建とされ、宇治若郎子（うじのわきいらつこ）を祀ります。本殿（国宝）は11世紀の神社建築の遺構として非常に貴重で、素朴で端正な佇まいが魅力です。宇治川の近くにあり、京都市内の有名観光地より比較的落ち着いて参拝できる静かなスポットです。'
     },
     highlights: [
       { en: 'UNESCO World Heritage: Part of "Historic Monuments of Ancient Kyoto"', zh: '联合国教科文组织世界遗产: "古都京都的历史遗迹"的一部分', ja: '联合国教科文组织世界遗产: "古都京都的历史遗迹"的一部分' },
@@ -455,7 +470,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Mt. Wakakusa (若草山), also known as Mount Mikasa, is a 342-meter-high grass-covered mountain located in Nara Park. The mountain offers spectacular panoramic views of Nara City and is famous for its beautiful sunset views. The entire mountain is covered with grass, creating a unique landscape that changes color with the seasons - green in spring and summer, golden in autumn, and brown in winter. The mountain is particularly famous for the annual Wakakusa Yamayaki festival in January, where the entire mountain is set on fire in a spectacular display. The best time to visit is during sunset (around 5:30 PM) when you can enjoy breathtaking views of Nara City bathed in golden light. The climb to the top takes about 15-20 minutes and is relatively easy, making it accessible for most visitors.",
-      zh: '若草山，也被称为三笠山，是一座342米高的草覆盖的山，位于奈良公园。这座山提供壮观的奈良市全景，以其美丽的日落景色而闻名。整座山都被草覆盖，创造了独特的景观，随着季节变化颜色 - 春天和夏天是绿色，秋天是金色，冬天是棕色。这座山特别以每年一月的若草山烧山节而闻名，整个山被点燃，形成壮观的展示。最佳访问时间是日落时分（约下午5:30），您可以欣赏到沐浴在金色光线中的奈良市的壮丽景色。爬到山顶大约需要15-20分钟，相对容易，大多数游客都可以到达。'
+      zh: '若草山，也被称为三笠山，是一座342米高的草覆盖的山，位于奈良公园。这座山提供壮观的奈良市全景，以其美丽的日落景色而闻名。整座山都被草覆盖，创造了独特的景观，随着季节变化颜色 - 春天和夏天是绿色，秋天是金色，冬天是棕色。这座山特别以每年一月的若草山烧山节而闻名，整个山被点燃，形成壮观的展示。最佳访问时间是日落时分（约下午5:30），您可以欣赏到沐浴在金色光线中的奈良市的壮丽景色。爬到山顶大约需要15-20分钟，相对容易，大多数游客都可以到达。',
+      ja: '若草山（みかさやま）は奈良公園内にある標高342mの草山で、奈良市街を一望できる眺望スポットとして人気です。山全体が芝に覆われ、春夏は緑、秋は黄金色、冬は茶色へと季節によって表情が変わります。毎年1月の「若草山焼き」では山肌を焼く行事が行われ、奈良の冬の風物詩として有名です。夕暮れ時（目安は17:30頃）は特に美しく、山頂までは徒歩15〜20分ほどで登れるため気軽に訪れやすい場所です。'
     },
     highlights: [
       { en: 'Panoramic Views: Spectacular 360-degree views of Nara City from the summit', zh: '全景: 从山顶欣赏奈良市的壮丽360度全景', ja: '全景: 山顶欣赏奈良市的壮丽360度全景' },
@@ -490,7 +506,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Osaka Castle is one of Japan's most famous castles, originally built in 1583 by Toyotomi Hideyoshi. The current castle tower is a concrete reconstruction completed in 1931, but it houses a museum with artifacts and displays about the castle's history. The castle is surrounded by beautiful gardens and moats, making it a popular spot for cherry blossom viewing in spring. The castle played a crucial role in the unification of Japan during the 16th century. The observation deck on the 8th floor offers panoramic views of Osaka city.",
-      zh: '大阪城是日本最著名的城堡之一，最初由丰臣秀吉于1583年建造。现在的天守阁是1931年完成的混凝土重建，但它设有一个博物馆，展示有关城堡历史的文物和展品。城堡被美丽的花园和护城河所环绕，使其成为春季赏樱的热门地点。城堡在16世纪日本统一中发挥了关键作用。8楼的观景台可欣赏大阪市的全景。'
+      zh: '大阪城是日本最著名的城堡之一，最初由丰臣秀吉于1583年建造。现在的天守阁是1931年完成的混凝土重建，但它设有一个博物馆，展示有关城堡历史的文物和展品。城堡被美丽的花园和护城河所环绕，使其成为春季赏樱的热门地点。城堡在16世纪日本统一中发挥了关键作用。8楼的观景台可欣赏大阪市的全景。',
+      ja: '大阪城は1583年に豊臣秀吉が築いた、日本を代表する城の一つです。現在の天守は1931年に再建されたもので、内部は博物館となっており、大阪城の歴史や資料が展示されています。広い公園と堀に囲まれ、春は桜の名所としても有名です。16世紀の天下統一の歴史に深く関わった城で、天守最上階（8階）の展望フロアからは大阪の街並みを一望できます。'
     },
     highlights: [
       { en: 'Castle Tower: 8-story reconstruction with museum and observation deck', zh: '天守阁: 8层重建，有博物馆和观景台', ja: '天守阁: 8层重建，有博物館和观景台' },
@@ -521,7 +538,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Umeda Sky Building (梅田スカイビル) is one of Osaka's most iconic landmarks, completed in 1993. The building consists of two 40-story towers connected at the top by the Floating Garden Observatory, creating a distinctive architectural design. The observatory offers stunning 360-degree panoramic views of Osaka city and beyond. The building is renowned for its unique design, featuring an open-air deck on the 39th floor and an enclosed observatory on the 40th floor. The Floating Garden Observatory provides breathtaking views both day and night, making it a must-visit attraction for anyone exploring Osaka.",
-      zh: '梅田蓝天大厦（梅田スカイビル）是大阪最具标志性的地标之一，于1993年完工。该建筑由两座40层高的塔楼组成，顶部通过空中庭园展望台相连，创造出独特的建筑设计。展望台提供令人惊叹的大阪市及周边360度全景。该建筑以其独特的设计而闻名，在39层设有露天观景台，40层设有封闭式展望台。空中庭园展望台提供令人叹为观止的白天和夜晚景观，是探索大阪的必游景点。'
+      zh: '梅田蓝天大厦（梅田スカイビル）是大阪最具标志性的地标之一，于1993年完工。该建筑由两座40层高的塔楼组成，顶部通过空中庭园展望台相连，创造出独特的建筑设计。展望台提供令人惊叹的大阪市及周边360度全景。该建筑以其独特的设计而闻名，在39层设有露天观景台，40层设有封闭式展望台。空中庭园展望台提供令人叹为观止的白天和夜晚景观，是探索大阪的必游景点。',
+      ja: '梅田スカイビルは1993年に完成した大阪の代表的ランドマークで、2棟の高層タワーが最上部で連結された特徴的なデザインが魅力です。最上部の「空中庭園展望台」からは大阪市街を360度見渡せ、昼は広がる街並み、夜はきらめく夜景を楽しめます。39階の屋外デッキと40階の屋内展望フロアがあり、建築好きにも人気の観光スポットです。'
     },
     highlights: [
       { en: 'Floating Garden Observatory: Open-air deck on 39th floor offering stunning 360° panoramic views of Osaka', zh: '空中庭园展望台: 39层的露天观景台，提供令人惊叹的大阪360°全景', ja: '空中庭园展望台: 39层的露天观景台，提供令人惊叹的大阪360°全景' },
@@ -556,7 +574,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Osaka Aquarium Kaiyukan (大阪海游馆) is one of Japan's largest and most impressive aquariums, located in the Tempozan Harbor Village area of Osaka Bay. The aquarium features a massive central tank that holds 5,400 tons of water and is home to whale sharks, the largest fish in the ocean. The aquarium takes visitors on a journey through the Pacific Rim, showcasing marine life from different regions including the Pacific Ocean, Antarctica, and the Great Barrier Reef. The aquarium is designed as a spiral walkway that descends through multiple floors, allowing visitors to view marine life from different depths and perspectives. The main attraction is the massive Pacific Ocean tank featuring whale sharks, manta rays, and various other large marine species.",
-      zh: '大阪海游馆是日本最大、最令人印象深刻的水族馆之一，位于大阪湾的天保山港口村地区。水族馆设有一个巨大的中央水槽，可容纳5,400吨水，是海洋中最大的鱼类鲸鲨的家园。水族馆带游客环游太平洋沿岸，展示来自不同地区的海洋生物，包括太平洋、南极洲和大堡礁。水族馆设计为螺旋式走道，通过多层下降，让游客从不同深度和角度观看海洋生物。主要景点是巨大的太平洋水槽，展示鲸鲨、蝠鲼和各种其他大型海洋物种。'
+      zh: '大阪海游馆是日本最大、最令人印象深刻的水族馆之一，位于大阪湾的天保山港口村地区。水族馆设有一个巨大的中央水槽，可容纳5,400吨水，是海洋中最大的鱼类鲸鲨的家园。水族馆带游客环游太平洋沿岸，展示来自不同地区的海洋生物，包括太平洋、南极洲和大堡礁。水族馆设计为螺旋式走道，通过多层下降，让游客从不同深度和角度观看海洋生物。主要景点是巨大的太平洋水槽，展示鲸鲨、蝠鲼和各种其他大型海洋物种。',
+      ja: '海遊館は大阪湾の天保山エリアにある日本最大級の水族館で、特に巨大な中央水槽（約5,400トン）とジンベエザメで有名です。館内は太平洋を中心とした環太平洋の海をテーマに、南極やグレートバリアリーフなど各地域の海洋生物を紹介しています。螺旋状のスロープを下りながら複数階を巡る構造で、さまざまな深さ・視点から生き物を観察できるのも魅力。メインの太平洋水槽ではジンベエザメやマンタなど迫力ある大型生物が見られます。'
     },
     highlights: [
       { en: 'Whale Sharks: See the world\'s largest fish species in the massive central tank', zh: '鲸鲨: 在巨大的中央水槽中看到世界上最大的鱼类' },
@@ -591,7 +610,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Universal Studios Japan (USJ) is one of Japan's most popular theme parks, featuring attractions based on Hollywood movies and Japanese pop culture. The park is famous for its Wizarding World of Harry Potter, Super Nintendo World (the first of its kind globally), and various themed areas. With thrilling rides, shows, and character meet-and-greets, USJ offers entertainment for all ages. The park is especially popular with both Japanese and international visitors, so expect crowds and consider purchasing Express Passes for popular attractions.",
-      zh: '日本环球影城（USJ）是日本最受欢迎的主题公园之一，设有基于好莱坞电影和日本流行文化的景点。该公园以其哈利波特魔法世界、超级任天堂世界（全球首个此类世界）和各种主题区域而闻名。凭借惊险的游乐设施、表演和角色见面会，USJ为所有年龄段提供娱乐。该公园在日本和国际游客中特别受欢迎，因此预计会有人群，并考虑为热门景点购买快速通行证。'
+      zh: '日本环球影城（USJ）是日本最受欢迎的主题公园之一，设有基于好莱坞电影和日本流行文化的景点。该公园以其哈利波特魔法世界、超级任天堂世界（全球首个此类世界）和各种主题区域而闻名。凭借惊险的游乐设施、表演和角色见面会，USJ为所有年龄段提供娱乐。该公园在日本和国际游客中特别受欢迎，因此预计会有人群，并考虑为热门景点购买快速通行证。',
+      ja: 'ユニバーサル・スタジオ・ジャパン（USJ）は、ハリウッド映画や日本のポップカルチャーをテーマにしたアトラクションが集まる日本屈指のテーマパークです。ハリー・ポッターの世界観を体験できるエリアや、世界初の「スーパー・ニンテンドー・ワールド」など、人気のテーマエリアが充実。スリル満点のライド、ショー、キャラクターとのグリーティングなど、年齢を問わず楽しめます。国内外からの来場者が多く混雑しやすいので、人気アトラクションはエクスプレス・パスの利用も検討すると安心です。'
     },
     highlights: [
       { en: 'Super Nintendo World: First-of-its-kind interactive theme park area with Mario Kart ride', zh: '超级任天堂世界: 首个互动主题公园区域，有马里奥卡丁车游乐设施', ja: '超级任天堂世界: 首个互动主题公園区域，有马里奥卡丁车游乐设施' },
@@ -710,7 +730,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Kobe Port Tower is an iconic red steel tower that has become the symbol of Kobe. Standing 108 meters tall, the tower was completed in 1963 to commemorate the 90th anniversary of Kobe's opening as a port city. The tower's unique design resembles a traditional Japanese drum (tsuzumi) and offers panoramic views of Kobe city, the port, and the surrounding mountains. The tower is especially beautiful at night when it's illuminated in various colors. The observation deck provides 360-degree views, and there's a revolving restaurant on the 3rd floor.",
-      zh: '神户塔是一个标志性的红色钢塔，已成为神户的象征。高108米，该塔于1963年完工，以纪念神户作为港口城市开放90周年。塔的独特设计类似于传统的日本鼓（鼓），可欣赏神户市、港口和周围山脉的全景。塔在夜晚特别美丽，当它以各种颜色点亮时。观景台提供360度视野，3楼有一个旋转餐厅。'
+      zh: '神户塔是一个标志性的红色钢塔，已成为神户的象征。高108米，该塔于1963年完工，以纪念神户作为港口城市开放90周年。塔的独特设计类似于传统的日本鼓（鼓），可欣赏神户市、港口和周围山脉的全景。塔在夜晚特别美丽，当它以各种颜色点亮时。观景台提供360度视野，3楼有一个旋转餐厅。',
+      ja: '神戸ポートタワーは、赤い鋼鉄の外観が印象的な神戸のシンボルです。1963年に「開港90周年」を記念して建設され、高さは108m。鼓（つづみ）をイメージした独特のデザインで、神戸の街並みや港、周囲の山々まで見渡せるパノラマビューが楽しめます。夜はライトアップが美しく、展望フロアは360度の眺望。3階には回転レストランもあります。'
     },
     highlights: [
       { en: 'Panoramic Views: 360-degree views of Kobe city, port, and mountains', zh: '全景: 神户市、港口和山脉的360度视野', ja: '全景: 神戸市、港口和山脉的360度视野' },
@@ -741,7 +762,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Harborland is Kobe's premier waterfront shopping and entertainment district, located near Kobe Port. The area features a large shopping mall (Umie), restaurants, cafes, and entertainment facilities. The highlight is the giant Ferris wheel offering panoramic views of Kobe Bay and the city. The area is perfect for shopping, dining, and enjoying the waterfront atmosphere. Harborland is especially beautiful at sunset and in the evening when the area is illuminated. It's a great place to relax after exploring Kobe's other attractions.",
-      zh: '港湾乐园是神户首屈一指的海滨购物和娱乐区，位于神户港附近。该地区设有大型购物中心（Umie）、餐厅、咖啡厅和娱乐设施。亮点是提供神户湾和城市全景的巨型摩天轮。该地区非常适合购物、用餐和享受海滨氛围。港湾乐园在日落和傍晚特别美丽，当该地区被点亮时。这是在探索神户其他景点后放松的好地方。'
+      zh: '港湾乐园是神户首屈一指的海滨购物和娱乐区，位于神户港附近。该地区设有大型购物中心（Umie）、餐厅、咖啡厅和娱乐设施。亮点是提供神户湾和城市全景的巨型摩天轮。该地区非常适合购物、用餐和享受海滨氛围。港湾乐园在日落和傍晚特别美丽，当该地区被点亮时。这是在探索神户其他景点后放松的好地方。',
+      ja: 'ハーバーランドは神戸港近くに広がる海辺のショッピング＆エンタメエリアで、大型商業施設「umie」をはじめ、レストランやカフェ、各種施設が集まります。大観覧車からは神戸湾と街並みを一望でき、海辺の雰囲気を感じながら買い物や食事を楽しめるのが魅力。夕方のサンセットや夜のイルミネーションも美しく、神戸観光の締めくくりにゆったり過ごすのにぴったりです。'
     },
     highlights: [
       { en: 'Giant Ferris Wheel: Panoramic views of Kobe Bay and city', zh: '巨型摩天轮: 神户湾和城市的全景', ja: '巨型摩天轮: 神戸湾和城市的全景' },
@@ -771,7 +793,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Rokkosan Pasture is a beautiful mountain farm located on Mount Rokko, offering a peaceful escape from the city with scenic views, farm animals, and fresh air. The pasture features sheep, cows, and other farm animals that visitors can interact with. The area offers stunning panoramic views of Kobe city and Osaka Bay. Visitors can enjoy fresh dairy products, take part in farm activities, and relax in the natural mountain setting. The pasture is especially beautiful during spring and autumn when the weather is pleasant and the views are clear.",
-      zh: '六甲山牧场是一个美丽的山地农场，位于六甲山上，提供远离城市的宁静，有风景、农场动物和新鲜空气。牧场有绵羊、奶牛和其他农场动物，游客可以与它们互动。该地区提供神户市和大阪湾的令人惊叹的全景。游客可以享受新鲜乳制品，参加农场活动，并在自然山地环境中放松。牧场在春季和秋季特别美丽，天气宜人，视野清晰。'
+      zh: '六甲山牧场是一个美丽的山地农场，位于六甲山上，提供远离城市的宁静，有风景、农场动物和新鲜空气。牧场有绵羊、奶牛和其他农场动物，游客可以与它们互动。该地区提供神户市和大阪湾的令人惊叹的全景。游客可以享受新鲜乳制品，参加农场活动，并在自然山地环境中放松。牧场在春季和秋季特别美丽，天气宜人，视野清晰。',
+      ja: '六甲山牧場は六甲山上にある自然豊かな牧場で、街の喧騒を離れてのんびり過ごせる人気スポットです。羊や牛などの動物と触れ合えるほか、神戸の街や大阪湾を見渡す爽快な眺望も魅力。新鮮な乳製品を味わったり、牧場体験を楽しんだり、山の空気の中でリラックスできます。気候が穏やかで景色が澄みやすい春や秋は特におすすめです。'
     },
     highlights: [
       { en: 'Farm Animals: Interact with sheep, cows, and other farm animals', zh: '农场动物: 与绵羊、奶牛和其他农场动物互动', ja: '农场动物: 与绵羊、奶牛和其他农场动物互动' },
@@ -801,7 +824,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Namba Yasaka Shrine (難波八阪神社) is a unique Shinto shrine located in the Namba district of Osaka. What makes this shrine truly special is its massive 12-meter-tall lion head stage (Shishiden), which is one of the largest and most impressive lion heads in Japan. The lion's open mouth is believed to swallow evil spirits and bring good fortune to visitors. The shrine is conveniently located near Namba Station, making it an easy stop during your Osaka exploration. It's a popular spot for taking photos, especially with the impressive lion head as a backdrop. The shrine also hosts various festivals throughout the year, and the surrounding area offers plenty of shopping and dining options.",
-      zh: '难波八阪神社（難波八阪神社）是位于大阪难波地区的一座独特的神社。这座神社最特别的是其12米高的巨大狮子头舞台（狮子殿），这是日本最大、最令人印象深刻的狮子头之一。据说狮子张开的嘴巴可以吞噬邪灵，为游客带来好运。神社位于难波站附近，交通便利，是大阪探索中的便捷停留点。这是一个受欢迎的拍照地点，尤其是以令人印象深刻的狮子头为背景。神社全年举办各种节日活动，周围区域提供丰富的购物和餐饮选择。'
+      zh: '难波八阪神社（難波八阪神社）是位于大阪难波地区的一座独特的神社。这座神社最特别的是其12米高的巨大狮子头舞台（狮子殿），这是日本最大、最令人印象深刻的狮子头之一。据说狮子张开的嘴巴可以吞噬邪灵，为游客带来好运。神社位于难波站附近，交通便利，是大阪探索中的便捷停留点。这是一个受欢迎的拍照地点，尤其是以令人印象深刻的狮子头为背景。神社全年举办各种节日活动，周围区域提供丰富的购物和餐饮选择。',
+      ja: '難波八阪神社は大阪・難波エリアにある個性的な神社で、最大の見どころは高さ約12mの巨大な獅子殿（ししでん）です。大きく開いた獅子の口が邪気を飲み込み、勝運や厄除けのご利益があるといわれます。難波駅から徒歩圏内で立ち寄りやすく、迫力ある獅子頭を背景にした写真スポットとしても大人気。年間を通して行事もあり、周辺にはショッピングやグルメも充実しています。'
     },
     highlights: [
       { en: 'Giant Lion Head (Shishiden): The 12-meter-tall lion head stage is absolutely stunning and perfect for photos', zh: '巨大狮子头（狮子殿）：12米高的狮子头舞台绝对令人惊叹，非常适合拍照', ja: '巨大狮子头（狮子殿）：12米高的狮子头舞台绝对令人惊叹，非常适合拍照' },
@@ -834,7 +858,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Kuromon Ichiba Market (黒門市場), also known as \"Osaka's Kitchen,\" is a vibrant public market located in the Namba district of Osaka. Established over 190 years ago, this covered market stretches for about 600 meters and is home to over 150 shops selling everything from fresh seafood, fruits, vegetables, meat, and traditional Japanese snacks to kitchenware and daily necessities. The market is famous for its fresh seafood, especially tuna, crab, and sea urchin. Many shops offer prepared food that you can eat on the spot, making it a popular destination for food lovers. The lively atmosphere, friendly vendors, and incredible variety of food make Kuromon Ichiba a must-visit destination for anyone exploring Osaka.",
-      zh: '黑门市场（黒門市場），也被称为"大阪的厨房"，是位于大阪难波地区的一个充满活力的公共市场。这个有盖市场已有190多年的历史，长约600米，拥有150多家店铺，销售从新鲜海鲜、水果、蔬菜、肉类和传统日本小吃到厨具和日用品的各种商品。该市场以其新鲜海鲜而闻名，特别是金枪鱼、螃蟹和海胆。许多商店提供即食食品，使其成为美食爱好者的热门目的地。热闹的氛围、友好的摊主和令人难以置信的各种食物使黑门市场成为探索大阪的必游之地。'
+      zh: '黑门市场（黒門市場），也被称为"大阪的厨房"，是位于大阪难波地区的一个充满活力的公共市场。这个有盖市场已有190多年的历史，长约600米，拥有150多家店铺，销售从新鲜海鲜、水果、蔬菜、肉类和传统日本小吃到厨具和日用品的各种商品。该市场以其新鲜海鲜而闻名，特别是金枪鱼、螃蟹和海胆。许多商店提供即食食品，使其成为美食爱好者的热门目的地。热闹的氛围、友好的摊主和令人难以置信的各种食物使黑门市场成为探索大阪的必游之地。',
+      ja: '黒門市場は「大阪の台所」と呼ばれる食のマーケットで、難波エリアにある全長約600mのアーケード商店街です。190年以上の歴史があり、約150店以上が軒を連ね、新鮮な魚介や果物、野菜、精肉、和菓子、調理道具、日用品まで幅広く揃います。特にマグロ、カニ、ウニなどの海鮮が名物で、その場で食べられる食べ歩きグルメも充実。活気ある雰囲気と品揃えの豊富さで、大阪観光の定番スポットです。'
     },
     highlights: [
       { en: 'Fresh Seafood: World-class tuna, crab, oysters, and sea urchin available at various stalls', zh: '新鲜海鲜：世界级的金枪鱼、螃蟹、牡蛎和海胆在各摊位均有售', ja: '新鲜海鮮：世界级的金枪鱼、カニ、牡蛎和海胆在各摊位均有售' },
@@ -867,7 +892,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Tsutenkaku Tower is an iconic landmark in Osaka's Shinsekai district. The name \"Tsutenkaku\" means \"tower reaching heaven\" in Japanese. The current tower, completed in 1956, is the second iteration - the original was built in 1912 but was dismantled during World War II. Standing at 103 meters tall, it's one of Osaka's most recognizable symbols. The tower features an observation deck at 91 meters offering panoramic views of Osaka, a Billiken statue (god of happiness) on the 5th floor, and colorful LED lights that change with the weather forecast. The surrounding Shinsekai area is famous for its retro atmosphere, kushikatsu restaurants, and vibrant street life.",
-      zh: '通天阁是大阪新世界区的标志性地标。"Tsutenkaku"这个名字在日语中意思是"通向天空的塔"。现在的塔建于1956年，是第二个版本 - 原版建于1912年，但在第二次世界大战期间被拆除。高103米，是大阪最知名的象征之一。塔在91米处设有观景台，可欣赏大阪全景，5楼有比利肯雕像（幸福之神），还有根据天气预报改变颜色的彩色LED灯。周围的新世界区以其复古氛围、串炸餐厅和充满活力的街头生活而闻名。'
+      zh: '通天阁是大阪新世界区的标志性地标。"Tsutenkaku"这个名字在日语中意思是"通向天空的塔"。现在的塔建于1956年，是第二个版本 - 原版建于1912年，但在第二次世界大战期间被拆除。高103米，是大阪最知名的象征之一。塔在91米处设有观景台，可欣赏大阪全景，5楼有比利肯雕像（幸福之神），还有根据天气预报改变颜色的彩色LED灯。周围的新世界区以其复古氛围、串炸餐厅和充满活力的街头生活而闻名。',
+      ja: '通天閣は大阪・新世界のシンボル的存在で、「天に通じる塔」という意味を持ちます。現在の塔は1956年完成の2代目で、初代（1912年建設）は戦時中に解体されました。高さ103m、地上約91mの展望台からは大阪の街を一望できます。5階には“幸福の神様”ビリケンさんが鎮座し、足の裏を撫でるとご利益があると人気。外観のLEDは天気予報に合わせて色が変わるのも特徴で、周辺の新世界は串カツやレトロな街並みで賑わいます。'
     },
     highlights: [
       { en: 'Observation Deck: Panoramic views of Osaka from 91 meters high', zh: '观景台: 从91米高处欣赏大阪全景', ja: '观景台: 91米高处欣赏大阪全景' },
@@ -898,7 +924,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Shinsaibashi is one of Osaka's most famous shopping districts, featuring a 580-meter long covered shopping arcade known as Shinsaibashi-suji. This vibrant shopping street connects to Dotonbori and offers everything from high-end department stores to trendy boutiques, traditional shops, and countless restaurants and cafes. The arcade dates back to the Edo period and has been a commercial center for over 300 years. Today, it's a bustling pedestrian-only street filled with shops selling fashion, cosmetics, electronics, souvenirs, and local specialties. The area is particularly popular with both locals and tourists for shopping, dining, and entertainment.",
-      zh: '心斋桥是大阪最著名的购物区之一，拥有580米长的有盖购物拱廊，称为心斋桥筋。这个充满活力的购物街连接到道顿堀，提供从高端百货商店到时尚精品店、传统商店以及无数餐厅和咖啡厅的一切。拱廊可以追溯到江户时代，作为商业中心已有300多年的历史。今天，它是一个繁华的步行街，到处都是销售时尚、化妆品、电子产品、纪念品和当地特色商品的商店。该地区特别受当地人和游客的欢迎，用于购物、餐饮和娱乐。'
+      zh: '心斋桥是大阪最著名的购物区之一，拥有580米长的有盖购物拱廊，称为心斋桥筋。这个充满活力的购物街连接到道顿堀，提供从高端百货商店到时尚精品店、传统商店以及无数餐厅和咖啡厅的一切。拱廊可以追溯到江户时代，作为商业中心已有300多年的历史。今天，它是一个繁华的步行街，到处都是销售时尚、化妆品、电子产品、纪念品和当地特色商品的商店。该地区特别受当地人和游客的欢迎，用于购物、餐饮和娱乐。',
+      ja: '心斎橋は大阪を代表するショッピングエリアで、全長約580mのアーケード商店街「心斎橋筋商店街」が中心です。道頓堀へもつながり、百貨店から流行のブティック、老舗店、飲食店やカフェまで幅広く揃います。江戸時代から300年以上続く商業地としての歴史もあり、現在はファッション、コスメ、家電、土産物などを求める人で賑わう歩行者専用の繁華街です。'
     },
     highlights: [
       { en: 'Covered Shopping Arcade: 580-meter long pedestrian-only street protected from weather', zh: '有盖购物拱廊: 580米长的步行街，不受天气影响', ja: '有盖ショッピング拱廊: 580米长的徒歩街，不受天气影响' },
@@ -930,7 +957,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Ninenzaka (二寧坂) and Sannenzaka (産寧坂) are two of Kyoto's most famous preserved historic streets, located in the Higashiyama district near Kiyomizu-dera Temple. These charming stone-paved slopes are lined with traditional wooden machiya houses, shops selling local crafts, souvenirs, and traditional sweets, creating an atmosphere that transports visitors back to old Kyoto. The streets are pedestrian-only and have been carefully preserved to maintain their traditional appearance. Ninenzaka means \"two-year slope\" and Sannenzaka means \"three-year slope\" - names that may refer to the time it took to build them or to prayers for safe childbirth. Both streets offer beautiful views, especially during cherry blossom season and autumn foliage, and are perfect for experiencing traditional Kyoto culture.",
-      zh: '二寧坂和産寧坂是京都最著名的保存历史街道中的两条，位于清水寺附近的东山区。这些迷人的石砌斜坡两旁是传统的木制町屋、销售当地工艺品、纪念品和传统甜点的商店，营造出一种将游客带回古老京都的氛围。这些街道仅供行人通行，并经过精心保护以保持其传统外观。二寧坂意思是"二年坂"，産寧坂意思是"三年坂" - 这些名称可能指的是建造它们所需的时间，或者是为了祈求安全分娩的祈祷。两条街道都提供美丽的景色，特别是在樱花季节和秋叶季节，是体验传统京都文化的完美场所。'
+      zh: '二寧坂和産寧坂是京都最著名的保存历史街道中的两条，位于清水寺附近的东山区。这些迷人的石砌斜坡两旁是传统的木制町屋、销售当地工艺品、纪念品和传统甜点的商店，营造出一种将游客带回古老京都的氛围。这些街道仅供行人通行，并经过精心保护以保持其传统外观。二寧坂意思是"二年坂"，産寧坂意思是"三年坂" - 这些名称可能指的是建造它们所需的时间，或者是为了祈求安全分娩的祈祷。两条街道都提供美丽的景色，特别是在樱花季节和秋叶季节，是体验传统京都文化的完美场所。',
+      ja: '二寧坂（二年坂）・産寧坂（三年坂）は、清水寺近くの東山エリアに残る京都屈指の歴史的街並みです。石畳の坂道沿いに町家が建ち並び、工芸品や土産物、和菓子などのお店が続き、古都らしい風情を味わえます。景観保存地区として整備されており、歩いて散策するのに最適。桜の季節や紅葉シーズンは特に美しく、伝統的な京都文化を感じられる人気スポットです。'
     },
     highlights: [
       { en: 'Historic Preservation: Beautifully preserved traditional streets with stone paving and wooden buildings', zh: '历史保护: 保存完好的传统街道，有石砌路面和木制建筑', ja: '历史保护: 保存完好的传统街道，有石砌路面和木制建筑' },
@@ -962,7 +990,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Kamogawa (Kamo River) is a scenic river that flows through the heart of Kyoto, dividing the city into east and west. The river is one of Kyoto's most beloved natural features, offering a peaceful escape from the bustling city streets. The riverbanks are beautifully maintained with walking paths, making it a popular spot for locals and tourists to stroll, jog, or simply relax and enjoy the scenery. The river is especially beautiful during cherry blossom season (late March to early April) when the sakura trees along the banks burst into bloom, creating a stunning pink tunnel. In summer, the riverbanks come alive with people enjoying yuka (outdoor dining platforms) at restaurants, and in the evenings, the area is popular for romantic walks. The river also features traditional stepping stones (dai-odan) that allow people to cross to the small islands in the middle of the river.",
-      zh: '鸭川是一条风景如画的河流，流经京都中心，将城市分为东西两部分。这条河是京都最受喜爱的自然景观之一，为繁忙的城市街道提供了一个宁静的避风港。河岸维护良好，有步行道，是当地人和游客散步、慢跑或只是放松和享受风景的热门地点。这条河在樱花季节（3月下旬至4月初）特别美丽，河岸两旁的樱花树盛开，形成令人惊叹的粉色隧道。在夏天，河岸因人们在餐厅享受纳凉床（户外用餐平台）而充满活力，在傍晚，该地区是浪漫散步的热门地点。这条河还设有传统的踏脚石（大跳石），让人们可以过河到河中央的小岛上。'
+      zh: '鸭川是一条风景如画的河流，流经京都中心，将城市分为东西两部分。这条河是京都最受喜爱的自然景观之一，为繁忙的城市街道提供了一个宁静的避风港。河岸维护良好，有步行道，是当地人和游客散步、慢跑或只是放松和享受风景的热门地点。这条河在樱花季节（3月下旬至4月初）特别美丽，河岸两旁的樱花树盛开，形成令人惊叹的粉色隧道。在夏天，河岸因人们在餐厅享受纳凉床（户外用餐平台）而充满活力，在傍晚，该地区是浪漫散步的热门地点。这条河还设有传统的踏脚石（大跳石），让人们可以过河到河中央的小岛上。',
+      ja: '鴨川は京都の中心部を流れる風情ある川で、街を東西に分ける京都の象徴的な景観の一つです。川沿いには遊歩道が整備され、散歩やジョギング、のんびり休憩する人々で賑わいます。春（3月下旬〜4月上旬）は桜並木が見事で、川辺がピンク色に彩られます。夏は川沿いの飲食店で「川床（ゆか）」が楽しめ、夕方以降はロマンチックな散策コースとしても人気。川の中央に渡る飛び石（大跳石）も京都らしい名物です。'
     },
     highlights: [
       { en: 'Cherry Blossom Season: Stunning sakura tunnel along the riverbanks in spring', zh: '樱花季节: 春天河岸两旁令人惊叹的樱花隧道', ja: '樱花季节: 春天河岸两旁令人惊叹的樱花隧道' },
@@ -996,7 +1025,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Katsuoji Temple (勝尾寺) is a famous Buddhist temple located in the mountains of northern Osaka, known for its thousands of daruma dolls. The temple is often called \"Daruma-dera\" (Daruma Temple) because of the countless daruma dolls that visitors place throughout the temple grounds. Founded in 727 AD, Katsuoji Temple has a long history and is known as a temple for \"winning luck\" (katsuo means \"victory\" in Japanese). Visitors come to pray for success in various endeavors and purchase daruma dolls to place around the temple, creating a unique and colorful atmosphere.",
-      zh: '勝尾寺是大阪北部山区的一座著名佛教寺庙，以其数千个达摩娃娃而闻名。这座寺庙通常被称为"达摩寺"，因为游客在整个寺庙场地放置了无数达摩娃娃。勝尾寺建于公元727年，历史悠久，被称为"胜利之寺"（勝尾在日语中意为"胜利"）。游客来这里祈祷在各种努力中取得成功，并购买达摩娃娃放置在寺庙周围，营造出独特而多彩的氛围。'
+      zh: '勝尾寺是大阪北部山区的一座著名佛教寺庙，以其数千个达摩娃娃而闻名。这座寺庙通常被称为"达摩寺"，因为游客在整个寺庙场地放置了无数达摩娃娃。勝尾寺建于公元727年，历史悠久，被称为"胜利之寺"（勝尾在日语中意为"胜利"）。游客来这里祈祷在各种努力中取得成功，并购买达摩娃娃放置在寺庙周围，营造出独特而多彩的氛围。',
+      ja: '勝尾寺（かつおうじ）は大阪北部の山中にある寺院で、境内に並ぶ無数のだるまが名物です。だるまが至る所に置かれていることから「だるま寺」とも呼ばれ、写真映えする独特の雰囲気があります。727年創建とされ、「勝運（かちうん）」のご利益で知られるため、受験・仕事・スポーツなどの成功祈願に訪れる人が多いスポットです。'
     },
     highlights: [
       { en: 'Thousands of Daruma Dolls: The temple grounds are filled with colorful daruma dolls placed by visitors, creating a unique and photogenic atmosphere', zh: '数千个达摩娃娃: 寺庙场地充满了游客放置的彩色达摩娃娃，营造出独特而适合拍照的氛围', ja: '数千个达摩娃娃: 寺院场地充满了游客放置的彩色达摩娃娃，营造出独特而适合拍照的氛围' },
@@ -1029,7 +1059,8 @@ export const attractionsData = {
     ],
     about: {
       en: "Abeno Harukas (阿倍野HARUKAS) is Japan's tallest building, standing at 300 meters (984 feet) tall with 60 floors. Located in the Abeno district of Osaka, it opened in 2014 and has quickly become one of the city's most iconic landmarks. The complex houses a department store, hotel, office spaces, and the highest observation deck in Japan. The name \"Harukas\" comes from the ancient Japanese word meaning \"to make bright, clear, and cheerful.\" The building features stunning modern architecture and offers panoramic views of Osaka from its observation deck on the 58th, 59th, and 60th floors.",
-      zh: '阿倍野HARUKAS是日本最高的建筑，高300米（984英尺），共60层。位于大阪的阿倍野区，于2014年开放，并迅速成为该市最具标志性的地标之一。该综合建筑内设有百货商店、酒店、办公空间和日本最高的观景台。"HARUKAS"这个名字来自古代日语单词，意思是"使明亮、清晰和愉快"。该建筑采用令人惊叹的现代建筑，从其位于58、59和60层的观景台可欣赏大阪的全景。'
+      zh: '阿倍野HARUKAS是日本最高的建筑，高300米（984英尺），共60层。位于大阪的阿倍野区，于2014年开放，并迅速成为该市最具标志性的地标之一。该综合建筑内设有百货商店、酒店、办公空间和日本最高的观景台。"HARUKAS"这个名字来自古代日语单词，意思是"使明亮、清晰和愉快"。该建筑采用令人惊叹的现代建筑，从其位于58、59和60层的观景台可欣赏大阪的全景。',
+      ja: 'あべのハルカスは高さ300m・60階建ての日本一高い超高層ビルで、2014年に大阪・阿倍野エリアに開業しました。百貨店、ホテル、オフィス、美術館などが入る複合施設で、最上部の「HARUKAS 300」展望台（58〜60階）からは大阪の街並みを360度見渡せます。名称の「ハルカス」は「晴るかす（明るくする）」に由来するとされ、近代的な建築と眺望の良さで大阪観光の定番スポットになっています。'
     },
     highlights: [
       { en: 'Japan\'s Tallest Building: At 300 meters tall, Abeno Harukas is the tallest building in Japan, offering breathtaking views of Osaka', zh: '日本最高的建筑: 高300米，阿倍野HARUKAS是日本最高的建筑，提供令人叹为观止的大阪景色' },

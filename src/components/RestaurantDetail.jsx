@@ -251,7 +251,7 @@ const RestaurantDetail = ({ restaurant }) => {
           <div className={`glass-card rounded-2xl p-6 mb-8 border ${locationColor}`}>
             <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor}`}>
               <i className="fa-solid fa-calendar-day mr-2"></i>
-              {t('Schedule', '行程安排')}
+              {t('Schedule', '行程安排', 'スケジュール')}
             </h2>
             <div className="space-y-3 text-slate-700">
               {Array.isArray(restaurant.schedule) ? (
@@ -260,9 +260,9 @@ const RestaurantDetail = ({ restaurant }) => {
                     <i className="fa-solid fa-calendar-day text-blue-600"></i>
                     <div>
                       <span className="font-semibold text-blue-700">
-                        {t(s.date.en, s.date.zh)} {s.time}
+                        {t(s.date.en, s.date.zh, s.date.ja)} {s.time}
                       </span>
-                      <span className="text-blue-600 ml-2">- {t(s.meal.en, s.meal.zh)}</span>
+                      <span className="text-blue-600 ml-2">- {t(s.meal.en, s.meal.zh, s.meal.ja)}</span>
                     </div>
                   </div>
                 ))
@@ -271,9 +271,9 @@ const RestaurantDetail = ({ restaurant }) => {
                   <i className="fa-solid fa-calendar-day text-blue-600"></i>
                   <div>
                     <span className="font-semibold text-blue-700">
-                      {t(restaurant.schedule.date.en, restaurant.schedule.date.zh)} {restaurant.schedule.time}
+                      {t(restaurant.schedule.date.en, restaurant.schedule.date.zh, restaurant.schedule.date.ja)} {restaurant.schedule.time}
                     </span>
-                    <span className="text-blue-600 ml-2">- {t(restaurant.schedule.meal.en, restaurant.schedule.meal.zh)}</span>
+                    <span className="text-blue-600 ml-2">- {t(restaurant.schedule.meal.en, restaurant.schedule.meal.zh, restaurant.schedule.meal.ja)}</span>
                   </div>
                 </div>
               )}
@@ -286,10 +286,10 @@ const RestaurantDetail = ({ restaurant }) => {
           <div className={`glass-card rounded-2xl p-6 mb-8 border ${locationColor}`}>
             <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor}`}>
               <i className="fa-solid fa-info-circle mr-2"></i>
-              {t('About', '关于')}
+              {t('About', '关于', '概要')}
             </h2>
             <p className="text-slate-700 leading-relaxed">
-              {t(restaurant.about.en, restaurant.about.zh)}
+              {t(restaurant.about.en, restaurant.about.zh, restaurant.about.ja)}
             </p>
           </div>
         )}
@@ -299,13 +299,13 @@ const RestaurantDetail = ({ restaurant }) => {
           <div className={`glass-card rounded-2xl p-6 mb-8 border ${locationColor}`}>
             <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor}`}>
               <i className="fa-solid fa-star mr-2"></i>
-              {t('Highlights', '亮点')}
+              {t('Highlights', '亮点', '見どころ')}
             </h2>
             <ul className="space-y-3 text-slate-700">
               {restaurant.highlights.map((highlight, index) => (
                 <li key={index} className="flex items-start">
                   <i className="fa-solid fa-check-circle text-pink-500 mr-3 mt-1"></i>
-                  <span>{t(highlight.en, highlight.zh)}</span>
+                  <span>{t(highlight.en, highlight.zh, highlight.ja)}</span>
                 </li>
               ))}
             </ul>
@@ -317,13 +317,13 @@ const RestaurantDetail = ({ restaurant }) => {
           <div className={`glass-card rounded-2xl p-6 mb-8 border ${locationColor}`}>
             <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor}`}>
               <i className="fa-solid fa-lightbulb mr-2"></i>
-              {t('Tips', '提示')}
+              {t('Tips', '提示', 'ヒント')}
             </h2>
             <ul className="space-y-3 text-slate-700">
               {restaurant.tips.map((tip, index) => (
                 <li key={index} className="flex items-start">
                   <i className="fa-solid fa-circle-info text-blue-500 mr-3 mt-1"></i>
-                  <span>{t(tip.en, tip.zh)}</span>
+                  <span>{t(tip.en, tip.zh, tip.ja)}</span>
                 </li>
               ))}
             </ul>
@@ -334,21 +334,21 @@ const RestaurantDetail = ({ restaurant }) => {
         <div className={`glass-card rounded-2xl p-6 border ${locationColor}`}>
           <h2 className={`font-header text-2xl font-bold mb-4 flex items-center ${locationColor}`}>
             <i className="fa-solid fa-map-location-dot mr-2"></i>
-            {t('Location & Access', '位置与交通')}
+            {t('Location & Access', '位置与交通', '場所・アクセス')}
           </h2>
           {restaurant.address && (
             <p className="text-slate-700 leading-relaxed mb-4">
-              <strong>{t('Address', '地址')}:</strong> {t(restaurant.address.en, restaurant.address.zh)}
+              <strong>{t('Address', '地址', '住所')}:</strong> {t(restaurant.address.en, restaurant.address.zh, restaurant.address.ja)}
             </p>
           )}
           {restaurant.station && (
             <p className="text-slate-700 leading-relaxed mb-4">
-              <strong>{t('Nearest Station', '最近车站')}:</strong> {t(restaurant.station.en, restaurant.station.zh)}
+              <strong>{t('Nearest Station', '最近车站', '最寄り駅')}:</strong> {t(restaurant.station.en, restaurant.station.zh, restaurant.station.ja)}
             </p>
           )}
           {restaurant.access && (
             <p className="text-slate-700 leading-relaxed mb-4">
-              <strong>{t('Access', '交通')}:</strong> {t(restaurant.access.en, restaurant.access.zh)}
+              <strong>{t('Access', '交通', 'アクセス')}:</strong> {t(restaurant.access.en, restaurant.access.zh, restaurant.access.ja)}
             </p>
           )}
           {restaurant.mapUrl && (
@@ -359,7 +359,7 @@ const RestaurantDetail = ({ restaurant }) => {
               className="btn-primary inline-flex items-center mt-4"
             >
               <i className="fa-solid fa-map-location-dot mr-2"></i>
-              {t('Open in Google Maps', '在Google地图中打开')}
+              {t('Open in Google Maps', '在Google地图中打开', 'Googleマップで開く')}
             </a>
           )}
         </div>
