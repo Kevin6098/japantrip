@@ -90,7 +90,7 @@ const ExpenseDetail = () => {
       navigate('/split-expenses')
     } catch (error) {
       console.error('Error deleting expense:', error)
-      alert(t('Failed to delete expense. Please try again.', '删除费用失败。请重试。'))
+      alert(t('Failed to delete expense. Please try again.', '删除费用失败。请重试。', '支出の削除に失敗しました。もう一度お試しください。'))
     } finally {
       setDeleting(false)
       setShowDeleteConfirm(false)

@@ -211,7 +211,7 @@ const BudgetSplitter = () => {
       })
     } catch (e) {
       console.error('Failed to fetch FX rate:', e)
-      setRateError(t('Failed to fetch current rate. Use manual rate.', '获取实时汇率失败。请使用手动汇率。'))
+      setRateError(t('Failed to fetch current rate. Use manual rate.', '获取实时汇率失败。请使用手动汇率。', '最新レートの取得に失敗しました。手動レートを使用してください。'))
     } finally {
       setRateLoading(false)
     }
@@ -316,7 +316,7 @@ const BudgetSplitter = () => {
     if (total <= 0) {
       return (
         <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-          {t('No data to show for the selected members.', '所选成员暂无可展示的数据。')}
+          {t('No data to show for the selected members.', '所选成员暂无可展示的数据。', '選択したメンバーのデータがありません。')}
         </div>
       )
     }
@@ -360,7 +360,7 @@ const BudgetSplitter = () => {
               )
             })}
             <text x="64" y="62" textAnchor="middle" fontSize="10" fill="#475569" fontWeight="600">
-              {t('Total', '总计')}
+              {t('Total', '总计', '合計')}
             </text>
             <text x="64" y="78" textAnchor="middle" fontSize="12" fill="#0f172a" fontWeight="800">
               {formatMoney(total, totalCurrency)}
@@ -933,7 +933,7 @@ const BudgetSplitter = () => {
             }`}
           >
             <i className="fa-solid fa-receipt mr-2"></i>
-            {t('Add an expense', '添加费用')}
+            {t('Add an expense', '添加费用', '支出を追加')}
           </button>
           <button
             onClick={() => setActiveTab('summary')}
@@ -942,7 +942,7 @@ const BudgetSplitter = () => {
             }`}
           >
             <i className="fa-solid fa-chart-pie mr-2"></i>
-            {t('Summary', '摘要')}
+            {t('Summary', '摘要', 'サマリー')}
           </button>
           <Link
             to="/split-expenses/expenses"
@@ -952,7 +952,7 @@ const BudgetSplitter = () => {
             onClick={() => setActiveTab('expenses')}
           >
             <i className="fa-solid fa-list mr-2"></i>
-            {t('Expenses', '费用')}
+            {t('Expenses', '费用', '支出')}
           </Link>
           <button
             onClick={() => setActiveTab('members')}
@@ -961,7 +961,7 @@ const BudgetSplitter = () => {
             }`}
           >
             <i className="fa-solid fa-users mr-2"></i>
-            {t('Members', '成员')}
+            {t('Members', '成员', 'メンバー')}
           </button>
         </div>
       </div>
@@ -975,12 +975,12 @@ const BudgetSplitter = () => {
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
                   <h2 className="font-header text-xl font-bold text-slate-800 mb-1">
-                    {t('Members', '成员')}
+                    {t('Members', '成员', 'メンバー')}
                   </h2>
                   <p className="text-xs text-slate-500">
                     {USE_DATABASE 
-                      ? t('Members are saved to database.', '成员已保存到数据库。')
-                      : t('Members are saved automatically.', '成员会自动保存。')
+                      ? t('Members are saved to database.', '成员已保存到数据库。', 'メンバーはDBに保存されます。')
+                      : t('Members are saved automatically.', '成员会自动保存。', 'メンバーは自動保存されます。')
                     }
                   </p>
                 </div>
@@ -989,7 +989,7 @@ const BudgetSplitter = () => {
                   className="px-3 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors text-sm font-semibold"
                 >
                   <i className="fa-solid fa-receipt mr-2"></i>
-                  {t('Add an expense', '添加费用')}
+                  {t('Add an expense', '添加费用', '支出を追加')}
                 </button>
               </div>
 
@@ -999,14 +999,14 @@ const BudgetSplitter = () => {
                   value={memberName}
                   onChange={(e) => setMemberName(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && addMember()}
-                  placeholder={t('e.g., Ang', '例如：Ang')}
+                  placeholder={t('e.g., Ang', '例如：Ang', '例：Ang')}
                   className="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
                 <button
                   onClick={addMember}
                   className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
                 >
-                  {t('Add Member', '添加成员')}
+                  {t('Add Member', '添加成员', 'メンバー追加')}
                 </button>
               </div>
 
@@ -1018,13 +1018,13 @@ const BudgetSplitter = () => {
                       onClick={() => removeMember(m.id)}
                       className="text-red-600 hover:text-red-800 text-xs font-bold"
                     >
-                      {t('Remove', '删除')}
+                      {t('Remove', '删除', '削除')}
                     </button>
                   </div>
                 ))}
                 {members.length === 0 && (
                   <div className="text-sm text-slate-500">
-                    {t('No members yet.', '还没有成员。')}
+                    {t('No members yet.', '还没有成员。', 'まだメンバーがいません。')}
                   </div>
                 )}
               </div>
@@ -1034,7 +1034,7 @@ const BudgetSplitter = () => {
                   onClick={resetAll}
                   className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold"
                 >
-                  {t('Reset All Data', '重置所有数据')}
+                  {t('Reset All Data', '重置所有数据', '全データをリセット')}
                 </button>
               </div>
             </>
@@ -1045,10 +1045,10 @@ const BudgetSplitter = () => {
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
                   <h2 className="font-header text-xl font-bold text-slate-800 mb-1">
-                    {t('Add an expense', '添加费用')}
+                    {t('Add an expense', '添加费用', '支出を追加')}
                   </h2>
                   <p className="text-xs text-slate-500">
-                    {t('Tip: Use "k" suffix (e.g., 5k = 5000).', '提示：可使用"k"后缀（例如 5k = 5000）。')}
+                    {t('Tip: Use "k" suffix (e.g., 5k = 5000).', '提示：可使用"k"后缀（例如 5k = 5000）。', 'ヒント：「k」を使えます（例：5k = 5000）。')}
                   </p>
                 </div>
                 <button
@@ -1056,20 +1056,20 @@ const BudgetSplitter = () => {
                   className="px-3 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors text-sm font-semibold"
                 >
                   <i className="fa-solid fa-users mr-2"></i>
-                  {t('Manage members', '管理成员')}
+                  {t('Manage members', '管理成员', 'メンバー管理')}
                 </button>
               </div>
 
               {members.length === 0 && (
                 <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-                  {t('No members yet. Add members first to split expenses.', '还没有成员。请先添加成员以进行费用分摊。')}
+                  {t('No members yet. Add members first to split expenses.', '还没有成员。请先添加成员以进行费用分摊。', 'まだメンバーがいません。割り勘する前にメンバーを追加してください。')}
                 </div>
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">
-                {t('Date', '日期')}
+                {t('Date', '日期', '日付')}
               </label>
               <input
                 type="date"
@@ -1080,7 +1080,7 @@ const BudgetSplitter = () => {
             </div>
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">
-                {t('Category', '类别')}
+                {t('Category', '类别', 'カテゴリ')}
               </label>
               <select
                 value={expCategory}
@@ -1097,7 +1097,7 @@ const BudgetSplitter = () => {
             </div>
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">
-                {t('Currency', '货币')}
+                {t('Currency', '货币', '通貨')}
               </label>
               <select
                 value={expCurrency}
@@ -1113,29 +1113,29 @@ const BudgetSplitter = () => {
 
           <div className="mb-4">
             <label className="block text-sm font-semibold text-slate-700 mb-1">
-              {t('Description', '描述')}
+              {t('Description', '描述', '内容')}
             </label>
             <textarea
               value={expDesc}
               onChange={(e) => setExpDesc(e.target.value)}
-              placeholder={t('e.g., Ramen 50k, Meat 50k', '例如：拉面 50k，肉类 50k')}
+              placeholder={t('e.g., Ramen 50k, Meat 50k', '例如：拉面 50k，肉类 50k', '例：ラーメン 50k、肉 50k')}
               rows={3}
               className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-y"
             />
             <p className="text-xs text-slate-500 mt-1">
-              {t('You can break down the expense here. e.g., "Ramen 50k, Meat 50k" for a 100k meal total.', '您可以在此处分解费用。例如：总餐费100k，可写"拉面 50k，肉类 50k"。')}
+              {t('You can break down the expense here. e.g., "Ramen 50k, Meat 50k" for a 100k meal total.', '您可以在此处分解费用。例如：总餐费100k，可写"拉面 50k，肉类 50k"。', 'ここに内訳を書けます。例：合計100kなら「ラーメン 50k、肉 50k」。')}
             </p>
           </div>
 
           <div className="mb-4">
             <label className="block text-sm font-semibold text-slate-700 mb-1">
-              {t('Amount', '金额')}
+              {t('Amount', '金额', '金額')}
             </label>
             <input
               type="text"
               value={expAmount}
               onChange={(e) => setExpAmount(e.target.value)}
-              placeholder={t('e.g., 4800 or 5k', '例如：4800 或 5k')}
+              placeholder={t('e.g., 4800 or 5k', '例如：4800 或 5k', '例：4800 または 5k')}
               className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
@@ -1143,7 +1143,7 @@ const BudgetSplitter = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">
-                {t('Paid by', '付款人')}
+                {t('Paid by', '付款人', '立替')}
               </label>
               <select
                 value={expPaidBy}
@@ -1157,15 +1157,15 @@ const BudgetSplitter = () => {
             </div>
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">
-                {t('Split mode', '分摊模式')}
+                {t('Split mode', '分摊模式', '割り勘方法')}
               </label>
               <select
                 value={splitMode}
                 onChange={(e) => setSplitMode(e.target.value)}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
-                <option value="equal">{t('Equal split', '平均分摊')}</option>
-                <option value="custom">{t('Custom amounts', '自定义金额')}</option>
+                <option value="equal">{t('Equal split', '平均分摊', '均等')}</option>
+                <option value="custom">{t('Custom amounts', '自定义金额', '金額指定')}</option>
               </select>
             </div>
           </div>
@@ -1184,16 +1184,17 @@ const BudgetSplitter = () => {
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
                 <option value="random_extra">
-                  {t('Randomly assign the extra to some members (total stays the same)', '随机分配零头给部分成员（总额不变）')}
+                  {t('Randomly assign the extra to some members (total stays the same)', '随机分配零头给部分成员（总额不变）', '端数をランダムに配分（合計は同じ）')}
                 </option>
                 <option value="round_up_payer_earns">
-                  {t('Everyone rounds up; payer earns the extra', '所有人进位；付款人赚取零头')}
+                  {t('Everyone rounds up; payer earns the extra', '所有人进位；付款人赚取零头', '全員切り上げ；立替が端数分を受け取る')}
                 </option>
               </select>
               <p className="text-xs text-slate-500 mt-1">
                 {t(
                   'Tip: If the payer is included in “Split with”, we’ll make the payer pay less so everyone else pays the same.',
-                  '提示：如果付款人也在“分摊对象”里，我们会让付款人付少一点，其余人付一样。'
+                  '提示：如果付款人也在“分摊对象”里，我们会让付款人付少一点，其余人付一样。',
+                  'ヒント：「割り勘する相手」に立替が含まれる場合、立替は少なめにして他の人を同額にします。'
                 )}
               </p>
             </div>
@@ -1201,7 +1202,7 @@ const BudgetSplitter = () => {
 
           <div className="mb-4">
             <label className="block text-sm font-semibold text-slate-700 mb-2">
-              {t('Split with (who should share this cost?)', '分摊对象（谁应分担此费用？）')}
+              {t('Split with (who should share this cost?)', '分摊对象（谁应分担此费用？）', '割り勘する相手')}
             </label>
             <div className="flex flex-wrap gap-2">
               {members.map(m => (
@@ -1221,7 +1222,7 @@ const BudgetSplitter = () => {
           {splitMode === 'custom' && (
             <div className="mb-4 p-4 bg-slate-50 rounded-lg">
               <label className="block text-sm font-semibold text-slate-700 mb-2">
-                {t('Custom split (enter each member\'s share)', '自定义分摊（输入每个成员的份额）')}
+                {t('Custom split (enter each member\'s share)', '自定义分摊（输入每个成员的份额）', 'カスタム割り勘（各メンバーの金額）')}
               </label>
               <div className="space-y-2">
                 {members.filter(m => splitWith.has(m.id)).map(m => (
@@ -1240,7 +1241,7 @@ const BudgetSplitter = () => {
                 ))}
               </div>
               <p className="text-xs text-slate-500 mt-2">
-                {t('Tip: You can uncheck members above. Only checked members are counted.', '提示：您可以取消选中上面的成员。只计算选中的成员。')}
+                {t('Tip: You can uncheck members above. Only checked members are counted.', '提示：您可以取消选中上面的成员。只计算选中的成员。', 'ヒント：上でチェックを外せます。チェック済みのみ計算されます。')}
               </p>
             </div>
           )}
@@ -1251,14 +1252,14 @@ const BudgetSplitter = () => {
               className="flex-1 px-4 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-semibold"
             >
               <i className="fa-solid fa-plus mr-2"></i>
-              {t('Add Expense', '添加费用')}
+              {t('Add Expense', '添加费用', '支出を追加')}
             </button>
             <button
               onClick={resetAll}
               className="px-4 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold"
             >
               <i className="fa-solid fa-rotate-left mr-2"></i>
-              {t('Reset All Data', '重置所有数据')}
+              {t('Reset All Data', '重置所有数据', '全データをリセット')}
             </button>
           </div>
             </>
@@ -1277,10 +1278,10 @@ const BudgetSplitter = () => {
           <div className="flex justify-between items-center mb-4">
             <div>
               <h2 className="font-header text-xl font-bold text-slate-800 mb-1">
-                {t('Summary', '摘要')}
+                {t('Summary', '摘要', 'サマリー')}
               </h2>
               <p className="text-xs text-slate-500">
-                {t('Totals are per member (based on splits), not "paid by".', '总计按成员（基于分摊），而非"付款人"。')}
+                {t('Totals are per member (based on splits), not "paid by".', '总计按成员（基于分摊），而非"付款人"。', '合計は「立替」ではなく割り勘（負担額）ベースです。')}
               </p>
             </div>
           </div>
@@ -1288,7 +1289,7 @@ const BudgetSplitter = () => {
           {/* Member Filter */}
           <div className="mb-4 p-3 bg-slate-50 rounded-lg border border-slate-200">
             <label className="block text-sm font-semibold text-slate-700 mb-2">
-              {t('Show Members', '显示成员')}
+              {t('Show Members', '显示成员', '表示するメンバー')}
             </label>
             <div className="flex flex-wrap gap-2">
               {members.map(m => (
@@ -1318,14 +1319,14 @@ const BudgetSplitter = () => {
                 onClick={() => setSelectedMembers(new Set(members.map(m => m.id)))}
                 className="text-xs text-emerald-600 hover:text-emerald-800 font-semibold"
               >
-                {t('Select All', '全选')}
+                {t('Select All', '全选', '全選択')}
               </button>
               <span className="text-xs text-slate-400">|</span>
               <button
                 onClick={() => setSelectedMembers(new Set())}
                 className="text-xs text-slate-600 hover:text-slate-800 font-semibold"
               >
-                {t('Deselect All', '全不选')}
+                {t('Deselect All', '全不选', '全解除')}
               </button>
             </div>
           </div>
@@ -1338,19 +1339,19 @@ const BudgetSplitter = () => {
                 className="px-3 py-2 bg-emerald-100 text-emerald-700 rounded-lg hover:bg-emerald-200 transition-colors text-sm font-semibold"
               >
                 <i className="fa-solid fa-chart-pie mr-2"></i>
-                {showTotalSummary ? t('Hide Total Summary', '隐藏总汇总') : t('Total Summary', '总汇总')}
+                {showTotalSummary ? t('Hide Total Summary', '隐藏总汇总', '合計サマリーを隠す') : t('Total Summary', '总汇总', '合計サマリー')}
               </button>
               <button
                 onClick={exportCSV}
                 className="px-3 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors text-sm font-semibold"
               >
-                {t('Export CSV', '导出CSV')}
+                {t('Export CSV', '导出CSV', 'CSVを書き出す')}
               </button>
               <button
                 onClick={clearExpenses}
                 className="px-3 py-2 bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition-colors text-sm font-semibold"
               >
-                {t('Clear Expenses Only', '仅清除费用')}
+                {t('Clear Expenses Only', '仅清除费用', '支出だけクリア')}
               </button>
             </div>
           </div>
@@ -1360,10 +1361,10 @@ const BudgetSplitter = () => {
               <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-4">
                 <div>
                   <h3 className="font-header text-lg font-bold text-slate-800">
-                    {t('Total Summary (Combine currencies)', '总汇总（合并不同货币）')}
+                    {t('Total Summary (Combine currencies)', '总汇总（合并不同货币）', '合計サマリー（通貨をまとめる）')}
                   </h3>
                   <p className="text-xs text-slate-500">
-                    {t('Uses selected members only. Converts between JPY, MYR, and SGD.', '仅统计所选成员。支持 JPY、MYR、SGD 的换算。')}
+                    {t('Uses selected members only. Converts between JPY, MYR, and SGD.', '仅统计所选成员。支持 JPY、MYR、SGD 的换算。', '選択メンバーのみ集計。JPY/MYR/SGD を換算します。')}
                   </p>
                 </div>
               </div>
@@ -1371,7 +1372,7 @@ const BudgetSplitter = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-4">
                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 lg:col-span-1 min-w-[160px]">
                   <label className="block text-sm font-semibold text-slate-700 mb-1">
-                    {t('Sum up in', '汇总货币')}
+                    {t('Sum up in', '汇总货币', '集計通貨')}
                   </label>
                   <select
                     value={totalBaseCurrency}
@@ -1386,24 +1387,24 @@ const BudgetSplitter = () => {
 
                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 lg:col-span-4">
                   <label className="block text-sm font-semibold text-slate-700 mb-1">
-                    {t('Exchange rate', '汇率')}
+                    {t('Exchange rate', '汇率', '為替レート')}
                   </label>
                   <select
                     value={rateMode}
                     onChange={(e) => setRateMode(e.target.value)}
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
                   >
-                    <option value="manual">{t('Manual (host sets)', '手动（主持人设置）')}</option>
-                    <option value="current">{t('Current rate (fetch)', '当前汇率（获取）')}</option>
+                    <option value="manual">{t('Manual (host sets)', '手动（主持人设置）', '手動（設定）')}</option>
+                    <option value="current">{t('Current rate (fetch)', '当前汇率（获取）', '最新（取得）')}</option>
                   </select>
                   <div className="mt-2 text-xs text-slate-600">
-                    {t('We use: 1 CUR = X MYR', '使用：1 货币 = X 马币')}
+                    {t('We use: 1 CUR = X MYR', '使用：1 货币 = X 马币', '使用：1 通貨 = X MYR')}
                   </div>
                 </div>
 
                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 lg:col-span-7">
                   <label className="block text-sm font-semibold text-slate-700 mb-1">
-                    {t('Rates (to MYR)', '汇率（换算到 MYR）')}
+                    {t('Rates (to MYR)', '汇率（换算到 MYR）', 'レート（MYR換算）')}
                   </label>
                   {rateMode === 'manual' ? (
                     <div className="space-y-2">
@@ -1411,7 +1412,7 @@ const BudgetSplitter = () => {
                         <div key={cur} className="flex flex-col sm:flex-row sm:items-center gap-2">
                           <div className="flex items-center gap-2">
                             <div className="w-12 text-sm font-semibold text-slate-700">{cur}</div>
-                            <div className="text-xs text-slate-500">{t('1', '1')} {cur} =</div>
+                            <div className="text-xs text-slate-500">{t('1', '1', '1')} {cur} =</div>
                           </div>
                           <input
                             type="number"
@@ -1430,22 +1431,22 @@ const BudgetSplitter = () => {
                       <div className="flex items-center gap-2">
                         <div className="flex-1 text-sm text-slate-700">
                           {rateLoading
-                            ? t('Fetching…', '获取中…')
-                            : (currentRatesToMyr ? t('Fetched', '已获取') : t('Not fetched', '未获取'))}
+                            ? t('Fetching…', '获取中…', '取得中…')
+                            : (currentRatesToMyr ? t('Fetched', '已获取', '取得済み') : t('Not fetched', '未获取', '未取得'))}
                         </div>
                         <button
                           onClick={fetchCurrentRatesToMyr}
                           className="px-3 py-2 bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition-colors text-sm font-semibold"
                           disabled={rateLoading}
                         >
-                          {t('Refresh', '刷新')}
+                          {t('Refresh', '刷新', '更新')}
                         </button>
                       </div>
                       {currentRatesToMyr && (
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm">
                           {(['JPY', 'SGD']).map((cur) => (
                             <div key={cur} className="px-3 py-2 border border-slate-300 rounded-lg bg-white">
-                              <div className="text-xs text-slate-500">{t('1', '1')} {cur} =</div>
+                              <div className="text-xs text-slate-500">{t('1', '1', '1')} {cur} =</div>
                               <div className="font-semibold text-slate-800">{String(currentRatesToMyr[cur])} MYR</div>
                             </div>
                           ))}
@@ -1460,20 +1461,20 @@ const BudgetSplitter = () => {
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <div className="flex-1">
                   <label className="block text-sm font-semibold text-slate-700 mb-1">
-                    {t('Pie chart breakdown', '饼图分组')}
+                    {t('Pie chart breakdown', '饼图分组', '円グラフの分類')}
                   </label>
                   <select
                     value={pieMode}
                     onChange={(e) => setPieMode(e.target.value)}
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
                   >
-                    <option value="category">{t('By category', '按类别')}</option>
-                    <option value="member">{t('By member', '按成员')}</option>
+                    <option value="category">{t('By category', '按类别', 'カテゴリ別')}</option>
+                    <option value="member">{t('By member', '按成员', 'メンバー別')}</option>
                   </select>
                 </div>
                 <div className="flex-1">
                   <label className="block text-sm font-semibold text-slate-700 mb-1">
-                    {t('Selected members count', '所选成员数量')}
+                    {t('Selected members count', '所选成员数量', '選択メンバー数')}
                   </label>
                   <div className="px-3 py-2 border border-slate-300 rounded-lg bg-white text-sm">
                     {members.filter(m => selectedMembers.has(m.id)).length} / {members.length}
@@ -1487,7 +1488,7 @@ const BudgetSplitter = () => {
                 if (selectedCount === 0) {
                   return (
                     <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-                      {t('Select at least 1 member above.', '请在上方至少选择1位成员。')}
+                      {t('Select at least 1 member above.', '请在上方至少选择1位成员。', '上でメンバーを1人以上選択してください。')}
                     </div>
                   )
                 }
@@ -1534,7 +1535,7 @@ const BudgetSplitter = () => {
                   <>
                     <PieChart data={pieData} totalCurrency={totalBaseCurrency} />
                     <div className="mt-4 text-sm text-slate-700">
-                      <span className="font-semibold">{t('Grand total:', '总计：')}</span>{' '}
+                      <span className="font-semibold">{t('Grand total:', '总计：', '合計：')}</span>{' '}
                       <span className="font-bold">{formatMoney(result.grand, totalBaseCurrency)}</span>
                     </div>
                   </>
@@ -1547,11 +1548,11 @@ const BudgetSplitter = () => {
           <div className="mb-6">
             {members.length === 0 ? (
               <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-                {t('No members yet.', '还没有成员。')}
+                {t('No members yet.', '还没有成员。', 'まだメンバーがいません。')}
               </div>
             ) : Object.keys(totals).length === 0 ? (
               <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-                {t('No expenses yet. Add your first expense in "Add an expense".', '还没有费用。请在“添加费用”中添加您的第一笔费用。')}
+                {t('No expenses yet. Add your first expense in "Add an expense".', '还没有费用。请在“添加费用”中添加您的第一笔费用。', 'まだ支出がありません。「支出を追加」で最初の支出を追加してください。')}
               </div>
             ) : (
               Object.keys(totals).sort().map(cur => {
@@ -1565,11 +1566,11 @@ const BudgetSplitter = () => {
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-slate-800">{cur}</span>
                         <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">
-                          {t('Totals', '总计')}
+                          {t('Totals', '总计', '合計')}
                         </span>
                       </div>
                       <div className="text-sm text-slate-600">
-                        {t('Total spent:', '总支出：')} <b>{formatMoney(grand, cur)}</b>
+                        {t('Total spent:', '总支出：', '合計支出：')} <b>{formatMoney(grand, cur)}</b>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
@@ -1577,8 +1578,8 @@ const BudgetSplitter = () => {
                         <table className="w-full text-sm">
                           <thead className="bg-slate-100">
                             <tr>
-                              <th className="text-left p-2 font-semibold text-slate-700">{t('Member', '成员')}</th>
-                              <th className="text-right p-2 font-semibold text-slate-700">{t('Their share', '他们的份额')}</th>
+                              <th className="text-left p-2 font-semibold text-slate-700">{t('Member', '成员', 'メンバー')}</th>
+                              <th className="text-right p-2 font-semibold text-slate-700">{t('Their share', '他们的份额', '負担額')}</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -1620,7 +1621,7 @@ const BudgetSplitter = () => {
                             {members.filter(m => selectedMembers.has(m.id)).length === 0 && (
                               <tr>
                                 <td colSpan="2" className="p-2 text-xs text-slate-500 text-center">
-                                  {t('No members selected', '未选择成员')}
+                                  {t('No members selected', '未选择成员', 'メンバー未選択')}
                                 </td>
                               </tr>
                             )}
@@ -1631,8 +1632,8 @@ const BudgetSplitter = () => {
                         <table className="w-full text-sm">
                           <thead className="bg-slate-100">
                             <tr>
-                              <th className="text-left p-2 font-semibold text-slate-700">{t('Category', '类别')}</th>
-                              <th className="text-right p-2 font-semibold text-slate-700">{t('Total', '总计')}</th>
+                              <th className="text-left p-2 font-semibold text-slate-700">{t('Category', '类别', 'カテゴリ')}</th>
+                              <th className="text-right p-2 font-semibold text-slate-700">{t('Total', '总计', '合計')}</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -1672,9 +1673,9 @@ const BudgetSplitter = () => {
                                                     to={`/split-expenses/expense/${exp.id}`}
                                                     className="text-slate-700 hover:text-emerald-600 transition-colors"
                                                   >
-                                                    <div className="font-medium">{exp.description || exp.desc || t('No description', '无描述')}</div>
+                                                    <div className="font-medium">{exp.description || exp.desc || t('No description', '无描述', '説明なし')}</div>
                                                     <div className="text-slate-500 text-xs mt-0.5">
-                                                      {exp.date} • {t('Paid by', '付款人')}: {paidByName}
+                                                      {exp.date} • {t('Paid by', '付款人', '立替')}: {paidByName}
                                                     </div>
                                                   </Link>
                                                 </div>
@@ -1699,7 +1700,7 @@ const BudgetSplitter = () => {
                             {Object.keys(catTotals[cur] || {}).length === 0 && (
                               <tr>
                                 <td colSpan="2" className="p-2 text-xs text-slate-500 text-center">
-                                  {t('No categories yet', '还没有类别')}
+                                  {t('No categories yet', '还没有类别', 'カテゴリがありません')}
                                 </td>
                               </tr>
                             )}

@@ -486,7 +486,7 @@ const ExpensesList = () => {
 
               {settleData.currencies.length === 0 ? (
                 <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-sm text-yellow-800">
-                  {t('No expenses yet.', '还没有费用。')}
+                  {t('No expenses yet.', '还没有费用。', 'まだ支出がありません。')}
                 </div>
               ) : (
                 <>
