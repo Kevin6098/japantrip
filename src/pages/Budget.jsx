@@ -52,11 +52,11 @@ const Budget = () => {
       day: 5,
       focus: { en: 'Kobe Trip (Beef+Cruise)', zh: '神户游 (和牛+游船)', ja: '神戸（神戸牛＋クルーズ）' },
       breakdown: {
-        en: 'Trains (~¥1500), Harborland Free, Kobe Steak Nick (~¥6500), Rokko Cable (~¥1200), Gashoken Dinner (~¥1500)',
-        zh: '电车 (~¥1500), 港湾乐园免费, Kobe Steak Nick (~¥6500), 六甲山缆车 (~¥1200), 賀正軒晚餐 (~¥1500)',
-        ja: '電車（約¥1500）、ハーバーランド（無料）、Kobe Steak Nick（約¥6500）、六甲ケーブル（約¥1200）、賀正軒（夜・約¥1500）',
+        en: 'Trains (~¥1500), Harborland Free, Kobe Steak Nick (~¥6500), Rokko Cable (~¥1200), Rokkosan Pasture (~¥500), Gashoken Dinner (~¥1500), Kobe Port Tower (~¥700)',
+        zh: '电车 (~¥1500), 港湾乐园免费, Kobe Steak Nick (~¥6500), 六甲山缆车 (~¥1200), 六甲山牧场 (~¥500), 賀正軒晚餐 (~¥1500), 神户塔 (~¥700)',
+        ja: '電車（約¥1500）、ハーバーランド（無料）、Kobe Steak Nick（約¥6500）、六甲ケーブル（約¥1200）、六甲山牧場（約¥500）、賀正軒（夜・約¥1500）、神戸ポートタワー（約¥700）',
       },
-      cost: 10700,
+      cost: 12400,
       color: 'red',
     },
     {
@@ -75,11 +75,11 @@ const Budget = () => {
       day: 7,
       focus: { en: 'Osaka City Highlights', zh: '大阪城市精华', ja: '大阪市内ハイライト' },
       breakdown: {
-        en: 'Metro (~¥800), Osaka Castle (~¥600), Kuromon Market Lunch (~¥2000), Namba Yasaka Free, Tsutenkaku (~¥900), Shinsaibashi, Dotonbori Dinner (~¥3000)',
-        zh: '地铁 (~¥800), 大阪城 (~¥600), 黑门市场午餐 (~¥2000), 难波八阪免费, 通天阁 (~¥900), 心斋桥, 道顿堀晚餐 (~¥3000)',
-        ja: '地下鉄（約¥800）、大阪城（約¥600）、黒門市場ランチ（約¥2000）、難波八阪（無料）、通天閣（約¥900）、心斎橋、道頓堀ディナー（約¥3000）',
+        en: 'Metro (~¥800), Umeda Sky Building (~¥1500), Osaka Aquarium (~¥2700), Shinsaibashi Free, Dotonbori Free, Dotonbori Dinner (~¥3000)',
+        zh: '地铁 (~¥800), 梅田蓝天大厦 (~¥1500), 大阪海游馆 (~¥2700), 心斋桥免费, 道顿堀免费, 道顿堀晚餐 (~¥3000)',
+        ja: '地下鉄（約¥800）、梅田スカイビル（約¥1500）、大阪海遊館（約¥2700）、心斎橋（無料）、道頓堀（無料）、道頓堀ディナー（約¥3000）',
       },
-      cost: 7300,
+      cost: 9000,
       color: 'orange',
     },
     {

@@ -111,7 +111,7 @@ const Home = () => {
           </span>
 
           {/* Title */}
-          <h1 className="font-header text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mb-4 leading-tight animate-slide-up">
+          <h1 className="font-header text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mb-4 leading-normal animate-slide-up">
             {t('Japan Trip', '日本之旅', '日本旅行')}
           </h1>
 
@@ -126,64 +126,37 @@ const Home = () => {
               <i className="fa-solid fa-map mr-2"></i>
               {t('View Plan', '查看计划', '旅程を見る')}
             </Link>
-            <Link to="/attractions" className="btn-secondary">
-              <i className="fa-solid fa-camera mr-2 text-purple-500"></i>
-              {t('See Attractions', '查看景点', '観光地を見る')}
-            </Link>
           </div>
         </div>
       </div>
 
       {/* Quick Links Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-12 relative z-20 pb-20 md:pb-24">
-        {/* Featured: Budget Splitter */}
-        <div className="mb-8 animate-fade-in">
-          <Link to="/split-expenses" className="block group">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 p-1 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]">
-              <div className="relative bg-white rounded-xl p-6 md:p-8">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-xl">
-                      <i className="fa-solid fa-calculator text-3xl text-emerald-600"></i>
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <h3 className="font-header text-2xl font-bold text-slate-800">
-                          {t('Budget Splitter', '费用分摊器', '割り勘')}
-                        </h3>
-                        <span className="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded-full animate-pulse">
-                          {t('NEW', '新', 'NEW')}
-                        </span>
-                      </div>
-                      <p className="text-slate-600 text-sm">
-                        {t('Track & split expenses with your group', '与团队追踪和分摊费用', 'グループの支出を記録して割り勘')}
-                      </p>
-                    </div>
-                  </div>
-                  <i className="fa-solid fa-arrow-right text-2xl text-emerald-600 group-hover:translate-x-2 transition-transform"></i>
-                </div>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  <span className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-semibold">
-                    {t('Auto Split', '自动分摊', '自動分割')}
-                  </span>
-                  <span className="px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-xs font-semibold">
-                    {t('Multi-Currency', '多货币', '複数通貨')}
-                  </span>
-                  <span className="px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs font-semibold">
-                    {t('Offline', '离线', 'オフライン')}
-                  </span>
-                  <span className="px-3 py-1 bg-pink-50 text-pink-700 rounded-full text-xs font-semibold">
-                    {t('10 Members', '10位成员', '10人')}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Budget Splitter - First in grid */}
+          <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <Link to="/split-expenses" className="block group">
+              <div className="glass-card group cursor-pointer hover:border-emerald-300 min-h-[160px] flex flex-col">
+                <div className="p-4 bg-emerald-100 rounded-xl mb-4 shadow-inner group-hover:scale-110 transition-transform duration-300 w-fit">
+                  <i className="fa-solid fa-calculator text-emerald-600 text-3xl"></i>
+                </div>
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="font-header text-xl font-bold text-slate-800">
+                    {t('Budget Splitter', '费用分摊器', '割り勘')}
+                  </h3>
+                  <span className="px-2 py-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full">
+                    {t('NEW', '新', 'NEW')}
+                  </span>
+                </div>
+                <p className="text-sm text-slate-600 flex-grow">
+                  {t('Track & split expenses with your group', '与团队追踪和分摊费用', 'グループの支出を記録して割り勘')}
+                </p>
+              </div>
+            </Link>
+          </div>
+
           {quickLinks.map((link, index) => (
-            <div key={link.to} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 0.1}s` }}>
+            <div key={link.to} className="animate-fade-in" style={{ animationDelay: `${(index + 2) * 0.1}s` }}>
               <QuickLinkCard {...link} />
             </div>
           ))}

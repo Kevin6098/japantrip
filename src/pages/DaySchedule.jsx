@@ -222,6 +222,13 @@ const DaySchedule = () => {
           {dayData.date} {dayData.isHoliday && t('(Holiday)', '(假日)', '(祝日)')}
         </p>
         <p className="text-slate-500 text-sm mt-2">📍 {dayData.location}</p>
+        <Link
+          to="/budget"
+          className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-lg transition-colors text-sm font-semibold"
+        >
+          <i className="fa-solid fa-wallet"></i>
+          {t('View Budget', '查看预算', '予算を見る')}
+        </Link>
       </div>
 
       {/* Schedule Details */}

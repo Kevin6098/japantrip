@@ -1369,40 +1369,42 @@ const BudgetSplitter = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-4">
-                <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 lg:col-span-1 min-w-[160px]">
-                  <label className="block text-sm font-semibold text-slate-700 mb-1">
-                    {t('Sum up in', '汇总货币', '集計通貨')}
-                  </label>
-                  <select
-                    value={totalBaseCurrency}
-                    onChange={(e) => setTotalBaseCurrency(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
-                  >
-                    <option value="JPY">JPY</option>
-                    <option value="MYR">MYR</option>
-                    <option value="SGD">SGD</option>
-                  </select>
-                </div>
+              <div className="space-y-4 mb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 flex-shrink-0">
+                    <label className="block text-sm font-semibold text-slate-700 mb-1">
+                      {t('Sum up in', '汇总货币', '集計通貨')}
+                    </label>
+                    <select
+                      value={totalBaseCurrency}
+                      onChange={(e) => setTotalBaseCurrency(e.target.value)}
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+                    >
+                      <option value="JPY">JPY</option>
+                      <option value="MYR">MYR</option>
+                      <option value="SGD">SGD</option>
+                    </select>
+                  </div>
 
-                <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 lg:col-span-4">
-                  <label className="block text-sm font-semibold text-slate-700 mb-1">
-                    {t('Exchange rate', '汇率', '為替レート')}
-                  </label>
-                  <select
-                    value={rateMode}
-                    onChange={(e) => setRateMode(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
-                  >
-                    <option value="manual">{t('Manual (host sets)', '手动（主持人设置）', '手動（設定）')}</option>
-                    <option value="current">{t('Current rate (fetch)', '当前汇率（获取）', '最新（取得）')}</option>
-                  </select>
-                  <div className="mt-2 text-xs text-slate-600">
-                    {t('We use: 1 CUR = X MYR', '使用：1 货币 = X 马币', '使用：1 通貨 = X MYR')}
+                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 flex-shrink-0">
+                    <label className="block text-sm font-semibold text-slate-700 mb-1">
+                      {t('Exchange rate', '汇率', '為替レート')}
+                    </label>
+                    <select
+                      value={rateMode}
+                      onChange={(e) => setRateMode(e.target.value)}
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
+                    >
+                      <option value="manual">{t('Manual (host sets)', '手动（主持人设置）', '手動（設定）')}</option>
+                      <option value="current">{t('Current rate (fetch)', '当前汇率（获取）', '最新（取得）')}</option>
+                    </select>
+                    <div className="mt-2 text-xs text-slate-600">
+                      {t('We use: 1 CUR = X MYR', '使用：1 货币 = X 马币', '使用：1 通貨 = X MYR')}
+                    </div>
                   </div>
                 </div>
 
-                <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 lg:col-span-7">
+                <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                   <label className="block text-sm font-semibold text-slate-700 mb-1">
                     {t('Rates (to MYR)', '汇率（换算到 MYR）', 'レート（MYR換算）')}
                   </label>

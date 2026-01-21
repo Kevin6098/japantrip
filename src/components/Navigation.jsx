@@ -30,12 +30,12 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center group">
-              <span className="text-pink-500 text-2xl mr-2 group-hover:scale-110 transition-transform">
+          <div className="flex items-center min-w-0">
+            <Link to="/" className="flex items-center group min-w-0">
+              <span className="text-pink-500 text-2xl mr-2 group-hover:scale-110 transition-transform flex-shrink-0">
                 🌸
               </span>
-              <span className="font-header text-xl font-bold text-slate-800 tracking-tight">
+              <span className="font-header text-xl font-bold text-slate-800 tracking-tight whitespace-nowrap">
                 {t('Japan Trip', '日本之旅', '日本旅行')}
               </span>
             </Link>
