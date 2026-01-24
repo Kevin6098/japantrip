@@ -244,6 +244,89 @@ export const getScheduleData = (t) => [
   {
     day: 5,
     date: 'Sun, Mar 22',
+    title: t('USJ', '环球影城', 'USJ'),
+    location: 'Osaka',
+    color: 'sky',
+    items: [
+      { 
+        time: '07:30', 
+        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) (Early!)', '从Airbnb出发 (生野区桃谷1-12-11) (早起!)', 'Airbnbから出発（生野区桃谷1-12-11）（早起き！）'),
+        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Nishikujo → JR Yumesaki Line to Universal City Station (~20 mins train) → Walk 5 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至西九条 → JR梦咲线至环球影城站 (~20分钟电车) → 步行5分钟', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で西九条へ→JRゆめ咲線でユニバーサルシティ駅へ（電車約20分）→徒歩5分')
+      },
+      { 
+        time: '08:00', 
+        text: t('Arrive at USJ', '抵达环球影城', 'USJ到着'), 
+        highlight: true,
+        link: '/attractions/usj',
+        mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Universal+Studios+Japan+Osaka',
+        prices: [
+          { label: t('Entry', '门票', '入場券'), value: '~¥9,500' },
+          { label: t('Express 7', '快通7', 'エクスプレス7'), value: '~¥18,000+', highlight: true }
+        ]
+      },
+      { 
+        time: '09:30', 
+        text: t('Super Nintendo World™ (No re-entry)', '超级任天堂世界™ (不可再入场)', 'スーパー・ニンテンドー・ワールド™（再入場不可）'), 
+        highlight: true,
+        express: true,
+        link: '/attractions/usj'
+      },
+      { 
+        time: '09:30', 
+        text: t('Mario Kart: Koopa\'s Challenge™', '马力欧卡丁车: 库巴的挑战书™', 'マリオカート ~クッパの挑戦状~™'), 
+        highlight: true,
+        express: true,
+        link: '/attractions/usj'
+      },
+      { 
+        time: '10:00', 
+        text: t('Yoshi\'s Adventure™', '耀西的冒险™', 'ヨッシー・アドベンチャー™'), 
+        highlight: true,
+        express: true,
+        link: '/attractions/usj'
+      },
+      { 
+        time: '10:30', 
+        text: t('Donkey Kong\'s Crazy Trolley', '大金刚的疯狂手推车', 'ドンキーコングのクレイジー・トロッコ'), 
+        highlight: true,
+        express: true,
+        link: '/attractions/usj'
+      },
+      { 
+        time: '11:00', 
+        text: t('Free Time / Other Attractions', '自由时间 / 其他游乐设施', '自由時間 / その他のアトラクション'),
+        transit: t('Jurassic Park The Ride, Harry Potter and the Forbidden Journey™ (Express - No time specified)', '侏罗纪公园乘船游, 哈利波特禁忌之旅™ (快通 - 无指定时间)', 'ジュラシック・パーク・ザ・ライド、ハリー・ポッター・アンド・ザ・フォービドゥン・ジャーニー™（エクスプレス - 時間指定なし）')
+      },
+      { 
+        time: '12:00', 
+        text: t('Lunch Break', '午餐休息', 'ランチ休憩')
+      },
+      { 
+        time: '13:00', 
+        text: t('Continue Exploring USJ', '继续探索环球影城', 'USJ探索続行'),
+        transit: t('Selectable Plus One: The Flying Dinosaur OR Minion Hacha Mecha Ride (Express - Choose one)', '可选加一: 飞天翼龙 或 小黄人调皮闹剧乘车游 (快通 - 二选一)', '選べるプラスワン: ザ・フライング・ダイナソー または ミニオン・ハチャメチャ・ライド（エクスプレス - いずれか1つ）')
+      },
+      { 
+        time: '17:30', 
+        text: t('Flight of the Hippogriff™', '鹰马的飞行™', 'フライト・オブ・ザ・ヒッポグリフ™'), 
+        highlight: true,
+        express: true,
+        link: '/attractions/usj'
+      },
+      { 
+        time: '18:00', 
+        text: t('Evening Activities / Dinner in Park', '晚间活动 / 园区内晚餐', '夕方の活動 / 園内ディナー')
+      },
+      { 
+        time: '20:00', 
+        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) / Dinner', '返回Airbnb (生野区桃谷1-12-11) / 晚餐', 'Airbnbに戻る（生野区桃谷1-12-11）/ 夕食'),
+        transit: t('Walk 5 mins to Universal City Station → JR Yumesaki Line to Nishikujo → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行5分钟至环球影城站 → JR梦咲线至西九条 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟至桃谷1-12-11', 'ユニバーサルシティ駅まで徒歩5分→JRゆめ咲線で西九条へ→JR大阪環状線で桃谷駅へ（電車約20分）→桃谷1-12-11まで徒歩2分')
+      },
+    ],
+  },
+  {
+    day: 6,
+    date: 'Mon, Mar 23',
     title: t('Kobe Day Trip', '神户一日游', '神戸日帰り'),
     location: 'Kobe',
     color: 'red',
@@ -318,36 +401,6 @@ export const getScheduleData = (t) => [
         time: '20:00', 
         text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)', 'Airbnbに戻る（生野区桃谷1-12-11）'),
         transit: t('Walk 10 mins to Sannomiya Station → JR Kobe Line to Osaka Station (~15 mins train) → JR Osaka Loop Line to Momodani Station (~15 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行10分钟至三宫站 → JR神户线至大阪站 (~15分钟电车) → JR大阪环状线至桃谷站 (~15分钟电车) → 步行2分钟至桃谷1-12-11', '三宮駅まで徒歩10分→JR神戸線で大阪駅へ（電車約15分）→JR大阪環状線で桃谷駅へ（電車約15分）→桃谷1-12-11まで徒歩2分')
-      },
-    ],
-  },
-  {
-    day: 6,
-    date: 'Mon, Mar 23',
-    title: t('USJ', '环球影城', 'USJ'),
-    location: 'Osaka',
-    color: 'sky',
-    items: [
-      { 
-        time: '07:30', 
-        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) (Early!)', '从Airbnb出发 (生野区桃谷1-12-11) (早起!)', 'Airbnbから出発（生野区桃谷1-12-11）（早起き！）'),
-        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Nishikujo → JR Yumesaki Line to Universal City Station (~20 mins train) → Walk 5 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至西九条 → JR梦咲线至环球影城站 (~20分钟电车) → 步行5分钟', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で西九条へ→JRゆめ咲線でユニバーサルシティ駅へ（電車約20分）→徒歩5分')
-      },
-      { 
-        time: '08:00', 
-        text: t('USJ All Day', '环球影城全天', 'USJ終日'), 
-        highlight: true,
-        link: '/attractions/usj',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Universal+Studios+Japan+Osaka',
-        prices: [
-          { label: t('Entry', '门票', '入場券'), value: '~¥9,500' },
-          { label: t('Express 7', '快通7', 'エクスプレス7'), value: '~¥18,000+', highlight: true }
-        ]
-      },
-      { 
-        time: '20:00', 
-        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) / Dinner', '返回Airbnb (生野区桃谷1-12-11) / 晚餐', 'Airbnbに戻る（生野区桃谷1-12-11）/ 夕食'),
-        transit: t('Walk 5 mins to Universal City Station → JR Yumesaki Line to Nishikujo → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行5分钟至环球影城站 → JR梦咲线至西九条 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟至桃谷1-12-11', 'ユニバーサルシティ駅まで徒歩5分→JRゆめ咲線で西九条へ→JR大阪環状線で桃谷駅へ（電車約20分）→桃谷1-12-11まで徒歩2分')
       },
     ],
   },

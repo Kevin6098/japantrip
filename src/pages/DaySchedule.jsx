@@ -102,6 +102,12 @@ const DaySchedule = () => {
                   {item.price}
                 </span>
               )}
+              {item.express && (
+                <span className="inline-block text-xs font-semibold text-yellow-800 bg-yellow-100 px-3 py-1 rounded-full border border-yellow-200">
+                  <i className="fa-solid fa-bolt mr-1"></i>
+                  {t('Express', '快通', 'エクスプレス')}
+                </span>
+              )}
               {item.mapLink && (
                 <a
                   href={item.mapLink}

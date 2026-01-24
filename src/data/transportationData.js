@@ -86,7 +86,25 @@ export const transportationData = [
   },
   {
     day: 5,
-    title: { en: 'Kobe Day Trip (Mar 22)', zh: '神户一日游 (3月22日)', ja: '神戸日帰り（3月22日）' },
+    title: { en: 'USJ (Mar 22)', zh: '环球影城 (3月22日)', ja: 'USJ（3月22日）' },
+    color: 'sky',
+    transportation: [
+      { en: 'Momodani → Nishikujo → Universal City (JR Loop/Yumesaki):', zh: '桃谷 → 西九条 → 环球影城 (JR环状/梦咲):', ja: '桃谷→西九条→ユニバーサルシティ（JR大阪環状線／JRゆめ咲線）：', cost: '¥200' },
+      { en: 'Universal City → Nishikujo → Momodani (JR Yumesaki/Loop):', zh: '环球影城 → 西九条 → 桃谷 (JR梦咲/环状):', ja: 'ユニバーサルシティ→西九条→桃谷（JRゆめ咲線／JR大阪環状線）：', cost: '¥200' },
+    ],
+    totalCost: '¥400',
+    walking: [
+      { en: 'To station:', zh: '至车站:', ja: '駅まで：', time: '2 mins' },
+      { en: 'Universal City Station → USJ:', zh: '环球影城站 → USJ:', ja: 'ユニバーサルシティ駅→USJ：', time: '5 mins' },
+      { en: 'USJ → Universal City Station:', zh: 'USJ → 环球影城站:', ja: 'USJ→ユニバーサルシティ駅：', time: '5 mins' },
+      { en: 'From station:', zh: '从车站:', ja: '駅から：', time: '2 mins' },
+      { en: 'USJ internal walking (all day):', zh: 'USJ内部步行 (全天):', ja: 'USJ園内の徒歩（終日）：', time: '~120 mins' },
+    ],
+    totalWalking: '~134 mins',
+  },
+  {
+    day: 6,
+    title: { en: 'Kobe Day Trip (Mar 23)', zh: '神户一日游 (3月23日)', ja: '神戸日帰り（3月23日）' },
     color: 'red',
     transportation: [
       { en: 'Momodani → Osaka → Sannomiya (JR Loop/Kobe Line):', zh: '桃谷 → 大阪 → 三宫 (JR环状/神户线):', ja: '桃谷→大阪→三宮（JR大阪環状線／JR神戸線）：', cost: '¥610' },
@@ -113,24 +131,6 @@ export const transportationData = [
       { en: 'From station:', zh: '从车站:', ja: '駅から：', time: '2 mins' },
     ],
     totalWalking: '~92 mins',
-  },
-  {
-    day: 6,
-    title: { en: 'USJ (Mar 23)', zh: '环球影城 (3月23日)', ja: 'USJ（3月23日）' },
-    color: 'sky',
-    transportation: [
-      { en: 'Momodani → Nishikujo → Universal City (JR Loop/Yumesaki):', zh: '桃谷 → 西九条 → 环球影城 (JR环状/梦咲):', ja: '桃谷→西九条→ユニバーサルシティ（JR大阪環状線／JRゆめ咲線）：', cost: '¥200' },
-      { en: 'Universal City → Nishikujo → Momodani (JR Yumesaki/Loop):', zh: '环球影城 → 西九条 → 桃谷 (JR梦咲/环状):', ja: 'ユニバーサルシティ→西九条→桃谷（JRゆめ咲線／JR大阪環状線）：', cost: '¥200' },
-    ],
-    totalCost: '¥400',
-    walking: [
-      { en: 'To station:', zh: '至车站:', ja: '駅まで：', time: '2 mins' },
-      { en: 'Universal City Station → USJ:', zh: '环球影城站 → USJ:', ja: 'ユニバーサルシティ駅→USJ：', time: '5 mins' },
-      { en: 'USJ → Universal City Station:', zh: 'USJ → 环球影城站:', ja: 'USJ→ユニバーサルシティ駅：', time: '5 mins' },
-      { en: 'From station:', zh: '从车站:', ja: '駅から：', time: '2 mins' },
-      { en: 'USJ internal walking (all day):', zh: 'USJ内部步行 (全天):', ja: 'USJ園内の徒歩（終日）：', time: '~120 mins' },
-    ],
-    totalWalking: '~134 mins',
   },
   {
     day: 7,

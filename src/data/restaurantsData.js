@@ -339,8 +339,8 @@ export const restaurantsData = {
     price: '¥6,000-¥7,000',
     hours: { en: 'Hours Vary', zh: '营业时间不定', ja: '営業時間不定' },
     schedule: {
-      day: 5,
-      date: { en: 'Sun, Mar 22', zh: '3月22日 星期日', ja: '3月22日 星期日' },
+      day: 6,
+      date: { en: 'Mon, Mar 23', zh: '3月23日 星期一', ja: '3月23日 月曜日' },
       time: '12:00',
       meal: { en: 'Lunch', zh: '午餐', ja: 'ランチ' },
     },
@@ -382,8 +382,8 @@ export const restaurantsData = {
     price: '¥1,100-¥1,880',
     hours: { en: '11:00 AM - 10:00 PM', zh: '11:00 AM - 10:00 PM', ja: '11:00 AM - 10:00 PM' },
     schedule: {
-      day: 5,
-      date: { en: 'Sun, Mar 22', zh: '3月22日 星期日', ja: '3月22日 星期日' },
+      day: 6,
+      date: { en: 'Mon, Mar 23', zh: '3月23日 星期一', ja: '3月23日 月曜日' },
       time: '17:30',
       meal: { en: 'Dinner', zh: '晚餐', ja: 'ディナー' },
     },
