@@ -12,7 +12,7 @@ const Navigation = () => {
     { path: '/schedule', label: { en: 'Itinerary', zh: '行程', ja: '旅程' }, icon: 'fa-calendar-days' },
     { path: '/budget', label: { en: 'Budget', zh: '预算', ja: '予算' }, icon: 'fa-yen-sign' },
     { path: '/transportation-budget', label: { en: 'Transportation', zh: '交通', ja: '交通' }, icon: 'fa-train' },
-    { path: '/packing', label: { en: 'Packing', zh: '清单', ja: '持ち物' }, icon: 'fa-suitcase' },
+    { path: '/packing', label: { en: 'Packing', zh: '打包', ja: '持ち物' }, icon: 'fa-suitcase' },
     { path: '/attractions', label: { en: 'Attractions', zh: '景点', ja: '観光地' }, icon: 'fa-camera' },
     { path: '/food', label: { en: 'Food', zh: '美食', ja: 'グルメ' }, icon: 'fa-utensils' },
     { path: '/hotels', label: { en: 'Hotels', zh: '住宿', ja: 'ホテル' }, icon: 'fa-hotel' },
