@@ -49,12 +49,13 @@ const Checklist = () => {
       id: 'umeda-sky-building-tickets',
       title: t('Umeda Sky Building Observation Deck Tickets', '梅田蓝天大厦展望台门票', '梅田スカイビル 空中庭園展望台チケット'),
       details: t(
-        'Day 7, Mar 24 - Floating Garden Observatory for 11 people, ~¥1,500 per person',
-        '第7天, 3月24日 - 空中庭园展望台11人, 每人约¥1,500',
-        '7日目・3/24：11名分、1人あたり約¥1,500'
+        'Day 7, Mar 24 - Floating Garden Observatory for 11 people, ~¥1,500 per person | Purchased from Agoda',
+        '第7天, 3月24日 - 空中庭园展望台11人, 每人约¥1,500 | 从Agoda购买',
+        '7日目・3/24：11名分、1人あたり約¥1,500 | Agodaで購入'
       ),
-      link: '/attractions/umeda-sky-building',
-      type: 'attraction'
+      link: 'https://www.agoda.com/',
+      type: 'attraction',
+      note: t('Purchased from Agoda', '从Agoda购买', 'Agodaで購入')
     },
     {
       id: 'osaka-aquarium-tickets',
@@ -66,6 +67,22 @@ const Checklist = () => {
       ),
       link: '/attractions/osaka-aquarium',
       type: 'attraction'
+    },
+    {
+      id: 'osaka-amazing-pass',
+      title: t('Osaka Amazing Pass (1 Day)', '大阪周游卡 (1日)', '大阪周遊パス（1日）'),
+      details: t(
+        'Day 10, Mar 27 - 1-Day Pass for 9 people, RM101 per person (RM909 total) | Purchased from Klook',
+        '第10天, 3月27日 - 1日周游卡9人, 每人RM101 (总计RM909) | 从Klook购买',
+        '10日目・3/27：1日パス9名分、1人あたりRM101（合計RM909）| Klookで購入'
+      ),
+      link: 'https://www.klook.com/',
+      type: 'attraction',
+      note: t(
+        'Covers: Osaka Metro, Municipal Bus, Osaka Castle Tower, Tsutenkaku Observation Deck, and 40+ attractions. JR lines and buses outside Osaka City are NOT covered.',
+        '包含: 大阪地铁、市营巴士、大阪城天守阁、通天阁展望台及40+景点。JR线和市外巴士不包含。',
+        '含まれるもの: 大阪メトロ・市バス・大阪城天守閣・通天閣展望台・40以上の観光スポット。JR線・市外バスは含まれません。'
+      )
     }
   ]
 
