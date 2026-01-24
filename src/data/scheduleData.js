@@ -481,73 +481,87 @@ export const getScheduleData = (t) => [
   {
     day: 8,
     date: 'Wed, Mar 25',
-    title: t('Kyoto (Efficient Route)', '京都 (高效路线)', '京都（効率ルート）'),
+    title: t('Kyoto', '京都', '京都'),
     location: 'Kyoto',
     color: 'emerald',
     items: [
       { 
-        time: '07:00', 
-        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward) (Early!)', '从Airbnb出发 (生野区桃谷1-12-11) (早起!)', 'Airbnbから出発（生野区桃谷1-12-11）（早起き！）'),
-        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Kyobashi → Keihan Line to Fushimi-Inari Station (~50 mins train) → Walk 5 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至京桥 → 京阪线至伏见稻荷站 (~50分钟电车) → 步行5分钟', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で京橋へ→京阪線で伏見稲荷駅へ（電車約50分）→徒歩5分')
+        time: '06:00', 
+        text: t('Leave Airbnb (Osaka)', '离开Airbnb (大阪)', 'Airbnb出発（大阪）'),
+        transit: t('Walk → Momodani Station (JR) → JR Osaka Loop Line → Kyobashi Station (~20 min) → Keihan Main Line → Fushimi-Inari Station (~40–45 min)', '步行 → 桃谷站 (JR) → JR大阪环状线 → 京桥站 (~20分钟) → 京阪本线 → 伏见稻荷站 (~40–45分钟)', '徒歩 → 桃谷駅（JR）→ JR大阪環状線 → 京橋駅（約20分）→ 京阪本線 → 伏見稲荷駅（約40〜45分）')
       },
       { 
-        time: '08:00', 
+        time: '07:20', 
         text: t('Fushimi Inari Taisha', '伏见稻荷大社', '伏見稲荷大社'), 
         highlight: true,
         link: '/attractions/fushimi-inari',
         mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Fushimi+Inari+Taisha+Kyoto',
         price: 'Free',
-        transit: t('South start: Beat the crowds!', '南端开始: 避开人潮!', '南口スタート：混雑を避ける！')
+        transit: t('07:20–08:30. Walk first torii gates, take photos. No mountain hike. Still early enough to avoid huge crowds.', '07:20–08:30。步行穿过鸟居、拍照。不爬山。仍足够早避开人潮。', '07:20〜08:30。鳥居を歩く、写真撮影。山登りなし。混雑を避けるにはまだ早い。')
       },
       { 
-        time: '11:00', 
+        time: '08:30', 
+        text: t('Fushimi Inari → Kiyomizu Area', '伏见稻荷 → 清水区域', '伏見稲荷 → 清水エリア'),
+        transit: t('Keihan Line → Kiyomizu-Gojo Station → Walk to bus stop → Bus 206 or 100 → Gojozaka / Kiyomizu-michi → Walk 10 min gentle uphill', '京阪线 → 清水五条站 → 步行至巴士站 → 巴士206或100 → 五条坂/清水道 → 步行10分钟缓上坡', '京阪線 → 清水五条駅 → バス停まで徒歩 → バス206または100 → 五条坂/清水道 → 徒歩10分ゆるやか上り')
+      },
+      { 
+        time: '09:30', 
         text: t('Kiyomizu-dera Temple', '清水寺', '清水寺'), 
         highlight: true,
         link: '/attractions/kiyomizu',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Fushimi+Inari+Taisha+Kyoto&destination=Kiyomizu-dera+Temple+Kyoto&travelmode=transit',
         price: '¥400',
-        transit: t('Walk 5 mins to Fushimi-Inari Station → Keihan Line to Kiyomizu-Gojo Station (~15 mins train) → Walk 15 mins uphill', '步行5分钟至伏见稻荷站 → 京阪线至清水五条站 (~15分钟电车) → 步行15分钟上坡', '伏見稲荷駅まで徒歩5分→京阪線で清水五条駅へ（電車約15分）→上り坂を徒歩15分')
+        transit: t('09:30–10:45. Entry ¥400. Great morning photos.', '09:30–10:45。门票¥400。早晨拍照佳。', '09:30〜10:45。入場¥400。朝の写真に最適。')
       },
       { 
-        time: '13:00', 
-        text: t('Ninenzaka & Sannenzaka', '二年坂 & 三年坂', '二年坂・三年坂'), 
+        time: '10:45', 
+        text: t('Ninenzaka & Sannenzaka (Short & Sweet)', '二年坂 & 三年坂 (短而精)', '二年坂・三年坂（短くて充実）'), 
         highlight: true,
         link: '/attractions/ninenzaka-sannenzaka',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kiyomizu-dera+Temple+Kyoto&destination=Ninenzaka+Kyoto&travelmode=walking',
-        price: 'Free',
-        transit: t('Walk 5 mins downhill from Kiyomizu-dera (Energy saving!) & Lunch', '从清水寺步行5分钟下坡 (省力!) & 午餐', '清水寺から下り坂を徒歩5分（体力温存！）＆ランチ')
+        price: '¥1,000–¥1,500',
+        transit: t('10:45–12:00. 1 hour only. Walk the street, photos, snacks/souvenirs, quick lunch (no heavy sit-down). Lunch budget: ¥1,000–¥1,500 per person. Avoids shopping fatigue.', '10:45–12:00。仅1小时。逛街、拍照、小吃/纪念品、轻食 (无正式餐厅)。午餐预算: 每人¥1,000–¥1,500。避免购物疲劳。', '10:45〜12:00。1時間のみ。散策、写真、軽食/お土産、軽いランチ。予算¥1,000〜¥1,500/人。')
       },
       { 
-        time: '16:00', 
+        time: '12:00', 
         text: t('Yasaka Shrine', '八坂神社', '八坂神社'), 
         highlight: true,
         link: '/attractions/yasaka',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Ninenzaka+Kyoto&destination=Yasaka+Shrine+Kyoto&travelmode=walking',
         price: 'Free',
-        transit: t('Walk 10 mins from Ninenzaka', '从二年坂步行10分钟', '二年坂から徒歩10分')
+        transit: t('12:00–12:30. Rest + toilet break. Very easy walking.', '12:00–12:30。休息 + 洗手间。步行轻松。', '12:00〜12:30。休憩＋トイレ。とても楽な徒歩。')
       },
       { 
-        time: '17:00', 
-        text: t('Gion District', '祇园区', '祇園地区'), 
+        time: '12:30', 
+        text: t('Gion District Walk', '祇园散步', '祇園散策'), 
         highlight: true,
         link: '/attractions/gion',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Yasaka+Shrine+Kyoto&destination=Gion+District+Kyoto&travelmode=walking',
         price: 'Free',
-        transit: t('Walk 5 mins from Yasaka Shrine (Atmospheric late afternoon walk)', '从八坂神社步行5分钟 (傍晚漫步体验氛围)', '八坂神社から徒歩5分（雰囲気のある午後の散歩）')
+        transit: t('12:30–14:30. Hanamikoji Street, traditional houses, matcha cafés. Slow walking, very flat.', '12:30–14:30。花见小路、传统建筑、抹茶咖啡。慢走，很平坦。', '12:30〜14:30。花見小路、伝統的家屋、抹茶カフェ。ゆっくり歩く、平坦。')
       },
       { 
-        time: '17:30', 
-        text: t('Kamogawa River', '鸭川', '鴨川'), 
+        time: '14:30', 
+        text: t('Kamogawa River (Rest Time)', '鸭川 (休息时间)', '鴨川（休息）'), 
         highlight: true,
         link: '/attractions/kamogawa',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Gion+District+Kyoto&destination=Kamogawa+River+Kyoto&travelmode=walking',
         note: t('(Sunset)', '(日落)', '（夕日）'),
-        transit: t('Walk 3 mins from Gion (Relax by the river, romantic evening)', '从祇园步行3分钟 (河边放松, 浪漫夜晚)', '祇園から徒歩3分（川辺でリラックス、ロマンチックな夕方）')
+        transit: t('14:30–16:00. Sit down, coffee / dessert. Let parents relax.', '14:30–16:00。坐下、咖啡/甜点。让长辈休息。', '14:30〜16:00。座って、コーヒー/デザート。ゆっくり休む。')
       },
       { 
-        time: '19:00', 
-        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)', 'Airbnbに戻る（生野区桃谷1-12-11）'),
-        transit: t('Walk 5 mins to Gion-Shijo Station → Keihan Line to Kyobashi → JR Osaka Loop Line to Momodani Station (~50 mins train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行5分钟至祇园四条站 → 京阪线至京桥 → JR大阪环状线至桃谷站 (~50分钟电车) → 步行2分钟至桃谷1-12-11', '祇園四条駅まで徒歩5分→京阪線で京橋へ→JR大阪環状線で桃谷駅へ（電車約50分）→桃谷1-12-11まで徒歩2分')
+        time: '17:30', 
+        text: t('Unagi Dinner at Gion Unagi Kawato', '祇园うなぎ 川と (鳗鱼晚餐)', '祇園うなぎ 川と（うなぎディナー）'), 
+        highlight: true,
+        link: '/food/gion-unagi-kawato',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Gion+Unagi+Kawato+Kyoto',
+        price: '¥5,000–¥6,000',
+        transit: t('17:30–19:00. ¥5,000–¥6,000 per person. 1–1.5 hours. MUST reserve or split into 2 groups (10 people).', '17:30–19:00。每人¥5,000–¥6,000。1–1.5小时。必须预订或分2组 (10人)。', '17:30〜19:00。1人¥5,000〜¥6,000。1〜1.5時間。要予約または2グループに分ける（10人）。')
+      },
+      { 
+        time: '19:15', 
+        text: t('Return to Osaka', '返回大阪', '大阪へ戻る'),
+        transit: t('Walk → Gion-Shijo Station → Keihan Line → Kyobashi (~45–50 min) → JR Loop Line → Momodani (~20 min). Back 20:45–21:15. Good timing, not too late.', '步行 → 祇园四条站 → 京阪线 → 京桥 (~45–50分钟) → JR环状线 → 桃谷 (~20分钟)。20:45–21:15抵大阪。时间合适，不会太晚。', '徒歩 → 祇園四条駅 → 京阪線 → 京橋（約45〜50分）→ JR環状線 → 桃谷（約20分）。20:45〜21:15着。程よい時間。')
       },
     ],
   },
@@ -635,74 +649,82 @@ export const getScheduleData = (t) => [
     title: t('Osaka City Highlights', '大阪城市精华', '大阪市内観光'),
     location: 'Osaka',
     color: 'orange',
+    note: t('Osaka Amazing Pass covers: Metro + city buses, Osaka Castle Tower, Tsutenkaku Observation Deck, and many other attractions', '大阪周游卡包含: 地铁 + 城市巴士, 大阪城天守阁, 通天阁展望台, 以及许多其他景点', '大阪周遊パスに含まれるもの: 地下鉄＋市バス、大阪城天守閣、通天閣展望台、その他多くの観光スポット'),
     items: [
       { 
         time: '06:00', 
-        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)', 'Airbnbから出発（生野区桃谷1-12-11）'),
-        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Shin-Osaka → Midosuji Line to Minami-Ibaraki → Bus to Katsuoji (~1.5 hours total)', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至新大阪 → 御堂筋线至南茨木 → 巴士至勝尾寺 (~1.5小时总计)', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で新大阪へ→御堂筋線で南茨木へ→バスで勝尾寺へ（合計約1.5時間）')
-      },
-      { 
-        time: '07:00', 
-        text: t('Katsuoji Temple (勝尾寺)', '勝尾寺', '勝尾寺'), 
-        highlight: true,
-        link: '/attractions/katsuoji',
-        mapLink: 'https://www.google.com/maps/search/?api=1&query=Katsuoji+Temple+Osaka',
-        price: '¥500',
-        transit: t('Arrive at 7am - Famous temple with thousands of daruma dolls', '早上7点到达 - 以数千个达摩娃娃而闻名的寺庙', '午前7時到着 - 数千個のだるまで有名な寺院')
+        text: t('Leave Airbnb → Katsuōji Temple', '离开Airbnb → 勝尾寺', 'Airbnb出発 → 勝尾寺'),
+        transit: t('Walk → Momodani Station → JR Osaka Loop Line → Shin-Osaka → Midosuji Line → Minami-Ibaraki → Hankyu Bus → Katsuōji (~1.5 hours). Note: Bus NOT covered by Amazing Pass', '步行 → 桃谷站 → JR大阪环状线 → 新大阪 → 御堂筋线 → 南茨木 → 阪急巴士 → 勝尾寺 (~1.5小时)。注意: 巴士不包含在周游卡内', '徒歩 → 桃谷駅 → JR大阪環状線 → 新大阪 → 御堂筋線 → 南茨木 → 阪急バス → 勝尾寺（約1.5時間）。注意: バスは周遊パスに含まれません')
       },
       { 
         time: '09:00', 
-        text: t('Depart from Katsuoji', '从勝尾寺出发', '勝尾寺から出発'),
-        transit: t('Bus to Minami-Ibaraki → Midosuji Line to Shin-Osaka → JR Osaka Loop Line to Morinomiya (~1.5 hours total)', '巴士至南茨木 → 御堂筋线至新大阪 → JR大阪环状线至森之宫 (~1.5小时总计)', 'バスで南茨木へ→御堂筋線で新大阪へ→JR大阪環状線で森ノ宮へ（合計約1.5時間）')
+        text: t('Katsuōji → Osaka Castle', '勝尾寺 → 大阪城', '勝尾寺 → 大阪城'), 
+        transit: t('Bus → Minami-Ibaraki → Umeda → Morinomiya → Walk (~1h 20m). Note: Bus NOT covered by Amazing Pass', '巴士 → 南茨木 → 梅田 → 森之宫 → 步行 (~1小时20分钟)。注意: 巴士不包含在周游卡内', 'バス → 南茨木 → 梅田 → 森ノ宮 → 徒歩（約1時間20分）。注意: バスは周遊パスに含まれません')
       },
       { 
         time: '10:30', 
-        text: t('Osaka Castle', '大阪城', '大阪城'), 
+        text: t('Osaka Castle Tower', '大阪城天守阁', '大阪城天守閣'), 
         highlight: true,
         link: '/attractions/osaka-castle',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Morinomiya+Station+Osaka&destination=Osaka+Castle&travelmode=walking',
-        price: 'Free',
-        transit: t('Walk 10 mins from Morinomiya Station. Conan Photo Spot & Tenshukaku (Tower ¥600)', '从森之宫站步行10分钟。柯南打卡点 & 天守阁 (登塔¥600)', '森ノ宮駅から徒歩10分。コナンフォトスポット＆天守閣（タワー¥600）')
+        price: t('FREE (Amazing Pass)', '免费 (周游卡)', '無料（周遊パス）'),
+        transit: t('Osaka Castle Tower: FREE (Amazing Pass)', '大阪城天守阁: 免费 (周游卡)', '大阪城天守閣: 無料（周遊パス）')
       },
       { 
-        time: '12:30', 
-        text: t('Kuromon Ichiba Market (Lunch)', '黑门市场 (午餐)', '黒門市場（ランチ）'), 
-        highlight: true,
-        link: '/attractions/kuromon-market',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Osaka+Castle&destination=Kuromon+Ichiba+Market+Osaka&travelmode=transit',
-        price: 'Free',
-        transit: t('Walk 10 mins to Morinomiya Station → JR Osaka Loop Line to Namba Station (~18 mins train) → Walk 5 mins. Fresh Seafood & Street Food Lunch', '步行10分钟至森之宫站 → JR大阪环状线至难波站 (~18分钟电车) → 步行5分钟。新鲜海鲜 & 街头美食午餐', '森ノ宮駅まで徒歩10分→JR大阪環状線で難波駅へ（電車約18分）→徒歩5分。新鮮な海鮮＆屋台料理ランチ')
+        time: '12:00', 
+        text: t('Osaka Castle → Kuromon Market (Lunch)', '大阪城 → 黑门市场 (午餐)', '大阪城 → 黒門市場（ランチ）'),
+        transit: t('Morinomiya → Namba → Walk (~25 min). Metro covered by Amazing Pass', '森之宫 → 难波 → 步行 (~25分钟)。地铁包含在周游卡内', '森ノ宮 → 難波 → 徒歩（約25分）。地下鉄は周遊パスに含まれる')
       },
       { 
         time: '14:00', 
+        text: t('Kuromon Market (Lunch)', '黑门市场 (午餐)', '黒門市場（ランチ）'), 
+        highlight: true,
+        link: '/attractions/kuromon-market',
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Osaka+Castle&destination=Kuromon+Ichiba+Market+Osaka&travelmode=transit',
+        price: '¥1,500-¥3,000',
+        transit: t('Street food / seafood / wagyu. Budget: ¥1,500-¥3,000 per person', '街头美食 / 海鲜 / 和牛。预算: 每人¥1,500-¥3,000', '屋台料理 / 海鮮 / 和牛。予算: 1人あたり¥1,500-¥3,000')
+      },
+      { 
+        time: '14:00', 
+        text: t('Kuromon Market → Namba Yasaka Shrine', '黑门市场 → 难波八阪神社', '黒門市場 → 難波八阪神社'),
+        transit: t('Walk 10 minutes', '步行10分钟', '徒歩10分')
+      },
+      { 
+        time: '15:00', 
         text: t('Namba Yasaka Shrine', '难波八阪神社', '難波八阪神社'), 
         highlight: true,
         link: '/attractions/namba-yasaka-shrine',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kuromon+Ichiba+Market+Osaka&destination=Namba+Yasaka+Shrine+Osaka&travelmode=walking',
         price: 'Free',
-        transit: t('Walk 5 mins from Kuromon Market. Giant Lion Head (Great for photos!)', '从黑门市场步行5分钟。巨大狮子头 (拍照绝佳!)', '黒門市場から徒歩5分。巨大な獅子頭（写真撮影に最適！）')
+        transit: t('Shrine entrance: FREE', '神社入口: 免费', '神社入場: 無料')
       },
       { 
         time: '15:00', 
-        text: t('Harukas Abeno', '阿倍野HARUKAS', 'あべのハルカス'), 
+        text: t('Namba Yasaka → Shinsekai + Tsutenkaku', '难波八阪 → 新世界 + 通天阁', '難波八阪 → 新世界＋通天閣'),
+        transit: t('Namba → Dobutsuen-mae → Walk. Metro covered by Amazing Pass', '难波 → 动物园前 → 步行。地铁包含在周游卡内', '難波 → 動物園前 → 徒歩。地下鉄は周遊パスに含まれる')
+      },
+      { 
+        time: '16:00', 
+        text: t('Tsutenkaku Observation Deck', '通天阁展望台', '通天閣展望台'), 
         highlight: true,
-        link: '/attractions/harukas-abeno',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Namba+Yasaka+Shrine+Osaka&destination=Harukas+Abeno+Osaka&travelmode=transit',
-        transit: t('Walk 5 mins to Namba Station → Midosuji Line to Tennoji Station (~5 mins train) → Walk 2 mins. Shopping at Japan\'s tallest building - Department stores & observation deck', '步行5分钟至难波站 → 御堂筋线至天王寺站 (~5分钟电车) → 步行2分钟。在日本最高建筑购物 - 百货商店 & 观景台')
+        link: '/attractions/tsutenkaku',
+        mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Tsutenkaku+Osaka',
+        price: t('FREE (Amazing Pass). Outdoor deck optional: ¥300', '免费 (周游卡)。户外展望台可选: ¥300', '無料（周遊パス）。屋外デッキオプション: ¥300'),
+        transit: t('Photos + souvenirs. Optional spending: ¥500-¥2,000 for souvenirs/gachapon', '拍照 + 纪念品。可选消费: ¥500-¥2,000 用于纪念品/扭蛋', '写真撮影＋お土産。オプション支出: お土産/ガチャポンで¥500-¥2,000')
       },
       { 
         time: '18:00', 
-        text: t('Travel to Jumbo Fishing Boat Tsurikichi Shinsekai', '前往ジャンボ釣船 つり吉 新世界店', 'ジャンボ釣船 つり吉 新世界店へ移動'),
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Harukas+Abeno+Osaka&destination=Tsurikichi+Shinsekai+Osaka&travelmode=transit',
-        transit: t('Walk 2 mins to Tennoji Station → Midosuji Line to Dobutsuen-mae Station (~5 mins train) → Walk 5 mins', '步行2分钟至天王寺站 → 御堂筋线至动物园前站 (~5分钟电车) → 步行5分钟', '天王寺駅まで徒歩2分→御堂筋線で動物園前駅へ（電車約5分）→徒歩5分')
-      },
-      { 
-        time: '18:30', 
-        text: t('Jumbo Fishing Boat Tsurikichi Shinsekai (Dinner)', 'ジャンボ釣船 つり吉 新世界店 (晚餐)', 'ジャンボ釣船 つり吉 新世界店（ディナー）'), 
+        text: t('Jumbo Fishing Boat Tsurikichi (Dinner)', 'ジャンボ釣船 つり吉 (晚餐)', 'ジャンボ釣船 つり吉（ディナー）'), 
         highlight: true,
         link: '/food/tsurikichi-shinsekai',
-        mapLink: 'https://www.google.com/maps/search/?api=1&query=Tsurikichi+Shinsekai+Osaka',
-        transit: t('Duration: ~1.5-2 hours - Interactive fishing izakaya experience. Catch your own fish and have it prepared fresh (sashimi, grilled, fried, or hot pot). Return: Walk 5 mins to Dobutsuen-mae Station → Midosuji Line to Nishikujo → JR Osaka Loop Line to Momodani Station (~20 mins train) → Walk 2 mins', '停留时间: 约1.5-2小时 - 互动钓鱼居酒屋体验。自己钓鱼并让餐厅新鲜制作 (刺身、烤制、油炸或火锅)。返回: 步行5分钟至动物园前站 → 御堂筋线至西九条 → JR大阪环状线至桃谷站 (~20分钟电车) → 步行2分钟', '所要時間：約1.5〜2時間 - インタラクティブな釣り居酒屋体験。自分で魚を釣り、新鮮に調理してもらう（刺身、焼き、揚げ、または鍋）。帰り：動物園前駅まで徒歩5分→御堂筋線で西九条へ→JR大阪環状線で桃谷駅へ（電車約20分）→徒歩2分')
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Tsutenkaku+Osaka&destination=Jumbo+Fishing+Boat+Tsurikichi+Shinsekai',
+        price: '¥3,000-¥6,000',
+        transit: t('Walk 5 minutes. Fishing + cooking fish: ¥3,000-¥6,000. Drinks: ¥500-¥1,500. Duration: ~1.5-2 hours. BIGGEST EXPENSE - For 10 people: ¥40,000-¥70,000 total', '步行5分钟。钓鱼 + 烹饪: ¥3,000-¥6,000。饮料: ¥500-¥1,500。停留时间: 约1.5-2小时。最大支出 - 10人总计: ¥40,000-¥70,000', '徒歩5分。釣り＋魚を調理: ¥3,000-¥6,000。飲み物: ¥500-¥1,500。所要時間: 約1.5〜2時間。最大の支出 - 10人で合計: ¥40,000-¥70,000')
+      },
+      { 
+        time: '20:30', 
+        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)', 'Airbnbに戻る（生野区桃谷1-12-11）'),
+        transit: t('Dobutsuen-mae → Tennoji → Momodani. Metro covered by Amazing Pass', '动物园前 → 天王寺 → 桃谷。地铁包含在周游卡内', '動物園前 → 天王寺 → 桃谷。地下鉄は周遊パスに含まれる')
       },
     ],
   },
