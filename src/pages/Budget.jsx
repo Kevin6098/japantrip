@@ -231,13 +231,20 @@ const Budget = () => {
         </div>
       </div>
 
-      <div className="flex justify-center mt-6">
+      <div className="flex flex-wrap justify-center gap-3 mt-6">
         <Link
           to="/transportation-budget"
           className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg transition-colors text-sm font-semibold"
         >
           <i className="fa-solid fa-train"></i>
-          {t('View Transportation Budget', '查看交通预算', '交通予算を見る')}
+          {t('View Transportation', '查看交通', '交通を見る')}
+        </Link>
+        <Link
+          to="/checklist"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 hover:bg-amber-200 text-amber-700 rounded-lg transition-colors text-sm font-semibold"
+        >
+          <i className="fa-solid fa-clipboard-check"></i>
+          {t('View Checklist (Tickets)', '查看清单 (门票)', 'チェックリスト（チケット）')}
         </Link>
       </div>
     </div>

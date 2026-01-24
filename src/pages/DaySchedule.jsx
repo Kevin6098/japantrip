@@ -238,6 +238,12 @@ const DaySchedule = () => {
           {dayData.date} {dayData.isHoliday && t('(Holiday)', '(假日)', '(祝日)')}
         </p>
         <p className="text-slate-500 text-sm mt-2">📍 {dayData.location}</p>
+        {dayData.note && (
+          <p className="text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 mt-3 max-w-2xl mx-auto">
+            <i className="fa-solid fa-info-circle mr-2 text-amber-600"></i>
+            {typeof dayData.note === 'string' ? dayData.note : t(dayData.note?.en || '', dayData.note?.zh || '', dayData.note?.ja || '')}
+          </p>
+        )}
         <div className="flex flex-wrap gap-3 mt-4">
           <Link
             to="/budget"

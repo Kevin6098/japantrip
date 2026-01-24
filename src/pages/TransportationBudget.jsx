@@ -70,6 +70,14 @@ const TransportationBudget = () => {
                 {t('View Schedule', '查看行程', '旅程を見る')}
               </Link>
             </div>
+            {day.note && (
+              <div className="mb-4 p-3 rounded-lg bg-amber-50 border border-amber-200">
+                <p className="text-xs text-amber-800">
+                  <i className="fa-solid fa-info-circle mr-2 text-amber-600"></i>
+                  {t(day.note.en, day.note.zh, day.note.ja)}
+                </p>
+              </div>
+            )}
             <div className="grid md:grid-cols-2 gap-4">
               {/* Transportation */}
               <div className="bg-slate-50 rounded-lg p-4">

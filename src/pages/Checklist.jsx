@@ -292,6 +292,23 @@ const Checklist = () => {
             ></div>
           </div>
         </div>
+
+        <div className="flex flex-wrap justify-center gap-3 mt-6">
+          <Link
+            to="/schedule"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 rounded-lg transition-colors text-sm font-semibold"
+          >
+            <i className="fa-solid fa-calendar-days"></i>
+            {t('View Itinerary', '查看行程', '旅程を見る')}
+          </Link>
+          <Link
+            to="/budget"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-lg transition-colors text-sm font-semibold"
+          >
+            <i className="fa-solid fa-wallet"></i>
+            {t('View Budget', '查看预算', '予算を見る')}
+          </Link>
+        </div>
       </div>
     </div>
   )
