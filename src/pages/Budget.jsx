@@ -108,11 +108,11 @@ const Budget = () => {
       day: 10,
       focus: { en: 'Osaka Highlights & Dinner', zh: '大阪精华 & 晚餐', ja: '大阪ハイライト＆ディナー' },
       breakdown: {
-        en: 'Trains/Bus (~¥2000), Katsuoji (~¥500), Osaka Castle (~¥600), Kuromon Market Lunch (~¥2000), Namba Yasaka Free, Harukas Abeno (~¥1500), Tsurikichi Shinsekai Dinner (~¥3500)',
-        zh: '电车/巴士 (~¥2000), 勝尾寺 (~¥500), 大阪城 (~¥600), 黑门市场午餐 (~¥2000), 难波八阪免费, 阿倍野HARUKAS (~¥1500), つり吉新世界晚餐 (~¥3500)',
-        ja: '電車/バス（約¥2000）、勝尾寺（約¥500）、大阪城（約¥600）、黒門市場ランチ（約¥2000）、難波八阪（無料）、あべのハルカス（約¥1500）、つり吉（新世界・夜・約¥3500）',
+        en: 'Osaka Amazing Pass (RM101), Hankyu Bus to Katsuoji (~¥1500), Katsuoji (~¥500), Osaka Castle FREE (Pass), Kuromon Market Lunch (~¥2000), Namba Yasaka Free, Tsutenkaku FREE (Pass), Tsurikichi Shinsekai Dinner (~¥3500), Snacks (~¥1000)',
+        zh: '大阪周游卡 (RM101), 阪急巴士至勝尾寺 (~¥1500), 勝尾寺 (~¥500), 大阪城免费 (周游卡), 黑门市场午餐 (~¥2000), 难波八阪免费, 通天阁免费 (周游卡), つり吉新世界晚餐 (~¥3500), 零食 (~¥1000)',
+        ja: '大阪周遊パス（RM101）、阪急バス（勝尾寺・約¥1500）、勝尾寺（約¥500）、大阪城（無料・パス）、黒門市場ランチ（約¥2000）、難波八阪（無料）、通天閣（無料・パス）、つり吉（新世界・夜・約¥3500）、軽食（約¥1000）',
       },
-      cost: 10100,
+      cost: 13500,
       color: 'orange',
     },
     {

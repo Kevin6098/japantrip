@@ -661,7 +661,7 @@ export const getScheduleData = (t) => [
     title: t('Osaka City Highlights', '大阪城市精华', '大阪市内観光'),
     location: 'Osaka',
     color: 'orange',
-    note: t('Osaka Amazing Pass covers: Metro + city buses, Osaka Castle Tower, Tsutenkaku Observation Deck, and many other attractions', '大阪周游卡包含: 地铁 + 城市巴士, 大阪城天守阁, 通天阁展望台, 以及许多其他景点', '大阪周遊パスに含まれるもの: 地下鉄＋市バス、大阪城天守閣、通天閣展望台、その他多くの観光スポット'),
+    note: t('Osaka Amazing Pass (RM101) covers: Metro + city buses, Osaka Castle Tower, Tsutenkaku Observation Deck, and many other attractions. JR lines and buses outside Osaka City are NOT covered.', '大阪周游卡 (RM101) 包含: 地铁 + 城市巴士, 大阪城天守阁, 通天阁展望台, 以及许多其他景点。JR线和市外巴士不包含。', '大阪周遊パス（RM101）に含まれるもの: 地下鉄＋市バス、大阪城天守閣、通天閣展望台、その他多くの観光スポット。JR線・市外バスは含まれません。'),
     items: [
       { 
         time: '06:00', 
