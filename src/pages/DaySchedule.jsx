@@ -43,18 +43,28 @@ const DaySchedule = () => {
                        itemText.toLowerCase().includes('leave') ||
                        (itemIndex === 0 && item.time)) // First item of the day is usually departure
 
+    const linkClass = item.highlight
+      ? 'bg-yellow-100 px-2 py-0.5 rounded text-yellow-900 font-semibold inline-flex items-center gap-1'
+      : ''
     const content = item.link ? (
       <Link
         to={item.link}
-        className={`text-sm hover:underline ${
-          item.highlight
-            ? 'bg-yellow-100 px-2 py-0.5 rounded text-yellow-900 font-semibold inline-flex items-center gap-1'
-            : ''
-        }`}
+        className={`text-sm hover:underline ${linkClass}`}
       >
         {itemText}
         <i className="fa-solid fa-arrow-up-right-from-square text-xs"></i>
       </Link>
+    ) : item.mapLink && item.highlight ? (
+      <a
+        href={item.mapLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`text-sm hover:underline ${linkClass}`}
+        title={t('Open in Google Maps', '在Google地图中打开', 'Googleマップで開く')}
+      >
+        {itemText}
+        <i className="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+      </a>
     ) : (
       <span
         className={`text-sm ${
@@ -228,13 +238,22 @@ const DaySchedule = () => {
           {dayData.date} {dayData.isHoliday && t('(Holiday)', '(假日)', '(祝日)')}
         </p>
         <p className="text-slate-500 text-sm mt-2">📍 {dayData.location}</p>
-        <Link
-          to="/budget"
-          className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-lg transition-colors text-sm font-semibold"
-        >
-          <i className="fa-solid fa-wallet"></i>
-          {t('View Budget', '查看预算', '予算を見る')}
-        </Link>
+        <div className="flex flex-wrap gap-3 mt-4">
+          <Link
+            to="/budget"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-lg transition-colors text-sm font-semibold"
+          >
+            <i className="fa-solid fa-wallet"></i>
+            {t('View Budget', '查看预算', '予算を見る')}
+          </Link>
+          <Link
+            to="/transportation-budget"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg transition-colors text-sm font-semibold"
+          >
+            <i className="fa-solid fa-train"></i>
+            {t('View Transportation', '查看交通', '交通を見る')}
+          </Link>
+        </div>
       </div>
 
       {/* Schedule Details */}

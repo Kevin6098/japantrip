@@ -97,11 +97,11 @@ const Budget = () => {
       day: 9,
       focus: { en: 'Uji & Nara', zh: '宇治 & 奈良', ja: '宇治＆奈良' },
       breakdown: {
-        en: 'Keihan/JR Train (~¥1400), Nakamura Tokichi Uji (~¥2500), Ujigami Free, Nara Park Free, Todaiji (~¥600), Kasuga Free, Mt Wakakusa (~¥150)',
-        zh: '京阪/JR电车 (~¥1400), 中村藤吉宇治 (~¥2500), 宇治上神社免费, 奈良公园免费, 东大寺 (~¥600), 春日大社免费, 若草山 (~¥150)',
-        ja: '京阪/JR（約¥1400）、中村藤吉（宇治・約¥2500）、宇治上神社（無料）、奈良公園（無料）、東大寺（約¥600）、春日大社（無料）、若草山（約¥150）',
+        en: 'Osaka↔Uji↔Nara↔Osaka (~¥1650), Byōdō-in (~¥600), Nakamura Tokichi (~¥1500), Ujigami Free, Nara Park deer crackers (~¥200), Tōdai-ji (~¥600), Kasuga Free, Mt Wakakusa (~¥150), snacks (~¥750)',
+        zh: '大阪↔宇治↔奈良↔大阪 (~¥1650), 平等院 (~¥600), 中村藤吉 (~¥1500), 宇治上神社免费, 奈良公园鹿仙贝 (~¥200), 东大寺 (~¥600), 春日免费, 若草山 (~¥150), 零食 (~¥750)',
+        ja: '大阪↔宇治↔奈良↔大阪（約¥1650）、平等院（約¥600）、中村藤吉（約¥1500）、宇治上神社無料、奈良公園せんべい（約¥200）、東大寺（約¥600）、春日無料、若草山（約¥150）、軽食（約¥750）',
       },
-      cost: 5050,
+      cost: 6000,
       color: 'teal',
     },
     {
@@ -157,12 +157,13 @@ const Budget = () => {
         </p>
 
         <div className="overflow-x-auto rounded-lg border border-slate-200 mb-4">
-          <table className="w-full text-xs sm:text-sm text-left min-w-[600px]">
+          <table className="w-full text-xs sm:text-sm text-left min-w-[680px]">
             <thead className="bg-slate-50 text-slate-500 font-semibold">
               <tr>
-                <th className="p-2 w-16">{t('Day', '日期')}</th>
+                <th className="p-2 w-16">{t('Day', '日期', '日')}</th>
                 <th className="p-2">{t('Focus & Breakdown', '重点与明细', '内容')}</th>
                 <th className="p-2 text-right">{t('Est. Cost', '预估花费', '目安')}</th>
+                <th className="p-2 w-24 text-center">{t('Schedule', '行程', '旅程')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -197,6 +198,15 @@ const Budget = () => {
                         RM {Math.round(day.cost * 0.032).toLocaleString()}
                       </div>
                     </td>
+                    <td className="p-2 text-center">
+                      <Link
+                        to={`/schedule/day/${day.day}`}
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 hover:text-emerald-800 hover:underline"
+                      >
+                        <i className="fa-solid fa-calendar-day"></i>
+                        {t('View', '查看', '見る')}
+                      </Link>
+                    </td>
                   </tr>
                 )
               })}
@@ -221,7 +231,15 @@ const Budget = () => {
         </div>
       </div>
 
-      {/* (Removed) Transportation Budget Link */}
+      <div className="flex justify-center mt-6">
+        <Link
+          to="/transportation-budget"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg transition-colors text-sm font-semibold"
+        >
+          <i className="fa-solid fa-train"></i>
+          {t('View Transportation Budget', '查看交通预算', '交通予算を見る')}
+        </Link>
+      </div>
     </div>
   )
 }

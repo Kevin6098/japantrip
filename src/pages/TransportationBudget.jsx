@@ -53,13 +53,22 @@ const TransportationBudget = () => {
       <div className="space-y-8">
         {transportationData.map((day, index) => (
           <section key={day.day} className="glass-card p-6 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-            <div className="flex items-center mb-4">
-              <div className={`${getColorClasses(day.color)} p-2 rounded-lg mr-3`}>
-                <span className="font-bold">Day {day.day}</span>
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div className="flex items-center">
+                <div className={`${getColorClasses(day.color)} p-2 rounded-lg mr-3`}>
+                  <span className="font-bold">Day {day.day}</span>
+                </div>
+                <h2 className="font-header text-xl font-bold text-slate-800">
+                  {t(day.title.en, day.title.zh, day.title.ja)}
+                </h2>
               </div>
-              <h2 className="font-header text-xl font-bold text-slate-800">
-                {t(day.title.en, day.title.zh, day.title.ja)}
-              </h2>
+              <Link
+                to={`/schedule/day/${day.day}`}
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 hover:text-emerald-800 hover:underline"
+              >
+                <i className="fa-solid fa-calendar-day"></i>
+                {t('View Schedule', '查看行程', '旅程を見る')}
+              </Link>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               {/* Transportation */}

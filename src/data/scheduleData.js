@@ -574,48 +574,59 @@ export const getScheduleData = (t) => [
     items: [
       { 
         time: '09:00', 
-        text: t('Depart from Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '从Airbnb出发 (生野区桃谷1-12-11)', 'Airbnbから出発（生野区桃谷1-12-11）'),
-        transit: t('Walk 2 mins from 1-chōme-12-11 Momodani to Momodani Station → JR Osaka Loop Line to Kyobashi → Keihan Line to Uji Station (~50 mins train) → Walk 3 mins', '从桃谷1-12-11步行2分钟至桃谷站 → JR大阪环状线至京桥 → 京阪线至宇治站 (~50分钟电车) → 步行3分钟', '桃谷1-12-11から桃谷駅まで徒歩2分→JR大阪環状線で京橋へ→京阪線で宇治駅へ（電車約50分）→徒歩3分')
+        text: t('Leave Airbnb (Osaka → Uji)', '离开Airbnb (大阪→宇治)', 'Airbnb出発（大阪→宇治）'),
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Momodani+Station+Osaka&destination=Uji+Station+Kyoto&travelmode=transit',
+        transit: t('Walk → Momodani Station (JR) → JR Osaka Loop Line → Kyobashi (~20 min) → Keihan Main Line → Uji Station (~45–50 min) → Walk 3–5 min to Uji town. Total travel: ~1h 15min', '步行 → 桃谷站 (JR) → JR大阪环状线 → 京桥 (~20分钟) → 京阪本线 → 宇治站 (~45–50分钟) → 步行3–5分钟至宇治。总行程约1小时15分', '徒歩 → 桃谷駅（JR）→ JR大阪環状線 → 京橋（約20分）→ 京阪本線 → 宇治駅（約45〜50分）→ 徒歩3〜5分。合計約1時間15分')
       },
       { 
-        time: '10:00', 
-        text: t('Nakamura Tokichi Honten', '中村藤吉本店', '中村藤吉本店'), 
+        time: '10:30', 
+        text: t('Nakamura Tokichi Honten (Matcha Café)', '中村藤吉本店 (抹茶咖啡)', '中村藤吉本店（抹茶カフェ）'), 
         highlight: true,
         link: '/food/nakamura-tokichi-uji',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Nakamura+Tokichi+Honten+Uji',
-        transit: t('Walk 3 mins from Uji Station (Matcha sweets & early lunch)', '从宇治站步行3分钟 (抹茶甜点 & 早午餐)', '宇治駅から徒歩3分（抹茶スイーツ＆早めのランチ）')
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Uji+Station+Kyoto&destination=Nakamura+Tokichi+Honten+Uji&travelmode=walking',
+        price: '¥1,000–¥2,000',
+        transit: t('10:30–11:15. Very close to Uji Station. Matcha parfait, soba, tea. Good early lunch/snack. For 10 people: expect queue → split group or takeaway matcha snacks.', '10:30–11:15。宇治站旁。抹茶芭菲、荞麦、茶。早午餐/轻食。10人可分批或外带。', '10:30〜11:15。宇治駅すぐ。抹茶パフェ・そば・茶。10人なら分団か持ち帰り推奨。')
       },
       { 
-        time: '11:30', 
-        text: t('Ujiagami Shrine & River', '宇治上神社 & 宇治川', '宇治上神社・宇治川'), 
+        time: '11:20', 
+        text: t('Byōdō-in Temple (Phoenix Hall)', '平等院 (凤凰堂)', '平等院（鳳凰堂）'), 
+        highlight: true,
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Nakamura+Tokichi+Honten+Uji&destination=Byodoin+Temple+Uji&travelmode=walking',
+        price: '¥600',
+        transit: t('11:20–12:20. 10 min walk from Nakamura Tokichi. Phoenix Hall (on ¥10 coin), Byōdō-in Museum, garden walk. ~¥600. 1 hour. Highlight of Uji.', '11:20–12:20。从中村藤吉步行10分钟。凤凰堂（10円硬币）、博物馆、庭园。约¥600。1小时。宇治精华。', '11:20〜12:20。中村藤吉から徒歩10分。鳳凰堂・博物館・庭園。¥600。1時間。')
+      },
+      { 
+        time: '12:30', 
+        text: t('Ujigami Shrine + Uji River Walk', '宇治上神社 + 宇治川散步', '宇治上神社・宇治川散策'), 
         highlight: true,
         link: '/attractions/ujigami',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Nakamura+Tokichi+Honten+Uji&destination=Ujiagami+Shrine+Uji&travelmode=walking',
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Byodoin+Temple+Uji&destination=Ujigami+Shrine+Uji&travelmode=walking',
         price: 'Free',
-        transit: t('Walk 10 mins along Uji River & Byodoin Omotesando', '沿宇治川 & 平等院表参道步行10分钟', '宇治川＆平等院表参道沿いを徒歩10分')
+        transit: t('12:30–13:15. UNESCO shrine. Flat riverside walking (easy for parents). Ice cream / tea shops.', '12:30–13:15。UNESCO神社。平坦河岸步行。冰淇淋/茶店。', '12:30〜13:15。ユネスコ神社。河畔の平坦な散歩。')
       },
       { 
-        time: '13:00', 
-        text: t('Transfer to Nara', '前往奈良', '奈良へ移動'),
-        transit: t('Walk 5 mins to Uji Station → JR Nara Line to Nara Station (~30 mins train) → Walk 15 mins or Bus #2/70 to Nara Park (~5 mins bus)', '步行5分钟至宇治站 → JR奈良线至奈良站 (~30分钟电车) → 步行15分钟或2/70号巴士至奈良公园 (~5分钟巴士)', '宇治駅まで徒歩5分→JR奈良線で奈良駅へ（電車約30分）→徒歩15分またはバス2/70号で奈良公園へ（バス約5分）')
+        time: '13:30', 
+        text: t('Transfer Uji → Nara', '宇治 → 奈良', '宇治→奈良'),
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Uji+Station+Kyoto&destination=Nara+Station&travelmode=transit',
+        transit: t('Walk → Uji Station (JR Nara Line) → JR Nara Line → JR Nara Station (~30 min)', '步行 → 宇治站 (JR奈良线) → JR奈良线 → 奈良站 (~30分钟)', '徒歩 → 宇治駅（JR奈良線）→ JR奈良線 → 奈良駅（約30分）')
       },
       { 
-        time: '14:00', 
-        text: t('Nara Park', '奈良公园', '奈良公園'), 
+        time: '14:15', 
+        text: t('Nara Park (Deer Feeding)', '奈良公园 (喂鹿)', '奈良公園（鹿せんべい）'), 
         highlight: true,
         link: '/attractions/nara-park',
-        mapLink: 'https://www.google.com/maps/dir/?api=1&destination=Nara+Park+Nara',
-        price: 'Free',
-        transit: t('Deer feeding & park exploration', '喂鹿 & 公园探索', '鹿への餌やり＆公園探索')
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Nara+Station&destination=Nara+Park+Nara&travelmode=walking',
+        price: '¥200',
+        transit: t('14:15–15:30. Buy deer crackers (¥200). Photos with deer. Relaxing walk. Large park, flat.', '14:15–15:30。鹿仙贝¥200。与鹿拍照。平坦大公园。', '14:15〜15:30。鹿せんべい¥200。平坦な公園。')
       },
       { 
-        time: '15:00', 
-        text: t('Todaiji Temple', '东大寺', '東大寺'), 
+        time: '15:30', 
+        text: t('Tōdai-ji Temple (Great Buddha)', '东大寺 (大佛)', '東大寺（大仏）'), 
         highlight: true,
         link: '/attractions/todaiji',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Nara+Park+Nara&destination=Todaiji+Temple+Nara&travelmode=walking',
         price: '¥600',
-        transit: t('Walk 10 mins from Nara Park (Great Buddha & temple grounds)', '从奈良公园步行10分钟 (大佛 & 寺庙场地)', '奈良公園から徒歩10分（大仏＆寺院の境内）')
+        transit: t('15:30–16:30. Entry ¥600. Short walk from Nara Park.', '15:30–16:30。门票¥600。奈良公园步行即达。', '15:30〜16:30。¥600。奈良公園から徒歩。')
       },
       { 
         time: '16:30', 
@@ -624,22 +635,23 @@ export const getScheduleData = (t) => [
         link: '/attractions/kasuga',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Todaiji+Temple+Nara&destination=Kasuga+Taisha+Nara&travelmode=walking',
         price: 'Free',
-        transit: t('Walk 15 mins from Todaiji (Stone lanterns forest path)', '从东大寺步行15分钟 (石灯笼森林小径)', '東大寺から徒歩15分（石灯籠の森の小道）')
+        transit: t('16:30–17:15. Lantern forest path. Peaceful atmosphere. Optional if group tired (can skip).', '16:30–17:15。石灯笼森林。可选，累可跳过。', '16:30〜17:15。石灯籠の森。疲れたらスキップ可。')
       },
       { 
         time: '17:30', 
-        text: t('Mt. Wakakusa', '若草山', '若草山'), 
+        text: t('Mt. Wakakusa (Sunset View)', '若草山 (日落)', '若草山（夕景）'), 
         highlight: true,
         link: '/attractions/wakakusa',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Kasuga+Taisha+Nara&destination=Mt+Wakakusa+Nara&travelmode=walking',
-        note: t('(Night View)', '(夜景)', '（夜景）'),
+        note: t('(Optional)', '(可选)', '（オプション）'),
         price: '¥150',
-        transit: t('Walk 15 mins from Kasuga Taisha (Sunset & panoramic city view)', '从春日大社步行15分钟 (日落 & 全景城市景观)', '春日大社から徒歩15分（夕日＆パノラマの街の眺め）')
+        transit: t('17:30–18:00. Entry ¥150. Gentle slope (NOT full mountain hike). Great city view. If parents tired → SKIP and rest at café.', '17:30–18:00。¥150。缓坡。累可跳过，咖啡厅休息。', '17:30〜18:00。¥150。ゆるやか。疲れたらスキップ可。')
       },
       { 
-        time: '19:30', 
-        text: t('Return to Airbnb (1-chōme-12-11 Momodani, Ikuno Ward)', '返回Airbnb (生野区桃谷1-12-11)', 'Airbnbに戻る（生野区桃谷1-12-11）'),
-        transit: t('Walk 20 mins to Nara Station → JR Nara Line to Kyobashi → JR Osaka Loop Line to Momodani Station (~1h 10m train) → Walk 2 mins to 1-chōme-12-11 Momodani', '步行20分钟至奈良站 → JR奈良线至京桥 → JR大阪环状线至桃谷站 (~1小时10分钟电车) → 步行2分钟至桃谷1-12-11', '奈良駅まで徒歩20分→JR奈良線で京橋へ→JR大阪環状線で桃谷駅へ（電車約1時間10分）→桃谷1-12-11まで徒歩2分')
+        time: '18:30', 
+        text: t('Return to Osaka (Momodani)', '返回大阪 (桃谷)', '大阪・桃谷へ戻る'),
+        mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Nara+Station&destination=Momodani+Station+Osaka&travelmode=transit',
+        transit: t('Walk → JR Nara Station → JR Nara Line → Kyobashi (~45 min) → JR Osaka Loop Line → Momodani (~20 min) → Walk to Airbnb. Total return ~1h 10min. Back 19:45–20:00. Perfect for dinner in Namba.', '步行 → 奈良站 → JR奈良线 → 京桥 (~45分钟) → JR环状线 → 桃谷 (~20分钟) → 步行回Airbnb。返程约1小时10分。19:45–20:00抵。可至难波晚餐。', '徒歩 → 奈良駅 → JR奈良線 → 京橋（約45分）→ JR環状線 → 桃谷（約20分）→ Airbnb。19:45〜20:00着。難波で夕食可。')
       },
     ],
   },
