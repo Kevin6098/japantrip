@@ -1049,7 +1049,6 @@ export const attractionsData = {
     price: '¥1,500 (Observation Deck)',
     hours: { en: '9:00 AM - 10:00 PM', zh: '早上9点 - 晚上10点', ja: '午前9時 - 午後10時' },
     images: [
-      'https://tenmabashi-ekimae.hotelkeihan.co.jp/wp-content/uploads/sites/425/2022/02/POI_ABENOHARUKAS.jpg',
       'https://www.abenoharukas-300.jp/en/images/bnr-ph01.jpg',
       'https://ichibanosaka.com/wdps/wp-content/uploads/2018/07/ad6ff09de8b12f7c591affa1ef81a225.jpg',
       'https://www.offthetrackjapan.com/wp-content/uploads/2019/02/abeno-harukas-4025468_1280_1000x667-min.jpg',
