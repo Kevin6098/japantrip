@@ -25,6 +25,13 @@ const DaySchedule = () => {
     )
   }
 
+  const translatePrice = (price) => {
+    if (!price || typeof price !== 'string') return price
+    if (price === 'Free') return t('Free', '免费', '無料')
+    if (price === 'Tea Time') return t('Tea Time', '下午茶', 'お茶の時間')
+    return price
+  }
+
   const renderItem = (item, itemIndex) => {
     const itemText = typeof item.text === 'string' ? item.text : t(item.text?.en || '', item.text?.zh || '', item.text?.ja || '')
     const itemTransit = item.transit
@@ -109,7 +116,7 @@ const DaySchedule = () => {
               )}
               {item.price && (
                 <span className="inline-block text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full border border-green-200">
-                  {item.price}
+                  {translatePrice(item.price)}
                 </span>
               )}
               {item.express && (
@@ -226,9 +233,9 @@ const DaySchedule = () => {
 
       {/* Header */}
       <div className="text-center mb-8">
-        <div className={`inline-block ${getColorClasses(dayData.color).split(' ')[2]} px-6 py-2 rounded-full mb-4`}>
-          <span className="font-bold text-sm text-white">
-            {t('Day', '第', 'Day')} {dayData.day} {t('Day', '天', '日')}
+        <div className="inline-block px-6 py-2 rounded-full mb-4 bg-slate-700 text-white shadow-md">
+          <span className="font-bold text-sm">
+            {t('Day ', '第', '')}{dayData.day}{t('', '天', '日目')}
           </span>
         </div>
         <h1 className={`text-4xl md:text-5xl font-header font-bold mb-2 ${getColorClasses(dayData.color).split(' ')[1]}`}>

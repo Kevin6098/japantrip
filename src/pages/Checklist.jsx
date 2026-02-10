@@ -107,9 +107,9 @@ const Checklist = () => {
     
     return {
       id: restaurant.id,
-      title: t(restaurant.title.en, restaurant.title.zh),
-      schedule: schedule ? `${t(schedule.date.en, schedule.date.zh)} ${schedule.time} - ${t(schedule.meal.en, schedule.meal.zh)}` : '',
-      location: t(restaurant.location.en, restaurant.location.zh),
+      title: t(restaurant.title.en, restaurant.title.zh, restaurant.title.ja),
+      schedule: schedule ? `${t(schedule.date.en, schedule.date.zh, schedule.date.ja)} ${schedule.time} - ${t(schedule.meal.en, schedule.meal.zh, schedule.meal.ja)}` : '',
+      location: t(restaurant.location.en, restaurant.location.zh, restaurant.location.ja),
       link: `/food/${restaurant.id}`,
       type: 'restaurant',
       reservationRequired: restaurant.id === 'ginza-kanimitsu' || 

@@ -2,9 +2,9 @@
 export const getScheduleData = (t) => [
   {
     day: 1,
-    date: 'Wed, Mar 18',
+    date: t('Wed, Mar 18', '3月18日 周三', '3月18日（水）'),
     title: t('Arrival', '抵达', '到着'),
-    location: 'Tokyo',
+    location: t('Tokyo', '东京', '東京'),
     color: 'indigo',
     items: [
       { time: '21:15', text: t('CX Lands (HND)', '国泰降落 (HND)', 'CX着陸（羽田）') },
@@ -19,9 +19,9 @@ export const getScheduleData = (t) => [
   },
   {
     day: 2,
-    date: 'Thu, Mar 19',
+    date: t('Thu, Mar 19', '3月19日 周四', '3月19日（木）'),
     title: t('Tokyo City Tour', '东京城市游', '東京市内観光'),
-    location: 'Tokyo',
+    location: t('Tokyo', '东京', '東京'),
     color: 'indigo',
     items: [
       { 
@@ -114,9 +114,9 @@ export const getScheduleData = (t) => [
   },
   {
     day: 3,
-    date: 'Fri, Mar 20',
+    date: t('Fri, Mar 20', '3月20日 周五', '3月20日（金）'),
     title: t('Graduation Day', '毕业典礼日', '卒業式'),
-    location: 'Tokyo/Saitama',
+    location: t('Tokyo/Saitama', '东京/埼玉', '東京・埼玉'),
     color: 'indigo',
     isHoliday: true,
     items: [
@@ -184,9 +184,9 @@ export const getScheduleData = (t) => [
   },
   {
     day: 4,
-    date: 'Sat, Mar 21',
+    date: t('Sat, Mar 21', '3月21日 周六', '3月21日（土）'),
     title: t('Move to Osaka', '前往大阪', '大阪へ移動'),
-    location: 'Osaka',
+    location: t('Osaka', '大阪', '大阪'),
     color: 'orange',
     items: [
       { 
@@ -243,9 +243,9 @@ export const getScheduleData = (t) => [
   },
   {
     day: 5,
-    date: 'Sun, Mar 22',
+    date: t('Sun, Mar 22', '3月22日 周日', '3月22日（日）'),
     title: t('USJ', '环球影城', 'USJ'),
-    location: 'Osaka',
+    location: t('Osaka', '大阪', '大阪'),
     color: 'sky',
     items: [
       { 
@@ -326,9 +326,9 @@ export const getScheduleData = (t) => [
   },
   {
     day: 6,
-    date: 'Mon, Mar 23',
+    date: t('Mon, Mar 23', '3月23日 周一', '3月23日（月）'),
     title: t('Kobe Day Trip', '神户一日游', '神戸日帰り'),
-    location: 'Kobe',
+    location: t('Kobe', '神户', '神戸'),
     color: 'red',
     items: [
       { 
@@ -406,9 +406,9 @@ export const getScheduleData = (t) => [
   },
   {
     day: 7,
-    date: 'Tue, Mar 24',
+    date: t('Tue, Mar 24', '3月24日 周二', '3月24日（火）'),
     title: t('Osaka City Highlights', '大阪城市精华', '大阪市内観光'),
-    location: 'Osaka',
+    location: t('Osaka', '大阪', '大阪'),
     color: 'orange',
     items: [
       { 
@@ -438,7 +438,7 @@ export const getScheduleData = (t) => [
         link: '/attractions/osaka-aquarium',
         mapLink: 'https://www.google.com/maps/dir/?api=1&origin=Umeda+Sky+Building+Osaka&destination=Osaka+Aquarium+Kaiyukan&travelmode=transit',
         price: '¥2,700',
-        transit: t('Duration: ~2-3 hours - One of Japan\'s largest aquariums with whale sharks & marine life', '停留时间: 约2-3小时 - 日本最大的水族馆之一，有鲸鲨 & 海洋生物')
+        transit: t('Duration: ~2-3 hours - One of Japan\'s largest aquariums with whale sharks & marine life', '停留时间: 约2-3小时 - 日本最大的水族馆之一，有鲸鲨 & 海洋生物', '所要時間：約2〜3時間 - 日本最大級の水族館、ジンベエザメ＆海洋生物')
       },
       { 
         time: '14:30', 
@@ -480,9 +480,9 @@ export const getScheduleData = (t) => [
   },
   {
     day: 8,
-    date: 'Wed, Mar 25',
+    date: t('Wed, Mar 25', '3月25日 周三', '3月25日（水）'),
     title: t('Kyoto', '京都', '京都'),
-    location: 'Kyoto',
+    location: t('Kyoto', '京都', '京都'),
     color: 'emerald',
     items: [
       { 
@@ -567,9 +567,9 @@ export const getScheduleData = (t) => [
   },
   {
     day: 9,
-    date: 'Thu, Mar 26',
+    date: t('Thu, Mar 26', '3月26日 周四', '3月26日（木）'),
     title: t('Uji & Nara (Healing Route)', '宇治 & 奈良 (治愈路线)', '宇治・奈良（癒しルート）'),
-    location: 'Nara',
+    location: t('Nara', '奈良', '奈良'),
     color: 'teal',
     items: [
       { 
@@ -657,9 +657,9 @@ export const getScheduleData = (t) => [
   },
   {
     day: 10,
-    date: 'Fri, Mar 27',
+    date: t('Fri, Mar 27', '3月27日 周五', '3月27日（金）'),
     title: t('Osaka City Highlights', '大阪城市精华', '大阪市内観光'),
-    location: 'Osaka',
+    location: t('Osaka', '大阪', '大阪'),
     color: 'orange',
     note: t('Osaka Amazing Pass (RM101) covers: Metro + city buses, Osaka Castle Tower, Tsutenkaku Observation Deck, and many other attractions. JR lines and buses outside Osaka City are NOT covered.', '大阪周游卡 (RM101) 包含: 地铁 + 城市巴士, 大阪城天守阁, 通天阁展望台, 以及许多其他景点。JR线和市外巴士不包含。', '大阪周遊パス（RM101）に含まれるもの: 地下鉄＋市バス、大阪城天守閣、通天閣展望台、その他多くの観光スポット。JR線・市外バスは含まれません。'),
     items: [
@@ -742,9 +742,9 @@ export const getScheduleData = (t) => [
   },
   {
     day: 11,
-    date: 'Sat, Mar 28',
+    date: t('Sat, Mar 28', '3月28日 周六', '3月28日（土）'),
     title: t('Fly Home', '回家', '帰国'),
-    location: 'Departure',
+    location: t('Departure', '出发', '出発'),
     color: 'orange',
     items: [
       { 

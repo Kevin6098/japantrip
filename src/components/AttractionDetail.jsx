@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
+import CarouselNav from './CarouselNav'
 
 const AttractionDetail = ({ attraction }) => {
   const { t } = useLanguage()
@@ -51,7 +52,7 @@ const AttractionDetail = ({ attraction }) => {
       {/* Image Carousel */}
       {images.length > 0 && (
       <div className="mb-8 relative">
-        <div className="relative rounded-2xl overflow-hidden shadow-xl">
+        <div className="carousel-container relative rounded-2xl overflow-hidden shadow-xl">
           <div className="relative h-64 sm:h-80 md:h-96">
             {images.map((img, index) => (
               <div
@@ -72,37 +73,21 @@ const AttractionDetail = ({ attraction }) => {
             ))}
           </div>
 
-          {/* Navigation Arrows */}
           {images.length > 1 && (
-            <>
-              <button
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-slate-700 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-                aria-label="Previous image"
-              >
-                <i className="fa-solid fa-chevron-left"></i>
-              </button>
-              <button
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-slate-700 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-                aria-label="Next image"
-              >
-                <i className="fa-solid fa-chevron-right"></i>
-              </button>
-            </>
+            <CarouselNav onPrev={prevImage} onNext={nextImage} />
           )}
 
-          {/* Indicators */}
+          {/* Indicators - theme-friendly dots */}
           {images.length > 1 && (
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
               {images.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToImage(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
                     index === currentImageIndex
-                      ? 'w-8 bg-white'
-                      : 'w-2 bg-white/50 hover:bg-white/75'
+                      ? 'w-8 bg-violet-400 border-2 border-violet-500 shadow'
+                      : 'w-2.5 bg-white/90 hover:bg-white border-2 border-violet-300'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -131,7 +116,9 @@ const AttractionDetail = ({ attraction }) => {
                 <i className="fa-solid fa-yen-sign mr-2 text-emerald-500"></i>
                 {typeof attraction.price === 'object' && attraction.price.en
                   ? t(attraction.price.en, attraction.price.zh, attraction.price.ja)
-                  : attraction.price}
+                  : attraction.price === 'Free'
+                    ? t('Free', '免费', '無料')
+                    : attraction.price}
               </span>
             )}
             {attraction.hours && (
@@ -199,14 +186,6 @@ const AttractionDetail = ({ attraction }) => {
               <i className="fa-solid fa-calendar-days mr-2"></i>
               {t('Visit Guide & Schedule', '参观指南与行程', 'ガイド＆スケジュール')}
             </h2>
-            
-            {/* Group Info */}
-            {attraction.visitGuide.groupInfo && (
-              <div className="mb-6 pb-4 border-b border-orange-200">
-                <h3 className="font-bold text-lg text-slate-800 mb-3">{t('Group Info', '团队信息', 'グループ情報')}</h3>
-                <p className="text-sm text-slate-700">{t(attraction.visitGuide.groupInfo.en, attraction.visitGuide.groupInfo.zh, attraction.visitGuide.groupInfo.ja)}</p>
-              </div>
-            )}
 
             {/* Arrival Plan */}
             {attraction.visitGuide.arrivalPlan && (

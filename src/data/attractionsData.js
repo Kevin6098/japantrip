@@ -19,15 +19,15 @@ export const attractionsData = {
       ja: '浅草寺は628年創建とされる東京最古の寺院です。伝説によると、隅田川で漁師が観音（慈悲の菩薩）の像を見つけたことが起源とされています。現在は年間を通じて多くの参拝者が訪れる東京屈指の霊場で、巨大な提灯が印象的な雷門、名物の食べ歩きや土産物が並ぶ仲見世通り、観音像を安置する本堂（観音堂）など見どころが集まっています。'
     },
     highlights: [
-      { en: 'Kaminarimon Gate: The iconic entrance with a 3.9-meter tall red lantern weighing 700kg', zh: '雷门: 标志性入口，有一个3.9米高、重700公斤的红灯笼', ja: '雷门: 标志性入口，有一个3.9米高、重700公斤的红灯笼' },
-      { en: 'Nakamise-dori: 250-meter shopping street with traditional Japanese snacks like senbei (rice crackers) and ningyo-yaki (doll-shaped cakes)', zh: '仲见世通: 250米长的购物街，有传统日本小吃，如煎饼和人形烧', ja: '仲见世通: 250米长的ショッピング街，有传统日本小吃，如煎饼和人形烧' },
-      { en: 'Main Hall: Rebuilt after WWII, houses the sacred Kannon statue (not publicly displayed)', zh: '本堂: 二战后重建，供奉神圣的观音像（不公开展示）', ja: '本堂: 二战后重建，供奉神圣的观音像（不公开展示）' },
-      { en: 'Five-Story Pagoda: Reconstructed in 1973, standing 53 meters tall', zh: '五层塔: 1973年重建，高53米', ja: '五层塔: 1973年重建，高53米' },
+      { en: 'Kaminarimon Gate: The iconic entrance with a 3.9-meter tall red lantern weighing 700kg', zh: '雷门: 标志性入口，有一个3.9米高、重700公斤的红灯笼', ja: '雷門：高さ3.9m・重さ700kgの大提灯がシンボルの入口' },
+      { en: 'Nakamise-dori: 250-meter shopping street with traditional Japanese snacks like senbei (rice crackers) and ningyo-yaki (doll-shaped cakes)', zh: '仲见世通: 250米长的购物街，有传统日本小吃，如煎饼和人形烧', ja: '仲見世通り：250mの商店街。せんべいや人形焼など昔ながらの駄菓子' },
+      { en: 'Main Hall: Rebuilt after WWII, houses the sacred Kannon statue (not publicly displayed)', zh: '本堂: 二战后重建，供奉神圣的观音像（不公开展示）', ja: '本堂：戦後再建。ご本尊の観音像（非公開）を安置' },
+      { en: 'Five-Story Pagoda: Reconstructed in 1973, standing 53 meters tall', zh: '五层塔: 1973年重建，高53米', ja: '五重塔：1973年再建。高さ53m' },
     ],
     tips: [
-      { en: 'Early Morning: Visit before 9 AM to avoid crowds and experience the temple in peace', zh: '清晨: 早上9点前参观，避开人群，安静体验寺庙', ja: '清晨: 午前9点前参观，避开人群，安静体验寺院' },
-      { en: 'Try the Snacks: Sample traditional treats like ningyo-yaki and senbei from Nakamise-dori', zh: '尝试小吃: 在仲见世通品尝传统美食，如人形烧和煎饼', ja: '尝试小吃: 在仲见世通品尝传统美食，如人形烧和煎饼' },
-      { en: 'Weekend Crowds: Very busy on weekends - weekdays are better for a peaceful visit', zh: '周末人群: 周末非常拥挤 - 工作日更适合安静参观', ja: '周末人群: 周末非常拥挤 - 工作日更适合安静参观' },
+      { en: 'Early Morning: Visit before 9 AM to avoid crowds and experience the temple in peace', zh: '清晨: 早上9点前参观，避开人群，安静体验寺庙', ja: '早朝がおすすめ：午前9時前なら人混みが少なく静かに参拝できます' },
+      { en: 'Try the Snacks: Sample traditional treats like ningyo-yaki and senbei from Nakamise-dori', zh: '尝试小吃: 在仲见世通品尝传统美食，如人形烧和煎饼', ja: '仲見世で食べ歩き：人形焼やせんべいなど名物を味わって' },
+      { en: 'Weekend Crowds: Very busy on weekends - weekdays are better for a peaceful visit', zh: '周末人群: 周末非常拥挤 - 工作日更适合安静参观', ja: '平日がおすすめ：土日は混雑するので平日がゆっくり楽しめます' },
     ],
   },
   'harajuku': {
@@ -50,15 +50,15 @@ export const attractionsData = {
       ja: '原宿は東京の若者文化とファッションの中心地で、個性的なショップやカフェが集まるエリアです。竹下通りは原宿の象徴で、カワイイ系ファッションからクレープ、綿あめまで多彩なお店がぎゅっと詰まっています。一方、徒歩数分の表参道は並木道と高級ブランドが並ぶ洗練された雰囲気で、「東京のシャンゼリゼ」とも呼ばれます。遊び心の原宿と上質な表参道の対比を同時に楽しめる、東京らしさが詰まったスポットです。'
     },
     highlights: [
-      { en: 'Takeshita Street: 350-meter street with colorful shops, crepe stands, and unique fashion items', zh: '竹下通: 350米长的街道，有色彩缤纷的商店、可丽饼摊和独特的时尚物品', ja: '竹下通: 350米长的街道，有色彩缤纷的店舗、可丽饼摊和独特的时尚物品' },
-      { en: 'Omotesando Hills: Modern shopping complex designed by Tadao Ando with luxury brands and restaurants', zh: '表参道Hills: 由安藤忠雄设计的现代购物中心，有奢侈品牌和餐厅', ja: '表参道Hills: 由安藤忠雄设计的现代ショッピング中心，有奢侈品牌和レストラン' },
-      { en: 'Meiji Shrine: Adjacent peaceful shrine offering a contrast to the busy streets', zh: '明治神宫: 邻近的宁静神社，与繁忙的街道形成对比', ja: '明治神宫: 邻近的宁静神社，与繁忙的街道形成对比' },
-      { en: 'Cat Street: Trendy street connecting Harajuku and Shibuya with unique boutiques and cafes', zh: '猫街: 连接原宿和涩谷的潮流街道，有独特的精品店和咖啡厅', ja: '猫街: 连接原宿和渋谷的潮流街道，有独特的精品店和咖啡厅' },
+      { en: 'Takeshita Street: 350-meter street with colorful shops, crepe stands, and unique fashion items', zh: '竹下通: 350米长的街道，有色彩缤纷的商店、可丽饼摊和独特的时尚物品', ja: '竹下通り：350mの通りにカラフルなショップ、クレープ屋、個性派ファッション' },
+      { en: 'Omotesando Hills: Modern shopping complex designed by Tadao Ando with luxury brands and restaurants', zh: '表参道Hills: 由安藤忠雄设计的现代购物中心，有奢侈品牌和餐厅', ja: '表参道ヒルズ：安藤忠雄設計の商業施設。ブランド店やレストラン' },
+      { en: 'Meiji Shrine: Adjacent peaceful shrine offering a contrast to the busy streets', zh: '明治神宫: 邻近的宁静神社，与繁忙的街道形成对比', ja: '明治神宮：すぐ近く。賑やかな街とのギャップが魅力の静かな杜' },
+      { en: 'Cat Street: Trendy street connecting Harajuku and Shibuya with unique boutiques and cafes', zh: '猫街: 连接原宿和涩谷的潮流街道，有独特的精品店和咖啡厅', ja: 'キャットストリート：原宿と渋谷をつなぐおしゃれ通り。セレクトショップやカフェ' },
     ],
     tips: [
-      { en: 'Weekend Crowds: Takeshita Street gets extremely crowded on weekends - visit on weekdays if possible', zh: '周末人群: 竹下通在周末非常拥挤 - 如果可能，在工作日参观', ja: '周末人群: 竹下通在周末非常拥挤 - 如果可能，在工作日参观' },
-      { en: 'Try the Food: Sample crepes, giant cotton candy, and other Harajuku street food specialties', zh: '尝试美食: 品尝可丽饼、巨型棉花糖和其他原宿街头美食特色', ja: '尝试美食: 品尝可丽饼、巨型棉花糖和其他原宿街头美食特色' },
-      { en: 'Fashion Shopping: Great place to find unique Japanese fashion items and souvenirs', zh: '时尚购物: 寻找独特日本时尚物品和纪念品的绝佳地点', ja: '时尚ショッピング: 寻找独特日本时尚物品和纪念品的绝佳地点' },
+      { en: 'Weekend Crowds: Takeshita Street gets extremely crowded on weekends - visit on weekdays if possible', zh: '周末人群: 竹下通在周末非常拥挤 - 如果可能，在工作日参观', ja: '平日がおすすめ：竹下通りは土日は大混雑。平日ならゆったり' },
+      { en: 'Try the Food: Sample crepes, giant cotton candy, and other Harajuku street food specialties', zh: '尝试美食: 品尝可丽饼、巨型棉花糖和其他原宿街头美食特色', ja: '食べ歩き：クレープ、でっかい綿あめなど原宿グルメを楽しんで' },
+      { en: 'Fashion Shopping: Great place to find unique Japanese fashion items and souvenirs', zh: '时尚购物: 寻找独特日本时尚物品和纪念品的绝佳地点', ja: 'ファッション＆お土産：日本らしい個性的な服や雑貨が揃うエリア' },
     ],
   },
   'fushimi-inari': {
@@ -79,15 +79,15 @@ export const attractionsData = {
       ja: '伏見稲荷大社は、稲荷大神（五穀豊穣・商売繁盛の神）を祀る日本屈指の神社で、711年創建とされています。全国に約3万社ある稲荷神社の総本宮として知られ、朱色の鳥居が連なる「千本鳥居」は世界的に有名です。鳥居は個人や企業の奉納によるもので、裏面に奉納者名が刻まれています。参道は稲荷山（標高233m）の山頂へ続き、往復で約2〜3時間。24時間参拝できるため、混雑を避けたい人は早朝や夕方の訪問がおすすめです。'
     },
     highlights: [
-      { en: 'Senbon Torii (Thousand Gates): The iconic tunnel of thousands of closely-spaced torii gates creating a mesmerizing vermillion path', zh: '千本鸟居: 标志性的数千个紧密排列的鸟居隧道，形成迷人的朱红色路径', ja: '千本鸟居: 标志性的数千个紧密排列的鸟居隧道，形成迷人的朱红色路径' },
-      { en: 'Fox Statues: Inari\'s messengers, fox statues (kitsune) are found throughout the shrine grounds', zh: '狐狸雕像: 稻荷神的使者，狐狸雕像（狐）遍布神社场地' },
-      { en: 'Mount Inari Summit: Beautiful views of Kyoto from the top, with smaller shrines along the way', zh: '稻荷山山顶: 从山顶可以欣赏到京都的美景，沿途有较小的神社', ja: '稻荷山山顶: 山顶可以欣赏到京都的美景，沿途有较小的神社' },
-      { en: 'Omokaru Stones: Heavy stones that feel lighter when your wish comes true - a popular test of fortune', zh: '重轻石: 当你的愿望实现时，重石会感觉更轻 - 一个受欢迎的占卜测试', ja: '重轻石: 当你的愿望实现时，重石会感觉更轻 - 一个受欢迎的占卜测试' },
+      { en: 'Senbon Torii (Thousand Gates): The iconic tunnel of thousands of closely-spaced torii gates creating a mesmerizing vermillion path', zh: '千本鸟居: 标志性的数千个紧密排列的鸟居隧道，形成迷人的朱红色路径', ja: '千本鳥居：幾千もの朱色の鳥居が続くトンネル。幻想的な参道です' },
+      { en: 'Fox Statues: Inari\'s messengers, fox statues (kitsune) are found throughout the shrine grounds', zh: '狐狸雕像: 稻荷神的使者，狐狸雕像（狐）遍布神社场地', ja: 'キツネ像：稲荷の使いであるキツネの像が境内各所にあります' },
+      { en: 'Mount Inari Summit: Beautiful views of Kyoto from the top, with smaller shrines along the way', zh: '稻荷山山顶: 从山顶可以欣赏到京都的美景，沿途有较小的神社', ja: '稲荷山山頂：頂上から京都市街を一望。途中にも小さな神社があります' },
+      { en: 'Omokaru Stones: Heavy stones that feel lighter when your wish comes true - a popular test of fortune', zh: '重轻石: 当你的愿望实现时，重石会感觉更轻 - 一个受欢迎的占卜测试', ja: 'おもかる石：願いが叶うと石が軽く感じると言われる人気の占い' },
     ],
     tips: [
-      { en: 'Start from the South: Most tourists start from the main entrance. Starting from the south entrance helps you avoid the initial crowds', zh: '从南端开始: 大多数游客从主入口开始。从南入口开始可以帮助您避开最初的人群', ja: '南端开始: 大多数游客主入口开始。南入口开始可以帮助您避开最初的人群' },
-      { en: 'Early Morning Visit: Arrive before 8 AM for the best experience with fewer people and better lighting for photos', zh: '清晨参观: 早上8点前到达，体验最佳，人少，拍照光线更好', ja: '清晨参观: 午前8点前到达，体验最佳，人少，拍照光線更好' },
-      { en: 'Wear Comfortable Shoes: The hike to the summit involves many steps and uneven paths', zh: '穿舒适的鞋子: 登顶需要走很多台阶和不平坦的小径', ja: '穿舒适的鞋子: 登顶需要走很多台阶和不平坦的小径' },
+      { en: 'Start from the South: Most tourists start from the main entrance. Starting from the south entrance helps you avoid the initial crowds', zh: '从南端开始: 大多数游客从主入口开始。从南入口开始可以帮助您避开最初的人群', ja: '南口からスタート：本殿正面は混雑しやすいので、南入口から回ると人が少なめです' },
+      { en: 'Early Morning Visit: Arrive before 8 AM for the best experience with fewer people and better lighting for photos', zh: '清晨参观: 早上8点前到达，体验最佳，人少，拍照光线更好', ja: '早朝がおすすめ：午前8時前なら人も少なく、写真も撮りやすいです' },
+      { en: 'Wear Comfortable Shoes: The hike to the summit involves many steps and uneven paths', zh: '穿舒适的鞋子: 登顶需要走很多台阶和不平坦的小径', ja: '歩きやすい靴で：山頂まで階段や凸凹道が多いので履きなれた靴で' },
     ],
   },
   'kiyomizu': {
@@ -108,17 +108,17 @@ export const attractionsData = {
       ja: '清水寺は778年創建の京都を代表する寺院で、ユネスコ世界遺産にも登録されています。釘を使わずに組み上げられた本堂の舞台（清水の舞台）は、京都市街や周辺の山々を一望できる絶景スポットとして有名です。寺名の由来となった音羽の滝では、三本の清水を柄杓で汲んで飲むことができ、それぞれ「長寿」「学業成就」「恋愛成就」のご利益があると伝えられています。'
     },
     highlights: [
-      { en: 'Wooden Stage: The 13-meter high stage offers panoramic views - especially beautiful during cherry blossom and autumn seasons', zh: '木制舞台: 13米高的舞台提供全景 - 在樱花和秋季特别美丽', ja: '木制舞台: 13米高的舞台提供全景 - 在樱花和秋季特别美丽' },
-      { en: 'Otowa Waterfall: Drink from the three streams for different blessings - but choose only one!', zh: '音羽瀑布: 从三股水流中饮水以获得不同的祝福 - 但只能选择一个！', ja: '音羽瀑布: 三股水流中饮水以获得不同的祝福 - 但只能选择一个！' },
-      { en: 'Ninenzaka & Sannenzaka: Historic stone-paved streets leading to the temple with traditional shops and cafes', zh: '二年坂 & 三年坂: 通往寺庙的历史石铺街道，有传统商店和咖啡厅', ja: '二年坂 & 三年坂: 通往寺院的历史石铺街道，有传统店舗和咖啡厅' },
+      { en: 'Wooden Stage: The 13-meter high stage offers panoramic views - especially beautiful during cherry blossom and autumn seasons', zh: '木制舞台: 13米高的舞台提供全景 - 在樱花和秋季特别美丽', ja: '清水の舞台：高さ13mの舞台から京都市街を一望。桜・紅葉の時期が特に美しい' },
+      { en: 'Otowa Waterfall: Drink from the three streams for different blessings - but choose only one!', zh: '音羽瀑布: 从三股水流中饮水以获得不同的祝福 - 但只能选择一个！', ja: '音羽の滝：3本の清水で「長寿」「学業」「恋愛」のご利益。1本だけ選んで飲みます' },
+      { en: 'Ninenzaka & Sannenzaka: Historic stone-paved streets leading to the temple with traditional shops and cafes', zh: '二年坂 & 三年坂: 通往寺庙的历史石铺街道，有传统商店和咖啡厅', ja: '二年坂・三年坂：お寺へ続く石畳の風情ある道。土産物やカフェあり' },
     ],
     tips: [
-      { en: 'Early Morning Visit: Arrive before 8 AM to avoid crowds and enjoy the peaceful atmosphere', zh: '清晨参观: 早上8点前到达，避开人群，享受宁静的氛围', ja: '清晨参观: 午前8点前到达，避开人群，享受宁静的氛围' },
+      { en: 'Early Morning Visit: Arrive before 8 AM to avoid crowds and enjoy the peaceful atmosphere', zh: '清晨参观: 早上8点前到达，避开人群，享受宁静的氛围', ja: '早朝参拝がおすすめ：午前8時前なら混雑を避けて静かに楽しめます' },
     ],
   },
   'shibuya': {
     id: 'shibuya',
-    title: { en: 'Shibuya Crossing', zh: '涩谷十字路口', ja: '渋谷十字路口' },
+    title: { en: 'Shibuya Crossing', zh: '涩谷十字路口', ja: '渋谷スクランブル交差点' },
     location: { en: 'Shibuya, Tokyo', zh: '东京涩谷', ja: '東京渋谷' },
     city: 'tokyo',
     price: 'Free',
@@ -133,13 +133,13 @@ export const attractionsData = {
       ja: '渋谷スクランブル交差点は、世界でも有数の人通りを誇る交差点で、ピーク時には一度に約3,000人が横断すると言われます。渋谷駅前の象徴的なスポットで、大型ビジョンやネオンサインに囲まれた景観は「現代の東京」を体感できる雰囲気です。待ち合わせ場所として有名な忠犬ハチ公像もすぐ近くにあり、周辺にはショッピング、グルメ、ナイトライフまで楽しめる施設が集まっています。'
     },
     highlights: [
-      { en: 'Hachiko Statue: The famous bronze statue of the loyal Akita dog - a popular meeting point', zh: '忠犬八公像: 著名的忠诚秋田犬青铜雕像 - 一个受欢迎的会面点', ja: '忠犬八公像: 著名的忠诚秋田犬青铜雕像 - 一个受欢迎的会面点' },
-      { en: 'Scramble Crossing: Watch thousands of people cross simultaneously from the Shibuya Sky observation deck', zh: '混乱十字路口: 从涩谷天空观景台观看数千人同时过马路', ja: '混乱十字路口: 渋谷天空观景台观看数千人同时过马路' },
-      { en: 'Shibuya 109: Iconic fashion building with trendy Japanese brands', zh: '涩谷109: 标志性的时尚建筑，有潮流日本品牌', ja: '渋谷109: 标志性的时尚建筑，有潮流日本品牌' },
+      { en: 'Hachiko Statue: The famous bronze statue of the loyal Akita dog - a popular meeting point', zh: '忠犬八公像: 著名的忠诚秋田犬青铜雕像 - 一个受欢迎的会面点', ja: 'ハチ公像：待ち合わせの定番。忠犬として知られる秋田犬の銅像' },
+      { en: 'Scramble Crossing: Watch thousands of people cross simultaneously from the Shibuya Sky observation deck', zh: '混乱十字路口: 从涩谷天空观景台观看数千人同时过马路', ja: 'スクランブル交差点：渋谷スカイの展望台から大群衆の横断を眺めよう' },
+      { en: 'Shibuya 109: Iconic fashion building with trendy Japanese brands', zh: '涩谷109: 标志性的时尚建筑，有潮流日本品牌', ja: '渋谷109：トレンド発信のファッションビル。若者向けブランドが集結' },
     ],
     tips: [
-      { en: 'Best View: Visit Shibuya Sky or Mag\'s Park for aerial views of the crossing', zh: '最佳视角: 参观涩谷天空或Mag\'s Park，从空中观看十字路口' },
-      { en: 'Peak Times: Most impressive during rush hour (7-9 AM, 5-7 PM)', zh: '高峰时段: 在高峰时段（上午7-9点，下午5-7点）最令人印象深刻', ja: '高峰时段: 在高峰时段（午前7-9点，午後5-7点）最令人印象深刻' },
+      { en: 'Best View: Visit Shibuya Sky or Mag\'s Park for aerial views of the crossing', zh: '最佳视角: 参观涩谷天空或Mag\'s Park，从空中观看十字路口', ja: '絶景スポット：渋谷スカイまたはマグズパークで交差点を上空から眺めよう' },
+      { en: 'Peak Times: Most impressive during rush hour (7-9 AM, 5-7 PM)', zh: '高峰时段: 在高峰时段（上午7-9点，下午5-7点）最令人印象深刻', ja: 'ラッシュ時が一番迫力あり（午前7〜9時、午後5〜7時）' },
     ],
   },
   'tokyo-station': {
@@ -162,16 +162,16 @@ export const attractionsData = {
       ja: '東京駅は日本を代表するターミナル駅で、歴史的建築としても有名です。1914年開業の赤レンガ駅舎（丸の内側）は辰野金吾の設計で、復原工事により20世紀初頭の姿が美しく蘇りました。JR各線や新幹線、地下鉄が乗り入れる一大ハブとして全国各地へアクセスでき、駅ナカにはグランスタなどの商業エリアや飲食店が充実。アニメ・キャラクターショップが集まる「東京キャラクターストリート」も人気で、東京ステーションホテルも併設されています。'
     },
     highlights: [
-      { en: 'Historic Red-Brick Building: Beautiful restored facade showcasing early 20th-century architecture', zh: '历史红砖建筑: 美丽的修复外墙，展示20世纪初的建筑', ja: '历史红砖建筑: 美丽的修复外墙，展示20世纪初的建筑' },
-      { en: 'Character Street: Famous shopping arcade with themed shops selling anime and manga merchandise', zh: '角色街: 著名的购物拱廊，有主题商店销售动漫和漫画商品', ja: '角色街: 著名的ショッピング拱廊，有主题店舗销售动漫和漫画商品' },
-      { en: 'Gransta: Large underground shopping mall with restaurants, souvenirs, and Japanese snacks', zh: 'Gransta: 大型地下购物中心，有餐厅、纪念品和日本小吃', ja: 'Gransta: 大型地下ショッピング中心，有レストラン、纪念品和日本小吃' },
-      { en: 'Shinkansen Hub: Gateway to bullet trains connecting to major cities across Japan', zh: '新干线枢纽: 连接日本主要城市的子弹头列车门户', ja: '新干線枢纽: 连接日本主要城市的子弹头列车门户' },
+      { en: 'Historic Red-Brick Building: Beautiful restored facade showcasing early 20th-century architecture', zh: '历史红砖建筑: 美丽的修复外墙，展示20世纪初的建筑', ja: '赤レンガ駅舎：20世紀初頭の姿に復原された美しい外観' },
+      { en: 'Character Street: Famous shopping arcade with themed shops selling anime and manga merchandise', zh: '角色街: 著名的购物拱廊，有主题商店销售动漫和漫画商品', ja: 'キャラクターストリート：アニメ・漫画グッズのテーマショップが並ぶアーケード' },
+      { en: 'Gransta: Large underground shopping mall with restaurants, souvenirs, and Japanese snacks', zh: 'Gransta: 大型地下购物中心，有餐厅、纪念品和日本小吃', ja: 'グランスタ：駅ナカの大型商業施設。レストラン・お土産・軽食' },
+      { en: 'Shinkansen Hub: Gateway to bullet trains connecting to major cities across Japan', zh: '新干线枢纽: 连接日本主要城市的子弹头列车门户', ja: '新幹線の拠点：日本各地への新幹線の玄関口' },
     ],
     tips: [
-      { en: 'Shopping: Explore Character Street and Gransta for unique souvenirs and Japanese snacks', zh: '购物: 探索角色街和Gransta，寻找独特的纪念品和日本小吃', ja: 'ショッピング: 探索角色街和Gransta，寻找独特的纪念品和日本小吃' },
-      { en: 'Architecture: Admire the restored red-brick facade from the Marunouchi side', zh: '建筑: 从丸之内一侧欣赏修复的红砖外墙', ja: '建筑: 丸の内一侧欣赏修复的红砖外墙' },
-      { en: 'Station Layout: The station is large - use the many signs to navigate or ask station staff', zh: '车站布局: 车站很大 - 使用许多标志导航或询问车站工作人员', ja: '车駅布局: 车駅很大 - 使用许多标志导航或询问车駅工作人员' },
-      { en: 'Early Visit: Visit in the morning for fewer crowds and better photo opportunities', zh: '早访: 早上参观，人群较少，拍照机会更好', ja: '早访: 午前参观，人群较少，拍照机会更好' },
+      { en: 'Shopping: Explore Character Street and Gransta for unique souvenirs and Japanese snacks', zh: '购物: 探索角色街和Gransta，寻找独特的纪念品和日本小吃', ja: 'お土産：キャラクターストリートとグランスタで限定グッズや軽食を' },
+      { en: 'Architecture: Admire the restored red-brick facade from the Marunouchi side', zh: '建筑: 从丸之内一侧欣赏修复的红砖外墙', ja: '建築：丸の内口から赤レンガの復原駅舎を眺めて' },
+      { en: 'Station Layout: The station is large - use the many signs to navigate or ask station staff', zh: '车站布局: 车站很大 - 使用许多标志导航或询问车站工作人员', ja: '駅内は広い：案内表示を確認するか、駅員に聞いて' },
+      { en: 'Early Visit: Visit in the morning for fewer crowds and better photo opportunities', zh: '早访: 早上参观，人群较少，拍照机会更好', ja: '午前がおすすめ：人混みが少なく写真も撮りやすい' },
     ],
   },
   'ueno': {
@@ -192,16 +192,16 @@ export const attractionsData = {
       ja: '上野公園は1873年に開園した東京最古級の公園で、春の桜（花見）の名所として特に有名です。園内には東京国立博物館をはじめとする複数の博物館や上野動物園、寺社などが集まり、都心の文化拠点となっています。もともとは寛永寺の境内の一部で、1868年の上野戦争など歴史の舞台にもなりました。現在は自然・文化・歴史が一度に楽しめる、散策にぴったりのエリアです。'
     },
     highlights: [
-      { en: 'Cherry Blossoms: Over 1,000 cherry trees create a stunning tunnel of pink in spring (late March to early April)', zh: '樱花: 1000多棵樱花树在春季（3月下旬至4月初）形成令人惊叹的粉色隧道', ja: '樱花: 1000多棵樱花树在春季（3月下旬へ4月初）形成令人惊叹的粉色隧道' },
-      { en: 'Tokyo National Museum: Japan\'s oldest and largest museum with extensive art and archaeological collections', zh: '东京国立博物馆: 日本最古老和最大的博物馆，拥有丰富的艺术和考古收藏' },
-      { en: 'Ueno Zoo: Japan\'s oldest zoo, home to pandas and over 3,000 animals', zh: '上野动物园: 日本最古老的动物园，是大熊猫和3000多只动物的家园' },
-      { en: 'Shinobazu Pond: Large pond with lotus flowers and boat rentals, perfect for relaxation', zh: '不忍池: 有荷花和租船服务的大池塘，非常适合放松', ja: '不忍池: 有荷花和租船服务的大池塘，非常适合放松' },
+      { en: 'Cherry Blossoms: Over 1,000 cherry trees create a stunning tunnel of pink in spring (late March to early April)', zh: '樱花: 1000多棵樱花树在春季（3月下旬至4月初）形成令人惊叹的粉色隧道', ja: '桜：春（3月下旬〜4月初旬）に1,000本以上の桜がピンクのトンネルを作る名所' },
+      { en: 'Tokyo National Museum: Japan\'s oldest and largest museum with extensive art and archaeological collections', zh: '东京国立博物馆: 日本最古老和最大的博物馆，拥有丰富的艺术和考古收藏', ja: '東京国立博物館：日本最古・最大の博物館で、美術・考古コレクションが充実' },
+      { en: 'Ueno Zoo: Japan\'s oldest zoo, home to pandas and over 3,000 animals', zh: '上野动物园: 日本最古老的动物园，是大熊猫和3000多只动物的家园', ja: '上野動物園：日本最古の動物園。パンダを含む3,000頭以上の動物' },
+      { en: 'Shinobazu Pond: Large pond with lotus flowers and boat rentals, perfect for relaxation', zh: '不忍池: 有荷花和租船服务的大池塘，非常适合放松', ja: '不忍池：ハスとボートが楽しめる大きな池。のんびり散策に最適' },
     ],
     tips: [
-      { en: 'Cherry Blossom Season: Extremely crowded during sakura season - arrive early or visit on weekdays', zh: '樱花季节: 樱花季节非常拥挤 - 提前到达或在工作日参观', ja: '樱花季节: 樱花季节非常拥挤 - 提前到达或在工作日参观' },
-      { en: 'Museum Pass: Consider the Ueno Park Pass for discounted entry to multiple museums', zh: '博物馆通票: 考虑购买上野公园通票，可折扣进入多个博物馆', ja: '博物館通票: 考虑购买上野公園通票，可折扣进入多个博物館' },
-      { en: 'Food Options: Many food vendors and restaurants in the park - perfect for lunch break', zh: '餐饮选择: 公园内有许多食品摊和餐厅 - 非常适合午餐休息', ja: '餐饮选择: 公園内有许多食品摊和レストラン - 非常适合ランチ休息' },
-      { en: 'Combine with Asakusa: Ueno is just one stop away from Asakusa on the Ginza Line - easy to visit both', zh: '与浅草结合: 上野距离浅草只有一站（银座线）- 很容易参观两者', ja: '与浅草结合: 上野距离浅草只有一駅（銀座線）- 很容易参观两者' },
+      { en: 'Cherry Blossom Season: Extremely crowded during sakura season - arrive early or visit on weekdays', zh: '樱花季节: 樱花季节非常拥挤 - 提前到达或在工作日参观', ja: '桜の季節：花見シーズンは大混雑。早めの到着か平日がおすすめ' },
+      { en: 'Museum Pass: Consider the Ueno Park Pass for discounted entry to multiple museums', zh: '博物馆通票: 考虑购买上野公园通票，可折扣进入多个博物馆', ja: '共通券：上野公園共通券で複数の博物館がお得に' },
+      { en: 'Food Options: Many food vendors and restaurants in the park - perfect for lunch break', zh: '餐饮选择: 公园内有许多食品摊和餐厅 - 非常适合午餐休息', ja: '園内の飲食：屋台やレストランが多数。ランチ休憩にぴったり' },
+      { en: 'Combine with Asakusa: Ueno is just one stop away from Asakusa on the Ginza Line - easy to visit both', zh: '与浅草结合: 上野距离浅草只有一站（银座线）- 很容易参观两者', ja: '浅草とセットで：銀座線1駅。浅草とまとめて回るのがおすすめ' },
     ],
   },
   'tsukiji-market': {
@@ -224,13 +224,13 @@ export const attractionsData = {
       ja: '築地場外市場は、新鮮な魚介や青果、調理道具などが集まる活気ある市場です。2018年に場内（卸売市場）は豊洲へ移転しましたが、場外は今も食べ歩きや朝ごはん目当ての人で賑わいます。寿司・刺身・玉子焼き、各種屋台グルメなどを楽しめ、東京の食文化を体感できる絶好のスポットです。'
     },
     highlights: [
-      { en: 'Fresh Sushi & Sashimi: Some of the freshest seafood in Tokyo', zh: '新鲜寿司和生鱼片: 东京最新鲜的海鲜之一', ja: '新鲜寿司和生鱼片: 東京最新鲜的海鮮之一' },
-      { en: 'Tamagoyaki: Famous sweet Japanese omelet on a stick', zh: '玉子烧: 著名的日式甜煎蛋串', ja: '玉子烧: 著名的日式甜煎蛋串' },
-      { en: 'Street Food: Various Japanese snacks and treats', zh: '街头美食: 各种日本小吃和美食', ja: '街头美食: 各种日本小吃和美食' },
+      { en: 'Fresh Sushi & Sashimi: Some of the freshest seafood in Tokyo', zh: '新鲜寿司和生鱼片: 东京最新鲜的海鲜之一', ja: '寿司・刺身：東京でも指折りの鮮度。朝から楽しめる' },
+      { en: 'Tamagoyaki: Famous sweet Japanese omelet on a stick', zh: '玉子烧: 著名的日式甜煎蛋串', ja: '玉子焼き：串で食べる甘い出汁巻き卵の名物' },
+      { en: 'Street Food: Various Japanese snacks and treats', zh: '街头美食: 各种日本小吃和美食', ja: '食べ歩き：和菓子や惣菜など多彩な屋台グルメ' },
     ],
     tips: [
-      { en: 'Early Morning: Best time to visit is 7-10 AM for freshest food', zh: '清晨: 最佳参观时间是上午7-10点，食物最新鲜', ja: '清晨: 最佳参观時間是午前7-10点，食物最新鲜' },
-      { en: 'Bring Cash: Many vendors don\'t accept credit cards', zh: '带现金: 许多摊位不接受信用卡' },
+      { en: 'Early Morning: Best time to visit is 7-10 AM for freshest food', zh: '清晨: 最佳参观时间是上午7-10点，食物最新鲜', ja: '朝がおすすめ：午前7〜10時が一番鮮度が良い' },
+      { en: 'Bring Cash: Many vendors don\'t accept credit cards', zh: '带现金: 许多摊位不接受信用卡', ja: '現金持参：多くの店でクレジットカードは使えません' },
     ],
   },
   'dotonbori': {
@@ -254,13 +254,13 @@ export const attractionsData = {
       ja: '道頓堀は道頓堀川沿いに広がる大阪随一の繁華街で、「大阪の台所」とも呼ばれるグルメの聖地です。1615年に開削された運河に由来し、夜になるとグリコの看板をはじめ、巨大なカニやタコなど派手な立体看板が街を彩ります。たこ焼き、お好み焼き、串カツなど大阪名物の食べ歩きを楽しむのにぴったりのエリアです。'
     },
     highlights: [
-      { en: 'Glico Running Man Sign: The iconic neon sign of a runner crossing a finish line - Osaka\'s most photographed landmark', zh: '格力高跑男广告牌: 标志性的霓虹灯招牌，显示一个跑步者冲过终点线 - 大阪最受拍照的地标' },
-      { en: 'Giant Food Signs: Massive 3D signs including a moving crab (Kani Doraku), octopus (Tako Tako King), and pufferfish', zh: '巨大食物招牌: 巨大的3D招牌，包括移动的螃蟹（蟹道乐）、章鱼（章鱼章鱼王）和河豚', ja: '巨大食物招牌: 巨大的3D招牌，包括移动的カニ（蟹道乐）、章鱼（章鱼章鱼王）和河豚' },
-      { en: 'Street Food: Try takoyaki, okonomiyaki, kushikatsu, and other Osaka specialties from street vendors', zh: '街头美食: 从街头小贩那里尝试章鱼烧、大阪烧、串炸和其他大阪特色菜', ja: '街头美食: 街头小贩那里尝试たこ焼き、お好み焼き、串カツ和其他大阪特色菜' },
+      { en: 'Glico Running Man Sign: The iconic neon sign of a runner crossing a finish line - Osaka\'s most photographed landmark', zh: '格力高跑男广告牌: 标志性的霓虹灯招牌，显示一个跑步者冲过终点线 - 大阪最受拍照的地标', ja: 'グリコサイン：ランナーがゴールするネオン看板。大阪で最も撮影されるランドマーク' },
+      { en: 'Giant Food Signs: Massive 3D signs including a moving crab (Kani Doraku), octopus (Tako Tako King), and pufferfish', zh: '巨大食物招牌: 巨大的3D招牌，包括移动的螃蟹（蟹道乐）、章鱼（章鱼章鱼王）和河豚', ja: '巨大ネオン看板：動くカニ（かに道楽）やタコ、フグなど迫力の3D看板' },
+      { en: 'Street Food: Try takoyaki, okonomiyaki, kushikatsu, and other Osaka specialties from street vendors', zh: '街头美食: 从街头小贩那里尝试章鱼烧、大阪烧、串炸和其他大阪特色菜', ja: '屋台グルメ：たこ焼き・お好み焼き・串カツなど大阪名物を路上で' },
     ],
     tips: [
-      { en: 'Visit at Night: The neon signs are most impressive after dark', zh: '夜晚参观: 霓虹灯招牌在夜晚最令人印象深刻', ja: '夜晚参观: 霓虹灯招牌在夜晚最令人印象深刻' },
-      { en: 'Try the Food: Don\'t miss takoyaki, okonomiyaki, and kushikatsu', zh: '尝试美食: 不要错过章鱼烧、大阪烧和串炸' },
+      { en: 'Visit at Night: The neon signs are most impressive after dark', zh: '夜晚参观: 霓虹灯招牌在夜晚最令人印象深刻', ja: '夜景がおすすめ：ネオンが一番映えるのは夜' },
+      { en: 'Try the Food: Don\'t miss takoyaki, okonomiyaki, and kushikatsu', zh: '尝试美食: 不要错过章鱼烧、大阪烧和串炸', ja: 'グルメ：たこ焼き・お好み焼き・串カツは外せません' },
     ],
   },
   'gion': {
@@ -285,14 +285,14 @@ export const attractionsData = {
       ja: '祇園は京都を代表する花街（芸妓の街）で、町家が並ぶ路地や石畳、茶屋など、昔ながらの風情が色濃く残るエリアです。夕方以降には、芸妓（げいこ）や舞妓（まいこ）が稽古やお座敷へ向かう姿を見かけることもあります。花見小路通を中心に、伝統的な建築と老舗の飲食店、お茶屋が並び、提灯の灯りがともる夕景は特に幻想的です。'
     },
     highlights: [
-      { en: 'Hanamikoji Street: The main street with traditional architecture and exclusive teahouses', zh: '花见小路: 主要街道，有传统建筑和独家茶屋', ja: '花见小路: 主要街道，有传统建筑和独家お茶屋' },
-      { en: 'Geisha Spotting: Best chance to see geishas and maikos in traditional attire (evening hours)', zh: '观赏艺伎: 看到传统服装的艺伎和舞伎的最佳机会（傍晚时段）', ja: '观赏艺伎: 看到传统服装的艺伎和舞伎的最佳机会（傍晚时段）' },
-      { en: 'Yasaka Shrine: Beautiful shrine at the end of Hanamikoji with hundreds of lanterns', zh: '八坂神社: 花见小路尽头的美丽神社，有数百个灯笼', ja: '八坂神社: 花见小路尽头的美丽神社，有数百个灯笼' },
+      { en: 'Hanamikoji Street: The main street with traditional architecture and exclusive teahouses', zh: '花见小路: 主要街道，有传统建筑和独家茶屋', ja: '花見小路通：伝統建築とお茶屋が並ぶメインストリート' },
+      { en: 'Geisha Spotting: Best chance to see geishas and maikos in traditional attire (evening hours)', zh: '观赏艺伎: 看到传统服装的艺伎和舞伎的最佳机会（傍晚时段）', ja: '芸妓・舞妓：夕方以降、稽古やお座敷に向かう姿が見られることも' },
+      { en: 'Yasaka Shrine: Beautiful shrine at the end of Hanamikoji with hundreds of lanterns', zh: '八坂神社: 花见小路尽头的美丽神社，有数百个灯笼', ja: '八坂神社：花見小路の突き当たり。提灯が並ぶ美しい神社' },
     ],
     tips: [
-      { en: 'Evening Visit: Best time to see geishas and experience the magical atmosphere', zh: '傍晚参观: 观赏艺伎和体验神奇氛围的最佳时间', ja: '傍晚参观: 观赏艺伎和体验神奇氛围的最佳時間' },
-      { en: 'Respect Privacy: Don\'t chase or harass geishas - observe from a respectful distance', zh: '尊重隐私: 不要追逐或骚扰艺伎 - 从尊重的距离观察' },
-      { en: 'Traditional Restaurants: Many exclusive restaurants require reservations', zh: '传统餐厅: 许多独家餐厅需要预订', ja: '传统レストラン: 许多独家レストラン需要予約' },
+      { en: 'Evening Visit: Best time to see geishas and experience the magical atmosphere', zh: '傍晚参观: 观赏艺伎和体验神奇氛围的最佳时间', ja: '夕方がおすすめ：芸妓の姿と幻想的な雰囲気を楽しめる' },
+      { en: 'Respect Privacy: Don\'t chase or harass geishas - observe from a respectful distance', zh: '尊重隐私: 不要追逐或骚扰艺伎 - 从尊重的距离观察', ja: 'マナー：芸妓に近づきすぎず、敬意を持って見学を' },
+      { en: 'Traditional Restaurants: Many exclusive restaurants require reservations', zh: '传统餐厅: 许多独家餐厅需要预订', ja: '高級店は予約必須のところが多い' },
     ],
   },
   'yasaka': {
@@ -314,13 +314,13 @@ export const attractionsData = {
       ja: '八坂神社（祇園社）は祇園の象徴的な神社で、花見小路通の突き当たりに位置します。約1,350年以上の歴史を持ち、素戔嗚尊（すさのおのみこと）などを祀っています。境内には数多くの提灯が並び、夜に灯りが入るととても写真映えする雰囲気に。7月の祇園祭は日本三大祭の一つとして有名で、本殿は国宝に指定されています。'
     },
     highlights: [
-      { en: 'Hundreds of Lanterns: Beautiful lanterns lining the main hall, especially stunning at night', zh: '数百个灯笼: 主殿旁的美丽灯笼，在夜晚特别令人惊叹', ja: '数百个灯笼: 主殿旁的美丽灯笼，在夜晚特别令人惊叹' },
-      { en: 'Gion Matsuri: One of Japan\'s three major festivals held in July', zh: '祇园祭: 7月举行的日本三大节日之一' },
-      { en: 'Main Hall: National Treasure-designated building with unique architecture', zh: '主殿: 被指定为国宝的建筑，具有独特的建筑风格', ja: '主殿: 被指定为国宝的建筑，具有独特的建筑风格' },
+      { en: 'Hundreds of Lanterns: Beautiful lanterns lining the main hall, especially stunning at night', zh: '数百个灯笼: 主殿旁的美丽灯笼，在夜晚特别令人惊叹', ja: '無数の提灯：本殿周辺に並ぶ提灯。夜のライトアップが特に美しい' },
+      { en: 'Gion Matsuri: One of Japan\'s three major festivals held in July', zh: '祇园祭: 7月举行的日本三大节日之一', ja: '祇園祭：7月開催の日本三大祭の一つ' },
+      { en: 'Main Hall: National Treasure-designated building with unique architecture', zh: '主殿: 被指定为国宝的建筑，具有独特的建筑风格', ja: '本殿：国宝指定。独特な神社建築' },
     ],
     tips: [
-      { en: 'Night Visit: The lanterns are most beautiful when lit at night', zh: '夜晚参观: 灯笼在夜晚点亮时最美丽', ja: '夜晚参观: 灯笼在夜晚点亮时最美丽' },
-      { en: 'Gion Matsuri: Visit in July to experience the famous festival', zh: '祇园祭: 在7月参观，体验著名的节日', ja: '祇園祭: 在7月参观，体验著名的节日' },
+      { en: 'Night Visit: The lanterns are most beautiful when lit at night', zh: '夜晚参观: 灯笼在夜晚点亮时最美丽', ja: '夜景がおすすめ：提灯に灯が入ると一層幻想的に' },
+      { en: 'Gion Matsuri: Visit in July to experience the famous festival', zh: '祇园祭: 在7月参观，体验著名的节日', ja: '祇園祭：7月に訪れれば日本三大祭の一つを体験' },
     ],
   },
   'nara-park': {
@@ -344,15 +344,15 @@ export const attractionsData = {
       ja: '奈良公園は奈良市中心部に広がる大きな公園で、約1,200頭以上の野生のシカが自由に歩き回ることで有名です。シカは神の使いとされ、国の天然記念物にも指定されています。園内では「鹿せんべい」を購入して餌やり体験ができ、写真撮影も人気。東大寺、春日大社、興福寺など主要な寺社が点在し、春は桜の名所としても美しいスポットです。'
     },
     highlights: [
-      { en: 'Friendly Deer: Over 1,200 sika deer freely roaming and interacting with visitors', zh: '友好的鹿: 超过1,200只梅花鹿自由漫游并与游客互动', ja: '友好的鹿: 超过1,200只梅花鹿自由漫游并与游客互动' },
-      { en: 'Deer Feeding: Buy special deer crackers (shika senbei) to feed the deer', zh: '喂鹿: 购买特殊的鹿饼干（鹿煎饼）来喂鹿', ja: '喂鹿: 购买特殊的鹿饼干（鹿煎饼）来喂鹿' },
-      { en: 'Major Temples: Home to Todaiji, Kasuga Taisha, and Kofukuji temples', zh: '主要寺庙: 东大寺、春日大社和兴福寺的所在地', ja: '主要寺院: 东大寺、春日大社和兴福寺的所在地' },
-      { en: 'Cherry Blossoms: Beautiful sakura trees throughout the park in spring', zh: '樱花: 春天整个公园都有美丽的樱花树', ja: '樱花: 春天整个公園都有美丽的樱花树' },
+      { en: 'Friendly Deer: Over 1,200 sika deer freely roaming and interacting with visitors', zh: '友好的鹿: 超过1,200只梅花鹿自由漫游并与游客互动', ja: '約1,200頭のシカ：神の使いとして大切にされている奈良の鹿' },
+      { en: 'Deer Feeding: Buy special deer crackers (shika senbei) to feed the deer', zh: '喂鹿: 购买特殊的鹿饼干（鹿煎饼）来喂鹿', ja: '鹿せんべい：¥200で購入。お辞儀する鹿に餌やり体験' },
+      { en: 'Major Temples: Home to Todaiji, Kasuga Taisha, and Kofukuji temples', zh: '主要寺庙: 东大寺、春日大社和兴福寺的所在地', ja: '東大寺・春日大社・興福寺：主要な寺社が園内に点在' },
+      { en: 'Cherry Blossoms: Beautiful sakura trees throughout the park in spring', zh: '樱花: 春天整个公园都有美丽的樱花树', ja: '桜：春は公園全体が桜の名所に' },
     ],
     tips: [
-      { en: 'Deer Crackers: Available for ¥200 - be careful, deer can be persistent!', zh: '鹿饼干: 售价200日元 - 小心，鹿可能会很坚持！', ja: '鹿饼干: 售价200日元 - 小心，鹿可能会很坚持！' },
-      { en: 'Respect the Deer: Don\'t tease or chase them - they can bow for food!', zh: '尊重鹿: 不要戏弄或追逐它们 - 它们会为食物鞠躬！' },
-      { en: 'Early Morning: Best time to visit with fewer crowds and active deer', zh: '清晨: 参观的最佳时间，人少，鹿活跃', ja: '清晨: 参观的最佳時間，人少，鹿活跃' },
+      { en: 'Deer Crackers: Available for ¥200 - be careful, deer can be persistent!', zh: '鹿饼干: 售价200日元 - 小心，鹿可能会很坚持！', ja: '鹿せんべい¥200：鹿は執念深いので袋は隠して' },
+      { en: 'Respect the Deer: Don\'t tease or chase them - they can bow for food!', zh: '尊重鹿: 不要戏弄或追逐它们 - 它们会为食物鞠躬！', ja: '鹿へのマナー：からかわず、お辞儀には鹿せんべいで応えて' },
+      { en: 'Early Morning: Best time to visit with fewer crowds and active deer', zh: '清晨: 参观的最佳时间，人少，鹿活跃', ja: '早朝がおすすめ：人が少なく鹿も活発' },
     ],
   },
   'todaiji': {
@@ -375,15 +375,15 @@ export const attractionsData = {
       ja: '東大寺は752年創建の日本を代表する大寺院で、聖武天皇が国分寺の総本山として建立しました。大仏殿は世界最大級の木造建築で、火災後の再建により当初より小さくなったとはいえ圧巻の規模です。堂内には高さ約15m、重さ約500トンともいわれる盧舎那仏（大仏）が鎮座します。境内には仁王像で知られる南大門や、眺望の良い二月堂など見どころが多くあります。'
     },
     highlights: [
-      { en: 'Great Buddha Hall: World\'s largest wooden building housing the massive bronze Buddha statue', zh: '大佛殿: 世界上最大的木制建筑，内有巨大的青铜佛像' },
-      { en: 'Great Buddha: 15-meter tall bronze statue weighing 500 tons - one of Japan\'s largest', zh: '大佛: 高15米、重500吨的青铜雕像 - 日本最大的之一' },
-      { en: 'Nandaimon Gate: Massive gate with fierce guardian statues (Nio)', zh: '南大门: 有凶猛守护神像（仁王）的巨大门', ja: '南大门: 有凶猛守护神像（仁王）的巨大门' },
-      { en: 'Pillar Hole: Try to crawl through a hole in a pillar - said to bring enlightenment', zh: '柱子洞: 尝试爬过柱子上的洞 - 据说能带来开悟', ja: '柱子洞: 尝试爬过柱子上的洞 - 据说能带来开悟' },
+      { en: 'Great Buddha Hall: World\'s largest wooden building housing the massive bronze Buddha statue', zh: '大佛殿: 世界上最大的木制建筑，内有巨大的青铜佛像', ja: '大仏殿：世界最大の木造建築で、巨大な銅造大仏を安置' },
+      { en: 'Great Buddha: 15-meter tall bronze statue weighing 500 tons - one of Japan\'s largest', zh: '大佛: 高15米、重500吨的青铜雕像 - 日本最大的之一', ja: '大仏：高さ15m・重さ500トンの銅像。日本最大級' },
+      { en: 'Nandaimon Gate: Massive gate with fierce guardian statues (Nio)', zh: '南大门: 有凶猛守护神像（仁王）的巨大门', ja: '南大門：仁王像で知られる巨大な門' },
+      { en: 'Pillar Hole: Try to crawl through a hole in a pillar - said to bring enlightenment', zh: '柱子洞: 尝试爬过柱子上的洞 - 据说能带来开悟', ja: '柱の穴くぐり：大仏の鼻の穴と同じ大きさの穴。くぐるとご利益が' },
     ],
     tips: [
-      { en: 'Early Visit: Arrive early to avoid crowds, especially during peak season', zh: '早到: 早到以避开人群，特别是在旺季', ja: '早到: 早到以避开人群，特别是在旺季' },
-      { en: 'Pillar Challenge: The hole in the pillar is said to be the same size as the Buddha\'s nostril', zh: '柱子挑战: 柱子上的洞据说与佛像的鼻孔大小相同' },
-      { en: 'Combined Ticket: Consider buying a combined ticket for multiple Nara attractions', zh: '联票: 考虑购买多个奈良景点的联票', ja: '联票: 考虑购买多个奈良観光地的联票' },
+      { en: 'Early Visit: Arrive early to avoid crowds, especially during peak season', zh: '早到: 早到以避开人群，特别是在旺季', ja: '早めの参拝がおすすめ：特にシーズン中は混雑するので' },
+      { en: 'Pillar Challenge: The hole in the pillar is said to be the same size as the Buddha\'s nostril', zh: '柱子挑战: 柱子上的洞据说与佛像的鼻孔大小相同', ja: '柱の穴くぐり：柱の穴は大仏の鼻の穴と同じ大きさと言われています' },
+      { en: 'Combined Ticket: Consider buying a combined ticket for multiple Nara attractions', zh: '联票: 考虑购买多个奈良景点的联票', ja: '共通券：奈良の複数スポットを回るなら共通券がお得' },
     ],
   },
   'kasuga': {
@@ -391,7 +391,7 @@ export const attractionsData = {
     title: { en: 'Kasuga Taisha', zh: '春日大社', ja: '春日大社' },
     location: { en: 'Nara', zh: '奈良', ja: '奈良' },
     city: 'nara',
-    price: 'Free (Main Area) | ¥500 (Inner Area)',
+    price: { en: 'Free (Main Area) | ¥500 (Inner Area)', zh: '本殿外围免费 | 内殿 ¥500', ja: '本殿外苑無料 | 本殿 ¥500' },
     hours: { en: '6:00 AM - 6:00 PM (Apr-Sep), 6:30 AM - 5:00 PM (Oct-Mar)', zh: '早上6:00 - 下午6:00（4-9月），早上6:30 - 下午5:00（10-3月）', ja: '午前6:00 - 午後6:00（4-9月）、午前6:30 - 午後5:00（10-3月）' },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/attractions/kasuga/stone-lanterns-pathway.jpg',
@@ -408,15 +408,15 @@ export const attractionsData = {
       ja: '春日大社は奈良を代表する神社で、境内に約3,000基の石灯籠・釣灯籠があることで知られます。768年創建とされ、奈良の守護神を祀っています。参道には石灯籠がずらりと並び、幻想的な雰囲気に。社殿の軒下には無数の釣灯籠が掛けられ、2月と8月の万灯籠の時期にはすべての灯籠に火が灯り、特に美しい光景が広がります。'
     },
     highlights: [
-      { en: '3,000 Lanterns: Stone and bronze lanterns throughout the shrine grounds', zh: '3,000个灯笼: 整个神社场地的石制和青铜灯笼', ja: '3,000个灯笼: 整个神社场地的石制和青铜灯笼' },
-      { en: 'Lantern Festivals: All lanterns lit during festivals in February and August', zh: '灯笼节: 在2月和8月的节日期间，所有灯笼都被点亮', ja: '灯笼节: 在2月和8月的节日期间，所有灯笼都被点亮' },
-      { en: 'Vermillion Buildings: Beautiful traditional architecture in vibrant vermillion color', zh: '朱红色建筑: 鲜艳朱红色的美丽传统建筑', ja: '朱红色建筑: 鲜艳朱红色的美丽传统建筑' },
-      { en: 'Stone Lantern Path: Magical pathway lined with hundreds of stone lanterns', zh: '石灯笼路径: 两旁有数百个石灯笼的神奇路径', ja: '石灯笼路径: 两旁有数百个石灯笼的神奇路径' },
+      { en: '3,000 Lanterns: Stone and bronze lanterns throughout the shrine grounds', zh: '3,000个灯笼: 整个神社场地的石制和青铜灯笼', ja: '約3,000基の灯籠：石灯籠・釣灯籠が境内にずらり' },
+      { en: 'Lantern Festivals: All lanterns lit during festivals in February and August', zh: '灯笼节: 在2月和8月的节日期间，所有灯笼都被点亮', ja: '万灯籠：2月・8月は全ての灯籠に火が灯る' },
+      { en: 'Vermillion Buildings: Beautiful traditional architecture in vibrant vermillion color', zh: '朱红色建筑: 鲜艳朱红色的美丽传统建筑', ja: '朱塗りの社殿：鮮やかな朱色の伝統建築' },
+      { en: 'Stone Lantern Path: Magical pathway lined with hundreds of stone lanterns', zh: '石灯笼路径: 两旁有数百个石灯笼的神奇路径', ja: '石灯籠の参道：数百基の石灯籠が並ぶ幻想的な道' },
     ],
     tips: [
-      { en: 'Lantern Festivals: Visit in February or August to see all lanterns lit', zh: '灯笼节: 在2月或8月参观，看到所有灯笼被点亮', ja: '灯笼节: 在2月或8月参观，看到所有灯笼被点亮' },
-      { en: 'Early Morning: Beautiful lighting and fewer crowds in the morning', zh: '清晨: 早晨光线美丽，人少', ja: '清晨: 早晨光線美丽，人少' },
-      { en: 'Inner Area: Pay ¥500 to see the inner area with more lanterns', zh: '内区: 支付500日元参观内区，有更多灯笼', ja: '内区: 支付500日元参观内区，有更多灯笼' },
+      { en: 'Lantern Festivals: Visit in February or August to see all lanterns lit', zh: '灯笼节: 在2月或8月参观，看到所有灯笼被点亮', ja: '万灯籠の時期：2月か8月に訪れると全灯籠に火が灯る' },
+      { en: 'Early Morning: Beautiful lighting and fewer crowds in the morning', zh: '清晨: 早晨光线美丽，人少', ja: '早朝がおすすめ：朝の光が美しく人も少なめ' },
+      { en: 'Inner Area: Pay ¥500 to see the inner area with more lanterns', zh: '内区: 支付500日元参观内区，有更多灯笼', ja: '内殿：¥500でさらに多くの灯籠が見られるエリアへ' },
     ],
   },
   'ujigami': {
@@ -438,18 +438,18 @@ export const attractionsData = {
       ja: '宇治上神社は京都・宇治にある日本最古級の神社で、「古都京都の文化財」としてユネスコ世界遺産にも登録されています。平安時代後期の創建とされ、宇治若郎子（うじのわきいらつこ）を祀ります。本殿（国宝）は11世紀の神社建築の遺構として非常に貴重で、素朴で端正な佇まいが魅力です。宇治川の近くにあり、京都市内の有名観光地より比較的落ち着いて参拝できる静かなスポットです。'
     },
     highlights: [
-      { en: 'UNESCO World Heritage: Part of "Historic Monuments of Ancient Kyoto"', zh: '联合国教科文组织世界遗产: "古都京都的历史遗迹"的一部分', ja: '联合国教科文组织世界遗产: "古都京都的历史遗迹"的一部分' },
-      { en: 'Oldest Shrine Architecture: Main hall dates back to the 11th century', zh: '最古老的神社建筑: 主殿可追溯到11世纪', ja: '最古老的神社建筑: 主殿可追溯到11世纪' },
-      { en: 'Peaceful Atmosphere: Less crowded than other Kyoto attractions', zh: '宁静氛围: 比京都其他景点人少', ja: '宁静氛围: 比京都其他観光地人少' },
-      { en: 'Riverside Location: Beautiful location along the Uji River', zh: '河畔位置: 位于宇治川沿岸的美丽位置', ja: '河畔位置: 位于宇治川沿岸的美丽位置' },
-      { en: 'Traditional Architecture: Simple and elegant Shinto shrine design', zh: '传统建筑: 简洁优雅的神道教神社设计', ja: '传统建筑: 简洁优雅的神道教神社设计' },
+      { en: 'UNESCO World Heritage: Part of "Historic Monuments of Ancient Kyoto"', zh: '联合国教科文组织世界遗产: "古都京都的历史遗迹"的一部分', ja: 'ユネスコ世界遺産：「古都京都の文化財」の一部' },
+      { en: 'Oldest Shrine Architecture: Main hall dates back to the 11th century', zh: '最古老的神社建筑: 主殿可追溯到11世纪', ja: '最古の神社建築：本殿は11世紀にさかのぼる国宝' },
+      { en: 'Peaceful Atmosphere: Less crowded than other Kyoto attractions', zh: '宁静氛围: 比京都其他景点人少', ja: '静かな雰囲気：他の京都観光地より人が少なめ' },
+      { en: 'Riverside Location: Beautiful location along the Uji River', zh: '河畔位置: 位于宇治川沿岸的美丽位置', ja: '宇治川沿い：川辺の静かで風情ある立地' },
+      { en: 'Traditional Architecture: Simple and elegant Shinto shrine design', zh: '传统建筑: 简洁优雅的神道教神社设计', ja: '伝統建築：シンプルで端正な神社造り' },
     ],
     tips: [
-      { en: 'Duration: ~30-45 mins (walk around shrine grounds)', zh: '停留时间: 约30-45分钟（在神社场地周围散步）', ja: '所要時間: 約30-45分（在神社场地周围散步）' },
-      { en: 'Access: Walk 10 mins from Nakamura Tokichi Honten along Uji River', zh: '交通: 从中村藤吉本店沿宇治川步行10分钟', ja: '交通: 中村藤吉本店沿宇治川徒歩10分' },
-      { en: 'Perfect Timing: Visit at 10:30 AM after Nakamura Tokichi (9:30 AM), then leave for Nara at 11:30 AM', zh: '完美时机: 在中村藤吉（上午9:30）之后上午10:30参观，然后在上午11:30前往奈良', ja: '完美时机: 在中村藤吉（午前9:30）之后午前10:30参观，然后在午前11:30へ移動奈良' },
-      { en: 'Free Admission: No entrance fee required', zh: '免费入场: 无需入场费', ja: '無料入场: 无需入场费' },
-      { en: 'Riverside Walk: Enjoy a peaceful walk along the Uji River to reach the shrine', zh: '河畔散步: 沿着宇治川享受宁静的步行到达神社', ja: '河畔散步: 沿着宇治川享受宁静的徒歩到达神社' },
+      { en: 'Duration: ~30-45 mins (walk around shrine grounds)', zh: '停留时间: 约30-45分钟（在神社场地周围散步）', ja: '所要時間：約30〜45分（境内散策）' },
+      { en: 'Access: Walk 10 mins from Nakamura Tokichi Honten along Uji River', zh: '交通: 从中村藤吉本店沿宇治川步行10分钟', ja: 'アクセス：中村藤吉本店から宇治川沿いに徒歩10分' },
+      { en: 'Perfect Timing: Visit at 10:30 AM after Nakamura Tokichi (9:30 AM), then leave for Nara at 11:30 AM', zh: '完美时机: 在中村藤吉（上午9:30）之后上午10:30参观，然后在上午11:30前往奈良', ja: 'おすすめの流れ：中村藤吉（9:30）のあと10:30参拝、11:30頃奈良へ移動' },
+      { en: 'Free Admission: No entrance fee required', zh: '免费入场: 无需入场费', ja: '拝観無料：入場料不要' },
+      { en: 'Riverside Walk: Enjoy a peaceful walk along the Uji River to reach the shrine', zh: '河畔散步: 沿着宇治川享受宁静的步行到达神社', ja: '川沿い散歩：宇治川沿いの静かな道を歩いて参拝' },
     ],
   },
   'wakakusa': {
@@ -474,19 +474,19 @@ export const attractionsData = {
       ja: '若草山（みかさやま）は奈良公園内にある標高342mの草山で、奈良市街を一望できる眺望スポットとして人気です。山全体が芝に覆われ、春夏は緑、秋は黄金色、冬は茶色へと季節によって表情が変わります。毎年1月の「若草山焼き」では山肌を焼く行事が行われ、奈良の冬の風物詩として有名です。夕暮れ時（目安は17:30頃）は特に美しく、山頂までは徒歩15〜20分ほどで登れるため気軽に訪れやすい場所です。'
     },
     highlights: [
-      { en: 'Panoramic Views: Spectacular 360-degree views of Nara City from the summit', zh: '全景: 从山顶欣赏奈良市的壮丽360度全景', ja: '全景: 山顶欣赏奈良市的壮丽360度全景' },
-      { en: 'Sunset Views: Famous for breathtaking sunset views over Nara City - best time is around 5:30 PM', zh: '日落景色: 以奈良市上空的壮丽日落景色而闻名 - 最佳时间是下午5:30左右', ja: '日落景色: 以奈良市上空的壮丽日落景色而闻名 - 最佳時間是午後5:30左右' },
-      { en: 'Grass-Covered Mountain: Unique landscape with grass covering the entire mountain, changing colors with seasons', zh: '草覆盖的山: 独特的景观，整座山都被草覆盖，随季节变化颜色', ja: '草覆盖的山: 独特的景观，整座山都被草覆盖，随季节变化颜色' },
-      { en: 'Easy Climb: 15-20 minute walk to the summit, accessible for most visitors', zh: '轻松攀登: 步行15-20分钟到达山顶，大多数游客都可以到达', ja: '轻松攀登: 徒歩15-20分到达山顶，大多数游客都可以到达' },
-      { en: 'Wakakusa Yamayaki Festival: Annual fire festival in January where the mountain is set ablaze', zh: '若草山烧山节: 每年一月的火节，整座山被点燃', ja: '若草山烧山节: 每年一月的火节，整座山被点燃' },
+      { en: 'Panoramic Views: Spectacular 360-degree views of Nara City from the summit', zh: '全景: 从山顶欣赏奈良市的壮丽360度全景', ja: 'パノラマ：山頂から奈良市街を360度一望' },
+      { en: 'Sunset Views: Famous for breathtaking sunset views over Nara City - best time is around 5:30 PM', zh: '日落景色: 以奈良市上空的壮丽日落景色而闻名 - 最佳时间是下午5:30左右', ja: '夕景：奈良市街を望む夕焼けが絶景。17:30頃がベスト' },
+      { en: 'Grass-Covered Mountain: Unique landscape with grass covering the entire mountain, changing colors with seasons', zh: '草覆盖的山: 独特的景观，整座山都被草覆盖，随季节变化颜色', ja: '芝生の山：山全体が芝に覆われ、季節で緑・黄金・茶色に変化' },
+      { en: 'Easy Climb: 15-20 minute walk to the summit, accessible for most visitors', zh: '轻松攀登: 步行15-20分钟到达山顶，大多数游客都可以到达', ja: '気軽に登山：山頂まで徒歩15〜20分。多くの方が登れます' },
+      { en: 'Wakakusa Yamayaki Festival: Annual fire festival in January where the mountain is set ablaze', zh: '若草山烧山节: 每年一月的火节，整座山被点燃', ja: '若草山焼き：毎年1月の火祭り。山肌を焼く奈良の冬の風物詩' },
     ],
     tips: [
-      { en: 'Best Time to Visit: Sunset (around 5:30 PM) for the most spectacular views - arrive at 5:00 PM to secure a good spot', zh: '最佳访问时间: 日落时分（约下午5:30）获得最壮观的景色 - 下午5:00到达以确保好位置', ja: '最佳访问時間: 日落时分（約午後5:30）获得最壮观的景色 - 午後5:00到达以确保好位置' },
-      { en: 'Duration: ~30-45 mins (15-20 mins climb up, 10-15 mins at top, 10 mins climb down)', zh: '停留时间: 约30-45分钟（15-20分钟爬上去，10-15分钟在顶部，10分钟爬下来）', ja: '所要時間: 約30-45分（15-20分爬上去，10-15分在顶部，10分爬下来）' },
-      { en: 'Entrance Fee: ¥150 per person', zh: '入场费: 每人¥150', ja: '入场费: 每人¥150' },
-      { en: 'Access: Walk 15 mins from Kasuga Taisha Shrine - perfect after visiting the shrine', zh: '交通: 从春日大社步行15分钟 - 参观神社后的完美选择', ja: '交通: 春日大社徒歩15分 - 参观神社后的完美选择' },
-      { en: 'Perfect Timing: Visit at 5:30 PM (sunset) after exploring Kasuga Taisha, then head to Yamatoen Honten for dinner at 7:00 PM', zh: '完美时机: 下午5:30（日落）参观，在探索春日大社之后，然后在晚上7:00前往大和园本店享用晚餐', ja: '完美时机: 午後5:30（日落）参观，在探索春日大社之后，然后在夜7:00へ移動大和园本店享用ディナー' },
-      { en: 'What to Bring: Camera for sunset photos, comfortable walking shoes, and a jacket as it can get windy at the top', zh: '携带物品: 用于拍摄日落照片的相机，舒适的步行鞋，以及夹克，因为山顶可能多风', ja: '携带物品: 用于拍摄日落照片的相机，舒适的徒歩鞋，以及夹克，因为山顶可能多风' },
+      { en: 'Best Time to Visit: Sunset (around 5:30 PM) for the most spectacular views - arrive at 5:00 PM to secure a good spot', zh: '最佳访问时间: 日落时分（约下午5:30）获得最壮观的景色 - 下午5:00到达以确保好位置', ja: '夕暮れがおすすめ：一番の絶景は17:30頃。良い場所は17:00到着で' },
+      { en: 'Duration: ~30-45 mins (15-20 mins climb up, 10-15 mins at top, 10 mins climb down)', zh: '停留时间: 约30-45分钟（15-20分钟爬上去，10-15分钟在顶部，10分钟爬下来）', ja: '所要時間：約30〜45分（登り15〜20分、頂上10〜15分、下り10分）' },
+      { en: 'Entrance Fee: ¥150 per person', zh: '入场费: 每人¥150', ja: '入山料：1人¥150' },
+      { en: 'Access: Walk 15 mins from Kasuga Taisha Shrine - perfect after visiting the shrine', zh: '交通: 从春日大社步行15分钟 - 参观神社后的完美选择', ja: 'アクセス：春日大社から徒歩15分。参拝後に立ち寄るのに最適' },
+      { en: 'Perfect Timing: Visit at 5:30 PM (sunset) after exploring Kasuga Taisha, then head to Yamatoen Honten for dinner at 7:00 PM', zh: '完美时机: 下午5:30（日落）参观，在探索春日大社之后，然后在晚上7:00前往大和园本店享用晚餐', ja: 'おすすめの流れ：春日大社のあと17:30（夕景）に若草山、19:00に大和園本店で夕食' },
+      { en: 'What to Bring: Camera for sunset photos, comfortable walking shoes, and a jacket as it can get windy at the top', zh: '携带物品: 用于拍摄日落照片的相机，舒适的步行鞋，以及夹克，因为山顶可能多风', ja: '持参品：夕景用カメラ、歩きやすい靴、頂上は風が冷たいので上着' },
     ],
   },
   'osaka-castle': {
@@ -494,7 +494,7 @@ export const attractionsData = {
     title: { en: 'Osaka Castle', zh: '大阪城', ja: '大阪城' },
     location: { en: 'Osaka', zh: '大阪', ja: '大阪' },
     city: 'osaka',
-    price: 'Free (Park) | ¥600 (Castle Tower)',
+    price: { en: 'Free (Park) | ¥600 (Castle Tower)', zh: '公园免费 | 天守阁 ¥600', ja: '公園無料 | 天守閣 ¥600' },
     hours: { en: '9:00 AM - 5:00 PM (Castle Tower)', zh: '上午9:00 - 下午5:00（天守阁）', ja: '午前9:00 - 午後5:00（天守閣）' },
     images: [
       'https://res.cloudinary.com/dput41tre/image/upload/japantrip/attractions/osaka-castle/castle-close-up.jpg',
@@ -510,20 +510,20 @@ export const attractionsData = {
       ja: '大阪城は1583年に豊臣秀吉が築いた、日本を代表する城の一つです。現在の天守は1931年に再建されたもので、内部は博物館となっており、大阪城の歴史や資料が展示されています。広い公園と堀に囲まれ、春は桜の名所としても有名です。16世紀の天下統一の歴史に深く関わった城で、天守最上階（8階）の展望フロアからは大阪の街並みを一望できます。'
     },
     highlights: [
-      { en: 'Castle Tower: 8-story reconstruction with museum and observation deck', zh: '天守阁: 8层重建，有博物馆和观景台', ja: '天守阁: 8层重建，有博物館和观景台' },
-      { en: 'Cherry Blossoms: Beautiful sakura trees throughout the park in spring', zh: '樱花: 春天整个公园都有美丽的樱花树', ja: '樱花: 春天整个公園都有美丽的樱花树' },
-      { en: 'Museum: Exhibits about Toyotomi Hideyoshi and the castle\'s history', zh: '博物馆: 关于丰臣秀吉和城堡历史的展览' },
-      { en: 'Gardens: Beautiful traditional Japanese gardens surrounding the castle', zh: '花园: 围绕城堡的美丽传统日本花园', ja: '花园: 围绕城堡的美丽传统日本花园' },
+      { en: 'Castle Tower: 8-story reconstruction with museum and observation deck', zh: '天守阁: 8层重建，有博物馆和观景台', ja: '天守閣：8階建ての再建。博物館と展望フロアあり' },
+      { en: 'Cherry Blossoms: Beautiful sakura trees throughout the park in spring', zh: '樱花: 春天整个公园都有美丽的樱花树', ja: '桜：春は公園全体が桜の名所' },
+      { en: 'Museum: Exhibits about Toyotomi Hideyoshi and the castle\'s history', zh: '博物馆: 关于丰臣秀吉和城堡历史的展览', ja: '博物館：豊臣秀吉と城の歴史に関する展示' },
+      { en: 'Gardens: Beautiful traditional Japanese gardens surrounding the castle', zh: '花园: 围绕城堡的美丽传统日本花园', ja: '庭園：城を囲む日本庭園' },
     ],
     tips: [
-      { en: 'Cherry Blossom Season: Visit in late March to early April for stunning views', zh: '樱花季节: 在3月下旬至4月初参观，欣赏令人惊叹的景色', ja: '樱花季节: 在3月下旬へ4月初参观，欣赏令人惊叹的景色' },
-      { en: 'Observation Deck: Great views of Osaka from the 8th floor', zh: '观景台: 从8楼可以欣赏到大阪的美景', ja: '观景台: 8楼可以欣赏到大阪的美景' },
-      { en: 'Park is Free: You can enjoy the gardens and exterior without entering the tower', zh: '公园免费: 您可以享受花园和外观，无需进入天守阁', ja: '公園無料: 您可以享受花园和外观，无需进入天守阁' },
+      { en: 'Cherry Blossom Season: Visit in late March to early April for stunning views', zh: '樱花季节: 在3月下旬至4月初参观，欣赏令人惊叹的景色', ja: '桜の時期：3月下旬〜4月初旬が絶景' },
+      { en: 'Observation Deck: Great views of Osaka from the 8th floor', zh: '观景台: 从8楼可以欣赏到大阪的美景', ja: '展望フロア：8階から大阪の街を一望' },
+      { en: 'Park is Free: You can enjoy the gardens and exterior without entering the tower', zh: '公园免费: 您可以享受花园和外观，无需进入天守阁', ja: '公園は無料：天守に入らなくても庭園と外観を楽しめる' },
     ],
   },
   'umeda-sky-building': {
     id: 'umeda-sky-building',
-    title: { en: 'Umeda Sky Building', zh: '梅田蓝天大厦', ja: '梅田蓝天大厦' },
+    title: { en: 'Umeda Sky Building', zh: '梅田蓝天大厦', ja: '梅田スカイビル' },
     location: { en: 'Umeda, Osaka', zh: '大阪梅田', ja: '大阪梅田' },
     city: 'osaka',
     price: '¥1,500',
@@ -542,16 +542,16 @@ export const attractionsData = {
       ja: '梅田スカイビルは1993年に完成した大阪の代表的ランドマークで、2棟の高層タワーが最上部で連結された特徴的なデザインが魅力です。最上部の「空中庭園展望台」からは大阪市街を360度見渡せ、昼は広がる街並み、夜はきらめく夜景を楽しめます。39階の屋外デッキと40階の屋内展望フロアがあり、建築好きにも人気の観光スポットです。'
     },
     highlights: [
-      { en: 'Floating Garden Observatory: Open-air deck on 39th floor offering stunning 360° panoramic views of Osaka', zh: '空中庭园展望台: 39层的露天观景台，提供令人惊叹的大阪360°全景', ja: '空中庭园展望台: 39层的露天观景台，提供令人惊叹的大阪360°全景' },
-      { en: 'Unique Architecture: Two towers connected by a circular observatory bridge at the top', zh: '独特建筑: 两座塔楼通过顶部的圆形展望台桥相连', ja: '独特建筑: 两座塔楼通过顶部的圆形展望台桥相连' },
-      { en: 'Day & Night Views: Beautiful cityscape views during the day and dazzling city lights at night', zh: '白天和夜景: 白天美丽的城市景观和夜晚耀眼的城市灯光', ja: '白天和夜景: 白天美丽的城市景观和夜晚耀眼的城市灯光' },
-      { en: 'Luminarie Walkway: Tunnel-like escalator connecting the two towers with beautiful lighting', zh: '光之隧道: 连接两座塔楼的隧道式自动扶梯，配有美丽的灯光', ja: '光之隧道: 连接两座塔楼的隧道式自动扶梯，配有美丽的灯光' },
+      { en: 'Floating Garden Observatory: Open-air deck on 39th floor offering stunning 360° panoramic views of Osaka', zh: '空中庭园展望台: 39层的露天观景台，提供令人惊叹的大阪360°全景', ja: '空中庭園展望台：39階の屋外デッキ。大阪360°パノラマ' },
+      { en: 'Unique Architecture: Two towers connected by a circular observatory bridge at the top', zh: '独特建筑: 两座塔楼通过顶部的圆形展望台桥相连', ja: 'ユニークな建築：最上部で連結された2棟のタワー' },
+      { en: 'Day & Night Views: Beautiful cityscape views during the day and dazzling city lights at night', zh: '白天和夜景: 白天美丽的城市景观和夜晚耀眼的城市灯光', ja: '昼と夜：昼は街並み、夜は夜景が楽しめる' },
+      { en: 'Luminarie Walkway: Tunnel-like escalator connecting the two towers with beautiful lighting', zh: '光之隧道: 连接两座塔楼的隧道式自动扶梯，配有美丽的灯光', ja: '光のエスカレーター：2棟をつなぐトンネル状の通路' },
     ],
     tips: [
-      { en: 'Best Time to Visit: Early morning (around 9am) to avoid crowds, or evening for city lights', zh: '最佳参观时间: 清晨（约9点）避开人群，或傍晚欣赏城市灯光', ja: '最佳参观時間: 清晨（約9点）避开人群，或傍晚欣赏城市灯光' },
-      { en: 'Duration: Allow 1-1.5 hours to fully enjoy the observatory and views', zh: '停留时间: 预留1-1.5小时充分享受展望台和景观', ja: '所要時間: 预留1-1.5時間充分享受展望台和景观' },
-      { en: 'Weather: Clear days offer the best views. Check weather forecast before visiting', zh: '天气: 晴天提供最佳景观。访问前查看天气预报', ja: '天气: 晴天提供最佳景观。访问前查看天气预报' },
-      { en: 'Photography: Great spot for panoramic photos of Osaka cityscape', zh: '摄影: 拍摄大阪城市景观全景照片的绝佳地点', ja: '摄影: 拍摄大阪城市景观全景照片的绝佳地点' },
+      { en: 'Best Time to Visit: Early morning (around 9am) to avoid crowds, or evening for city lights', zh: '最佳参观时间: 清晨（约9点）避开人群，或傍晚欣赏城市灯光', ja: 'おすすめ：朝9時頃は空いています。夕方なら夜景' },
+      { en: 'Duration: Allow 1-1.5 hours to fully enjoy the observatory and views', zh: '停留时间: 预留1-1.5小时充分享受展望台和景观', ja: '所要時間：展望台と景色を楽しむなら1〜1.5時間' },
+      { en: 'Weather: Clear days offer the best views. Check weather forecast before visiting', zh: '天气: 晴天提供最佳景观。访问前查看天气预报', ja: '天気：晴れの日がよく見える。事前に天気予報を' },
+      { en: 'Photography: Great spot for panoramic photos of Osaka cityscape', zh: '摄影: 拍摄大阪城市景观全景照片的绝佳地点', ja: '撮影：大阪のパノラマ写真に最適' },
     ],
     address: { en: '1-1-88 Oyodonaka, Kita-ku, Osaka 531-6023, Japan', zh: '日本大阪府大阪市北区大淀中1-1-88 531-6023', ja: '日本大阪府大阪市北区大淀中1-1-88 531-6023' },
     station: { en: 'Osaka Station', zh: '大阪站', ja: '大阪駅' },
@@ -560,7 +560,7 @@ export const attractionsData = {
   },
   'osaka-aquarium': {
     id: 'osaka-aquarium',
-    title: { en: 'Osaka Aquarium Kaiyukan (大阪海游馆)', zh: '大阪海游馆', ja: '大阪海游馆' },
+    title: { en: 'Osaka Aquarium Kaiyukan (大阪海游馆)', zh: '大阪海游馆', ja: '海遊館' },
     location: { en: 'Osaka Bay, Osaka', zh: '大阪湾，大阪', ja: '大阪湾、大阪' },
     city: 'osaka',
     price: '¥2,700',
@@ -578,24 +578,24 @@ export const attractionsData = {
       ja: '海遊館は大阪湾の天保山エリアにある日本最大級の水族館で、特に巨大な中央水槽（約5,400トン）とジンベエザメで有名です。館内は太平洋を中心とした環太平洋の海をテーマに、南極やグレートバリアリーフなど各地域の海洋生物を紹介しています。螺旋状のスロープを下りながら複数階を巡る構造で、さまざまな深さ・視点から生き物を観察できるのも魅力。メインの太平洋水槽ではジンベエザメやマンタなど迫力ある大型生物が見られます。'
     },
     highlights: [
-      { en: 'Whale Sharks: See the world\'s largest fish species in the massive central tank', zh: '鲸鲨: 在巨大的中央水槽中看到世界上最大的鱼类' },
-      { en: 'Massive Central Tank: 5,400-ton tank featuring whale sharks, manta rays, and large marine species', zh: '巨大的中央水槽: 5,400吨水槽，展示鲸鲨、蝠鲼和大型海洋物种', ja: '巨大的中央水槽: 5,400吨水槽，展示鲸鲨、蝠鲼和大型海洋物种' },
-      { en: 'Pacific Rim Journey: Explore marine life from different regions of the Pacific', zh: '环太平洋之旅: 探索来自太平洋不同地区的海洋生物', ja: '环太平洋之旅: 探索来自太平洋不同地区的海洋生物' },
-      { en: 'Spiral Design: Unique descending walkway through multiple floors', zh: '螺旋设计: 独特的下降走道，通过多层', ja: '螺旋设计: 独特的下降走道，通过多层' },
-      { en: 'Interactive Exhibits: Educational displays and feeding shows', zh: '互动展览: 教育展示和喂食表演', ja: '互动展览: 教育展示和喂食表演' },
+      { en: 'Whale Sharks: See the world\'s largest fish species in the massive central tank', zh: '鲸鲨: 在巨大的中央水槽中看到世界上最大的鱼类', ja: 'ジンベエザメ：巨大な中央水槽で世界最大の魚類を観察' },
+      { en: 'Massive Central Tank: 5,400-ton tank featuring whale sharks, manta rays, and large marine species', zh: '巨大的中央水槽: 5,400吨水槽，展示鲸鲨、蝠鲼和大型海洋物种', ja: '巨大な中央水槽：約5,400トン。ジンベエザメ・マンタなど' },
+      { en: 'Pacific Rim Journey: Explore marine life from different regions of the Pacific', zh: '环太平洋之旅: 探索来自太平洋不同地区的海洋生物', ja: '環太平洋の海：各地域の海洋生物を巡る構成' },
+      { en: 'Spiral Design: Unique descending walkway through multiple floors', zh: '螺旋设计: 独特的下降走道，通过多层', ja: '螺旋スロープ：複数階を下りながら観察' },
+      { en: 'Interactive Exhibits: Educational displays and feeding shows', zh: '互动展览: 教育展示和喂食表演', ja: '体験型展示：教育展示や餌やりショー' },
     ],
     tips: [
-      { en: 'Duration: ~2-3 hours to fully explore all exhibits', zh: '停留时间: 约2-3小时充分探索所有展览', ja: '所要時間: 約2-3時間充分探索所有展览' },
+      { en: 'Duration: ~2-3 hours to fully explore all exhibits', zh: '停留时间: 约2-3小时充分探索所有展览', ja: '所要時間：全展示をゆっくり回るなら約2〜3時間' },
       { en: 'Admission: ¥2,700 for adults (discounts available for children and seniors)', zh: '入场费: 成人¥2,700（儿童和老年人有折扣）', ja: '入场费: 成人¥2,700（儿童和老年人有折扣）' },
       { en: 'Access: Walk 5 mins from Osakako Station (JR Osaka Loop Line from Osaka Station, ~20 mins)', zh: '交通: 从大阪港站步行5分钟（从大阪站乘坐JR大阪环状线，约20分钟）', ja: '交通: 大阪港駅徒歩5分（大阪駅でJR大阪環状線，約20分）' },
-      { en: 'Perfect Timing: Visit at 11:00 AM after Umeda Sky Building (9:00 AM), then head to Shinsaibashi at 2:30 PM', zh: '完美时机: 在梅田蓝天大厦（上午9:00）之后上午11:00参观，然后在下午2:30前往心斋桥', ja: '完美时机: 在梅田蓝天大厦（午前9:00）之后午前11:00参观，然后在午後2:30へ移動心斎橋' },
-      { en: 'Feeding Shows: Check the schedule for whale shark and other marine life feeding times', zh: '喂食表演: 查看鲸鲨和其他海洋生物的喂食时间表', ja: '喂食表演: 查看鲸鲨和其他海洋生物的喂食時間表' },
-      { en: 'Photography: Photography allowed (no flash), perfect for capturing the amazing marine life', zh: '摄影: 允许摄影（禁止闪光灯），非常适合拍摄令人惊叹的海洋生物', ja: '摄影: 允许摄影（禁止闪光灯），非常适合拍摄令人惊叹的海洋生物' },
+      { en: 'Perfect Timing: Visit at 11:00 AM after Umeda Sky Building (9:00 AM), then head to Shinsaibashi at 2:30 PM', zh: '完美时机: 在梅田蓝天大厦（上午9:00）之后上午11:00参观，然后在下午2:30前往心斋桥', ja: 'おすすめの流れ：梅田スカイビル（9:00）のあと11:00に海遊館、14:30頃心斎橋へ' },
+      { en: 'Feeding Shows: Check the schedule for whale shark and other marine life feeding times', zh: '喂食表演: 查看鲸鲨和其他海洋生物的喂食时间表', ja: '給餌時間：ジンベエザメなどのスケジュールを確認' },
+      { en: 'Photography: Photography allowed (no flash), perfect for capturing the amazing marine life', zh: '摄影: 允许摄影（禁止闪光灯），非常适合拍摄令人惊叹的海洋生物', ja: '撮影可（フラッシュ禁止）。海洋生物の写真を楽しんで' },
     ],
   },
   'usj': {
     id: 'usj',
-    title: { en: 'Universal Studios Japan', zh: '环球影城', ja: '环球影城' },
+    title: { en: 'Universal Studios Japan', zh: '环球影城', ja: 'ユニバーサル・スタジオ・ジャパン' },
     location: { en: 'Osaka', zh: '大阪', ja: '大阪' },
     city: 'osaka',
     price: '~¥9,500',
@@ -614,14 +614,14 @@ export const attractionsData = {
       ja: 'ユニバーサル・スタジオ・ジャパン（USJ）は、ハリウッド映画や日本のポップカルチャーをテーマにしたアトラクションが集まる日本屈指のテーマパークです。ハリー・ポッターの世界観を体験できるエリアや、世界初の「スーパー・ニンテンドー・ワールド」など、人気のテーマエリアが充実。スリル満点のライド、ショー、キャラクターとのグリーティングなど、年齢を問わず楽しめます。国内外からの来場者が多く混雑しやすいので、人気アトラクションはエクスプレス・パスの利用も検討すると安心です。'
     },
     highlights: [
-      { en: 'Super Nintendo World: First-of-its-kind interactive theme park area with Mario Kart ride', zh: '超级任天堂世界: 首个互动主题公园区域，有马里奥卡丁车游乐设施', ja: '超级任天堂世界: 首个互动主题公園区域，有马里奥卡丁车游乐设施' },
-      { en: 'Wizarding World of Harry Potter: Immersive experience with Hogwarts Castle and Butterbeer', zh: '哈利波特魔法世界: 沉浸式体验，有霍格沃茨城堡和黄油啤酒', ja: '哈利波特魔法世界: 沉浸式体验，有霍格沃茨城堡和黄油啤酒' },
-      { en: 'The Flying Dinosaur: One of the world\'s longest and fastest flying roller coasters', zh: '飞天翼龙: 世界上最长和最快的飞行过山车之一' },
+      { en: 'Super Nintendo World: First-of-its-kind interactive theme park area with Mario Kart ride', zh: '超级任天堂世界: 首个互动主题公园区域，有马里奥卡丁车游乐设施', ja: 'スーパー・ニンテンドー・ワールド：マリオカートなど世界初の体験型エリア' },
+      { en: 'Wizarding World of Harry Potter: Immersive experience with Hogwarts Castle and Butterbeer', zh: '哈利波特魔法世界: 沉浸式体验，有霍格沃茨城堡和黄油啤酒', ja: 'ウィザーディング・ワールド・オブ・ハリー・ポッター：ホグワーツ城とバタービール' },
+      { en: 'The Flying Dinosaur: One of the world\'s longest and fastest flying roller coasters', zh: '飞天翼龙: 世界上最长和最快的飞行过山车之一', ja: 'ザ・フライング・ダイナソー：世界最長・最速級のフライングコースター' },
     ],
     tips: [
-      { en: 'Express Passes: Highly recommended to avoid long wait times', zh: '快速通行证: 强烈推荐以避免长时间等待', ja: '快速通行证: 强烈推荐以避免长時間等待' },
-      { en: 'Early Arrival: Arrive before opening time to be first in line', zh: '早到: 在开放时间前到达，成为第一批', ja: '早到: 在営業時間前到达，成为第一批' },
-      { en: 'Nintendo World: May require timed entry ticket - check park app', zh: '任天堂世界: 可能需要定时入场票 - 查看公园应用', ja: '任天堂世界: 可能需要定时入场票 - 查看公園应用' },
+      { en: 'Express Passes: Highly recommended to avoid long wait times', zh: '快速通行证: 强烈推荐以避免长时间等待', ja: 'エクスプレス・パス：長い待ち時間を避けるなら強くおすすめ' },
+      { en: 'Early Arrival: Arrive before opening time to be first in line', zh: '早到: 在开放时间前到达，成为第一批', ja: '早めの到着：開園前に並んで最初の部に入る' },
+      { en: 'Nintendo World: May require timed entry ticket - check park app', zh: '任天堂世界: 可能需要定时入场票 - 查看公园应用', ja: 'ニンテンドー・ワールド：整理券が必要な場合あり。アプリで確認' },
     ],
     visitGuide: {
       groupInfo: {
@@ -629,89 +629,90 @@ export const attractionsData = {
         zh: '10人 - 混合年龄（40-50岁、Z世代、Alpha世代） - 部分有快速通行证，部分没有 - 所有人都可以非常早到达'
       },
       arrivalPlan: {
-        title: { en: 'Arrival Plan (Very Important)', zh: '到达计划（非常重要）', ja: '到达计划（非常重要）' },
-        time: { en: 'Arrive at USJ: 6:30 AM | Official opening: ~8:30 AM | Gates often open earlier: 7:15–7:45 AM', zh: '到达USJ: 早上6:30 | 正式开放: 约早上8:30 | 大门通常提前开放: 早上7:15–7:45', ja: '到达USJ: 午前6:30 | 正式営業: 約午前8:30 | 大门通常提前営業: 午前7:15–7:45' },
+        title: { en: 'Arrival Plan (Very Important)', zh: '到达计划（非常重要）', ja: '到着プラン（重要）' },
+        time: { en: 'Arrive at USJ: 6:30 AM | Official opening: ~8:30 AM | Gates often open earlier: 7:15–7:45 AM', zh: '到达USJ: 早上6:30 | 正式开放: 约早上8:30 | 大门通常提前开放: 早上7:15–7:45', ja: 'USJ到着：6:30 | 開園：約8:30 | 実際は7:15〜7:45に開くことも' },
         whyMatters: [
-          { en: 'Best chance to enter Super Nintendo World without timed entry', zh: '无需定时入场券进入超级任天堂世界的最佳机会', ja: '无需定时入场券进入超级任天堂世界的最佳机会' },
-          { en: 'Shortest waiting times of the day', zh: '一天中最短的等待时间', ja: '一天中最短的等待時間' },
-          { en: 'Helps non-Express guests ride popular attractions early', zh: '帮助没有快速通行证的客人早早乘坐热门景点', ja: '帮助没有快速通行证的客人早早で热门観光地' }
+          { en: 'Best chance to enter Super Nintendo World without timed entry', zh: '无需定时入场券进入超级任天堂世界的最佳机会', ja: '整理券なしでニンテンドー・ワールドに入れるチャンス' },
+          { en: 'Shortest waiting times of the day', zh: '一天中最短的等待时间', ja: 'その日いちばん待ち時間が短い' },
+          { en: 'Helps non-Express guests ride popular attractions early', zh: '帮助没有快速通行证的客人早早乘坐热门景点', ja: 'エクスプレスなしでも人気アトラクションに早く乗れる' }
         ]
       },
       ticketsStrategy: {
-        required: { en: '1-Day Studio Pass (for everyone)', zh: '1日票（每个人都需要）', ja: '1日票（每个人都需要）' },
+        required: { en: '1-Day Studio Pass (for everyone)', zh: '1日票（每个人都需要）', ja: '1デーパス（全員必要）' },
         expressPass: {
           recommendedFor: [
-            { en: 'Gen Z / thrill riders', zh: 'Z世代 / 刺激游乐设施爱好者', ja: 'Z世代 / 刺激游乐设施爱好者' },
-            { en: 'Anyone who wants to avoid long queues', zh: '任何想避免长队的人', ja: '任何想避免长队的人' }
+            { en: 'Gen Z / thrill riders', zh: 'Z世代 / 刺激游乐设施爱好者', ja: 'Z世代・絶叫好き' },
+            { en: 'Anyone who wants to avoid long queues', zh: '任何想避免长队的人', ja: '長い列を避けたい人' }
           ],
           bestType: [
-            { en: 'Mario Kart', zh: '马里奥卡丁车', ja: '马里奥卡丁车' },
-            { en: 'Donkey Kong Mine Cart', zh: '大金刚矿山车', ja: '大金刚矿山车' },
-            { en: 'Flying Dinosaur', zh: '飞天翼龙', ja: '飞天翼龙' },
-            { en: '(Optional: Harry Potter / Minions)', zh: '（可选：哈利波特 / 小黄人）', ja: '（可选：哈利波特 / 小黄人）' }
+            { en: 'Mario Kart', zh: '马里奥卡丁车', ja: 'マリオカート' },
+            { en: 'Donkey Kong Mine Cart', zh: '大金刚矿山车', ja: 'ドンキーコング・マインカート' },
+            { en: 'Flying Dinosaur', zh: '飞天翼龙', ja: 'ザ・フライング・ダイナソー' },
+            { en: '(Optional: Harry Potter / Minions)', zh: '（可选：哈利波特 / 小黄人）', ja: '（任意：ハリー・ポッター / ミニオン）' }
           ],
-          budgetTip: { en: 'Give Express Pass to 3–5 people only. Others rely on early entry + normal lines', zh: '只为3-5人购买快速通行证。其他人依靠早到入场 + 普通排队', ja: '只为3-5人购买快速通行证。其他人依靠早到入场 + 普通排队' }
+          budgetTip: { en: 'Give Express Pass to 3–5 people only. Others rely on early entry + normal lines', zh: '只为3-5人购买快速通行证。其他人依靠早到入场 + 普通排队', ja: 'エクスプレスは3〜5人だけ。他は早朝入園＋通常列で' }
         }
       },
       morningRoute: {
-        destination: { en: 'Super Nintendo World (8:00–10:30)', zh: '超级任天堂世界（8:00–10:30）', ja: '超级任天堂世界（8:00–10:30）' },
+        destination: { en: 'Super Nintendo World (8:00–10:30)', zh: '超级任天堂世界（8:00–10:30）', ja: 'スーパー・ニンテンドー・ワールド（8:00–10:30）' },
         ridePriority: [
-          { en: 'Mario Kart (must-do for everyone)', zh: '马里奥卡丁车（每个人必玩）', ja: '马里奥卡丁车（每个人必玩）' },
-          { en: 'Donkey Kong Mine Cart (thrill ride)', zh: '大金刚矿山车（刺激游乐设施）', ja: '大金刚矿山车（刺激游乐设施）' },
-          { en: 'Yoshi\'s Adventure (easy, kid-friendly)', zh: '耀西冒险（简单，适合儿童）' }
+          { en: 'Mario Kart (must-do for everyone)', zh: '马里奥卡丁车（每个人必玩）', ja: 'マリオカート（全員必須）' },
+          { en: 'Donkey Kong Mine Cart (thrill ride)', zh: '大金刚矿山车（刺激游乐设施）', ja: 'ドンキーコング・マインカート（絶叫系）' },
+          { en: 'Yoshi\'s Adventure (easy, kid-friendly)', zh: '耀西冒险（简单，适合儿童）', ja: 'ヨッシーアドベンチャー（子ども向け）' }
         ],
-        important: { en: 'As soon as you enter the park, use the USJ App to get a Timed Entry ticket for Super Nintendo World (for later return if needed)', zh: '一进入公园，立即使用USJ应用程序获取超级任天堂世界的定时入场券（如需要，稍后可返回）', ja: '一进入公園，立即使用USJ应用程序获取超级任天堂世界的定时入场券（如需要，稍后可に戻る）' }
+        important: { en: 'As soon as you enter the park, use the USJ App to get a Timed Entry ticket for Super Nintendo World (for later return if needed)', zh: '一进入公园，立即使用USJ应用程序获取超级任天堂世界的定时入场券（如需要，稍后可返回）', ja: '入園したらすぐUSJアプリでニンテンドー・ワールドの整理券を取得（あとで再入場用）' }
       },
       lunch: {
-        destination: { en: 'Wizarding World of Harry Potter (11:30–13:00)', zh: '哈利波特魔法世界（11:30–13:00）', ja: '哈利波特魔法世界（11:30–13:00）' },
+        destination: { en: 'Wizarding World of Harry Potter (11:30–13:00)', zh: '哈利波特魔法世界（11:30–13:00）', ja: 'ウィザーディング・ワールド（11:30–13:00）' },
         thingsToDo: [
-          { en: 'Hogwarts Castle / Forbidden Journey (skip if motion sick)', zh: '霍格沃茨城堡 / 禁忌之旅（如果晕车可跳过）', ja: '霍格沃茨城堡 / 禁忌之旅（如果晕车可跳过）' },
-          { en: 'Hippogriff (family-friendly)', zh: '鹰马飞行（适合家庭）', ja: '鹰马飞行（适合家庭）' },
-          { en: 'Photos + Butterbeer', zh: '拍照 + 黄油啤酒', ja: '拍照 + 黄油啤酒' }
+          { en: 'Hogwarts Castle / Forbidden Journey (skip if motion sick)', zh: '霍格沃茨城堡 / 禁忌之旅（如果晕车可跳过）', ja: 'ホグワーツ城 / フォビドゥン・ジャーニー（乗り物酔いする人はスキップ）' },
+          { en: 'Hippogriff (family-friendly)', zh: '鹰马飞行（适合家庭）', ja: 'ヒッポグリフ（ファミリー向け）' },
+          { en: 'Photos + Butterbeer', zh: '拍照 + 黄油啤酒', ja: '写真＋バタービール' }
         ],
-        restaurant: { en: 'Three Broomsticks - Eat early to avoid peak lunch crowd', zh: '三把扫帚 - 早吃以避开午餐高峰期人群', ja: '三把扫帚 - 早吃以避开ランチ高峰期人群' }
+        restaurant: { en: 'Three Broomsticks - Eat early to avoid peak lunch crowd', zh: '三把扫帚 - 早吃以避开午餐高峰期人群', ja: 'スリー・ブルームスティックス - ランチ混雑前の早めの食事' }
       },
       afternoonStrategy: {
         groupA: {
-          title: { en: 'Group A — Express Pass users', zh: 'A组 — 快速通行证用户', ja: 'A组 — 快速通行证用户' },
+          title: { en: 'Group A — Express Pass users', zh: 'A组 — 快速通行证用户', ja: 'Aグループ — エクスプレス・パス利用者' },
           tasks: [
-            { en: 'Follow Express Pass ride times', zh: '按照快速通行证的游乐设施时间', ja: '按照快速通行证的游乐设施時間' },
-            { en: 'Focus on: Flying Dinosaur, other major rides included in pass', zh: '专注于：飞天翼龙，通行证中包含的其他主要游乐设施', ja: '专注于：飞天翼龙，通行证中包含的其他主要游乐设施' }
+            { en: 'Follow Express Pass ride times', zh: '按照快速通行证的游乐设施时间', ja: 'エクスプレス・パスの時間に合わせて' },
+            { en: 'Focus on: Flying Dinosaur, other major rides included in pass', zh: '专注于：飞天翼龙，通行证中包含的其他主要游乐设施', ja: 'フライング・ダイナソーなどパス対象のメインアトラクションを' }
           ]
         },
         groupB: {
-          title: { en: 'Group B — No Express Pass', zh: 'B组 — 无快速通行证', ja: 'B组 — 无快速通行证' },
+          title: { en: 'Group B — No Express Pass', zh: 'B组 — 无快速通行证', ja: 'Bグループ — エクスプレスなし' },
           attractions: [
-            { en: 'JAWS (fun, suitable for all ages)', zh: '大白鲨（有趣，适合所有年龄）', ja: '大白鲨（有趣，适合所有年龄）' },
-            { en: 'WaterWorld show (great rest time)', zh: '水世界表演（很好的休息时间）', ja: '水世界表演（很好的休息時間）' },
-            { en: 'Minions area (optional)', zh: '小黄人区域（可选）', ja: '小黄人区域（可选）' }
+            { en: 'JAWS (fun, suitable for all ages)', zh: '大白鲨（有趣，适合所有年龄）', ja: 'ジョーズ（楽しめる・全年齢）' },
+            { en: 'WaterWorld show (great rest time)', zh: '水世界表演（很好的休息时间）', ja: 'ウォーターワールド（休憩にも最適）' },
+            { en: 'Minions area (optional)', zh: '小黄人区域（可选）', ja: 'ミニオンエリア（任意）' }
           ]
         },
-        meetupTip: { en: 'Set a fixed meeting point. Regroup every 1–2 hours', zh: '设置固定会合点。每1-2小时重新集合', ja: '设置固定会合点。每1-2時間重新集合' }
+        meetupTip: { en: 'Set a fixed meeting point. Regroup every 1–2 hours', zh: '设置固定会合点。每1-2小时重新集合', ja: '待ち合わせ場所を決めて。1〜2時間ごとに集合' }
       },
       eveningPlan: {
         bestTime: [
-          { en: 'Crowds reduce', zh: '人群减少', ja: '人群减少' },
-          { en: 'Cooler weather', zh: '天气更凉爽', ja: '天气更凉爽' },
-          { en: 'Best photos', zh: '最佳拍照时间', ja: '最佳拍照時間' }
+          { en: 'Crowds reduce', zh: '人群减少', ja: '混雑が落ち着く' },
+          { en: 'Cooler weather', zh: '天气更凉爽', ja: '涼しくなる' },
+          { en: 'Best photos', zh: '最佳拍照时间', ja: '写真映えの時間帯' }
         ],
         returnToNintendo: [
-          { en: 'Night lighting is beautiful', zh: '夜间灯光很美', ja: '夜间灯光很美' },
-          { en: 'Ride missed attractions', zh: '游玩错过的景点', ja: '游玩错过的観光地' },
-          { en: 'Gen Z can use Single Rider for faster queues', zh: 'Z世代可以使用单人通道以更快排队', ja: 'Z世代可以使用单人通道以更快排队' }
+          { en: 'Night lighting is beautiful', zh: '夜间灯光很美', ja: '夜のライトアップが美しい' },
+          { en: 'Ride missed attractions', zh: '游玩错过的景点', ja: '乗り逃したアトラクションに再挑戦' },
+          { en: 'Gen Z can use Single Rider for faster queues', zh: 'Z世代可以使用单人通道以更快排队', ja: 'Z世代はシングルライダーで待ち時間短縮' }
         ],
-        dinner: { en: 'Early dinner around 5:30–6:00 PM. Choose quick-service restaurants to save time', zh: '下午5:30–6:00左右早晚餐。选择快餐厅以节省时间', ja: '午後5:30–6:00左右早ディナー。选择快レストラン以节省時間' }
+        dinner: { en: 'Early dinner around 5:30–6:00 PM. Choose quick-service restaurants to save time', zh: '下午5:30–6:00左右早晚餐。选择快餐厅以节省时间', ja: '17:30〜18:00頃に早めの夕食。カジュアル店で時間節約' }
       },
       quickTips: [
-        { en: 'Use USJ App all day (wait times, tickets)', zh: '全天使用USJ应用程序（等待时间、门票）', ja: '全天使用USJ应用程序（等待時間、チケット）' },
-        { en: 'Single Rider = fastest for Gen Z', zh: '单人通道 = Z世代最快方式', ja: '单人通道 = Z世代最快方式' },
-        { en: 'Wear comfortable shoes', zh: '穿舒适的鞋子', ja: '穿舒适的鞋子' },
-        { en: 'Bring power bank', zh: '携带充电宝', ja: '携带充电宝' },
-        { en: 'Take breaks with shows (WaterWorld)', zh: '通过表演（水世界）休息', ja: '通过表演（水世界）休息' }
+        { en: 'Use USJ App all day (wait times, tickets)', zh: '全天使用USJ应用程序（等待时间、门票）', ja: 'USJアプリを一日中（待ち時間・整理券）' },
+        { en: 'Single Rider = fastest for Gen Z', zh: '单人通道 = Z世代最快方式', ja: 'シングルライダー＝Z世代は最速' },
+        { en: 'Wear comfortable shoes', zh: '穿舒适的鞋子', ja: '歩きやすい靴で' },
+        { en: 'Bring power bank', zh: '携带充电宝', ja: 'モバイルバッテリー持参' },
+        { en: 'Take breaks with shows (WaterWorld)', zh: '通过表演（水世界）休息', ja: 'ウォーターワールドなどショーで休憩' }
       ],
       summary: {
         en: 'Arrive early, go to Super Nintendo World first, use Express Pass strategically, split the group smartly in the afternoon, and enjoy Super Nintendo World again at night.',
-        zh: '早到，先到超级任天堂世界，战略性使用快速通行证，下午明智地分组，晚上再次享受超级任天堂世界。'
+        zh: '早到，先到超级任天堂世界，战略性使用快速通行证，下午明智地分组，晚上再次享受超级任天堂世界。',
+        ja: '早く着いてニンテンドー・ワールドを先に。エクスプレスを有効に使い、午後はグループ分けして、夜またニンテンドー・ワールドを楽しむ。'
       }
     },
   },
@@ -734,20 +735,20 @@ export const attractionsData = {
       ja: '神戸ポートタワーは、赤い鋼鉄の外観が印象的な神戸のシンボルです。1963年に「開港90周年」を記念して建設され、高さは108m。鼓（つづみ）をイメージした独特のデザインで、神戸の街並みや港、周囲の山々まで見渡せるパノラマビューが楽しめます。夜はライトアップが美しく、展望フロアは360度の眺望。3階には回転レストランもあります。'
     },
     highlights: [
-      { en: 'Panoramic Views: 360-degree views of Kobe city, port, and mountains', zh: '全景: 神户市、港口和山脉的360度视野', ja: '全景: 神戸市、港口和山脉的360度视野' },
-      { en: 'Night Illumination: Beautifully lit in various colors at night', zh: '夜间照明: 在夜晚以各种颜色美丽地点亮', ja: '夜间照明: 在夜晚以各种颜色美丽地点亮' },
-      { en: 'Unique Design: Resembles a traditional Japanese drum (tsuzumi)', zh: '独特设计: 类似于传统的日本鼓（鼓）', ja: '独特设计: 类似于传统的日本鼓（鼓）' },
-      { en: 'Revolving Restaurant: Dine with a view on the 3rd floor', zh: '旋转餐厅: 在3楼用餐，欣赏美景', ja: '旋转レストラン: 在3楼用餐，欣赏美景' },
+      { en: 'Panoramic Views: 360-degree views of Kobe city, port, and mountains', zh: '全景: 神户市、港口和山脉的360度视野', ja: 'パノラマ：神戸の街・港・山を360度' },
+      { en: 'Night Illumination: Beautifully lit in various colors at night', zh: '夜间照明: 在夜晚以各种颜色美丽地点亮', ja: 'ナイトライトアップ：夜は色とりどりにライトアップ' },
+      { en: 'Unique Design: Resembles a traditional Japanese drum (tsuzumi)', zh: '独特设计: 类似于传统的日本鼓（鼓）', ja: '鼓型デザイン：つづみをイメージした外観' },
+      { en: 'Revolving Restaurant: Dine with a view on the 3rd floor', zh: '旋转餐厅: 在3楼用餐，欣赏美景', ja: '3階の回転レストラン：景色を楽しみながら食事' },
     ],
     tips: [
-      { en: 'Night Visit: Most beautiful when illuminated at night', zh: '夜晚参观: 在夜晚点亮时最美丽', ja: '夜晚参观: 在夜晚点亮时最美丽' },
-      { en: 'Clear Day: Best views on clear days with good visibility', zh: '晴天: 在能见度好的晴天视野最佳', ja: '晴天: 在能见度好的晴天视野最佳' },
-      { en: 'Combined Ticket: Consider buying a ticket with Harborland attractions', zh: '联票: 考虑购买与港湾乐园景点的联票', ja: '联票: 考虑购买与港湾乐园観光地的联票' },
+      { en: 'Night Visit: Most beautiful when illuminated at night', zh: '夜晚参观: 在夜晚点亮时最美丽', ja: '夜景がおすすめ：ライトアップ時が最も美しい' },
+      { en: 'Clear Day: Best views on clear days with good visibility', zh: '晴天: 在能见度好的晴天视野最佳', ja: '晴れた日：展望がよく見える' },
+      { en: 'Combined Ticket: Consider buying a ticket with Harborland attractions', zh: '联票: 考虑购买与港湾乐园景点的联票', ja: 'ハーバーランドとの共通券も検討を' },
     ],
   },
   'harborland': {
     id: 'harborland',
-    title: { en: 'Harborland', zh: '港湾乐园', ja: '港湾乐园' },
+    title: { en: 'Harborland', zh: '港湾乐园', ja: 'ハーバーランド' },
     location: { en: 'Kobe', zh: '神户', ja: '神戸' },
     city: 'kobe',
     price: 'Free',
@@ -763,23 +764,23 @@ export const attractionsData = {
     about: {
       en: "Harborland is Kobe's premier waterfront shopping and entertainment district, located near Kobe Port. The area features a large shopping mall (Umie), restaurants, cafes, and entertainment facilities. The highlight is the giant Ferris wheel offering panoramic views of Kobe Bay and the city. The area is perfect for shopping, dining, and enjoying the waterfront atmosphere. Harborland is especially beautiful at sunset and in the evening when the area is illuminated. It's a great place to relax after exploring Kobe's other attractions.",
       zh: '港湾乐园是神户首屈一指的海滨购物和娱乐区，位于神户港附近。该地区设有大型购物中心（Umie）、餐厅、咖啡厅和娱乐设施。亮点是提供神户湾和城市全景的巨型摩天轮。该地区非常适合购物、用餐和享受海滨氛围。港湾乐园在日落和傍晚特别美丽，当该地区被点亮时。这是在探索神户其他景点后放松的好地方。',
-      ja: 'ハーバーランドは神戸港近くに広がる海辺のショッピング＆エンタメエリアで、大型商業施設「umie」をはじめ、レストランやカフェ、各種施設が集まります。大観覧車からは神戸湾と街並みを一望でき、海辺の雰囲気を感じながら買い物や食事を楽しめるのが魅力。夕方のサンセットや夜のイルミネーションも美しく、神戸観光の締めくくりにゆったり過ごすのにぴったりです。'
+      ja: 'ハーバーランドは神戸港近くに広がる海辺のショッピング＆エンタメエリアで、大型商業施設「ユーミー」をはじめ、レストランやカフェ、各種施設が集まります。大観覧車からは神戸湾と街並みを一望でき、海辺の雰囲気を感じながら買い物や食事を楽しめるのが魅力。夕方のサンセットや夜のイルミネーションも美しく、神戸観光の締めくくりにゆったり過ごすのにぴったりです。'
     },
     highlights: [
-      { en: 'Giant Ferris Wheel: Panoramic views of Kobe Bay and city', zh: '巨型摩天轮: 神户湾和城市的全景', ja: '巨型摩天轮: 神戸湾和城市的全景' },
-      { en: 'Shopping Mall: Large shopping complex with various stores', zh: '购物中心: 有各种商店的大型购物中心', ja: 'ショッピング中心: 有各种店舗的大型ショッピング中心' },
-      { en: 'Waterfront Dining: Restaurants and cafes with harbor views', zh: '海滨餐饮: 有港口景色的餐厅和咖啡厅', ja: '海滨餐饮: 有港口景色的レストラン和咖啡厅' },
-      { en: 'Evening Illumination: Beautiful lighting in the evening', zh: '夜间照明: 傍晚美丽的照明', ja: '夜间照明: 傍晚美丽的照明' },
+      { en: 'Giant Ferris Wheel: Panoramic views of Kobe Bay and city', zh: '巨型摩天轮: 神户湾和城市的全景', ja: '大観覧車：神戸湾と街を一望' },
+      { en: 'Shopping Mall: Large shopping complex with various stores', zh: '购物中心: 有各种商店的大型购物中心', ja: '大型商業施設：ユーミーを中心に各種ショップ' },
+      { en: 'Waterfront Dining: Restaurants and cafes with harbor views', zh: '海滨餐饮: 有港口景色的餐厅和咖啡厅', ja: '海辺の飲食：港を見ながらのレストラン・カフェ' },
+      { en: 'Evening Illumination: Beautiful lighting in the evening', zh: '夜间照明: 傍晚美丽的照明', ja: '夕方のイルミネーション' },
     ],
     tips: [
-      { en: 'Sunset Visit: Most beautiful during sunset hours', zh: '日落参观: 在日落时段最美丽', ja: '日落参观: 在日落时段最美丽' },
-      { en: 'Ferris Wheel: Great views especially on clear days', zh: '摩天轮: 特别是在晴天的美景', ja: '摩天轮: 特别是在晴天的美景' },
-      { en: 'Shopping: Great place to buy Kobe souvenirs', zh: '购物: 购买神户纪念品的绝佳地点', ja: 'ショッピング: 购买神戸纪念品的绝佳地点' },
+      { en: 'Sunset Visit: Most beautiful during sunset hours', zh: '日落参观: 在日落时段最美丽', ja: '夕景がおすすめ' },
+      { en: 'Ferris Wheel: Great views especially on clear days', zh: '摩天轮: 特别是在晴天的美景', ja: '観覧車は晴れた日がよく見える' },
+      { en: 'Shopping: Great place to buy Kobe souvenirs', zh: '购物: 购买神户纪念品的绝佳地点', ja: 'お土産：神戸みやげを買うのに最適' },
     ],
   },
   'rokkosan-pasture': {
     id: 'rokkosan-pasture',
-    title: { en: 'Rokkosan Pasture', zh: '六甲山牧场', ja: '六甲山牧场' },
+    title: { en: 'Rokkosan Pasture', zh: '六甲山牧场', ja: '六甲山牧場' },
     location: { en: 'Kobe', zh: '神户', ja: '神戸' },
     city: 'kobe',
     price: '¥500',
@@ -797,15 +798,15 @@ export const attractionsData = {
       ja: '六甲山牧場は六甲山上にある自然豊かな牧場で、街の喧騒を離れてのんびり過ごせる人気スポットです。羊や牛などの動物と触れ合えるほか、神戸の街や大阪湾を見渡す爽快な眺望も魅力。新鮮な乳製品を味わったり、牧場体験を楽しんだり、山の空気の中でリラックスできます。気候が穏やかで景色が澄みやすい春や秋は特におすすめです。'
     },
     highlights: [
-      { en: 'Farm Animals: Interact with sheep, cows, and other farm animals', zh: '农场动物: 与绵羊、奶牛和其他农场动物互动', ja: '农场动物: 与绵羊、奶牛和其他农场动物互动' },
-      { en: 'Mountain Views: Panoramic views of Kobe city and Osaka Bay', zh: '山景: 神户市和大阪湾的全景', ja: '山景: 神戸市和大阪湾的全景' },
-      { en: 'Fresh Dairy: Enjoy fresh milk, ice cream, and other dairy products', zh: '新鲜乳制品: 享受新鲜牛奶、冰淇淋和其他乳制品', ja: '新鲜乳制品: 享受新鲜牛奶、冰淇淋和其他乳制品' },
-      { en: 'Natural Setting: Peaceful mountain environment away from the city', zh: '自然环境: 远离城市的宁静山地环境', ja: '自然环境: 远离城市的宁静山地环境' },
+      { en: 'Farm Animals: Interact with sheep, cows, and other farm animals', zh: '农场动物: 与绵羊、奶牛和其他农场动物互动', ja: '動物との触れ合い：羊・牛など' },
+      { en: 'Mountain Views: Panoramic views of Kobe city and Osaka Bay', zh: '山景: 神户市和大阪湾的全景', ja: '眺望：神戸の街と大阪湾を一望' },
+      { en: 'Fresh Dairy: Enjoy fresh milk, ice cream, and other dairy products', zh: '新鲜乳制品: 享受新鲜牛奶、冰淇淋和其他乳制品', ja: '新鮮な乳製品：牛乳・アイスなど牧場ならではの味' },
+      { en: 'Natural Setting: Peaceful mountain environment away from the city', zh: '自然环境: 远离城市的宁静山地环境', ja: '自然環境：都会を離れた山の静けさ' },
     ],
     tips: [
-      { en: 'Weather Check: Mountain weather can be different - bring layers', zh: '天气检查: 山地天气可能不同 - 带多层衣服', ja: '天气检查: 山地天气可能不同 - 带多层衣服' },
-      { en: 'Clear Day: Best views on clear days with good visibility', zh: '晴天: 在能见度好的晴天视野最佳', ja: '晴天: 在能见度好的晴天视野最佳' },
-      { en: 'Dairy Products: Don\'t miss the fresh ice cream and milk', zh: '乳制品: 不要错过新鲜冰淇淋和牛奶' },
+      { en: 'Weather Check: Mountain weather can be different - bring layers', zh: '天气检查: 山地天气可能不同 - 带多层衣服', ja: '山の天気は変わりやすいので重ね着で' },
+      { en: 'Clear Day: Best views on clear days with good visibility', zh: '晴天: 在能见度好的晴天视野最佳', ja: '晴れた日は展望がきれい' },
+      { en: 'Dairy Products: Don\'t miss the fresh ice cream and milk', zh: '乳制品: 不要错过新鲜冰淇淋和牛奶', ja: '乳製品：新鮮なアイスや牛乳はおすすめ' },
     ],
   },
   'namba-yasaka-shrine': {
@@ -828,17 +829,17 @@ export const attractionsData = {
       ja: '難波八阪神社は大阪・難波エリアにある個性的な神社で、最大の見どころは高さ約12mの巨大な獅子殿（ししでん）です。大きく開いた獅子の口が邪気を飲み込み、勝運や厄除けのご利益があるといわれます。難波駅から徒歩圏内で立ち寄りやすく、迫力ある獅子頭を背景にした写真スポットとしても大人気。年間を通して行事もあり、周辺にはショッピングやグルメも充実しています。'
     },
     highlights: [
-      { en: 'Giant Lion Head (Shishiden): The 12-meter-tall lion head stage is absolutely stunning and perfect for photos', zh: '巨大狮子头（狮子殿）：12米高的狮子头舞台绝对令人惊叹，非常适合拍照', ja: '巨大狮子头（狮子殿）：12米高的狮子头舞台绝对令人惊叹，非常适合拍照' },
-      { en: 'Easy Access: Just a short walk from Namba Station, making it a convenient stop', zh: '交通便利：距离难波站仅几步之遥，是一个便捷的停留点', ja: '交通便利：距离難波駅仅几步之遥，是一个便捷的所要点' },
-      { en: 'Free Admission: No entrance fee, perfect for a quick visit', zh: '免费入场：无需门票，非常适合快速参观', ja: '無料入场：无需チケット，非常适合快速参观' },
-      { en: 'Near Attractions: Close to Kuromon Market, Dotonbori, and Shinsaibashi shopping area', zh: '附近景点：靠近黑门市场、道顿堀和心斋桥购物区', ja: '附近観光地：靠近黒門市場、道頓堀和心斎橋ショッピング区' },
-      { en: 'Photography: The lion head makes for an impressive and unique photo opportunity', zh: '摄影：狮子头提供了令人印象深刻且独特的拍照机会', ja: '摄影：狮子头提供了令人印象深刻且独特的拍照机会' },
+      { en: 'Giant Lion Head (Shishiden): The 12-meter-tall lion head stage is absolutely stunning and perfect for photos', zh: '巨大狮子头（狮子殿）：12米高的狮子头舞台绝对令人惊叹，非常适合拍照', ja: '巨大な獅子頭（獅子殿）：高さ12mの獅子頭舞台。写真映え抜群' },
+      { en: 'Easy Access: Just a short walk from Namba Station, making it a convenient stop', zh: '交通便利：距离难波站仅几步之遥，是一个便捷的停留点', ja: '難波駅から徒歩圏内で立ち寄りやすい' },
+      { en: 'Free Admission: No entrance fee, perfect for a quick visit', zh: '免费入场：无需门票，非常适合快速参观', ja: '拝観無料：気軽に立ち寄れる' },
+      { en: 'Near Attractions: Close to Kuromon Market, Dotonbori, and Shinsaibashi shopping area', zh: '附近景点：靠近黑门市场、道顿堀和心斋桥购物区', ja: '黒門市場・道頓堀・心斎橋から近い' },
+      { en: 'Photography: The lion head makes for an impressive and unique photo opportunity', zh: '摄影：狮子头提供了令人印象深刻且独特的拍照机会', ja: '写真映え：獅子頭を背景にした撮影が人気' },
     ],
     tips: [
-      { en: 'The shrine is free to enter and usually takes 15-20 minutes to explore', zh: '神社免费进入，通常需要15-20分钟探索', ja: '神社無料进入，通常需要15-20分探索' },
-      { en: 'Best time to visit is during the day when you can clearly see the lion head details', zh: '最佳参观时间是白天，可以清楚地看到狮子头的细节', ja: '最佳参观時間是白天，可以清楚地看到狮子头的细节' },
-      { en: 'Combine your visit with nearby attractions like Kuromon Market (5 mins walk) or Dotonbori (10 mins walk)', zh: '可以将参观与附近景点结合，如黑门市场（步行5分钟）或道顿堀（步行10分钟）', ja: '可以将参观与附近観光地结合，如黒門市場（徒歩5分）或道頓堀（徒歩10分）' },
-      { en: 'Be respectful when taking photos, especially if there are ceremonies or prayers in progress', zh: '拍照时要尊重，特别是在进行仪式或祈祷时', ja: '拍照时要尊重，特别是在进行仪式或祈祷时' },
+      { en: 'The shrine is free to enter and usually takes 15-20 minutes to explore', zh: '神社免费进入，通常需要15-20分钟探索', ja: '拝観無料。見学は15〜20分程度' },
+      { en: 'Best time to visit is during the day when you can clearly see the lion head details', zh: '最佳参观时间是白天，可以清楚地看到狮子头的细节', ja: '日中がおすすめ：獅子頭の細部までよく見える' },
+      { en: 'Combine your visit with nearby attractions like Kuromon Market (5 mins walk) or Dotonbori (10 mins walk)', zh: '可以将参观与附近景点结合，如黑门市场（步行5分钟）或道顿堀（步行10分钟）', ja: '黒門市場（徒歩5分）や道頓堀（徒歩10分）とセットで回るのがおすすめ' },
+      { en: 'Be respectful when taking photos, especially if there are ceremonies or prayers in progress', zh: '拍照时要尊重，特别是在进行仪式或祈祷时', ja: '撮影時はマナーを。神事や祈祷中は特に配慮を' },
     ],
   },
   'kuromon-market': {
@@ -862,18 +863,18 @@ export const attractionsData = {
       ja: '黒門市場は「大阪の台所」と呼ばれる食のマーケットで、難波エリアにある全長約600mのアーケード商店街です。190年以上の歴史があり、約150店以上が軒を連ね、新鮮な魚介や果物、野菜、精肉、和菓子、調理道具、日用品まで幅広く揃います。特にマグロ、カニ、ウニなどの海鮮が名物で、その場で食べられる食べ歩きグルメも充実。活気ある雰囲気と品揃えの豊富さで、大阪観光の定番スポットです。'
     },
     highlights: [
-      { en: 'Fresh Seafood: World-class tuna, crab, oysters, and sea urchin available at various stalls', zh: '新鲜海鲜：世界级的金枪鱼、螃蟹、牡蛎和海胆在各摊位均有售', ja: '新鲜海鮮：世界级的金枪鱼、カニ、牡蛎和海胆在各摊位均有售' },
-      { en: 'Street Food: Try takoyaki, kushikatsu, fresh fruit, and other local specialties', zh: '街头美食：尝试章鱼烧、炸串、新鲜水果和其他当地特色美食', ja: '街头美食：尝试たこ焼き、炸串、新鲜水果和其他当地特色美食' },
-      { en: 'Local Atmosphere: Experience authentic Osaka market culture with friendly vendors', zh: '当地氛围：体验正宗的大阪市场文化与友好的摊主', ja: '当地氛围：体验正宗的大阪市場文化与友好的摊主' },
-      { en: 'Great for Lunch: Many vendors offer prepared food perfect for a quick and delicious meal', zh: '午餐好去处：许多摊主提供即食食品，非常适合快速美味的用餐', ja: 'ランチ好去处：许多摊主提供即食食品，非常适合快速美味的用餐' },
-      { en: 'Perfect Location: Just a 5-minute walk from Namba Yasaka Shrine and close to Dotonbori', zh: '位置绝佳：距离难波八阪神社仅5分钟步行路程，靠近道顿堀', ja: '位置绝佳：距离難波八阪神社仅5分徒歩路程，靠近道頓堀' },
+      { en: 'Fresh Seafood: World-class tuna, crab, oysters, and sea urchin available at various stalls', zh: '新鲜海鲜：世界级的金枪鱼、螃蟹、牡蛎和海胆在各摊位均有售', ja: '新鮮な海鮮：マグロ・カニ・カキ・ウニなど各店で' },
+      { en: 'Street Food: Try takoyaki, kushikatsu, fresh fruit, and other local specialties', zh: '街头美食：尝试章鱼烧、炸串、新鲜水果和其他当地特色美食', ja: '食べ歩き：たこ焼き・串カツ・フルーツなど地元の味を' },
+      { en: 'Local Atmosphere: Experience authentic Osaka market culture with friendly vendors', zh: '当地氛围：体验正宗的大阪市场文化与友好的摊主', ja: '市場の雰囲気：大阪らしい台所文化を体験' },
+      { en: 'Great for Lunch: Many vendors offer prepared food perfect for a quick and delicious meal', zh: '午餐好去处：许多摊主提供即食食品，非常适合快速美味的用餐', ja: 'ランチに最適：すぐ食べられる惣菜や丼が豊富' },
+      { en: 'Perfect Location: Just a 5-minute walk from Namba Yasaka Shrine and close to Dotonbori', zh: '位置绝佳：距离难波八阪神社仅5分钟步行路程，靠近道顿堀', ja: '難波八阪神社から徒歩5分。道頓堀も近い' },
     ],
     tips: [
-      { en: 'Best time to visit is in the morning (9:00-12:00) when the market is liveliest and food is freshest', zh: '最佳参观时间是早上（9:00-12:00），此时市场最热闹，食物最新鲜', ja: '最佳参观時間是午前（9:00-12:00），此时市場最热闹，食物最新鲜' },
-      { en: 'Bring cash - many vendors don\'t accept credit cards', zh: '带现金 - 许多摊主不接受信用卡' },
-      { en: 'Try the fresh tuna sashimi, grilled crab, and Japanese strawberries - they\'re incredible!', zh: '尝试新鲜金枪鱼生鱼片、烤螃蟹和日本草莓 - 它们非常棒！' },
-      { en: 'The market is covered, so it\'s great to visit even on rainy days', zh: '市场有顶棚，所以即使在雨天也是参观的好去处' },
-      { en: 'Combine your visit with Namba Yasaka Shrine (5 mins walk) and Dotonbori (10 mins walk)', zh: '可以将参观与难波八阪神社（步行5分钟）和道顿堀（步行10分钟）结合起来', ja: '可以将参观与難波八阪神社（徒歩5分）和道頓堀（徒歩10分）结合起来' },
+      { en: 'Best time to visit is in the morning (9:00-12:00) when the market is liveliest and food is freshest', zh: '最佳参观时间是早上（9:00-12:00），此时市场最热闹，食物最新鲜', ja: '午前9〜12時が一番活気があり鮮度も良い' },
+      { en: 'Bring cash - many vendors don\'t accept credit cards', zh: '带现金 - 许多摊主不接受信用卡', ja: '現金持参。多くの店ではカード利用不可' },
+      { en: 'Try the fresh tuna sashimi, grilled crab, and Japanese strawberries - they\'re incredible!', zh: '尝试新鲜金枪鱼生鱼片、烤螃蟹和日本草莓 - 它们非常棒！', ja: 'マグロの刺身・焼きガニ・いちごは絶品です' },
+      { en: 'The market is covered, so it\'s great to visit even on rainy days', zh: '市场有顶棚，所以即使在雨天也是参观的好去处', ja: '屋根付きなので雨の日でも安心' },
+      { en: 'Combine your visit with Namba Yasaka Shrine (5 mins walk) and Dotonbori (10 mins walk)', zh: '可以将参观与难波八阪神社（步行5分钟）和道顿堀（步行10分钟）结合起来', ja: '難波八阪神社（徒歩5分）・道頓堀（徒歩10分）とまとめて回るのがおすすめ' },
     ],
   },
   'tsutenkaku': {
@@ -896,16 +897,16 @@ export const attractionsData = {
       ja: '通天閣は大阪・新世界のシンボル的存在で、「天に通じる塔」という意味を持ちます。現在の塔は1956年完成の2代目で、初代（1912年建設）は戦時中に解体されました。高さ103m、地上約91mの展望台からは大阪の街を一望できます。5階には“幸福の神様”ビリケンさんが鎮座し、足の裏を撫でるとご利益があると人気。外観のLEDは天気予報に合わせて色が変わるのも特徴で、周辺の新世界は串カツやレトロな街並みで賑わいます。'
     },
     highlights: [
-      { en: 'Observation Deck: Panoramic views of Osaka from 91 meters high', zh: '观景台: 从91米高处欣赏大阪全景', ja: '观景台: 91米高处欣赏大阪全景' },
-      { en: 'Billiken Statue: Rub the feet of the Billiken for good luck - a popular tradition', zh: '比利肯雕像: 抚摸比利肯的脚以求好运 - 一个受欢迎的传统', ja: '比利肯雕像: 抚摸比利肯的脚以求好运 - 一个受欢迎的传统' },
-      { en: 'LED Light Display: Color-coded lights indicate weather forecast (blue=sunny, orange=cloudy, pink=rainy)', zh: 'LED灯光显示: 颜色编码的灯光显示天气预报（蓝色=晴天，橙色=多云，粉色=雨天）', ja: 'LED灯光显示: 颜色编码的灯光显示天气预报（蓝色=晴天，橙色=多云，粉色=雨天）' },
-      { en: 'Shinsekai District: Explore the retro neighborhood with kushikatsu restaurants and local shops', zh: '新世界区: 探索有串炸餐厅和当地商店的复古社区', ja: '新世界区: 探索有串カツレストラン和当地店舗的复古社区' },
+      { en: 'Observation Deck: Panoramic views of Osaka from 91 meters high', zh: '观景台: 从91米高处欣赏大阪全景', ja: '展望台：地上91mから大阪を一望' },
+      { en: 'Billiken Statue: Rub the feet of the Billiken for good luck - a popular tradition', zh: '比利肯雕像: 抚摸比利肯的脚以求好运 - 一个受欢迎的传统', ja: 'ビリケンさん：足の裏を撫でるとご利益が。5階' },
+      { en: 'LED Light Display: Color-coded lights indicate weather forecast (blue=sunny, orange=cloudy, pink=rainy)', zh: 'LED灯光显示: 颜色编码的灯光显示天气预报（蓝色=晴天，橙色=多云，粉色=雨天）', ja: 'LED：天気予報で色が変わる（青=晴れ・オレンジ=曇・ピンク=雨）' },
+      { en: 'Shinsekai District: Explore the retro neighborhood with kushikatsu restaurants and local shops', zh: '新世界区: 探索有串炸餐厅和当地商店的复古社区', ja: '新世界：串カツとレトロな街並みを散策' },
     ],
     tips: [
-      { en: 'Best Time to Visit: Visit during sunset for beautiful views of Osaka illuminated at dusk', zh: '最佳参观时间: 在日落时参观，欣赏黄昏时大阪的美丽景色', ja: '最佳参观時間: 在日落时参观，欣赏黄昏时大阪的美丽景色' },
-      { en: 'Combine with Shinsekai: Explore the surrounding area for kushikatsu and local street food', zh: '与新世界结合: 探索周边地区，品尝串炸和当地街头美食', ja: '与新世界结合: 探索周边地区，品尝串カツ和当地街头美食' },
-      { en: 'Access: 3-minute walk from Ebisucho Station (Osaka Metro Sakaisuji Line) or Dobutsuen-mae Station', zh: '交通: 从惠美须町站（大阪地铁堺筋线）或动物园前站步行3分钟', ja: '交通: 惠美须町駅（大阪地下鉄堺筋線）或动物园前駅徒歩3分' },
-      { en: 'Duration: Allow 30-45 minutes for the tower visit, plus time to explore Shinsekai', zh: '停留时间: 塔参观需要30-45分钟，加上探索新世界的时间', ja: '所要時間: 塔参观需要30-45分，加上探索新世界的時間' },
+      { en: 'Best Time to Visit: Visit during sunset for beautiful views of Osaka illuminated at dusk', zh: '最佳参观时间: 在日落时参观，欣赏黄昏时大阪的美丽景色', ja: '夕暮れ時がおすすめ：黄昏の大阪が美しい' },
+      { en: 'Combine with Shinsekai: Explore the surrounding area for kushikatsu and local street food', zh: '与新世界结合: 探索周边地区，品尝串炸和当地街头美食', ja: '新世界とセットで：周辺の串カツや屋台グルメも楽しんで' },
+      { en: 'Access: 3-minute walk from Ebisucho Station (Osaka Metro Sakaisuji Line) or Dobutsuen-mae Station', zh: '交通: 从惠美须町站（大阪地铁堺筋线）或动物园前站步行3分钟', ja: '恵美須町駅・動物園前駅から徒歩3分' },
+      { en: 'Duration: Allow 30-45 minutes for the tower visit, plus time to explore Shinsekai', zh: '停留时间: 塔参观需要30-45分钟，加上探索新世界的时间', ja: '塔30〜45分＋新世界散策の時間を' },
     ],
   },
   'shinsaibashi': {
@@ -928,16 +929,16 @@ export const attractionsData = {
       ja: '心斎橋は大阪を代表するショッピングエリアで、全長約580mのアーケード商店街「心斎橋筋商店街」が中心です。道頓堀へもつながり、百貨店から流行のブティック、老舗店、飲食店やカフェまで幅広く揃います。江戸時代から300年以上続く商業地としての歴史もあり、現在はファッション、コスメ、家電、土産物などを求める人で賑わう歩行者専用の繁華街です。'
     },
     highlights: [
-      { en: 'Covered Shopping Arcade: 580-meter long pedestrian-only street protected from weather', zh: '有盖购物拱廊: 580米长的步行街，不受天气影响', ja: '有盖ショッピング拱廊: 580米长的徒歩街，不受天气影响' },
-      { en: 'Diverse Shopping: From luxury brands to affordable fashion, cosmetics, electronics, and souvenirs', zh: '多样化购物: 从奢侈品牌到平价时尚、化妆品、电子产品和纪念品', ja: '多样化ショッピング: 奢侈品牌到平价时尚、化妆品、电子产品和纪念品' },
-      { en: 'Connects to Dotonbori: Seamlessly connects to Osaka\'s famous food and entertainment district', zh: '连接道顿堀: 无缝连接到大阪著名的美食和娱乐区' },
-      { en: 'Historic Significance: Commercial center dating back over 300 years to the Edo period', zh: '历史意义: 可追溯到300多年前江户时代的商业中心', ja: '历史意义: 可追溯到300多年前江户时代的商业中心' },
+      { en: 'Covered Shopping Arcade: 580-meter long pedestrian-only street protected from weather', zh: '有盖购物拱廊: 580米长的步行街，不受天气影响', ja: 'アーケード商店街：全長580m。雨の日も安心' },
+      { en: 'Diverse Shopping: From luxury brands to affordable fashion, cosmetics, electronics, and souvenirs', zh: '多样化购物: 从奢侈品牌到平价时尚、化妆品、电子产品和纪念品', ja: 'ブランドからカジュアル・コスメ・家電・お土産まで' },
+      { en: 'Connects to Dotonbori: Seamlessly connects to Osaka\'s famous food and entertainment district', zh: '连接道顿堀: 无缝连接到大阪著名的美食和娱乐区', ja: '道頓堀に直結。大阪の食・繁華街へそのまま' },
+      { en: 'Historic Significance: Commercial center dating back over 300 years to the Edo period', zh: '历史意义: 可追溯到300多年前江户时代的商业中心', ja: '江戸時代から300年以上続く商業地' },
     ],
     tips: [
-      { en: 'Best Time to Visit: Weekday mornings are less crowded; evenings are livelier with more people', zh: '最佳参观时间: 工作日上午人较少；晚上更热闹，人更多', ja: '最佳参观時間: 工作日午前人较少；夜更热闹，人更多' },
-      { en: 'Tax-Free Shopping: Many stores offer tax-free shopping for tourists - bring your passport', zh: '免税购物: 许多商店为游客提供免税购物 - 请携带护照', ja: '免税ショッピング: 许多店舗为游客提供免税ショッピング - 请携带护照' },
-      { en: 'Combine with Dotonbori: Perfect for shopping during the day, then dining in Dotonbori at night', zh: '与道顿堀结合: 白天购物，晚上在道顿堀用餐的完美选择', ja: '与道頓堀结合: 白天ショッピング，夜在道頓堀用餐的完美选择' },
-      { en: 'Access: Direct access from Shinsaibashi Station (Osaka Metro Midosuji Line) or Namba Station', zh: '交通: 从心斋桥站（大阪地铁御堂筋线）或难波站直接到达', ja: '交通: 心斎橋駅（大阪地下鉄御堂筋線）或難波駅直接到达' },
+      { en: 'Best Time to Visit: Weekday mornings are less crowded; evenings are livelier with more people', zh: '最佳参观时间: 工作日上午人较少；晚上更热闹，人更多', ja: '平日午前は空いている。夕方以降はにぎやか' },
+      { en: 'Tax-Free Shopping: Many stores offer tax-free shopping for tourists - bring your passport', zh: '免税购物: 许多商店为游客提供免税购物 - 请携带护照', ja: '免税対応店多数。パスポート持参を' },
+      { en: 'Combine with Dotonbori: Perfect for shopping during the day, then dining in Dotonbori at night', zh: '与道顿堀结合: 白天购物，晚上在道顿堀用餐的完美选择', ja: '昼は心斎橋でショッピング、夜は道頓堀で食事' },
+      { en: 'Access: Direct access from Shinsaibashi Station (Osaka Metro Midosuji Line) or Namba Station', zh: '交通: 从心斋桥站（大阪地铁御堂筋线）或难波站直接到达', ja: '心斎橋駅（御堂筋線）・難波駅からすぐ' },
     ],
   },
   'ninenzaka-sannenzaka': {
@@ -961,17 +962,17 @@ export const attractionsData = {
       ja: '二寧坂（二年坂）・産寧坂（三年坂）は、清水寺近くの東山エリアに残る京都屈指の歴史的街並みです。石畳の坂道沿いに町家が建ち並び、工芸品や土産物、和菓子などのお店が続き、古都らしい風情を味わえます。景観保存地区として整備されており、歩いて散策するのに最適。桜の季節や紅葉シーズンは特に美しく、伝統的な京都文化を感じられる人気スポットです。'
     },
     highlights: [
-      { en: 'Historic Preservation: Beautifully preserved traditional streets with stone paving and wooden buildings', zh: '历史保护: 保存完好的传统街道，有石砌路面和木制建筑', ja: '历史保护: 保存完好的传统街道，有石砌路面和木制建筑' },
-      { en: 'Traditional Shops: Local crafts, pottery, sweets, tea, and souvenirs in traditional machiya buildings', zh: '传统商店: 传统町屋建筑中的当地工艺品、陶器、甜点、茶和纪念品', ja: '传统店舗: 传统町屋建筑中的当地工艺品、陶器、甜点、お茶和纪念品' },
-      { en: 'Scenic Beauty: Stunning views especially during cherry blossom and autumn foliage seasons', zh: '风景优美: 特别是在樱花和秋叶季节的壮丽景色', ja: '风景优美: 特别是在樱花和秋叶季节的壮丽景色' },
-      { en: 'Near Kiyomizu-dera: Perfect combination visit with the famous temple just above the streets', zh: '靠近清水寺: 与位于街道上方的著名寺庙完美结合参观', ja: '靠近清水寺: 与位于街道上方的著名寺院完美结合参观' },
+      { en: 'Historic Preservation: Beautifully preserved traditional streets with stone paving and wooden buildings', zh: '历史保护: 保存完好的传统街道，有石砌路面和木制建筑', ja: '歴史的景観：石畳と木造建築が残る伝統的な街並み' },
+      { en: 'Traditional Shops: Local crafts, pottery, sweets, tea, and souvenirs in traditional machiya buildings', zh: '传统商店: 传统町屋建筑中的当地工艺品、陶器、甜点、茶和纪念品', ja: '伝統的な店舗：町家建築で工芸品・陶器・和菓子・お茶・土産物' },
+      { en: 'Scenic Beauty: Stunning views especially during cherry blossom and autumn foliage seasons', zh: '风景优美: 特别是在樱花和秋叶季节的壮丽景色', ja: '景観：桜や紅葉の時期が特に美しい' },
+      { en: 'Near Kiyomizu-dera: Perfect combination visit with the famous temple just above the streets', zh: '靠近清水寺: 与位于街道上方的著名寺庙完美结合参观', ja: '清水寺のすぐ下：セットで回る定番コース' },
     ],
     tips: [
-      { en: 'Best Time to Visit: Early morning (before 9 AM) or late afternoon to avoid crowds; cherry blossom and autumn are especially beautiful', zh: '最佳参观时间: 清晨（上午9点前）或下午晚些时候以避免人群；樱花和秋季特别美丽', ja: '最佳参观時間: 清晨（午前9点前）或午後晚些时候以避免人群；樱花和秋季特别美丽' },
-      { en: 'Photography: The streets are very photogenic, but be respectful of shop owners and other visitors', zh: '摄影: 街道非常适合拍照，但要尊重店主和其他游客', ja: '摄影: 街道非常适合拍照，但要尊重店主和其他游客' },
-      { en: 'Combine with Kiyomizu-dera: Visit the temple first, then walk down these historic streets', zh: '与清水寺结合: 先参观寺庙，然后沿着这些历史街道步行', ja: '与清水寺结合: 先参观寺院，然后沿着这些历史街道徒歩' },
-      { en: 'Access: 5-minute walk from Kiyomizu-dera Temple, or 10-minute walk from Kiyomizu-Gojo Station', zh: '交通: 从清水寺步行5分钟，或从清水五条站步行10分钟', ja: '交通: 清水寺徒歩5分，或清水五条駅徒歩10分' },
-      { en: 'Duration: Allow 30-60 minutes to explore both streets and browse shops', zh: '停留时间: 留出30-60分钟探索两条街道并浏览商店', ja: '所要時間: 留出30-60分探索两条街道并浏览店舗' },
+      { en: 'Best Time to Visit: Early morning (before 9 AM) or late afternoon to avoid crowds; cherry blossom and autumn are especially beautiful', zh: '最佳参观时间: 清晨（上午9点前）或下午晚些时候以避免人群；樱花和秋季特别美丽', ja: '午前9時前か夕方なら混雑を避けられる。桜・紅葉の時期が特に美しい' },
+      { en: 'Photography: The streets are very photogenic, but be respectful of shop owners and other visitors', zh: '摄影: 街道非常适合拍照，但要尊重店主和其他游客', ja: '写真：風情ある街並みですが、店舗や他のお客様に配慮して撮影を' },
+      { en: 'Combine with Kiyomizu-dera: Visit the temple first, then walk down these historic streets', zh: '与清水寺结合: 先参观寺庙，然后沿着这些历史街道步行', ja: '清水寺参拝後に坂を下って散策する流れがおすすめ' },
+      { en: 'Access: 5-minute walk from Kiyomizu-dera Temple, or 10-minute walk from Kiyomizu-Gojo Station', zh: '交通: 从清水寺步行5分钟，或从清水五条站步行10分钟', ja: 'アクセス：清水寺から徒歩5分、または清水五条駅から徒歩10分' },
+      { en: 'Duration: Allow 30-60 minutes to explore both streets and browse shops', zh: '停留时间: 留出30-60分钟探索两条街道并浏览商店', ja: '所要時間：二つの坂を散策して店を見て回るなら30〜60分' },
     ],
   },
   'kamogawa': {
@@ -994,18 +995,18 @@ export const attractionsData = {
       ja: '鴨川は京都の中心部を流れる風情ある川で、街を東西に分ける京都の象徴的な景観の一つです。川沿いには遊歩道が整備され、散歩やジョギング、のんびり休憩する人々で賑わいます。春（3月下旬〜4月上旬）は桜並木が見事で、川辺がピンク色に彩られます。夏は川沿いの飲食店で「川床（ゆか）」が楽しめ、夕方以降はロマンチックな散策コースとしても人気。川の中央に渡る飛び石（大跳石）も京都らしい名物です。'
     },
     highlights: [
-      { en: 'Cherry Blossom Season: Stunning sakura tunnel along the riverbanks in spring', zh: '樱花季节: 春天河岸两旁令人惊叹的樱花隧道', ja: '樱花季节: 春天河岸两旁令人惊叹的樱花隧道' },
-      { en: 'Riverside Walks: Beautiful walking paths perfect for strolling and jogging', zh: '河畔散步: 美丽的步行道，非常适合散步和慢跑', ja: '河畔散步: 美丽的徒歩道，非常适合散步和慢跑' },
-      { en: 'Summer Yuka Dining: Outdoor dining platforms at riverside restaurants during summer', zh: '夏季纳凉床: 夏季河畔餐厅的户外用餐平台', ja: '夏季纳凉床: 夏季河畔レストラン的户外用餐平台' },
-      { en: 'Stepping Stones: Traditional dai-odan stones for crossing to river islands', zh: '踏脚石: 传统的踏脚石，用于过河到河中的小岛', ja: '踏脚石: 传统的踏脚石，用于过河到河中的小岛' },
-      { en: 'Evening Atmosphere: Romantic evening walks with beautiful city lights reflecting on the water', zh: '傍晚氛围: 浪漫的晚间散步，美丽的城市灯光倒映在水面上', ja: '傍晚氛围: 浪漫的晚间散步，美丽的城市灯光倒映在水面上' },
+      { en: 'Cherry Blossom Season: Stunning sakura tunnel along the riverbanks in spring', zh: '樱花季节: 春天河岸两旁令人惊叹的樱花隧道', ja: '桜の季節：春の川沿いに見事な桜のトンネル' },
+      { en: 'Riverside Walks: Beautiful walking paths perfect for strolling and jogging', zh: '河畔散步: 美丽的步行道，非常适合散步和慢跑', ja: '川沿いの散歩：散策・ジョギングに最適な遊歩道' },
+      { en: 'Summer Yuka Dining: Outdoor dining platforms at riverside restaurants during summer', zh: '夏季纳凉床: 夏季河畔餐厅的户外用餐平台', ja: '夏の川床：夏季は川沿いの飲食店で屋外の川床が楽しめる' },
+      { en: 'Stepping Stones: Traditional dai-odan stones for crossing to river islands', zh: '踏脚石: 传统的踏脚石，用于过河到河中的小岛', ja: '飛び石：川の島へ渡る伝統的な大飛び石' },
+      { en: 'Evening Atmosphere: Romantic evening walks with beautiful city lights reflecting on the water', zh: '傍晚氛围: 浪漫的晚间散步，美丽的城市灯光倒映在水面上', ja: '夕景：ライトアップされた街並みが川に映るロマンチックな散策' },
     ],
     tips: [
-      { en: 'Best Time to Visit: Early morning for peaceful walks, evening for romantic atmosphere, or during cherry blossom season for stunning views', zh: '最佳参观时间: 清晨进行宁静的散步，傍晚享受浪漫氛围，或在樱花季节欣赏壮丽景色', ja: '最佳参观時間: 清晨进行宁静的散步，傍晚享受浪漫氛围，或在樱花季节欣赏壮丽景色' },
-      { en: 'Popular Sections: The area between Shijo-dori and Sanjo-dori is most popular, especially near Gion district', zh: '热门区域: 四条通和三条通之间的区域最受欢迎，特别是靠近祇园区的区域', ja: '热门区域: 四条通和三条通之间的区域最受欢迎，特别是靠近祇園区的区域' },
-      { en: 'Summer Yuka: Many restaurants set up outdoor platforms (yuka) from May to September - perfect for riverside dining', zh: '夏季纳凉床: 许多餐厅从5月到9月设置户外平台（纳凉床）- 非常适合河畔用餐', ja: '夏季纳凉床: 许多レストラン5月到9月设置户外平台（纳凉床）- 非常适合河畔用餐' },
-      { en: 'Access: Easily accessible from multiple stations including Shijo Station, Sanjo Station, or Gion-Shijo Station', zh: '交通: 从多个车站轻松到达，包括四条站、三条站或祇园四条站', ja: '交通: 多个车駅轻松到达，包括四条駅、三条駅或祇園四条駅' },
-      { en: 'Duration: Allow 30-60 minutes for a leisurely walk along the river', zh: '停留时间: 沿河悠闲散步需要30-60分钟', ja: '所要時間: 沿河悠闲散步需要30-60分' },
+      { en: 'Best Time to Visit: Early morning for peaceful walks, evening for romantic atmosphere, or during cherry blossom season for stunning views', zh: '最佳参观时间: 清晨进行宁静的散步，傍晚享受浪漫氛围，或在樱花季节欣赏壮丽景色', ja: '早朝は静かな散歩、夕方はロマンチック。桜の時期も絶景' },
+      { en: 'Popular Sections: The area between Shijo-dori and Sanjo-dori is most popular, especially near Gion district', zh: '热门区域: 四条通和三条通之间的区域最受欢迎，特别是靠近祇园区的区域', ja: '人気エリア：四条通〜三条通付近、特に祇園側がにぎわう' },
+      { en: 'Summer Yuka: Many restaurants set up outdoor platforms (yuka) from May to September - perfect for riverside dining', zh: '夏季纳凉床: 许多餐厅从5月到9月设置户外平台（纳凉床）- 非常适合河畔用餐', ja: '川床：5〜9月は川沿いの店で納涼床。川畔の食事が楽しめる' },
+      { en: 'Access: Easily accessible from multiple stations including Shijo Station, Sanjo Station, or Gion-Shijo Station', zh: '交通: 从多个车站轻松到达，包括四条站、三条站或祇园四条站', ja: 'アクセス：四条駅・三条駅・祇園四条駅などから徒歩でアクセス可' },
+      { en: 'Duration: Allow 30-60 minutes for a leisurely walk along the river', zh: '停留时间: 沿河悠闲散步需要30-60分钟', ja: '所要時間：のんびり川沿いを歩くなら30〜60分' },
     ],
   },
   'katsuoji': {
@@ -1029,24 +1030,24 @@ export const attractionsData = {
       ja: '勝尾寺（かつおうじ）は大阪北部の山中にある寺院で、境内に並ぶ無数のだるまが名物です。だるまが至る所に置かれていることから「だるま寺」とも呼ばれ、写真映えする独特の雰囲気があります。727年創建とされ、「勝運（かちうん）」のご利益で知られるため、受験・仕事・スポーツなどの成功祈願に訪れる人が多いスポットです。'
     },
     highlights: [
-      { en: 'Thousands of Daruma Dolls: The temple grounds are filled with colorful daruma dolls placed by visitors, creating a unique and photogenic atmosphere', zh: '数千个达摩娃娃: 寺庙场地充满了游客放置的彩色达摩娃娃，营造出独特而适合拍照的氛围', ja: '数千个达摩娃娃: 寺院场地充满了游客放置的彩色达摩娃娃，营造出独特而适合拍照的氛围' },
-      { en: 'Victory Temple: Known as a temple for "winning luck" - visitors pray for success in exams, business, sports, and other endeavors', zh: '胜利之寺: 被称为"胜利之寺" - 游客祈祷在考试、商业、体育和其他努力中取得成功', ja: '胜利之寺: 被称为"胜利之寺" - 游客祈祷在考试、商业、体育和其他努力中取得成功' },
-      { en: 'Seasonal Beauty: Beautiful mountain temple surrounded by nature - especially stunning in autumn when the maple leaves change color', zh: '季节性美景: 美丽的山寺被自然环绕 - 尤其是在秋季枫叶变色时格外美丽', ja: '季节性美景: 美丽的山寺被自然环绕 - 尤其是在秋季枫叶变色时格外美丽' },
-      { en: 'Early Morning Access: Opens at 8:00 AM, perfect for early morning visits before crowds arrive', zh: '清晨开放: 早上8点开放，非常适合在人群到达之前清晨参观', ja: '清晨営業: 午前8点営業，非常适合在人群到达之前清晨参观' },
+      { en: 'Thousands of Daruma Dolls: The temple grounds are filled with colorful daruma dolls placed by visitors, creating a unique and photogenic atmosphere', zh: '数千个达摩娃娃: 寺庙场地充满了游客放置的彩色达摩娃娃，营造出独特而适合拍照的氛围', ja: 'だるまの数々：参拝者が奉納した色とりどりのだるまが境内を彩り、独特のフォトジェニックな雰囲気です' },
+      { en: 'Victory Temple: Known as a temple for "winning luck" - visitors pray for success in exams, business, sports, and other endeavors', zh: '胜利之寺: 被称为"胜利之寺" - 游客祈祷在考试、商业、体育和其他努力中取得成功', ja: '勝運の寺：合格・商売・スポーツなどの成功祈願で人気' },
+      { en: 'Seasonal Beauty: Beautiful mountain temple surrounded by nature - especially stunning in autumn when the maple leaves change color', zh: '季节性美景: 美丽的山寺被自然环绕 - 尤其是在秋季枫叶变色时格外美丽', ja: '紅葉の名所：自然に囲まれた山寺。秋の紅葉が特に美しい' },
+      { en: 'Early Morning Access: Opens at 8:00 AM, perfect for early morning visits before crowds arrive', zh: '清晨开放: 早上8点开放，非常适合在人群到达之前清晨参观', ja: '8:00開門。混雑前の早朝参拝がおすすめ' },
     ],
     tips: [
-      { en: 'Early Arrival: Arriving at 7:00 AM allows you to experience the temple before the crowds and enjoy the peaceful morning atmosphere', zh: '早到: 早上7点到达可以让您在人群到达之前体验寺庙，享受宁静的早晨氛围', ja: '早到: 午前7点到达可以让您在人群到达之前体验寺院，享受宁静的早晨氛围' },
-      { en: 'Daruma Dolls: You can purchase daruma dolls at the temple to place around the grounds - they come in various sizes', zh: '达摩娃娃: 您可以在寺庙购买达摩娃娃放置在场地周围 - 它们有各种尺寸', ja: '达摩娃娃: 您可以在寺院购买达摩娃娃放置在场地周围 - 它们有各种尺寸' },
-      { en: 'Autumn Season: The temple is especially beautiful in autumn (late October to early December) when the maple leaves turn red and yellow', zh: '秋季: 寺庙在秋季（10月下旬至12月初）特别美丽，此时枫叶变红变黄', ja: '秋季: 寺院在秋季（10月下旬へ12月初）特别美丽，此时枫叶变红变黄' },
-      { en: 'Mountain Location: Located in the mountains, the temple offers beautiful views and a peaceful escape from the city', zh: '山区位置: 位于山区，寺庙提供美丽的景色和远离城市的宁静避风港', ja: '山区位置: 位于山区，寺院提供美丽的景色和远离城市的宁静避风港' },
+      { en: 'Early Arrival: Arriving at 7:00 AM allows you to experience the temple before the crowds and enjoy the peaceful morning atmosphere', zh: '早到: 早上7点到达可以让您在人群到达之前体验寺庙，享受宁静的早晨氛围', ja: '7:00到着なら人混み前に静かな朝の境内を体験' },
+      { en: 'Daruma Dolls: You can purchase daruma dolls at the temple to place around the grounds - they come in various sizes', zh: '达摩娃娃: 您可以在寺庙购买达摩娃娃放置在场地周围 - 它们有各种尺寸', ja: 'だるま：境内で購入して各所に奉納。サイズは各種' },
+      { en: 'Autumn Season: The temple is especially beautiful in autumn (late October to early December) when the maple leaves turn red and yellow', zh: '秋季: 寺庙在秋季（10月下旬至12月初）特别美丽，此时枫叶变红变黄', ja: '紅葉の時期：10月下旬〜12月初旬は境内の紅葉が特に美しい' },
+      { en: 'Mountain Location: Located in the mountains, the temple offers beautiful views and a peaceful escape from the city', zh: '山区位置: 位于山区，寺庙提供美丽的景色和远离城市的宁静避风港', ja: '山中の立地：都会を離れた静かな眺望' },
     ],
   },
   'harukas-abeno': {
     id: 'harukas-abeno',
-    title: { en: 'Abeno Harukas (阿倍野HARUKAS)', zh: '阿倍野HARUKAS', ja: '阿倍野HARUKAS' },
+    title: { en: 'Abeno Harukas', zh: '阿倍野 HARUKAS', ja: 'あべのハルカス' },
     location: { en: 'Osaka', zh: '大阪', ja: '大阪' },
     city: 'osaka',
-    price: '¥1,500 (Observation Deck)',
+    price: { en: '¥1,500 (Observation Deck)', zh: '¥1,500（观景台）', ja: '¥1,500（展望台）' },
     hours: { en: '9:00 AM - 10:00 PM', zh: '早上9点 - 晚上10点', ja: '午前9時 - 午後10時' },
     images: [
       'https://www.abenoharukas-300.jp/en/images/bnr-ph01.jpg',
@@ -1062,17 +1063,17 @@ export const attractionsData = {
       ja: 'あべのハルカスは高さ300m・60階建ての日本一高い超高層ビルで、2014年に大阪・阿倍野エリアに開業しました。百貨店、ホテル、オフィス、美術館などが入る複合施設で、最上部の「HARUKAS 300」展望台（58〜60階）からは大阪の街並みを360度見渡せます。名称の「ハルカス」は「晴るかす（明るくする）」に由来するとされ、近代的な建築と眺望の良さで大阪観光の定番スポットになっています。'
     },
     highlights: [
-      { en: 'Japan\'s Tallest Building: At 300 meters tall, Abeno Harukas is the tallest building in Japan, offering breathtaking views of Osaka', zh: '日本最高的建筑: 高300米，阿倍野HARUKAS是日本最高的建筑，提供令人叹为观止的大阪景色' },
-      { en: 'HARUKAS 300 Observation Deck: Located on floors 58-60, the observation deck offers 360-degree panoramic views of Osaka and surrounding areas', zh: 'HARUKAS 300观景台: 位于58-60层，观景台提供360度全景，可欣赏大阪及周边地区', ja: 'HARUKAS 300观景台: 位于58-60层，观景台提供360度全景，可欣赏大阪及周边地区' },
-      { en: 'Shopping Paradise: The building houses a massive department store with luxury brands, fashion, electronics, and local products', zh: '购物天堂: 该建筑内设有大型百货商店，有奢侈品牌、时尚、电子产品和当地产品', ja: 'ショッピング天堂: 该建筑内设有大型百货店舗，有奢侈品牌、时尚、电子产品和当地产品' },
-      { en: 'Dining Options: Wide variety of restaurants and cafes throughout the building, from casual dining to fine dining', zh: '餐饮选择: 整个建筑内有各种餐厅和咖啡馆，从休闲餐饮到高级餐饮', ja: '餐饮选择: 整个建筑内有各种レストラン和咖啡馆，休闲餐饮到高级餐饮' },
-      { en: 'Easy Access: Directly connected to Tennoji Station, making it easily accessible by train', zh: '交通便利: 直接连接到天王寺站，乘坐火车即可轻松到达', ja: '交通便利: 直接连接到天王寺駅，で火车即可轻松到达' },
+      { en: 'Japan\'s Tallest Building: At 300 meters tall, Abeno Harukas is the tallest building in Japan, offering breathtaking views of Osaka', zh: '日本最高的建筑: 高300米，阿倍野HARUKAS是日本最高的建筑，提供令人叹为观止的大阪景色', ja: '日本一の高さ：300mのあべのハルカスから大阪を一望' },
+      { en: 'HARUKAS 300 Observation Deck: Located on floors 58-60, the observation deck offers 360-degree panoramic views of Osaka and surrounding areas', zh: 'HARUKAS 300观景台: 位于58-60层，观景台提供360度全景，可欣赏大阪及周边地区', ja: 'HARUKAS 300：58〜60階の展望台。大阪を360度パノラマ' },
+      { en: 'Shopping Paradise: The building houses a massive department store with luxury brands, fashion, electronics, and local products', zh: '购物天堂: 该建筑内设有大型百货商店，有奢侈品牌、时尚、电子产品和当地产品', ja: 'ショッピング：百貨店にブランド・ファッション・家電・土産' },
+      { en: 'Dining Options: Wide variety of restaurants and cafes throughout the building, from casual dining to fine dining', zh: '餐饮选择: 整个建筑内有各种餐厅和咖啡馆，从休闲餐饮到高级餐饮', ja: '飲食：カジュアルから高級までレストラン・カフェが充実' },
+      { en: 'Easy Access: Directly connected to Tennoji Station, making it easily accessible by train', zh: '交通便利: 直接连接到天王寺站，乘坐火车即可轻松到达', ja: '天王寺駅直結で電車アクセス良好' },
     ],
     tips: [
-      { en: 'Best Time to Visit: Visit during sunset hours for the most spectacular views of Osaka bathed in golden light', zh: '最佳访问时间: 在日落时分访问，可欣赏大阪沐浴在金色光芒中最壮观的景色', ja: '最佳访问時間: 在日落时分访问，可欣赏大阪沐浴在金色光芒中最壮观的景色' },
-      { en: 'Shopping Tax-Free: Bring your passport for tax-free shopping at the department store - many international brands available', zh: '免税购物: 携带护照在百货商店享受免税购物 - 有许多国际品牌可供选择', ja: '免税ショッピング: 携带护照在百货店舗享受免税ショッピング - 有许多国际品牌可供选择' },
-      { en: 'Observation Deck: The HARUKAS 300 observation deck offers indoor and outdoor viewing areas - tickets can be purchased on-site or online', zh: '观景台: HARUKAS 300观景台提供室内和室外观景区 - 可以在现场或在线购买门票', ja: '观景台: HARUKAS 300观景台提供室内和室外观景区 - 可以在现场或在線购买チケット' },
-      { en: 'Combine with Nearby Attractions: Visit nearby Tennoji Zoo, Shitennoji Temple, or Tsutenkaku Tower in the same area', zh: '与附近景点结合: 参观附近的天王寺动物园、四天王寺或通天阁塔，都在同一地区', ja: '与附近観光地结合: 参观附近的天王寺动物园、四天王寺或通天閣塔，都在同一地区' },
+      { en: 'Best Time to Visit: Visit during sunset hours for the most spectacular views of Osaka bathed in golden light', zh: '最佳访问时间: 在日落时分访问，可欣赏大阪沐浴在金色光芒中最壮观的景色', ja: '夕景がおすすめ：金色に染まる大阪が最高' },
+      { en: 'Shopping Tax-Free: Bring your passport for tax-free shopping at the department store - many international brands available', zh: '免税购物: 携带护照在百货商店享受免税购物 - 有许多国际品牌可供选择', ja: '免税：パスポート持参で百貨店が免税。ブランド品も豊富' },
+      { en: 'Observation Deck: The HARUKAS 300 observation deck offers indoor and outdoor viewing areas - tickets can be purchased on-site or online', zh: '观景台: HARUKAS 300观景台提供室内和室外观景区 - 可以在现场或在线购买门票', ja: 'HARUKAS 300：屋内・屋外の展望エリア。チケットは現地またはオンラインで' },
+      { en: 'Combine with Nearby Attractions: Visit nearby Tennoji Zoo, Shitennoji Temple, or Tsutenkaku Tower in the same area', zh: '与附近景点结合: 参观附近的天王寺动物园、四天王寺或通天阁塔，都在同一地区', ja: '天王寺動物園・四天王寺・通天閣とセットでどうぞ' },
     ],
   },
 }

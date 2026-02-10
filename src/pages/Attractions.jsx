@@ -105,10 +105,13 @@ const Attractions = () => {
                 ? detailedData.images[0]
                 : 'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'
               
-              // Handle price - can be string or object {en, zh}
-              const price = typeof detailedData.price === 'object' && detailedData.price !== null
-                ? t(detailedData.price.en, detailedData.price.zh, detailedData.price.ja)
-                : detailedData.price
+              // Handle price - can be string or object {en, zh, ja}; translate "Free" and object form
+              const rawPrice = detailedData.price
+              const price = typeof rawPrice === 'object' && rawPrice !== null
+                ? t(rawPrice.en, rawPrice.zh, rawPrice.ja)
+                : rawPrice === 'Free'
+                  ? t('Free', '免费', '無料')
+                  : rawPrice
               
               return (
                 <div

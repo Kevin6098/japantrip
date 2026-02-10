@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
+import CarouselNav from './CarouselNav'
 
 const RestaurantDetail = ({ restaurant }) => {
   const { t } = useLanguage()
@@ -92,7 +93,7 @@ const RestaurantDetail = ({ restaurant }) => {
       {/* Image Carousel */}
       {images.length > 0 && (
         <div className="mb-8 relative">
-          <div className="relative overflow-hidden cursor-pointer group" onClick={() => openLightbox(currentImageIndex)}>
+          <div className="carousel-container relative rounded-2xl overflow-hidden shadow-xl cursor-pointer group" onClick={() => openLightbox(currentImageIndex)}>
             <div className="relative h-64 sm:h-80 md:h-96">
               {images.map((img, index) => (
                 <div
@@ -103,7 +104,7 @@ const RestaurantDetail = ({ restaurant }) => {
                 >
                   <img
                     src={img}
-                    alt={`${t(restaurant.title.en, restaurant.title.zh)} - Image ${index + 1}`}
+                    alt={`${t(restaurant.title.en, restaurant.title.zh, restaurant.title.ja)} - Image ${index + 1}`}
                     className="w-full h-full object-cover pointer-events-none"
                     onError={(e) => {
                       e.target.src = 'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'
@@ -113,33 +114,11 @@ const RestaurantDetail = ({ restaurant }) => {
               ))}
             </div>
 
-            {/* Navigation Arrows */}
             {images.length > 1 && (
-              <>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    prevImage()
-                  }}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-slate-700 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-                  aria-label="Previous image"
-                >
-                  <i className="fa-solid fa-chevron-left"></i>
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    nextImage()
-                  }}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-slate-700 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-                  aria-label="Next image"
-                >
-                  <i className="fa-solid fa-chevron-right"></i>
-                </button>
-              </>
+              <CarouselNav onPrev={prevImage} onNext={nextImage} stopPropagation />
             )}
 
-            {/* Indicators */}
+            {/* Indicators - theme-friendly dots */}
             {images.length > 1 && (
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
                 {images.map((_, index) => (
@@ -149,10 +128,10 @@ const RestaurantDetail = ({ restaurant }) => {
                       e.stopPropagation()
                       goToImage(index)
                     }}
-                    className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
                       index === currentImageIndex
-                        ? 'bg-white w-8'
-                        : 'bg-white/50 hover:bg-white/75'
+                        ? 'w-8 bg-violet-400 border-2 border-violet-500 shadow'
+                        : 'w-2.5 bg-white/90 hover:bg-white border-2 border-violet-300'
                     }`}
                     aria-label={`Go to image ${index + 1}`}
                   />
@@ -169,20 +148,20 @@ const RestaurantDetail = ({ restaurant }) => {
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
           onClick={closeLightbox}
         >
-          {/* Close Button */}
+          {/* Close Button - theme-friendly */}
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white hover:text-gray-300 p-3 bg-black/50 hover:bg-black/70 rounded-full transition-all duration-200 z-60"
+            className="absolute top-4 right-4 w-11 h-11 flex items-center justify-center rounded-full bg-white/95 border-2 border-violet-300 text-violet-600 shadow-xl hover:bg-white hover:border-violet-400 transition-all duration-200 z-60 active:scale-95"
             aria-label="Close"
           >
-            <i className="fa-solid fa-times text-2xl"></i>
+            <i className="fa-solid fa-times text-xl" aria-hidden="true"></i>
           </button>
 
           {/* Image Container */}
           <div className="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center">
             <img
               src={images[lightboxImageIndex]}
-              alt={`${t(restaurant.title.en, restaurant.title.zh)} - Image ${lightboxImageIndex + 1}`}
+              alt={`${t(restaurant.title.en, restaurant.title.zh, restaurant.title.ja)} - Image ${lightboxImageIndex + 1}`}
               className="max-w-full max-h-full object-contain rounded-lg"
               onError={(e) => {
                 e.target.src = 'https://images.unsplash.com/photo-1574781330855-d0db8cc4c2a8?auto=format&fit=crop&w=1200&q=80'
@@ -190,22 +169,22 @@ const RestaurantDetail = ({ restaurant }) => {
               onClick={(e) => e.stopPropagation()}
             />
 
-            {/* Navigation Arrows */}
+            {/* Navigation Arrows - theme-friendly, same as carousel */}
             {images.length > 1 && (
               <>
                 <button
                   onClick={prevLightboxImage}
-                  className="absolute left-4 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full transition-all duration-200 hover:scale-110 z-60"
+                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-60 w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/95 border-2 border-violet-300 text-violet-600 shadow-xl hover:bg-white hover:border-violet-400 transition-all duration-200 hover:scale-105 active:scale-95"
                   aria-label="Previous image"
                 >
-                  <i className="fa-solid fa-chevron-left text-2xl"></i>
+                  <i className="fa-solid fa-arrow-left text-lg sm:text-xl" aria-hidden="true"></i>
                 </button>
                 <button
                   onClick={nextLightboxImage}
-                  className="absolute right-4 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full transition-all duration-200 hover:scale-110 z-60"
+                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-60 w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/95 border-2 border-violet-300 text-violet-600 shadow-xl hover:bg-white hover:border-violet-400 transition-all duration-200 hover:scale-105 active:scale-95"
                   aria-label="Next image"
                 >
-                  <i className="fa-solid fa-chevron-right text-2xl"></i>
+                  <i className="fa-solid fa-arrow-right text-lg sm:text-xl" aria-hidden="true"></i>
                 </button>
               </>
             )}
@@ -224,12 +203,12 @@ const RestaurantDetail = ({ restaurant }) => {
       <article className="animate-fade-in">
         <div className="mb-6">
           <h1 className="font-header text-3xl sm:text-4xl font-black text-slate-800 mb-3">
-            {t(restaurant.title.en, restaurant.title.zh)}
+            {t(restaurant.title.en, restaurant.title.zh, restaurant.title.ja)}
           </h1>
           <div className="flex flex-wrap items-center gap-3 text-sm text-slate-600">
             <span className={`flex items-center px-3 py-1 rounded-full border ${locationColor}`}>
               <i className="fa-solid fa-location-dot mr-2"></i>
-              {t(restaurant.location.en, restaurant.location.zh)}
+              {t(restaurant.location.en, restaurant.location.zh, restaurant.location.ja)}
             </span>
             {restaurant.price && (
               <span className="flex items-center text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
@@ -240,7 +219,7 @@ const RestaurantDetail = ({ restaurant }) => {
             {restaurant.hours && (
               <span className="flex items-center text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
                 <i className="fa-solid fa-clock mr-2"></i>
-                {t(restaurant.hours.en, restaurant.hours.zh)}
+                {t(restaurant.hours.en, restaurant.hours.zh, restaurant.hours.ja)}
               </span>
             )}
           </div>

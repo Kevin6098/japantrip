@@ -47,7 +47,7 @@ const Schedule = () => {
             <div className={`${getColorBg(day.color)} p-4 text-white`}>
               <div className="flex justify-between items-center mb-2">
                 <span className="font-bold text-sm">
-                  {t('Day', '第', 'Day')} {day.day} {t('Day', '天', '日')}
+                  {t('Day', '第', '')} {day.day} {t('Day', '天', '日目')}
                 </span>
                 <span className="text-xs">{day.date}</span>
               </div>

@@ -36,6 +36,7 @@ export const LanguageProvider = ({ children }) => {
   // - existing calls: t(en, zh) continue to work
   // - new calls:      t(en, zh, ja)
   // - missing language falls back to English, then Chinese.
+  // - when language is 'ja', use ja when available (even if same as zh), else fall back to en/zh
   const t = (en, zh, ja) => {
     if (language === 'en') return en
     if (language === 'zh') return zh ?? en

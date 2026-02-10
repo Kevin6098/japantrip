@@ -1,0 +1,82 @@
+/* ============================================
+   Restaurant Detail Page – Mobile-only
+   Prev/Next restaurant navigation
+   Desktop: unchanged (see .restaurant-nav-desktop)
+   ============================================ */
+
+/* Hide mobile nav on desktop */
+.restaurant-nav-mobile {
+  display: none;
+}
+
+/* On mobile: hide desktop prev/next, show mobile nav */
+@media (max-width: 768px) {
+  .restaurant-nav-desktop {
+    display: none;
+  }
+
+  .restaurant-nav-mobile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .restaurant-nav-mobile__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 10px 14px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .restaurant-nav-mobile__btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .restaurant-nav-mobile__btn .restaurant-nav-mobile__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    color: inherit;
+  }
+
+  .restaurant-nav-mobile__btn .restaurant-nav-mobile__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Disabled state (no prev/next) */
+  .restaurant-nav-mobile__btn--disabled,
+  .restaurant-nav-mobile__btn--disabled:active {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* Desktop: ensure desktop nav is visible */
+@media (min-width: 769px) {
+  .restaurant-nav-desktop {
+    display: flex;
+  }
+
+  .restaurant-nav-mobile {
+    display: none;
+  }
+}

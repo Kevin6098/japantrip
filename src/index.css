@@ -37,6 +37,72 @@
     @apply bg-white shadow-lg transform -translate-y-1;
   }
 
+  /* Dashboard card icon container (replaces colored square) */
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+    transition: transform 180ms ease, background 180ms ease;
+  }
+
+  .card-icon .card-icon-symbol {
+    font-size: 22px;
+    line-height: 1;
+    user-select: none;
+  }
+
+  /* Dashboard cards: premium hover + tap (only for .dashboard-card) */
+  .dashboard-card {
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  }
+
+  .dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  .dashboard-card:hover .card-icon {
+    transform: scale(1.05);
+  }
+
+  .dashboard-card:active {
+    transform: scale(0.98) translateY(0);
+  }
+
+  .dashboard-card:active .card-icon {
+    transform: scale(0.95);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dashboard-card,
+    .dashboard-card:hover,
+    .dashboard-card:active,
+    .card-icon {
+      transition: none;
+    }
+
+    .dashboard-card:hover {
+      transform: none;
+    }
+
+    .dashboard-card:hover .card-icon,
+    .dashboard-card:active .card-icon {
+      transform: none;
+    }
+
+    .dashboard-card:active {
+      transform: none;
+    }
+  }
+
   /* Button Styles */
   .btn-primary {
     @apply bg-slate-900 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 hover:bg-slate-800 hover:scale-105 hover:shadow-xl;

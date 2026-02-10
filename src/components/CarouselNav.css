@@ -1,0 +1,112 @@
+/* ============================================
+   Carousel Nav - Modern travel app style
+   Glass effect, backdrop blur, hover animation
+   ============================================ */
+
+.carousel-nav {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.carousel-nav__btn {
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.25s ease, box-shadow 0.2s ease, background 0.2s ease;
+  opacity: 0.9;
+}
+
+/* Fade in when user hovers carousel container */
+.carousel-container:hover .carousel-nav__btn {
+  opacity: 1;
+}
+
+/* Touch devices: always show buttons (no hover) */
+@media (hover: none) {
+  .carousel-nav__btn {
+    opacity: 1;
+  }
+}
+
+.carousel-nav__btn:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.carousel-nav__btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.carousel-nav__btn:focus {
+  outline: none;
+}
+
+.carousel-nav__btn:focus-visible {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5), 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-nav__btn--prev {
+  left: 12px;
+}
+
+.carousel-nav__btn--next {
+  right: 12px;
+}
+
+/* Icon: dark gray, visible on light and dark images */
+.carousel-nav__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569; /* slate-600, works on glass background */
+  width: 24px;
+  height: 24px;
+}
+
+.carousel-nav__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Slightly larger on larger screens */
+@media (min-width: 640px) {
+  .carousel-nav__btn {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
+  }
+
+  .carousel-nav__btn--prev {
+    left: 16px;
+  }
+
+  .carousel-nav__btn--next {
+    right: 16px;
+  }
+
+  .carousel-nav__icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Minimum tap target for mobile (44px) is satisfied by 48px */

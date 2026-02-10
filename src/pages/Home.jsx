@@ -8,78 +8,15 @@ const Home = () => {
   const { t } = useLanguage()
 
   const quickLinks = [
-    {
-      to: '/flights',
-      icon: 'fa-plane-arrival',
-      title: t('Flights', '航班信息', 'フライト'),
-      description: t('Flight schedules and arrival times', '航班时刻表和抵达时间', 'フライトの時刻表と到着時間'),
-      bgColor: 'bg-purple-100',
-      iconColor: 'text-purple-500',
-    },
-    {
-      to: '/schedule',
-      icon: 'fa-calendar-days',
-      title: t('Itinerary', '行程', '旅程'),
-      description: t('Daily schedule and timeline', '每日行程和时间表', '日ごとのスケジュールとタイムライン'),
-      bgColor: 'bg-indigo-100',
-      iconColor: 'text-indigo-500',
-    },
-    {
-      to: '/budget',
-      icon: 'fa-wallet',
-      title: t('Budget', '预算', '予算'),
-      description: t('Daily pocket money estimates', '每日零花钱估算', '日ごとの予算（目安）'),
-      bgColor: 'bg-emerald-100',
-      iconColor: 'text-emerald-600',
-    },
-    {
-      to: '/transportation-budget',
-      icon: 'fa-train',
-      title: t('Transportation', '交通', '交通'),
-      description: t('Train, bus fares & walking times', '电车、巴士费用与步行时间', '電車・バス運賃と徒歩時間'),
-      bgColor: 'bg-blue-100',
-      iconColor: 'text-blue-600',
-    },
-    {
-      to: '/hotels',
-      icon: 'fa-bed',
-      title: t('Hotels', '住宿', 'ホテル'),
-      description: t('Accommodation details', '住宿详情', '宿泊先の詳細'),
-      bgColor: 'bg-indigo-100',
-      iconColor: 'text-indigo-500',
-    },
-    {
-      to: '/attractions',
-      icon: 'fa-camera-retro',
-      title: t('Attractions', '景点', '観光地'),
-      description: t('Must-see places and photos', '必看景点和照片', '必見スポットと写真'),
-      bgColor: 'bg-purple-100',
-      iconColor: 'text-purple-500',
-    },
-    {
-      to: '/packing',
-      icon: 'fa-suitcase',
-      title: t('Packing', '清单', '持ち物'),
-      description: t('Essential items checklist', '必备物品清单', '必需品チェックリスト'),
-      bgColor: 'bg-pink-100',
-      iconColor: 'text-pink-500',
-    },
-    {
-      to: '/food',
-      icon: 'fa-utensils',
-      title: t('Food & Restaurants', '美食与餐厅', 'グルメ'),
-      description: t('Restaurants and dining experiences', '餐厅和用餐体验', 'レストランと食体験'),
-      bgColor: 'bg-orange-100',
-      iconColor: 'text-orange-500',
-    },
-    {
-      to: '/checklist',
-      icon: 'fa-clipboard-check',
-      title: t('Checklist', '清单', 'チェックリスト'),
-      description: t('Quick checklist for the trip', '旅行快速检查清单', '旅行のチェック項目'),
-      bgColor: 'bg-slate-100',
-      iconColor: 'text-slate-600',
-    },
+    { to: '/flights', emoji: '✈️', title: t('Flights', '航班信息', 'フライト'), description: t('Flight schedules and arrival times', '航班时刻表和抵达时间', 'フライトの時刻表と到着時間') },
+    { to: '/schedule', emoji: '🗓️', title: t('Itinerary', '行程', '旅程'), description: t('Daily schedule and timeline', '每日行程和时间表', '日ごとのスケジュールとタイムライン') },
+    { to: '/budget', emoji: '💵', title: t('Budget', '预算', '予算'), description: t('Daily pocket money estimates', '每日零花钱估算', '日ごとの予算（目安）') },
+    { to: '/transportation-budget', emoji: '🚆', title: t('Transportation', '交通', '交通'), description: t('Train, bus fares & walking times', '电车、巴士费用与步行时间', '電車・バス運賃と徒歩時間') },
+    { to: '/hotels', emoji: '🏨', title: t('Hotels', '住宿', 'ホテル'), description: t('Accommodation details', '住宿详情', '宿泊先の詳細') },
+    { to: '/attractions', emoji: '📍', title: t('Attractions', '景点', '観光地'), description: t('Must-see places and photos', '必看景点和照片', '必見スポットと写真') },
+    { to: '/packing', emoji: '🎒', title: t('Packing', '清单', '持ち物'), description: t('Essential items checklist', '必备物品清单', '必需品チェックリスト') },
+    { to: '/food', emoji: '🍜', title: t('Food & Restaurants', '美食与餐厅', 'グルメ'), description: t('Restaurants and dining experiences', '餐厅和用餐体验', 'レストランと食体験') },
+    { to: '/checklist', emoji: '✅', title: t('Checklist', '清单', 'チェックリスト'), description: t('Quick checklist for the trip', '旅行快速检查清单', '旅行のチェック項目') },
   ]
 
   return (
@@ -135,23 +72,18 @@ const Home = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Budget Splitter - First in grid */}
           <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <Link to="/split-expenses" className="block group">
-              <div className="glass-card group cursor-pointer hover:border-emerald-300 min-h-[160px] flex flex-col">
-                <div className="p-4 bg-emerald-100 rounded-xl mb-4 shadow-inner group-hover:scale-110 transition-transform duration-300 w-fit">
-                  <i className="fa-solid fa-calculator text-emerald-600 text-3xl"></i>
-                </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-header text-xl font-bold text-slate-800">
-                    {t('Budget Splitter', '费用分摊器', '割り勘')}
-                  </h3>
-                  <span className="px-2 py-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full">
-                    {t('NEW', '新', 'NEW')}
-                  </span>
-                </div>
-                <p className="text-sm text-slate-600 flex-grow">
-                  {t('Track & split expenses with your group', '与团队追踪和分摊费用', 'グループの支出を記録して割り勘')}
-                </p>
+            <Link to="/split-expenses" className="dashboard-card glass-card block group cursor-pointer hover:border-emerald-300 min-h-[160px] flex flex-col">
+              <div className="card-icon">
+                <span className="card-icon-symbol" aria-hidden="true">💰</span>
               </div>
+              <div className="mb-2">
+                <h3 className="font-header text-xl font-bold text-slate-800">
+                  {t('Budget Splitter', '费用分摊器', '割り勘')}
+                </h3>
+              </div>
+              <p className="text-sm text-slate-600 flex-grow">
+                {t('Track & split expenses with your group', '与团队追踪和分摊费用', 'グループの支出を記録して割り勘')}
+              </p>
             </Link>
           </div>
 

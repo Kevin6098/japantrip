@@ -4,7 +4,21 @@ import { useLanguage } from '../context/LanguageContext'
 import { transportationData, transportationSummary } from '../data/transportationData'
 
 const TransportationBudget = () => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+
+  // Translate "X mins" / "~X mins" to current language (e.g. Japanese "X 分")
+  const formatMins = (timeStr) => {
+    if (!timeStr || typeof timeStr !== 'string') return timeStr
+    if (language === 'ja') return timeStr.replace(/\s*mins\s*$/i, '分').replace(/^~\s*/, '約')
+    if (language === 'zh') return timeStr.replace(/\s*mins\s*$/i, '分钟').replace(/^~\s*/, '约')
+    return timeStr
+  }
+
+  const translateCost = (cost) => {
+    if (!cost || typeof cost !== 'string') return cost
+    if (cost === 'Free') return t('Free', '免费', '無料')
+    return cost
+  }
 
   const getColorClasses = (color) => {
     const colors = {
@@ -56,7 +70,9 @@ const TransportationBudget = () => {
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <div className="flex items-center">
                 <div className={`${getColorClasses(day.color)} p-2 rounded-lg mr-3`}>
-                  <span className="font-bold">Day {day.day}</span>
+                  <span className="font-bold">
+                  {language === 'ja' ? `${day.day}日目` : language === 'zh' ? `第${day.day}天` : `Day ${day.day}`}
+                </span>
                 </div>
                 <h2 className="font-header text-xl font-bold text-slate-800">
                   {t(day.title.en, day.title.zh, day.title.ja)}
@@ -90,7 +106,7 @@ const TransportationBudget = () => {
                     <li key={idx}>
                       • {t(item.en, item.zh, item.ja)}
                       {item.cost && (
-                        <span className="font-mono font-semibold ml-1"> {item.cost}</span>
+                        <span className="font-mono font-semibold ml-1"> {translateCost(item.cost)}</span>
                       )}
                     </li>
                   ))}
@@ -120,7 +136,7 @@ const TransportationBudget = () => {
                     <li key={idx}>
                       • {t(item.en, item.zh, item.ja)}
                       {item.time && (
-                        <span className="ml-1"> {item.time}</span>
+                        <span className="ml-1"> {formatMins(item.time)}</span>
                       )}
                     </li>
                   ))}
@@ -131,7 +147,7 @@ const TransportationBudget = () => {
                       {t('Total Walking:', '总步行:', '徒歩合計：')}
                     </span>
                     <span className="text-lg font-bold text-green-600">
-                      {day.totalWalking}
+                      {formatMins(day.totalWalking)}
                     </span>
                   </div>
                 </div>

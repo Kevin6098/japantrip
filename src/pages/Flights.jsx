@@ -44,7 +44,7 @@ const Flights = () => {
               <div className="space-y-2 text-sm">
                 <div className="bg-purple-50 p-3 rounded-lg">
                   <div className="font-semibold text-slate-800 mb-1">
-                    {t('18 Mar 2026', '2026年3月18日')}
+                    {t('18 Mar 2026', '2026年3月18日', '2026年3月18日')}
                   </div>
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
@@ -78,7 +78,7 @@ const Flights = () => {
               <div className="space-y-2 text-sm">
                 <div className="bg-orange-50 p-3 rounded-lg">
                   <div className="font-semibold text-slate-800 mb-1">
-                    {t('28 Mar 2026', '2026年3月28日')}
+                    {t('28 Mar 2026', '2026年3月28日', '2026年3月28日')}
                   </div>
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
@@ -136,7 +136,7 @@ const Flights = () => {
               <div className="space-y-2 text-sm">
                 <div className="bg-teal-50 p-3 rounded-lg">
                   <div className="font-semibold text-slate-800 mb-1">
-                    {t('18 Mar 2026', '2026年3月18日')}
+                    {t('18 Mar 2026', '2026年3月18日', '2026年3月18日')}
                   </div>
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
@@ -170,7 +170,7 @@ const Flights = () => {
               <div className="space-y-2 text-sm">
                 <div className="bg-orange-50 p-3 rounded-lg">
                   <div className="font-semibold text-slate-800 mb-1">
-                    {t('28 Mar 2026', '2026年3月28日')}
+                    {t('28 Mar 2026', '2026年3月28日', '2026年3月28日')}
                   </div>
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
@@ -214,7 +214,7 @@ const Flights = () => {
               <span className="text-xs bg-white/20 px-2 py-1 rounded font-bold">CX</span>
             </div>
             <div className="text-xs bg-white/20 px-3 py-1 rounded inline-block mt-1">
-              {t('Passengers (3):', '乘客 (3人):')} <span className="font-semibold">Siew Tin See, Jun Ming Koay, Eng Kim See</span>
+              {t('Passengers (3):', '乘客 (3人):', '搭乗者（3名）：')} <span className="font-semibold">Siew Tin See, Jun Ming Koay, Eng Kim See</span>
             </div>
           </div>
           <div className="p-5 space-y-4">
@@ -227,7 +227,7 @@ const Flights = () => {
               <div className="space-y-2 text-sm">
                 <div className="bg-amber-50 p-3 rounded-lg">
                   <div className="font-semibold text-slate-800 mb-1">
-                    {t('21 Mar 2026', '2026年3月21日')}
+                    {t('21 Mar 2026', '2026年3月21日', '2026年3月21日')}
                   </div>
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
@@ -261,7 +261,7 @@ const Flights = () => {
               <div className="space-y-2 text-sm">
                 <div className="bg-orange-50 p-3 rounded-lg">
                   <div className="font-semibold text-slate-800 mb-1">
-                    {t('28 Mar 2026', '2026年3月28日')}
+                    {t('28 Mar 2026', '2026年3月28日', '2026年3月28日')}
                   </div>
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
