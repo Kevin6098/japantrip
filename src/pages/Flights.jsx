@@ -295,6 +295,84 @@ const Flights = () => {
           </div>
         </div>
 
+        {/* Group 4 – Taipei → Tokyo / Osaka → Taipei */}
+        <div className="glass-card rounded-2xl p-1 shadow-sm border-2 border-rose-200 hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="bg-gradient-to-r from-rose-600 to-rose-700 text-white p-4 rounded-t-xl">
+            <div className="flex justify-between items-center mb-2">
+              <h3 className="font-bold font-header text-lg">
+                ✈️ {t('Group 4 – Taipei → Tokyo / Osaka → Taipei', '第四组 – 台北 → 东京 / 大阪 → 台北', 'グループ4：台北 → 東京 / 大阪 → 台北')}
+              </h3>
+              <span className="text-xs bg-white/20 px-2 py-1 rounded font-bold">JX / MM</span>
+            </div>
+            <div className="text-xs bg-white/20 px-3 py-1 rounded inline-block mt-1">
+              {t('Passenger (1):', '乘客 (1人):', '搭乗者（1名）：')}{' '}
+              <span className="font-semibold">SOON XINYI</span>
+            </div>
+          </div>
+          <div className="p-5 space-y-4">
+            {/* Outbound */}
+            <div className="border-l-4 border-rose-500 pl-4">
+              <div className="font-bold text-rose-700 mb-2 flex items-center gap-2">
+                <i className="fa-solid fa-plane-departure"></i>
+                🛫 {t('Outbound (To Japan)', '去程 (前往日本)', '往路（日本へ）')}
+              </div>
+              <div className="space-y-2 text-sm">
+                <div className="bg-rose-50 p-3 rounded-lg">
+                  <div className="font-semibold text-slate-800 mb-1">
+                    {t('16 Mar 2026', '2026年3月16日', '2026年3月16日')}
+                  </div>
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-600">Taipei (Taoyuan) T1 → Tokyo (Narita) T2</span>
+                      <span className="font-bold text-rose-600 bg-rose-100 px-2 py-1 rounded">
+                        ⏰ <span className="highlight-time">10:10 – 14:20</span>
+                      </span>
+                    </div>
+                    <div className="text-xs text-slate-500 pl-4">STARLUX Airlines JX802 · {t('Duration:', '飞行时间:', '所要時間：')} 3h 10m</div>
+                  </div>
+                </div>
+                <div className="bg-green-50 border border-green-200 p-2 rounded text-xs">
+                  <span className="font-semibold text-green-700">📍 {t('Arrive:', '抵达:', '到着：')}{' '} </span>
+                  <span className="text-green-800">Tokyo Narita ({t('16 Mar 2026, 14:20', '2026年3月16日 14:20', '2026年3月16日 14:20')})</span>
+                </div>
+              </div>
+            </div>
+            {/* Return */}
+            <div className="border-l-4 border-orange-500 pl-4">
+              <div className="font-bold text-orange-700 mb-2 flex items-center gap-2">
+                <i className="fa-solid fa-plane-arrival"></i>
+                🛬 {t('Return (From Japan)', '返程 (从日本)', '復路（日本から）')}
+              </div>
+              <div className="space-y-2 text-sm">
+                <div className="bg-orange-50 p-3 rounded-lg">
+                  <div className="font-semibold text-slate-800 mb-1">
+                    {t('28 Mar 2026', '2026年3月28日', '2026年3月28日')}
+                  </div>
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-600">Osaka (Kansai) T2 → Taipei (Taoyuan) T1</span>
+                      <span className="font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded">
+                        ⏰ <span className="highlight-time">10:10 – 12:45</span>
+                      </span>
+                    </div>
+                    <div className="text-xs text-slate-500 pl-4">MM025 · Standard (TSD)</div>
+                  </div>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 p-2 rounded text-xs space-y-1">
+                  <div>
+                    <span className="font-semibold text-blue-700">📍 {t('Depart Japan:', '离开日本:', '日本出発：')}{' '} </span>
+                    <span className="text-blue-800">Osaka Kansai</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-blue-700">📍 {t('Arrive Home:', '抵达家乡:', '帰国到着：')}{' '} </span>
+                    <span className="text-blue-800">Taipei ({t('28 Mar 2026, 12:45', '2026年3月28日 12:45', '2026年3月28日 12:45')})</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Quick Overview */}
         <div className="glass-card rounded-2xl p-5 shadow-sm border-2 border-indigo-200 bg-gradient-to-br from-indigo-50 to-purple-50 animate-fade-in" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-start gap-3 mb-4">
@@ -311,7 +389,7 @@ const Flights = () => {
                     {t('Earliest arrival in Japan:', '最早抵达日本:', '日本への最速到着：')}
                   </div>
                   <div className="text-slate-600">
-                    {t('Group 1 & 2 → 18 Mar 2026 (Tokyo)', '第一组 & 第二组 → 2026年3月18日 (东京)', 'グループ1・2 → 2026年3月18日（東京）')}
+                    {t('Group 4 → 16 Mar 2026 (Tokyo Narita); Group 1 & 2 → 18 Mar 2026 (Tokyo)', '第四组 → 2026年3月16日 (成田); 第一组 & 第二组 → 2026年3月18日 (东京)', 'グループ4 → 2026年3月16日（成田）；グループ1・2 → 2026年3月18日（東京）')}
                   </div>
                 </div>
                 <div className="bg-white/80 p-3 rounded-lg border border-indigo-200">
@@ -327,7 +405,7 @@ const Flights = () => {
                     {t('All groups depart Japan:', '所有组离开日本:', '全グループの日本出発：')}
                   </div>
                   <div className="text-slate-600">
-                    {t('28 Mar 2026 from Osaka', '2026年3月28日 从大阪', '2026年3月28日 大阪から')}
+                    {t('28 Mar 2026 from Osaka (Group 4 MM025 10:10 → Taipei; others → PEN/SIN)', '2026年3月28日 从大阪 (第四组 MM025 10:10 → 台北; 其他 → 槟城/新加坡)', '2026年3月28日 大阪から（グループ4 MM025 10:10→台北；その他→ペナン/シンガポール）')}
                   </div>
                 </div>
               </div>

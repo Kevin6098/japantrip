@@ -768,6 +768,15 @@ export const getScheduleData = (t) => [
         special: true
       },
       { 
+        time: '06:30', 
+        text: t('Private Van to KIX (Taiwan / MM025 Group)', '私人包车前往关西机场 (台湾/MM025组)', '関空へプライベートバン（台湾・MM025グループ）'),
+        transit: t('Travel time: ~50-60 mins (1-chōme-12-11 Momodani, Ikuno Ward → KIX)', '车程: 约50-60分钟 (生野区桃谷1-12-11 → 关西机场)', '移動時間：約50〜60分（生野区桃谷1-12-11→関空）')
+      },
+      { 
+        time: '10:10', 
+        text: t('Flight Departs (KIX → Taipei) MM025', '航班起飞 (关西机场 → 台北) MM025', 'フライト出発（関空→台北）MM025')
+      },
+      { 
         time: '11:00', 
         text: t('Flight Departs (KIX → PEN)', '航班起飞 (关西机场 → 槟城)', 'フライト出発（関空→ペナン）')
       },
